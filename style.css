@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar .logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 15px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 8px;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  background: #fff;
+  color: #222;
+  border-radius: 4px;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0066ff, #00ccff);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #fff;
+  color: #0066ff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #f0f0f0;
+}
+
+/* Blog list */
+.blog-list {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.blog-list h1 {
+  margin-bottom: 20px;
+}
+
+.blog-list article {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.blog-list article h2 a {
+  color: #0066ff;
+  text-decoration: none;
+}
+
+.blog-list .date {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Post detail */
+.post {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post h1 {
+  margin-bottom: 10px;
+}
+
+.post .date {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 20px;
+  display: block;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.blog-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 8px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.blog-description {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 10px;
+  line-height: 1.6;
+  max-width: 650px;
+  font-style: italic;
+}
