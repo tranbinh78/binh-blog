@@ -1,171 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* ====== FONT Google ====== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
+/* ====== RESET ====== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
 body {
-   background-color: #f9fafb;
-  color: #222;
+  font-family: 'Nunito', sans-serif;
+  background: #faf6f3;  /* pastel be hồng nhạt */
+  color: #444;
+  line-height: 1.7;
 }
 
+/* ====== HEADER ====== */
 header {
-  background-color: #0077cc;
-  color: white;
-  padding: 40px 20px;
+  background: #f8d5d1;  /* pastel hồng */
+  color: #4b3f3f;
   text-align: center;
+  padding: 50px 20px;
+  border-bottom: 2px solid #f1c1bb;
 }
 
-a {
-  color: #0077cc;
-  text-decoration: none;
+header h1 {
+  font-size: 36px;
+  font-weight: 700;
 }
-a:hover {
+
+header p {
+  margin-top: 8px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+/* ====== NAV ====== */
+nav {
+  text-align: center;
+  padding: 12px;
+  background: #ffffff;
+  border-bottom: 1px solid #f2e4e2;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #d27772;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+nav a:hover {
   text-decoration: underline;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #222;
-  color: #fff;
-  padding: 10px 20px;
+/* ====== CONTAINER ====== */
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 30px 20px;
 }
 
-.navbar .logo a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.nav-links li {
-  margin-left: 15px;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 8px;
-}
-
-.nav-links a:hover,
-.nav-links .active {
-  background: #fff;
-  color: #222;
-  border-radius: 4px;
-}
-
-/* Hero section */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #0066ff, #00ccff);
-  color: #fff;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  margin-bottom: 20px;
-}
-
-.btn {
-  background: #fff;
-  color: #0066ff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.btn:hover {
-  background: #f0f0f0;
-}
-
-/* Blog list */
-.blog-list {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.blog-list h1 {
-  margin-bottom: 20px;
-}
-
-.blog-list article {
-  background: #fff;
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.blog-list article h2 a {
-  color: #0066ff;
-  text-decoration: none;
-}
-
-.blog-list .date {
-  font-size: 0.8rem;
-  color: #888;
-}
-
-/* Post detail */
+/* ====== BLOG POST CARD ====== */
 .post {
-  max-width: 800px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #f7e6e4;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 26px;
+  transition: 0.2s;
+}
+
+.post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.post h2 {
+  color: #d27772;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.post p {
+  margin-top: 10px;
+  color: #5e5050;
+}
+
+/* ====== BUTTON ====== */
+a.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  color: #ffffff;
+  background: #d5827b;
+  padding: 8px 14px;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-weight: 600;
+  transition: 0.2s;
 }
 
-.post h1 {
-  margin-bottom: 10px;
+a.read-more:hover {
+  background: #b96e69;
 }
 
-.post .date {
-  font-size: 0.8rem;
-  color: #888;
-  margin-bottom: 20px;
-  display: block;
-}
-
+/* ====== FOOTER ====== */
 footer {
   text-align: center;
   padding: 20px;
-  background: #222;
+  background: #dcb7b4;
   color: #fff;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
-.blog-description {
-  font-size: 1.1rem;
-  color: #555;
-  margin-top: 8px;
-  max-width: 600px;
-  line-height: 1.5;
-}
-
-.blog-description {
-  font-size: 1.1rem;
-  color: #444;
-  margin-top: 10px;
-  line-height: 1.6;
-  max-width: 650px;
-  font-style: italic;
+footer p {
+  font-size: 14px;
+  opacity: 0.85;
 }
