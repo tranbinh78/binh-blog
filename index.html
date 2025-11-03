@@ -98,10 +98,9 @@
       border-top: 1px solid #cde7ff;
       color: #666;
     }
-    nav {
-  margin-top: 15px;
+nav {
+margin-top: 15px;
 }
-
 nav a {
   margin: 0 12px;
   text-decoration: none;
@@ -109,10 +108,10 @@ nav a {
   padding: 6px 10px;
   border-radius: 6px;
 }
-
 nav a:hover {
   background: #cde7ff;
 }
+
 footer {
   text-align: center;
   padding: 24px;
@@ -131,7 +130,41 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-  </style>
+/* Toggle button */
+#theme-toggle {
+  padding: 8px 16px;
+  margin-top: 10px;
+  background: #d3c8ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#theme-toggle:hover {
+  background: #bfaefa;
+}
+
+/* DARK MODE */
+.dark {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark header {
+  background: #2d2d2d;
+}
+
+.dark nav a {
+  color: #ffffff;
+}
+
+.dark footer {
+  background: #2d2d2d;
+  border-top: 1px solid #444;
+}
+</style>
 </head>
 <body>
   <header>
@@ -162,5 +195,6 @@ footer a:hover {
     <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
   </div>
   </footer>
+  <button id="theme-toggle">Dark Mode</button>
 </body>
 </html>
