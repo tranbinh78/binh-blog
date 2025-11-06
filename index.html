@@ -173,35 +173,7 @@ body.dark footer {
 }
 </style>
 </head>
-<script>
-async function loadPosts() {
-  const postList = document.getElementById("post-list");
 
-  const posts = [
-    "post1.html"
-  ];
-
-  postList.innerHTML = "";
-
-  for (const file of posts) {
-    const response = await fetch(`./posts/${file}`);
-    const text = await response.text();
-
-    const temp = document.createElement("div");
-    temp.innerHTML = text;
-    const title = temp.querySelector("title").innerText;
-
-    postList.innerHTML += `
-      <article class="post-card">
-        <h2>${title}</h2>
-        <a href="./posts/${file}" class="btn">Đọc bài →</a>
-      </article>
-    `;
-  }
-}
-
-loadPosts();
-</script>
 <body>
   <header>
     <h1>Binh Blog</h1>
@@ -249,5 +221,34 @@ loadPosts();
     }
   });
   </script>
+  <script>
+  async function loadPosts() {
+  const postList = document.getElementById("post-list");
+
+  const posts = [
+    "post1.html"
+  ];
+
+  postList.innerHTML = "";
+
+  for (const file of posts) {
+    const response = await fetch(`./posts/${file}`);
+    const text = await response.text();
+
+    const temp = document.createElement("div");
+    temp.innerHTML = text;
+    const title = temp.querySelector("title").innerText;
+
+    postList.innerHTML += `
+      <article class="post-card">
+        <h2>${title}</h2>
+        <a href="./posts/${file}" class="btn">Đọc bài →</a>
+      </article>
+    `;
+  }
+}
+
+loadPosts();
+</script>
 </body>
 </html>
