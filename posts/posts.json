@@ -6,4 +6,11 @@
     "date": "2025-01-20",
     "thumbnail": "https://picsum.photos/600/350?1"
   }
+  {
+  "file": "post2.html",
+  "title": "Tên bài viết thứ 2",
+  "description": "Mô tả ngắn cho bài 2",
+  "date": "2025-01-21",
+  "thumbnail": "https://picsum.photos/600/350?2"
+  }
 ]
