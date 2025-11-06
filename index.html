@@ -173,7 +173,40 @@ body.dark footer {
 }
 </style>
 </head>
+<script>
+async function loadPosts() {
+  const postList = document.getElementById("post-list");
 
+  // Danh sách file bài viết (tên file)
+  const posts = [
+    "post1.html",
+    "post2.html",
+    "post3.html"
+  ];
+
+  postList.innerHTML = ""; // Xóa chữ "Đang tải"
+
+  for (const file of posts) {
+    const response = await fetch(`./posts/${file}`);
+    const text = await response.text();
+
+    // Tạo DOM ảo để đọc <title> trong file
+    const temp = document.createElement("div");
+    temp.innerHTML = text;
+    const title = temp.querySelector("title").innerText;
+
+    // Thêm bài vào danh sách
+    postList.innerHTML += `
+      <article class="post-card">
+        <h2>${title}</h2>
+        <a href="./posts/${file}" class="btn">Đọc bài →</a>
+      </article>
+    `;
+  }
+}
+
+loadPosts();
+</script>
 <body>
   <header>
     <h1>Binh Blog</h1>
@@ -186,15 +219,10 @@ body.dark footer {
     <button id="theme-toggle">Dark Mode</button>
   </header>
 
-  <main>
-    <!-- SAMPLE POST -->
-    <article class="post-card">
-      <h2>Bài viết đầu tiên</h2>
-      <p>Đây là phần mô tả ngắn của bài viết...</p>
-      <a href="./posts/post1.html" class="btn">Đọc tiếp →</a>
-    </article>
+  <main id="post-list">
+  <p>Đang tải bài viết...</p>
   </main>
-
+ 
   <footer>
   <p>©2025 — Binh Blog</p>
 
