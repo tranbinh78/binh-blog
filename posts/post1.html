@@ -3,10 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>Bài viết đầu tiên | Binh Blog</title>
+
+  <style>
+  body {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 0 16px;
+    font-family: "Georgia", serif;
+    line-height: 1.8;
+    color: #444;
+    background: #fffdf9;
+  }
+
+  h1, h2, h3 {
+    font-family: "Helvetica", sans-serif;
+    color: #333;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    font-size: 17px;
+  }
+
+  a.back {
+    display: inline-block;
+    margin-top: 30px;
+    color: #7f5af0;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  a.back:hover {
+    text-decoration: underline;
+  }
+
+  /* DARK MODE */
+  body.dark {
+    background: #1a1a1a;
+    color: #ddd;
+  }
+
+  body.dark h1, body.dark h2, body.dark h3 {
+    color: #fff;
+  }
+
+  body.dark a.back {
+    color: #c9b6ff;
+  }
+  </style>
 </head>
+
 <body>
   <h1>Bài viết đầu tiên</h1>
   <p>Đây là nội dung của bài viết đầu tiên...</p>
-  <p><a href="../index.html">← Quay lại trang chủ</a></p>
+  <p><a href="/binh-blog/index.html" class="back">← Trở lại trang chủ</a></p>
+
+  <script>
+    // Đồng bộ Dark Mode với trang chủ
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
 </body>
 </html>
