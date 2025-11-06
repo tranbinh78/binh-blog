@@ -54,16 +54,18 @@
 
     .post-card {
       background: #ffffff;
-      border: 1px solid #cde7ff;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      transition: 0.3s;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 28px;
+      border: 1px solid #e6dff8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: 0.25s ease;
     }
 
     .post-card:hover {
-      background: #f4fbff;
-      transform: translateY(-3px);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      background: #faf7ff;
     }
 
     .post-card h2 {
@@ -78,16 +80,18 @@
 
     a.btn {
       display: inline-block;
-      background: #fadadd;
-      padding: 8px 14px;
+      background: #e6d0ff;
+      padding: 9px 16px;
       border-radius: 8px;
       text-decoration: none;
-      color: #333;
-      font-weight: bold;
+      color: #4b3c63;
+      font-weight: 600;
+      transition: 0.25s;
     }
 
     a.btn:hover {
-      background: #f7c8cf;
+      background: #d3bef5;
+      transform: translateY(-2px);
     }
 
     /* ===== FOOTER ===== */
@@ -170,6 +174,11 @@ body.dark footer {
   background: #2d2d2d;
   border-top: 1px solid #444;
   color: #ddd;
+}
+.post-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 14px;
 }
 </style>
 </head>
