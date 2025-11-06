@@ -247,6 +247,29 @@ body.dark footer {
     `;
   }
 }
+loadPosts();
+</script>
+<script>
+async function loadPosts() {
+  const postList = document.getElementById("post-list");
+
+  const response = await fetch("./posts/posts.json");
+  const posts = await response.json();
+
+  postList.innerHTML = "";
+
+  posts.reverse().forEach(post => {
+    postList.innerHTML += `
+      <article class="post-card">
+        <img src="${post.thumbnail}" style="width:100%; border-radius:12px; margin-bottom:12px;">
+        <h2>${post.title}</h2>
+        <p>${post.description}</p>
+        <small>${post.date}</small><br><br>
+        <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
+      </article>
+    `;
+  });
+}
 
 loadPosts();
 </script>
