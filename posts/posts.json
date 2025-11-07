@@ -15,10 +15,11 @@
     "thumbnail": "https://picsum.photos/600/350?2",
     "category": "Tiếng Anh"
   },
-  "file": "post3.html",
+   {"file": "post3.html",
     "title": "Tên bài thứ 3",
     "description": "Mô tả bài viết số 3",
     "date": "2025-01-23",
     "thumbnail": "https://picsum.photos/600/350?2",
     "category": "Cuộc sống"
+    }
 ]
