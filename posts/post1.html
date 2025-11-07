@@ -179,7 +179,8 @@ function generateTOC() {
   toc.innerHTML = tocHTML;
 }
 
-generateTOC();
+// ✅ chạy sau khi trang tải xong
+window.addEventListener("DOMContentLoaded", generateTOC);
 </script>
 </body>
 </html>
