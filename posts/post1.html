@@ -153,7 +153,7 @@
 </head>
 <body>
   <h1>Bài viết đầu tiên</h1>
-  <p id="post-meta">Đang tải...</p>
+  <p class="category">Chuyên mục: Lập trình</p>
   <!-- MỤC LỤC SẼ HIỆN Ở ĐÂY -->
   <div id="toc-container">
   <div id="toc-header">Mục lục ▼</div>
@@ -207,7 +207,7 @@ function generateTOC() {
   }
 
   let html = "";
-  headings.forEach((heading, i) => {
+    headings.forEach((heading, i) => {
     const id = "sec-" + i;
     heading.id = id;
     const indent = heading.tagName === "H3" ? "&nbsp;&nbsp;&nbsp;• " : "• ";
