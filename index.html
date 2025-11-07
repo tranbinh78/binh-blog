@@ -129,38 +129,38 @@
       border-top: 1px solid #cde7ff;
       color: #666;
     }
-nav {
-margin-top: 15px;
-}
-nav a {
-  margin: 0 12px;
-  text-decoration: none;
-  color: #333;
-  padding: 6px 10px;
-  border-radius: 6px;
-}
-nav a:hover {
-  background: #cde7ff;
-}
+    nav {
+      margin-top: 15px;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+    nav a:hover {
+      background: #cde7ff;
+    }
 
-footer {
-  text-align: center;
-  padding: 24px;
-  background: #fef6ff;   /* pastel tím nhạt */
-  color: #5b4a66;
-  margin-top: 40px;
-  border-top: 1px solid #e9d8f2;
-}
+    footer {
+      text-align: center;
+      padding: 24px;
+      background: #fef6ff;   /* pastel tím nhạt */
+      color: #5b4a66;
+      margin-top: 40px;
+      border-top: 1px solid #e9d8f2;
+    }
 
-footer a {
-  color: #8a72b9;
-  text-decoration: none;
-  font-weight: 500;
-}
+    footer a {
+      color: #8a72b9;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-footer a:hover {
-  text-decoration: underline;
-}
+    footer a:hover {
+      text-decoration: underline;
+    }
 /* Toggle button */
 #theme-toggle {
   padding: 8px 16px;
@@ -228,8 +228,9 @@ body.dark footer {
     <button id="theme-toggle">Dark Mode</button>
   </header>
 
-  <main id="post-list">
-  <p>Đang tải bài viết...</p>
+  <main 
+  <input type="text" id="search" placeholder="Tìm bài viết..." />
+  <div id="post-list"></div>
   </main>
  
   <footer>
@@ -293,6 +294,15 @@ body.dark footer {
   loadPosts(category);
 }
 loadPosts();
+  document.getElementById("search").addEventListener("input", function () {
+  const keyword = this.value.toLowerCase();
+  const cards = document.querySelectorAll(".post-card");
+
+    cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(keyword) ? "flex" : "none";
+  });
+});
 </script>
 </body>
 </html>
