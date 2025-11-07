@@ -57,19 +57,42 @@
     }
 
     .post-card {
+      display: flex;
       background: #ffffff;
+      border: 1px solid #e0d8ff;
       border-radius: 14px;
-      padding: 18px;
-      margin-bottom: 28px;
-      border: 1px solid #e6dff8;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      transition: 0.25s ease;
+      overflow: hidden;
+      margin-bottom: 30px;
+      transition: 0.3s;
     }
 
     .post-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-      background: #faf7ff;
+      box-shadow: 0 4px 18px rgba(120, 90, 255, 0.15);
+    }
+
+    .post-card img {
+      width: 180px;
+      object-fit: cover;
+    }
+
+    .post-info {
+      padding: 16px;
+    }
+
+    .post-info h2 {
+      margin-bottom: 8px;
+    }
+
+    .post-info .desc {
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    .post-info .date {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 10px;
     }
 
     .post-card h2 {
@@ -253,11 +276,15 @@ body.dark footer {
   posts.reverse().forEach(post => {
    if (filterCategory && post.category !== filterCategory) return;
     postList.innerHTML += `
-      <article class="post-card">
-        <h2>${post.title}</h2>
-        <p><strong>${post.category}</strong> · ${post.description}</p>
-        <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
-      </article>
+    <article class="post-card">
+    <img src="${post.thumbnail}" alt="${post.title}">
+    <div class="post-info">
+      <h2>${post.title}</h2>
+      <p class="desc">${post.description}</p>
+      <p class="date">📅 ${post.date}</p>
+      <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
+    </div>
+    </article>
     `;
   });
 }
