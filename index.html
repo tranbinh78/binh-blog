@@ -310,6 +310,11 @@ function enableSearch() {
 }
 
 loadPosts();
+
+function filterPosts(category) {
+  loadPosts(category); // gọi lại hàm loadPosts với category được chọn
+}
+
 </script>
 </body>
 </html>
