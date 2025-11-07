@@ -225,7 +225,7 @@ body.dark footer {
     toggleBtn.textContent = "Light Mode";
   }
 
-  toggleBtn.addEventListener("click", () => {
+    toggleBtn.addEventListener("click", () => {
     body.classList.toggle("dark");
 
     if (body.classList.contains("dark")) {
@@ -250,10 +250,8 @@ body.dark footer {
   posts.reverse().forEach(post => {
     postList.innerHTML += `
       <article class="post-card">
-        <img src="${post.thumbnail}" style="width:100%; border-radius:12px; margin-bottom:12px;">
         <h2>${post.title}</h2>
-        <p>${post.description}</p>
-        <small>${post.date}</small><br><br>
+        <p><strong>${post.category}</strong> · ${post.description}</p>
         <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
       </article>
     `;
