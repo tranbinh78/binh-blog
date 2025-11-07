@@ -228,9 +228,12 @@ body.dark footer {
     <button id="theme-toggle">Dark Mode</button>
   </header>
 
+  /* Phần Main */  
   <main>
   <input type="text" id="search" placeholder="Tìm bài viết..." />
+
   <div id="post-list">
+    <p>Đang tải bài viết...</p>
   </div>
   </main>
  
@@ -269,31 +272,35 @@ body.dark footer {
 <script>
   async function loadPosts(filterCategory = null) {
   const postList = document.getElementById("post-list");
-
   const response = await fetch("./posts/posts.json");
   const posts = await response.json();
 
-  postList.innerHTML = "";// Xóa chữ "Đang tải"
+  postList.innerHTML = "";
 
-  posts.forEach(post => {
+  posts.reverse().forEach(post => {
+    if (filterCategory && post.category !== filterCategory) return;
+
     postList.innerHTML += `
       <article class="post-card">
         <img src="${post.thumbnail}" alt="${post.title}">
         <div class="post-info">
           <h2>${post.title}</h2>
           <p class="desc">${post.description}</p>
-          <p class="date">📅 ${post.date}</p>
+          <p class="date">📅 ${post.date} · ${post.category}</p>
           <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
         </div>
       </article>
     `;
   });
 
-  enableSearch(); // <-- THÊM DÒNG NÀY
+  enableSearch(); // CHẠY LẠI TÌM KIẾM SAU KHI LOAD
 }
 
-loadPosts();
-  function enableSearch() {
+function filterPosts(category) {
+  loadPosts(category);
+}
+
+function enableSearch() {
   const searchBox = document.getElementById("search");
 
   searchBox.addEventListener("input", function () {
@@ -306,6 +313,9 @@ loadPosts();
     });
   });
 }
+
+loadPosts();
+
 </script>
 </body>
 </html>
