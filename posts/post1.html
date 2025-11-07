@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 /* Nội dung bài viết dễ đọc */
  body {
       max-width: 750px;
@@ -85,7 +85,36 @@
   body.dark a.back {
     color: #c9b6ff;
   }
-  </style>
+#toc {
+  background: #f6edff; /* pastel tím rất nhẹ */
+  border: 1px solid #e2d5ff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin: 25px 0 35px 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+#toc strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #5b4a8f;
+}
+
+#toc a {
+  display: block;
+  text-decoration: none;
+  color: #6d5ca4;
+  padding: 4px 0;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+#toc a:hover {
+  color: #2f1fa6;
+  text-decoration: underline;
+}
+</style>
 </head>
 
 <body>
@@ -94,19 +123,21 @@
   <p id="post-meta">Đang tải...</p>
 
   <p>Đây là nội dung của bài viết đầu tiên...</p>
-  
+  <div id="toc"></div> <!-- MỤC LỤC SẼ HIỆN Ở ĐÂY -->
   <img src="https://picsum.photos/800/450" alt="Ảnh minh họa">
-
+  <h2>Giới thiệu</h2>
+  <p>Nội dung phần này...</p>
   <blockquote>
     Đây là một câu trích hoặc ý quan trọng trong bài viết.
   </blockquote>
-
+  <h2>Kết luận</h2>
+  <p>Nội dung phần này...</p>
   <p>Thêm đoạn nội dung khác...</p>
 
   <a href="/binh-blog/index.html" class="back">← Trở lại trang chủ</a>
 
   <script>
-    if (localStorage.getItem("theme") === "dark") {
+  if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark");
     }
   </script>
@@ -123,8 +154,32 @@
   document.getElementById("post-meta").innerHTML =
     `Đăng ngày: ${date} · 📖 ${minutes} phút đọc`;
   }
-
   calculateReadingTime();
-  </script>
+</script>
+<script>
+// Tạo mục lục dựa trên H2 và H3
+function generateTOC() {
+  const toc = document.getElementById("toc");
+  const headings = document.querySelectorAll("h2, h3");
+
+  if (headings.length === 0) {
+    toc.style.display = "none";
+    return;
+  }
+
+  let tocHTML = "<strong>Mục lục</strong>";
+
+  headings.forEach((heading, index) => {
+    const id = "section-" + index;
+    heading.id = id;
+    const indent = heading.tagName === "H3" ? "&nbsp;&nbsp;&nbsp;• " : "• ";
+    tocHTML += `<a href="#${id}">${indent}${heading.innerText}</a>`;
+  });
+
+  toc.innerHTML = tocHTML;
+}
+
+generateTOC();
+</script>
 </body>
 </html>
