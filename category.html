@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chuyên mục | Binh Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Be Vietnam Pro", sans-serif;
+      background: #fffdf9;
+      line-height: 1.7;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
 
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .post-card {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="category-title">Chuyên mục</h1>
+
+  <div id="post-list">Đang tải...</div>
+
+<script>
+async function loadCategory() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const category = urlParams.get("tag");
+
+  document.getElementById("category-title").textContent = "Chuyên mục: " + category;
+
+  const response = await fetch("./posts/posts.json");
+  const posts = await response.json();
+  const list = document.getElementById("post-list");
+  list.innerHTML = "";
+
+  posts.forEach(post => {
+    if (post.category === category) {
+      list.innerHTML += `
+      <article class="post-card">
+        <h2>${post.title}</h2>
+        <p>${post.description}</p>
+        <a href="./posts/${post.file}">Đọc bài →</a>
+      </article>`;
+    }
+  });
+}
+
+loadCategory();
+</script>
+</body>
+</html>
