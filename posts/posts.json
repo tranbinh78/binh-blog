@@ -2,17 +2,17 @@
   {
     "file": "post1.html",
     "title": "Bài viết đầu tiên",
-    "description": "Giới thiệu blog và hành trình học tiếng Anh & lập trình.",
+    "description": "Giới thiệu blog...",
     "date": "2025-01-20",
     "thumbnail": "https://picsum.photos/600/350?1",
     "category": "Lập trình"
   },
   {
     "file": "post2.html",
-    "title": "Tên bài viết thứ 2",
-    "description": "Mô tả ngắn cho bài 2",
-    "date": "2025-01-21",
+    "title": "Tên bài thứ 2",
+    "description": "Mô tả bài viết số 2",
+    "date": "2025-01-22",
     "thumbnail": "https://picsum.photos/600/350?2",
-    "category": "Cuộc sống"
+    "category": "Tiếng Anh"
   }
 ]
