@@ -196,6 +196,9 @@ body.dark footer {
     <p>Chia sẻ kiến thức tiếng Anh, lập trình & trải nghiệm cuộc sống</p>
     <nav>
       <a href="./index.html">Home</a>
+      <a href="#" onclick="filterPosts('Tiếng Anh')">Tiếng Anh</a>
+      <a href="#" onclick="filterPosts('Lập trình')">Lập trình</a>
+      <a href="#" onclick="filterPosts('Cuộc sống')">Cuộc sống</a>
       <a href="/binh-blog/about.html">About</a>
       <a href="/binh-blog/contact.html">Contact</a>
     </nav>
@@ -239,7 +242,7 @@ body.dark footer {
   </script>
   
 <script>
-  async function loadPosts() {
+  async function loadPosts(filterCategory = null) {
   const postList = document.getElementById("post-list");
 
   const response = await fetch("./posts/posts.json");
@@ -248,6 +251,7 @@ body.dark footer {
   postList.innerHTML = "";
 
   posts.reverse().forEach(post => {
+   if (filterCategory && post.category !== filterCategory) return;
     postList.innerHTML += `
       <article class="post-card">
         <h2>${post.title}</h2>
@@ -258,6 +262,9 @@ body.dark footer {
   });
 }
 
+  function filterPosts(category) {
+  loadPosts(category);
+}
 loadPosts();
 </script>
 </body>
