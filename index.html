@@ -228,9 +228,10 @@ body.dark footer {
     <button id="theme-toggle">Dark Mode</button>
   </header>
 
-  <main 
+  <main>
   <input type="text" id="search" placeholder="Tìm bài viết..." />
-  <div id="post-list"></div>
+  <div id="post-list">
+  </div>
   </main>
  
   <footer>
@@ -272,37 +273,39 @@ body.dark footer {
   const response = await fetch("./posts/posts.json");
   const posts = await response.json();
 
-  postList.innerHTML = "";
+  postList.innerHTML = "";// Xóa chữ "Đang tải"
 
-  posts.reverse().forEach(post => {
-   if (filterCategory && post.category !== filterCategory) return;
+  posts.forEach(post => {
     postList.innerHTML += `
-    <article class="post-card">
-    <img src="${post.thumbnail}" alt="${post.title}">
-    <div class="post-info">
-      <h2>${post.title}</h2>
-      <p class="desc">${post.description}</p>
-      <p class="date">📅 ${post.date}</p>
-      <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
-    </div>
-    </article>
+      <article class="post-card">
+        <img src="${post.thumbnail}" alt="${post.title}">
+        <div class="post-info">
+          <h2>${post.title}</h2>
+          <p class="desc">${post.description}</p>
+          <p class="date">📅 ${post.date}</p>
+          <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
+        </div>
+      </article>
     `;
   });
+
+  enableSearch(); // <-- THÊM DÒNG NÀY
 }
 
-  function filterPosts(category) {
-  loadPosts(category);
-}
 loadPosts();
-  document.getElementById("search").addEventListener("input", function () {
-  const keyword = this.value.toLowerCase();
-  const cards = document.querySelectorAll(".post-card");
+  function enableSearch() {
+  const searchBox = document.getElementById("search");
+
+  searchBox.addEventListener("input", function () {
+    const keyword = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".post-card");
 
     cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(keyword) ? "flex" : "none";
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(keyword) ? "flex" : "none";
+    });
   });
-});
+}
 </script>
 </body>
 </html>
