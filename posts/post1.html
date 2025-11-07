@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Bài viết đầu tiên | Binh Blog</title>
-<!-- THÊM FONT Ở ĐÂY -->
+  <meta name="date" content="20/01/2025">
+  <!-- THÊM FONT Ở ĐÂY -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
@@ -90,7 +91,7 @@
 <body>
 
   <h1>Bài viết đầu tiên</h1>
-  <p class="date">Đăng ngày: 20/01/2025</p>
+  <p id="post-meta">Đang tải...</p>
 
   <p>Đây là nội dung của bài viết đầu tiên...</p>
   
@@ -109,6 +110,21 @@
       document.body.classList.add("dark");
     }
   </script>
+  <script>
+  function calculateReadingTime() {
+  const text = document.body.innerText; // Lấy toàn bộ nội dung bài
+  const words = text.trim().split(/\s+/).length; // Đếm số từ
+  const minutes = Math.ceil(words / 200); // 200 từ / phút
 
+  const dateElement = document.querySelector("meta[name='date']");
+  const date = dateElement ? dateElement.getAttribute("content") : "";
+
+  // Hiển thị kết quả
+  document.getElementById("post-meta").innerHTML =
+    `Đăng ngày: ${date} · 📖 ${minutes} phút đọc`;
+  }
+
+  calculateReadingTime();
+  </script>
 </body>
 </html>
