@@ -270,7 +270,7 @@ body.dark footer {
   </script>
   
 <script>
-  async function loadPosts(filterCategory = null) {
+async function loadPosts(filterCategory = null) {
   const postList = document.getElementById("post-list");
   const response = await fetch("./posts/posts.json");
   const posts = await response.json();
@@ -286,18 +286,14 @@ body.dark footer {
         <div class="post-info">
           <h2>${post.title}</h2>
           <p class="desc">${post.description}</p>
-          <p class="date">📅 ${post.date} · ${post.category}</p>
+          <p class="date">📅 ${post.date}</p>
           <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
         </div>
       </article>
     `;
   });
 
-  enableSearch(); // CHẠY LẠI TÌM KIẾM SAU KHI LOAD
-}
-
-function filterPosts(category) {
-  loadPosts(category);
+  enableSearch();
 }
 
 function enableSearch() {
@@ -315,7 +311,6 @@ function enableSearch() {
 }
 
 loadPosts();
-
 </script>
 </body>
 </html>
