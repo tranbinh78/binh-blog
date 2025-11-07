@@ -7,29 +7,50 @@
   <style>
   body {
     max-width: 750px;
-    margin: 40px auto;
-    padding: 0 16px;
+    margin: 50px auto;
+    padding: 0 18px;
     font-family: "Georgia", serif;
-    line-height: 1.8;
-    color: #444;
+    line-height: 1.85;
+    color: #3a3a3a;
     background: #fffdf9;
   }
 
-  h1, h2, h3 {
+  h1 {
     font-family: "Helvetica", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 6px;
     color: #333;
-    margin-top: 24px;
-    margin-bottom: 16px;
+  }
+
+  .date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 24px;
   }
 
   p {
-    margin-bottom: 16px;
-    font-size: 17px;
+    margin-bottom: 18px;
+    font-size: 18px;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 25px 0;
+  }
+
+  blockquote {
+    border-left: 4px solid #c5b3ff;
+    padding-left: 14px;
+    font-style: italic;
+    color: #555;
+    margin: 20px 0;
   }
 
   a.back {
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 40px;
     color: #7f5af0;
     text-decoration: none;
     font-weight: 600;
@@ -44,11 +65,13 @@
     background: #1a1a1a;
     color: #ddd;
   }
-
-  body.dark h1, body.dark h2, body.dark h3 {
+  body.dark h1 {
     color: #fff;
   }
-
+  body.dark blockquote {
+    border-left-color: #a892ff;
+    color: #ccc;
+  }
   body.dark a.back {
     color: #c9b6ff;
   }
@@ -56,15 +79,25 @@
 </head>
 
 <body>
+
   <h1>Bài viết đầu tiên</h1>
+  <p class="date">Đăng ngày: 20/01/2025</p>
+
   <p>Đây là nội dung của bài viết đầu tiên...</p>
-  <p><a href="/binh-blog/index.html" class="back">← Trở lại trang chủ</a></p>
+
+  <blockquote>
+    Đây là một câu trích hoặc ý quan trọng trong bài viết.
+  </blockquote>
+
+  <p>Thêm đoạn nội dung khác...</p>
+
+  <a href="/binh-blog/index.html" class="back">← Trở lại trang chủ</a>
 
   <script>
-    // Đồng bộ Dark Mode với trang chủ
     if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark");
     }
   </script>
+
 </body>
 </html>
