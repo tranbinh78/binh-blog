@@ -95,5 +95,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const article = document.getElementById("article");
+  const tocList = document.getElementById("toc-list");
+  const headings = article.querySelectorAll("h2, h3");
+
+  headings.forEach((heading, index) => {
+    const id = "section-" + index;
+    heading.setAttribute("id", id);
+
+    const li = document.createElement("li");
+    li.style.margin = "6px 0";
+
+    li.innerHTML = `<a href="#${id}" style="text-decoration:none;color:#7f5af0;">${heading.innerText}</a>`;
+    tocList.appendChild(li);
+  });
+});
+</script>
 </body>
 </html>
