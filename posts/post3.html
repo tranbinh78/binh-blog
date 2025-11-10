@@ -2,11 +2,76 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Bài viết thứ ba | Binh Blog</title>
+  <title>Tên bài viết thứ 3 | Binh Blog</title>
+  <meta name="date" content="10/11/2025">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      max-width: 750px;
+      margin: 40px auto;
+      padding: 0 16px;
+      font-family: "Noto Serif", serif;
+      line-height: 1.8;
+      color: #444;
+      background: #fffdf9;
+    }
+    h1, h2, h3, a.back {
+      font-family: "Be Vietnam Pro", sans-serif;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 25px 0;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 40px;
+      color: #7f5af0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.back:hover { text-decoration: underline; }
+
+    /* DARK MODE */
+    body.dark { background: #1a1a1a; color: #ddd; }
+    body.dark h1 { color: #fff; }
+  </style>
 </head>
+
 <body>
-  <h1>Bài viết thứ ba</h1>
-  <p>Nội dung bài viết thứ 3...</p>
-  <a href="/binh-blog/index.html">← Trở lại trang chủ</a>
+
+  <h1>Tên bài viết thứ 3</h1>
+  <p id="post-meta">Đang tải...</p>
+
+  <p>Nội dung bài viết thứ 3 sẽ được thêm tại đây...</p>
+
+  <img src="https://picsum.photos/800/450?random=3" alt="Ảnh minh họa">
+
+  <p>Thêm nội dung...</p>
+
+  <a href="/binh-blog/index.html" class="back">← Trở lại trang chủ</a>
+
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
+
+  <script>
+    function calculateReadingTime() {
+      const text = document.body.innerText;
+      const words = text.trim().split(/\s+/).length;
+      const minutes = Math.ceil(words / 200);
+      const date = document.querySelector("meta[name='date']").getAttribute("content");
+      document.getElementById("post-meta").innerHTML = `Đăng ngày: ${date} · 📖 ${minutes} phút đọc`;
+    }
+    calculateReadingTime();
+  </script>
+
 </body>
 </html>
