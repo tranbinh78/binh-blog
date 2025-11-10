@@ -273,29 +273,31 @@ body.dark footer {
   </script>
   
 <script>
-async function loadPosts(filterCategory = null) {
+
+  async function loadPosts(filterCategory = null) {
   const postList = document.getElementById("post-list");
   const response = await fetch("/binh-blog/posts/posts.json");
   const posts = await response.json();
 
-  postList.innerHTML = ""; // luôn xóa sạch trước
+  postList.innerHTML = ""; // Xóa danh sách cũ
 
-  posts.sort((a, b) => new Date(a.date) - new Date(b.date));
-  .forEach(post => {
-    if (filterCategory && post.category !== filterCategory) return;
+  posts
+    .sort((a, b) => new Date(b.date) - new Date(a.date)) // Bài mới nhất lên trước
+    .forEach(post => {
+      if (filterCategory && post.category !== filterCategory) return;
 
-    postList.innerHTML += `
-      <article class="post-card">
-        <img src="${post.thumbnail}" alt="${post.title}">
-        <div class="post-info">
-          <h2>${post.title}</h2>
-          <p class="desc">${post.description}</p>
-          <p class="date">📅 ${post.date}</p>
-          <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
-        </div>
-      </article>
-    `;
-  });
+      postList.innerHTML += `
+        <article class="post-card">
+          <img src="${post.thumbnail}" alt="${post.title}">
+          <div class="post-info">
+            <h2>${post.title}</h2>
+            <p class="desc">${post.description}</p>
+            <p class="date">📅 ${post.date}</p>
+            <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
+          </div>
+        </article>
+      `;
+    });
 
   enableSearch();
 }
