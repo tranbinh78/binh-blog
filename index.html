@@ -280,7 +280,8 @@ async function loadPosts(filterCategory = null) {
 
   postList.innerHTML = ""; // luôn xóa sạch trước
 
-  posts.reverse().forEach(post => {
+  posts.sort((a, b) => new Date(a.date) - new Date(b.date));
+  .forEach(post => {
     if (filterCategory && post.category !== filterCategory) return;
 
     postList.innerHTML += `
