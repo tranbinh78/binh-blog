@@ -5,7 +5,7 @@
     "description": "Giới thiệu blog...",
     "date": "2025-01-20",
     "thumbnail": "https://picsum.photos/600/350?1",
-    "category": "Lập trình"
+    "category": "Tiếng Anh"
   },
   {
     "file": "post2.html",
@@ -13,13 +13,14 @@
     "description": "Mô tả bài viết số 2",
     "date": "2025-01-22",
     "thumbnail": "https://picsum.photos/600/350?2",
-    "category": "Tiếng Anh"
+    "category": "Lập trình"
   },
-   {"file": "post3.html",
+  {
+    "file": "post3.html",
     "title": "Tên bài thứ 3",
     "description": "Mô tả bài viết số 3",
     "date": "2025-01-23",
-    "thumbnail": "https://picsum.photos/600/350?2",
+    "thumbnail": "https://picsum.photos/600/350?3",
     "category": "Cuộc sống"
-    }
+  }
 ]
