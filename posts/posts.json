@@ -2,7 +2,7 @@
   {
     "file": "post1.html",
     "title": "Bài viết đầu tiên",
-    "description": "Giới thiệu blog...",
+    "description": "Giới thiệu blog và định hướng chia sẻ học tiếng Anh.",
     "date": "2025-01-21",
     "thumbnail": "https://picsum.photos/600/350?1",
     "category": "Tiếng Anh"
@@ -10,7 +10,7 @@
   {
     "file": "post2.html",
     "title": "Bài viết thứ 2",
-    "description": "Mô tả bài viết số 2",
+    "description": "Chia sẻ cách học lập trình hiệu quả và dễ hiểu.",
     "date": "2025-01-22",
     "thumbnail": "https://picsum.photos/600/350?2",
     "category": "Lập trình"
@@ -18,7 +18,7 @@
   {
     "file": "post3.html",
     "title": "Bài viết thứ 3",
-    "description": "Mô tả bài viết số 3",
+    "description": "Một câu chuyện cuộc sống và góc nhìn tích cực.",
     "date": "2025-01-23",
     "thumbnail": "https://picsum.photos/600/350?3",
     "category": "Cuộc sống"
