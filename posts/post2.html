@@ -2,76 +2,76 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Tên bài viết thứ 2 | Binh Blog</title>
+  <title>Bài viết thứ 2 | Binh Blog</title>
   <meta name="date" content="22/01/2025">
 
-  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      max-width: 750px;
-      margin: 40px auto;
-      padding: 0 16px;
       font-family: "Noto Serif", serif;
+      background: #fffdf9;
+      margin: 0;
+      padding: 0;
       line-height: 1.8;
       color: #444;
-      background: #fffdf9;
     }
-    h1, h2, h3, a.back {
-      font-family: "Be Vietnam Pro", sans-serif;
-    }
-    img {
-      width: 100%;
-      border-radius: 12px;
-      margin: 25px 0;
-    }
-    a.back {
-      display: inline-block;
-      margin-top: 40px;
-      color: #7f5af0;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a.back:hover { text-decoration: underline; }
+    .container { max-width: 1000px; margin: 40px auto; padding: 0 16px; display: flex; gap: 40px; }
 
-    /* DARK MODE */
+    #article { flex: 3; }
+    #sidebar { flex: 1; background: #f8f1ff; border: 1px solid #e7dbff; border-radius: 12px; padding: 20px; height: fit-content; position: sticky; top: 20px; text-align: center; }
+
+    #sidebar img { width: 80px; border-radius: 50%; margin-bottom: 12px; }
+    a { color: #7f5af0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { width: 100%; border-radius: 12px; margin: 25px 0; }
+
+    /* Dark Mode */
     body.dark { background: #1a1a1a; color: #ddd; }
-    body.dark h1 { color: #fff; }
+    body.dark #sidebar { background: #2b2140; border-color: #3a2a55; }
   </style>
 </head>
 
 <body>
+<div class="container">
+  <aside id="sidebar">
+    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
+    <h3>Xin chào, mình là Bình 👋</h3>
+    <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
 
-  <h1>Tên bài viết thứ 2</h1>
-  <p id="post-meta">Đang tải...</p>
+    <p>
+      <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
+      <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
+    </p>
+  </aside>
 
-  <p>Nội dung bài viết thứ 2 sẽ được thêm tại đây...</p>
+  <main id="article">
+    <h1>Bài viết thứ 2</h1>
+    <p id="post-meta">Đang tải...</p>
 
-  <img src="https://picsum.photos/800/450?random=3" alt="Ảnh minh họa">
+    <p>Nội dung bài viết thứ 2 sẽ được thêm vào đây...</p>
 
-  <p>Thêm nội dung...</p>
+    <img src="https://picsum.photos/800/450?random=10" alt="Ảnh minh họa">
 
-  <a href="/binh-blog/index.html" class="back">← Trở lại trang chủ</a>
+    <p>Thêm nội dung...</p>
 
-  <script>
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
-    }
-  </script>
+    <a href="/binh-blog/index.html" class="back">← Trở lại trang chủ</a>
 
-  <script>
-    function calculateReadingTime() {
-      const text = document.body.innerText;
-      const words = text.trim().split(/\s+/).length;
-      const minutes = Math.ceil(words / 200);
-      const date = document.querySelector("meta[name='date']").getAttribute("content");
-      document.getElementById("post-meta").innerHTML = `Đăng ngày: ${date} · 📖 ${minutes} phút đọc`;
-    }
-    calculateReadingTime();
-  </script>
+    <script>
+      if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark");
 
+      function calculateReadingTime() {
+        const text = document.body.innerText;
+        const words = text.trim().split(/\s+/).length;
+        const minutes = Math.ceil(words / 200);
+        const date = document.querySelector("meta[name='date']").content;
+        document.getElementById("post-meta").innerHTML = `Đăng ngày: ${date} · 📖 ${minutes} phút đọc`;
+      }
+      calculateReadingTime();
+    </script>
+  </main>
+</div>
 </body>
 </html>
