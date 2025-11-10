@@ -40,11 +40,75 @@
     /* DARK MODE */
     body.dark { background: #1a1a1a; color: #ddd; }
     body.dark h1 { color: #fff; }
+    .container {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+#article {
+  flex: 3;
+}
+
+#sidebar {
+  flex: 1;
+  background: #f8f1ff;
+  border: 1px solid #e7dbff;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+#sidebar img {
+  width: 80px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+#sidebar h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#sidebar p {
+  text-align: center;
+  color: #555;
+  line-height: 1.6;
+}
+
+#sidebar a {
+  color: #7f5af0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#sidebar a:hover {
+  text-decoration: underline;
+}
   </style>
 </head>
 
 <body>
+<div class="container">
 
+  <aside id="sidebar">
+    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
+    <h3>Xin chào, mình là Bình 👋</h3>
+    <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
+
+    <p>
+      <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
+      <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
+    </p>
+  </aside>
+
+  <main id="article">
+    <!-- PHẦN NỘI DUNG BÀI VIẾT CỦA BẠN -->
   <h1>Bài viết đầu tiên </h1>
   <p id="post-meta">Đang tải...</p>
 
@@ -72,6 +136,7 @@
     }
     calculateReadingTime();
   </script>
-
+</main>
+</div>
 </body>
 </html>
