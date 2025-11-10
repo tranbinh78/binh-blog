@@ -2,229 +2,76 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Bài viết đầu tiên | Binh Blog</title>
-  <meta name="date" content="20/01/2025">
-  <!-- THÊM FONT Ở ĐÂY -->
+  <title>Bài viết thứ hai | Binh Blog</title>
+  <meta name="date" content="21/01/2025">
+
+  <!-- Font chữ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* Nội dung bài viết dễ đọc */
- body {
+  <style>
+    body {
       max-width: 750px;
       margin: 40px auto;
       padding: 0 16px;
-      font-family: "Noto Serif", serif; /* ← DÙNG FONT SẴN */
+      font-family: "Noto Serif", serif;
       line-height: 1.8;
       color: #444;
       background: #fffdf9;
     }
-
     h1, h2, h3, a.back {
       font-family: "Be Vietnam Pro", sans-serif;
     }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 25px 0;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 40px;
+      color: #7f5af0;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.back:hover { text-decoration: underline; }
 
-  h1 {
-    font-family: "Helvetica", sans-serif;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #333;
-  }
-
-  .date {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 24px;
-  }
-
-  p {
-    margin-bottom: 24px;
-    font-size: 18px;
-  }
-
-  img {
-    width: 100%;
-    border-radius: 12px;
-    margin: 25px 0;
-  }
-
-  blockquote {
-    border-left: 4px solid #c5b3ff;
-    padding-left: 14px;
-    font-style: italic;
-    color: #555;
-    margin: 20px 0;
-  }
-
-  a.back {
-    display: inline-block;
-    margin-top: 40px;
-    color: #7f5af0;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  a.back:hover {
-    text-decoration: underline;
-  }
-
-  /* DARK MODE */
-  body.dark {
-    background: #1a1a1a;
-    color: #ddd;
-  }
-  body.dark h1 {
-    color: #fff;
-  }
-  body.dark blockquote {
-    border-left-color: #a892ff;
-    color: #ccc;
-  }
-  body.dark a.back {
-    color: #c9b6ff;
-  }
-#toc {
-  background: #f6edff; /* pastel tím rất nhẹ */
-  border: 1px solid #e2d5ff;
-  padding: 16px 20px;
-  border-radius: 12px;
-  margin: 25px 0 35px 0;
-  font-family: "Be Vietnam Pro", sans-serif;
-}
-
-#toc strong {
-  display: block;
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #5b4a8f;
-}
-
-#toc a {
-  display: block;
-  text-decoration: none;
-  color: #6d5ca4;
-  padding: 4px 0;
-  font-size: 15px;
-  transition: 0.2s;
-}
-
-#toc a:hover {
-  color: #2f1fa6;
-  text-decoration: underline;
-}
-#toc-container {
-  background: #f6edff;
-  border: 1px solid #e2d5ff;
-  padding: 12px 20px;
-  border-radius: 12px;
-  margin: 25px 0 35px 0;
-  font-family: "Be Vietnam Pro", sans-serif;
-}
-
-#toc-header {
-  font-weight: 600;
-  font-size: 18px;
-  color: #5b4a8f;
-  cursor: pointer;
-  user-select: none;
-  margin-bottom: 8px;
-}
-
-#toc a {
-  display: block;
-  text-decoration: none;
-  color: #6d5ca4;
-  padding: 4px 0;
-  font-size: 15px;
-}
-
-#toc a:hover {
-  color: #2f1fa6;
-  text-decoration: underline;
-}
-
-/* Thu gọn */
-.toc-collapsed #toc {
-  display: none;
-}
-</style>
+    /* DARK MODE */
+    body.dark { background: #1a1a1a; color: #ddd; }
+    body.dark h1 { color: #fff; }
+  </style>
 </head>
+
 <body>
-  <h1>Bài viết đầu tiên</h1>
-  <p class="category">Chuyên mục: Lập trình</p>
-  <!-- MỤC LỤC SẼ HIỆN Ở ĐÂY -->
-  <div id="toc-container">
-  <div id="toc-header">Mục lục ▼</div>
-  <div id="toc"></div>
-  </div> 
-  <p>Đây là nội dung của bài viết đầu tiên...</p>
-  
-  <img src="https://picsum.photos/800/450" alt="Ảnh minh họa">
-  <h2>Giới thiệu</h2>
-  <p>Nội dung phần này...</p>
-  <blockquote>
-    Đây là một câu trích hoặc ý quan trọng trong bài viết.
-  </blockquote>
-  <h2>Kết luận</h2>
-  <p>Nội dung phần này...</p>
-  <p>Thêm đoạn nội dung khác...</p>
+
+  <h1>Bài viết thứ hai</h1>
+  <p id="post-meta">Đang tải...</p>
+
+  <p>Nội dung bài viết thứ hai sẽ được thêm tại đây...</p>
+
+  <img src="https://picsum.photos/800/450?random=2" alt="Ảnh minh họa">
+
+  <p>Thêm nội dung...</p>
 
   <a href="/binh-blog/index.html" class="back">← Trở lại trang chủ</a>
 
   <script>
-  if (localStorage.getItem("theme") === "dark") {
+    if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark");
     }
   </script>
+
   <script>
-  function calculateReadingTime() {
-  const text = document.body.innerText; // Lấy toàn bộ nội dung bài
-  const words = text.trim().split(/\s+/).length; // Đếm số từ
-  const minutes = Math.ceil(words / 200); // 200 từ / phút
+    function calculateReadingTime() {
+      const text = document.body.innerText;
+      const words = text.trim().split(/\s+/).length;
+      const minutes = Math.ceil(words / 200);
+      const date = document.querySelector("meta[name='date']").getAttribute("content");
+      document.getElementById("post-meta").innerHTML = `Đăng ngày: ${date} · 📖 ${minutes} phút đọc`;
+    }
+    calculateReadingTime();
+  </script>
 
-  const dateElement = document.querySelector("meta[name='date']");
-  const date = dateElement ? dateElement.getAttribute("content") : "";
-
-  // Hiển thị kết quả
-  document.getElementById("post-meta").innerHTML =
-    `Đăng ngày: ${date} · 📖 ${minutes} phút đọc`;
-  }
-  calculateReadingTime();
-</script>
-<script>
-// Tạo mục lục dựa trên H2 và H3
-function generateTOC() {
-  const toc = document.getElementById("toc");
-  const tocContainer = document.getElementById("toc-container");
-  const tocHeader = document.getElementById("toc-header");
-  const headings = document.querySelectorAll("h2, h3");
-
-  if (headings.length === 0) {
-    tocContainer.style.display = "none";
-    return;
-  }
-
-  let html = "";
-    headings.forEach((heading, i) => {
-    const id = "sec-" + i;
-    heading.id = id;
-    const indent = heading.tagName === "H3" ? "&nbsp;&nbsp;&nbsp;• " : "• ";
-    html += `<a href="#${id}">${indent}${heading.innerText}</a>`;
-  });
-
-  toc.innerHTML = html;
-
-  // Toggle thu gọn / mở rộng
-  tocHeader.addEventListener("click", () => {
-    tocContainer.classList.toggle("toc-collapsed");
-    tocHeader.innerHTML = tocContainer.classList.contains("toc-collapsed")
-      ? "Mục lục ▲"
-      : "Mục lục ▼";
-  });
-}
-window.addEventListener("DOMContentLoaded", generateTOC);
-</script>
 </body>
 </html>
