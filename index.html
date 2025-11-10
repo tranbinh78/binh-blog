@@ -229,8 +229,7 @@ body.dark footer {
       <a href="/binh-blog/about.html">About</a>
       <a href="/binh-blog/contact.html">Contact</a>
     </nav>
-    </nav>
-    <button id="theme-toggle">Dark Mode</button>
+   <button id="theme-toggle">Dark Mode</button>
   </header>
 
   <main>
@@ -279,7 +278,7 @@ async function loadPosts(filterCategory = null) {
   const response = await fetch("./posts/posts.json");
   const posts = await response.json();
 
-  postList.innerHTML = "";
+  postList.innerHTML = ""; // luôn xóa sạch trước
 
   posts.reverse().forEach(post => {
     if (filterCategory && post.category !== filterCategory) return;
