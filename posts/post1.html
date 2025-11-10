@@ -12,7 +12,6 @@
 
   <style>
     body {
-      max-width: 750px;
       margin: 40px auto;
       padding: 0 16px;
       font-family: "Noto Serif", serif;
@@ -41,18 +40,21 @@
     body.dark { background: #1a1a1a; color: #ddd; }
     body.dark h1 { color: #fff; }
     .container {
-  display: flex;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 16px;
-}
+      display: flex;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 40px auto;
+      display: flex;
+      gap: 48px;
+      padding: 0 24px;
+    }
 
 #article {
   flex: 3;
 }
 
 #sidebar {
+  flex-basis: 260px;
   flex: 1;
   background: #f8f1ff;
   border: 1px solid #e7dbff;
