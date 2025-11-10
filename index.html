@@ -276,7 +276,7 @@ body.dark footer {
 
   async function loadPosts(filterCategory = null) {
   const postList = document.getElementById("post-list");
-  const response = await fetch("/binh-blog/posts/posts.json");
+  const response = await fetch("./posts/posts.json");
   const posts = await response.json();
 
   postList.innerHTML = ""; // Xóa danh sách cũ
