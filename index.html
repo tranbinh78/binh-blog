@@ -211,6 +211,39 @@ body.dark footer {
   border-radius: 12px;
   margin-bottom: 14px;
 }
+
+/* ==== FIX HIỂN THỊ MOBILE ==== */
+@media (max-width: 768px) {
+  main {
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .post-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .post-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 4px;
+    padding: 6px 8px;
+  }
+
+  #search {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
