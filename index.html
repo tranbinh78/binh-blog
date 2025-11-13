@@ -399,11 +399,13 @@ async function loadPosts(filterCategory = null) {
   POSTS = posts.slice(); // lưu bản gốc
 
   // sort: mới nhất trước (theo date)
-  POSTS.sort((a,b) => new Date(b.date) - new Date(a.date));
+  POSTS
+  .sort((a,b) => new Date(b.date) - new Date(a.date));
 
   // render (giữ hành vi cũ)
   postList.innerHTML = "";
-  POSTS.forEach(post => {
+  POSTS
+  .forEach(post => {
     if (filterCategory && post.category !== filterCategory) return;
     postList.innerHTML += `
       <article class="post-card">
