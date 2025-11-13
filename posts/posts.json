@@ -5,7 +5,7 @@
     "description": "Giới thiệu blog và định hướng chia sẻ học tiếng Anh.",
     "date": "2025-01-21",
     "thumbnail": "https://picsum.photos/600/350?1",
-    "category": "Tiếng Anh"
+    "category": "Tiếng Anh",
     "content": "Học tiếng Anh hiệu quả không chỉ là..."
   },
   {
@@ -14,7 +14,7 @@
     "description": "Chia sẻ cách học lập trình hiệu quả và dễ hiểu.",
     "date": "2025-01-22",
     "thumbnail": "https://picsum.photos/600/350?2",
-    "category": "Lập trình"
+    "category": "Lập trình",
     "content": "Cách học lập trình hiệu quả và dễ hiểu..."
   },
   {
@@ -23,7 +23,7 @@
     "description": "Một câu chuyện cuộc sống và góc nhìn tích cực.",
     "date": "2025-01-23",
     "thumbnail": "https://picsum.photos/600/350?3",
-    "category": "Cuộc sống"
+    "category": "Cuộc sống",
     "content": "Cuộc sống không chỉ là..."
   }
 ]
