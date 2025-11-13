@@ -244,6 +244,48 @@ body.dark footer {
   }
 }
 
+/* ===== HAMBURGER MENU ===== */
+#hamburger {
+  display: none; /* desktop ẩn */
+  font-size: 30px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #cde7ff;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  #hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #dcd3ff;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  nav a {
+    display: block;
+    padding: 10px;
+    margin: 6px 0;
+    background: #f3eaff;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  nav.show {
+    display: flex; /* mở menu */
+  }
+}
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -255,6 +297,9 @@ body.dark footer {
   <header>
     <h1>Binh Blog</h1>
     <p>Chia sẻ kiến thức tiếng Anh, lập trình & trải nghiệm cuộc sống</p>
+    
+    <div id="hamburger">☰</div>
+   
     <nav>
       <a href="#" onclick="loadPosts()">Home</a>
       <a href="#" onclick="filterPosts('Tiếng Anh')">Tiếng Anh</a>
@@ -364,6 +409,28 @@ function filterPosts(category) {
       header.style.padding = "10px 20px";
     } else {
       header.style.padding = "20px 20px";
+    }
+  });
+</script>
+<script>
+  const ham = document.getElementById("hamburger");
+  const nav = document.querySelector("nav");
+
+  ham.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+
+  // Tự đóng menu khi bấm link
+  document.querySelectorAll("nav a").forEach(a => {
+    a.addEventListener("click", () => {
+      nav.classList.remove("show");
+    });
+  });
+
+  // Tự đóng khi bấm ra ngoài
+  document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target) && !ham.contains(e.target)) {
+      nav.classList.remove("show");
     }
   });
 </script>
