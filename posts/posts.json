@@ -6,6 +6,7 @@
     "date": "2025-01-21",
     "thumbnail": "https://picsum.photos/600/350?1",
     "category": "Tiếng Anh"
+    "content": "Học tiếng Anh hiệu quả không chỉ là..."
   },
   {
     "file": "post2.html",
@@ -14,6 +15,7 @@
     "date": "2025-01-22",
     "thumbnail": "https://picsum.photos/600/350?2",
     "category": "Lập trình"
+    "content": "Cách học lập trình hiệu quả và dễ hiểu..."
   },
   {
     "file": "post3.html",
@@ -22,5 +24,6 @@
     "date": "2025-01-23",
     "thumbnail": "https://picsum.photos/600/350?3",
     "category": "Cuộc sống"
+    "content": "Cuộc sống không chỉ là..."
   }
 ]
