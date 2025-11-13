@@ -287,25 +287,38 @@ body.dark footer {
 }
 
 /* ===== SEARCH SUGGEST ===== */
-  #suggest-list {
-    margin-top: 5px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    list-style: none;
-    max-height: 200px;
-    overflow-y: auto;
-    display: none;
-  }
+ #suggest-list {
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none; /* ẩn khi không có gợi ý */
+  padding-left: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  z-index: 50;
+  position: absolute; /* để gợi ý nằm trên nội dung */
+  width: calc(100% - 30px); /* điều chỉnh nếu cần */
+}
 
-  #suggest-list li {
-    padding: 8px 12px;
-    cursor: pointer;
-  }
+#search-wrapper { position: relative; display: inline-block; width: 100%; max-width: 520px; }
 
-  #suggest-list li:hover {
-    background: #f0f0ff;
-  }
+#suggest-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#suggest-list li:hover,
+#suggest-list li.active {
+  background: #f0f0ff;
+}
+
+.search-highlight { font-weight: 700; color: #2f1fa6; }
 
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -334,7 +347,7 @@ body.dark footer {
 
   <main>
   <input type="text" id="search" placeholder="Tìm bài viết..." />
-  <ul id="suggest-list"></ul>
+  <ul id="suggest-list" role="listbox" aria-label="Gợi ý tìm kiếm"></ul>
   <div id="post-list">
     <p>Đang tải bài viết...</p>
   </div>
@@ -373,19 +386,25 @@ body.dark footer {
   </script>
   
 <script>
+/* ----- Global ----- */
+let POSTS = []; // lưu posts từ posts.json
+let lastKeyword = "";
 
-  async function loadPosts(filterCategory = null) {
+/* ---- Load posts once and render ---- */
+async function loadPosts(filterCategory = null) {
   const postList = document.getElementById("post-list");
-  const response = await fetch("./posts/posts.json");
+  // chỉnh đường dẫn nếu bạn host ở /binh-blog/ (nếu không, dùng ./posts/posts.json)
+  const response = await fetch("/binh-blog/posts/posts.json");
   const posts = await response.json();
+  POSTS = posts.slice(); // lưu bản gốc
 
-  postList.innerHTML = ""; // Xóa danh sách cũ
+  // sort: mới nhất trước (theo date)
+  POSTS.sort((a,b) => new Date(b.date) - new Date(a.date));
 
-  posts
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
-  .forEach(post => {
+  // render (giữ hành vi cũ)
+  postList.innerHTML = "";
+  POSTS.forEach(post => {
     if (filterCategory && post.category !== filterCategory) return;
-
     postList.innerHTML += `
       <article class="post-card">
         <img src="${post.thumbnail}" alt="${post.title}">
@@ -393,54 +412,224 @@ body.dark footer {
           <h2>${post.title}</h2>
           <p class="desc">${post.description}</p>
           <p class="date">📅 ${post.date}</p>
-          <a href="./posts/${post.file}" class="btn">Đọc bài →</a>
+          <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
         </div>
       </article>
     `;
   });
 
-  enableSearch();
+  enableSearch(); // kích hoạt tìm nâng cao
 }
 
-function enableSearchSuggestions(posts) {
-  const input = document.getElementById("search");
-  const list = document.getElementById("suggest-list");
+/* ---- Search / Suggest feature ---- */
+function enableSearch() {
+  const searchBox = document.getElementById("search");
+  // bọc input trong wrapper (nếu chưa có)
+  let wrapper = document.getElementById("search-wrapper");
+  if (!wrapper) {
+    wrapper = document.createElement("div");
+    wrapper.id = "search-wrapper";
+    const parent = searchBox.parentNode;
+    parent.insertBefore(wrapper, searchBox);
+    wrapper.appendChild(searchBox);
+    // thêm suggest list nếu chưa có
+    let suggest = document.getElementById("suggest-list");
+    if (!suggest) {
+      suggest = document.createElement("ul");
+      suggest.id = "suggest-list";
+      wrapper.appendChild(suggest);
+    }
+  }
+  const suggestList = document.getElementById("suggest-list");
 
-  input.addEventListener("input", function () {
-    const text = input.value.toLowerCase();
-    list.innerHTML = "";
+  // keyboard navigation
+  let currentIndex = -1;
+  function setActiveIndex(i) {
+    const items = suggestList.querySelectorAll("li");
+    items.forEach(it => it.classList.remove("active"));
+    if (i >= 0 && i < items.length) {
+      items[i].classList.add("active");
+      items[i].scrollIntoView({block: "nearest"});
+      currentIndex = i;
+    } else {
+      currentIndex = -1;
+    }
+  }
 
-    if (text.length < 1) {
-      list.style.display = "none";
+  // debounce
+  let timer;
+  searchBox.addEventListener("input", (e) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const q = e.target.value.trim().toLowerCase();
+      lastKeyword = q;
+      if (!q) {
+        suggestList.style.display = "none";
+        return;
+      }
+      const results = searchPosts(q, 8); // tối đa 8 gợi ý
+      renderSuggest(results, q);
+    }, 150);
+  });
+
+  searchBox.addEventListener("keydown", (e) => {
+    const items = suggestList.querySelectorAll("li");
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (items.length === 0) return;
+      setActiveIndex((currentIndex + 1) % items.length);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (items.length === 0) return;
+      setActiveIndex((currentIndex - 1 + items.length) % items.length);
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      if (currentIndex >= 0 && items[currentIndex]) {
+        items[currentIndex].click();
+      } else {
+        // nếu nhấn enter mà không chọn gợi ý, làm tìm toàn trang
+        doFullSearch(lastKeyword);
+      }
+    } else if (e.key === "Escape") {
+      suggestList.style.display = "none";
+    }
+  });
+
+  // click ngoài để ẩn
+  document.addEventListener("click", (ev) => {
+    if (!wrapper.contains(ev.target)) {
+      suggestList.style.display = "none";
+    }
+  });
+
+  function renderSuggest(list, q) {
+    if (!list || list.length === 0) {
+      suggestList.style.display = "none";
+      suggestList.innerHTML = "";
       return;
     }
-
-    const suggestions = posts.filter(p =>
-      p.title.toLowerCase().includes(text) ||
-      p.description.toLowerCase().includes(text) ||
-      p.category.toLowerCase().includes(text)
-    );
-
-    suggestions.slice(0, 5).forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item.title;
-      li.onclick = () => {
-        window.location.href = "/binh-blog/posts/" + item.file;
-      };
-      list.appendChild(li);
+    suggestList.innerHTML = list.map(item => {
+      // highlight từ khoá trong title
+      const title = escapeHtml(item.title);
+      const idx = item.title.toLowerCase().indexOf(q);
+      let highlighted = title;
+      if (idx >= 0) {
+        const before = title.slice(0, idx);
+        const match = title.slice(idx, idx + q.length);
+        const after = title.slice(idx + q.length);
+        highlighted = `${before}<span class="search-highlight">${match}</span>${after}`;
+      }
+      return `<li data-file="${item.file}" data-title="${escapeHtml(item.title)}">
+                ${highlighted} <div style="font-size:12px;color:#888">${item.category} · ${item.date}</div>
+              </li>`;
+    }).join("");
+    // add click listeners
+    Array.from(suggestList.children).forEach((li, i) => {
+      li.addEventListener("click", () => {
+        const file = li.getAttribute("data-file");
+        // mở bài
+        window.location.href = `/binh-blog/posts/${file}`;
+      });
     });
+    currentIndex = -1;
+    suggestList.style.display = "block";
+  }
 
-    list.style.display = suggestions.length ? "block" : "none";
+  function doFullSearch(q) {
+    // filter POSTS và hiển thị kết quả trên trang (giống filterPosts nhưng theo text)
+    const postList = document.getElementById("post-list");
+    const filtered = POSTS.filter(p => {
+      const text = (p.title + " " + p.description + " " + p.category).toLowerCase();
+      return text.includes(q);
+    });
+    postList.innerHTML = "";
+    filtered.forEach(post => {
+      postList.innerHTML += `
+        <article class="post-card">
+          <img src="${post.thumbnail}" alt="${post.title}">
+          <div class="post-info">
+            <h2>${post.title}</h2>
+            <p class="desc">${post.description}</p>
+            <p class="date">📅 ${post.date}</p>
+            <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
+          </div>
+        </article>
+      `;
+    });
+    // ẩn gợi ý
+    const suggestList = document.getElementById("suggest-list");
+    suggestList.style.display = "none";
+  }
+}
+
+/* ---- Simple ranking / fuzzy match ----
+   trả về các post có điểm cao: kết hợp title, description, category
+*/
+function searchPosts(keyword, limit = 6) {
+  if (!keyword) return [];
+  const q = keyword.toLowerCase();
+  const scored = POSTS.map(p => {
+    let score = 0;
+    const title = p.title.toLowerCase();
+    const desc = (p.description || "").toLowerCase();
+    const cat = (p.category || "").toLowerCase();
+
+    if (title === q) score += 100;
+    if (title.includes(q)) score += 60;
+    if (desc.includes(q)) score += 20;
+    if (cat.includes(q)) score += 30;
+
+    // tăng điểm nếu q xuất hiện sớm trong title
+    const idx = title.indexOf(q);
+    if (idx >= 0) score += Math.max(0, 10 - idx);
+
+    // trừ điểm cho bài cũ
+    const daysAgo = (Date.now() - new Date(p.date)) / (1000*60*60*24);
+    score += Math.max(0, 20 - Math.floor(daysAgo/30)); // nhẹ
+    return {post: p, score};
+  });
+
+  // chọn only those with score>0
+  const filtered = scored.filter(s => s.score > 0)
+                         .sort((a,b) => b.score - a.score)
+                         .slice(0, limit)
+                         .map(s => s.post);
+  return filtered;
+}
+
+/* ---- Utils ---- */
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+/* ---- Expose filterPosts for nav buttons (if you used before) ---- */
+function filterPosts(category) {
+  // reuse loadPosts but with category filter
+  const postList = document.getElementById("post-list");
+  postList.innerHTML = "";
+  POSTS.forEach(post => {
+    if (post.category !== category) return;
+    postList.innerHTML += `
+      <article class="post-card">
+        <img src="${post.thumbnail}" alt="${post.title}">
+        <div class="post-info">
+          <h2>${post.title}</h2>
+          <p class="desc">${post.description}</p>
+          <p class="date">📅 ${post.date}</p>
+          <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
+        </div>
+      </article>
+    `;
   });
 }
 
-loadPosts();
-
-function filterPosts(category) {
-  loadPosts(category); // gọi lại hàm loadPosts với category được chọn
-}
-
+/* ---- Start ---- */
+loadPosts(); // gọi khi trang load
 </script>
+
 <script>
   window.addEventListener("scroll", function() {
     const header = document.querySelector("header");
