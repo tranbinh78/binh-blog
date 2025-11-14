@@ -406,18 +406,15 @@ function enableSearch() {
   const searchBox = document.getElementById("search");
   const suggestList = document.getElementById("suggest-list");
 
-  // Khi nhấn Enter → tìm kiếm toàn trang
+  // Nhấn ENTER để thực hiện tìm kiếm toàn trang
   searchBox.addEventListener("keydown", function(e) {
   if (e.key === "Enter") {
-    e.preventDefault(); 
-    const keyword = searchBox.value.trim().toLowerCase();
-    if (keyword) {
-      doFullSearch(keyword);   // chạy tìm kiếm toàn trang
-    }
+    e.preventDefault();
+    doFullSearch(searchBox.value);
   }
   });
 
-  function renderSuggest(list, q) {
+function renderSuggest(list, q) {
     if (list.length === 0) {
       suggestList.style.display = "none";
       return;
@@ -471,14 +468,24 @@ function searchPosts(keyword, limit = 6) {
 }
 
 function doFullSearch(keyword) {
-  const result = POSTS.filter(post =>
-    (post.title + post.description + post.category).toLowerCase().includes(keyword)
-  );
+  const q = keyword.trim().toLowerCase();
+  if (!q) return;
+
+  // Lọc tất cả bài
+  const results = POSTS.filter(post => {
+    const text = (post.title + " " + post.description + " " + post.category).toLowerCase();
+    return text.includes(q);
+  });
 
   const postList = document.getElementById("post-list");
   postList.innerHTML = "";
 
-  result.forEach(post => {
+  if (results.length === 0) {
+    postList.innerHTML = "<p>Không tìm thấy bài viết nào...</p>";
+    return;
+  }
+
+  results.forEach(post => {
     postList.innerHTML += `
       <article class="post-card">
         <img src="${post.thumbnail}" alt="${post.title}">
@@ -492,9 +499,11 @@ function doFullSearch(keyword) {
     `;
   });
 
+  // Ẩn gợi ý sau khi search
   document.getElementById("suggest-list").style.display = "none";
 }
 
+ 
 // ⭐ THÊM HÀM NÀY ĐỂ FIX LỖI
 function filterCategory(cat) {
   loadPosts(cat);
