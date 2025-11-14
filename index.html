@@ -320,6 +320,32 @@ body.dark footer {
 
 .search-highlight { font-weight: 700; color: #2f1fa6; }
 
+/* PAGINATION */
+#pagination {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.page-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 4px;
+  border: 1px solid #cfc1ff;
+  border-radius: 6px;
+  background: #f7f0ff;
+  color: #5b4a8f;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.page-btn.active {
+  background: #d7caff;
+}
+
+.page-btn:hover {
+  background: #e9ddff;
+}
+
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -351,6 +377,7 @@ body.dark footer {
   <div id="post-list">
     <p>Đang tải bài viết...</p>
   </div>
+  <div id="pagination"></div>
   </main>
  
   <footer>
@@ -387,20 +414,30 @@ body.dark footer {
   
 <script>
 /* ----- Global ----- */
-let POSTS = []; // lưu posts từ posts.json
-let lastKeyword = "";
+let POSTS = [];
+let currentPage = 1;
+const POSTS_PER_PAGE = 5;
 
 /* ---- Load posts once and render ---- */
 async function loadPosts(filterCategory = null) {
   const postList = document.getElementById("post-list");
-  // chỉnh đường dẫn nếu bạn host ở /binh-blog/ (nếu không, dùng ./posts/posts.json)
+
   const response = await fetch("/binh-blog/posts/posts.json");
   const posts = await response.json();
-  POSTS = posts.slice(); // lưu bản gốc
 
-  // sort: mới nhất trước (theo date)
-  POSTS
-  .sort((a,b) => new Date(b.date) - new Date(a.date));
+  // Lưu toàn bộ bài viết vào POSTS
+  POSTS = posts.slice();
+
+  // Sắp xếp mới nhất lên đầu
+  POSTS.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // Nếu có lọc chuyên mục
+  if (filterCategory) {
+    POSTS = POSTS.filter(p => p.category === filterCategory);
+  }
+
+  renderPage(1); // hiển thị trang đầu
+  }
 
   // render (giữ hành vi cũ)
   postList.innerHTML = "";
@@ -630,6 +667,55 @@ function filterPosts(category) {
 
 /* ---- Start ---- */
 loadPosts(); // gọi khi trang load
+
+function renderPage(page) {
+  currentPage = page;
+
+  const start = (page - 1) * POSTS_PER_PAGE;
+  const end = start + POSTS_PER_PAGE;
+  const displayPosts = POSTS.slice(start, end);
+
+  const postList = document.getElementById("post-list");
+  postList.innerHTML = "";
+
+  displayPosts.forEach(post => {
+    postList.innerHTML += `
+      <article class="post-card">
+        <img src="${post.thumbnail}" alt="${post.title}">
+        <div class="post-info">
+          <h2>${post.title}</h2>
+          <p class="desc">${post.description}</p>
+          <p class="date">📅 ${post.date}</p>
+          <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
+        </div>
+      </article>
+    `;
+  });
+
+  renderPagination();
+}
+
+function renderPagination() {
+  const totalPages = Math.ceil(POSTS.length / POSTS_PER_PAGE);
+  const container = document.getElementById("pagination");
+
+  let html = "";
+
+  if (currentPage > 1) {
+    html += `<span class="page-btn" onclick="renderPage(${currentPage - 1})">← Trước</span>`;
+  }
+
+  for (let i = 1; i <= totalPages; i++) {
+    html += `<span class="page-btn ${i === currentPage ? "active" : ""}" onclick="renderPage(${i})">${i}</span>`;
+  }
+
+  if (currentPage < totalPages) {
+    html += `<span class="page-btn" onclick="renderPage(${currentPage + 1})">Tiếp →</span>`;
+  }
+
+  container.innerHTML = html;
+}
+
 </script>
 
 <script>
