@@ -5,34 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Binh Blog | Chia sẻ tiếng Anh, lập trình & cuộc sống</title>
 
-  <!-- SEO -->
-  <meta
-    name="description"
-    content="Blog chia sẻ kiến thức tiếng Anh, lập trình, học tập — giúp bạn phát triển kỹ năng và khám phá cuộc sống."
-  />
+  <meta name="description"
+    content="Blog chia sẻ kiến thức tiếng Anh, lập trình, học tập — giúp bạn phát triển kỹ năng và khám phá cuộc sống.">
+
+  <link rel="icon" type="image/x-icon" href="/binh-blog/favicon.ico">
 
   <style>
-    /* ===== RESET ===== */
-    html {
-    scroll-behavior: smooth;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* Toàn trang dùng Be Vietnam Pro (UI) */
     body {
-      font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI",
-               Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Be Vietnam Pro", sans-serif;
       background: #fffdf9;
       color: #333;
-      line-height: 1.85; /* tăng độ rộng chữ để đọc thoáng hơn */
-      letter-spacing: 0.2px; /* chữ nhẹ hơn, đỡ dính */
+      line-height: 1.85;
     }
 
-    /* ===== HEADER ===== */
     header {
       background: #d7f3e3;
       padding: 20px;
@@ -40,102 +28,8 @@
       border-bottom: 2px solid #cde7ff;
     }
 
-    /* Tiêu đề */
-    header h1, .post-card h2, h1, h2, h3 {
-      font-family: "Be Vietnam Pro", inherit;
-      font-size: 28px;
-      margin-bottom: 10px;
-      color: #333;
-    }
+    header h1 { font-size: 28px; margin-bottom: 10px; }
 
-    header p {
-      font-size: 16px;
-      color: #666;
-    }
-
-    /* ===== MAIN ===== */
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 15px;
-    }
-
-    .post-card {
-      display: flex;
-      background: #ffffff;
-      border: 1px solid #e0d8ff;
-      border-radius: 14px;
-      overflow: hidden;
-      margin-bottom: 30px;
-      transition: 0.3s;
-    }
-
-    .post-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(120, 90, 255, 0.12);
-      transition: 0.3s ease;
-    }
-
-    .post-card img {
-      width: 180px;
-      object-fit: cover;
-    }
-
-    .post-info {
-      padding: 16px;
-    }
-
-    .post-info h2 {
-      margin-bottom: 8px;
-    }
-
-    .post-info .desc {
-      color: #666;
-      margin-bottom: 6px;
-    }
-
-    .post-info .date {
-      font-size: 13px;
-      color: #999;
-      margin-bottom: 10px;
-    }
-
-    .post-card h2 {
-      color: #333;
-      margin-bottom: 12px;
-    }
-
-    .post-card p {
-      color: #666;
-      margin-bottom: 8px;
-    }
-
-    a.btn {
-      background: #d7caff;
-      padding: 10px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    a.btn:hover {
-      background: #c9b3ff;
-      transform: translateY(-2px);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      text-align: center;
-      padding: 25px;
-      margin-top: 40px;
-      border-top: 1px solid #cde7ff;
-      color: #666;
-    }
-    nav {
-      margin-top: 15px;
-    }
     nav a {
       margin: 0 12px;
       text-decoration: none;
@@ -143,223 +37,110 @@
       padding: 6px 10px;
       border-radius: 6px;
     }
-    nav a:hover {
-      background: #cde7ff;
+
+    nav a:hover { background: #cde7ff; }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 15px;
     }
 
-    footer {
-      text-align: center;
-      padding: 24px;
-      background: #fef6ff;   /* pastel tím nhạt */
-      color: #5b4a66;
-      margin-top: 40px;
-      border-top: 1px solid #e9d8f2;
+    /* CARD */
+    .post-card {
+      display: flex;
+      background: white;
+      border: 1px solid #e0d8ff;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 25px;
     }
 
-    footer a {
-      color: #8a72b9;
+    .post-card img {
+      width: 180px;
+      object-fit: cover;
+    }
+
+    .post-info { padding: 16px; }
+
+    a.btn {
+      display: inline-block;
+      background: #d7caff;
+      padding: 10px 18px;
+      border-radius: 10px;
+      color: #333;
       text-decoration: none;
-      font-weight: 500;
+      margin-top: 10px;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    /* MOBILE MENU */
+    #hamburger {
+      display: none;
+      font-size: 30px;
+      margin-top: 10px;
+      cursor: pointer;
     }
-/* Toggle button */
-#theme-toggle {
-  padding: 8px 16px;
-  margin-top: 10px;
-  background: #d3c8ff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
 
-#theme-toggle:hover {
-  background: #bfaefa;
-}
+    @media(max-width: 768px) {
+      #hamburger { display: block; }
 
-/* DARK MODE */
-body.dark {
-  background: #1a1a1a;
-  color: #ffffff;
-}
+      nav {
+        display: none;
+        flex-direction: column;
+        background: white;
+        border: 1px solid #dcd3ff;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
 
-body.dark header {
-  background: #2d2d2d;
-  color: #ffffff;
-}
+      nav.show { display: flex; }
 
-body.dark nav a {
-  color: #ffffff;
-}
+      .post-card { flex-direction: column; }
+      .post-card img { width: 100%; }
+    }
 
-body.dark .post-card {
-  background: #333;
-  border-color: #555;
-}
+    /* SEARCH BOX */
+    #search-wrapper { position: relative; max-width: 500px; width: 100%; }
+    #suggest-list {
+      margin-top: 4px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      display: none;
+      list-style: none;
+      position: absolute;
+      width: 100%;
+      z-index: 99;
+    }
+    #suggest-list li { padding: 8px 12px; cursor: pointer; }
+    #suggest-list li:hover { background: #f0f0ff; }
 
-body.dark footer {
-  background: #2d2d2d;
-  border-top: 1px solid #444;
-  color: #ddd;
-}
-.post-card img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 14px;
-}
+    /* PAGINATION */
+    #pagination { text-align: center; margin-top: 25px; }
+    .page-btn {
+      padding: 8px 15px;
+      margin: 3px;
+      background: #f7f0ff;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid #d0c0ff;
+    }
+    .page-btn.active { background: #d7caff; font-weight: bold; }
+  </style>
 
-/* ==== FIX HIỂN THỊ MOBILE ==== */
-@media (max-width: 768px) {
-  main {
-    padding: 10px;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-
-  .post-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .post-card img {
-    width: 100%;
-    height: auto;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 4px;
-    padding: 6px 8px;
-  }
-
-  #search {
-    width: 100%;
-    max-width: 300px;
-    margin: 10px auto;
-    display: block;
-  }
-}
-
-/* ===== HAMBURGER MENU ===== */
-#hamburger {
-  display: none; /* desktop ẩn */
-  font-size: 30px;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: #cde7ff;
-  width: fit-content;
-  margin: 10px auto;
-}
-
-/* Mobile menu */
-@media (max-width: 768px) {
-  #hamburger {
-    display: block;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #ffffff;
-    border: 1px solid #dcd3ff;
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 10px;
-  }
-
-  nav a {
-    display: block;
-    padding: 10px;
-    margin: 6px 0;
-    background: #f3eaff;
-    border-radius: 6px;
-    text-align: center;
-  }
-
-  nav.show {
-    display: flex; /* mở menu */
-  }
-}
-
-/* ===== SEARCH SUGGEST ===== */
- #suggest-list {
-  margin-top: 6px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  list-style: none;
-  max-height: 200px;
-  overflow-y: auto;
-  display: none; /* ẩn khi không có gợi ý */
-  padding-left: 0;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  z-index: 50;
-  position: absolute; /* để gợi ý nằm trên nội dung */
-  width: calc(100% - 30px); /* điều chỉnh nếu cần */
-}
-
-#search-wrapper { position: relative; display: inline-block; width: 100%; max-width: 520px; }
-
-#suggest-list li {
-  padding: 8px 12px;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-#suggest-list li:hover,
-#suggest-list li.active {
-  background: #f0f0ff;
-}
-
-.search-highlight { font-weight: 700; color: #2f1fa6; }
-
-/* PAGINATION */
-#pagination {
-  margin: 25px 0;
-  text-align: center;
-}
-
-.page-btn {
-  display: inline-block;
-  padding: 8px 14px;
-  margin: 4px;
-  border: 1px solid #cfc1ff;
-  border-radius: 6px;
-  background: #f7f0ff;
-  color: #5b4a8f;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.page-btn.active {
-  background: #d7caff;
-}
-
-.page-btn:hover {
-  background: #e9ddff;
-}
-
-</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="/binh-blog/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <h1>Binh Blog</h1>
     <p>Chia sẻ kiến thức tiếng Anh, lập trình & trải nghiệm cuộc sống</p>
-    
+
     <div id="hamburger">☰</div>
-   
+
     <nav>
       <a href="#" onclick="loadPosts()">Home</a>
       <a href="#" onclick="filterPosts('Tiếng Anh')">Tiếng Anh</a>
@@ -368,388 +149,180 @@ body.dark footer {
       <a href="/binh-blog/about.html">About</a>
       <a href="/binh-blog/contact.html">Contact</a>
     </nav>
-   <button id="theme-toggle">Dark Mode</button>
+
+    <button id="theme-toggle">Dark Mode</button>
   </header>
 
   <main>
-  <input type="text" id="search" placeholder="Tìm bài viết..." />
-  <ul id="suggest-list" role="listbox" aria-label="Gợi ý tìm kiếm"></ul>
-  <div id="post-list">
-    <p>Đang tải bài viết...</p>
-  </div>
-  <div id="pagination"></div>
+    <!-- SEARCH BOX -->
+    <div id="search-wrapper">
+      <input type="text" id="search" placeholder="Tìm bài viết..." />
+      <ul id="suggest-list" role="listbox" aria-label="Gợi ý tìm kiếm"></ul>
+    </div>
+
+    <!-- POST LIST -->
+    <div id="post-list">
+      <p>Đang tải bài viết...</p>
+    </div>
+
+    <!-- PAGINATION -->
+    <div id="pagination" style="text-align:center; margin-top:25px;"></div>
+
   </main>
- 
+
   <footer>
-  <p>©2025 — Binh Blog</p>
+    <p>©2025 — Binh Blog</p>
 
-  <div class="social-links">
-    <a href="https://mail.google.com/mail/?view=cm&to=tranbinhtlq12@gmail.com" target="_blank">Email</a> ·
-    <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
-    <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
-  </div>
+    <div class="social-links">
+      <a href="https://mail.google.com/mail/?view=cm&to=tranbinhtlq12@gmail.com" target="_blank">Email</a> ·
+      <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
+      <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
+    </div>
   </footer>
+
   <script>
-  const toggleBtn = document.getElementById("theme-toggle");
-  const body = document.body;
+/* === DARK MODE === */
+const toggleBtn = document.getElementById("theme-toggle");
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+  toggleBtn.textContent = "Light Mode";
+}
+toggleBtn.onclick = () => {
+  document.body.classList.toggle("dark");
+  const mode = document.body.classList.contains("dark") ? "dark" : "light";
+  toggleBtn.textContent = mode === "dark" ? "Light Mode" : "Dark Mode";
+  localStorage.setItem("theme", mode);
+};
+</script>
 
-  // Check saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark");
-    toggleBtn.textContent = "Light Mode";
-  }
-
-    toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-
-    if (body.classList.contains("dark")) {
-      toggleBtn.textContent = "Light Mode";
-      localStorage.setItem("theme", "dark");
-    } else {
-      toggleBtn.textContent = "Dark Mode";
-      localStorage.setItem("theme", "light");
-    }
-  });
-  </script>
-  
 <script>
-/* ----- Global ----- */
+/* === HAMBURGER MENU === */
+const ham = document.getElementById("hamburger");
+const navMenu = document.querySelector("nav");
+
+ham.onclick = () => navMenu.classList.toggle("show");
+document.addEventListener("click", (e) => {
+  if (!ham.contains(e.target) && !navMenu.contains(e.target)) {
+    navMenu.classList.remove("show");
+  }
+});
+document.querySelectorAll("nav a").forEach(a => {
+  a.onclick = () => navMenu.classList.remove("show");
+});
+</script>
+
+<script>
+/* === GLOBAL DATA === */
 let POSTS = [];
 let currentPage = 1;
 const POSTS_PER_PAGE = 5;
 
-/* ---- Load posts once and render ---- */
+/* === LOAD POSTS === */
 async function loadPosts(filterCategory = null) {
-  const postList = document.getElementById("post-list");
+  const res = await fetch("/binh-blog/posts/posts.json");
+  let data = await res.json();
 
-  const response = await fetch("/binh-blog/posts/posts.json");
-  const posts = await response.json();
+  // Sort bài mới → cũ
+  data.sort((a,b) => new Date(b.date) - new Date(a.date));
 
-  // Lưu toàn bộ bài viết vào POSTS
-  POSTS = posts.slice();
+  // Lưu full để phân trang & tìm kiếm
+  POSTS = filterCategory 
+          ? data.filter(p => p.category === filterCategory)
+          : data;
 
-  // Sắp xếp mới nhất lên đầu
-  POSTS.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  // Nếu có lọc chuyên mục
-  if (filterCategory) {
-    POSTS = POSTS.filter(p => p.category === filterCategory);
-  }
-
-  renderPage(1); // hiển thị trang đầu
-  }
-
-  // render (giữ hành vi cũ)
-  postList.innerHTML = "";
-  POSTS
-  .forEach(post => {
-    if (filterCategory && post.category !== filterCategory) return;
-    postList.innerHTML += `
-      <article class="post-card">
-        <img src="${post.thumbnail}" alt="${post.title}">
-        <div class="post-info">
-          <h2>${post.title}</h2>
-          <p class="desc">${post.description}</p>
-          <p class="date">📅 ${post.date}</p>
-          <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
-        </div>
-      </article>
-    `;
-  });
-
-  enableSearch(); // kích hoạt tìm nâng cao
+  currentPage = 1;
+  renderPage(1);
 }
 
-/* ---- Search / Suggest feature ---- */
-function enableSearch() {
-  const searchBox = document.getElementById("search");
-  // bọc input trong wrapper (nếu chưa có)
-  let wrapper = document.getElementById("search-wrapper");
-  if (!wrapper) {
-    wrapper = document.createElement("div");
-    wrapper.id = "search-wrapper";
-    const parent = searchBox.parentNode;
-    parent.insertBefore(wrapper, searchBox);
-    wrapper.appendChild(searchBox);
-    // thêm suggest list nếu chưa có
-    let suggest = document.getElementById("suggest-list");
-    if (!suggest) {
-      suggest = document.createElement("ul");
-      suggest.id = "suggest-list";
-      wrapper.appendChild(suggest);
-    }
-  }
-  const suggestList = document.getElementById("suggest-list");
-
-  // keyboard navigation
-  let currentIndex = -1;
-  function setActiveIndex(i) {
-    const items = suggestList.querySelectorAll("li");
-    items.forEach(it => it.classList.remove("active"));
-    if (i >= 0 && i < items.length) {
-      items[i].classList.add("active");
-      items[i].scrollIntoView({block: "nearest"});
-      currentIndex = i;
-    } else {
-      currentIndex = -1;
-    }
-  }
-
-  // debounce
-  let timer;
-  searchBox.addEventListener("input", (e) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      const q = e.target.value.trim().toLowerCase();
-      lastKeyword = q;
-      if (!q) {
-        suggestList.style.display = "none";
-        return;
-      }
-      const results = searchPosts(q, 8); // tối đa 8 gợi ý
-      renderSuggest(results, q);
-    }, 150);
-  });
-
-  searchBox.addEventListener("keydown", (e) => {
-    const items = suggestList.querySelectorAll("li");
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      if (items.length === 0) return;
-      setActiveIndex((currentIndex + 1) % items.length);
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      if (items.length === 0) return;
-      setActiveIndex((currentIndex - 1 + items.length) % items.length);
-    } else if (e.key === "Enter") {
-      e.preventDefault();
-      if (currentIndex >= 0 && items[currentIndex]) {
-        items[currentIndex].click();
-      } else {
-        // nếu nhấn enter mà không chọn gợi ý, làm tìm toàn trang
-        doFullSearch(lastKeyword);
-      }
-    } else if (e.key === "Escape") {
-      suggestList.style.display = "none";
-    }
-  });
-
-  // click ngoài để ẩn
-  document.addEventListener("click", (ev) => {
-    if (!wrapper.contains(ev.target)) {
-      suggestList.style.display = "none";
-    }
-  });
-
-  function renderSuggest(list, q) {
-    if (!list || list.length === 0) {
-      suggestList.style.display = "none";
-      suggestList.innerHTML = "";
-      return;
-    }
-    suggestList.innerHTML = list.map(item => {
-      // highlight từ khoá trong title
-      const title = escapeHtml(item.title);
-      const idx = item.title.toLowerCase().indexOf(q);
-      let highlighted = title;
-      if (idx >= 0) {
-        const before = title.slice(0, idx);
-        const match = title.slice(idx, idx + q.length);
-        const after = title.slice(idx + q.length);
-        highlighted = `${before}<span class="search-highlight">${match}</span>${after}`;
-      }
-      return `<li data-file="${item.file}" data-title="${escapeHtml(item.title)}">
-                ${highlighted} <div style="font-size:12px;color:#888">${item.category} · ${item.date}</div>
-              </li>`;
-    }).join("");
-    // add click listeners
-    Array.from(suggestList.children).forEach((li, i) => {
-      li.addEventListener("click", () => {
-        const file = li.getAttribute("data-file");
-        // mở bài
-        window.location.href = `/binh-blog/posts/${file}`;
-      });
-    });
-    currentIndex = -1;
-    suggestList.style.display = "block";
-  }
-
-  function doFullSearch(q) {
-    // filter POSTS và hiển thị kết quả trên trang (giống filterPosts nhưng theo text)
-    const postList = document.getElementById("post-list");
-    const filtered = POSTS.filter(p => {
-      const text = (p.title + " " + p.description + " " + p.category).toLowerCase();
-      return text.includes(q);
-    });
-    postList.innerHTML = "";
-    filtered.forEach(post => {
-      postList.innerHTML += `
-        <article class="post-card">
-          <img src="${post.thumbnail}" alt="${post.title}">
-          <div class="post-info">
-            <h2>${post.title}</h2>
-            <p class="desc">${post.description}</p>
-            <p class="date">📅 ${post.date}</p>
-            <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
-          </div>
-        </article>
-      `;
-    });
-    // ẩn gợi ý
-    const suggestList = document.getElementById("suggest-list");
-    suggestList.style.display = "none";
-  }
-}
-
-/* ---- Simple ranking / fuzzy match ----
-   trả về các post có điểm cao: kết hợp title, description, category
-*/
-function searchPosts(keyword, limit = 6) {
-  if (!keyword) return [];
-  const q = keyword.toLowerCase();
-  const scored = POSTS.map(p => {
-    let score = 0;
-    const title = p.title.toLowerCase();
-    const desc = (p.description || "").toLowerCase();
-    const cat = (p.category || "").toLowerCase();
-
-    if (title === q) score += 100;
-    if (title.includes(q)) score += 60;
-    if (desc.includes(q)) score += 20;
-    if (cat.includes(q)) score += 30;
-
-    // tăng điểm nếu q xuất hiện sớm trong title
-    const idx = title.indexOf(q);
-    if (idx >= 0) score += Math.max(0, 10 - idx);
-
-    // trừ điểm cho bài cũ
-    const daysAgo = (Date.now() - new Date(p.date)) / (1000*60*60*24);
-    score += Math.max(0, 20 - Math.floor(daysAgo/30)); // nhẹ
-    return {post: p, score};
-  });
-
-  // chọn only those with score>0
-  const filtered = scored.filter(s => s.score > 0)
-                         .sort((a,b) => b.score - a.score)
-                         .slice(0, limit)
-                         .map(s => s.post);
-  return filtered;
-}
-
-/* ---- Utils ---- */
-function escapeHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-}
-
-/* ---- Expose filterPosts for nav buttons (if you used before) ---- */
-function filterPosts(category) {
-  // reuse loadPosts but with category filter
-  const postList = document.getElementById("post-list");
-  postList.innerHTML = "";
-  POSTS.forEach(post => {
-    if (post.category !== category) return;
-    postList.innerHTML += `
-      <article class="post-card">
-        <img src="${post.thumbnail}" alt="${post.title}">
-        <div class="post-info">
-          <h2>${post.title}</h2>
-          <p class="desc">${post.description}</p>
-          <p class="date">📅 ${post.date}</p>
-          <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
-        </div>
-      </article>
-    `;
-  });
-}
-
-/* ---- Start ---- */
-loadPosts(); // gọi khi trang load
-
+/* === RENDER 1 PAGE === */
 function renderPage(page) {
   currentPage = page;
 
   const start = (page - 1) * POSTS_PER_PAGE;
-  const end = start + POSTS_PER_PAGE;
-  const displayPosts = POSTS.slice(start, end);
+  const end   = start + POSTS_PER_PAGE;
+  const items = POSTS.slice(start, end);
 
   const postList = document.getElementById("post-list");
   postList.innerHTML = "";
 
-  displayPosts.forEach(post => {
+  items.forEach(post => {
     postList.innerHTML += `
       <article class="post-card">
-        <img src="${post.thumbnail}" alt="${post.title}">
+        <img src="${post.thumbnail}">
         <div class="post-info">
           <h2>${post.title}</h2>
           <p class="desc">${post.description}</p>
           <p class="date">📅 ${post.date}</p>
           <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
         </div>
-      </article>
-    `;
+      </article>`;
   });
 
   renderPagination();
 }
 
+/* === PAGINATION === */
 function renderPagination() {
   const totalPages = Math.ceil(POSTS.length / POSTS_PER_PAGE);
-  const container = document.getElementById("pagination");
+  const pag = document.getElementById("pagination");
 
-  let html = "";
+  pag.innerHTML = "";
+  if (totalPages <= 1) return;
 
-  if (currentPage > 1) {
-    html += `<span class="page-btn" onclick="renderPage(${currentPage - 1})">← Trước</span>`;
-  }
+  if (currentPage > 1)
+    pag.innerHTML += `<span class="page-btn" onclick="renderPage(${currentPage - 1})">← Trước</span>`;
 
   for (let i = 1; i <= totalPages; i++) {
-    html += `<span class="page-btn ${i === currentPage ? "active" : ""}" onclick="renderPage(${i})">${i}</span>`;
+    pag.innerHTML += `
+      <span class="page-btn ${i===currentPage?"active":""}" 
+            onclick="renderPage(${i})">${i}</span>`;
   }
 
-  if (currentPage < totalPages) {
-    html += `<span class="page-btn" onclick="renderPage(${currentPage + 1})">Tiếp →</span>`;
-  }
-
-  container.innerHTML = html;
+  if (currentPage < totalPages)
+    pag.innerHTML += `<span class="page-btn" onclick="renderPage(${currentPage + 1})">Tiếp →</span>`;
 }
 
+/* === FILTER CATEGORY === */
+function filterPosts(cat) {
+  loadPosts(cat);
+}
+
+/* === SEARCH SUGGEST === */
+function enableSearch() {
+  const search = document.getElementById("search");
+  const list = document.getElementById("suggest-list");
+
+  let timer = null;
+
+  search.addEventListener("input", () => {
+    clearTimeout(timer);
+    const q = search.value.trim().toLowerCase();
+    if (!q) { list.style.display = "none"; return; }
+
+    timer = setTimeout(() => {
+      const results = POSTS.filter(p =>
+        (p.title + p.description + p.category).toLowerCase().includes(q)
+      ).slice(0, 6);
+
+      if (!results.length) { list.style.display = "none"; return; }
+
+      list.innerHTML = results.map(p =>
+        `<li onclick="window.location.href='/binh-blog/posts/${p.file}'">
+           <strong>${p.title}</strong><br>
+           <small>${p.category} · ${p.date}</small>
+         </li>`
+      ).join("");
+
+      list.style.display = "block";
+    }, 150);
+  });
+
+  document.addEventListener("click", e => {
+    if (!search.contains(e.target)) list.style.display = "none";
+  });
+}
+
+/* === START === */
+loadPosts();
+enableSearch();
 </script>
-
-<script>
-  window.addEventListener("scroll", function() {
-    const header = document.querySelector("header");
-    if (window.scrollY > 10) {
-      header.style.padding = "10px 20px";
-    } else {
-      header.style.padding = "20px 20px";
-    }
-  });
-</script>
-<script>
-  const ham = document.getElementById("hamburger");
-  const nav = document.querySelector("nav");
-
-  ham.addEventListener("click", () => {
-    nav.classList.toggle("show");
-  });
-
-  // Tự đóng menu khi bấm link
-  document.querySelectorAll("nav a").forEach(a => {
-    a.addEventListener("click", () => {
-      nav.classList.remove("show");
-    });
-  });
-
-  // Tự đóng khi bấm ra ngoài
-  document.addEventListener("click", (e) => {
-    if (!nav.contains(e.target) && !ham.contains(e.target)) {
-      nav.classList.remove("show");
-    }
-  });
-</script>
-
-</body>
-</html>
