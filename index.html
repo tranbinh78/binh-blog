@@ -6,7 +6,7 @@
   <title>Binh Blog | Chia sẻ tiếng Anh, lập trình & cuộc sống</title>
 
   <meta name="description"
-    content="Blog chia sẻ kiến thức tiếng Anh, lập trình, học tập — giúp bạn phát triển kỹ năng và khám phá cuộc sống.">
+    content="Blog chia sẻ kiến thức tiếng Anh, lập trình, học tập — giúp bạn phát triển kỹ năng và khám phá cuộc sống."/>
 
   <link rel="icon" type="image/x-icon" href="/binh-blog/favicon.ico">
 
@@ -28,8 +28,6 @@
       border-bottom: 2px solid #cde7ff;
     }
 
-    header h1 { font-size: 28px; margin-bottom: 10px; }
-
     nav a {
       margin: 0 12px;
       text-decoration: none;
@@ -40,20 +38,31 @@
 
     nav a:hover { background: #cde7ff; }
 
+    #theme-toggle {
+      padding: 8px 16px;
+      margin-top: 10px;
+      background: #d3c8ff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
     main {
       max-width: 800px;
-      margin: 30px auto;
+      margin: 40px auto;
       padding: 0 15px;
     }
 
-    /* CARD */
+    /* Card bài viết */
     .post-card {
       display: flex;
-      background: white;
+      background: #ffffff;
       border: 1px solid #e0d8ff;
       border-radius: 14px;
       overflow: hidden;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
+      transition: 0.3s;
     }
 
     .post-card img {
@@ -63,266 +72,373 @@
 
     .post-info { padding: 16px; }
 
-    a.btn {
-      display: inline-block;
-      background: #d7caff;
-      padding: 10px 18px;
-      border-radius: 10px;
-      color: #333;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-
-    /* MOBILE MENU */
-    #hamburger {
-      display: none;
-      font-size: 30px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-
-    @media(max-width: 768px) {
-      #hamburger { display: block; }
-
-      nav {
-        display: none;
-        flex-direction: column;
-        background: white;
-        border: 1px solid #dcd3ff;
-        padding: 15px;
-        margin-top: 10px;
-        border-radius: 10px;
-      }
-
-      nav.show { display: flex; }
-
-      .post-card { flex-direction: column; }
+    /* MOBILE FIX */
+    @media (max-width: 768px) {
+      .post-card { flex-direction: column; text-align: center; }
       .post-card img { width: 100%; }
     }
 
-    /* SEARCH BOX */
-    #search-wrapper { position: relative; max-width: 500px; width: 100%; }
-    #suggest-list {
-      margin-top: 4px;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+    /* HAMBURGER */
+    #hamburger {
       display: none;
-      list-style: none;
-      position: absolute;
-      width: 100%;
-      z-index: 99;
+      font-size: 32px;
+      background: #cde7ff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin: 10px auto;
+      cursor: pointer;
     }
-    #suggest-list li { padding: 8px 12px; cursor: pointer; }
-    #suggest-list li:hover { background: #f0f0ff; }
 
-    /* PAGINATION */
-    #pagination { text-align: center; margin-top: 25px; }
+    @media (max-width: 768px) {
+      #hamburger { display: block; }
+      nav { display: none; flex-direction: column; }
+      nav.show { display: flex; }
+      nav a { display: block; margin: 6px 0; }
+    }
+
+    /* PHÂN TRANG */
+    #pagination { text-align: center; margin: 25px 0; }
     .page-btn {
-      padding: 8px 15px;
-      margin: 3px;
+      padding: 8px 14px;
+      margin: 4px;
+      border: 1px solid #cfc1ff;
       background: #f7f0ff;
       border-radius: 6px;
       cursor: pointer;
-      border: 1px solid #d0c0ff;
     }
-    .page-btn.active { background: #d7caff; font-weight: bold; }
+    .page-btn.active { background: #d7caff; }
+
+    /* SEARCH BOX */
+    #search-wrapper { position: relative; width: 100%; max-width: 500px; }
+    #suggest-list {
+      position: absolute;
+      background: white;
+      width: 100%;
+      border: 1px solid #ccc;
+      list-style: none;
+      display: none;
+      border-radius: 6px;
+      z-index: 999;
+      max-height: 200px;
+      overflow-y: auto;
+      padding-left: 0;
+    }
+    #suggest-list li { padding: 8px 12px; cursor: pointer; }
+    #suggest-list li:hover { background: #eef; }
   </style>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
+<header>
     <h1>Binh Blog</h1>
-    <p>Chia sẻ kiến thức tiếng Anh, lập trình & trải nghiệm cuộc sống</p>
+    <p>Chia sẻ kiến thức tiếng Anh, lập trình & cuộc sống</p>
 
     <div id="hamburger">☰</div>
 
     <nav>
       <a href="#" onclick="loadPosts()">Home</a>
-      <a href="#" onclick="filterPosts('Tiếng Anh')">Tiếng Anh</a>
-      <a href="#" onclick="filterPosts('Lập trình')">Lập trình</a>
-      <a href="#" onclick="filterPosts('Cuộc sống')">Cuộc sống</a>
+      <a href="#" onclick="filterCategory('Tiếng Anh')">Tiếng Anh</a>
+      <a href="#" onclick="filterCategory('Lập trình')">Lập trình</a>
+      <a href="#" onclick="filterCategory('Cuộc sống')">Cuộc sống</a>
+
       <a href="/binh-blog/about.html">About</a>
       <a href="/binh-blog/contact.html">Contact</a>
     </nav>
 
     <button id="theme-toggle">Dark Mode</button>
-  </header>
+</header>
 
-  <main>
-    <!-- SEARCH BOX -->
-    <div id="search-wrapper">
-      <input type="text" id="search" placeholder="Tìm bài viết..." />
-      <ul id="suggest-list" role="listbox" aria-label="Gợi ý tìm kiếm"></ul>
-    </div>
-
-    <!-- POST LIST -->
-    <div id="post-list">
-      <p>Đang tải bài viết...</p>
-    </div>
-
-    <!-- PAGINATION -->
-    <div id="pagination" style="text-align:center; margin-top:25px;"></div>
-
-  </main>
-
-  <footer>
-    <p>©2025 — Binh Blog</p>
-
-    <div class="social-links">
-      <a href="https://mail.google.com/mail/?view=cm&to=tranbinhtlq12@gmail.com" target="_blank">Email</a> ·
-      <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
-      <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
-    </div>
-  </footer>
-
-  <script>
-/* === DARK MODE === */
-const toggleBtn = document.getElementById("theme-toggle");
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-  toggleBtn.textContent = "Light Mode";
+/* ===== SEARCH SUGGEST ===== */
+#suggest-list {
+  margin-top: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  padding-left: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  z-index: 50;
+  position: absolute;
+  width: calc(100% - 30px);
 }
-toggleBtn.onclick = () => {
-  document.body.classList.toggle("dark");
-  const mode = document.body.classList.contains("dark") ? "dark" : "light";
-  toggleBtn.textContent = mode === "dark" ? "Light Mode" : "Dark Mode";
-  localStorage.setItem("theme", mode);
-};
-</script>
+
+#search-wrapper { 
+  position: relative; 
+  display: inline-block; 
+  width: 100%; 
+  max-width: 520px; 
+}
+
+#suggest-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#suggest-list li:hover,
+#suggest-list li.active {
+  background: #f0f0ff;
+}
+
+.search-highlight { 
+  font-weight: 700; 
+  color: #2f1fa6; 
+}
+
+/* PAGINATION */
+#pagination {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.page-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 4px;
+  border: 1px solid #cfc1ff;
+  border-radius: 6px;
+  background: #f7f0ff;
+  color: #5b4a8f;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.page-btn.active {
+  background: #d7caff;
+}
+
+.page-btn:hover {
+  background: #e9ddff;
+}
+
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/binh-blog/favicon.ico">
+</head>
+
+<body>
+<header>
+  <h1>Binh Blog</h1>
+  <p>Chia sẻ kiến thức tiếng Anh, lập trình & trải nghiệm cuộc sống</p>
+
+  <div id="hamburger">☰</div>
+
+  <nav>
+    <a href="#" onclick="loadPosts()">Home</a>
+    <a href="#" onclick="filterPosts('Tiếng Anh')">Tiếng Anh</a>
+    <a href="#" onclick="filterPosts('Lập trình')">Lập trình</a>
+    <a href="#" onclick="filterPosts('Cuộc sống')">Cuộc sống</a>
+    <a href="/binh-blog/about.html">About</a>
+    <a href="/binh-blog/contact.html">Contact</a>
+  </nav>
+
+  <button id="theme-toggle">Dark Mode</button>
+</header>
+
+<main>
+
+  <div id="search-wrapper">
+    <input type="text" id="search" placeholder="Tìm bài viết..." />
+    <ul id="suggest-list"></ul>
+  </div>
+
+  <div id="post-list">
+    <p>Đang tải bài viết...</p>
+  </div>
+
+  <div id="pagination"></div>
+
+</main>
 
 <script>
-/* === HAMBURGER MENU === */
-const ham = document.getElementById("hamburger");
-const navMenu = document.querySelector("nav");
-
-ham.onclick = () => navMenu.classList.toggle("show");
-document.addEventListener("click", (e) => {
-  if (!ham.contains(e.target) && !navMenu.contains(e.target)) {
-    navMenu.classList.remove("show");
-  }
-});
-document.querySelectorAll("nav a").forEach(a => {
-  a.onclick = () => navMenu.classList.remove("show");
-});
-</script>
-
-<script>
-/* === GLOBAL DATA === */
+/* =============================
+      GLOBAL BIẾN CHUNG
+==============================*/
 let POSTS = [];
 let currentPage = 1;
 const POSTS_PER_PAGE = 5;
+let lastKeyword = "";
 
-/* === LOAD POSTS === */
+/* =============================
+      LOAD POSTS + FILTER
+==============================*/
 async function loadPosts(filterCategory = null) {
   const res = await fetch("/binh-blog/posts/posts.json");
-  let data = await res.json();
+  let posts = await res.json();
 
-  // Sort bài mới → cũ
-  data.sort((a,b) => new Date(b.date) - new Date(a.date));
+  // sắp xếp bài mới nhất -> cũ
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // Lưu full để phân trang & tìm kiếm
-  POSTS = filterCategory 
-          ? data.filter(p => p.category === filterCategory)
-          : data;
+  // lưu toàn bộ cho search + phân trang
+  POSTS = filterCategory
+    ? posts.filter(p => p.category === filterCategory)
+    : posts;
 
-  currentPage = 1;
   renderPage(1);
 }
 
-/* === RENDER 1 PAGE === */
+/* =============================
+      HIỂN THỊ 1 TRANG
+==============================*/
 function renderPage(page) {
   currentPage = page;
 
   const start = (page - 1) * POSTS_PER_PAGE;
-  const end   = start + POSTS_PER_PAGE;
-  const items = POSTS.slice(start, end);
+  const end = start + POSTS_PER_PAGE;
 
-  const postList = document.getElementById("post-list");
-  postList.innerHTML = "";
+  const list = POSTS.slice(start, end);
 
-  items.forEach(post => {
-    postList.innerHTML += `
+  const box = document.getElementById("post-list");
+  box.innerHTML = "";
+
+  list.forEach(post => {
+    box.innerHTML += `
       <article class="post-card">
-        <img src="${post.thumbnail}">
+        <img src="${post.thumbnail}" alt="${post.title}">
         <div class="post-info">
           <h2>${post.title}</h2>
           <p class="desc">${post.description}</p>
           <p class="date">📅 ${post.date}</p>
           <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
         </div>
-      </article>`;
+      </article>
+    `;
   });
 
   renderPagination();
 }
 
-/* === PAGINATION === */
+/* =============================
+      PHÂN TRANG (PAGINATION)
+==============================*/
 function renderPagination() {
   const totalPages = Math.ceil(POSTS.length / POSTS_PER_PAGE);
   const pag = document.getElementById("pagination");
 
-  pag.innerHTML = "";
-  if (totalPages <= 1) return;
+  if (totalPages <= 1) {
+    pag.innerHTML = "";
+    return;
+  }
+
+  let html = "";
 
   if (currentPage > 1)
-    pag.innerHTML += `<span class="page-btn" onclick="renderPage(${currentPage - 1})">← Trước</span>`;
+    html += `<span class="page-btn" onclick="renderPage(${currentPage - 1})">← Trước</span>`;
 
   for (let i = 1; i <= totalPages; i++) {
-    pag.innerHTML += `
-      <span class="page-btn ${i===currentPage?"active":""}" 
-            onclick="renderPage(${i})">${i}</span>`;
+    html += `<span class="page-btn ${i === currentPage ? "active" : ""}" onclick="renderPage(${i})">${i}</span>`;
   }
 
   if (currentPage < totalPages)
-    pag.innerHTML += `<span class="page-btn" onclick="renderPage(${currentPage + 1})">Tiếp →</span>`;
+    html += `<span class="page-btn" onclick="renderPage(${currentPage + 1})">Tiếp →</span>`;
+
+  pag.innerHTML = html;
 }
 
-/* === FILTER CATEGORY === */
-function filterPosts(cat) {
-  loadPosts(cat);
-}
-
-/* === SEARCH SUGGEST === */
+/* =============================
+      TÌM KIẾM + GỢI Ý SEARCH
+==============================*/
 function enableSearch() {
   const search = document.getElementById("search");
   const list = document.getElementById("suggest-list");
 
-  let timer = null;
+  let timer;
 
-  search.addEventListener("input", () => {
+  search.addEventListener("input", (e) => {
     clearTimeout(timer);
-    const q = search.value.trim().toLowerCase();
-    if (!q) { list.style.display = "none"; return; }
 
     timer = setTimeout(() => {
-      const results = POSTS.filter(p =>
-        (p.title + p.description + p.category).toLowerCase().includes(q)
-      ).slice(0, 6);
+      const key = e.target.value.toLowerCase().trim();
+      lastKeyword = key;
 
-      if (!results.length) { list.style.display = "none"; return; }
+      if (!key) {
+        list.style.display = "none";
+        return;
+      }
 
-      list.innerHTML = results.map(p =>
-        `<li onclick="window.location.href='/binh-blog/posts/${p.file}'">
-           <strong>${p.title}</strong><br>
-           <small>${p.category} · ${p.date}</small>
-         </li>`
-      ).join("");
-
-      list.style.display = "block";
+      const results = searchPosts(key, 8);
+      renderSuggest(results, key);
     }, 150);
   });
 
-  document.addEventListener("click", e => {
+  document.addEventListener("click", (e) => {
     if (!search.contains(e.target)) list.style.display = "none";
   });
+
+  // CLICK 1 gợi ý
+  function renderSuggest(arr, key) {
+    if (!arr.length) {
+      list.style.display = "none";
+      return;
+    }
+
+    list.innerHTML = arr.map(post => `
+      <li onclick="window.location='/binh-blog/posts/${post.file}'">
+        <strong>${post.title.replace(new RegExp(key, "gi"), m => `<span class='search-highlight'>${m}</span>`)}</strong>
+        <div style="font-size:12px;color:#888">${post.category} · ${post.date}</div>
+      </li>
+    `).join("");
+
+    list.style.display = "block";
+  }
 }
 
-/* === START === */
+/* tìm kiếm scoring */
+function searchPosts(key, limit) {
+  return POSTS.map(p => {
+    let score = 0;
+    const t = p.title.toLowerCase();
+    const d = p.description.toLowerCase();
+    const c = p.category.toLowerCase();
+
+    if (t.includes(key)) score += 50;
+    if (d.includes(key)) score += 20;
+    if (c.includes(key)) score += 15;
+
+    return { ...p, score };
+  })
+  .filter(p => p.score > 0)
+  .sort((a, b) => b.score - a.score)
+  .slice(0, limit);
+}
+
+/* =============================
+   LỌC CHUYÊN MỤC (MENU NAV)
+==============================*/
+function filterPosts(cat) {
+  loadPosts(cat);
+}
+
+/* =============================
+    BẮT ĐẦU KHỞI TẠO TRANG
+==============================*/
 loadPosts();
 enableSearch();
+
+/* =============================
+      HAMBURGER MENU
+==============================*/
+const ham = document.getElementById("hamburger");
+const nav = document.querySelector("nav");
+
+ham.addEventListener("click", () => {
+  nav.classList.toggle("show");
+});
+
+document.addEventListener("click", (e) => {
+  if (!ham.contains(e.target) && !nav.contains(e.target)) {
+    nav.classList.remove("show");
+  }
+});
 </script>
+
+</body>
