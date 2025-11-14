@@ -406,17 +406,15 @@ function enableSearch() {
   const searchBox = document.getElementById("search");
   const suggestList = document.getElementById("suggest-list");
 
-  searchBox.addEventListener("input", () => {
-    const q = searchBox.value.trim().toLowerCase();
-    lastKeyword = q;
-
-    if (!q) {
-      suggestList.style.display = "none";
-      return;
+  // Khi nhấn Enter → tìm kiếm toàn trang
+  searchBox.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    e.preventDefault(); 
+    const keyword = searchBox.value.trim().toLowerCase();
+    if (keyword) {
+      doFullSearch(keyword);   // chạy tìm kiếm toàn trang
     }
-
-    const results = searchPosts(q, 6);
-    renderSuggest(results, q);
+  }
   });
 
   function renderSuggest(list, q) {
@@ -470,6 +468,31 @@ function searchPosts(keyword, limit = 6) {
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
     .map(x => x.p);
+}
+
+function doFullSearch(keyword) {
+  const result = POSTS.filter(post =>
+    (post.title + post.description + post.category).toLowerCase().includes(keyword)
+  );
+
+  const postList = document.getElementById("post-list");
+  postList.innerHTML = "";
+
+  result.forEach(post => {
+    postList.innerHTML += `
+      <article class="post-card">
+        <img src="${post.thumbnail}" alt="${post.title}">
+        <div class="post-info">
+          <h2>${post.title}</h2>
+          <p class="desc">${post.description}</p>
+          <p class="date">📅 ${post.date}</p>
+          <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
+        </div>
+      </article>
+    `;
+  });
+
+  document.getElementById("suggest-list").style.display = "none";
 }
 
 // ⭐ THÊM HÀM NÀY ĐỂ FIX LỖI
