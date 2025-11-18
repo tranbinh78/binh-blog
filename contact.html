@@ -66,6 +66,21 @@
         button:hover {
             background: #357ac9;
         }
+
+        .contact-form label {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px; /* tạo khoảng cách giữa icon và chữ */
+        }
+        
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
     </style>
 </head>
 
@@ -84,16 +99,16 @@
             <!-- Redirect về trang cảm ơn -->
             <input type="hidden" name="_next" value="https://tranbinh78.github.io/binh-blog/contact.html?success=1">
 
-            <label>Họ và tên:</label>
+            <label>👤 Họ và tên:</label>
             <input type="text" name="name" required>
 
-            <label>Email:</label>
+            <label>📧 Email:</label>
             <input type="email" name="email" required>
 
-            <label>Tin nhắn:</label>
+            <label>💬 Tin nhắn:</label>
             <textarea name="message" required></textarea>
 
-            <button type="submit">Gửi liên hệ</button>
+            <button type="submit">📨 Gửi liên hệ</button>
         </form>
 
         <!-- Thông báo gửi thành công -->
