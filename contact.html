@@ -71,14 +71,14 @@
             font-weight: bold;
             display: flex;
             align-items: center;
-            gap: 6px; /* tạo khoảng cách giữa icon và chữ */
+            gap: 8px; /* tạo khoảng cách giữa icon và chữ */
         }
         
         button {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
         }
         
     </style>
@@ -94,22 +94,22 @@
         <form class="contact-form" action="https://formsubmit.co/tranbinhtlq12@gmail.com" method="POST">
             
             <!-- Ẩn Captcha -->
-            <input type="hidden" name="_captcha" value="false">
+           <input type="hidden" name="_captcha" value="false">
+           <input type="hidden" name="_next" value="https://tranbinh78.github.io/binh-blog/contact.html?success=1">
 
-            <!-- Redirect về trang cảm ơn -->
-            <input type="hidden" name="_next" value="https://tranbinh78.github.io/binh-blog/contact.html?success=1">
+           <label><span style="font-size:22px">👤</span> Họ và tên:</label>
+           <input type="text" name="name" required>
 
-            <label>👤 Họ và tên:</label>
-            <input type="text" name="name" required>
+           <label><span style="font-size:22px">📧</span> Email:</label>
+           <input type="email" name="email" required>
 
-            <label>📧 Email:</label>
-            <input type="email" name="email" required>
+           <label><span style="font-size:22px">💬</span> Tin nhắn:</label>
+           <textarea name="message" required></textarea>
 
-            <label>💬 Tin nhắn:</label>
-            <textarea name="message" required></textarea>
-
-            <button type="submit">📨 Gửi liên hệ</button>
-        </form>
+           <button type="submit">
+           <span style="font-size:20px">📨</span> Gửi liên hệ
+    </button>
+</form>
 
         <!-- Thông báo gửi thành công -->
         <p id="successMsg" style="display:none; color:green; text-align:center; margin-top:20px;">
