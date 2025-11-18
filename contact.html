@@ -1,46 +1,114 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Binh Blog</title>
+    <meta charset="UTF-8">
+    <title>Contact - Binh Blog</title>
 
-  <style>
-    body {
-      font-family: "Helvetica", sans-serif;
-      background: #fffdf9;
-      color: #333;
-      line-height: 1.7;
-      padding: 30px;
-    }
-    a {
-      color: #333;
-    }
-    .card {
-      background: #ffffff;
-      border: 1px solid #cde7ff;
-      padding: 25px;
-      border-radius: 12px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-  </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            margin: 60px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 14px;
+            background: #4a90e2;
+            border: none;
+            color: white;
+            font-size: 17px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #357ac9;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="card">
-    <h1>Liên hệ</h1>
 
-    <p>
-      Nếu bạn muốn trao đổi, hợp tác hoặc góp ý, bạn có thể liên hệ mình qua email:
-    </p>
+    <div class="contact-container">
+        <h1>Liên hệ</h1>
+        <p>Hãy để lại lời nhắn, tôi sẽ phản hồi sớm nhất!</p>
 
-    <p>Email: <a href="mailto:tranbinhtlq12@gmail.com">tranbinhtlq12@gmail.com</a></p>
+        <!-- Form liên hệ dùng FormSubmit -->
+        <form class="contact-form" action="https://formsubmit.co/tranbinhtlq12@gmail.com" method="POST">
+            
+            <!-- Ẩn Captcha -->
+            <input type="hidden" name="_captcha" value="false">
 
-    <p><a href="/binh-blog/index.html">Home</a></p>
-  </div>
+            <!-- Redirect về trang cảm ơn -->
+            <input type="hidden" name="_next" value="https://tranbinh78.github.io/binh-blog/contact.html?success=1">
+
+            <label>Họ và tên:</label>
+            <input type="text" name="name" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Tin nhắn:</label>
+            <textarea name="message" required></textarea>
+
+            <button type="submit">Gửi liên hệ</button>
+        </form>
+
+        <!-- Thông báo gửi thành công -->
+        <p id="successMsg" style="display:none; color:green; text-align:center; margin-top:20px;">
+            ✔️ Gửi thành công! Cảm ơn bạn đã liên hệ.
+        </p>
+
+    </div>
+
+    <script>
+        // Nếu gửi form thành công thì show thông báo
+        if (window.location.search.includes("success=1")) {
+            document.getElementById("successMsg").style.display = "block";
+        }
+    </script>
+
 </body>
 </html>
