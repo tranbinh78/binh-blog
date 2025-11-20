@@ -369,16 +369,16 @@ function renderPage(page) {
 
   displayPosts.forEach(post => {
     container.innerHTML += `
-      <article class="post-card">
-        <img src="${post.thumbnail}" alt="${post.title}">
-        <div class="post-info">
-          <h2>${post.title}</h2>
-          <p class="desc">${post.description}</p>
-          <p class="date">📅 ${post.date}</p>
-          <a href="/binh-blog/post.html?file=${post.file}" class="btn">Đọc bài →</a>
-        </div>
-      </article>
-    `;
+    <article class="post-card">
+    <img src="${post.thumbnail}" alt="${post.title}">
+    <div class="post-info">
+      <h2>${post.title}</h2>
+      <p class="desc">${post.description}</p>
+      <p class="date">📅 ${post.date}</p>
+      <a href="/binh-blog/post.html?file=${post.file}" class="btn">Đọc bài →</a>
+    </div>
+  </article>
+  `;
   });
 }
 
