@@ -8,6 +8,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
+#toc-list li {
+  margin: 6px 0;
+  cursor: pointer;
+  color: #3b35c3;
+}
+#toc-list li:hover {
+  text-decoration: underline;
+}
+.toc-level-1 { margin-left: 0px; }
+.toc-level-2 { margin-left: 15px; }
+.toc-level-3 { margin-left: 30px; }
+    
     body {
       font-family: "Be Vietnam Pro", sans-serif;
       max-width: 800px;
@@ -32,6 +44,16 @@
       margin-bottom: 20px;
     }
 
+<div id="toc-container" style="
+  background:#f8f5ff;
+  padding:15px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  margin:20px 0;">
+  <h3>Mục lục</h3>
+  <ul id="toc-list" style="margin-top:10px;"></ul>
+</div>
+    
     a.back {
       display: inline-block;
       margin-top: 30px;
@@ -88,9 +110,49 @@
           .then(res => res.text())
           .then(html => {
             document.getElementById("post-content").innerHTML = html;
+        generateTOC();
           });
       });
   }
+
+function generateTOC() {
+  const content = document.getElementById("post-content");
+  const tocList = document.getElementById("toc-list");
+
+  tocList.innerHTML = ""; // Xóa mục cũ nếu có
+
+  // Lấy các heading trong bài
+  const headings = content.querySelectorAll("h1, h2, h3");
+
+  headings.forEach((h, index) => {
+    // tạo ID nếu chưa có
+    if (!h.id) h.id = "heading-" + index;
+
+    const li = document.createElement("li");
+
+    let level = 1;
+    if (h.tagName === "H2") level = 2;
+    if (h.tagName === "H3") level = 3;
+
+    li.classList.add("toc-level-" + level);
+    li.innerHTML = h.textContent;
+
+    li.addEventListener("click", () => {
+      document.getElementById(h.id).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+
+    tocList.appendChild(li);
+  });
+
+  // Nếu bài không có heading thì ẩn mục lục
+  if (headings.length === 0) {
+    document.getElementById("toc-container").style.display = "none";
+  }
+}
+  
 </script>
 
 </body>
