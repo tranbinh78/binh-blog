@@ -418,19 +418,22 @@ let lastKeyword = "";
 
 function enableSearch() {
   const searchBox = document.getElementById("search");
-  <div id="suggest-list"></div>
+  const suggestList = document.getElementById("suggest-list");
 
   // Nhấn ENTER để thực hiện tìm kiếm toàn trang
   searchBox.addEventListener("keydown", function(e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    doFullSearch(searchBox.value);
-  }
+    if (e.key === "Enter") {
+      e.preventDefault();
+      doFullSearch(searchBox.value);
+      suggestList.style.display = "none"; // ẩn gợi ý khi Enter
+    }
+  });
 
+  // Gợi ý khi gõ phím
   searchBox.addEventListener("keyup", function(e) {
     showSuggestions(searchBox.value);
   });
-  });
+}
 
 function renderSuggest(list, q) {
     if (list.length === 0) {
