@@ -472,39 +472,37 @@ function searchPosts(keyword, limit = 6) {
 }
 
 function doFullSearch(keyword) {
-  const q = keyword.trim().toLowerCase();
-  if (!q) return;
+    keyword = keyword.trim().toLowerCase();
 
-  // Lọc tất cả bài
-  const results = POSTS.filter(post => {
-    const text = (post.title + " " + post.description + " " + post.category).toLowerCase();
-    return text.includes(q);
-  });
+    // Lọc bài viết có chứa keyword (ở title hoặc content)
+    const results = POSTS.filter(post =>
+        post.title.toLowerCase().includes(keyword) ||
+        post.content.toLowerCase().includes(keyword)
+    );
 
-  const postList = document.getElementById("post-list");
-  postList.innerHTML = "";
+    const list = document.getElementById("post-list");
+    list.innerHTML = "";
 
-  if (results.length === 0) {
-    postList.innerHTML = "<p>Không tìm thấy bài viết nào...</p>";
-    return;
-  }
+    results.forEach(post => {
+        const item = document.createElement("div");
+        item.className = "post-item";
 
-  results.forEach(post => {
-    postList.innerHTML += `
-      <article class="post-card">
-        <img src="${post.thumbnail}" alt="${post.title}">
-        <div class="post-info">
-          <h2>${post.title}</h2>
-          <p class="desc">${post.description}</p>
-          <p class="date">📅 ${post.date}</p>
-          <a href="/binh-blog/posts/${post.file}" class="btn">Đọc bài →</a>
-        </div>
-      </article>
-    `;
-  });
+        // Highlight từ khóa trong title + content
+        const highlightedTitle = highlight(post.title, keyword);
+        const highlightedContent = highlight(post.content.substring(0, 150), keyword);
 
-  // Ẩn gợi ý sau khi search
-  document.getElementById("suggest-list").style.display = "none";
+        item.innerHTML = `
+            <h3>${highlightedTitle}</h3>
+            <p>${highlightedContent}...</p>
+        `;
+
+        list.appendChild(item);
+    });
+
+    // Nếu không có bài nào
+    if (results.length === 0) {
+        list.innerHTML = "<p>Không tìm thấy bài nào...</p>";
+    }
 }
 
  
@@ -550,6 +548,19 @@ document.addEventListener("click", e => {
 ========================= */
 loadPosts();      // HIỂN THỊ BÀI VIẾT
 enableSearch();   // BẬT SEARCH
+
+// Hàm highlight từ khóa tìm kiếm trong text
+function highlight(text, keyword) {
+    if (!keyword) return text;
+
+    // Escape ký tự đặc biệt (tránh regex bị lỗi)
+    const safeKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+    const regex = new RegExp(safeKeyword, "gi");
+
+    return text.replace(regex, match => `<mark>${match}</mark>`);
+}
+
 </script>
 </body>
 </html>
