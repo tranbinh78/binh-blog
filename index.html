@@ -126,6 +126,11 @@
   <ul id="suggest-list"></ul>
 </div>
 
+<div id="suggestions" 
+     style="position:absolute; background:white; border:1px solid #ccc; width:200px; display:none; max-height:200px; overflow-y:auto; z-index:1000;">
+</div>
+
+
 <div id="post-list">
   <p>Đang tải bài viết...</p>
 </div>
@@ -314,6 +319,11 @@ footer {
   text-align:center; padding:25px; margin-top:40px;
   background:#fef6ff; border-top:1px solid #e9d8f2;
 }
+
+.sug-item:hover {
+    background: #f0f0f0;
+}
+
 </style>
 
 <script>
@@ -408,7 +418,7 @@ let lastKeyword = "";
 
 function enableSearch() {
   const searchBox = document.getElementById("search");
-  const suggestList = document.getElementById("suggest-list");
+  <div id="suggest-list"></div>
 
   // Nhấn ENTER để thực hiện tìm kiếm toàn trang
   searchBox.addEventListener("keydown", function(e) {
@@ -416,6 +426,10 @@ function enableSearch() {
     e.preventDefault();
     doFullSearch(searchBox.value);
   }
+
+  searchBox.addEventListener("keyup", function(e) {
+    showSuggestions(searchBox.value);
+  });
   });
 
 function renderSuggest(list, q) {
@@ -595,6 +609,66 @@ function highlight(text, keyword) {
     const regex = new RegExp(safeKeyword, "gi");
 
     return text.replace(regex, match => `<mark>${match}</mark>`);
+}
+
+function showSuggestions(keyword) {
+    const sugBox = document.getElementById("suggestions");
+    SugList = [];
+
+    if (!keyword) {
+        sugBox.style.display = "none";
+        return;
+    }
+
+    const lower = keyword.toLowerCase();
+
+    POSTS.forEach(post => {
+        // Collect title
+        if (post.title.toLowerCase().includes(lower)) {
+            SugList.push(post.title);
+        }
+
+        // Collect category
+        if (post.category && post.category.toLowerCase().includes(lower)) {
+            SugList.push(post.category);
+        }
+
+        // Collect tags
+        if (post.tags) {
+            post.tags.forEach(tag => {
+                if (tag.toLowerCase().includes(lower)) {
+                    SugList.push(tag);
+                }
+            });
+        }
+    });
+
+    // Remove duplicates
+    SugList = [...new Set(SugList)];
+
+    // If nothing → hide
+    if (SugList.length === 0) {
+        sugBox.style.display = "none";
+        return;
+    }
+
+    // Build suggestion list
+    sugBox.innerHTML = SugList.map(s => `
+        <div class="sug-item" style="padding:6px; cursor:pointer;">
+            ${highlight(s, keyword)}
+        </div>
+    `).join("");
+
+    sugBox.style.display = "block";
+
+    // Add click event → auto search
+    document.querySelectorAll(".sug-item").forEach(item => {
+        item.onclick = () => {
+            document.getElementById("search").value = item.innerText;
+            sugBox.style.display = "none";
+            doFullSearch(item.innerText);
+        }
+    });
 }
 
 </script>
