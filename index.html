@@ -473,36 +473,72 @@ function searchPosts(keyword, limit = 6) {
 
 function doFullSearch(keyword) {
     keyword = keyword.trim().toLowerCase();
-
-    // Lọc bài viết có chứa keyword (ở title hoặc content)
-    const results = POSTS.filter(post =>
-        post.title.toLowerCase().includes(keyword) ||
-        post.content.toLowerCase().includes(keyword)
-    );
-
     const list = document.getElementById("post-list");
     list.innerHTML = "";
 
-    results.forEach(post => {
+    if (!keyword) {
+        list.innerHTML = "<p>Hãy nhập từ khóa để tìm kiếm.</p>";
+        return;
+    }
+
+    const scores = [];
+
+    POSTS.forEach(post => {
+        let score = 0;
+
+        // Chuẩn hóa
+        const title = post.title.toLowerCase();
+        const content = post.content.toLowerCase();
+        const category = (post.category || "").toLowerCase();
+        const tags = (post.tags || []).join(" ").toLowerCase();
+
+        // Chấm điểm
+        if (title.includes(keyword)) score += 5;
+        if (category.includes(keyword)) score += 3;
+        if (tags.includes(keyword)) score += 3;
+
+        // Tìm trong content – mỗi lần xuất hiện +1
+        const matches = content.match(new RegExp(keyword, "gi"));
+        if (matches) score += matches.length;
+
+        // Nếu score > 0 thì đưa vào danh sách
+        if (score > 0) {
+            scores.push({ post, score });
+        }
+    });
+
+    // Sắp xếp giảm dần theo điểm
+    scores.sort((a, b) => b.score - a.score);
+
+    // Hiển thị kết quả
+    if (scores.length === 0) {
+        list.innerHTML = "<p>Không tìm thấy bài nào...</p>";
+        return;
+    }
+
+    scores.forEach(({ post }) => {
         const item = document.createElement("div");
         item.className = "post-item";
 
-        // Highlight từ khóa trong title + content
+        // Highlight title & content
         const highlightedTitle = highlight(post.title, keyword);
-        const highlightedContent = highlight(post.content.substring(0, 150), keyword);
+        const highlightedContent = highlight(
+            post.content.substring(0, 180) + "...",
+            keyword
+        );
 
         item.innerHTML = `
             <h3>${highlightedTitle}</h3>
-            <p>${highlightedContent}...</p>
+            <p>${highlightedContent}</p>
+            <div style="font-size:14px;color:#777;margin-top:5px;">
+                Category: ${post.category || "Không có"}  
+                <br>
+                Tags: ${(post.tags || []).join(", ")}
+            </div>
         `;
 
         list.appendChild(item);
     });
-
-    // Nếu không có bài nào
-    if (results.length === 0) {
-        list.innerHTML = "<p>Không tìm thấy bài nào...</p>";
-    }
 }
 
  
