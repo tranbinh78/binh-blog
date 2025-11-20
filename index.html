@@ -464,7 +464,6 @@ function renderSuggest(list, q) {
       text.substring(idx + keyword.length)
     );
   }
-}
 
 /* =========================
    SEARCH RANKING
@@ -602,76 +601,145 @@ document.addEventListener("click", e => {
 loadPosts();      // HIỂN THỊ BÀI VIẾT
 enableSearch();   // BẬT SEARCH
 
-// Hàm highlight từ khóa tìm kiếm trong text
+/* ===== SEARCH HELPERS (SAFE VERSION) ===== */
+
+// highlight từ khóa trong text (dùng trong render kết quả & gợi ý)
 function highlight(text, keyword) {
-    if (!keyword) return text;
-
-    // Escape ký tự đặc biệt (tránh regex bị lỗi)
-    const safeKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-
-    const regex = new RegExp(safeKeyword, "gi");
-
-    return text.replace(regex, match => `<mark>${match}</mark>`);
+  if (!keyword) return text;
+  const safeKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const regex = new RegExp(safeKeyword, "gi");
+  return text.replace(regex, match => `<mark>${match}</mark>`);
 }
 
+// Google-mini search: tìm trong title, content, category, tags; sắp theo điểm
+function doFullSearch(keyword) {
+  keyword = (keyword || "").trim();
+  const q = keyword.toLowerCase();
+  const list = document.getElementById("post-list");
+  if (!list) return;
+
+  list.innerHTML = "";
+
+  if (!q) {
+    list.innerHTML = "<p>Hãy nhập từ khóa để tìm kiếm.</p>";
+    return;
+  }
+
+  const scored = [];
+
+  POSTS.forEach(post => {
+    let score = 0;
+    const title = (post.title || "").toLowerCase();
+    const content = (post.content || "").toLowerCase();
+    const category = (post.category || "").toLowerCase();
+    const tags = (post.tags || []).join(" ").toLowerCase();
+
+    if (title.includes(q)) score += 5;
+    if (category.includes(q)) score += 3;
+    if (tags.includes(q)) score += 3;
+
+    const matches = content.match(new RegExp(q, "gi"));
+    if (matches) score += matches.length;
+
+    if (score > 0) scored.push({ post, score });
+  });
+
+  scored.sort((a, b) => b.score - a.score);
+
+  if (scored.length === 0) {
+    list.innerHTML = "<p>Không tìm thấy bài nào...</p>";
+    return;
+  }
+
+  scored.forEach(({ post }) => {
+    const item = document.createElement("div");
+    item.className = "post-item";
+
+    const shortContent = (post.content || "").substring(0, 180);
+    const highlightedTitle = highlight(post.title || "", q);
+    const highlightedContent = highlight(shortContent + (post.content && post.content.length > 180 ? "..." : ""), q);
+
+    item.innerHTML = `
+      <h3>${highlightedTitle}</h3>
+      <p>${highlightedContent}</p>
+      <div style="font-size:14px;color:#777;margin-top:5px;">
+        Category: ${post.category || "Không có"}<br>
+        Tags: ${(post.tags || []).join(", ")}
+      </div>
+    `;
+    list.appendChild(item);
+  });
+}
+
+// Enable search: bắt Enter + gợi ý (keyup)
+function enableSearch() {
+  const searchBox = document.getElementById("search");
+  const suggestList = document.getElementById("suggest-list"); // đảm bảo HTML có id này
+
+  if (!searchBox) return;
+
+  // Enter để search
+  searchBox.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      doFullSearch(searchBox.value);
+      if (suggestList) suggestList.style.display = "none";
+    }
+  });
+
+  // Keyup để show suggestions
+  searchBox.addEventListener("keyup", function (e) {
+    showSuggestions(searchBox.value);
+  });
+}
+
+// Tạo và hiển thị gợi ý (autocomplete) — an toàn, dùng template string
 function showSuggestions(keyword) {
-    const sugBox = document.getElementById("suggestions");
-    SugList = [];
+  const sugBox = document.getElementById("suggest-list");
+  if (!sugBox) return;
 
-    if (!keyword) {
-        sugBox.style.display = "none";
-        return;
-    }
+  if (!keyword || keyword.trim() === "") {
+    sugBox.style.display = "none";
+    sugBox.innerHTML = "";
+    return;
+  }
 
-    const lower = keyword.toLowerCase();
+  const lower = keyword.toLowerCase();
+  let SugList = [];
 
-    POSTS.forEach(post => {
-        // Collect title
-        if (post.title.toLowerCase().includes(lower)) {
-            SugList.push(post.title);
-        }
-
-        // Collect category
-        if (post.category && post.category.toLowerCase().includes(lower)) {
-            SugList.push(post.category);
-        }
-
-        // Collect tags
-        if (post.tags) {
-            post.tags.forEach(tag => {
-                if (tag.toLowerCase().includes(lower)) {
-                    SugList.push(tag);
-                }
-            });
-        }
+  POSTS.forEach(post => {
+    if (post.title && post.title.toLowerCase().includes(lower)) SugList.push(post.title);
+    if (post.category && post.category.toLowerCase().includes(lower)) SugList.push(post.category);
+    if (post.tags) post.tags.forEach(tag => {
+      if (tag.toLowerCase().includes(lower)) SugList.push(tag);
     });
+  });
 
-    // Remove duplicates
-    SugList = [...new Set(SugList)];
+  SugList = [...new Set(SugList)].slice(0, 8); // loại trùng + giới hạn
 
-    // If nothing → hide
-    if (SugList.length === 0) {
-        sugBox.style.display = "none";
-        return;
-    }
+  if (SugList.length === 0) {
+    sugBox.style.display = "none";
+    sugBox.innerHTML = "";
+    return;
+  }
 
-    // Build suggestion list
-    sugBox.innerHTML = SugList.map(s => `
-        <div class="sug-item" style="padding:6px; cursor:pointer;">
-            ${highlight(s, keyword)}
-        </div>
-    `).join("");
+  sugBox.innerHTML = SugList.map(s => `
+    <div class="sug-item" style="padding:8px;cursor:pointer;">
+      ${highlight(s, keyword)}
+    </div>
+  `).join("");
 
-    sugBox.style.display = "block";
+  sugBox.style.display = "block";
 
-    // Add click event → auto search
-    document.querySelectorAll(".sug-item").forEach(item => {
-        item.onclick = () => {
-            document.getElementById("search").value = item.innerText;
-            sugBox.style.display = "none";
-            doFullSearch(item.innerText);
-        }
+  // click vào gợi ý: điền ô search + chạy full search
+  sugBox.querySelectorAll(".sug-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const text = item.innerText || item.textContent;
+      document.getElementById("search").value = text;
+      sugBox.style.display = "none";
+      doFullSearch(text);
     });
+  });
 }
 
 </script>
