@@ -463,14 +463,13 @@ function highlight(text, keyword) {
 
 // Google-mini search: tìm trong title, content, category, tags; sắp theo điểm
 function doFullSearch(keyword) {
-  keyword = (keyword || "").trim();
-  const q = keyword.toLowerCase();
+  keyword = (keyword || "").trim().toLowerCase();
   const list = document.getElementById("post-list");
   if (!list) return;
 
   list.innerHTML = "";
 
-  if (!q) {
+  if (!keyword) {
     list.innerHTML = "<p>Hãy nhập từ khóa để tìm kiếm.</p>";
     return;
   }
@@ -479,16 +478,18 @@ function doFullSearch(keyword) {
 
   POSTS.forEach(post => {
     let score = 0;
+
     const title = (post.title || "").toLowerCase();
-    const content = (post.content || "").toLowerCase();
+    const desc = (post.description || "").toLowerCase();
     const category = (post.category || "").toLowerCase();
     const tags = (post.tags || []).join(" ").toLowerCase();
 
-    if (title.includes(q)) score += 5;
-    if (category.includes(q)) score += 3;
-    if (tags.includes(q)) score += 3;
+    if (title.includes(keyword)) score += 5;
+    if (category.includes(keyword)) score += 3;
+    if (tags.includes(keyword)) score += 3;
 
-    const matches = content.match(new RegExp(q, "gi"));
+    // Tìm trong mô tả bài viết
+    const matches = desc.match(new RegExp(keyword, "gi"));
     if (matches) score += matches.length;
 
     if (score > 0) scored.push({ post, score });
@@ -505,13 +506,15 @@ function doFullSearch(keyword) {
     const item = document.createElement("div");
     item.className = "post-item";
 
-    const shortContent = (post.content || "").substring(0, 180);
-    const highlightedTitle = highlight(post.title || "", q);
-    const highlightedContent = highlight(shortContent + (post.content && post.content.length > 180 ? "..." : ""), q);
+    const highlightedTitle = highlight(post.title || "", keyword);
+    const highlightedDesc = highlight(
+      (post.description || "").substring(0, 180),
+      keyword
+    );
 
     item.innerHTML = `
       <h3>${highlightedTitle}</h3>
-      <p>${highlightedContent}</p>
+      <p>${highlightedDesc}</p>
       <div style="font-size:14px;color:#777;margin-top:5px;">
         Category: ${post.category || "Không có"}<br>
         Tags: ${(post.tags || []).join(", ")}
