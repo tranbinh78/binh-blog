@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài viết | Binh Blog</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Be Vietnam Pro", sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.8;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    img.thumb {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    a.back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 16px;
+      background: #d7caff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 id="post-title"></h1>
+  <p class="meta">
+    <span id="post-date"></span> • 
+    <span id="post-category"></span>
+  </p>
+
+  <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
+
+  <div id="post-content">Đang tải nội dung...</div>
+
+  <a href="index.html" class="back">← Quay lại trang chủ</a>
+
+<script>
+  // Lấy ID bài viết từ URL
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
+
+  if (!file) {
+    document.getElementById("post-content").innerHTML = "<p>Lỗi: Không tìm thấy bài viết.</p>";
+  } else {
+    // Load dữ liệu posts.json
+    fetch("/binh-blog/posts/posts.json")
+      .then(res => res.json())
+      .then(posts => {
+        const post = posts.find(p => p.file === file);
+
+        if (!post) {
+          document.getElementById("post-content").innerHTML = "<p>Không tìm thấy bài viết.</p>";
+          return;
+        }
+
+        // Gán tiêu đề – ngày – category – thumbnail
+        document.getElementById("post-title").textContent = post.title;
+        document.getElementById("post-date").textContent = "📅 " + post.date;
+        document.getElementById("post-category").textContent = "📂 " + post.category;
+        document.getElementById("post-thumb").src = post.thumbnail;
+
+        // Load nội dung bài viết từ file HTML
+        fetch("/binh-blog/posts/" + post.file)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById("post-content").innerHTML = html;
+          });
+      });
+  }
+</script>
+
+</body>
+</html>
