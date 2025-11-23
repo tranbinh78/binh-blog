@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
 /* ===== GENERAL ===== */
 body {
@@ -15,104 +15,97 @@ body {
   max-width: 760px;
   margin: auto;
   padding: 30px 20px;
-  line-height: 1.8;
-  color: #222;
   background: #fafafa;
+  color: #222;
+  line-height: 1.85;
 }
 
-/* Title */
+/* TITLE */
 h1 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 .meta {
   color: #777;
-  font-size: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
+  font-size: 14px;
 }
 
-/* Thumbnail */
+/* THUMBNAIL */
 img.thumb {
   width: 100%;
-  border-radius: 12px;
-  margin: 20px 0;
+  border-radius: 14px;
+  margin: 22px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* ===== POST CONTENT ===== */
+/* CONTENT STYLE */
 #post-content {
   margin-top: 25px;
   font-size: 18px;
 }
 
-#post-content h1,
-#post-content h2,
-#post-content h3 {
-  margin-top: 28px;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
 #post-content h2 {
   font-size: 24px;
+  font-weight: 700;
+  margin-top: 30px;
   border-left: 4px solid #7a64ff;
   padding-left: 10px;
 }
 
 #post-content h3 {
   font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
   color: #333;
 }
 
 #post-content p {
   margin: 14px 0;
+  line-height: 1.8;
 }
 
-#post-content ul,
-#post-content ol {
-  margin: 14px 0 14px 25px;
+#post-content ul, #post-content ol {
+  margin-left: 25px;
+  margin-bottom: 20px;
 }
 
 #post-content li {
-  margin: 6px 0;
+  margin: 8px 0;
 }
 
+/* IMAGES */
 #post-content img {
   width: 100%;
   border-radius: 10px;
   margin: 18px 0;
-  display: block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* Blockquote */
+/* BLOCKQUOTE */
 #post-content blockquote {
   border-left: 4px solid #c0b4ff;
-  padding: 10px 15px;
-  margin: 20px 0;
+  padding: 12px 18px;
   background: #f5f2ff;
   border-radius: 6px;
+  margin: 20px 0;
   font-style: italic;
 }
 
-/* Code block */
+/* CODE BLOCK */
 #post-content pre {
   background: #1e1e1e;
   color: #f0f0f0;
-  padding: 14px;
-  border-radius: 8px;
+  padding: 16px;
+  border-radius: 10px;
   overflow-x: auto;
-  margin: 18px 0;
+  margin: 20px 0;
 }
 
-#post-content code {
-  background: #eee;
-  padding: 3px 5px;
-  border-radius: 4px;
-  font-size: 15px;
-}
-
-/* ===== TOC ===== */
+/* TOC */
 #toc-container {
   background: #f8f5ff;
   padding: 18px;
@@ -126,30 +119,29 @@ img.thumb {
 }
 
 #toc-list li {
+  list-style: none;
   margin: 6px 0;
   cursor: pointer;
   color: #4635d4;
-  list-style: none;
 }
 
 #toc-list li:hover {
   text-decoration: underline;
 }
 
-.toc-level-1 { margin-left: 0; }
 .toc-level-2 { margin-left: 15px; }
 .toc-level-3 { margin-left: 30px; }
 
-/* ===== BACK BUTTON ===== */
+/* BACK BUTTON */
 a.back {
   display: inline-block;
   margin-top: 35px;
   padding: 10px 18px;
   background: #d9d1ff;
-  text-decoration: none;
   border-radius: 8px;
-  font-weight: 600;
+  text-decoration: none;
   color: #333;
+  font-weight: 600;
 }
 
 a.back:hover {
@@ -167,8 +159,8 @@ a.back:hover {
     <span id="post-category"></span>
   </p>
 
-  <!-- ⭐ TOC -->
- <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
+<!-- ⭐ TOC -->
+<img id="post-thumb" class="thumb" src="" alt="Thumbnail">
 
 <!-- TOC đặt đúng vị trí -->
 <div id="toc-container">
@@ -178,7 +170,7 @@ a.back:hover {
 
 <div id="post-content">Đang tải nội dung...</div>
 
-  <a href="index.html" class="back">← Quay lại trang chủ</a>
+<a href="index.html" class="back">← Quay lại trang chủ</a>
 
 <script>
   const params = new URLSearchParams(window.location.search);
