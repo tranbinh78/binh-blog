@@ -266,6 +266,37 @@ code {
 .related-item a:hover {
   text-decoration: underline;
 }
+
+.post-layout {
+  max-width: 1150px;
+  margin: 40px auto;
+  display: flex;
+  gap: 40px;
+}
+
+#sidebar {
+  flex: 1;
+  background: #f8f1ff;
+  border: 1px solid #e7dbff;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  text-align: center;
+}
+
+#post-article {
+  flex: 3;
+}
+
+#toc-container {
+  background:#f8f4ff;
+  border-left:4px solid #b699ff;
+  padding:16px;
+  border-radius:8px;
+  margin:20px 0;
+}
   
   </style>
 </head>
@@ -283,8 +314,38 @@ code {
 
   <div id="post-main">
     <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
-    <div id="post-content">Đang tải nội dung...</div>
-  </div>
+  <div class="post-layout">
+    <aside id="sidebar">
+        <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
+        <h3>Xin chào, mình là Bình 👋</h3>
+        <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
+        <p>
+          <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
+          <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
+        </p>
+    </aside>
+
+    <main id="post-article">
+        <h1 id="post-title"></h1>
+        <p class="meta">
+            <span id="post-date"></span> • 
+            <span id="post-category"></span>
+        </p>
+
+        <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
+
+        <!-- TOC -->
+        <div id="toc-container">
+            <h3>Mục lục</h3>
+            <ul id="toc-list"></ul>
+        </div>
+
+        <div id="post-content">Đang tải nội dung...</div>
+
+        <a href="index.html" class="back">← Quay lại trang chủ</a>
+    </main>
+</div>
+</div>
 
 <!-- Bài viết liên quan -->
 <div id="related-posts" class="related-box">
