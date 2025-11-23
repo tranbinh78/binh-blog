@@ -1,192 +1,25 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Bài viết thứ 2 | Binh Blog</title>
+<h1>Bài viết thứ 2</h1>
 
- <!-- SEO Meta Tags -->
-<meta name="description" content="Chia sẻ kinh nghiệm lập trình cơ bản cho người mới bắt đầu. Học cách viết code rõ ràng, dễ hiểu và chuyên nghiệp.">
+<p>Nhiều bạn hỏi mình rằng nên bắt đầu học lập trình từ ngôn ngữ nào. Thật ra, ngôn ngữ không quan trọng bằng tư duy lập trình. Điều quan trọng là bạn hiểu được biến, hàm, điều kiện, vòng lặp...</p>
 
-<!-- Open Graph -->
-<meta property="fb:app_id" content="0">
-<meta property="og:title" content="Bài viết thứ hai | Binh Blog">
-<meta property="og:description" content="Chia sẻ kinh nghiệm lập trình cơ bản cho người mới bắt đầu. Học cách viết code rõ ràng, dễ hiểu và chuyên nghiệp.">
-<meta property="og:image" content="https://picsum.photos/id/1011/800/450">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="450">
-<meta property="og:url" content="https://tranbinh78.github.io/binh-blog/posts/post2.html">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Binh Blog">
+<img src="https://picsum.photos/800/450?random=10" alt="Ảnh minh họa">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bài viết thứ hai | Binh Blog">
-<meta name="twitter:description" content="Kinh nghiệm lập trình cho người mới — từ lý thuyết đến thực hành.">
-<meta name="twitter:image" content="https://picsum.photos/id/1011/800/450">
+<h2>1. Tư duy lập trình</h2>
+<p>Tư duy lập trình là nền tảng trước khi học bất kỳ ngôn ngữ nào.</p>
 
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://tranbinh78.github.io/binh-blog/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Lập trình",
-      "item": "https://tranbinh78.github.io/binh-blog/?cat=Lập trình"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Bài viết thứ hai",
-      "item": "https://tranbinh78.github.io/binh-blog/posts/post2.html"
-    }
-  ]
-}
-</script>
-  
-  <meta name="date" content="22/01/2025">
+<h3>1.1 Biến và kiểu dữ liệu</h3>
+<p>Biến giúp lưu trữ dữ liệu. Kiểu dữ liệu quyết định cách dữ liệu được biểu diễn.</p>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+<h3>1.2 Câu điều kiện</h3>
+<p>Điều kiện giúp chương trình đưa ra quyết định.</p>
 
-  <style>
-    body {
-      font-family: "Noto Serif", serif;
-      background: #fffdf9;
-      margin: 0;
-      padding: 0;
-      line-height: 1.8;
-      color: #444;
-    }
-    .container { max-width: 1000px; margin: 40px auto; padding: 0 16px; display: flex; gap: 40px; }
+<h2>2. Ngôn ngữ lập trình</h2>
+<p>Chọn ngôn ngữ nào không quan trọng. Quan trọng là hiểu cách nó hoạt động.</p>
 
-    #article { flex: 3; }
-    #sidebar { flex: 1; background: #f8f1ff; border: 1px solid #e7dbff; border-radius: 12px; padding: 20px; height: fit-content; position: sticky; top: 20px; text-align: center; }
+<h3>2.1 JavaScript</h3>
+<p>Ngôn ngữ linh hoạt, dễ học, chạy trên trình duyệt.</p>
 
-    #sidebar img { width: 80px; border-radius: 50%; margin-bottom: 12px; }
-    a { color: #7f5af0; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    img { width: 100%; border-radius: 12px; margin: 25px 0; }
+<h3>2.2 Python</h3>
+<p>Ngắn gọn, dễ đọc, phù hợp người mới.</p>
 
-    /* Dark Mode */
-    body.dark { background: #1a1a1a; color: #ddd; }
-    body.dark #sidebar { background: #2b2140; border-color: #3a2a55; }
-
-    .breadcrumb {
-  font-size: 14px;
-  margin-bottom: 20px;
-  color: #7f5af0;
-  font-family: "Be Vietnam Pro", sans-serif;
-}
-
-.breadcrumb a {
-  color: #7f5af0;
-  text-decoration: none;
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-.breadcrumb span {
-  color: #555;
-}
-  </style>
-</head>
-
-<body>
-<div class="container">
-  <aside id="sidebar">
-    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
-    <h3>Xin chào, mình là Bình 👋</h3>
-    <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
-
-    <p>
-      <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
-      <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
-    </p>
-  </aside>
-
-  <main id="article">
-
-    <nav class="breadcrumb">
-    <a href="/binh-blog/">Home</a> › 
-    <a href="/binh-blog/index.html?cat=Lập trình">Lập trình</a> › 
-    <span>Bài viết thứ hai</span>
-    </nav>
-    
-    <h1>Bài viết thứ 2</h1>
-    <p id="post-meta">Đang tải...</p>
-    <!-- MỤC LỤC -->
-    <div id="toc" style="background:#f8f4ff;border-left:4px solid #b699ff;padding:16px;border-radius:8px;margin:20px 0;">
-    <strong>Mục lục</strong>
-    <ul id="toc-list" style="margin-top:10px;"></ul>
-    </div>
-    <p>Nhiều bạn hỏi mình rằng nên bắt đầu học lập trình từ ngôn ngữ nào. Thật ra, ngôn ngữ không quan trọng bằng tư duy lập trình. Điều quan trọng là bạn hiểu được biến, hàm, điều kiện, vòng lặp...</p>
-
-    <img src="https://picsum.photos/800/450?random=10" alt="Ảnh minh họa">
-
-    <p> Thêm nội dung bài viết ...</p>
-
-    <a href="/binh-blog/index.html" class="back">← Trở lại trang chủ</a>
-
-    <script>
-      if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark");
-
-      function calculateReadingTime() {
-        const text = document.body.innerText;
-        const words = text.trim().split(/\s+/).length;
-        const minutes = Math.ceil(words / 200);
-        const date = document.querySelector("meta[name='date']").content;
-        document.getElementById("post-meta").innerHTML = `Đăng ngày: ${date} · 📖 ${minutes} phút đọc`;
-      }
-      calculateReadingTime();
-    </script>
-  </main>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const article = document.getElementById("article");
-  const tocList = document.getElementById("toc-list");
-  const headings = article.querySelectorAll("h2, h3");
-
-  headings.forEach((heading, index) => {
-    const id = "section-" + index;
-    heading.setAttribute("id", id);
-
-    const li = document.createElement("li");
-    li.style.margin = "6px 0";
-
-    li.innerHTML = `<a href="#${id}" style="text-decoration:none;color:#7f5af0;">${heading.innerText}</a>`;
-    tocList.appendChild(li);
-  });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const article = document.getElementById("article");
-  const tocList = document.getElementById("toc-list");
-  const headings = article.querySelectorAll("h2, h3");
-
-  headings.forEach((heading, index) => {
-    const id = "section-" + index;
-    heading.setAttribute("id", id);
-
-    const li = document.createElement("li");
-    li.style.margin = "6px 0";
-
-    li.innerHTML = `<a href="#${id}" style="text-decoration:none;color:#7f5af0;">${heading.innerText}</a>`;
-    tocList.appendChild(li);
-  });
-});
-</script>
-</body>
-</html>
+<p>Kết luận: Tập trung tư duy → ngôn ngữ tự nhiên sẽ dễ.</p>
