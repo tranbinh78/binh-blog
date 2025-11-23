@@ -247,7 +247,19 @@ if (!file) {
           document.getElementById("post-content").innerHTML = html;
           generateTOC();
         });
+// ⭐ KÍCH HOẠT NÚT HIỆN / ẨN ĐÁP ÁN (dành cho bài có answer-box)
+setTimeout(() => {
+  const toggleBtn = document.getElementById("toggle-answer");
+  const answerBox = document.getElementById("answer-box");
 
+  if (toggleBtn && answerBox) {
+    toggleBtn.addEventListener("click", () => {
+      const hidden = answerBox.style.display === "none";
+      answerBox.style.display = hidden ? "block" : "none";
+      toggleBtn.innerText = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+  }
+}, 50);
 
       /* RELATED POSTS */
       const related = posts
@@ -280,17 +292,6 @@ if (!file) {
           `<a href="/binh-blog/post.html?file=${next.file}">${next.title}</a> ➡`;
       }
     });
-}
-// KÍCH HOẠT NÚT HIỆN / ẨN ĐÁP ÁN
-const toggleBtn = document.getElementById("toggle-answer");
-const answerBox = document.getElementById("answer-box");
-
-if (toggleBtn && answerBox) {
-  toggleBtn.addEventListener("click", () => {
-    const isHidden = answerBox.style.display === "none";
-    answerBox.style.display = isHidden ? "block" : "none";
-    toggleBtn.innerText = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-  });
 }
 
 /* TOC GENERATOR */
