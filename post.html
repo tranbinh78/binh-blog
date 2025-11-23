@@ -184,7 +184,43 @@ a.back:hover {
   <div id="prev-post"></div>
   <div id="next-post"></div>
 </div>
-  
+
+#author-box {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f8f5ff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+#author-box img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#share-box {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+#share-box button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: #e7dbff;
+  border: 1px solid #c5b0ff;
+  cursor: pointer;
+  font-weight: 600;
+}
+#share-box button:hover {
+  background: #d8c4ff;
+}
+
   </style>
 </head>
 
@@ -215,6 +251,22 @@ a.back:hover {
 <div id="post-nav" style="margin-top:40px; display:flex; justify-content:space-between; font-size:18px;">
   <span id="prev-post"></span>
   <span id="next-post"></span>
+</div>
+
+<!-- AUTHOR BOX -->
+<div id="author-box">
+  <img src="/binh-blog/binh-avatar.jpg" alt="Tác giả" id="author-avatar">
+  <div>
+    <h3>Tran Binh</h3>
+    <p>Blogger — chia sẻ kiến thức tiếng Anh, lập trình và cuộc sống.</p>
+  </div>
+</div>
+
+<!-- SHARE BUTTONS -->
+<div id="share-box">
+  <button onclick="shareFB()">📘 Chia sẻ Facebook</button>
+  <button onclick="shareZalo()">💬 Chia sẻ Zalo</button>
+  <button onclick="copyLink()">🔗 Copy link</button>
 </div>
   
 <a href="index.html" class="back">← Quay lại trang chủ</a>
@@ -303,6 +355,22 @@ if (index < posts.length - 1) {
       document.getElementById("toc-container").style.display = "none";
     }
   }
+
+function shareFB() {
+  const url = window.location.href;
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, "_blank");
+}
+
+function shareZalo() {
+  const url = window.location.href;
+  window.open(`https://zalo.me/share?url=${encodeURIComponent(url)}`, "_blank");
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href);
+  alert("Đã copy link bài viết!");
+}
+  
 </script>
 
 </body>
