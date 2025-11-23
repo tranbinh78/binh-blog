@@ -1,147 +1,268 @@
-<h1>Thì Hiện Tại Đơn (Present Simple)</h1>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thì Hiện Tại Đơn (Present Simple) | Binh Blog</title>
 
-<p>Thì Hiện Tại Đơn là thì cơ bản và quan trọng nhất trong tiếng Anh. Bạn sẽ dùng nó mỗi ngày để nói về thói quen, sự thật, thời gian biểu, và những điều luôn đúng.</p>
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
-<img src="https://picsum.photos/900/450?random=100" alt="Present Simple">
+  <!-- CSS CHUNG VỚI post.html -->
+  <style>
+    body {
+      font-family: "Be Vietnam Pro", sans-serif;
+      background: #fffdf9;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
+      color: #444;
+    }
 
-<h2>1. Khi nào dùng Thì Hiện Tại Đơn?</h2>
+    .post-layout {
+      max-width: 1150px;
+      margin: 40px auto;
+      display: flex;
+      gap: 40px;
+      padding: 0 20px;
+    }
 
-<h3>1.1 Thói quen – hành động lặp lại</h3>
-<p>Ví dụ:</p>
-<ul>
-  <li>I drink coffee every morning. (Tôi uống cà phê mỗi sáng.)</li>
-  <li>She goes to school at 7 AM. (Cô ấy đi học lúc 7 giờ.)</li>
-</ul>
+    #sidebar {
+      flex: 1;
+      background: #f8f1ff;
+      border: 1px solid #e7dbff;
+      border-radius: 12px;
+      padding: 20px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+      text-align: center;
+    }
 
-<h3>1.2 Sự thật hiển nhiên</h3>
-<ul>
-  <li>The sun rises in the east. (Mặt trời mọc ở hướng đông.)</li>
-  <li>Water boils at 100°C. (Nước sôi ở 100°C.)</li>
-</ul>
+    #sidebar img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 12px;
+    }
 
-<h3>1.3 Lịch trình / thời gian biểu</h3>
-<ul>
-  <li>The train leaves at 6:30. (Tàu rời lúc 6:30.)</li>
-</ul>
+    #post-article {
+      flex: 3;
+    }
 
-<h3>1.4 Sở thích / cảm xúc / mô tả</h3>
-<ul>
-  <li>I like English. (Tôi thích tiếng Anh.)</li>
-  <li>She feels happy. (Cô ấy cảm thấy vui.)</li>
-</ul>
+    #post-article h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #222;
+    }
 
-<h2>2. Công thức Thì Hiện Tại Đơn</h2>
+    #post-article img {
+      width: 100%;
+      border-radius: 14px;
+      margin: 22px 0;
+    }
 
-<h3>2.1 Khẳng định</h3>
-<pre><code>
-S + V(s/es) + O
-</code></pre>
-<p>Lưu ý:</p>
-<ul>
-  <li>He/She/It → thêm <strong>s/es</strong></li>
-  <li>I/You/We/They → giữ nguyên động từ</li>
-</ul>
+    /* TOC */
+    #toc-container {
+      background:#f8f4ff;
+      border-left:4px solid #b699ff;
+      padding:16px;
+      border-radius:8px;
+      margin:20px 0;
+    }
 
-<h3>Ví dụ:</h3>
-<ul>
-  <li>He plays football.</li>
-  <li>They work very hard.</li>
-</ul>
+    #toc-list li {
+      list-style:none;
+      margin:5px 0;
+      cursor:pointer;
+      color:#4635d4;
+    }
 
-<h3>2.2 Phủ định</h3>
-<pre><code>
-S + do/does + not + V
-</code></pre>
+    #toc-list li:hover { text-decoration: underline; }
 
-<ul>
-  <li>He doesn’t play football.</li>
-  <li>They don’t work on Sunday.</li>
-</ul>
+    .toc-level-2 { margin-left: 15px; }
+    .toc-level-3 { margin-left: 30px; }
 
-<h3>2.3 Câu hỏi Yes/No</h3>
-<pre><code>
-Do/Does + S + V ?
-</code></pre>
+    /* BUTTON */
+    button {
+      font-family: inherit;
+    }
 
-<ul>
-  <li>Do you like English?</li>
-  <li>Does she live in Hanoi?</li>
-</ul>
+    #toggle-answer {
+      padding:10px 16px;
+      background:#d9d1ff;
+      border:1px solid #bcb0ff;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      margin-bottom:15px;
+    }
 
-<h3>2.4 Câu hỏi WH</h3>
-<pre><code>
-Wh- + do/does + S + V ?
-</code></pre>
+    /* BACK BUTTON */
+    a.back {
+      display:block;
+      margin-top:35px;
+      padding:10px 18px;
+      background:#d9d1ff;
+      border-radius:8px;
+      text-decoration:none;
+      color:#333;
+      font-weight:600;
+      width: fit-content;
+    }
 
-<ul>
-  <li>Where does he work?</li>
-  <li>What do you do?</li>
-</ul>
+    a.back:hover { background:#c8bef8; }
+  </style>
+</head>
 
-<h2>3. Dấu hiệu nhận biết</h2>
-<ul>
-  <li>every day / week / month</li>
-  <li>usually, often, always, sometimes</li>
-  <li>once/twice a week</li>
-</ul>
+<body>
 
-<h2>4. 10 Bài tập Thì Hiện Tại Đơn</h2>
+<div class="post-layout">
 
-<ol>
-  <li>He ______ (go) to school every day.</li>
-  <li>They ______ (not/play) football on Sunday.</li>
-  <li>______ she ______ (like) music?</li>
-  <li>My father ______ (work) in a hospital.</li>
-  <li>We ______ (study) English every night.</li>
-  <li>The sun ______ (rise) in the east.</li>
-  <li>She ______ (not/eat) meat.</li>
-  <li>______ you ______ (live) near here?</li>
-  <li>Cats ______ (drink) milk.</li>
-  <li>He ______ (not/go) to bed early.</li>
-</ol>
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
+    <h3>Xin chào, mình là Bình 👋</h3>
+    <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
+    <p>
+      <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
+      <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
+    </p>
+  </aside>
 
-<h2>Đáp án</h2>
+  <!-- ARTICLE -->
+  <main id="post-article">
 
-<button id="toggle-answer" 
-        style="
-          padding:10px 16px;
-          background:#ceb9ff;
-          border:none;
-          border-radius:8px;
-          font-weight:600;
-          cursor:pointer;
-          margin-bottom:12px;
-        ">
-  👉 Hiện đáp án
-</button>
+    <h1>Thì Hiện Tại Đơn (Present Simple)</h1>
 
-<div id="answer-box" style="display:none; transition:0.3s;">
-  <ol>
-    <li>goes</li>
-    <li>don’t play</li>
-    <li>Does – like</li>
-    <li>works</li>
-    <li>study</li>
-    <li>rises</li>
-    <li>doesn’t eat</li>
-    <li>Do – live</li>
-    <li>drink</li>
-    <li>doesn’t go</li>
-  </ol>
+    <div id="toc-container">
+      <h3>Mục lục</h3>
+      <ul id="toc-list"></ul>
+    </div>
+
+    <p>Thì Hiện Tại Đơn là thì cơ bản và quan trọng nhất trong tiếng Anh...</p>
+
+    <img src="https://picsum.photos/900/450?random=100" alt="Present Simple">
+
+    <h2>1. Khi nào dùng Thì Hiện Tại Đơn?</h2>
+
+    <h3>1.1 Thói quen – hành động lặp lại</h3>
+    <ul>
+      <li>I drink coffee every morning.</li>
+      <li>She goes to school at 7 AM.</li>
+    </ul>
+
+    <h3>1.2 Sự thật hiển nhiên</h3>
+    <ul>
+      <li>The sun rises in the east.</li>
+      <li>Water boils at 100°C.</li>
+    </ul>
+
+    <h3>1.3 Lịch trình</h3>
+    <ul>
+      <li>The train leaves at 6:30.</li>
+    </ul>
+
+    <h3>1.4 Sở thích / cảm xúc</h3>
+    <ul>
+      <li>I like English.</li>
+    </ul>
+
+    <h2>2. Công thức Thì Hiện Tại Đơn</h2>
+
+    <h3>2.1 Khẳng định</h3>
+    <pre><code>S + V(s/es) + O</code></pre>
+
+    <h3>2.2 Phủ định</h3>
+    <pre><code>S + do/does + not + V</code></pre>
+
+    <h3>2.3 Câu hỏi Yes/No</h3>
+    <pre><code>Do/Does + S + V ?</code></pre>
+
+    <h3>2.4 Câu hỏi WH</h3>
+    <pre><code>Wh- + do/does + S + V ?</code></pre>
+
+    <h2>3. Dấu hiệu nhận biết</h2>
+    <ul>
+      <li>every day / week / month</li>
+      <li>usually, often, always</li>
+      <li>once/twice a week</li>
+    </ul>
+
+    <h2>4. 10 Bài tập</h2>
+
+    <ol>
+      <li>He ______ (go) to school every day.</li>
+      <li>They ______ (not/play) football on Sunday.</li>
+      <li>______ she ______ (like) music?</li>
+      <li>My father ______ (work) in a hospital.</li>
+      <li>We ______ (study) English every night.</li>
+      <li>The sun ______ (rise) in the east.</li>
+      <li>She ______ (not/eat) meat.</li>
+      <li>______ you ______ (live) near here?</li>
+      <li>Cats ______ (drink) milk.</li>
+      <li>He ______ (not/go) to bed early.</li>
+    </ol>
+
+    <h2>Đáp án</h2>
+
+    <button id="toggle-answer">👉 Hiện đáp án</button>
+
+    <div id="answer-box" style="display:none;">
+      <ol>
+        <li>goes</li>
+        <li>don’t play</li>
+        <li>Does – like</li>
+        <li>works</li>
+        <li>study</li>
+        <li>rises</li>
+        <li>doesn’t eat</li>
+        <li>Do – live</li>
+        <li>drink</li>
+        <li>doesn’t go</li>
+      </ol>
+    </div>
+
+    <p><strong>Chúc bạn học tốt! ❤️</strong></p>
+
+    <a href="/binh-blog/index.html" class="back">← Quay lại trang chủ</a>
+
+  </main>
 </div>
 
+<!-- TOC SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const content = document.getElementById("post-article");
+  const tocList = document.getElementById("toc-list");
+  const headings = content.querySelectorAll("h2, h3");
+
+  headings.forEach((h, index) => {
+    h.id = "section-" + index;
+
+    const li = document.createElement("li");
+    li.classList.add("toc-level-" + (h.tagName === "H2" ? "2" : "3"));
+    li.textContent = h.innerText;
+
+    li.onclick = () => {
+      document.getElementById(h.id).scrollIntoView({ behavior: "smooth" });
+    };
+
+    tocList.appendChild(li);
+  });
+});
+</script>
+
+<!-- ANSWER TOGGLE -->
 <script>
 document.getElementById("toggle-answer").addEventListener("click", function () {
   const box = document.getElementById("answer-box");
 
-  if (box.style.display === "none") {
-    box.style.display = "block";
-    this.textContent = "👈 Ẩn đáp án";
-  } else {
-    box.style.display = "none";
-    this.textContent = "👉 Hiện đáp án";
-  }
+  const isHidden = box.style.display === "none";
+
+  box.style.display = isHidden ? "block" : "none";
+  this.innerText = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
 });
 </script>
 
-<p><strong>Chúc bạn học tốt! ❤️</strong></p>
+</body>
+</html>
