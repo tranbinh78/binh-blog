@@ -238,6 +238,34 @@ code {
   font-size: 15px;
   line-height: 1.6;
 } 
+
+.related-box {
+  background: #f7f3ff;
+  padding: 18px;
+  margin-top: 40px;
+  border-radius: 12px;
+  border: 1px solid #e1d4ff;
+}
+
+.related-box h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #4b3bbd;
+}
+
+.related-item {
+  margin: 8px 0;
+}
+
+.related-item a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #3b35c3;
+}
+
+.related-item a:hover {
+  text-decoration: underline;
+}
   
   </style>
 </head>
@@ -258,6 +286,12 @@ code {
     <div id="post-content">Đang tải nội dung...</div>
   </div>
 
+<!-- Bài viết liên quan -->
+<div id="related-posts" class="related-box">
+  <h3>Bài viết liên quan</h3>
+  <div id="related-list"></div>
+</div>
+  
   <aside id="post-toc">
     <div id="toc-container">
       <h3>Mục lục</h3>
@@ -318,8 +352,29 @@ code {
             // ⭐ gọi TOC tại đúng vị trí
             generateTOC();
           });
-// ⭐⭐ CHÈN PREV/NEXT Ở ĐÂY ⭐⭐
 
+// --- TẠO DANH SÁCH BÀI VIẾT LIÊN QUAN ---
+const related = posts
+  .filter(p => p.category === post.category && p.file !== post.file)
+  .slice(0, 3);  // lấy 3 bài
+
+const relatedBox = document.getElementById("related-list");
+relatedBox.innerHTML = "";
+
+// Nếu không có bài liên quan → ẩn box
+if (related.length === 0) {
+  document.getElementById("related-posts").style.display = "none";
+} else {
+  related.forEach(r => {
+    relatedBox.innerHTML += `
+      <div class="related-item">
+        <a href="/binh-blog/post.html?file=${r.file}">${r.title}</a>
+      </div>
+    `;
+  });
+}
+        
+// ⭐⭐ CHÈN PREV/NEXT Ở ĐÂY ⭐⭐
 // Xác định vị trí bài hiện tại trong danh sách
 const index = posts.findIndex(p => p.file === file);
 
@@ -373,7 +428,7 @@ if (index < posts.length - 1) {
       document.getElementById("toc-container").style.display = "none";
     }
   }
-
+  
 function shareFB() {
   const url = window.location.href;
   window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, "_blank");
