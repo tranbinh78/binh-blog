@@ -101,17 +101,47 @@ Wh- + do/does + S + V ?
 </ol>
 
 <h2>Đáp án</h2>
-<ol>
-  <li>goes</li>
-  <li>don’t play</li>
-  <li>Does – like</li>
-  <li>works</li>
-  <li>study</li>
-  <li>rises</li>
-  <li>doesn’t eat</li>
-  <li>Do – live</li>
-  <li>drink</li>
-  <li>doesn’t go</li>
-</ol>
+
+<button id="toggle-answer" 
+        style="
+          padding:10px 16px;
+          background:#ceb9ff;
+          border:none;
+          border-radius:8px;
+          font-weight:600;
+          cursor:pointer;
+          margin-bottom:12px;
+        ">
+  👉 Hiện đáp án
+</button>
+
+<div id="answer-box" style="display:none; transition:0.3s;">
+  <ol>
+    <li>goes</li>
+    <li>don’t play</li>
+    <li>Does – like</li>
+    <li>works</li>
+    <li>study</li>
+    <li>rises</li>
+    <li>doesn’t eat</li>
+    <li>Do – live</li>
+    <li>drink</li>
+    <li>doesn’t go</li>
+  </ol>
+</div>
+
+<script>
+document.getElementById("toggle-answer").addEventListener("click", function () {
+  const box = document.getElementById("answer-box");
+
+  if (box.style.display === "none") {
+    box.style.display = "block";
+    this.textContent = "👈 Ẩn đáp án";
+  } else {
+    box.style.display = "none";
+    this.textContent = "👉 Hiện đáp án";
+  }
+});
+</script>
 
 <p><strong>Chúc bạn học tốt! ❤️</strong></p>
