@@ -252,17 +252,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- ANSWER TOGGLE -->
-<script>
-document.getElementById("toggle-answer").addEventListener("click", function () {
-  const box = document.getElementById("answer-box");
-
-  const isHidden = box.style.display === "none";
-
-  box.style.display = isHidden ? "block" : "none";
-  this.innerText = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-});
-</script>
-
 </body>
 </html>
