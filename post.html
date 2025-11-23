@@ -7,120 +7,92 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
- <!-- Highlight.js -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script> 
-  
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
 <style>
 
-/* ===== GENERAL ===== */
+/* ==== GENERAL ==== */
 body {
   font-family: "Be Vietnam Pro", sans-serif;
-  max-width: 760px;
-  margin: auto;
-  padding: 30px 20px;
   background: #fafafa;
   color: #222;
+  margin: 0;
+  padding: 0;
   line-height: 1.85;
 }
 
-/* TITLE */
-h1 {
+.post-layout {
+  max-width: 1150px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+}
+
+/* ==== SIDEBAR ==== */
+#sidebar {
+  flex: 1;
+  background: #f8f1ff;
+  border: 1px solid #e7dbff;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  text-align: center;
+}
+
+#sidebar img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+#post-article {
+  flex: 3;
+}
+
+/* ==== TITLES ==== */
+#post-title {
   font-size: 32px;
-  font-weight: 700;
   margin-bottom: 10px;
-  color: #222;
+  font-weight: 700;
 }
 
 .meta {
-  color: #777;
-  margin-bottom: 22px;
+  color: #555;
   font-size: 14px;
+  margin-bottom: 20px;
 }
 
-/* THUMBNAIL */
-img.thumb {
+/* ==== THUMBNAIL ==== */
+.thumb {
   width: 100%;
   border-radius: 14px;
   margin: 22px 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* CONTENT STYLE */
-#post-content {
-  margin-top: 25px;
-  font-size: 18px;
-}
-
+/* ==== CONTENT ==== */
 #post-content h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 30px;
   border-left: 4px solid #7a64ff;
   padding-left: 10px;
+  margin-top: 35px;
 }
 
 #post-content h3 {
-  font-size: 20px;
-  font-weight: 600;
   margin-top: 20px;
-  color: #333;
 }
 
-#post-content p {
-  margin: 14px 0;
-  line-height: 1.8;
-}
-
-#post-content ul, #post-content ol {
-  margin-left: 25px;
-  margin-bottom: 20px;
-}
-
-#post-content li {
-  margin: 8px 0;
-}
-
-/* IMAGES */
-#post-content img {
-  width: 100%;
-  border-radius: 10px;
-  margin: 18px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-/* BLOCKQUOTE */
-#post-content blockquote {
-  border-left: 4px solid #c0b4ff;
-  padding: 12px 18px;
-  background: #f5f2ff;
-  border-radius: 6px;
-  margin: 20px 0;
-  font-style: italic;
-}
-
-/* CODE BLOCK */
-#post-content pre {
-  background: #1e1e1e;
-  color: #f0f0f0;
-  padding: 16px;
-  border-radius: 10px;
-  overflow-x: auto;
-  margin: 20px 0;
-}
-
-/* TOC */
+/* ==== TOC ==== */
 #toc-container {
-  background: #f8f5ff;
-  padding: 18px;
-  border-radius: 12px;
-  border: 1px solid #e0d8ff;
+  background: #f8f4ff;
+  border-left: 4px solid #b699ff;
+  padding: 16px;
+  border-radius: 8px;
   margin: 25px 0;
-}
-
-#toc-container h3 {
-  margin-bottom: 10px;
 }
 
 #toc-list li {
@@ -130,66 +102,25 @@ img.thumb {
   color: #4635d4;
 }
 
-#toc-list li:hover {
-  text-decoration: underline;
+/* ==== RELATED POSTS ==== */
+.related-box {
+  background: #f7f3ff;
+  padding: 18px;
+  margin-top: 40px;
+  border-radius: 12px;
+  border: 1px solid #e1d4ff;
 }
 
-.toc-level-2 { margin-left: 15px; }
-.toc-level-3 { margin-left: 30px; }
-
-/* BACK BUTTON */
-a.back {
-  display: inline-block;
-  margin-top: 35px;
-  padding: 10px 18px;
-  background: #d9d1ff;
+/* ==== SHARE ==== */
+#share-box button {
+  padding: 10px 15px;
   border-radius: 8px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
+  background: #e7dbff;
+  border: 1px solid #c5b0ff;
+  cursor: pointer;
 }
 
-a.back:hover {
-  background: #c8bef8;
-}
-
-/* ===== STICKY TOC ===== */
-#toc-container {
-  position: sticky;
-  top: 20px;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-/* ===== 2-COLUMN LAYOUT ===== */
-#post-layout {
-  display: flex;
-  gap: 30px;
-}
-
-#post-main {
-  flex: 3;
-}
-
-#post-toc {
-  flex: 1;
-  position: relative;
-}
-
-@media(max-width: 900px) {
-  #post-layout {
-    flex-direction: column;
-  }
-  #post-toc {
-    order: -1;
-  }
-}
-
-<div id="post-nav" style="margin-top:40px; display:flex; justify-content:space-between;">
-  <div id="prev-post"></div>
-  <div id="next-post"></div>
-</div>
-
+/* ==== AUTHOR BOX ==== */
 #author-box {
   margin-top: 40px;
   padding: 20px;
@@ -203,298 +134,194 @@ a.back:hover {
 
 #author-box img {
   width: 70px;
-  height: 70px;
   border-radius: 50%;
-  object-fit: cover;
 }
 
-#share-box {
-  margin-top: 20px;
-  display: flex;
-  gap: 12px;
-}
-
-#share-box button {
-  padding: 10px 15px;
-  border-radius: 8px;
-  background: #e7dbff;
-  border: 1px solid #c5b0ff;
-  cursor: pointer;
-  font-weight: 600;
-}
-#share-box button:hover {
-  background: #d8c4ff;
-}
-
- pre {
-  background: #f4f4f4;
-  padding: 16px;
-  overflow-x: auto;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-
-code {
-  font-size: 15px;
-  line-height: 1.6;
-} 
-
-.related-box {
-  background: #f7f3ff;
-  padding: 18px;
-  margin-top: 40px;
-  border-radius: 12px;
-  border: 1px solid #e1d4ff;
-}
-
-.related-box h3 {
-  margin-bottom: 15px;
-  font-size: 20px;
-  color: #4b3bbd;
-}
-
-.related-item {
-  margin: 8px 0;
-}
-
-.related-item a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #3b35c3;
-}
-
-.related-item a:hover {
-  text-decoration: underline;
-}
-
-.post-layout {
-  max-width: 1150px;
-  margin: 40px auto;
-  display: flex;
-  gap: 40px;
-}
-
-#sidebar {
-  flex: 1;
-  background: #f8f1ff;
-  border: 1px solid #e7dbff;
-  border-radius: 12px;
-  padding: 20px;
-  height: fit-content;
-  position: sticky;
-  top: 20px;
-  text-align: center;
-}
-
-#post-article {
-  flex: 3;
-}
-
-#toc-container {
-  background:#f8f4ff;
-  border-left:4px solid #b699ff;
-  padding:16px;
-  border-radius:8px;
-  margin:20px 0;
-}
-  
-  </style>
+</style>
 </head>
 
 <body>
 
-  <h1 id="post-title"></h1>
-  <p class="meta">
-    <span id="post-date"></span> • 
-    <span id="post-category"></span>
-  </p>
+<div class="post-layout">
 
-<!-- ⭐ TOC -->
-<div id="post-layout">
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
+    <h3>Xin chào, mình là Bình 👋</h3>
+    <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
+    <p>
+      <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
+      <a href="https://github.com/tranbin78" target="_blank">GitHub</a>
+    </p>
+  </aside>
 
-    <aside id="sidebar">
-        <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
-        <h3>Xin chào, mình là Bình 👋</h3>
-        <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
-        <p>
-          <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
-          <a href="https://github.com/tranbinh78" target="_blank">GitHub</a>
-        </p>
-    </aside>
-
-    <main id="post-article">
-        <h1 id="post-title"></h1>
-        <p class="meta">
-            <span id="post-date"></span> • 
-            <span id="post-category"></span>
-        </p>
-
-        <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
-
-        <!-- TOC -->
-        <div id="toc-container">
-            <h3>Mục lục</h3>
-            <ul id="toc-list"></ul>
-        </div>
-
-        <div id="post-content">Đang tải nội dung...</div>
-
-        <a href="index.html" class="back">← Quay lại trang chủ</a>
-    </main>
-</div>
-</div>
-
-<!-- Bài viết liên quan -->
-<div id="related-posts" class="related-box">
-  <h3>Bài viết liên quan</h3>
-  <div id="related-list"></div>
-</div>
-</div>
-
-<div id="post-nav" style="margin-top:40px; display:flex; justify-content:space-between; font-size:18px;">
-  <span id="prev-post"></span>
-  <span id="next-post"></span>
-</div>
-
-<!-- AUTHOR BOX -->
-<div id="author-box">
-  <img src="/binh-blog/binh-avatar.jpg" alt="Tác giả" id="author-avatar">
-  <div>
-    <h3>Tran Binh</h3>
-    <p>Blogger — chia sẻ kiến thức tiếng Anh, lập trình và cuộc sống.</p>
-  </div>
-</div>
-
-<!-- SHARE BUTTONS -->
-<div id="share-box">
-  <button onclick="shareFB()">📘 Chia sẻ Facebook</button>
-  <button onclick="shareZalo()">💬 Chia sẻ Zalo</button>
-  <button onclick="copyLink()">🔗 Copy link</button>
-</div>
   
-<a href="index.html" class="back">← Quay lại trang chủ</a>
+  <!-- MAIN ARTICLE -->
+  <main id="post-article">
+
+    <h1 id="post-title"></h1>
+    <p class="meta">
+      <span id="post-date"></span> • 
+      <span id="post-category"></span>
+    </p>
+
+    <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
+
+
+    <!-- TOC -->
+    <div id="toc-container">
+      <h3>Mục lục</h3>
+      <ul id="toc-list"></ul>
+    </div>
+
+
+    <!-- CONTENT -->
+    <div id="post-content">Đang tải nội dung...</div>
+
+
+    <!-- BACK -->
+    <a href="index.html" class="back">← Quay lại trang chủ</a>
+
+
+    <!-- RELATED -->
+    <div id="related-posts" class="related-box">
+      <h3>Bài viết liên quan</h3>
+      <div id="related-list"></div>
+    </div>
+
+
+    <!-- PREV / NEXT -->
+    <div id="post-nav" style="margin-top:40px; display:flex; justify-content:space-between;">
+      <span id="prev-post"></span>
+      <span id="next-post"></span>
+    </div>
+
+
+    <!-- AUTHOR BOX -->
+    <div id="author-box">
+      <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
+      <div>
+        <h3>Tran Binh</h3>
+        <p>Blogger — chia sẻ kiến thức tiếng Anh, lập trình và cuộc sống.</p>
+      </div>
+    </div>
+
+
+    <!-- SHARE -->
+    <div id="share-box">
+      <button onclick="shareFB()">📘 Chia sẻ Facebook</button>
+      <button onclick="shareZalo()">💬 Chia sẻ Zalo</button>
+      <button onclick="copyLink()">🔗 Copy link</button>
+    </div>
+
+  </main>
+
+</div>
+
 
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const file = params.get("file");
 
-  if (!file) {
-    document.getElementById("post-content").innerHTML = "<p>Lỗi: không tìm thấy bài viết.</p>";
-  } else {
+const params = new URLSearchParams(window.location.search);
+const file = params.get("file");
 
-    fetch("/binh-blog/posts/posts.json")
-      .then(res => res.json())
-      .then(posts => {
-
-        const post = posts.find(p => p.file === file);
-
-        if (!post) return;
-
-        document.getElementById("post-title").textContent = post.title;
-        document.getElementById("post-date").textContent = "📅 " + post.date;
-        document.getElementById("post-category").textContent = "📂 " + post.category;
-        document.getElementById("post-thumb").src = post.thumbnail;
-        
-        fetch("/binh-blog/posts/" + post.file)
-          .then(res => res.text())
-          .then(html => {
-            document.getElementById("post-content").innerHTML = html;
-
-            // ⭐ gọi TOC tại đúng vị trí
-            generateTOC();
-          });
-
-// --- TẠO DANH SÁCH BÀI VIẾT LIÊN QUAN ---
-const related = posts
-  .filter(p => p.category === post.category && p.file !== post.file)
-  .slice(0, 3);  // lấy 3 bài
-
-const relatedBox = document.getElementById("related-list");
-relatedBox.innerHTML = "";
-
-// Nếu không có bài liên quan → ẩn box
-if (related.length === 0) {
-  document.getElementById("related-posts").style.display = "none";
+if (!file) {
+  document.getElementById("post-content").innerHTML = "<p>Lỗi: không tìm thấy bài viết.</p>";
 } else {
-  related.forEach(r => {
-    relatedBox.innerHTML += `
-      <div class="related-item">
-        <a href="/binh-blog/post.html?file=${r.file}">${r.title}</a>
-      </div>
-    `;
-  });
-}
-        
-// ⭐⭐ CHÈN PREV/NEXT Ở ĐÂY ⭐⭐
-// Xác định vị trí bài hiện tại trong danh sách
-const index = posts.findIndex(p => p.file === file);
 
-// Bài trước
-if (index > 0) {
-  const prev = posts[index - 1];
-  document.getElementById("prev-post").innerHTML = 
-    `⬅ <a href="/binh-blog/post.html?file=${prev.file}">${prev.title}</a>`;
-}
+  fetch("/binh-blog/posts/posts.json")
+    .then(res => res.json())
+    .then(posts => {
 
-// Bài tiếp theo
-if (index < posts.length - 1) {
-  const next = posts[index + 1];
-  document.getElementById("next-post").innerHTML =
-    `<a href="/binh-blog/post.html?file=${next.file}">${next.title}</a> ➡`;
-}
- 
-  });
-  }
+      const post = posts.find(p => p.file === file);
+      if (!post) return;
 
-  function generateTOC() {
-    const content = document.getElementById("post-content");
-    const tocList = document.getElementById("toc-list");
+      document.getElementById("post-title").textContent = post.title;
+      document.getElementById("post-date").textContent = "📅 " + post.date;
+      document.getElementById("post-category").textContent = "📂 " + post.category;
+      document.getElementById("post-thumb").src = post.thumbnail;
 
-    if (!content || !tocList) return;
 
-    tocList.innerHTML = "";
-    const headings = content.querySelectorAll("h1, h2, h3");
-
-    headings.forEach((h, index) => {
-      if (!h.id) h.id = "heading-" + index;
-
-      const li = document.createElement("li");
-
-      let level = h.tagName === "H1" ? 1 :
-                  h.tagName === "H2" ? 2 : 3;
-
-      li.classList.add("toc-level-" + level);
-      li.textContent = h.textContent;
-
-      li.addEventListener("click", () => {
-        document.getElementById(h.id).scrollIntoView({
-          behavior: "smooth"
+      fetch("/binh-blog/posts/" + post.file)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("post-content").innerHTML = html;
+          generateTOC();
         });
-      });
 
-      tocList.appendChild(li);
+
+      /* RELATED POSTS */
+      const related = posts
+        .filter(p => p.category === post.category && p.file !== post.file)
+        .slice(0, 3);
+
+      if (related.length === 0) {
+        document.getElementById("related-posts").style.display = "none";
+      } else {
+        const list = document.getElementById("related-list");
+        related.forEach(r => {
+          list.innerHTML += `<div class="related-item">
+            <a href="/binh-blog/post.html?file=${r.file}">${r.title}</a>
+          </div>`;
+        });
+      }
+
+      /* PREV / NEXT */
+      const index = posts.findIndex(p => p.file === file);
+
+      if (index > 0) {
+        const prev = posts[index - 1];
+        document.getElementById("prev-post").innerHTML =
+          `⬅ <a href="/binh-blog/post.html?file=${prev.file}">${prev.title}</a>`;
+      }
+
+      if (index < posts.length - 1) {
+        const next = posts[index + 1];
+        document.getElementById("next-post").innerHTML =
+          `<a href="/binh-blog/post.html?file=${next.file}">${next.title}</a> ➡`;
+      }
     });
+}
 
-    if (headings.length === 0) {
-      document.getElementById("toc-container").style.display = "none";
-    }
-  }
-  
+
+/* TOC GENERATOR */
+function generateTOC() {
+  const content = document.getElementById("post-content");
+  const tocList = document.getElementById("toc-list");
+
+  tocList.innerHTML = "";
+
+  const headings = content.querySelectorAll("h1, h2, h3");
+
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = "heading-" + i;
+
+    const li = document.createElement("li");
+    li.textContent = h.textContent;
+
+    li.onclick = () => document.getElementById(h.id).scrollIntoView({ behavior: "smooth" });
+
+    tocList.appendChild(li);
+  });
+}
+
+
+/* SHARE */
 function shareFB() {
-  const url = window.location.href;
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, "_blank");
+  window.open(
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`,
+    "_blank"
+  );
 }
 
 function shareZalo() {
-  const url = window.location.href;
-  window.open(`https://zalo.me/share?url=${encodeURIComponent(url)}`, "_blank");
+  window.open(`https://zalo.me/share?url=${encodeURIComponent(location.href)}`, "_blank");
 }
 
 function copyLink() {
   navigator.clipboard.writeText(window.location.href);
   alert("Đã copy link bài viết!");
 }
-  
+
 </script>
 
 </body>
