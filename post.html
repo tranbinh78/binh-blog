@@ -265,7 +265,7 @@ if (!file) {
         });
       }
 
-      /* PREV / NEXT */
+    /* PREV / NEXT */
       const index = posts.findIndex(p => p.file === file);
 
       if (index > 0) {
@@ -281,7 +281,17 @@ if (!file) {
       }
     });
 }
+// KÍCH HOẠT NÚT HIỆN / ẨN ĐÁP ÁN
+const toggleBtn = document.getElementById("toggle-answer");
+const answerBox = document.getElementById("answer-box");
 
+if (toggleBtn && answerBox) {
+  toggleBtn.addEventListener("click", () => {
+    const isHidden = answerBox.style.display === "none";
+    answerBox.style.display = isHidden ? "block" : "none";
+    toggleBtn.innerText = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+  });
+}
 
 /* TOC GENERATOR */
 function generateTOC() {
