@@ -148,6 +148,38 @@ a.back:hover {
   background: #c8bef8;
 }
 
+/* ===== STICKY TOC ===== */
+#toc-container {
+  position: sticky;
+  top: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* ===== 2-COLUMN LAYOUT ===== */
+#post-layout {
+  display: flex;
+  gap: 30px;
+}
+
+#post-main {
+  flex: 3;
+}
+
+#post-toc {
+  flex: 1;
+  position: relative;
+}
+
+@media(max-width: 900px) {
+  #post-layout {
+    flex-direction: column;
+  }
+  #post-toc {
+    order: -1;
+  }
+}
+  
   </style>
 </head>
 
@@ -160,15 +192,20 @@ a.back:hover {
   </p>
 
 <!-- ⭐ TOC -->
-<img id="post-thumb" class="thumb" src="" alt="Thumbnail">
+<div id="post-layout">
 
-<!-- TOC đặt đúng vị trí -->
-<div id="toc-container">
-  <h3>Mục lục</h3>
-  <ul id="toc-list"></ul>
+  <div id="post-main">
+    <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
+    <div id="post-content">Đang tải nội dung...</div>
+  </div>
+
+  <aside id="post-toc">
+    <div id="toc-container">
+      <h3>Mục lục</h3>
+      <ul id="toc-list"></ul>
+    </div>
+  </aside>
 </div>
-
-<div id="post-content">Đang tải nội dung...</div>
 
 <a href="index.html" class="back">← Quay lại trang chủ</a>
 
