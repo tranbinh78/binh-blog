@@ -189,6 +189,21 @@
     .btn-view:hover { background: #c4b5ff; }
     body.dark .btn-view { background: #3b335f; color: #eee; }
 
+.learned-tag {
+  background: #fff8d1;
+  color: #b08500;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+body.dark .learned-tag {
+  background: #5a4a00;
+  color: #ffeb8a;
+}
+    
   </style>
 </head>
 
@@ -202,6 +217,25 @@
   </div>
 
   <h1>📘 Grammar Index</h1>
+  <p id="progress-text" class="subtitle" style="margin-top:-10px;">
+  Đang tải tiến độ học...
+  </p>
+
+  <div id="progress-bar" style="
+  width: 100%;
+  height: 16px;
+  background: #e9e4ff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 25px;
+">
+  <div id="progress-fill" style="
+    height: 100%;
+    width: 0%;
+    background: #7b61ff;
+    transition: width 0.4s ease;
+  "></div>
+  </div>
   <p class="subtitle">Tự động cập nhật từ posts.json — hỗ trợ Dark Mode + Bộ lọc nâng cao</p>
 
   <!-- FILTER BAR -->
@@ -214,6 +248,9 @@
     <button class="filter-btn active" data-status="all">All</button>
     <button class="filter-btn" data-status="completed">Completed</button>
     <button class="filter-btn" data-status="soon">Coming Soon</button>
+    <button class="filter-btn" data-learn="learned">Đã học</button>
+    <button class="filter-btn" data-learn="notlearned">Chưa học</button>
+    
   </div>
 
   <!-- Search Box -->
@@ -330,6 +367,79 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
 });
+
+// ⭐ LEARNING PROGRESS SYSTEM ⭐
+let learned = JSON.parse(localStorage.getItem("learned") || "[]");
+
+// Khi người dùng bấm xem bài → thêm vào danh sách đã học
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-view")) {
+    const file = e.target.href.split("file=")[1];
+    if (!learned.includes(file)) {
+      learned.push(file);
+      localStorage.setItem("learned", JSON.stringify(learned));
+    }
+  }
+});
+
+// Cập nhật tag "Đã học" trên từng card
+function updateLearnedStatus() {
+  document.querySelectorAll(".card").forEach(card => {
+    const file = card.dataset.file;
+    if (learned.includes(file)) {
+      if (!card.querySelector(".learned-tag")) {
+        const tag = document.createElement("div");
+        tag.className = "learned-tag";
+        tag.textContent = "✓ Đã học";
+        card.insertBefore(tag, card.children[1]);
+      }
+      card.dataset.learn = "learned";
+    } else {
+      card.dataset.learn = "notlearned";
+    }
+  });
+}
+
+// ⭐ Tiến trình học
+function updateProgress() {
+  const total = document.querySelectorAll(".card").length;
+  const done = learned.filter(file =>
+    document.querySelector(`.card[data-file="${file}"]`)
+  ).length;
+
+  const percent = Math.round((done / total) * 100);
+
+  document.getElementById("progress-text").textContent =
+    `Tiến độ học: ${done}/${total} bài (${percent}%)`;
+
+  document.getElementById("progress-fill").style.width = percent + "%";
+}
+
+// Gọi khi load trang
+setTimeout(() => {
+  updateLearnedStatus();
+  updateProgress();
+}, 800);
+
+// ⭐ Filter đã học / chưa học
+document.querySelectorAll('[data-learn]').forEach(btn => {
+  btn.addEventListener("click", () => {
+    const value = btn.dataset.learn;
+
+    document.querySelectorAll(".filter-btn[data-learn]")
+      .forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    document.querySelectorAll(".card").forEach(card => {
+      if (value === "all") {
+        card.style.display = "flex";
+      } else {
+        card.style.display = (card.dataset.learn === value) ? "flex" : "none";
+      }
+    });
+  });
+});
+  
 </script>
 
 </body>
