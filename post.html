@@ -214,7 +214,7 @@ if (!file) {
   document.getElementById("post-content").innerHTML = "<p>Lỗi: không tìm thấy bài viết.</p>";
 } else {
 
-  fetch("/binh-blog/posts/posts.json")
+  fetch("posts/posts.json")
     .then(res => res.json())
     .then(posts => {
 
@@ -227,7 +227,7 @@ if (!file) {
       document.getElementById("post-thumb").src = post.thumbnail;
 
 
-      fetch("/binh-blog/posts/" + post.file)
+      fetch("posts/" + post.file)
         .then(res => res.text())
         .then(html => {
           document.getElementById("post-content").innerHTML = html;
