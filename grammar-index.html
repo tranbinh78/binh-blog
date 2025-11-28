@@ -285,6 +285,97 @@ body {
   50% { box-shadow: 0 0 8px rgba(150,150,150,0.6); }
   100% { box-shadow: 0 0 0px rgba(120,120,120,0.3); }
 }
+
+/* ROADMAP TITLE */
+.roadmap-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: #4635d4;
+}
+
+body.dark .roadmap-title {
+  color: #cfc4ff;
+}
+
+/* ROADMAP CONTAINER */
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* MỖI HÀNG */
+.roadmap-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* NODE (ITEM) */
+.roadmap-item {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid #b7a6ff;
+  min-width: 170px;
+  text-align: center;
+  font-weight: 600;
+  color: #4635d4;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.roadmap-item:hover {
+  background: #f1ebff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(100,80,255,0.2);
+}
+
+body.dark .roadmap-item {
+  background: #2a2536;
+  border-color: #917cff;
+  color: #cabdff;
+}
+
+body.dark .roadmap-item:hover {
+  background: #3b3355;
+  box-shadow: 0 4px 12px rgba(180,160,255,0.25);
+}
+
+/* COMPLETED */
+.roadmap-item.completed {
+  background: #e6f9ee;
+  border-color: #0fa34a;
+  color: #0f7738;
+}
+
+body.dark .roadmap-item.completed {
+  background: #203427;
+  color: #55ff93;
+}
+
+/* LEARNED */
+.roadmap-item.learned {
+  box-shadow: 0 0 10px rgba(255, 210, 75, 0.5);
+}
+
+/* COMING SOON */
+.roadmap-item.soon {
+  background: #f3f3f3;
+  color: #777;
+  border-color: #aaa;
+}
+
+body.dark .roadmap-item.soon {
+  background: #2e2e2e;
+  color: #aaa;
+  border-color: #666;
+}
     
   </style>
 </head>
@@ -299,6 +390,37 @@ body {
   </div>
 
   <h1>📘 Grammar Index</h1>
+
+  <div id="roadmap-container">
+  <h2 class="roadmap-title">🗺️ Lộ Trình Học 12 Thì Tiếng Anh</h2>
+
+  <div class="roadmap">
+
+    <!-- Hàng 1: Present -->
+    <div class="roadmap-row">
+      <div class="roadmap-item" data-file="present-simple.html">Present Simple</div>
+      <div class="roadmap-item" data-file="present-continuous.html">Present Continuous</div>
+      <div class="roadmap-item" data-file="present-perfect.html">Present Perfect</div>
+      <div class="roadmap-item" data-file="present-perfect-continuous.html">P. Perfect Continuous</div>
+    </div>
+
+    <!-- Hàng 2: Past -->
+    <div class="roadmap-row">
+      <div class="roadmap-item" data-file="past-simple.html">Past Simple</div>
+      <div class="roadmap-item" data-file="past-continuous.html">Past Continuous</div>
+      <div class="roadmap-item" data-file="past-perfect.html">Past Perfect</div>
+    </div>
+
+    <!-- Hàng 3: Future -->
+    <div class="roadmap-row">
+      <div class="roadmap-item" data-file="future-simple.html">Future Simple</div>
+      <div class="roadmap-item" data-file="future-continuous.html">Future Continuous</div>
+      <div class="roadmap-item" data-file="near-future.html">Near Future</div>
+    </div>
+
+  </div>
+</div>
+  
   <p id="progress-text" class="subtitle" style="margin-top:-10px;">
   Đang tải tiến độ học...
   </p>
@@ -529,6 +651,42 @@ document.querySelectorAll('[data-learn]').forEach(btn => {
     });
   });
 });
+
+// ⭐ ROADMAP SYSTEM
+function updateRoadmap() {
+  const roadmapItems = document.querySelectorAll(".roadmap-item");
+
+  roadmapItems.forEach(item => {
+    const file = item.dataset.file;
+
+    // Check file exists → Completed
+    fetch(`posts/${file}`).then(r => {
+      if (r.ok) {
+        item.classList.add("completed");
+      } else {
+        item.classList.add("soon");
+      }
+    });
+
+    // Check learned
+    if (learned.includes(file)) {
+      item.classList.add("learned");
+    }
+
+    // Click item → open bài nếu có
+    item.addEventListener("click", () => {
+      fetch(`posts/${file}`).then(r => {
+        if (r.ok) {
+          window.location.href = `post.html?file=${file}`;
+        } else {
+          alert("Bài này đang được xây dựng!");
+        }
+      });
+    });
+  });
+}
+
+setTimeout(updateRoadmap, 800);
   
 </script>
 
