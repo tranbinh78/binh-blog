@@ -10,78 +10,104 @@
   <style>
     body {
       font-family: "Be Vietnam Pro", sans-serif;
-      background: #fffdf9;
+      background: #faf9ff;
       margin: 0;
       padding: 0;
     }
 
     .container {
       max-width: 950px;
-      margin: 40px auto;
+      margin: 40px auto 80px;
       padding: 20px;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 34px;
       text-align: center;
       margin-bottom: 10px;
+      color: #2a235a;
+      font-weight: 800;
     }
 
+    .subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    /* SEARCH BOX */
+    #search-box {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #b9aaff;
+      border-radius: 10px;
+      font-size: 18px;
+      margin-bottom: 35px;
+      outline: none;
+    }
+
+    #search-box:focus {
+      border-color: #7b61ff;
+      box-shadow: 0 0 6px #cfc1ff;
+    }
+
+    /* GROUP TITLE */
     .group-title {
-      font-size: 24px;
+      font-size: 26px;
       margin-top: 40px;
       margin-bottom: 15px;
       font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 10px;
-      color: #333;
+      gap: 12px;
     }
 
     .icon {
-      font-size: 28px;
+      font-size: 30px;
     }
 
+    /* BOX */
     .list-box {
-      background: #f6f2ff;
-      padding: 18px 22px;
-      border-radius: 12px;
-      border-left: 5px solid #a480ff;
+      background: #f2edff;
+      padding: 20px 28px;
+      border-radius: 14px;
+      border-left: 6px solid #9378ff;
       margin-bottom: 30px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
     }
 
+    /* ITEM */
     .grammar-item {
-      display: block;
-      margin: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+      padding: 10px 14px;
       font-size: 18px;
       text-decoration: none;
-      color: #4734d3;
       font-weight: 600;
+      border-radius: 8px;
+      transition: 0.25s;
     }
 
     .grammar-item:hover {
-      text-decoration: underline;
+      background: #ece6ff;
+      transform: translateX(4px);
     }
 
-    /* 🔥 Highlight cho bài đã có file */
+    /* COMPLETED */
     .completed {
-      color: #0a8a32 !important;
-      font-weight: 700;
+      color: #087a3d !important;
+      background: #e6f9ee;
+      border-left: 4px solid #0fa34a;
     }
 
-    /* 🔥 Highlight cho bài chưa có file */
+    /* SOON */
     .soon {
-      color: #999 !important;
+      color: #777 !important;
+      background: #f3f3f3;
+      border-left: 4px solid #aaa;
       font-style: italic;
-    }
-
-    .note {
-      margin-top: 40px;
-      padding: 15px;
-      background: #e7fff5;
-      border-left: 4px solid #40b86d;
-      border-radius: 8px;
-      font-size: 16px;
     }
 
     .back {
@@ -98,7 +124,6 @@
     .back:hover {
       background: #c8bef8;
     }
-
   </style>
 </head>
 
@@ -107,14 +132,13 @@
 <div class="container">
 
   <h1>📘 Grammar Index</h1>
-  <p style="text-align:center; color:#555;">Danh sách toàn bộ các thì + ngữ pháp quan trọng</p>
+  <p class="subtitle">Danh sách toàn bộ các thì + ngữ pháp quan trọng</p>
 
-  <!-- PRESENT TENSES -->
-  <div class="group-title">
-    <span class="icon">⏳</span> 
-    Thì Hiện Tại (Present Tenses)
-  </div>
+  <!-- SEARCH -->
+  <input type="text" id="search-box" placeholder="🔍 Tìm kiếm thì... (vd: simple, tiếp diễn, past, future...)">
 
+  <!-- PRESENT -->
+  <div class="group-title"><span class="icon">⏳</span> Thì Hiện Tại (Present Tenses)</div>
   <div class="list-box">
     <a class="grammar-item" data-file="present-simple.html">Present Simple – Thì Hiện Tại Đơn</a>
     <a class="grammar-item" data-file="present-continuous.html">Present Continuous – Thì Hiện Tại Tiếp Diễn</a>
@@ -122,43 +146,33 @@
     <a class="grammar-item" data-file="present-perfect-continuous.html">Present Perfect Continuous</a>
   </div>
 
-  <!-- PAST TENSES -->
-  <div class="group-title">
-    <span class="icon">⏱️</span> 
-    Thì Quá Khứ (Past Tenses)
-  </div>
-
+  <!-- PAST -->
+  <div class="group-title"><span class="icon">⏱️</span> Thì Quá Khứ (Past Tenses)</div>
   <div class="list-box">
     <a class="grammar-item" data-file="past-simple.html">Past Simple – Thì Quá Khứ Đơn</a>
     <a class="grammar-item" data-file="past-continuous.html">Past Continuous – Thì Quá Khứ Tiếp Diễn</a>
     <a class="grammar-item" data-file="past-perfect.html">Past Perfect</a>
   </div>
 
-  <!-- FUTURE TENSES -->
-  <div class="group-title">
-    <span class="icon">⏭️</span> 
-    Thì Tương Lai (Future Tenses)
-  </div>
-
+  <!-- FUTURE -->
+  <div class="group-title"><span class="icon">⏭️</span> Thì Tương Lai (Future Tenses)</div>
   <div class="list-box">
     <a class="grammar-item" data-file="future-simple.html">Future Simple – Thì Tương Lai Đơn</a>
     <a class="grammar-item" data-file="near-future.html">Near Future – Thì Sắp Tương Lai</a>
     <a class="grammar-item" data-file="future-continuous.html">Future Continuous</a>
   </div>
 
-  <div class="note">
-    📌 Các bài sẽ tự chuyển sang màu xanh (✔ Completed) khi bạn tạo file trong thư mục <b>/posts/</b>
-  </div>
-
   <a href="index.html" class="back">← Quay lại trang chủ</a>
 
 </div>
 
-<!-- ⭐ SCRIPT KIỂM TRA FILE & HIGHLIGHT TỰ ĐỘNG -->
+<!-- ⭐ SCRIPT: Highlight + Search -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   const items = document.querySelectorAll(".grammar-item");
 
+  // 🔥 Kiểm tra file tồn tại để highlight
   items.forEach(item => {
     const file = item.dataset.file;
 
@@ -178,6 +192,19 @@ document.addEventListener("DOMContentLoaded", () => {
         item.innerHTML = "⏳ " + item.innerHTML;
       });
   });
+
+  // 🔍 Search theo từ khóa
+  const searchBox = document.getElementById("search-box");
+
+  searchBox.addEventListener("input", () => {
+    const text = searchBox.value.toLowerCase();
+
+    items.forEach(item => {
+      const label = item.innerText.toLowerCase();
+      item.style.display = label.includes(text) ? "flex" : "none";
+    });
+  });
+
 });
 </script>
 
