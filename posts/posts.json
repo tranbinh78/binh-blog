@@ -1,12 +1,12 @@
 [
-  {
-    "file": "post1.html",
-    "title": "Bài viết đầu tiên",
-    "description": "Giới thiệu blog và định hướng chia sẻ học tiếng Anh.",
-    "date": "2025-01-21",
-    "thumbnail": "https://picsum.photos/600/350?1",
-    "category": "Tiếng Anh"
-  },
+ {
+  "file": "post1.html",
+  "title": "Bài viết đầu tiên",
+  "description": "Giới thiệu blog và định hướng chia sẻ học tiếng Anh.",
+  "date": "2025-01-21",
+  "thumbnail": "https://picsum.photos/600/350?1",
+  "category": "Giới thiệu"
+  }
   {
     "file": "post2.html",
     "title": "Bài viết thứ 2",
