@@ -203,6 +203,88 @@ body.dark .learned-tag {
   background: #5a4a00;
   color: #ffeb8a;
 }
+
+/* Fade-in toàn trang */
+body {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Card slide lên khi xuất hiện */
+.card {
+  transform: translateY(15px);
+  opacity: 0;
+  animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Delay nhẹ mỗi card cho hiệu ứng đẹp */
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.10s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.20s; }
+.card:nth-child(5) { animation-delay: 0.25s; }
+.card:nth-child(6) { animation-delay: 0.30s; }
+
+/* Hover glow đẹp */
+.card:hover {
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12), 0 0 12px rgba(123,97,255,0.25);
+}
+
+/* Icon rung nhẹ như Duolingo */
+.card-icon:hover {
+  animation: wobble 0.6s ease;
+}
+
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(6deg); }
+  50% { transform: rotate(-6deg); }
+  75% { transform: rotate(4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Filter nhún khi click */
+.filter-btn:active {
+  transform: scale(0.92);
+}
+
+/* Transition đẹp cho card */
+.card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+    /* Animation cho trạng thái Completed */
+.completed .status {
+  animation: pulseGreen 1s ease;
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0px rgba(0,255,100,0.3); }
+  50% { box-shadow: 0 0 10px rgba(0,255,100,0.6); }
+  100% { box-shadow: 0 0 0px rgba(0,255,100,0.3); }
+}
+
+/* Animation cho Coming Soon */
+.soon .status {
+  animation: pulseGray 1s ease;
+}
+
+@keyframes pulseGray {
+  0% { box-shadow: 0 0 0px rgba(120,120,120,0.3); }
+  50% { box-shadow: 0 0 8px rgba(150,150,150,0.6); }
+  100% { box-shadow: 0 0 0px rgba(120,120,120,0.3); }
+}
     
   </style>
 </head>
@@ -313,6 +395,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     container.appendChild(card);
+
+    // Thêm delay animation theo thứ tự card
+    let index = 0;
+    document.querySelectorAll(".card").forEach(card => {
+    card.style.animationDelay = `${index * 0.07}s`;
+    index++;
+  });
+    
   });
 
   // FILTER FUNCTION
