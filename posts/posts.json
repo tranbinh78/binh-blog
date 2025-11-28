@@ -1,16 +1,16 @@
 [
- {
-  "file": "post1.html",
-  "title": "Bài viết đầu tiên",
-  "description": "Giới thiệu blog và định hướng chia sẻ học tiếng Anh.",
-  "date": "2025-01-21",
-  "thumbnail": "https://picsum.photos/600/350?1",
-  "category": "Blog"
+  {
+    "file": "post1.html",
+    "title": "Bài viết đầu tiên",
+    "description": "Giới thiệu blog và định hướng chia sẻ học tiếng Anh.",
+    "date": "2025-01-21",
+    "thumbnail": "https://picsum.photos/600/350?1",
+    "category": "Tiếng Anh"
   },
   {
     "file": "post2.html",
     "title": "Bài viết thứ 2",
-    "description": "Chia sẻ cách học lập trình hiệu quả và dễ hiểu.",
+    "description": "Chia sẻ cách học lập trình hiệu quả.",
     "date": "2025-01-22",
     "thumbnail": "https://picsum.photos/600/350?2",
     "category": "Lập trình"
@@ -23,20 +23,128 @@
     "thumbnail": "https://picsum.photos/600/350?3",
     "category": "Cuộc sống"
   },
+
+  /* -----------------
+      PRESENT TENSES
+  ------------------ */
+
   {
-  "file": "present-simple.html",
-  "title": "Thì Hiện Tại Đơn (Present Simple)",
-  "description": "Giải thích dễ hiểu + ví dụ + bài tập + đáp án.",
-  "date": "2025-02-01",
-  "thumbnail": "https://picsum.photos/900/450?random=100",
-  "category": "Tiếng Anh"
+    "file": "present-simple.html",
+    "title": "Present Simple – Thì Hiện Tại Đơn",
+    "description": "Giải thích dễ hiểu + ví dụ + bài tập.",
+    "date": "2025-02-01",
+    "thumbnail": "https://picsum.photos/600/350?10",
+    "category": "Tiếng Anh"
   },
   {
-  "file": "present-continuous.html",
-  "title": "Thì Hiện Tại Tiếp Diễn (Present Continuous)",
-  "description": "Giải thích dễ hiểu + ví dụ + bài tập + đáp án.",
-  "date": "2025-02-15",
-  "thumbnail": "https://picsum.photos/900/450?random=102",
-  "category": "Tiếng Anh"
+    "file": "present-continuous.html",
+    "title": "Present Continuous – Thì Hiện Tại Tiếp Diễn",
+    "description": "Giải thích dễ hiểu + ví dụ + bài tập.",
+    "date": "2025-02-02",
+    "thumbnail": "https://picsum.photos/600/350?11",
+    "category": "Tiếng Anh"
+  },
+  {
+    "file": "present-perfect.html",
+    "title": "Present Perfect – Thì Hiện Tại Hoàn Thành",
+    "description": "Cách dùng, ví dụ, bài tập + đáp án.",
+    "date": "2025-02-03",
+    "thumbnail": "https://picsum.photos/600/350?12",
+    "category": "Tiếng Anh"
+  },
+  {
+    "file": "present-perfect-continuous.html",
+    "title": "Present Perfect Continuous – Thì Hiện Tại Hoàn Thành Tiếp Diễn",
+    "description": "Cách dùng, ví dụ, bài tập.",
+    "date": "2025-02-04",
+    "thumbnail": "https://picsum.photos/600/350?13",
+    "category": "Tiếng Anh"
+  },
+
+  /* -----------------
+        PAST TENSES
+  ------------------ */
+
+  {
+    "file": "past-simple.html",
+    "title": "Past Simple – Thì Quá Khứ Đơn",
+    "description": "Giải thích + ví dụ + bài tập.",
+    "date": "2025-02-05",
+    "thumbnail": "https://picsum.photos/600/350?20",
+    "category": "Tiếng Anh"
+  },
+  {
+    "file": "past-continuous.html",
+    "title": "Past Continuous – Thì Quá Khứ Tiếp Diễn",
+    "description": "Cách dùng + ví dụ + bài tập.",
+    "date": "2025-02-06",
+    "thumbnail": "https://picsum.photos/600/350?21",
+    "category": "Tiếng Anh"
+  },
+  {
+    "file": "past-perfect.html",
+    "title": "Past Perfect – Thì Quá Khứ Hoàn Thành",
+    "description": "Ví dụ + bài tập.",
+    "date": "2025-02-07",
+    "thumbnail": "https://picsum.photos/600/350?22",
+    "category": "Tiếng Anh"
+  },
+  {
+    "file": "past-perfect-continuous.html",
+    "title": "Past Perfect Continuous – Thì Quá Khứ Hoàn Thành Tiếp Diễn",
+    "description": "Giải thích + bài tập.",
+    "date": "2025-02-08",
+    "thumbnail": "https://picsum.photos/600/350?23",
+    "category": "Tiếng Anh"
+  },
+
+  /* -----------------
+       FUTURE TENSES
+  ------------------ */
+
+  {
+    "file": "future-simple.html",
+    "title": "Future Simple – Thì Tương Lai Đơn",
+    "description": "Giải thích dễ hiểu + ví dụ.",
+    "date": "2025-02-09",
+    "thumbnail": "https://picsum.photos/600/350?30",
+    "category": "Tiếng Anh"
+  },
+  {
+    "file": "future-continuous.html",
+    "title": "Future Continuous – Thì Tương Lai Tiếp Diễn",
+    "description": "Cách dùng + ví dụ + bài tập.",
+    "date": "2025-02-10",
+    "thumbnail": "https://picsum.photos/600/350?31",
+    "category": "Tiếng Anh"
+  },
+  {
+    "file": "future-perfect.html",
+    "title": "Future Perfect – Thì Tương Lai Hoàn Thành",
+    "description": "Giải thích + ví dụ.",
+    "date": "2025-02-11",
+    "thumbnail": "https://picsum.photos/600/350?32",
+    "category": "Tiếng Anh"
+  },
+  {
+    "file": "future-perfect-continuous.html",
+    "title": "Future Perfect Continuous – Thì Tương Lai Hoàn Thành Tiếp Diễn",
+    "description": "Cách dùng + ví dụ.",
+    "date": "2025-02-12",
+    "thumbnail": "https://picsum.photos/600/350?33",
+    "category": "Tiếng Anh"
+  },
+
+  /* -----------------
+      NEAR FUTURE
+  ------------------ */
+
+  {
+    "file": "near-future.html",
+    "title": "Near Future – 'Be going to'",
+    "description": "Dự định tương lai gần + ví dụ + bài tập.",
+    "date": "2025-02-13",
+    "thumbnail": "https://picsum.photos/600/350?40",
+    "category": "Tiếng Anh"
   }
- ]
+]
