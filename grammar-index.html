@@ -16,14 +16,14 @@
       transition: 0.3s;
     }
 
-    /* DARK MODE BODY */
+    /* DARK MODE */
     body.dark {
       background: #17151f;
       color: #eee;
     }
 
     .container {
-      max-width: 950px;
+      max-width: 1000px;
       margin: 40px auto 80px;
       padding: 20px;
     }
@@ -52,12 +52,11 @@
       color: #bbb;
     }
 
-    /* DARK MODE TOGGLE */
+    /* Dark Mode Toggle */
     .toggle-box {
       text-align: right;
       margin-bottom: 15px;
     }
-
     .toggle-btn {
       background: #dcd2ff;
       border: none;
@@ -67,21 +66,10 @@
       cursor: pointer;
       transition: 0.3s;
     }
+    .toggle-btn:hover { background: #c4b5ff; }
+    body.dark .toggle-btn { background: #3b335f; color: #eee; }
 
-    .toggle-btn:hover {
-      background: #c4b5ff;
-    }
-
-    body.dark .toggle-btn {
-      background: #3b335f;
-      color: #eee;
-    }
-
-    body.dark .toggle-btn:hover {
-      background: #4e4386;
-    }
-
-    /* GROUP TITLE */
+    /* Group Title */
     .group-title {
       font-size: 26px;
       margin-top: 40px;
@@ -94,105 +82,99 @@
     }
 
     body.dark .group-title {
-      color: #dcd2ff;
+      color: #decfff;
     }
 
-    .icon { font-size: 30px; }
+    .group-icon { font-size: 30px; }
 
-    /* BOX */
-    .list-box {
-      background: #f2edff;
-      padding: 20px 28px;
+    /* Card List */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    /* CARD */
+    .card {
+      background: white;
+      padding: 20px;
       border-radius: 14px;
-      border-left: 6px solid #9378ff;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-      transition: 0.3s;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      transition: 0.25s;
+      border-left: 6px solid transparent;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    body.dark .list-box {
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    body.dark .card {
       background: #2a2636;
-      border-left-color: #6d54ff;
       box-shadow: none;
     }
 
-    /* ITEM */
-    .grammar-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 10px 0;
-      padding: 10px 14px;
-      font-size: 18px;
-      text-decoration: none;
+    .card-icon {
+      font-size: 36px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .status {
+      font-size: 15px;
       font-weight: 600;
+      padding: 6px 12px;
       border-radius: 8px;
-      transition: 0.25s;
-      color: #4734d3;
+      display: inline-block;
     }
 
-    .grammar-item:hover {
-      background: #ece6ff;
-      transform: translateX(4px);
-    }
-
-    body.dark .grammar-item {
-      color: #bda8ff;
-    }
-
-    body.dark .grammar-item:hover {
-      background: #3a344b;
-    }
-
-    /* ✔ Completed */
+    /* Completed */
     .completed {
-      color: #087a3d !important;
       background: #e6f9ee;
-      border-left: 4px solid #0fa34a;
+      color: #0b7a3d;
+      border-left-color: #0fa34a !important;
     }
 
     body.dark .completed {
-      color: #65ff9a !important;
-      background: #223426;
-      border-left-color: #17d45e;
+      background: #203427;
+      color: #46f996;
     }
 
-    /* ⏳ Coming soon */
+    /* Coming Soon */
     .soon {
-      color: #777 !important;
       background: #f3f3f3;
-      border-left: 4px solid #aaa;
-      font-style: italic;
+      color: #777;
     }
 
     body.dark .soon {
-      color: #aaa !important;
       background: #2e2e2e;
-      border-left-color: #666;
+      color: #aaa;
     }
 
-    .back {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 18px;
-      background: #d9d1ff;
+    .btn-view {
+      margin-top: auto;
+      padding: 8px 14px;
+      background: #dcd2ff;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
       text-decoration: none;
       color: #333;
-      font-weight: 600;
-      border-radius: 8px;
       transition: 0.3s;
     }
 
-    .back:hover { background: #c8bef8; }
+    .btn-view:hover { background: #c4b5ff; }
+    body.dark .btn-view { background: #3b335f; color: #eee; }
 
-    body.dark .back {
-      background: #3b335f;
-      color: #eee;
-    }
-
-    body.dark .back:hover {
-      background: #504478;
-    }
   </style>
 </head>
 
@@ -200,68 +182,88 @@
 
 <div class="container">
 
+  <!-- DARK MODE BUTTON -->
   <div class="toggle-box">
     <button class="toggle-btn" id="darkToggle">🌙 Dark Mode</button>
   </div>
 
   <h1>📘 Grammar Index</h1>
-  <p class="subtitle">Danh sách toàn bộ các thì – tự động cập nhật theo posts.json</p>
+  <p class="subtitle">Danh sách toàn bộ các thì – tự động cập nhật từ posts.json</p>
 
-  <!-- GROUPS -->
-  <div class="group-title"><span class="icon">⏳</span> Thì Hiện Tại (Present Tenses)</div>
-  <div class="list-box" id="present"></div>
+  <!-- PRESENT GROUP -->
+  <div class="group-title"><span class="group-icon">⏳</span> Thì Hiện Tại (Present Tenses)</div>
+  <div id="present" class="card-grid"></div>
 
-  <div class="group-title"><span class="icon">⏱️</span> Thì Quá Khứ (Past Tenses)</div>
-  <div class="list-box" id="past"></div>
+  <!-- PAST GROUP -->
+  <div class="group-title"><span class="group-icon">⏱️</span> Thì Quá Khứ (Past Tenses)</div>
+  <div id="past" class="card-grid"></div>
 
-  <div class="group-title"><span class="icon">⏭️</span> Thì Tương Lai (Future Tenses)</div>
-  <div class="list-box" id="future"></div>
-
-  <a href="index.html" class="back">← Quay lại trang chủ</a>
+  <!-- FUTURE GROUP -->
+  <div class="group-title"><span class="group-icon">⏭️</span> Thì Tương Lai (Future Tenses)</div>
+  <div id="future" class="card-grid"></div>
 
 </div>
 
-<!-- ⭐ SCRIPT: Tự động load + highlight + Dark Mode -->
+<!-- ⭐ AUTO LOAD POSTS + DARK MODE -->
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
 
-  // Tải bài từ posts.json
+  // LOAD POSTS.JSON
   const res = await fetch("posts/posts.json");
   let posts = await res.json();
 
   posts = posts.filter(p => p.category === "Tiếng Anh");
 
-  const present = document.getElementById("present");
-  const past = document.getElementById("past");
-  const future = document.getElementById("future");
+  const groups = {
+    present: document.getElementById("present"),
+    past: document.getElementById("past"),
+    future: document.getElementById("future"),
+  };
 
+  // RENDER CARD
   posts.forEach(post => {
-    const item = document.createElement("a");
-    item.className = "grammar-item";
-    item.textContent = post.title;
-    item.dataset.file = post.file;
+    const card = document.createElement("div");
+    card.className = "card";
+    card.dataset.file = post.file;
 
+    // ICON AUTO BY GROUP
+    let icon = "📘";
+    if (post.file.startsWith("past-")) icon = "📙";
+    if (post.file.startsWith("future-") || post.file.startsWith("near-future")) icon = "📗";
+
+    card.innerHTML = `
+      <div class="card-icon">${icon}</div>
+      <div class="card-title">${post.title}</div>
+      <div class="status">Đang kiểm tra...</div>
+      <a class="btn-view">Xem bài</a>
+    `;
+
+    // CHECK IF FILE EXISTS
     fetch(`posts/${post.file}`)
       .then(r => {
+        const status = card.querySelector(".status");
+        const btn = card.querySelector(".btn-view");
         if (r.ok) {
-          item.href = `post.html?file=${post.file}`;
-          item.classList.add("completed");
-          item.textContent = "✔ " + item.textContent;
+          card.classList.add("completed");
+          status.textContent = "✔ Completed";
+          btn.href = `post.html?file=${post.file}`;
         } else {
-          item.classList.add("soon");
-          item.textContent = "⏳ " + item.textContent;
+          card.classList.add("soon");
+          status.textContent = "⏳ Coming soon";
+          btn.remove();
         }
       });
-  // ✔ Tự động phân nhóm theo tên file (đã sửa lỗi)
-    if (post.file.startsWith("present-")) present.appendChild(item);
-    else if (post.file.startsWith("past-")) past.appendChild(item);
-    else if (post.file.startsWith("future-") || post.file.startsWith("near-future")) future.appendChild(item);
-    });
-  // Không fallback → bài viết thường sẽ bị bỏ qua
-  // ⭐ DARK MODE
+
+    // GROUP ASSIGN
+    if (post.file.startsWith("present-")) groups.present.appendChild(card);
+    else if (post.file.startsWith("past-")) groups.past.appendChild(card);
+    else if (post.file.startsWith("future-") || post.file.startsWith("near-future")) groups.future.appendChild(card);
+
+  });
+
+  // DARK MODE
   const toggle = document.getElementById("darkToggle");
 
-  // Load trạng thái
   if (localStorage.getItem("darkmode") === "true") {
     document.body.classList.add("dark");
     toggle.textContent = "🌞 Light Mode";
@@ -269,10 +271,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-
     const isDark = document.body.classList.contains("dark");
     localStorage.setItem("darkmode", isDark);
-
     toggle.textContent = isDark ? "🌞 Light Mode" : "🌙 Dark Mode";
   });
 
