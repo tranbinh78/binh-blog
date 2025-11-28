@@ -35,23 +35,6 @@
       margin-bottom: 40px;
     }
 
-    /* SEARCH BOX */
-    #search-box {
-      width: 100%;
-      padding: 14px 18px;
-      border: 2px solid #b9aaff;
-      border-radius: 10px;
-      font-size: 18px;
-      margin-bottom: 35px;
-      outline: none;
-    }
-
-    #search-box:focus {
-      border-color: #7b61ff;
-      box-shadow: 0 0 6px #cfc1ff;
-    }
-
-    /* GROUP TITLE */
     .group-title {
       font-size: 26px;
       margin-top: 40px;
@@ -62,11 +45,8 @@
       gap: 12px;
     }
 
-    .icon {
-      font-size: 30px;
-    }
+    .icon { font-size: 30px; }
 
-    /* BOX */
     .list-box {
       background: #f2edff;
       padding: 20px 28px;
@@ -76,7 +56,6 @@
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
     }
 
-    /* ITEM */
     .grammar-item {
       display: flex;
       align-items: center;
@@ -88,6 +67,7 @@
       font-weight: 600;
       border-radius: 8px;
       transition: 0.25s;
+      color: #4734d3;
     }
 
     .grammar-item:hover {
@@ -95,14 +75,14 @@
       transform: translateX(4px);
     }
 
-    /* COMPLETED */
+    /* ✔ Completed */
     .completed {
       color: #087a3d !important;
       background: #e6f9ee;
       border-left: 4px solid #0fa34a;
     }
 
-    /* SOON */
+    /* ⏳ Coming soon */
     .soon {
       color: #777 !important;
       background: #f3f3f3;
@@ -110,19 +90,8 @@
       font-style: italic;
     }
 
-    .back {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 18px;
-      background: #d9d1ff;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      border-radius: 8px;
-    }
-
-    .back:hover {
-      background: #c8bef8;
+    #present, #past, #future {
+      min-height: 50px;
     }
   </style>
 </head>
@@ -132,79 +101,60 @@
 <div class="container">
 
   <h1>📘 Grammar Index</h1>
-  <p class="subtitle">Danh sách toàn bộ các thì + ngữ pháp quan trọng</p>
+  <p class="subtitle">Danh sách toàn bộ các thì – tự động cập nhật theo posts.json</p>
 
-  <!-- SEARCH -->
-  <input type="text" id="search-box" placeholder="🔍 Tìm kiếm thì... (vd: simple, tiếp diễn, past, future...)">
-
-  <!-- PRESENT -->
+  <!-- GROUPS -->
   <div class="group-title"><span class="icon">⏳</span> Thì Hiện Tại (Present Tenses)</div>
-  <div class="list-box">
-    <a class="grammar-item" data-file="present-simple.html">Present Simple – Thì Hiện Tại Đơn</a>
-    <a class="grammar-item" data-file="present-continuous.html">Present Continuous – Thì Hiện Tại Tiếp Diễn</a>
-    <a class="grammar-item" data-file="present-perfect.html">Present Perfect – Thì Hiện Tại Hoàn Thành</a>
-    <a class="grammar-item" data-file="present-perfect-continuous.html">Present Perfect Continuous</a>
-  </div>
+  <div class="list-box" id="present"></div>
 
-  <!-- PAST -->
   <div class="group-title"><span class="icon">⏱️</span> Thì Quá Khứ (Past Tenses)</div>
-  <div class="list-box">
-    <a class="grammar-item" data-file="past-simple.html">Past Simple – Thì Quá Khứ Đơn</a>
-    <a class="grammar-item" data-file="past-continuous.html">Past Continuous – Thì Quá Khứ Tiếp Diễn</a>
-    <a class="grammar-item" data-file="past-perfect.html">Past Perfect</a>
-  </div>
+  <div class="list-box" id="past"></div>
 
-  <!-- FUTURE -->
   <div class="group-title"><span class="icon">⏭️</span> Thì Tương Lai (Future Tenses)</div>
-  <div class="list-box">
-    <a class="grammar-item" data-file="future-simple.html">Future Simple – Thì Tương Lai Đơn</a>
-    <a class="grammar-item" data-file="near-future.html">Near Future – Thì Sắp Tương Lai</a>
-    <a class="grammar-item" data-file="future-continuous.html">Future Continuous</a>
-  </div>
+  <div class="list-box" id="future"></div>
 
   <a href="index.html" class="back">← Quay lại trang chủ</a>
 
 </div>
 
-<!-- ⭐ SCRIPT: Highlight + Search -->
+<!-- ⭐ Script tự động tạo toàn bộ danh sách -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  const res = await fetch("posts/posts.json");
+  let posts = await res.json();
 
-  const items = document.querySelectorAll(".grammar-item");
+  // Lấy bài category "Tiếng Anh"
+  posts = posts.filter(p => p.category === "Tiếng Anh");
 
-  // 🔥 Kiểm tra file tồn tại để highlight
-  items.forEach(item => {
-    const file = item.dataset.file;
+  const present = document.getElementById("present");
+  const past = document.getElementById("past");
+  const future = document.getElementById("future");
 
-    fetch(`posts/${file}`)
-      .then(res => {
-        if (res.ok) {
+  posts.forEach(post => {
+    const item = document.createElement("a");
+    item.className = "grammar-item";
+    item.textContent = post.title;
+    item.dataset.file = post.file;
+
+    // Gắn link nếu có file
+    fetch(`posts/${post.file}`)
+      .then(r => {
+        if (r.ok) {
+          item.href = `post.html?file=${post.file}`;
           item.classList.add("completed");
-          item.innerHTML = "✔ " + item.innerHTML;
-          item.href = `post.html?file=${file}`;
+          item.textContent = "✔ " + item.textContent;
         } else {
           item.classList.add("soon");
-          item.innerHTML = "⏳ " + item.innerHTML;
+          item.textContent = "⏳ " + item.textContent;
         }
-      })
-      .catch(() => {
-        item.classList.add("soon");
-        item.innerHTML = "⏳ " + item.innerHTML;
       });
+
+    // ✔ Tự động phân nhóm theo tên file
+    if (post.file.startsWith("present-")) present.appendChild(item);
+    else if (post.file.startsWith("past-")) past.appendChild(item);
+    else if (post.file.startsWith("future-") || post.file.startsWith("near-future")) future.appendChild(item);
+    else present.appendChild(item); // fallback
   });
-
-  // 🔍 Search theo từ khóa
-  const searchBox = document.getElementById("search-box");
-
-  searchBox.addEventListener("input", () => {
-    const text = searchBox.value.toLowerCase();
-
-    items.forEach(item => {
-      const label = item.innerText.toLowerCase();
-      item.style.display = label.includes(text) ? "flex" : "none";
-    });
-  });
-
 });
 </script>
 
