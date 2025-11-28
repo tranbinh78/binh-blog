@@ -252,13 +252,12 @@ document.addEventListener("DOMContentLoaded", async () => {
           item.textContent = "⏳ " + item.textContent;
         }
       });
-
+  // ✔ Tự động phân nhóm theo tên file (đã sửa lỗi)
     if (post.file.startsWith("present-")) present.appendChild(item);
     else if (post.file.startsWith("past-")) past.appendChild(item);
     else if (post.file.startsWith("future-") || post.file.startsWith("near-future")) future.appendChild(item);
-    else present.appendChild(item);
-  });
-
+    });
+  // Không fallback → bài viết thường sẽ bị bỏ qua
   // ⭐ DARK MODE
   const toggle = document.getElementById("darkToggle");
 
