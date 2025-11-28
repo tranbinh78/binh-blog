@@ -24,10 +24,6 @@
     "category": "Cuộc sống"
   },
 
-  /* -----------------
-      PRESENT TENSES
-  ------------------ */
-
   {
     "file": "present-simple.html",
     "title": "Present Simple – Thì Hiện Tại Đơn",
@@ -57,13 +53,9 @@
     "title": "Present Perfect Continuous – Thì Hiện Tại Hoàn Thành Tiếp Diễn",
     "description": "Cách dùng, ví dụ, bài tập.",
     "date": "2025-02-04",
-    "thumbnail": "https://picsum.photos/600/350?13",
+    "thumbnail": "httpsum.photos/600/350?13",
     "category": "Tiếng Anh"
   },
-
-  /* -----------------
-        PAST TENSES
-  ------------------ */
 
   {
     "file": "past-simple.html",
@@ -98,10 +90,6 @@
     "category": "Tiếng Anh"
   },
 
-  /* -----------------
-       FUTURE TENSES
-  ------------------ */
-
   {
     "file": "future-simple.html",
     "title": "Future Simple – Thì Tương Lai Đơn",
@@ -134,10 +122,6 @@
     "thumbnail": "https://picsum.photos/600/350?33",
     "category": "Tiếng Anh"
   },
-
-  /* -----------------
-      NEAR FUTURE
-  ------------------ */
 
   {
     "file": "near-future.html",
