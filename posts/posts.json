@@ -1,12 +1,12 @@
 [
- {
-  "file": "post1.html",
-  "title": "Bài viết đầu tiên",
-  "description": "Giới thiệu blog và định hướng chia sẻ học tiếng Anh.",
-  "date": "2025-01-21",
-  "thumbnail": "https://picsum.photos/600/350?1",
-  "category": "Giới thiệu"
-  }
+  {
+    "file": "post1.html",
+    "title": "Bài viết đầu tiên",
+    "description": "Giới thiệu blog và định hướng chia sẻ học tiếng Anh.",
+    "date": "2025-01-21",
+    "thumbnail": "https://picsum.photos/600/350?1",
+    "category": "Giới thiệu"
+  },
   {
     "file": "post2.html",
     "title": "Bài viết thứ 2",
@@ -53,7 +53,7 @@
     "title": "Present Perfect Continuous – Thì Hiện Tại Hoàn Thành Tiếp Diễn",
     "description": "Cách dùng, ví dụ, bài tập.",
     "date": "2025-02-04",
-    "thumbnail": "httpsum.photos/600/350?13",
+    "thumbnail": "https://picsum.photos/600/350?13",
     "category": "Tiếng Anh"
   },
 
