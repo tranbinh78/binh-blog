@@ -50,7 +50,7 @@
       margin-bottom: 30px;
     }
 
-    .list-box a {
+    .grammar-item {
       display: block;
       margin: 6px 0;
       font-size: 18px;
@@ -59,8 +59,20 @@
       font-weight: 600;
     }
 
-    .list-box a:hover {
+    .grammar-item:hover {
       text-decoration: underline;
+    }
+
+    /* 🔥 Highlight cho bài đã có file */
+    .completed {
+      color: #0a8a32 !important;
+      font-weight: 700;
+    }
+
+    /* 🔥 Highlight cho bài chưa có file */
+    .soon {
+      color: #999 !important;
+      font-style: italic;
     }
 
     .note {
@@ -97,50 +109,77 @@
   <h1>📘 Grammar Index</h1>
   <p style="text-align:center; color:#555;">Danh sách toàn bộ các thì + ngữ pháp quan trọng</p>
 
-  <!-- PRESENT -->
+  <!-- PRESENT TENSES -->
   <div class="group-title">
     <span class="icon">⏳</span> 
     Thì Hiện Tại (Present Tenses)
   </div>
 
   <div class="list-box">
-    <a href="post.html?file=present-simple.html">📘 Present Simple – Thì Hiện Tại Đơn</a>
-    <a href="post.html?file=present-continuous.html">📗 Present Continuous – Thì Hiện Tại Tiếp Diễn</a>
-    <a href="#">📙 Present Perfect – Thì Hiện Tại Hoàn Thành (Coming soon)</a>
-    <a href="#">📒 Present Perfect Continuous – Sắp có…</a>
+    <a class="grammar-item" data-file="present-simple.html">Present Simple – Thì Hiện Tại Đơn</a>
+    <a class="grammar-item" data-file="present-continuous.html">Present Continuous – Thì Hiện Tại Tiếp Diễn</a>
+    <a class="grammar-item" data-file="present-perfect.html">Present Perfect – Thì Hiện Tại Hoàn Thành</a>
+    <a class="grammar-item" data-file="present-perfect-continuous.html">Present Perfect Continuous</a>
   </div>
 
-  <!-- PAST -->
+  <!-- PAST TENSES -->
   <div class="group-title">
     <span class="icon">⏱️</span> 
     Thì Quá Khứ (Past Tenses)
   </div>
 
   <div class="list-box">
-    <a href="#">📘 Past Simple – Thì Quá Khứ Đơn (Coming soon)</a>
-    <a href="#">📗 Past Continuous – Thì Quá Khứ Tiếp Diễn (Coming soon)</a>
-    <a href="#">📙 Past Perfect – Sắp có…</a>
+    <a class="grammar-item" data-file="past-simple.html">Past Simple – Thì Quá Khứ Đơn</a>
+    <a class="grammar-item" data-file="past-continuous.html">Past Continuous – Thì Quá Khứ Tiếp Diễn</a>
+    <a class="grammar-item" data-file="past-perfect.html">Past Perfect</a>
   </div>
 
-  <!-- FUTURE -->
+  <!-- FUTURE TENSES -->
   <div class="group-title">
     <span class="icon">⏭️</span> 
     Thì Tương Lai (Future Tenses)
   </div>
 
   <div class="list-box">
-    <a href="#">📘 Future Simple – Thì Tương Lai Đơn (Coming soon)</a>
-    <a href="#">📗 Near Future – Thì Sắp Tương Lai (Coming soon)</a>
-    <a href="#">📙 Future Continuous – Sắp có…</a>
+    <a class="grammar-item" data-file="future-simple.html">Future Simple – Thì Tương Lai Đơn</a>
+    <a class="grammar-item" data-file="near-future.html">Near Future – Thì Sắp Tương Lai</a>
+    <a class="grammar-item" data-file="future-continuous.html">Future Continuous</a>
   </div>
 
   <div class="note">
-    📌 Gợi ý: Trần Bình có thể thêm bao nhiêu thì cũng được — chỉ cần thêm vào mục đúng nhóm.
+    📌 Các bài sẽ tự chuyển sang màu xanh (✔ Completed) khi bạn tạo file trong thư mục <b>/posts/</b>
   </div>
 
   <a href="index.html" class="back">← Quay lại trang chủ</a>
 
 </div>
+
+<!-- ⭐ SCRIPT KIỂM TRA FILE & HIGHLIGHT TỰ ĐỘNG -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".grammar-item");
+
+  items.forEach(item => {
+    const file = item.dataset.file;
+
+    fetch(`posts/${file}`)
+      .then(res => {
+        if (res.ok) {
+          item.classList.add("completed");
+          item.innerHTML = "✔ " + item.innerHTML;
+          item.href = `post.html?file=${file}`;
+        } else {
+          item.classList.add("soon");
+          item.innerHTML = "⏳ " + item.innerHTML;
+        }
+      })
+      .catch(() => {
+        item.classList.add("soon");
+        item.innerHTML = "⏳ " + item.innerHTML;
+      });
+  });
+});
+</script>
 
 </body>
 </html>
