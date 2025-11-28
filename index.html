@@ -347,8 +347,7 @@ async function loadPosts(filter = null) {
 // Ẩn các bài học tiếng Anh khỏi trang chủ
 if (!filter) {
   posts = posts.filter(p => 
-    p.file !== "present-simple.html" &&
-    p.file !== "present-continuous.html"
+    p.category !== "Tiếng Anh"
   );
 }
 
