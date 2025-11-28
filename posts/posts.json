@@ -22,5 +22,21 @@
     "date": "2025-01-23",
     "thumbnail": "https://picsum.photos/600/350?3",
     "category": "Cuộc sống"
-  }
+  },
+  {
+  "file": "present-simple.html",
+  "title": "Thì Hiện Tại Đơn (Present Simple)",
+  "description": "Giải thích dễ hiểu + ví dụ + bài tập + đáp án.",
+  "date": "2025-02-01",
+  "thumbnail": "https://picsum.photos/600/350?random=100",
+  "category": "Tiếng Anh"
+},
+{
+  "file": "present-continuous.html",
+  "title": "Thì Hiện Tại Tiếp Diễn (Present Continuous)",
+  "description": "Giải thích dễ hiểu + ví dụ + bài tập + đáp án.",
+  "date": "2025-02-15",
+  "thumbnail": "https://picsum.photos/900/450?random=102",
+  "category": "Tiếng Anh"
+}
  ]
