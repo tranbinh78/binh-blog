@@ -344,9 +344,12 @@ async function loadPosts(filter = null) {
   // Sắp xếp bài mới → cũ
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-// Ẩn bài Present Simple khỏi trang chủ
+// Ẩn các bài học tiếng Anh khỏi trang chủ
 if (!filter) {
-  posts = posts.filter(p => p.file !== "present-simple.html");
+  posts = posts.filter(p => 
+    p.file !== "present-simple.html" &&
+    p.file !== "present-continuous.html"
+  );
 }
 
   // Nếu lọc chuyên mục
