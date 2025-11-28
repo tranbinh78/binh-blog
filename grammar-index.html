@@ -13,6 +13,13 @@
       background: #faf9ff;
       margin: 0;
       padding: 0;
+      transition: 0.3s;
+    }
+
+    /* DARK MODE BODY */
+    body.dark {
+      background: #17151f;
+      color: #eee;
     }
 
     .container {
@@ -27,14 +34,54 @@
       margin-bottom: 10px;
       color: #2a235a;
       font-weight: 800;
+      transition: 0.3s;
+    }
+
+    body.dark h1 {
+      color: #d6ccff;
     }
 
     .subtitle {
       text-align: center;
       color: #555;
       margin-bottom: 40px;
+      transition: 0.3s;
     }
 
+    body.dark .subtitle {
+      color: #bbb;
+    }
+
+    /* DARK MODE TOGGLE */
+    .toggle-box {
+      text-align: right;
+      margin-bottom: 15px;
+    }
+
+    .toggle-btn {
+      background: #dcd2ff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: #c4b5ff;
+    }
+
+    body.dark .toggle-btn {
+      background: #3b335f;
+      color: #eee;
+    }
+
+    body.dark .toggle-btn:hover {
+      background: #4e4386;
+    }
+
+    /* GROUP TITLE */
     .group-title {
       font-size: 26px;
       margin-top: 40px;
@@ -43,10 +90,16 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      transition: 0.3s;
+    }
+
+    body.dark .group-title {
+      color: #dcd2ff;
     }
 
     .icon { font-size: 30px; }
 
+    /* BOX */
     .list-box {
       background: #f2edff;
       padding: 20px 28px;
@@ -54,8 +107,16 @@
       border-left: 6px solid #9378ff;
       margin-bottom: 30px;
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      transition: 0.3s;
     }
 
+    body.dark .list-box {
+      background: #2a2636;
+      border-left-color: #6d54ff;
+      box-shadow: none;
+    }
+
+    /* ITEM */
     .grammar-item {
       display: flex;
       align-items: center;
@@ -75,11 +136,25 @@
       transform: translateX(4px);
     }
 
+    body.dark .grammar-item {
+      color: #bda8ff;
+    }
+
+    body.dark .grammar-item:hover {
+      background: #3a344b;
+    }
+
     /* ✔ Completed */
     .completed {
       color: #087a3d !important;
       background: #e6f9ee;
       border-left: 4px solid #0fa34a;
+    }
+
+    body.dark .completed {
+      color: #65ff9a !important;
+      background: #223426;
+      border-left-color: #17d45e;
     }
 
     /* ⏳ Coming soon */
@@ -90,8 +165,33 @@
       font-style: italic;
     }
 
-    #present, #past, #future {
-      min-height: 50px;
+    body.dark .soon {
+      color: #aaa !important;
+      background: #2e2e2e;
+      border-left-color: #666;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 18px;
+      background: #d9d1ff;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .back:hover { background: #c8bef8; }
+
+    body.dark .back {
+      background: #3b335f;
+      color: #eee;
+    }
+
+    body.dark .back:hover {
+      background: #504478;
     }
   </style>
 </head>
@@ -99,6 +199,10 @@
 <body>
 
 <div class="container">
+
+  <div class="toggle-box">
+    <button class="toggle-btn" id="darkToggle">🌙 Dark Mode</button>
+  </div>
 
   <h1>📘 Grammar Index</h1>
   <p class="subtitle">Danh sách toàn bộ các thì – tự động cập nhật theo posts.json</p>
@@ -117,13 +221,14 @@
 
 </div>
 
-<!-- ⭐ Script tự động tạo toàn bộ danh sách -->
+<!-- ⭐ SCRIPT: Tự động load + highlight + Dark Mode -->
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
+
+  // Tải bài từ posts.json
   const res = await fetch("posts/posts.json");
   let posts = await res.json();
 
-  // Lấy bài category "Tiếng Anh"
   posts = posts.filter(p => p.category === "Tiếng Anh");
 
   const present = document.getElementById("present");
@@ -136,7 +241,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     item.textContent = post.title;
     item.dataset.file = post.file;
 
-    // Gắn link nếu có file
     fetch(`posts/${post.file}`)
       .then(r => {
         if (r.ok) {
@@ -149,12 +253,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       });
 
-    // ✔ Tự động phân nhóm theo tên file
     if (post.file.startsWith("present-")) present.appendChild(item);
     else if (post.file.startsWith("past-")) past.appendChild(item);
     else if (post.file.startsWith("future-") || post.file.startsWith("near-future")) future.appendChild(item);
-    else present.appendChild(item); // fallback
+    else present.appendChild(item);
   });
+
+  // ⭐ DARK MODE
+  const toggle = document.getElementById("darkToggle");
+
+  // Load trạng thái
+  if (localStorage.getItem("darkmode") === "true") {
+    document.body.classList.add("dark");
+    toggle.textContent = "🌞 Light Mode";
+  }
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("darkmode", isDark);
+
+    toggle.textContent = isDark ? "🌞 Light Mode" : "🌙 Dark Mode";
+  });
+
 });
 </script>
 
