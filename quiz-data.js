@@ -2,12 +2,12 @@
    QUIZ DATABASE – Binh Blog (12 Tenses × 20)
    ============================================ */
 
-const quizData = {};
+const QUIZ_DATABASE = {};
 
 /* ================================
    1. PRESENT SIMPLE (20 QUESTIONS)
    ================================ */
-quizData["present-simple"] = [
+QUIZ_DATABASE["present-simple"] = [
   {question:"She ___ to school every day.", options:["go","goes","is going","going"], answer:1, explain:"He/She/It + V(s/es)"},
   {question:"I usually ___ breakfast at 7.", options:["have","has","am having","having"], answer:0, explain:"I/You/We/They + V"},
   {question:"The sun ___ in the east.", options:["rise","rises","is rising","rose"], answer:1, explain:"Sự thật hiển nhiên"},
@@ -33,7 +33,7 @@ quizData["present-simple"] = [
 /* ==================================
    2. PRESENT CONTINUOUS (20 QUESTIONS)
    ================================== */
-quizData["present-continuous"] = [
+QUIZ_DATABASE["present-continuous"] = [
   {question:"She ___ TV now.", options:["watch","watches","is watching","watching"], answer:2, explain:"now → be + V-ing"},
   {question:"I ___ English at the moment.", options:["study","am studying","studying","is studying"], answer:1, explain:"at the moment"},
   {question:"They ___ dinner right now.", options:["have","are having","having","has"], answer:1},
@@ -59,7 +59,7 @@ quizData["present-continuous"] = [
 /* =============================
    3. PRESENT PERFECT (20)
    ============================= */
-quizData["present-perfect"] = [
+QUIZ_DATABASE["present-perfect"] = [
   {question:"I ___ finished my homework.", options:["have","has","having","have been"], answer:0},
   {question:"She ___ lived here since 2010.", options:["has","have","is","was"], answer:0},
   {question:"They ___ just arrived.", options:["have","has","are","were"], answer:0},
@@ -85,7 +85,7 @@ quizData["present-perfect"] = [
 /* =================================
    4. PRESENT PERFECT CONTINUOUS (20)
    ================================= */
-quizData["present-perfect-continuous"] = [
+QUIZ_DATABASE["present-perfect-continuous"] = [
   {question:"I ___ studying for 3 hours.", options:["have been","has been","am","was"], answer:0},
   {question:"She ___ working here since May.", options:["has been","have been","is","was"], answer:0},
   {question:"They ___ playing football all morning.", options:["have been","has been","are","were"], answer:0},
@@ -111,7 +111,7 @@ quizData["present-perfect-continuous"] = [
 /* =========================
    5. PAST SIMPLE (20)
    ========================= */
-quizData["past-simple"] = [
+QUIZ_DATABASE["past-simple"] = [
   {question:"She ___ to school yesterday.", options:["go","goes","went","gone"], answer:2},
   {question:"I ___ a new phone last week.", options:["buy","bought","buys","buyed"], answer:1},
   {question:"They ___ dinner at 7.", options:["have","had","has","having"], answer:1},
@@ -137,7 +137,7 @@ quizData["past-simple"] = [
 /* ==========================
    6. PAST CONTINUOUS (20)
    ========================== */
-quizData["past-continuous"] = [
+QUIZ_DATABASE["past-continuous"] = [
   {question:"I ___ when you called.", options:["was sleeping","sleep","am sleeping","slept"], answer:0},
   {question:"They ___ dinner at 7.", options:["were having","have","had","having"], answer:0},
   {question:"She ___ TV.", options:["was watching","watched","watches","watching"], answer:0},
@@ -163,7 +163,7 @@ quizData["past-continuous"] = [
 /* ==========================
    7. PAST PERFECT (20)
    ========================== */
-quizData["past-perfect"] = [
+QUIZ_DATABASE["past-perfect"] = [
   {question:"She ___ before I arrived.", options:["had left","left","was leaving","leaves"], answer:0},
   {question:"I ___ my work before 6 PM.", options:["had finished","finished","finish","was finishing"], answer:0},
   {question:"They ___ dinner.", options:["had eaten","ate","eat","were eating"], answer:0},
@@ -189,7 +189,7 @@ quizData["past-perfect"] = [
 /* ====================================
    8. PAST PERFECT CONTINUOUS (20)
    ==================================== */
-quizData["past-perfect-continuous"] = [
+QUIZ_DATABASE["past-perfect-continuous"] = [
   {question:"I ___ studying for 2 hours before you came.", options:["had been","have been","was","am"], answer:0},
   {question:"She ___ working all day.", options:["had been","has been","was","is"], answer:0},
   {question:"They ___ playing.", options:["had been","have been","were","are"], answer:0},
@@ -215,7 +215,7 @@ quizData["past-perfect-continuous"] = [
 /* ================================
    9. FUTURE SIMPLE (20)
    ================================ */
-quizData["future-simple"] = [
+QUIZ_DATABASE["future-simple"] = [
   {question:"I ___ help you.", options:["will","am","is","was"], answer:0},
   {question:"She ___ come tomorrow.", options:["will","is","are","was"], answer:0},
   {question:"They ___ go soon.", options:["will","are","is","was"], answer:0},
@@ -241,7 +241,7 @@ quizData["future-simple"] = [
 /* ==================================
    10. FUTURE CONTINUOUS (20)
    ================================== */
-quizData["future-continuous"] = [
+QUIZ_DATABASE["future-continuous"] = [
   {question:"I ___ working tomorrow.", options:["will be","am","is","was"], answer:0},
   {question:"She ___ traveling next week.", options:["will be","is","are","was"], answer:0},
   {question:"They ___ waiting for you.", options:["will be","are","is","was"], answer:0},
@@ -267,7 +267,7 @@ quizData["future-continuous"] = [
 /* ==============================
    11. FUTURE PERFECT (20)
    ============================== */
-quizData["future-perfect"] = [
+QUIZ_DATABASE["future-perfect"] = [
   {question:"I ___ finished by 5 PM.", options:["will have","will","am","is"], answer:0},
   {question:"She ___ completed the task.", options:["will have","will","is","was"], answer:0},
   {question:"They ___ left by noon.", options:["will have","will","are","is"], answer:0},
@@ -293,7 +293,7 @@ quizData["future-perfect"] = [
 /* ==========================================
    12. FUTURE PERFECT CONTINUOUS (20)
    ========================================== */
-quizData["future-perfect-continuous"] = [
+QUIZ_DATABASE["future-perfect-continuous"] = [
   {question:"I ___ working for 5 hours.", options:["will have been","will","am","is"], answer:0},
   {question:"She ___ studying all day.", options:["will have been","will","is","was"], answer:0},
   {question:"They ___ waiting.", options:["will have been","will","are","is"], answer:0},
