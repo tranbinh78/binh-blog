@@ -5,7 +5,8 @@
 const QUIZ_DATABASE = {};
 
 /* Xuất biến ra global để quiz.html có thể dùng */
-window.quizData = QUIZ_DATABASE;
+window.quizData = {};
+const QUIZ_DATABASE = window.quizData;
 
 /* ================================
    1. PRESENT SIMPLE (20 QUESTIONS)
