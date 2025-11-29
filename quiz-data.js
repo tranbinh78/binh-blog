@@ -1,13 +1,14 @@
 /* ============================================
-   QUIZ DATABASE – Binh Blog (12 Tenses × 20)
+   QUIZ DATABASE – Binh Blog
    ============================================ */
 
-const QUIZ_DATABASE = {};
+window.quizData = {};
 
 /* ================================
    1. PRESENT SIMPLE (20 QUESTIONS)
    ================================ */
-QUIZ_DATABASE["present-simple"] = {
+
+quizData["present-simple"] = {
   title: "Bài tập – PRESENT SIMPLE",
   desc: "Chọn đáp án đúng cho thì Hiện tại đơn.",
   questions: [
