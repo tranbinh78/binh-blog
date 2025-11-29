@@ -232,7 +232,42 @@ if (!file) {
         .then(html => {
           document.getElementById("post-content").innerHTML = html;
           generateTOC();
-        });
+
+// ⭐ TỰ ĐỘNG THÊM NÚT QUIZ CHO 12 THÌ
+const quizMap = {
+  "present-simple.html": "present-simple",
+  "present-continuous.html": "present-continuous",
+  "present-perfect.html": "present-perfect",
+  "present-perfect-continuous.html": "present-perfect-continuous",
+
+  "past-simple.html": "past-simple",
+  "past-continuous.html": "past-continuous",
+  "past-perfect.html": "past-perfect",
+  "past-perfect-continuous.html": "past-perfect-continuous",
+
+  "future-simple.html": "future-simple",
+  "future-continuous.html": "future-continuous",
+  "future-perfect.html": "future-perfect",
+  "future-perfect-continuous.html": "future-perfect-continuous",
+
+  "near-future.html": "near-future"
+};
+
+// Nếu bài học có quiz → tự thêm nút
+if (quizMap[post.file]) {
+  const quizType = quizMap[post.file];
+
+  document.getElementById("post-content").innerHTML += `
+    <a href="/binh-blog/quiz.html?type=${quizType}"
+       style="display:inline-block; margin:25px 0; padding:10px 18px;
+       background:#d9d1ff; border-radius:8px; font-weight:600;
+       text-decoration:none;">
+       👉 Làm bài tập: ${post.title}
+    </a>
+  `;
+} 
+});
+      
 // ⭐ KÍCH HOẠT NÚT HIỆN / ẨN ĐÁP ÁN (dành cho bài có answer-box)
 setTimeout(() => {
   const toggleBtn = document.getElementById("toggle-answer");
