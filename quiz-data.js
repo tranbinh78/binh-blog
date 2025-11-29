@@ -2,15 +2,13 @@
    QUIZ DATABASE – Binh Blog (12 Tenses × 20)
    ============================================ */
 
-// tạo biến global để quiz.html truy cập
+// Tạo biến global để quiz.html truy cập
 window.quizData = {};
-
-const QUIZ_DATABASE = window.quizData;
 
 /* ================================
    1. PRESENT SIMPLE
 ================================ */
-QUIZ_DATABASE["present-simple"] = [
+window.quizData["present-simple"] = [
   {
     question: "She ___ to school every day.",
     options: ["go", "goes", "is going", "going"],
@@ -28,19 +26,19 @@ QUIZ_DATABASE["present-simple"] = [
 /* ================================
    2. PRESENT CONTINUOUS
 ================================ */
-QUIZ_DATABASE["present-continuous"] = [
+window.quizData["present-continuous"] = [
   {
     question: "They ___ TV now.",
     options: ["watch", "are watching", "watched", "watching"],
     answer: 1,
-    explain: "Dấu hiệu: now"
+    explain: "Dấu hiệu now → hiện tại tiếp diễn"
   }
 ];
 
 /* ================================
    3. PRESENT PERFECT
 ================================ */
-QUIZ_DATABASE["present-perfect"] = [
+window.quizData["present-perfect"] = [
   {
     question: "She ___ already finished her homework.",
     options: ["has", "have", "is", "was"],
@@ -52,10 +50,10 @@ QUIZ_DATABASE["present-perfect"] = [
 /* ================================
    4. PRESENT PERFECT CONTINUOUS
 ================================ */
-QUIZ_DATABASE["present-perfect-continuous"] = [
+window.quizData["present-perfect-continuous"] = [
   {
     question: "They ___ for 2 hours.",
-    options: ["have studied", "have been studying", "are studying", "studies"],
+    options: ["have studied", "have been studying", "are studying", "study"],
     answer: 1,
     explain: "have/has been + V-ing"
   }
@@ -64,7 +62,7 @@ QUIZ_DATABASE["present-perfect-continuous"] = [
 /* ================================
    5. PAST SIMPLE
 ================================ */
-QUIZ_DATABASE["past-simple"] = [
+window.quizData["past-simple"] = [
   {
     question: "He ___ to the beach yesterday.",
     options: ["go", "goes", "went", "is going"],
@@ -76,10 +74,10 @@ QUIZ_DATABASE["past-simple"] = [
 /* ================================
    6. PAST CONTINUOUS
 ================================ */
-QUIZ_DATABASE["past-continuous"] = [
+window.quizData["past-continuous"] = [
   {
     question: "I ___ dinner when he called.",
-    options: ["was cooking", "am cooking", "cooked", "cook"],
+    options: ["was cooking", "am cooking", "cooked", "is cooking"],
     answer: 0,
     explain: "was/were + V-ing"
   }
@@ -88,7 +86,7 @@ QUIZ_DATABASE["past-continuous"] = [
 /* ================================
    7. PAST PERFECT
 ================================ */
-QUIZ_DATABASE["past-perfect"] = [
+window.quizData["past-perfect"] = [
   {
     question: "She ___ before he arrived.",
     options: ["left", "had left", "was leaving", "leaves"],
@@ -100,7 +98,7 @@ QUIZ_DATABASE["past-perfect"] = [
 /* ================================
    8. PAST PERFECT CONTINUOUS
 ================================ */
-QUIZ_DATABASE["past-perfect-continuous"] = [
+window.quizData["past-perfect-continuous"] = [
   {
     question: "They ___ for 2 hours before the rain.",
     options: ["had worked", "had been working", "worked", "were working"],
@@ -112,7 +110,7 @@ QUIZ_DATABASE["past-perfect-continuous"] = [
 /* ================================
    9. FUTURE SIMPLE
 ================================ */
-QUIZ_DATABASE["future-simple"] = [
+window.quizData["future-simple"] = [
   {
     question: "I think it ___ tomorrow.",
     options: ["rains", "will rain", "is raining", "rain"],
@@ -124,7 +122,7 @@ QUIZ_DATABASE["future-simple"] = [
 /* ================================
    10. FUTURE CONTINUOUS
 ================================ */
-QUIZ_DATABASE["future-continuous"] = [
+window.quizData["future-continuous"] = [
   {
     question: "This time tomorrow, I ___ to Hanoi.",
     options: ["will fly", "will be flying", "am flying", "fly"],
@@ -136,7 +134,7 @@ QUIZ_DATABASE["future-continuous"] = [
 /* ================================
    11. FUTURE PERFECT
 ================================ */
-QUIZ_DATABASE["future-perfect"] = [
+window.quizData["future-perfect"] = [
   {
     question: "By 2025, I ___ college.",
     options: ["will finish", "will have finished", "finish", "finished"],
@@ -148,7 +146,7 @@ QUIZ_DATABASE["future-perfect"] = [
 /* ================================
    12. FUTURE PERFECT CONTINUOUS
 ================================ */
-QUIZ_DATABASE["future-perfect-continuous"] = [
+window.quizData["future-perfect-continuous"] = [
   {
     question: "By next month, I ___ here for 2 years.",
     options: ["will work", "will have worked", "will have been working", "work"],
