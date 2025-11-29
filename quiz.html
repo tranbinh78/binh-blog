@@ -67,60 +67,106 @@
       cursor:pointer;
       font-size:16px;
       font-weight:bold;
+      display:none;
     }
   </style>
 </head>
 <body>
 
-<h1>Bài tập trắc nghiệm</h1>
-<p>Chọn đáp án đúng cho từng câu.</p>
+<h1 id="quiz-title">Bài tập trắc nghiệm</h1>
+<p id="quiz-desc"></p>
 
 <div id="quiz-container"></div>
 
 <div id="result-box"></div>
-<button id="restart-btn" style="display:none;">Làm lại</button>
+<button id="restart-btn">Làm lại</button>
 
 <script>
-const quizData = [
-  {
-    question: "1. The sun ______ in the east.",
-    answers: ["rise", "rises", "is rising", "rose"],
-    correct: 1,
-    explain: "Sự thật hiển nhiên → dùng Present Simple: rises."
-  },
-  {
-    question: "2. She ______ usually go to school by bus.",
-    answers: ["don't", "doesn't", "isn't", "not"],
-    correct: 1,
-    explain: "Chủ ngữ She → phủ định: doesn't."
-  },
-  {
-    question: "3. Look! The boy ______ to fall.",
-    answers: ["is going", "is going to", "will", "goes"],
-    correct: 1,
-    explain: "'Look!' → dấu hiệu → dùng 'be going to'."
-  },
-  {
-    question: "4. He ______ to Da Nang next week. (plan)",
-    answers: ["will go", "is going", "is going to go", "goes"],
-    correct: 2,
-    explain: "Đã có kế hoạch → dùng 'be going to'."
-  },
-  {
-    question: "5. They ______ English for 5 years.",
-    answers: ["study", "are studying", "have studied", "studied"],
-    correct: 2,
-    explain: "Hành động đã kéo dài trong quá khứ đến hiện tại → Present Perfect."
-  }
-];
+/* ==========================
+   1. DỮ LIỆU QUIZ THEO BÀI
+   ==========================*/
 
+const QUIZ_DATABASE = {
+  "present-simple": {
+    title: "Bài tập – Present Simple",
+    desc: "Chọn đáp án đúng cho thì Hiện tại đơn.",
+    questions: [
+      {
+        question: "He ______ to school every day.",
+        answers: ["go", "goes", "is going", "went"],
+        correct: 1,
+        explain: "He → thêm -es → goes."
+      },
+      {
+        question: "They ______ football on Sunday.",
+        answers: ["don't play", "doesn't play", "not play", "aren't play"],
+        correct: 0,
+        explain: "They → don't + V nguyên thể."
+      }
+    ]
+  },
+
+  "present-continuous": {
+    title: "Bài tập – Present Continuous",
+    desc: "Chọn đáp án đúng cho thì Hiện tại tiếp diễn.",
+    questions: [
+      {
+        question: "They ______ TV now.",
+        answers: ["watch", "are watching", "watched", "watching"],
+        correct: 1,
+        explain: "Dấu hiệu now → Present Continuous."
+      },
+      {
+        question: "She ______ coffee at the moment.",
+        answers: ["drinks", "is drinking", "drink", "are drinking"],
+        correct: 1,
+        explain: "At the moment → đang diễn ra."
+      }
+    ]
+  },
+
+  "past-simple": {
+    title: "Bài tập – Past Simple",
+    desc: "Chọn đáp án đúng cho thì Quá khứ đơn.",
+    questions: [
+      {
+        question: "They ______ to the beach yesterday.",
+        answers: ["go", "goes", "went", "are going"],
+        correct: 2,
+        explain: "Yesterday → went."
+      }
+    ]
+  }
+};
+
+/* ==========================
+   2. LẤY LOẠI BÀI TỪ URL
+   ==========================*/
+
+const params = new URLSearchParams(window.location.search);
+const type = params.get("type");
+
+const quizData = QUIZ_DATABASE[type];
 let score = 0;
 
+/* ==========================
+   3. HIỂN THỊ QUIZ
+   ==========================*/
+
+if (!quizData) {
+  document.getElementById("quiz-title").innerText = "Quiz không tồn tại";
+} else {
+  document.getElementById("quiz-title").innerText = quizData.title;
+  document.getElementById("quiz-desc").innerText = quizData.desc;
+  loadQuiz();
+}
+
 function loadQuiz() {
+  score = 0;
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
 
-  quizData.forEach((q, index) => {
+  quizData.questions.forEach((q, index) => {
     const box = document.createElement("div");
     box.className = "question-box";
 
@@ -132,15 +178,18 @@ function loadQuiz() {
 
     html += `</div><p id="explain-${index}" style="display:none; margin-top:10px; color:#444;"></p>`;
     box.innerHTML = html;
-
     container.appendChild(box);
   });
 }
 
-function checkAnswer(qIndex, ansIndex, btn) {
-  const correct = quizData[qIndex].correct;
+/* ==========================
+   4. KIỂM TRA ĐÁP ÁN
+   ==========================*/
 
-  // ngăn chọn lại
+function checkAnswer(qIndex, ansIndex, btn) {
+  const correct = quizData.questions[qIndex].correct;
+
+  // khóa toàn bộ đáp án
   const buttons = btn.parentNode.querySelectorAll("button");
   buttons.forEach(b => b.disabled = true);
 
@@ -153,29 +202,29 @@ function checkAnswer(qIndex, ansIndex, btn) {
   }
 
   document.getElementById("explain-" + qIndex).innerHTML =
-    "➡ " + quizData[qIndex].explain;
+    "➡ " + quizData.questions[qIndex].explain;
   document.getElementById("explain-" + qIndex).style.display = "block";
 
-  if (qIndex === quizData.length - 1) finishQuiz();
+  if (qIndex === quizData.questions.length - 1) finishQuiz();
 }
+
+/* ==========================
+   5. KẾT QUẢ
+   ==========================*/
 
 function finishQuiz() {
   const box = document.getElementById("result-box");
   box.style.display = "block";
-  box.innerHTML = `<h3>Kết quả: ${score}/${quizData.length}</h3>
+  box.innerHTML = `<h3>Kết quả: ${score}/${quizData.questions.length}</h3>
                    <p>Bạn đã hoàn thành bài kiểm tra!</p>`;
-
   document.getElementById("restart-btn").style.display = "block";
 }
 
 document.getElementById("restart-btn").onclick = () => {
-  score = 0;
   loadQuiz();
   document.getElementById("result-box").style.display = "none";
   document.getElementById("restart-btn").style.display = "none";
 };
-
-loadQuiz();
 </script>
 
 </body>
