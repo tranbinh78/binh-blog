@@ -2,9 +2,7 @@
    QUIZ DATABASE – Binh Blog (12 Tenses × 20)
    ============================================ */
 
-const QUIZ_DATABASE = {};
-
-/* Xuất biến ra global để quiz.html có thể dùng */
+// Tạo object global để quiz.html có thể truy cập
 window.quizData = {};
 const QUIZ_DATABASE = window.quizData;
 
