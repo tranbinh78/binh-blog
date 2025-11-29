@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Quiz | Binh Blog</title>
+
   <style>
     body {
       font-family: "Be Vietnam Pro", sans-serif;
@@ -11,6 +12,10 @@
       max-width:900px;
       margin:auto;
       line-height:1.7;
+    }
+
+    h1 {
+      margin-bottom:5px;
     }
 
     .question-box {
@@ -85,38 +90,63 @@
 <script src="/binh-blog/quiz-data.js"></script>
 
 <script>
-/* ==========================
-   1. LẤY LOẠI BÀI TỪ URL
-==========================*/
+/* ============================================
+   1. LẤY TYPE (thì) TỪ URL
+============================================ */
 
 const params = new URLSearchParams(window.location.search);
 const type = params.get("type");
 
-// quizData được load từ quiz-data.js
-const data = quizData[type];
-let score = 0;
+/* QUIZ_DATABASE được load từ quiz-data.js */
+const rawData = QUIZ_DATABASE[type];
 
-/* ==========================
-   2. HIỂN THỊ TIÊU ĐỀ
-==========================*/
+let quizObject = null;
 
-if (!data) {
-  document.getElementById("quiz-title").innerText = "Chưa có bài tập cho phần này!";
+// Nếu người dùng nhập type sai → thông báo lỗi
+if (!rawData) {
+  document.getElementById("quiz-title").innerText = "Không tìm thấy bài tập!";
+  document.getElementById("quiz-desc").innerText =
+    "Bài '" + type + "' chưa được tạo trong quiz-data.js.";
 } else {
-  document.getElementById("quiz-title").innerText = data.title;
-  document.getElementById("quiz-desc").innerText = data.desc;
-  loadQuiz(data.questions);
+
+  /* ============================================
+     2. CHUẨN HÓA DỮ LIỆU TỰ ĐỘNG
+     rawData = mảng 20 câu
+     hoặc rawData = object {title, desc, questions}
+  ============================================= */
+
+  if (Array.isArray(rawData)) {
+    // Trường hợp bạn tạo dữ liệu bằng cách gán array (20 câu / thì)
+    quizObject = {
+      title: "Bài tập – " + type.replace(/-/g, " ").toUpperCase(),
+      desc: "Chọn đáp án đúng cho bài tập.",
+      questions: rawData
+    };
+  } else {
+    quizObject = rawData;
+  }
+
+  // Hiển thị tiêu đề
+  document.getElementById("quiz-title").innerText = quizObject.title;
+  document.getElementById("quiz-desc").innerText = quizObject.desc;
+
+  // Render quiz
+  loadQuiz(quizObject.questions);
 }
 
-/* ==========================
+let score = 0;
+let currentQuestions = [];
+
+/* ============================================
    3. HIỂN THỊ CÂU HỎI
-==========================*/
+============================================ */
 
 function loadQuiz(questions) {
   score = 0;
+  currentQuestions = questions;
+
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
-  window.currentQuestions = questions;
 
   questions.forEach((q, index) => {
     const box = document.createElement("div");
@@ -128,15 +158,16 @@ function loadQuiz(questions) {
       html += `<button onclick="checkAnswer(${index}, ${i}, this)">${ans}</button>`;
     });
 
-    html += `</div><p id="explain-${index}" style="display:none; margin-top:10px;"></p>`;
+    html += `</div><p id="explain-${index}" style="display:none; margin-top:10px; color:#333;"></p>`;
+
     box.innerHTML = html;
     container.appendChild(box);
   });
 }
 
-/* ==========================
+/* ============================================
    4. KIỂM TRA ĐÁP ÁN
-==========================*/
+============================================ */
 
 function checkAnswer(qIndex, ansIndex, btn) {
   const correct = currentQuestions[qIndex].answer;
@@ -159,15 +190,18 @@ function checkAnswer(qIndex, ansIndex, btn) {
   if (qIndex === currentQuestions.length - 1) finishQuiz();
 }
 
-/* ==========================
-   5. KẾT QUẢ
-==========================*/
+/* ============================================
+   5. HIỂN THỊ KẾT QUẢ
+============================================ */
 
 function finishQuiz() {
   const box = document.getElementById("result-box");
   box.style.display = "block";
+
   box.innerHTML =
-    `<h3>Kết quả: ${score}/${currentQuestions.length}</h3><p>Bạn đã hoàn thành bài kiểm tra!</p>`;
+    `<h3>Kết quả: ${score}/${currentQuestions.length}</h3>
+     <p>Chúc bạn học tốt! ❤️</p>`;
+
   document.getElementById("restart-btn").style.display = "block";
 }
 
