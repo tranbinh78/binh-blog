@@ -1,157 +1,33 @@
-/* ============================================
-   QUIZ DATABASE – Binh Blog (12 Tenses × 20)
-   ============================================ */
+// ===========================================
+// QUIZ DATABASE – Dữ liệu 12 thì (20 câu/thì)
+// ===========================================
 
-// Tạo biến global để quiz.html truy cập
-
+// Khởi tạo object chứa toàn bộ quiz
 window.quizData = {};
 
-/* ================================
-   1. PRESENT SIMPLE
-================================ */
+
+// ===========================================
+// 1. PRESENT SIMPLE — 20 câu
+// ===========================================
 window.quizData["present-simple"] = [
-  {
-    question: "She ___ to school every day.",
-    options: ["go", "goes", "is going", "going"],
-    answer: 1,
-    explain: "He/She/It + V(s/es)"
-  },
-  {
-    question: "I usually ___ breakfast at 7.",
-    options: ["have", "has", "am having", "having"],
-    answer: 0,
-    explain: "I/You/We/They + V"
-  }
-];
-
-/* ================================
-   2. PRESENT CONTINUOUS
-================================ */
-window.quizData["present-continuous"] = [
-  {
-    question: "They ___ TV now.",
-    options: ["watch", "are watching", "watched", "watching"],
-    answer: 1,
-    explain: "Dấu hiệu now → hiện tại tiếp diễn"
-  }
-];
-
-/* ================================
-   3. PRESENT PERFECT
-================================ */
-window.quizData["present-perfect"] = [
-  {
-    question: "She ___ already finished her homework.",
-    options: ["has", "have", "is", "was"],
-    answer: 0,
-    explain: "Has/have + V3"
-  }
-];
-
-/* ================================
-   4. PRESENT PERFECT CONTINUOUS
-================================ */
-window.quizData["present-perfect-continuous"] = [
-  {
-    question: "They ___ for 2 hours.",
-    options: ["have studied", "have been studying", "are studying", "study"],
-    answer: 1,
-    explain: "have/has been + V-ing"
-  }
-];
-
-/* ================================
-   5. PAST SIMPLE
-================================ */
-window.quizData["past-simple"] = [
-  {
-    question: "He ___ to the beach yesterday.",
-    options: ["go", "goes", "went", "is going"],
-    answer: 2,
-    explain: "Yesterday → V2"
-  }
-];
-
-/* ================================
-   6. PAST CONTINUOUS
-================================ */
-window.quizData["past-continuous"] = [
-  {
-    question: "I ___ dinner when he called.",
-    options: ["was cooking", "am cooking", "cooked", "is cooking"],
-    answer: 0,
-    explain: "was/were + V-ing"
-  }
-];
-
-/* ================================
-   7. PAST PERFECT
-================================ */
-window.quizData["past-perfect"] = [
-  {
-    question: "She ___ before he arrived.",
-    options: ["left", "had left", "was leaving", "leaves"],
-    answer: 1,
-    explain: "had + V3"
-  }
-];
-
-/* ================================
-   8. PAST PERFECT CONTINUOUS
-================================ */
-window.quizData["past-perfect-continuous"] = [
-  {
-    question: "They ___ for 2 hours before the rain.",
-    options: ["had worked", "had been working", "worked", "were working"],
-    answer: 1,
-    explain: "had been + V-ing"
-  }
-];
-
-/* ================================
-   9. FUTURE SIMPLE
-================================ */
-window.quizData["future-simple"] = [
-  {
-    question: "I think it ___ tomorrow.",
-    options: ["rains", "will rain", "is raining", "rain"],
-    answer: 1,
-    explain: "will + V"
-  }
-];
-
-/* ================================
-   10. FUTURE CONTINUOUS
-================================ */
-window.quizData["future-continuous"] = [
-  {
-    question: "This time tomorrow, I ___ to Hanoi.",
-    options: ["will fly", "will be flying", "am flying", "fly"],
-    answer: 1,
-    explain: "will be + V-ing"
-  }
-];
-
-/* ================================
-   11. FUTURE PERFECT
-================================ */
-window.quizData["future-perfect"] = [
-  {
-    question: "By 2025, I ___ college.",
-    options: ["will finish", "will have finished", "finish", "finished"],
-    answer: 1,
-    explain: "will have + V3"
-  }
-];
-
-/* ================================
-   12. FUTURE PERFECT CONTINUOUS
-================================ */
-window.quizData["future-perfect-continuous"] = [
-  {
-    question: "By next month, I ___ here for 2 years.",
-    options: ["will work", "will have worked", "will have been working", "work"],
-    answer: 2,
-    explain: "will have been + V-ing"
-  }
+  {question:"She ___ to school every day.", options:["go","goes","is going","going"], answer:1, explain:"He/She/It + V(s/es)"},
+  {question:"I usually ___ breakfast at 7.", options:["have","has","am having","having"], answer:0, explain:"I/You/We/They + V"},
+  {question:"The sun ___ in the east.", options:["rise","rises","is rising","rose"], answer:1, explain:"Sự thật hiển nhiên"},
+  {question:"He ___ coffee, he prefers tea.", options:["don’t drink","doesn’t drink","isn’t drinking","not drink"], answer:1, explain:"He → doesn’t + V"},
+  {question:"We ___ English every Monday.", options:["study","studies","are study","studying"], answer:0, explain:"Thói quen"},
+  {question:"Water ___ at 100°C.", options:["boil","boils","is boiling","boiled"], answer:1, explain:"Scientific fact"},
+  {question:"Dogs ___ meat.", options:["eat","eats","are eating","eated"], answer:0, explain:"Habit"},
+  {question:"My father ___ TV in the evening.", options:["watch","watches","is watching","watching"], answer:1, explain:"He/She/It + V(s/es)"},
+  {question:"Anna ___ her homework after school.", options:["do","does","is doing","doing"], answer:1, explain:"does + V"},
+  {question:"He rarely ___ breakfast.", options:["eat","eats","is eat","eating"], answer:1, explain:"Trạng từ chỉ tần suất + Present Simple"},
+  {question:"My parents ___ in a big company.", options:["works","working","work","are work"], answer:2, explain:"Plural → work"},
+  {question:"The museum ___ at 8.", options:["open","opens","is opening","opened"], answer:1, explain:"Schedule"},
+  {question:"My brother never ___ late.", options:["is","are","be","being"], answer:0, explain:"State verb 'to be'"},
+  {question:"We ___ a car, so we take the bus.", options:["don’t have","doesn’t have","aren’t have","not have"], answer:0, explain:"don’t + V"},
+  {question:"The Earth ___ around the Sun.", options:["move","moves","is moving","moved"], answer:1, explain:"Fact"},
+  {question:"Lisa ___ French very well.", options:["speak","speaks","is speak","speaking"], answer:1, explain:"He/She/It + V(s/es)"},
+  {question:"My friends often ___ to the cinema.", options:["go","goes","going","are go"], answer:0, explain:"Habit"},
+  {question:"His job ___ a lot of traveling.", options:["require","requires","is requiring","required"], answer:1, explain:"Singular subject"},
+  {question:"They ___ near my house.", options:["live","lives","are living","living"], answer:0, explain:"Permanent situation"},
+  {question:"Tom ___ well with his team.", options:["gets along","get along","is get along","get alongs"], answer:0, explain:"Phrasal verb"}
 ];
