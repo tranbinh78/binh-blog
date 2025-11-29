@@ -147,7 +147,7 @@ QUIZ_DATABASE["past-continuous"] = [
   {question:"She ___ late.", options:["was coming","comes","come","came"], answer:0},
   {question:"They ___ loudly.", options:["were talking","talk","talked","talking"], answer:0},
   {question:"I ___ for the bus.", options:["was waiting","wait","waited","waiting"], answer:0},
-  {question:"He ___ lunch.", pptions:["was eating","eat","ate","eating"], answer:0},
+  {question:"He ___ lunch.", options:["was eating","eat","ate","eating"], answer:0},
   {question:"We ___ the house.", options:["were cleaning","clean","cleaned","cleaning"], answer:0},
   {question:"She ___ a book.", options:["was reading","read","reads","reading"], answer:0},
   {question:"They ___ football.", options:["were playing","play","played","playing"], answer:0},
