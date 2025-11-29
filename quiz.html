@@ -81,102 +81,54 @@
 <div id="result-box"></div>
 <button id="restart-btn">Làm lại</button>
 
+<!-- Load dữ liệu 12 thì -->
+<script src="/binh-blog/quiz-data.js"></script>
+
 <script>
 /* ==========================
-   1. DỮ LIỆU QUIZ THEO BÀI
-   ==========================*/
-
-const QUIZ_DATABASE = {
-  "present-simple": {
-    title: "Bài tập – Present Simple",
-    desc: "Chọn đáp án đúng cho thì Hiện tại đơn.",
-    questions: [
-      {
-        question: "He ______ to school every day.",
-        answers: ["go", "goes", "is going", "went"],
-        correct: 1,
-        explain: "He → thêm -es → goes."
-      },
-      {
-        question: "They ______ football on Sunday.",
-        answers: ["don't play", "doesn't play", "not play", "aren't play"],
-        correct: 0,
-        explain: "They → don't + V nguyên thể."
-      }
-    ]
-  },
-
-  "present-continuous": {
-    title: "Bài tập – Present Continuous",
-    desc: "Chọn đáp án đúng cho thì Hiện tại tiếp diễn.",
-    questions: [
-      {
-        question: "They ______ TV now.",
-        answers: ["watch", "are watching", "watched", "watching"],
-        correct: 1,
-        explain: "Dấu hiệu now → Present Continuous."
-      },
-      {
-        question: "She ______ coffee at the moment.",
-        answers: ["drinks", "is drinking", "drink", "are drinking"],
-        correct: 1,
-        explain: "At the moment → đang diễn ra."
-      }
-    ]
-  },
-
-  "past-simple": {
-    title: "Bài tập – Past Simple",
-    desc: "Chọn đáp án đúng cho thì Quá khứ đơn.",
-    questions: [
-      {
-        question: "They ______ to the beach yesterday.",
-        answers: ["go", "goes", "went", "are going"],
-        correct: 2,
-        explain: "Yesterday → went."
-      }
-    ]
-  }
-};
-
-/* ==========================
-   2. LẤY LOẠI BÀI TỪ URL
-   ==========================*/
+   1. LẤY LOẠI BÀI TỪ URL
+==========================*/
 
 const params = new URLSearchParams(window.location.search);
 const type = params.get("type");
 
-const quizData = QUIZ_DATABASE[type];
+// quizData được load từ quiz-data.js
+const data = quizData[type];
 let score = 0;
 
 /* ==========================
-   3. HIỂN THỊ QUIZ
-   ==========================*/
+   2. HIỂN THỊ TIÊU ĐỀ
+==========================*/
 
-if (!quizData) {
-  document.getElementById("quiz-title").innerText = "Quiz không tồn tại";
+if (!data) {
+  document.getElementById("quiz-title").innerText = "Chưa có bài tập cho phần này!";
 } else {
-  document.getElementById("quiz-title").innerText = quizData.title;
-  document.getElementById("quiz-desc").innerText = quizData.desc;
-  loadQuiz();
+  document.getElementById("quiz-title").innerText = data.title;
+  document.getElementById("quiz-desc").innerText = data.desc;
+  loadQuiz(data.questions);
 }
 
-function loadQuiz() {
+/* ==========================
+   3. HIỂN THỊ CÂU HỎI
+==========================*/
+
+function loadQuiz(questions) {
   score = 0;
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
+  window.currentQuestions = questions;
 
-  quizData.questions.forEach((q, index) => {
+  questions.forEach((q, index) => {
     const box = document.createElement("div");
     box.className = "question-box";
 
     let html = `<p><strong>${q.question}</strong></p><div class="answers">`;
 
-    q.answers.forEach((ans, i) => {
+    q.options.forEach((ans, i) => {
       html += `<button onclick="checkAnswer(${index}, ${i}, this)">${ans}</button>`;
     });
 
-    html += `</div><p id="explain-${index}" style="display:none; margin-top:10px; color:#444;"></p>`;
+    html += `</div><p id="explain-${index}" style="display:none; margin-top:10px;"></p>`;
     box.innerHTML = html;
     container.appendChild(box);
   });
@@ -184,12 +136,11 @@ function loadQuiz() {
 
 /* ==========================
    4. KIỂM TRA ĐÁP ÁN
-   ==========================*/
+==========================*/
 
 function checkAnswer(qIndex, ansIndex, btn) {
-  const correct = quizData.questions[qIndex].correct;
+  const correct = currentQuestions[qIndex].answer;
 
-  // khóa toàn bộ đáp án
   const buttons = btn.parentNode.querySelectorAll("button");
   buttons.forEach(b => b.disabled = true);
 
@@ -202,33 +153,30 @@ function checkAnswer(qIndex, ansIndex, btn) {
   }
 
   document.getElementById("explain-" + qIndex).innerHTML =
-    "➡ " + quizData.questions[qIndex].explain;
+    "➡ " + currentQuestions[qIndex].explain;
   document.getElementById("explain-" + qIndex).style.display = "block";
 
-  if (qIndex === quizData.questions.length - 1) finishQuiz();
+  if (qIndex === currentQuestions.length - 1) finishQuiz();
 }
 
 /* ==========================
    5. KẾT QUẢ
-   ==========================*/
+==========================*/
 
 function finishQuiz() {
   const box = document.getElementById("result-box");
   box.style.display = "block";
-  box.innerHTML = `<h3>Kết quả: ${score}/${quizData.questions.length}</h3>
-                   <p>Bạn đã hoàn thành bài kiểm tra!</p>`;
+  box.innerHTML =
+    `<h3>Kết quả: ${score}/${currentQuestions.length}</h3><p>Bạn đã hoàn thành bài kiểm tra!</p>`;
   document.getElementById("restart-btn").style.display = "block";
 }
 
 document.getElementById("restart-btn").onclick = () => {
-  loadQuiz();
+  loadQuiz(currentQuestions);
   document.getElementById("result-box").style.display = "none";
   document.getElementById("restart-btn").style.display = "none";
 };
 </script>
 
-<script src="/binh-blog/quiz-data.js"></script>
-<script src="/binh-blog/quiz.js"></script>   <!-- file xử lý logic quiz -->
-  
 </body>
 </html>
