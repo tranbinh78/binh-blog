@@ -3,7 +3,7 @@
    Sử dụng cho Binh Blog – quiz.html
 ======================================================== */
 
-window.quizData = {};
+window.quizData = window.quizData || {};
 
 /* ========================================================
    1) PRESENT SIMPLE – 20 QUESTIONS
