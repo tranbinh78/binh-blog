@@ -3,7 +3,7 @@
 // ===========================================
 
 // Khởi tạo object chứa toàn bộ quiz
-window.quizData = {};
+window.quizData = window.quizData || {};
 
 
 // ===========================================
