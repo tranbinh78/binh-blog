@@ -69,24 +69,22 @@
 <div id="result-box"></div>
 <button id="restart-btn">Làm lại</button>
 
-<!-- MUST load first -->
+<!-- Load dữ liệu quiz -->
 <script src="/binh-blog/quiz-data.js"></script>
 
 <script>
-// =======================
-// LẤY TYPE TỪ URL
-// =======================
+/* ======================
+   1. LẤY LOẠI QUIZ
+====================== */
 const params = new URLSearchParams(window.location.search);
 const type = params.get("type");
 
-// CHUẨN: Lấy dữ liệu từ window.quizData
+/* ======================
+   2. LẤY DỮ LIỆU THEO TYPE
+====================== */
 const quiz = window.quizData?.[type];
-
 let score = 0;
 
-// =======================
-// HIỂN THỊ QUIZ
-// =======================
 if (!quiz) {
   document.getElementById("quiz-title").innerText = "Chưa có bài tập cho phần này!";
   document.getElementById("quiz-desc").innerText = "Vui lòng kiểm tra lại URL.";
@@ -96,6 +94,9 @@ if (!quiz) {
   loadQuiz(quiz.questions);
 }
 
+/* ======================
+   3. HIỂN THỊ CÂU HỎI
+====================== */
 function loadQuiz(questions) {
   score = 0;
   const container = document.getElementById("quiz-container");
@@ -118,13 +119,13 @@ function loadQuiz(questions) {
   });
 }
 
-// =======================
-// CHECK ANSWER
-// =======================
+/* ======================
+   4. KIỂM TRA ĐÁP ÁN
+====================== */
 function checkAnswer(qIndex, ansIndex, btn) {
   const correct = currentQuestions[qIndex].answer;
-  const buttons = btn.parentNode.querySelectorAll("button");
 
+  const buttons = btn.parentNode.querySelectorAll("button");
   buttons.forEach(b => b.disabled = true);
 
   if (ansIndex === correct) {
@@ -142,12 +143,13 @@ function checkAnswer(qIndex, ansIndex, btn) {
   if (qIndex === currentQuestions.length - 1) finishQuiz();
 }
 
-// =======================
-// FINISH QUIZ
-// =======================
+/* ======================
+   5. HIỆN KẾT QUẢ
+====================== */
 function finishQuiz() {
   const box = document.getElementById("result-box");
-  box.innerHTML = `<h3>Kết quả: ${score}/${currentQuestions.length}</h3><p>Bạn đã hoàn thành bài kiểm tra!</p>`;
+  box.innerHTML = `<h3>Kết quả: ${score}/${currentQuestions.length}</h3>
+                   <p>Bạn đã hoàn thành bài kiểm tra!</p>`;
   box.style.display = "block";
 
   document.getElementById("restart-btn").style.display = "block";
