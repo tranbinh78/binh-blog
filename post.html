@@ -233,7 +233,7 @@ if (!file) {
           document.getElementById("post-content").innerHTML = html;
           generateTOC();
 
-// TỰ ĐỘNG THÊM NÚT QUIZ CHO 12 THÌ
+// 🟣 TỰ ĐỘNG THÊM NÚT QUIZ CHO 12 THÌ
 const quizMap = {
   "present-simple.html": "present-simple",
   "present-continuous.html": "present-continuous",
@@ -251,7 +251,6 @@ const quizMap = {
   "future-perfect.html": "future-perfect"
 };
 
-// kiểm tra tên file - nếu có quiz thì tạo nút
 if (quizMap[file]) {
   const quizType = quizMap[file];
 
@@ -260,8 +259,8 @@ if (quizMap[file]) {
       <a href="/binh-blog/quiz.html?type=${quizType}"
          style="display:inline-block; padding:12px 22px;
                 background:#d9d1ff; border-radius:10px;
-                font-weight:600; font-size:18px; color:#000;">
-        👉 Làm bài tập ${quizType.replace(/-/g, " ").toUpperCase()}
+                font-weight:600; font-size:18px;">
+        👉 Làm bài tập: ${quizType.replace(/-/g, " ").toUpperCase()}
       </a>
     </div>
   `;
