@@ -121,78 +121,126 @@ if (!data) {
 }
 
 /* ==========================
-   HIỂN THỊ CÂU HỎI
+   3. HIỂN THỊ QUIZ – PRO MODE
 ==========================*/
 
+let timerInterval;
+let timeLeft = 300; // 300s = 5 phút
+
+function startTimer() {
+  const box = document.getElementById("result-box");
+  box.style.display = "block";
+  box.innerHTML = `<b>⏱ Thời gian: <span id="timer">${timeLeft}</span> giây</b>`;
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    document.getElementById("timer").textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      finishQuiz(true);  // auto nộp bài
+    }
+  }, 1000);
+}
+
+function shuffleArray(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
 function loadQuiz(questions) {
-  window._score = 0;
-  window.currentQuestions = questions;
+  score = 0;
+  timeLeft = 300; // reset 5 phút
+  clearInterval(timerInterval);
+
+  // ⭐ Random hoá thứ tự câu hỏi
+  window.currentQuestions = shuffleArray([...questions]);
 
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
 
-  questions.forEach((q, index) => {
+  currentQuestions.forEach((q, index) => {
+    // ⭐ Random hoá thứ tự đáp án
+    const optionOrder = shuffleArray([0, 1, 2, 3]);
+
     const box = document.createElement("div");
     box.className = "question-box";
 
-    let html = `<p><strong>${index + 1}. ${q.question}</strong></p><div class="answers">`;
+    let html = `<p><strong>${q.question}</strong></p><div class="answers">`;
 
-    q.options.forEach((ans, i) => {
-      html += `<button onclick="checkAnswer(${index}, ${i}, this)">${ans}</button>`;
+    optionOrder.forEach(orderIndex => {
+      html += `<button onclick="checkAnswer(${index}, ${orderIndex}, this)">
+                  ${q.options[orderIndex]}
+               </button>`;
     });
 
-    html += `</div><p id="explain-${index}" style="display:none; margin-top:10px; color:#444;"></p>`;
-
+    html += `</div><p id="explain-${index}" style="display:none; margin-top:10px;"></p>`;
     box.innerHTML = html;
     container.appendChild(box);
   });
+
+  // ⭐ Bắt đầu đếm giờ
+  startTimer();
 }
 
 /* ==========================
-   KIỂM TRA ĐÁP ÁN
+   4. KIỂM TRA ĐÁP ÁN – PRO MODE
 ==========================*/
 
-function checkAnswer(qIndex, ansIndex, btn) {
-  const q = window.currentQuestions[qIndex];
-  const correct = q.answer;
+function checkAnswer(qIndex, chosenIndex, btn) {
+  const question = currentQuestions[qIndex];
 
-  // khóa các nút
+  // Lấy đáp án thật (vị trí gốc)
+  const correctIndex = question.answer;
+
+  // Lấy toàn bộ nút đáp án
   const buttons = btn.parentNode.querySelectorAll("button");
   buttons.forEach(b => b.disabled = true);
 
-  // chấm điểm
-  if (ansIndex === correct) {
+  // Xác định đúng sai
+  if (chosenIndex === correctIndex) {
     btn.classList.add("correct");
-    window._score++;
+    score++;
   } else {
     btn.classList.add("wrong");
-    buttons[correct].classList.add("correct");
+
+    // tô màu đáp án đúng
+    buttons.forEach(b => {
+      if (b.textContent.trim() === question.options[correctIndex])
+        b.classList.add("correct");
+    });
   }
 
-  // giải thích
-  const explainEl = document.getElementById("explain-" + qIndex);
-  if (q.explain) {
-    explainEl.innerHTML = "➡ " + q.explain;
-    explainEl.style.display = "block";
-  }
+  document.getElementById("explain-" + qIndex).innerHTML =
+    "➡ " + question.explain;
+  document.getElementById("explain-" + qIndex).style.display = "block";
 
-  // câu cuối → tính điểm
-  if (qIndex === window.currentQuestions.length - 1) {
-    finishQuiz();
-  }
+  // Nếu là câu cuối → nộp bài
+  if (qIndex === currentQuestions.length - 1) finishQuiz(false);
 }
 
 /* ==========================
-   HIỂN THỊ KẾT QUẢ
+   5. KẾT QUẢ – PRO MODE
 ==========================*/
 
-function finishQuiz() {
+function finishQuiz(autoSubmit) {
+  clearInterval(timerInterval);
+
   const box = document.getElementById("result-box");
   box.style.display = "block";
-  box.innerHTML =
-    `<h3>Kết quả: ${window._score}/${window.currentQuestions.length}</h3>
-     <p>Bạn đã hoàn thành bài kiểm tra!</p>`;
 
+  if (autoSubmit) {
+    box.innerHTML = `
+      <h3>⏱ Hết giờ!</h3>
+      <p>Bạn đạt: ${score}/${currentQuestions.length}</p>
+    `;
+  } else {
+    box.innerHTML = `
+      <h3>Kết quả: ${score}/${currentQuestions.length}</h3>
+      <p>Bạn đã hoàn thành bài kiểm tra!</p>
+    `;
+  }
+
+  // hiện nút làm lại
   document.getElementById("restart-btn").style.display = "block";
 }
 
