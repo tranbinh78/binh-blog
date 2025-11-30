@@ -104,26 +104,49 @@ function loadQuiz(questions) {
   window.currentQuestions = questions;
 
   questions.forEach((q, index) => {
+
+    // ====== SHUFFLE OPTIONS ======
+    const opts = q.options.map((opt, i) => ({
+        text: opt,
+        isCorrect: i === q.answer
+    }));
+
+    // Fisher-Yates shuffle
+    for (let i = opts.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [opts[i], opts[j]] = [opts[j], opts[i]];
+    }
+
+    // SAVE back shuffled options + new correct index
+    const shuffledOptions = opts.map(o => o.text);
+    const newCorrectIndex = opts.findIndex(o => o.isCorrect);
+
+    // ====== RENDERING ======
     const box = document.createElement("div");
     box.className = "question-box";
 
     let html = `<p><strong>${index+1}. ${q.question}</strong></p><div class="answers">`;
 
-    q.options.forEach((ans, i) => {
+    shuffledOptions.forEach((ans, i) => {
       html += `<button onclick="checkAnswer(${index}, ${i}, this)">${ans}</button>`;
     });
 
     html += `</div><p id="explain-${index}" style="display:none; margin-top:10px; color:#444;"></p>`;
+
+    // Lưu lại index đúng mới
+    if (!window.correctMap) window.correctMap = {};
+    window.correctMap[index] = newCorrectIndex;
+
     box.innerHTML = html;
     container.appendChild(box);
-  });
+});
 }
 
 /* ======================
    4. KIỂM TRA ĐÁP ÁN
 ====================== */
 function checkAnswer(qIndex, ansIndex, btn) {
-  const correct = currentQuestions[qIndex].answer;
+  const correct = window.correctMap[qIndex];
 
   const buttons = btn.parentNode.querySelectorAll("button");
   buttons.forEach(b => b.disabled = true);
