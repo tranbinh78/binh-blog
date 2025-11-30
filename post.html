@@ -14,6 +14,7 @@
 
 <style>
 
+/* ==== CUSTOM STYLES ==== */
 #post-content .formula {
   font-size: 24px;
   font-weight: 700;
@@ -40,7 +41,7 @@
 #post-content .example strong {
   color: #1d63a5;
 }
-  
+
 /* ==== GENERAL ==== */
 body {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -113,22 +114,6 @@ body {
   margin-top: 20px;
 }
 
-/* ==== TOC ==== */
-#toc-container {
-  background: #f8f4ff;
-  border-left: 4px solid #b699ff;
-  padding: 16px;
-  border-radius: 8px;
-  margin: 25px 0;
-}
-
-#toc-list li {
-  list-style: none;
-  margin: 6px 0;
-  cursor: pointer;
-  color: #4635d4;
-}
-
 /* ==== RELATED POSTS ==== */
 .related-box {
   background: #f7f3ff;
@@ -146,7 +131,7 @@ body {
   border: 1px solid #c5b0ff;
   cursor: pointer;
 }
-  
+
 </style>
 </head>
 
@@ -233,96 +218,105 @@ if (!file) {
           document.getElementById("post-content").innerHTML = html;
           generateTOC();
 
-// 🟣 TỰ ĐỘNG THÊM NÚT QUIZ CHO 12 THÌ
-const quizMap = {
-  "present-simple.html": "present-simple",
-  "present-continuous.html": "present-continuous",
-  "present-perfect.html": "present-perfect",
-  "present-perfect-continuous.html": "present-perfect-continuous",
+          /* ============================
+             🟣 TỰ ĐỘNG THÊM NÚT QUIZ 12 THÌ
+          ============================ */
+          const quizMap = {
+            "present-simple.html": "present-simple",
+            "present-continuous.html": "present-continuous",
+            "present-perfect.html": "present-perfect",
+            "present-perfect-continuous.html": "present-perfect-continuous",
 
-  "past-simple.html": "past-simple",
-  "past-continuous.html": "past-continuous",
-  "past-perfect.html": "past-perfect",
-  "past-perfect-continuous.html": "past-perfect-continuous",
+            "past-simple.html": "past-simple",
+            "past-continuous.html": "past-continuous",
+            "past-perfect.html": "past-perfect",
+            "past-perfect-continuous.html": "past-perfect-continuous",
 
-  "future-simple.html": "future-simple",
-  "near-future.html": "near-future",
-  "future-continuous.html": "future-continuous",
-  "future-perfect.html": "future-perfect"
-};
+            "future-simple.html": "future-simple",
+            "future-continuous.html": "future-continuous",
+            "future-perfect.html": "future-perfect",
 
-if (quizMap[post.file]) {   // ✅ SỬA Ở ĐÂY
-  const quizType = quizMap[post.file];   // ✅ SỬA Ở ĐÂY
+            /* ⚠️ BẠN ĐANG DÙNG file “future-near.html” */
+            "future-near.html": "near-future"
+          };
 
-  const quizBtn = `
-    <div style="margin-top:25px;">
-      <a href="/binh-blog/quiz.html?type=${quizType}"
-         style="display:inline-block; padding:12px 22px;
-                background:#d9d1ff; border-radius:10px;
-                font-weight:600; font-size:18px;">
-        👉 Làm bài tập: ${quizType.replace(/-/g, " ").toUpperCase()}
-      </a>
-    </div>
-  `;
+          if (quizMap[file]) {
+            const quizType = quizMap[file];
 
-  document.getElementById("post-content").innerHTML += quizBtn;
-}
-             
-// ⭐ KÍCH HOẠT NÚT HIỆN / ẨN ĐÁP ÁN (dành cho bài có answer-box)
-setTimeout(() => {
-  const toggleBtn = document.getElementById("toggle-answer");
-  const answerBox = document.getElementById("answer-box");
+            const quizBtn = `
+              <div style="margin-top:25px;">
+                <a href="/binh-blog/quiz.html?type=${quizType}"
+                   style="display:inline-block; padding:12px 22px;
+                          background:#d9d1ff; border-radius:10px;
+                          font-weight:600; font-size:18px;">
+                  👉 Làm bài tập: ${quizType.replace(/-/g, " ").toUpperCase()}
+                </a>
+              </div>
+            `;
 
-  if (toggleBtn && answerBox) {
-    toggleBtn.addEventListener("click", () => {
-      const hidden = answerBox.style.display === "none";
-      answerBox.style.display = hidden ? "block" : "none";
-      toggleBtn.innerText = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-    });
-  }
-}, 50);
+            document.getElementById("post-content").innerHTML += quizBtn;
+          }
 
-      /* RELATED POSTS */
-      const related = posts
-        .filter(p => p.category === post.category && p.file !== post.file)
-        .slice(0, 3);
 
-      if (related.length === 0) {
-        document.getElementById("related-posts").style.display = "none";
-      } else {
-        const list = document.getElementById("related-list");
-        related.forEach(r => {
-          list.innerHTML += `<div class="related-item">
-            <a href="/binh-blog/post.html?file=${r.file}">${r.title}</a>
-          </div>`;
+          /* ANSWER TOGGLE */
+          setTimeout(() => {
+            const toggleBtn = document.getElementById("toggle-answer");
+            const answerBox = document.getElementById("answer-box");
+
+            if (toggleBtn && answerBox) {
+              toggleBtn.addEventListener("click", () => {
+                const hidden = answerBox.style.display === "none";
+                answerBox.style.display = hidden ? "block" : "none";
+                toggleBtn.innerText = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+              });
+            }
+          }, 50);
+
+
+          /* RELATED POSTS */
+          const related = posts
+            .filter(p => p.category === post.category && p.file !== post.file)
+            .slice(0, 3);
+
+          if (related.length === 0) {
+            document.getElementById("related-posts").style.display = "none";
+          } else {
+            const list = document.getElementById("related-list");
+            related.forEach(r => {
+              list.innerHTML += `<div class="related-item">
+                <a href="/binh-blog/post.html?file=${r.file}">${r.title}</a>
+              </div>`;
+            });
+          }
+
+          /* PREV / NEXT */
+          const index = posts.findIndex(p => p.file === file);
+
+          if (index > 0) {
+            const prev = posts[index - 1];
+            document.getElementById("prev-post").innerHTML =
+              `⬅ <a href="/binh-blog/post.html?file=${prev.file}">${prev.title}</a>`;
+          }
+
+          if (index < posts.length - 1) {
+            const next = posts[index + 1];
+            document.getElementById("next-post").innerHTML =
+              `<a href="/binh-blog/post.html?file=${next.file}">${next.title}</a> ➡`;
+          }
         });
-      }
-
-    /* PREV / NEXT */
-      const index = posts.findIndex(p => p.file === file);
-
-      if (index > 0) {
-        const prev = posts[index - 1];
-        document.getElementById("prev-post").innerHTML =
-          `⬅ <a href="/binh-blog/post.html?file=${prev.file}">${prev.title}</a>`;
-      }
-
-      if (index < posts.length - 1) {
-        const next = posts[index + 1];
-        document.getElementById("next-post").innerHTML =
-          `<a href="/binh-blog/post.html?file=${next.file}">${next.title}</a> ➡`;
-      }
     });
 }
 
 /* TOC GENERATOR */
 function generateTOC() {
   const content = document.getElementById("post-content");
-  const tocList = document.getElementById("toc-list");
-
-  tocList.innerHTML = "";
 
   const headings = content.querySelectorAll("h1, h2, h3");
+
+  const tocList = document.getElementById("toc-list");
+  if (!tocList) return;
+
+  tocList.innerHTML = "";
 
   headings.forEach((h, i) => {
     if (!h.id) h.id = "heading-" + i;
@@ -336,8 +330,7 @@ function generateTOC() {
   });
 }
 
-
-/* SHARE */
+/* SHARE BUTTONS */
 function shareFB() {
   window.open(
     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`,
