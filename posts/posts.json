@@ -146,5 +146,13 @@
   "date": "2025-11-30",
   "thumbnail": "https://picsum.photos/600/350?used01",
   "category": "Tiếng Anh"
-}
+  },
+  {
+  "file": "nouns.html",
+  "title": "Nouns – Danh từ",
+  "category": "Ngữ pháp cơ bản",
+  "date": "2025-12-02",
+  "thumbnail": "https://i.imgur.com/6VBx3io.png",
+  "status": "completed"
+  }
 ]
