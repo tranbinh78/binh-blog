@@ -384,3 +384,53 @@ window.quizData["future-perfect"] = {
     { question:"We ___ everything we need.", options:["will have prepared","prepare","prepared","are preparing"], answer:0, explain:"will have + V3" }
   ]
 };
+
+/* ============================
+   13. NEAR FUTURE – 20 câu
+   ============================ */
+
+window.quizData["Near-Future"] = {
+  title: "Bài tập – Near Future",
+  desc: "Chọn đáp án đúng cho thì Tương lai gần.",
+  questions: [
+  { question: "She ___ visit her grandmother tomorrow.", options: ["is going to", "will", "go", "is go"], answer: 0, explain: "Dấu hiệu: tomorrow → near future (be going to + V)" },
+
+  { question: "They ___ have a big party next weekend.", options: ["are going to", "will", "are go", "going to"], answer: 0, explain: "S + am/is/are + going to + V" },
+
+  { question: "I ___ buy a new phone. I saved money.", options: ["am going to", "will", "am go to", "going to buy"], answer: 0, explain: "Kế hoạch có trước → be going to" },
+
+  { question: "Look at the clouds! It ___ rain.", options: ["is going to", "will", "rains", "is rain"], answer: 0, explain: "Dự đoán dựa vào dấu hiệu hiện tại → be going to" },
+
+  { question: "We ___ travel to Da Nang this summer.", options: ["are going to", "will to", "go", "are go"], answer: 0, explain: "are going to + V" },
+
+  { question: "He ___ study abroad next year.", options: ["is going to", "will going to", "is go to", "goes"], answer: 0, explain: "is going to + V" },
+
+  { question: "They ___ build a new house.", options: ["are going to", "are build", "will build", "building"], answer: 0, explain: "are going to + V" },
+
+  { question: "I think she ___ be a doctor.", options: ["is going to", "will", "is to", "going"], answer: 0, explain: "Ý định tương lai → be going to" },
+
+  { question: "We ___ have lunch at 12.", options: ["are going to", "will have", "are have", "have"], answer: 0, explain:"are going to + V" },
+
+  { question: "My brother ___ start a new job next month.", options: ["is going to", "will start", "starts", "is start"], answer: 0, explain:"is going to + V" },
+
+  { question: "She ___ take an English course.", options: ["is going to", "will to", "is taking", "take"], answer: 0, explain:"is going to + V" },
+
+  { question: "They ___ move to a new apartment soon.", options: ["are going to", "will moving", "move", "are move"], answer: 0, explain:"are going to + V" },
+
+  { question: "I ___ visit Ho Chi Minh City next month.", options: ["am going to", "will visit", "am visit", "going"], answer: 0, explain:"am going to + V" },
+
+  { question: "He ___ play football this afternoon.", options: ["is going to", "play", "is playing", "will play"], answer: 0, explain:"is going to + V" },
+
+  { question: "They ___ buy some new furniture.", options: ["are going to", "are buy", "buy", "are buying"], answer: 0, explain:"are going to + V" },
+
+  { question: "We ___ watch a movie tonight.", options: ["are going to", "watch", "are watch", "will"], answer: 0, explain:"are going to + V" },
+
+  { question: "She ___ cook dinner after work.", options: ["is going to", "is cooks", "will cook", "cook"], answer: 0, explain:"is going to + V" },
+
+  { question: "I ___ start learning Japanese.", options: ["am going to", "will start", "start", "am start"], answer: 0, explain:"am going to + V" },
+
+  { question: "He ___ meet his friends at 7 PM.", options: ["is going to", "meets", "is meet", "will meet"], answer: 0, explain:"is going to + V" },
+
+  { question: "They ___ open a new restaurant.", options: ["are going to", "open", "will open", "are open"], answer: 0, explain:"are going to + V" }
+]
+};
