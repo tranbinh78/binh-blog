@@ -614,6 +614,35 @@ window.quizData["pronouns"] = {
     {question: "They enjoyed ___.",
      options: ["themselves", "them", "their", "they"], answer: 0,
      explain: "Đại từ phản thân: they → themselves."}
+  ]
+};
 
+/* ============================
+   19. Articles - Mạo từ
+   ============================ */
+window.quizData["articles"] = {
+  title: "Bài tập – Articles",
+  desc: "Chọn đáp án đúng cho mạo từ (a, an, the, zero article).",
+  questions: [
+    {q:"I bought ___ umbrella.", o:["a","an","the","zero"], a:1},
+    {q:"___ Earth is round.", o:["A","An","The","zero"], a:2},
+    {q:"She is ___ honest person.", o:["a","an","the","zero"], a:1},
+    {q:"He wants to buy ___ new laptop.", o:["a","an","the","zero"], a:0},
+    {q:"___ Pacific Ocean is the largest.", o:["A","An","The","zero"], a:2},
+    {q:"I love ___ music.", o:["a","an","the","zero"], a:3},
+    {q:"___ dogs are friendly animals.", o:["A","The","zero","An"], a:2},
+    {q:"She has ___ idea.", o:["a","an","the","zero"], a:1},
+    {q:"I visited ___ Louvre last year.", o:["a","an","the","zero"], a:2},
+    {q:"We had ___ dinner at 7PM.", o:["a","an","the","zero"], a:3},
+    {q:"He is ___ teacher.", o:["a","an","the","zero"], a:0},
+    {q:"They went to ___ school early.", o:["a","an","the","zero"], a:3},
+    {q:"___ Nile is the longest river in Africa.", o:["A","An","The","zero"], a:2},
+    {q:"She adopted ___ cat.", o:["a","an","the","zero"], a:0},
+    {q:"___ sun is very bright today.", o:["A","An","The","zero"], a:2},
+    {q:"I have never seen ___ elephant.", o:["a","an","the","zero"], a:1},
+    {q:"He likes ___ books.", o:["a","an","the","zero"], a:3},
+    {q:"She went to ___ university in London.", o:["a","an","the","zero"], a:1},
+    {q:"Turn off ___ lights, please.", o:["a","an","the","zero"], a:2},
+    {q:"We took ___ taxi to the airport.", o:["a","an","the","zero"], a:0}
   ]
 };
