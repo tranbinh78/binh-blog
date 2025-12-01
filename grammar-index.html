@@ -376,6 +376,38 @@ body.dark .roadmap-item.soon {
   color: #aaa;
   border-color: #666;
 }
+
+  .grammar-card {
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #eaeaea;
+  gap: 20px;
+}
+
+.grammar-card img.thumb {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.g-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grammar-card .btn {
+  display: inline-block;
+  background: #d9d1ff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
     
   </style>
 </head>
@@ -420,12 +452,15 @@ body.dark .roadmap-item.soon {
       <div class="roadmap-item" data-file="will-vs-going-to.html">Will-vs-Going-to</div>
     </div>
 
-    <div class="card">
-      <div class="card-icon" style="background:#4caf50;"></div>
-      <p class="card-status">✓ Đã học</p>
-      <h3 class="card-title">Nouns – Danh từ</h3>
-      <p class="card-desc">Ngữ pháp cơ bản</p>
-      <a class="card-btn" href="/binh-blog/post.html?file=nouns.html">Xem bài</a>
+   <div class="grammar-card">
+      <img src="${post.thumbnail}" class="thumb" alt="${post.title}">
+  
+      <div class="g-info">
+        <p class="done">✓ Đã học</p>
+        <h3>${post.title}</h3>
+        <p>${post.description}</p>
+        <a class="btn" href="post.html?file=${post.file}">Xem bài →</a>
+      </div>
     </div>
     
   </div>
