@@ -389,7 +389,7 @@ window.quizData["future-perfect"] = {
    13. NEAR FUTURE – 20 câu
    ============================ */
 
-window.quizData["Near-Future"] = {
+window.quizData["near-future"] = {
   title: "Bài tập – Near Future",
   desc: "Chọn đáp án đúng cho thì Tương lai gần.",
   questions: [
