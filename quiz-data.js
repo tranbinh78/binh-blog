@@ -3,464 +3,384 @@
    Sử dụng cho Binh Blog – quiz.html
 ======================================================== */
 
-window.quizData = window.quizData || {};
+window.quizData = {
 
-/* ========================================================
-   1) PRESENT SIMPLE – 20 QUESTIONS
-======================================================== */
-window.quizData["present-simple"] = {
-  title: "Bài tập – Present Simple",
-  desc: "Chọn đáp án đúng cho thì Hiện tại đơn.",
-  questions: [
-    {question:"She ___ to school every day.", options:["go","goes","is going","going"], answer:1, explain:"He/She/It + V(s/es)"},
-    {question:"I usually ___ breakfast at 7.", options:["have","has","am having","having"], answer:0, explain:"I/You/We/They + V"},
-    {question:"The sun ___ in the east.", options:["rise","rises","is rising","rose"], answer:1, explain:"Sự thật hiển nhiên"},
-    {question:"He ___ coffee, he prefers tea.", options:["don’t drink","doesn’t drink","isn’t drinking","not drink"], answer:1, explain:"He → doesn’t + V"},
-    {question:"We ___ English every Monday.", options:["study","studies","are study","studying"], answer:0, explain:"Thói quen"},
-    {question:"Water ___ at 100°C.", options:["boil","boils","is boiling","boiled"], answer:1, explain:"Fact"},
-    {question:"Dogs ___ meat.", options:["eat","eats","are eating","eated"], answer:0, explain:"Habits"},
-    {question:"My father ___ TV in the evening.", options:["watch","watches","is watching","watching"], answer:1, explain:"He/She/It + V(s/es)"},
-    {question:"Anna ___ her homework after school.", options:["do","does","is doing","doing"], answer:1, explain:"does + V"},
-    {question:"He rarely ___ breakfast.", options:["eat","eats","is eat","eating"], answer:1, explain:"Adverb + Present simple"},
-    {question:"My parents ___ in a big company.", options:["works","working","work","are work"], answer:2, explain:"Plural → work"},
-    {question:"The museum ___ at 8.", options:["open","opens","is opening","opened"], answer:1, explain:"Schedule"},
-    {question:"My brother never ___ late.", options:["is","are","be","being"], answer:0, explain:"State verb 'to be'"},
-    {question:"We ___ a car, so we take the bus.", options:["don’t have","doesn’t have","aren’t have","not have"], answer:0, explain:"don’t + have"},
-    {question:"The Earth ___ around the Sun.", options:["move","moves","is moving","moved"], answer:1, explain:"Fact"},
-    {question:"Lisa ___ French very well.", options:["speak","speaks","is speak","speaking"], answer:1, explain:"He/She/It + V(s/es)"},
-    {question:"My friends often ___ to the cinema.", options:["go","goes","going","are go"], answer:0, explain:"Habit"},
-    {question:"His job ___ a lot of traveling.", options:["require","requires","is requiring","required"], answer:1, explain:"Singular subject"},
-    {question:"They ___ near my house.", options:["live","lives","are living","living"], answer:0, explain:"Permanent situation"},
-    {question:"Tom ___ well with his team.", options:["gets along","get along","is get along","get alongs"], answer:0, explain:"Phrasal verb"}
-  ]
+  /* ============================
+     1. PRESENT SIMPLE – 20 câu
+     ============================ */
+  "present-simple": {
+    title: "Bài tập – Present Simple",
+    desc: "Chọn đáp án đúng cho thì Hiện tại đơn.",
+    questions: [
+      { question:"She ___ to school every day.", options:["go","goes","is going","going"], answer:1, explain:"He/She/It + V(s/es)" },
+      { question:"I usually ___ breakfast at 7.", options:["have","has","am having","having"], answer:0, explain:"I/You/We/They + V" },
+      { question:"The sun ___ in the east.", options:["rise","rises","is rising","rose"], answer:1, explain:"Sự thật hiển nhiên" },
+      { question:"He ___ coffee.", options:["don’t drink","doesn’t drink","isn’t drinking","not drink"], answer:1, explain:"He → doesn’t + V" },
+      { question:"We ___ English every Monday.", options:["study","studies","are study","studying"], answer:0, explain:"Thói quen" },
+      { question:"Water ___ at 100°C.", options:["boil","boils","is boiling","boiled"], answer:1, explain:"Scientific fact" },
+      { question:"Dogs ___ meat.", options:["eat","eats","are eating","eated"], answer:0, explain:"Habits" },
+      { question:"My father ___ TV in the evening.", options:["watch","watches","is watching","watching"], answer:1, explain:"He/She/It + V(s/es)" },
+      { question:"Anna ___ her homework after school.", options:["do","does","is doing","doing"], answer:1, explain:"does + V" },
+      { question:"He rarely ___ breakfast.", options:["eat","eats","is eat","eating"], answer:1, explain:"Trạng từ tần suất + Present Simple" },
+      { question:"My parents ___ in a big company.", options:["works","working","work","are work"], answer:2, explain:"Chủ ngữ số nhiều → work" },
+      { question:"The museum ___ at 8.", options:["open","opens","is opening","opened"], answer:1, explain:"Thời gian biểu" },
+      { question:"My brother never ___ late.", options:["is","are","be","being"], answer:0, explain:"Động từ to be ở HTĐ" },
+      { question:"We ___ a car.", options:["don’t have","doesn’t have","aren’t have","not have"], answer:0, explain:"don’t + V" },
+      { question:"The Earth ___ around the Sun.", options:["move","moves","is moving","moved"], answer:1, explain:"Scientific fact" },
+      { question:"Lisa ___ French very well.", options:["speak","speaks","is speak","speaking"], answer:1, explain:"He/She/It + V(s/es)" },
+      { question:"My friends often ___ to the cinema.", options:["go","goes","going","are go"], answer:0, explain:"Thói quen" },
+      { question:"His job ___ a lot of traveling.", options:["require","requires","is requiring","required"], answer:1, explain:"Danh từ số ít → V(s/es)" },
+      { question:"They ___ near my house.", options:["live","lives","are living","living"], answer:0, explain:"Sự thật / Tình huống dài" },
+      { question:"Tom ___ well with his team.", options:["gets along","get along","is get along","get alongs"], answer:0, explain:"Phrasal verb" }
+    ]
+  },
+
+  /* ============================
+     2. PRESENT CONTINUOUS – 20 câu
+     ============================ */
+  "present-continuous": {
+    title: "Bài tập – Present Continuous",
+    desc: "Chọn đáp án đúng cho thì Hiện tại tiếp diễn.",
+    questions: [
+      { question:"She ___ now.", options:["is cooking","cook","cooks","cooking"], answer:0, explain:"now → be + V-ing" },
+      { question:"They ___ TV at the moment.", options:["are watching","watch","watches","watching"], answer:0, explain:"at the moment → HTTD" },
+      { question:"I ___ to music right now.", options:["am listening","listen","listens","listening"], answer:0, explain:"Dấu hiệu: right now" },
+      { question:"The kids ___ in the yard.", options:["are playing","play","plays","playing"], answer:0, explain:"Đang diễn ra" },
+      { question:"She ___ her homework.", options:["is doing","does","do","doing"], answer:0, explain:"be + V-ing" },
+      { question:"He ___ a shower.", options:["is taking","takes","take","taking"], answer:0, explain:"Hành động ngay lúc nói" },
+      { question:"The phone ___ .", options:["is ringing","rings","ring","ringing"], answer:0, explain:"Xảy ra ngay bây giờ" },
+      { question:"We ___ dinner.", options:["are having","have","has","having"], answer:0, explain:"be + V-ing" },
+      { question:"They ___ for the bus.", options:["are waiting","wait","waits","waiting"], answer:0, explain:"Hành động tạm thời" },
+      { question:"She ___ to school today.", options:["is walking","walks","walk","walking"], answer:0, explain:"Tạm thời khác bình thường" },
+      { question:"I ___ my friend this week.", options:["am helping","help","helps","helping"], answer:0, explain:"This week → HTTD" },
+      { question:"The baby ___ now.", options:["is sleeping","sleep","sleeps","sleeping"], answer:0, explain:"now → be + V-ing" },
+      { question:"They ___ a new project.", options:["are working on","work on","works on","working on"], answer:0, explain:"be + V-ing" },
+      { question:"She ___ the piano right now.", options:["is practicing","practices","practice","practicing"], answer:0, explain:"Hành động đang diễn ra" },
+      { question:"We ___ for the exam.", options:["are studying","study","studies","studying"], answer:0, explain:"be + V-ing" },
+      { question:"He ___ a book at the moment.", options:["is reading","reads","read","reading"], answer:0, explain:"at the moment" },
+      { question:"The dog ___.", options:["is barking","barks","bark","barking"], answer:0, explain:"be + V-ing" },
+      { question:"The sun ___ behind the clouds today.", options:["is shining","shines","shine","shining"], answer:0, explain:"Tạm thời hôm nay" },
+      { question:"I ___ English this month.", options:["am learning","learn","learns","learning"], answer:0, explain:"Thời gian dài nhưng tạm thời" },
+      { question:"They ___ to the teacher now.", options:["are listening","listen","listens","listening"], answer:0, explain:"now → HTTD" }
+    ]
+  }
+
 };
 
-/* ========================================================
-   2) PRESENT CONTINUOUS – 20 QUESTIONS
-======================================================== */
-window.quizData["present-continuous"] = {
-  title: "Bài tập – Present Continuous",
-  desc: "Chọn đáp án đúng cho thì Hiện tại tiếp diễn.",
-  questions: [
-    {question:"She ___ now.", options:["is cooking","cook","cooks","cooking"], answer:0, explain:"now → be + V-ing"},
-    {question:"They ___ TV at the moment.", options:["are watching","watch","watches","watching"], answer:0, explain:"at the moment → Present Continuous"},
-    {question:"I ___ to music right now.", options:["am listening","listen","listens","listening"], answer:0, explain:"right now → be + V-ing"},
-    {question:"The kids ___ in the yard.", options:["are playing","play","plays","playing"], answer:0, explain:"be + V-ing"},
-    {question:"My mom ___ dinner.", options:["is making","make","makes","making"], answer:0},
-    {question:"Look! He ___.", options:["is running","runs","run","running"], answer:0},
-    {question:"We ___ English this week.", options:["are studying","study","studies","are study"], answer:0},
-    {question:"She ___ for her exam.", options:["is preparing","prepare","prepares","preparing"], answer:0},
-    {question:"Listen! The birds ___.", options:["are singing","sing","sings","singing"], answer:0},
-    {question:"The weather ___ colder.", options:["is getting","gets","get","getting"], answer:0},
-    {question:"I ___ my homework now.", options:["am doing","do","does","doing"], answer:0},
-    {question:"He ___ a book at the moment.", options:["is reading","reads","read","reading"], answer:0},
-    {question:"They ___ some coffee.", options:["are drinking","drink","drinks","drinking"], answer:0},
-    {question:"The dog ___ loudly.", options:["is barking","barks","bark","barking"], answer:0},
-    {question:"She ___ to school today.", options:["is walking","walk","walks","walking"], answer:0},
-    {question:"He ___ with his friends.", options:["is chatting","chat","chats","chatting"], answer:0},
-    {question:"The baby ___", options:["is crying","cries","cry","crying"], answer:0},
-    {question:"We ___ our bikes.", options:["are riding","ride","rides","riding"], answer:0},
-    {question:"She ___ her car.", options:["is washing","wash","washes","washing"], answer:0},
-    {question:"I ___ for my keys.", options:["am looking","look","looks","looking"], answer:0}
-  ]
-};
+/* ============================
+   3. PRESENT PERFECT – 20 câu
+   ============================ */
 
-/* ========================================================
-   3) PRESENT PERFECT – 20 QUESTIONS
-======================================================== */
 window.quizData["present-perfect"] = {
   title: "Bài tập – Present Perfect",
   desc: "Chọn đáp án đúng cho thì Hiện tại hoàn thành.",
   questions: [
-    {question:"I ___ this movie before.", options:["have seen","saw","see","seeing"], answer:0},
-    {question:"She ___ here for 3 years.", options:["has lived","lives","lived","is living"], answer:0},
-    {question:"They ___ to Paris twice.", options:["have been","went","go","are going"], answer:0},
-    {question:"He ___ already ___ lunch.", options:["has / had","have / had","had / has","has / has"], answer:0},
-    {question:"We ___ our homework.", options:["have finished","finish","finished","are finishing"], answer:0},
-    {question:"She ___ him since 2010.", options:["has known","knew","knows","is knowing"], answer:0},
-    {question:"I ___ just ___ the news.", options:["have / heard","heard","hear","am hearing"], answer:0},
-    {question:"They ___ never ___ Japan.", options:["have / visited","visited","visit","are visiting"], answer:0},
-    {question:"He ___ already.", options:["has left","left","leaves","is leaving"], answer:0},
-    {question:"We ___ many times.", options:["have met","met","meet","are meeting"], answer:0},
-    {question:"She ___ yet.", options:["hasn’t arrived","didn’t arrive","isn’t arriving","arrives"], answer:0},
-    {question:"I ___ my keys!", options:["have lost","lost","lose","am losing"], answer:0},
-    {question:"They ___ the task.", options:["have done","did","do","are doing"], answer:0},
-    {question:"He ___ his leg.", options:["has broken","broke","breaks","is breaking"], answer:0},
-    {question:"We ___ enough food.", options:["have bought","bought","buy","are buying"], answer:0},
-    {question:"I ___ him recently.", options:["haven’t seen","didn’t see","don’t see","am not seeing"], answer:0},
-    {question:"She ___ the book.", options:["has written","wrote","writes","is writing"], answer:0},
-    {question:"They ___ just ___ home.", options:["have / come","came","come","are coming"], answer:0},
-    {question:"He ___ COVID.", options:["has had","had","has","is having"], answer:0},
-    {question:"We ___ that film.", options:["have watched","watched","watch","are watching"], answer:0}
+    { question: "I ___ this movie before.", options:["have seen","saw","see","am seeing"], answer:0, explain:"have/has + V3" },
+    { question: "She ___ in London since 2010.", options:["has lived","lived","lives","is living"], answer:0, explain:"since + mốc thời gian → HTHT" },
+    { question: "They ___ their homework already.", options:["have finished","finished","finish","are finishing"], answer:0, explain:"already → HTHT" },
+    { question: "He ___ the car yet.", options:["hasn't washed","didn't wash","doesn't wash","isn't washing"], answer:0, explain:"yet → phủ định HTHT" },
+    { question: "We ___ to Japan many times.", options:["have been","went","go","are going"], answer:0, explain:"have been to + nơi" },
+    { question: "She ___ her keys.", options:["has lost","lost","loses","is losing"], answer:0, explain:"Kết quả hiện tại → HTHT" },
+    { question: "They ___ dinner.", options:["have just had","just had","are having","had"], answer:0, explain:"just → HTHT" },
+    { question: "I ___ my homework.", options:["haven’t done","didn’t do","don’t do","not do"], answer:0, explain:"Phủ định HTHT" },
+    { question: "He ___ three books this year.", options:["has written","wrote","writes","is writing"], answer:0, explain:"this year → chưa kết thúc → HTHT" },
+    { question: "We ___ each other for 5 years.", options:["have known","knew","know","are knowing"], answer:0, explain:"for + khoảng thời gian → HTHT" },
+    { question: "She ___ breakfast yet.", options:["hasn't eaten","didn't eat","doesn't eat","isn't eating"], answer:0, explain:"yet → HTHT phủ định" },
+    { question: "They ___ in this house for a long time.", options:["have lived","lived","live","are living"], answer:0, explain:"for + khoảng thời gian → HTHT" },
+    { question: "He ___ my letter.", options:["has received","received","receives","is receiving"], answer:0, explain:"Kết quả → HTHT" },
+    { question: "I ___ the news.", options:["have heard","hear","heard","am hearing"], answer:0, explain:"have/has + V3" },
+    { question: "She ___ her job recently.", options:["has changed","changed","changes","is changing"], answer:0, explain:"recently → HTHT" },
+    { question: "The students ___ the test.", options:["have finished","finished","finish","are finishing"], answer:0, explain:"Hành động vừa hoàn thành" },
+    { question: "He ___ the bill.", options:["has paid","paid","pays","is paying"], answer:0, explain:"have/has + V3" },
+    { question: "They ___ the film before.", options:["have seen","saw","see","are seeing"], answer:0, explain:"before → HTHT" },
+    { question: "I ___ the answer already.", options:["have known","knew","know","am knowing"], answer:0, explain:"already → HTHT" },
+    { question: "She ___ to New York twice.", options:["has been","was","is","goes"], answer:0, explain:"have/has been → trải nghiệm" }
   ]
 };
 
-/* ========================================================
-   4) PRESENT PERFECT CONTINUOUS – 20 QUESTIONS
-======================================================== */
+
+/* ================================================
+   4. PRESENT PERFECT CONTINUOUS – 20 câu
+   ================================================ */
+
 window.quizData["present-perfect-continuous"] = {
   title: "Bài tập – Present Perfect Continuous",
   desc: "Chọn đáp án đúng cho thì Hiện tại hoàn thành tiếp diễn.",
   questions: [
-    {question:"She ___ for 2 hours.", options:["has been studying","studied","studies","is studying"], answer:0},
-    {question:"They ___ since morning.", options:["have been working","worked","work","are working"], answer:0},
-    {question:"He ___ all day.", options:["has been running","ran","runs","is running"], answer:0},
-    {question:"I ___ English for 5 years.", options:["have been learning","learned","learn","am learning"], answer:0},
-    {question:"It ___ raining.", options:["has been","is","was","has been raining"], answer:3},
-    {question:"We ___ this project.", options:["have been doing","did","do","are doing"], answer:0},
-    {question:"She ___ too much coffee.", options:["has been drinking","drinks","drank","is drinking"], answer:0},
-    {question:"They ___ TV for 3 hours.", options:["have been watching","watch","watched","are watching"], answer:0},
-    {question:"I ___ for you.", options:["have been waiting","waited","wait","am waiting"], answer:0},
-    {question:"He ___ football.", options:["has been playing","played","plays","is playing"], answer:0},
-    {question:"We ___ for 20 minutes.", options:["have been walking","walked","walk","are walking"], answer:0},
-    {question:"She ___ to lose weight.", options:["has been trying","tried","tries","is trying"], answer:0},
-    {question:"They ___ harder recently.", options:["have been working","worked","work","are working"], answer:0},
-    {question:"He ___ well.", options:["has been sleeping","sleeps","slept","is sleeping"], answer:0},
-    {question:"I ___ this game.", options:["have been playing","played","play","am playing"], answer:0},
-    {question:"We ___ too long!", options:["have been waiting","waited","wait","are waiting"], answer:0},
-    {question:"She ___ emails all day.", options:["has been writing","wrote","writes","is writing"], answer:0},
-    {question:"They ___ around the city.", options:["have been walking","walk","walked","are walking"], answer:0},
-    {question:"He ___ since morning.", options:["has been studying","studies","studied","is studying"], answer:0},
-    {question:"I ___ tired lately.", options:["have been feeling","felt","feel","am feeling"], answer:0}
+    { question:"I ___ for 2 hours.", options:["have been studying","studied","am studying","study"], answer:0, explain:"have/has been + V-ing" },
+    { question:"She ___ here since morning.", options:["has been working","worked","works","is working"], answer:0, explain:"since + mốc thời gian → HTHTTD" },
+    { question:"They ___ the project all day.", options:["have been doing","did","do","are doing"], answer:0, explain:"all day → kéo dài liên tục" },
+    { question:"He ___ for you.", options:["has been waiting","waited","waits","is waiting"], answer:0, explain:"hành động kéo dài → HTHTTD" },
+    { question:"We ___ English for 5 years.", options:["have been learning","learned","learn","are learning"], answer:0, explain:"for + thời gian → HTHTTD" },
+    { question:"She ___ too much recently.", options:["has been eating","ate","eats","is eating"], answer:0, explain:"recently → HTHTTD" },
+    { question:"I ___ TV for 3 hours.", options:["have been watching","watched","am watching","watch"], answer:0, explain:"has/have been + V-ing" },
+    { question:"They ___ games since noon.", options:["have been playing","played","play","are playing"], answer:0, explain:"since → mốc thời gian" },
+    { question:"He ___ hard these days.", options:["has been working","worked","works","is working"], answer:0, explain:"these days → HTHTTD" },
+    { question:"She ___ to lose weight.", options:["has been trying","tried","tries","is trying"], answer:0, explain:"hành động kéo dài" },
+    { question:"I ___ better recently.", options:["have been feeling","felt","feel","am feeling"], answer:0, explain:"recently → HTHTTD" },
+    { question:"They ___ the house.", options:["have been painting","painted","paint","are painting"], answer:0, explain:"be + V-ing" },
+    { question:"He ___ more exercise lately.", options:["has been doing","did","does","is doing"], answer:0, explain:"lately → HTHTTD" },
+    { question:"We ___ for the bus.", options:["have been waiting","waited","wait","are waiting"], answer:0, explain:"hành động kéo dài" },
+    { question:"She ___ a lot of books.", options:["has been reading","read","reads","is reading"], answer:0, explain:"has been + V-ing" },
+    { question:"The kids ___ loudly.", options:["have been shouting","shouted","shout","are shouting"], answer:0, explain:"kéo dài liên tục" },
+    { question:"I ___ on this project since June.", options:["have been working","worked","work","am working"], answer:0, explain:"since + mốc thời gian" },
+    { question:"They ___ for hours.", options:["have been talking","talked","talk","are talking"], answer:0, explain:"have been + V-ing" },
+    { question:"He ___ too fast.", options:["has been driving","drove","drives","is driving"], answer:0, explain:"Thói quen kéo dài → HTHTTD" },
+    { question:"We ___ her about it.", options:["have been telling","told","tell","are telling"], answer:0, explain:"have/has been + V-ing" }
   ]
 };
 
-/* ========================================================
-   5) PAST SIMPLE – 20 QUESTIONS
-======================================================== */
-window.quizData["past-simple"] = [
-  {
-    question: "I ___ to school yesterday.",
-    options: ["go", "am going", "went", "goes"],
-    answer: 2,
-    explain: "Yesterday → hành động quá khứ → went."
-  },
-  {
-    question: "She ___ a new car last month.",
-    options: ["buys", "is buying", "bought", "buy"],
-    answer: 2,
-    explain: "Quá khứ đơn của buy là bought."
-  },
-  {
-    question: "They ___ football last Sunday.",
-    options: ["play", "played", "are playing", "plays"],
-    answer: 1,
-    explain: "Last Sunday → played."
-  },
-  {
-    question: "My father ___ very tired yesterday.",
-    options: ["is", "was", "were", "be"],
-    answer: 1,
-    explain: "He/she/it → was (quá khứ)."
-  },
-  {
-    question: "We ___ at home all day.",
-    options: ["stay", "stayed", "stays", "are staying"],
-    answer: 1,
-    explain: "Hành động toàn bộ ngày → stayed."
-  },
-  {
-    question: "Tom ___ his homework last night.",
-    options: ["did", "does", "is doing", "do"],
-    answer: 0,
-    explain: "Do → quá khứ irregular → did."
-  },
-  {
-    question: "The movie ___ at 9 PM.",
-    options: ["finish", "finishes", "finished", "finishing"],
-    answer: 2,
-    explain: "Hành động kết thúc trong quá khứ → finished."
-  },
-  {
-    question: "Kate ___ me a letter two days ago.",
-    options: ["send", "sends", "sent", "is sending"],
-    answer: 2,
-    explain: "Send → quá khứ: sent."
-  },
-  {
-    question: "We ___ to Paris last summer.",
-    options: ["travel", "travelled", "travelling", "travels"],
-    answer: 1,
-    explain: "Last summer → travelled."
-  },
-  {
-    question: "I ___ a delicious cake yesterday.",
-    options: ["bake", "baked", "bakes", "am baking"],
-    answer: 1,
-    explain: "Baked = quá khứ của bake."
-  },
-  {
-    question: "The cat ___ on the sofa all night.",
-    options: ["sleep", "slept", "sleeps", "sleeping"],
-    answer: 1,
-    explain: "Sleep → slept (quá khứ)."
-  },
-  {
-    question: "She ___ the window because it was hot.",
-    options: ["open", "opened", "opens", "is opening"],
-    answer: 1,
-    explain: "Opened = hành động hoàn tất."
-  },
-  {
-    question: "They ___ late for school yesterday.",
-    options: ["are", "were", "was", "be"],
-    answer: 1,
-    explain: "They → were (quá khứ)."
-  },
-  {
-    question: "I ___ a new phone last week.",
-    options: ["buy", "bought", "buys", "am buying"],
-    answer: 1,
-    explain: "Buy → bought."
-  },
-  {
-    question: "He ___ the guitar at the party.",
-    options: ["play", "played", "plays", "is playing"],
-    answer: 1,
-    explain: "Played = quá khứ đơn."
-  },
-  {
-    question: "The weather ___ very cold yesterday.",
-    options: ["is", "was", "were", "be"],
-    answer: 1,
-    explain: "It → was (quá khứ)."
-  },
-  {
-    question: "We ___ dinner early yesterday.",
-    options: ["eat", "ate", "eaten", "eating"],
-    answer: 1,
-    explain: "Eat → ate (V2)."
-  },
-  {
-    question: "My sister ___ a beautiful picture.",
-    options: ["paint", "painted", "paints", "is painting"],
-    answer: 1,
-    explain: "Painted = hành động hoàn thành."
-  },
-  {
-    question: "They ___ their hands before eating.",
-    options: ["wash", "washed", "washes", "are washing"],
-    answer: 1,
-    explain: "Washed = hành động trong quá khứ."
-  },
-  {
-    question: "She ___ her keys yesterday.",
-    options: ["lose", "lost", "loses", "is losing"],
-    answer: 1,
-    explain: "Lose → lost (quá khứ)."
-  }
-];
+/* ============================
+   5. PAST SIMPLE – 20 câu
+   ============================ */
 
-/* ========================================================
-   6) PAST CONTINUOUS – 20 QUESTIONS
-======================================================== */
+window.quizData["past-simple"] = {
+  title: "Bài tập – Past Simple",
+  desc: "Chọn đáp án đúng cho thì Quá khứ đơn.",
+  questions: [
+    { question:"I ___ to school yesterday.", options:["go","am going","went","goes"], answer:2, explain:"Yesterday → hành động quá khứ → went" },
+    { question:"She ___ a new car last month.", options:["buys","is buying","bought","buy"], answer:2, explain:"last month → bought" },
+    { question:"They ___ football last Sunday.", options:["play","played","are playing","plays"], answer:1, explain:"played = quá khứ" },
+    { question:"My father ___ very tired yesterday.", options:["is","was","were","be"], answer:1, explain:"He → was" },
+    { question:"We ___ at home all day.", options:["stay","stayed","stays","are staying"], answer:1, explain:"stayed = quá khứ" },
+    { question:"Tom ___ his homework last night.", options:["did","does","is doing","do"], answer:0, explain:"do → did" },
+    { question:"The movie ___ at 9 PM.", options:["finish","finishes","finished","finishing"], answer:2, explain:"finished = quá khứ" },
+    { question:"Kate ___ me a letter two days ago.", options:["send","sends","sent","is sending"], answer:2, explain:"sent = quá khứ của send" },
+    { question:"We ___ to Paris last summer.", options:["travel","travelled","travelling","travels"], answer:1, explain:"travelled = quá khứ" },
+    { question:"I ___ a delicious cake yesterday.", options:["bake","baked","bakes","am baking"], answer:1, explain:"baked = quá khứ của bake" },
+    { question:"The cat ___ on the sofa all night.", options:["sleep","slept","sleeps","sleeping"], answer:1, explain:"slept = quá khứ" },
+    { question:"She ___ the window because it was hot.", options:["open","opened","opens","is opening"], answer:1, explain:"opened = quá khứ" },
+    { question:"They ___ late for school yesterday.", options:["are","were","was","be"], answer:1, explain:"They → were" },
+    { question:"I ___ a new phone last week.", options:["buy","bought","buys","am buying"], answer:1, explain:"bought = quá khứ" },
+    { question:"He ___ the guitar at the party.", options:["play","played","plays","is playing"], answer:1, explain:"played = quá khứ" },
+    { question:"The weather ___ very cold yesterday.", options:["is","was","were","be"], answer:1, explain:"It → was" },
+    { question:"We ___ dinner early yesterday.", options:["eat","ate","eaten","eating"], answer:1, explain:"eat → ate" },
+    { question:"My sister ___ a beautiful picture.", options:["paint","painted","paints","is painting"], answer:1, explain:"painted = quá khứ" },
+    { question:"They ___ their hands before eating.", options:["wash","washed","washes","are washing"], answer:1, explain:"washed = quá khứ" },
+    { question:"She ___ her keys yesterday.", options:["lose","lost","loses","is losing"], answer:1, explain:"lost = quá khứ" }
+  ]
+};
+
+
+/* ============================
+   6. PAST CONTINUOUS – 20 câu
+   ============================ */
+
 window.quizData["past-continuous"] = {
   title: "Bài tập – Past Continuous",
   desc: "Chọn đáp án đúng cho thì Quá khứ tiếp diễn.",
   questions: [
-    {question:"I ___ TV when he called.", options:["was watching","watched","watch","am watching"], answer:0},
-    {question:"She ___ dinner at 7 PM.", options:["was cooking","cooked","cooks","is cooking"], answer:0},
-    {question:"They ___ football yesterday.", options:["were playing","played","play","are playing"], answer:0},
-    {question:"He ___ when it started raining.", options:["was walking","walked","walk","is walking"], answer:0},
-    {question:"We ___ to music.", options:["were listening","listened","listen","are listening"], answer:0},
-    {question:"She ___ homework.", options:["was doing","did","does","is doing"], answer:0},
-    {question:"The kids ___ loudly.", options:["were shouting","shouted","shout","are shouting"], answer:0},
-    {question:"I ___ when the phone rang.", options:["was sleeping","slept","sleep","am sleeping"], answer:0},
-    {question:"They ___ dinner.", options:["were having","had","have","are having"], answer:0},
-    {question:"He ___ a book.", options:["was reading","read","reads","is reading"], answer:0},
-    {question:"The dog ___.", options:["was barking","barked","barks","is barking"], answer:0},
-    {question:"We ___ outside.", options:["were sitting","sat","sit","are sitting"], answer:0},
-    {question:"The students ___ in class.", options:["were studying","studied","study","are studying"], answer:0},
-    {question:"I ___ coffee.", options:["was drinking","drank","drink","am drinking"], answer:0},
-    {question:"She ___ the house.", options:["was cleaning","cleaned","cleans","is cleaning"], answer:0},
-    {question:"They ___ to school.", options:["were going","went","go","are going"], answer:0},
-    {question:"He ___ his bike.", options:["was fixing","fixed","fix","is fixing"], answer:0},
-    {question:"We ___ the news.", options:["were watching","watched","watch","are watching"], answer:0},
-    {question:"She ___ the room.", options:["was entering","entered","enters","is entering"], answer:0},
-    {question:"They ___ songs.", options:["were singing","sang","sing","are singing"], answer:0}
+    { question:"I ___ when he called me.", options:["was studying","studied","study","am studying"], answer:0, explain:"was/were + V-ing" },
+    { question:"They ___ dinner at 7 PM last night.", options:["were having","had","have","are having"], answer:0, explain:"Thời điểm cụ thể → QKTD" },
+    { question:"She ___ TV when I arrived.", options:["was watching","watched","watches","is watching"], answer:0, explain:"đang diễn ra thì hành động khác xen vào" },
+    { question:"We ___ in the park at that time.", options:["were walking","walked","walk","are walking"], answer:0, explain:"at that time → QKTD" },
+    { question:"He ___ his homework all evening.", options:["was doing","did","does","is doing"], answer:0, explain:"was + V-ing" },
+    { question:"The students ___ when the teacher came.", options:["were talking","talked","talk","are talking"], answer:0, explain:"hành động đang diễn ra" },
+    { question:"I ___ a shower when the phone rang.", options:["was taking","took","take","am taking"], answer:0, explain:"đang diễn ra → QKTD" },
+    { question:"They ___ to music.", options:["were listening","listened","listen","are listening"], answer:0, explain:"were + V-ing" },
+    { question:"She ___ with her friends yesterday afternoon.", options:["was playing","played","plays","is playing"], answer:0, explain:"yesterday afternoon + QKTD" },
+    { question:"We ___ for the bus.", options:["were waiting","waited","wait","are waiting"], answer:0, explain:"were + V-ing" },
+    { question:"The dog ___ loudly.", options:["was barking","barked","barks","is barking"], answer:0, explain:"hành động kéo dài" },
+    { question:"He ___ to music when I saw him.", options:["was listening","listened","listen","is listening"], answer:0, explain:"was + V-ing" },
+    { question:"They ___ chess.", options:["were playing","played","play","are playing"], answer:0, explain:"were + V-ing" },
+    { question:"The children ___ while their mother cooked.", options:["were playing","played","plays","are playing"], answer:0, explain:"hành động song song" },
+    { question:"She ___ on the phone when you arrived.", options:["was talking","talked","talk","is talking"], answer:0, explain:"was + V-ing" },
+    { question:"I ___ the news when he came home.", options:["was reading","read","reads","am reading"], answer:0, explain:"đang đọc" },
+    { question:"We ___ a movie at that time.", options:["were watching","watched","watch","are watching"], answer:0, explain:"at that time → QKTD" },
+    { question:"He ___ to sleep during the lecture.", options:["was falling","fell","falls","is falling"], answer:0, explain:"was + V-ing" },
+    { question:"They ___ the room when I visited.", options:["were cleaning","cleaned","clean","are cleaning"], answer:0, explain:"were + V-ing" },
+    { question:"She ___ down when it started to rain.", options:["was walking","walked","walk","is walking"], answer:0, explain:"đang diễn ra → QKTD" }
   ]
 };
 
-/* ========================================================
-   7) PAST PERFECT – 20 QUESTIONS
-======================================================== */
+/* ============================
+   7. PAST PERFECT – 20 câu
+   ============================ */
+
 window.quizData["past-perfect"] = {
   title: "Bài tập – Past Perfect",
   desc: "Chọn đáp án đúng cho thì Quá khứ hoàn thành.",
   questions: [
-    {question:"She ___ before he arrived.", options:["had left","left","leaves","has left"], answer:0},
-    {question:"They ___ dinner when I came.", options:["had finished","finished","finish","are finishing"], answer:0},
-    {question:"He ___ the book before 10 PM.", options:["had read","read","reads","has read"], answer:0},
-    {question:"I ___ my homework when he called.", options:["had done","did","do","have done"], answer:0},
-    {question:"We ___ already.", options:["had left","left","leave","has left"], answer:0},
-    {question:"She ___ the movie.", options:["had watched","watched","watches","has watched"], answer:0},
-    {question:"They ___ to school.", options:["had gone","went","go","have gone"], answer:0},
-    {question:"He ___ the car.", options:["had repaired","repaired","repairs","has repaired"], answer:0},
-    {question:"I ___ him before.", options:["had met","met","meet","have met"], answer:0},
-    {question:"We ___ breakfast.", options:["had eaten","ate","eat","have eaten"], answer:0},
-    {question:"The rain ___ before we arrived.", options:["had stopped","stopped","stops","has stopped"], answer:0},
-    {question:"She ___ the letter.", options:["had written","wrote","writes","has written"], answer:0},
-    {question:"They ___ the house.", options:["had cleaned","cleaned","cleans","has cleaned"], answer:0},
-    {question:"He ___ sick.", options:["had felt","felt","feels","has felt"], answer:0},
-    {question:"We ___ the film before.", options:["had seen","saw","see","have seen"], answer:0},
-    {question:"She ___ the cake.", options:["had made","made","makes","has made"], answer:0},
-    {question:"They ___ together.", options:["had worked","worked","work","have worked"], answer:0},
-    {question:"We ___ the news.", options:["had heard","heard","hear","have heard"], answer:0},
-    {question:"He ___ football.", options:["had played","played","plays","has played"], answer:0},
-    {question:"I ___ to the store.", options:["had gone","went","go","have gone"], answer:0}
+    { question:"I ___ my homework before I went out.", options:["had finished","finished","finish","was finishing"], answer:0, explain:"before + QKĐ → hành động trước đó = QKHT" },
+    { question:"She ___ when I arrived.", options:["had left","left","leaves","was leaving"], answer:0, explain:"had + V3" },
+    { question:"They ___ dinner when we came.", options:["had eaten","ate","eat","were eating"], answer:0, explain:"hành động xảy ra trước quá khứ" },
+    { question:"He ___ the film before.", options:["had seen","saw","sees","was seeing"], answer:0, explain:"had + V3 = đã từng trước đó" },
+    { question:"We ___ the house before it rained.", options:["had cleaned","cleaned","clean","were cleaning"], answer:0, explain:"before + QKĐ → QKHT" },
+    { question:"She ___ the letter by the time he came.", options:["had written","wrote","writes","was writing"], answer:0, explain:"by the time + QKĐ → QKHT" },
+    { question:"They ___ the work when the boss checked.", options:["had done","did","do","were doing"], answer:0, explain:"hoàn thành trước → QKHT" },
+    { question:"I ___ him before that day.", options:["had met","met","meet","was meeting"], answer:0, explain:"đã từng gặp → QKHT" },
+    { question:"She ___ the keys before losing them.", options:["had found","found","find","was finding"], answer:0, explain:"had + V3" },
+    { question:"The train ___ when we arrived.", options:["had left","left","leaves","was leaving"], answer:0, explain:"hành động rời đi trước → QKHT" },
+    { question:"He ___ lunch when I called.", options:["had had","had","has","was having"], answer:0, explain:"had had = QKHT của have" },
+    { question:"We ___ the news already.", options:["had heard","heard","hear","were hearing"], answer:0, explain:"already → QKHT" },
+    { question:"She ___ English before she came here.", options:["had learned","learned","learn","was learning"], answer:0, explain:"hành động học trước" },
+    { question:"They ___ the report.", options:["had finished","finished","finish","were finishing"], answer:0, explain:"hoàn thành trước → QKHT" },
+    { question:"I ___ all the money by the time he asked.", options:["had spent","spent","spend","was spending"], answer:0, explain:"by the time → QKHT" },
+    { question:"He ___ the message.", options:["had sent","sent","sends","was sending"], answer:0, explain:"had + V3" },
+    { question:"The students ___ the test before lunch.", options:["had done","did","do","were doing"], answer:0, explain:"done = QKHT" },
+    { question:"She ___ her homework when her mom arrived.", options:["had done","did","does","was doing"], answer:0, explain:"hoàn thành trước → QKHT" },
+    { question:"They ___ in that house for 10 years.", options:["had lived","lived","live","were living"], answer:0, explain:"kéo dài trước một thời điểm" },
+    { question:"I ___ the book before the exam.", options:["had read","read","reads","was reading"], answer:0, explain:"read → had read (QKHT)" }
   ]
 };
 
-/* ========================================================
-   8) PAST PERFECT CONTINUOUS – 20 QUESTIONS
-======================================================== */
+
+
+/* ============================================
+   8. PAST PERFECT CONTINUOUS – 20 câu
+   ============================================ */
+
 window.quizData["past-perfect-continuous"] = {
   title: "Bài tập – Past Perfect Continuous",
   desc: "Chọn đáp án đúng cho thì Quá khứ hoàn thành tiếp diễn.",
   questions: [
-    {question:"She ___ for 2 hours.", options:["had been studying","studied","studies","was studying"], answer:0},
-    {question:"They ___ since morning.", options:["had been working","worked","work","were working"], answer:0},
-    {question:"He ___ all day.", options:["had been running","ran","runs","was running"], answer:0},
-    {question:"I ___ English for 5 years.", options:["had been learning","learned","learn","was learning"], answer:0},
-    {question:"It ___ raining.", options:["had been","was","is","had been raining"], answer:3},
-    {question:"We ___ this project.", options:["had been doing","did","do","were doing"], answer:0},
-    {question:"She ___ too much coffee.", options:["had been drinking","drinks","drank","was drinking"], answer:0},
-    {question:"They ___ TV for 3 hours.", options:["had been watching","watched","watch","were watching"], answer:0},
-    {question:"I ___ for you.", options:["had been waiting","waited","wait","was waiting"], answer:0},
-    {question:"He ___ football.", options:["had been playing","played","plays","was playing"], answer:0},
-    {question:"We ___ for 20 minutes.", options:["had been walking","walked","walk","were walking"], answer:0},
-    {question:"She ___ to lose weight.", options:["had been trying","tried","tries","was trying"], answer:0},
-    {question:"They ___ harder.", options:["had been working","worked","work","were working"], answer:0},
-    {question:"He ___ well.", options:["had been sleeping","slept","sleeps","was sleeping"], answer:0},
-    {question:"I ___ this game.", options:["had been playing","played","play","was playing"], answer:0},
-    {question:"We ___ too long!", options:["had been waiting","waited","wait","were waiting"], answer:0},
-    {question:"She ___ emails all day.", options:["had been writing","wrote","writes","was writing"], answer:0},
-    {question:"They ___ around the city.", options:["had been walking","walk","walked","were walking"], answer:0},
-    {question:"He ___ since morning.", options:["had been studying","studied","studies","was studying"], answer:0},
-    {question:"I ___ tired lately.", options:["had been feeling","felt","feel","was feeling"], answer:0}
+    { question:"I ___ for 2 hours before he arrived.", options:["had been studying","studied","was studying","study"], answer:0, explain:"had been + V-ing" },
+    { question:"She ___ since morning.", options:["had been working","worked","was working","works"], answer:0, explain:"hành động kéo dài đến QKĐ" },
+    { question:"They ___ for the bus for 30 minutes.", options:["had been waiting","waited","were waiting","wait"], answer:0, explain:"had been + V-ing" },
+    { question:"He ___ before the match started.", options:["had been practicing","practiced","was practicing","practices"], answer:0, explain:"kéo dài liên tục trước QKĐ" },
+    { question:"We ___ in the rain.", options:["had been walking","walked","were walking","walk"], answer:0, explain:"had been + V-ing" },
+    { question:"She ___ hard all day.", options:["had been working","worked","was working","works"], answer:0, explain:"all day → QKHTTD" },
+    { question:"They ___ the house before the guests came.", options:["had been cleaning","cleaned","were cleaning","clean"], answer:0, explain:"hành động kéo dài" },
+    { question:"He ___ for hours.", options:["had been sleeping","slept","was sleeping","sleeps"], answer:0, explain:"had been + V-ing" },
+    { question:"I ___ English before moving to London.", options:["had been learning","learned","was learning","learn"], answer:0, explain:"trước một thời điểm QK" },
+    { question:"She ___ too much before she got sick.", options:["had been eating","ate","was eating","eats"], answer:0, explain:"nguyên nhân → kéo dài trước quá khứ" },
+    { question:"The kids ___ all morning.", options:["had been playing","played","were playing","play"], answer:0, explain:"all morning → QKHTTD" },
+    { question:"We ___ for the exam.", options:["had been preparing","prepared","were preparing","prepare"], answer:0, explain:"had been + V-ing" },
+    { question:"He ___ around the city.", options:["had been driving","drove","was driving","drives"], answer:0, explain:"kéo dài liên tục" },
+    { question:"They ___ for days before the test.", options:["had been studying","studied","were studying","study"], answer:0, explain:"for days → QKHTTD" },
+    { question:"She ___ loudly before the teacher came.", options:["had been shouting","shouted","was shouting","shouts"], answer:0, explain:"had been + V-ing" },
+    { question:"I ___ on this project.", options:["had been working","worked","was working","work"], answer:0, explain:"hành động kéo dài đến QKĐ" },
+    { question:"They ___ about moving.", options:["had been talking","talked","were talking","talk"], answer:0, explain:"had been + V-ing" },
+    { question:"He ___ too fast before the accident.", options:["had been driving","drove","was driving","drives"], answer:0, explain:"nguyên nhân → QKHTTD" },
+    { question:"We ___ for her all afternoon.", options:["had been waiting","waited","were waiting","wait"], answer:0, explain:"kéo dài → QKHTTD" },
+    { question:"She ___ before she fainted.", options:["had been walking","walked","was walking","walk"], answer:0, explain:"had been + V-ing" }
   ]
 };
 
-/* ========================================================
-   9) FUTURE SIMPLE – 20 QUESTIONS
-======================================================== */
+/* ============================
+   9. FUTURE SIMPLE – 20 câu
+   ============================ */
+
 window.quizData["future-simple"] = {
   title: "Bài tập – Future Simple",
   desc: "Chọn đáp án đúng cho thì Tương lai đơn.",
   questions: [
-    {question:"I ___ you tomorrow.", options:["will see","see","am seeing","saw"], answer:0},
-    {question:"She ___ soon.", options:["will arrive","arrives","is arriving","arrived"], answer:0},
-    {question:"They ___ later.", options:["will call","call","called","are calling"], answer:0},
-    {question:"He ___ the exam.", options:["will pass","passes","passed","is passing"], answer:0},
-    {question:"We ___ a new house.", options:["will buy","buy","buys","bought"], answer:0},
-    {question:"It ___ rain.", options:["will","rains","is raining","rain"], answer:0},
-    {question:"She ___ your homework.", options:["will help","helps","helped","is helping"], answer:0},
-    {question:"They ___ to Da Nang.", options:["will travel","travel","traveled","are traveling"], answer:0},
-    {question:"He ___ coffee.", options:["will drink","drinks","drank","is drinking"], answer:0},
-    {question:"I ___ home soon.", options:["will go","go","went","am going"], answer:0},
-    {question:"We ___ together.", options:["will work","work","worked","are working"], answer:0},
-    {question:"She ___ the truth.", options:["will know","knows","knew","is knowing"], answer:0},
-    {question:"They ___ dinner.", options:["will cook","cook","cooked","are cooking"], answer:0},
-    {question:"He ___ the door.", options:["will open","opens","opened","is opening"], answer:0},
-    {question:"I ___ you.", options:["will help","help","helped","am helping"], answer:0},
-    {question:"We ___ money.", options:["will save","save","saved","are saving"], answer:0},
-    {question:"She ___ the cat.", options:["will feed","feeds","fed","is feeding"], answer:0},
-    {question:"They ___ the news.", options:["will hear","hear","heard","are hearing"], answer:0},
-    {question:"He ___ faster.", options:["will run","runs","ran","is running"], answer:0},
-    {question:"I ___ the lesson.", options:["will learn","learn","learned","am learning"], answer:0}
+    { question:"I ___ you a message later.", options:["will send","send","am sending","sent"], answer:0, explain:"will + V" },
+    { question:"She ___ happy when she sees this.", options:["will be","is","was","be"], answer:0, explain:"dự đoán tương lai → will be" },
+    { question:"They ___ tomorrow.", options:["will leave","left","leave","are leaving"], answer:0, explain:"dự đoán hoặc quyết định ngay lúc nói" },
+    { question:"He ___ dinner tonight.", options:["will cook","cooks","is cooking","has cooked"], answer:0, explain:"will + V" },
+    { question:"We ___ the exam next week.", options:["will take","take","took","are taking"], answer:0, explain:"next week → TLĐ" },
+    { question:"She ___ you soon.", options:["will call","calls","called","is calling"], answer:0, explain:"hứa/ý định → will" },
+    { question:"It ___ tomorrow.", options:["will rain","rains","rained","is raining"], answer:0, explain:"dự báo thời tiết → will" },
+    { question:"They ___ at 6 PM.", options:["will arrive","arrives","arrived","are arriving"], answer:0, explain:"dự đoán tương lai" },
+    { question:"I think he ___ the game.", options:["will win","wins","won","is winning"], answer:0, explain:"think → TLĐ" },
+    { question:"We ___ a new house next year.", options:["will buy","buy","bought","are buying"], answer:0, explain:"next year → TLĐ" },
+    { question:"She ___ to school by bus tomorrow.", options:["will go","goes","went","is going"], answer:0, explain:"dự đoán tương lai" },
+    { question:"They ___ late.", options:["will be","are","were","be"], answer:0, explain:"will + be" },
+    { question:"The train ___ on time.", options:["will arrive","arrived","arrives","is arriving"], answer:0, explain:"dự đoán TLĐ" },
+    { question:"I ___ you soon.", options:["will see","see","saw","am seeing"], answer:0, explain:"will + V" },
+    { question:"He ___ the truth one day.", options:["will know","knows","knew","is knowing"], answer:0, explain:"dự đoán" },
+    { question:"We ___ the results tomorrow.", options:["will get","get","got","are getting"], answer:0, explain:"thời phù hợp" },
+    { question:"She ___ a teacher.", options:["will become","becomes","became","is becoming"], answer:0, explain:"tương lai → will" },
+    { question:"They ___ the project next month.", options:["will start","start","started","are starting"], answer:0, explain:"next month → TLĐ" },
+    { question:"He ___ here soon.", options:["will come","comes","came","is coming"], answer:0, explain:"will + V" },
+    { question:"I hope she ___ well.", options:["will do","does","did","is doing"], answer:0, explain:"hope → TLĐ" }
   ]
 };
 
-/* ========================================================
-   10) NEAR FUTURE (BE GOING TO) – 20 QUESTIONS
-======================================================== */
+
+
+/* ================================================
+   10. NEAR FUTURE – “Be going to” – 20 câu
+   ================================================ */
+
 window.quizData["near-future"] = {
   title: "Bài tập – Near Future (Be going to)",
   desc: "Chọn đáp án đúng cho cấu trúc Be going to.",
   questions: [
-    {question:"I ___ eat.", options:["am going to","is going to","are going to","going to"], answer:0},
-    {question:"She ___ travel.", options:["is going to","are going to","am going to","is go to"], answer:0},
-    {question:"They ___ move.", options:["are going to","is going to","am going to","going"], answer:0},
-    {question:"He ___ study.", options:["is going to","are going to","am going to","is study"], answer:0},
-    {question:"We ___ help you.", options:["are going to","is going to","am going to","going"], answer:0},
-    {question:"I ___ buy a new phone.", options:["am going to","is going to","are going to","will"], answer:0},
-    {question:"She ___ cook dinner.", options:["is going to","are going to","am going to","going"], answer:0},
-    {question:"They ___ visit us.", options:["are going to","is going to","am going to","visit"], answer:0},
-    {question:"He ___ watch TV.", options:["is going to","are going to","am going to","watch"], answer:0},
-    {question:"We ___ travel soon.", options:["are going to","is going to","am going to","travel"], answer:0},
-    {question:"I ___ read that book.", options:["am going to","is going to","are going to","read"], answer:0},
-    {question:"She ___ play tennis.", options:["is going to","are going to","am going to","play"], answer:0},
-    {question:"They ___ move house.", options:["are going to","is going to","am going to","move"], answer:0},
-    {question:"He ___ study harder.", options:["is going to","are going to","am going to","study"], answer:0},
-    {question:"We ___ buy a car.", options:["are going to","is going to","am going to","buy"], answer:0},
-    {question:"I ___ exercise.", options:["am going to","is going to","are going to","exercise"], answer:0},
-    {question:"She ___ change jobs.", options:["is going to","are going to","am going to","change"], answer:0},
-    {question:"They ___ adopt a pet.", options:["are going to","is going to","am going to","adopt"], answer:0},
-    {question:"He ___ call her.", options:["is going to","are going to","am going to","call"], answer:0},
-    {question:"We ___ start soon.", options:["are going to","is going to","am going to","start"], answer:0}
+    { question:"I ___ visit my uncle tomorrow.", options:["am going to","will","go","going"], answer:0, explain:"am/is/are + going to + V" },
+    { question:"She ___ buy a new laptop.", options:["is going to","going to","will going","is going"], answer:0, explain:"is going to + V" },
+    { question:"They ___ play football this afternoon.", options:["are going to","is going to","going to","will"], answer:0, explain:"are going to + V" },
+    { question:"We ___ travel to Japan next year.", options:["are going to","is going to","will going","go"], answer:0, explain:"dự định tương lai gần" },
+    { question:"He ___ start a new job.", options:["is going to","are going to","going to","will"], answer:0, explain:"kế hoạch có sẵn" },
+    { question:"I think it ___ rain soon. Look at the clouds!", options:["is going to","will","going to","is going"], answer:0, explain:"dựa trên dấu hiệu" },
+    { question:"She ___ meet her friends tonight.", options:["is going to","are going to","going","will"], answer:0, explain:"is going to + V" },
+    { question:"They ___ move to a new house.", options:["are going to","is going to","will","move"], answer:0, explain:"kế hoạch tương lai" },
+    { question:"We ___ have dinner outside.", options:["are going to","is going to","will","having"], answer:0, explain:"am/is/are + going to" },
+    { question:"He ___ study English next semester.", options:["is going to","are going to","going","will"], answer:0, explain:"kế hoạch" },
+    { question:"I ___ start a new project.", options:["am going to","will","go","going"], answer:0, explain:"am going to" },
+    { question:"She ___ call you later.", options:["is going to","are going to","will","calls"], answer:0, explain:"is going to + V" },
+    { question:"They ___ buy a new car.", options:["are going to","is going to","going to","will"], answer:0, explain:"kế hoạch có sẵn" },
+    { question:"We ___ paint the house.", options:["are going to","is going to","will","painting"], answer:0, explain:"dự định gần" },
+    { question:"He ___ visit his parents.", options:["is going to","are going to","going","visits"], answer:0, explain:"is going to + V" },
+    { question:"I ___ cook dinner tonight.", options:["am going to","will","cook","going"], answer:0, explain:"am + going to" },
+    { question:"She ___ take a photo.", options:["is going to","are going to","takes","taking"], answer:0, explain:"cấu trúc chuẩn" },
+    { question:"They ___ watch a movie.", options:["are going to","is going to","watch","will"], answer:0, explain:"are going to" },
+    { question:"We ___ start soon.", options:["are going to","is going to","starting","will"], answer:0, explain:"kế hoạch" },
+    { question:"He ___ buy flowers for his mom.", options:["is going to","are going to","will","buys"], answer:0, explain:"is going to + V" }
   ]
 };
 
-/* ========================================================
-   11) FUTURE CONTINUOUS – 20 QUESTIONS
-======================================================== */
+/* ============================
+   11. FUTURE CONTINUOUS – 20 câu
+   ============================ */
+
 window.quizData["future-continuous"] = {
   title: "Bài tập – Future Continuous",
   desc: "Chọn đáp án đúng cho thì Tương lai tiếp diễn.",
   questions: [
-    {question:"I ___ at 8 PM.", options:["will be working","work","worked","am working"], answer:0},
-    {question:"She ___ soon.", options:["will be arriving","arrives","arrived","is arriving"], answer:0},
-    {question:"They ___ dinner.", options:["will be having","have","had","are having"], answer:0},
-    {question:"He ___ TV.", options:["will be watching","watches","watched","is watching"], answer:0},
-    {question:"We ___ together.", options:["will be working","work","worked","are working"], answer:0},
-    {question:"I ___ at home.", options:["will be staying","stay","stayed","am staying"], answer:0},
-    {question:"She ___ a book.", options:["will be reading","reads","read","is reading"], answer:0},
-    {question:"They ___ soon.", options:["will be traveling","travel","traveled","are traveling"], answer:0},
-    {question:"He ___ coffee.", options:["will be drinking","drinks","drank","is drinking"], answer:0},
-    {question:"We ___ dinner.", options:["will be cooking","cook","cooked","are cooking"], answer:0},
-    {question:"I ___ tomorrow.", options:["will be studying","study","studied","am studying"], answer:0},
-    {question:"She ___ online.", options:["will be working","works","worked","is working"], answer:0},
-    {question:"They ___ football.", options:["will be playing","play","played","are playing"], answer:0},
-    {question:"He ___ outside.", options:["will be sitting","sits","sat","is sitting"], answer:0},
-    {question:"We ___ songs.", options:["will be singing","sing","sang","are singing"], answer:0},
-    {question:"I ___ him.", options:["will be meeting","meet","met","am meeting"], answer:0},
-    {question:"She ___ French.", options:["will be speaking","speaks","spoke","is speaking"], answer:0},
-    {question:"They ___ home.", options:["will be going","go","went","are going"], answer:0},
-    {question:"He ___ faster.", options:["will be running","runs","ran","is running"], answer:0},
-    {question:"We ___ later.", options:["will be calling","call","called","are calling"], answer:0}
+    { question:"I ___ at 8 PM tonight.", options:["will be studying","study","studied","am studying"], answer:0, explain:"will be + V-ing" },
+    { question:"She ___ to work tomorrow morning.", options:["will be driving","drives","is driving","drive"], answer:0, explain:"hành động đang diễn ra tại thời điểm tương lai" },
+    { question:"They ___ dinner when we arrive.", options:["will be having","have","had","are having"], answer:0, explain:"đang diễn ra trong tương lai" },
+    { question:"We ___ the game at this time tomorrow.", options:["will be watching","watch","watched","are watching"], answer:0, explain:"this time tomorrow → TLTD" },
+    { question:"He ___ the report all day tomorrow.", options:["will be working on","works on","worked on","is working on"], answer:0, explain:"kéo dài ở tương lai" },
+    { question:"She ___ for the exam.", options:["will be studying","studies","studied","is studying"], answer:0, explain:"will be + V-ing" },
+    { question:"They ___ the meeting.", options:["will be attending","attend","attended","are attending"], answer:0, explain:"ý diễn ra trong tương lai" },
+    { question:"I ___ on the project next week.", options:["will be working","work","worked","am working"], answer:0, explain:"kéo dài tương lai" },
+    { question:"He ___ with his friends.", options:["will be playing","play","played","is playing"], answer:0, explain:"will be + V-ing" },
+    { question:"We ___ the bus at 9 AM.", options:["will be taking","take","took","are taking"], answer:0, explain:"hành động đang diễn ra tại điểm tương lai" },
+    { question:"She ___ when you call her.", options:["will be sleeping","sleep","sleeps","is sleeping"], answer:0, explain:"when + TLTD" },
+    { question:"They ___ the house.", options:["will be cleaning","clean","cleaned","are cleaning"], answer:0, explain:"will be + V-ing" },
+    { question:"I ___ to music then.", options:["will be listening","listen","listened","am listening"], answer:0, explain:"hành động đang diễn ra" },
+    { question:"We ___ our tests tomorrow afternoon.", options:["will be taking","take","took","are taking"], answer:0, explain:"thời điểm xác định tương lai" },
+    { question:"He ___ TV when I arrive.", options:["will be watching","watch","watched","is watching"], answer:0, explain:"song song tương lai" },
+    { question:"She ___ all day.", options:["will be working","working","works","is working"], answer:0, explain:"kéo dài tương lai" },
+    { question:"They ___ lunch at noon.", options:["will be having","have","had","are having"], answer:0, explain:"will be + V-ing" },
+    { question:"I ___ my car.", options:["will be fixing","fix","fixed","am fixing"], answer:0, explain:"will be + V-ing" },
+    { question:"The kids ___ outside.", options:["will be playing","play","played","are playing"], answer:0, explain:"tương lai tiếp diễn" },
+    { question:"He ___ the meeting at that time.", options:["will be attending","attend","attended","is attending"], answer:0, explain:"at that time → TLTD" }
   ]
 };
 
-/* ========================================================
-   12) FUTURE PERFECT – 20 QUESTIONS
-======================================================== */
+
+
+/* ============================
+   12. FUTURE PERFECT – 20 câu
+   ============================ */
+
 window.quizData["future-perfect"] = {
   title: "Bài tập – Future Perfect",
   desc: "Chọn đáp án đúng cho thì Tương lai hoàn thành.",
   questions: [
-    {question:"I ___ by 8 PM.", options:["will have finished","finish","finished","am finishing"], answer:0},
-    {question:"She ___ soon.", options:["will have arrived","arrives","arrived","is arriving"], answer:0},
-    {question:"They ___ dinner.", options:["will have cooked","cook","cooked","are cooking"], answer:0},
-    {question:"He ___ the book.", options:["will have read","reads","read","is reading"], answer:0},
-    {question:"We ___ together.", options:["will have worked","work","worked","are working"], answer:0},
-    {question:"I ___ homework.", options:["will have done","do","did","am doing"], answer:0},
-    {question:"She ___ the car.", options:["will have repaired","repairs","repaired","is repairing"], answer:0},
-    {question:"They ___ the house.", options:["will have cleaned","clean","cleaned","are cleaning"], answer:0},
-    {question:"He ___ breakfast.", options:["will have eaten","eats","ate","is eating"], answer:0},
-    {question:"We ___ home.", options:["will have gone","go","went","are going"], answer:0},
-    {question:"I ___ him.", options:["will have met","meet","met","am meeting"], answer:0},
-    {question:"She ___ the lesson.", options:["will have learned","learns","learned","is learning"], answer:0},
-    {question:"They ___ enough money.", options:["will have saved","save","saved","are saving"], answer:0},
-    {question:"He ___ to school.", options:["will have gone","goes","went","is going"], answer:0},
-    {question:"We ___ this movie.", options:["will have watched","watch","watched","are watching"], answer:0},
-    {question:"I ___ the test.", options:["will have passed","pass","passed","am passing"], answer:0},
-    {question:"She ___ English.", options:["will have studied","studies","studied","is studying"], answer:0},
-    {question:"They ___ the truth.", options:["will have known","know","knew","are knowing"], answer:0},
-    {question:"He ___ the song.", options:["will have sung","sings","sang","is singing"], answer:0},
-    {question:"We ___ the project.", options:["will have completed","complete","completed","are completing"], answer:0}
+    { question:"I ___ the work by tomorrow.", options:["will have finished","finish","finished","am finishing"], answer:0, explain:"will have + V3" },
+    { question:"She ___ the letter by 5 PM.", options:["will have written","writes","wrote","is writing"], answer:0, explain:"by + thời điểm → TLHT" },
+    { question:"They ___ the project before Friday.", options:["will have completed","complete","completed","are completing"], answer:0, explain:"đã hoàn thành trước tương lai" },
+    { question:"We ___ dinner by then.", options:["will have had","have","had","are having"], answer:0, explain:"will have + V3" },
+    { question:"He ___ the book by next week.", options:["will have finished","finishes","finished","is finishing"], answer:0, explain:"next week (điểm tương lai)" },
+    { question:"The students ___ the test.", options:["will have done","do","did","are doing"], answer:0, explain:"will have + V3" },
+    { question:"They ___ the house by summer.", options:["will have built","build","built","are building"], answer:0, explain:"hành động hoàn tất trước tương lai" },
+    { question:"I ___ enough money.", options:["will have saved","save","saved","am saving"], answer:0, explain:"will have + V3" },
+    { question:"She ___ the report.", options:["will have typed","types","typed","is typing"], answer:0, explain:"đánh máy xong trước tương lai" },
+    { question:"We ___ the plan.", options:["will have made","make","made","are making"], answer:0, explain:"will have + V3" },
+    { question:"He ___ the car by noon.", options:["will have repaired","repairs","repaired","is repairing"], answer:0, explain:"by noon → TLHT" },
+    { question:"They ___ the film by that time.", options:["will have watched","watch","watched","are watching"], answer:0, explain:"hoàn tất trong tương lai" },
+    { question:"I ___ all the exercises.", options:["will have done","do","did","am doing"], answer:0, explain:"will have + V3" },
+    { question:"She ___ the flowers by evening.", options:["will have watered","waters","watered","is watering"], answer:0, explain:"TLHT" },
+    { question:"We ___ the training course.", options:["will have finished","finish","finished","are finishing"], answer:0, explain:"hoàn thành khóa học" },
+    { question:"He ___ for 10 years by next month.", options:["will have worked","works","worked","is working"], answer:0, explain:"for + time + by + future → TLHT" },
+    { question:"They ___ two cars by next year.", options:["will have bought","buy","bought","are buying"], answer:0, explain:"will have + V3" },
+    { question:"I ___ breakfast by then.", options:["will have eaten","eat","ate","am eating"], answer:0, explain:"by then → TLHT" },
+    { question:"She ___ all tasks by tomorrow.", options:["will have completed","completes","completed","is completing"], answer:0, explain:"hoàn thành trước tương lai" },
+    { question:"We ___ everything we need.", options:["will have prepared","prepare","prepared","are preparing"], answer:0, explain:"will have + V3" }
   ]
 };
-
-/* ========================================================
-   END OF FILE
-======================================================== */
