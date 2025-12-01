@@ -14,9 +14,14 @@
       margin: 0;
       padding: 0;
       transition: 0.3s;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
     }
 
-    /* DARK MODE */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
     body.dark {
       background: #17151f;
       color: #eee;
@@ -47,11 +52,8 @@
 
     body.dark .subtitle { color: #bbb; }
 
-    /* DARK MODE BUTTON */
-    .toggle-box {
-      text-align: right;
-      margin-bottom: 10px;
-    }
+    /* Dark Mode Button */
+    .toggle-box { text-align: right; margin-bottom: 10px; }
 
     .toggle-btn {
       background: #dcd2ff;
@@ -68,13 +70,65 @@
       color: #eee;
     }
 
-    /* FILTERS */
+    /* Roadmap */
+    .roadmap-title {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      color: #4635d4;
+    }
+
+    body.dark .roadmap-title { color: #cfc4ff; }
+
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .roadmap-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .roadmap-item {
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: #fff;
+      border: 2px solid #b7a6ff;
+      min-width: 170px;
+      text-align: center;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .roadmap-item:hover {
+      background: #f1ebff;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(100,80,255,0.2);
+    }
+
+    body.dark .roadmap-item {
+      background: #2a2536;
+      border-color: #917cff;
+      color: #cabdff;
+    }
+
+    .roadmap-item.completed { background: #e6f9ee; color: #0f7738; border-color:#0f7738; }
+    .roadmap-item.soon { background:#f3f3f3; color:#777; }
+    .roadmap-item.learned { box-shadow: 0 0 10px rgba(255,210,75,0.7); }
+
+    /* Filters */
     .filters {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
-      margin-bottom: 25px;
       justify-content: center;
+      margin-bottom: 30px;
     }
 
     .filter-btn {
@@ -87,28 +141,13 @@
       transition: 0.2s;
     }
 
-    .filter-btn:hover {
-      background: #e9e1ff;
-    }
-
     .filter-btn.active {
       background: #c7b6ff;
       border-color: #6f54ff;
       color: #000;
     }
 
-    body.dark .filter-btn {
-      background: #2a2636;
-      border-color: #6f54ff;
-      color: #eee;
-    }
-
-    body.dark .filter-btn.active {
-      background: #6f54ff;
-      color: #fff;
-    }
-
-    /* SEARCH */
+    /* Search */
     #search-box {
       width: 100%;
       padding: 14px;
@@ -116,33 +155,24 @@
       border: 2px solid #b9aaff;
       border-radius: 10px;
       font-size: 18px;
-      outline: none;
     }
 
-    body.dark #search-box {
-      background: #2a2636;
-      color: #eee;
-      border-color: #6f54ff;
-    }
-
-    /* CARD GRID */
+    /* Card grid */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
 
-    /* CARD STYLE */
     .card {
       background: white;
       padding: 20px;
       border-radius: 14px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-      transition: 0.25s;
-      border-left: 6px solid transparent;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      transition: 0.25s;
     }
 
     .card:hover {
@@ -152,263 +182,23 @@
 
     body.dark .card {
       background: #2a2636;
-      box-shadow: none;
+      box-shadow:none;
     }
 
-    .card-icon { font-size: 36px; }
-    .card-title { font-size: 20px; font-weight: 700; }
+    .card-icon { font-size:36px; }
+    .card-title { font-size:20px; font-weight:700; }
 
-    /* STATUS */
-    .status {
-      font-size: 15px;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 8px;
-      display: inline-block;
-      width: fit-content;
+    .status { font-size:14px; font-weight:600; }
+
+    .learned-tag {
+      background:#fff8d1;
+      color:#b08500;
+      padding:4px 10px;
+      border-radius:8px;
+      font-size:14px;
+      font-weight:600;
     }
 
-    .completed { background: #e6f9ee; color: #0b7a3d; }
-    body.dark .completed { background: #203427; color: #46f996; }
-
-    .soon { background: #f0f0f0; color: #666; }
-    body.dark .soon { background: #333; color: #aaa; }
-
-    .btn-view {
-      margin-top: auto;
-      padding: 8px 14px;
-      background: #dcd2ff;
-      border-radius: 8px;
-      font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      color: #333;
-      transition: 0.3s;
-    }
-
-    .btn-view:hover { background: #c4b5ff; }
-    body.dark .btn-view { background: #3b335f; color: #eee; }
-
-.learned-tag {
-  background: #fff8d1;
-  color: #b08500;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  width: fit-content;
-}
-
-body.dark .learned-tag {
-  background: #5a4a00;
-  color: #ffeb8a;
-}
-
-/* Fade-in toàn trang */
-body {
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-/* Card slide lên khi xuất hiện */
-.card {
-  transform: translateY(15px);
-  opacity: 0;
-  animation: slideUp 0.5s ease forwards;
-}
-
-@keyframes slideUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Delay nhẹ mỗi card cho hiệu ứng đẹp */
-.card:nth-child(1) { animation-delay: 0.05s; }
-.card:nth-child(2) { animation-delay: 0.10s; }
-.card:nth-child(3) { animation-delay: 0.15s; }
-.card:nth-child(4) { animation-delay: 0.20s; }
-.card:nth-child(5) { animation-delay: 0.25s; }
-.card:nth-child(6) { animation-delay: 0.30s; }
-
-/* Hover glow đẹp */
-.card:hover {
-  box-shadow: 0 8px 22px rgba(0,0,0,0.12), 0 0 12px rgba(123,97,255,0.25);
-}
-
-/* Icon rung nhẹ như Duolingo */
-.card-icon:hover {
-  animation: wobble 0.6s ease;
-}
-
-@keyframes wobble {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(6deg); }
-  50% { transform: rotate(-6deg); }
-  75% { transform: rotate(4deg); }
-  100% { transform: rotate(0deg); }
-}
-
-/* Filter nhún khi click */
-.filter-btn:active {
-  transform: scale(0.92);
-}
-
-/* Transition đẹp cho card */
-.card {
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-/* Animation cho trạng thái Completed */
-.completed .status {
-  animation: pulseGreen 1s ease;
-}
-
-@keyframes pulseGreen {
-  0% { box-shadow: 0 0 0px rgba(0,255,100,0.3); }
-  50% { box-shadow: 0 0 10px rgba(0,255,100,0.6); }
-  100% { box-shadow: 0 0 0px rgba(0,255,100,0.3); }
-}
-
-/* Animation cho Coming Soon */
-.soon .status {
-  animation: pulseGray 1s ease;
-}
-
-@keyframes pulseGray {
-  0% { box-shadow: 0 0 0px rgba(120,120,120,0.3); }
-  50% { box-shadow: 0 0 8px rgba(150,150,150,0.6); }
-  100% { box-shadow: 0 0 0px rgba(120,120,120,0.3); }
-}
-
-/* ROADMAP TITLE */
-.roadmap-title {
-  text-align: center;
-  font-size: 22px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  color: #4635d4;
-}
-
-body.dark .roadmap-title {
-  color: #cfc4ff;
-}
-
-/* ROADMAP CONTAINER */
-.roadmap {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin-bottom: 40px;
-}
-
-/* MỖI HÀNG */
-.roadmap-row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  position: relative;
-}
-
-/* NODE (ITEM) */
-.roadmap-item {
-  padding: 12px 16px;
-  border-radius: 12px;
-  background: #ffffff;
-  border: 2px solid #b7a6ff;
-  min-width: 170px;
-  text-align: center;
-  font-weight: 600;
-  color: #4635d4;
-  cursor: pointer;
-  transition: 0.3s;
-  position: relative;
-}
-
-.roadmap-item:hover {
-  background: #f1ebff;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(100,80,255,0.2);
-}
-
-body.dark .roadmap-item {
-  background: #2a2536;
-  border-color: #917cff;
-  color: #cabdff;
-}
-
-body.dark .roadmap-item:hover {
-  background: #3b3355;
-  box-shadow: 0 4px 12px rgba(180,160,255,0.25);
-}
-
-/* COMPLETED */
-.roadmap-item.completed {
-  background: #e6f9ee;
-  border-color: #0fa34a;
-  color: #0f7738;
-}
-
-body.dark .roadmap-item.completed {
-  background: #203427;
-  color: #55ff93;
-}
-
-/* LEARNED */
-.roadmap-item.learned {
-  box-shadow: 0 0 10px rgba(255, 210, 75, 0.5);
-}
-
-/* COMING SOON */
-.roadmap-item.soon {
-  background: #f3f3f3;
-  color: #777;
-  border-color: #aaa;
-}
-
-body.dark .roadmap-item.soon {
-  background: #2e2e2e;
-  color: #aaa;
-  border-color: #666;
-}
-
-  .grammar-card {
-  display: flex;
-  background: #fff;
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 20px;
-  border: 1px solid #eaeaea;
-  gap: 20px;
-}
-
-.grammar-card img.thumb {
-  width: 180px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.g-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.grammar-card .btn {
-  display: inline-block;
-  background: #d9d1ff;
-  padding: 8px 14px;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-    
   </style>
 </head>
 
@@ -416,19 +206,16 @@ body.dark .roadmap-item.soon {
 
 <div class="container">
 
-  <!-- Dark mode -->
   <div class="toggle-box">
     <button class="toggle-btn" id="darkToggle">🌙 Dark Mode</button>
   </div>
 
   <h1>📘 Grammar Index</h1>
 
-  <div id="roadmap-container">
   <h2 class="roadmap-title">🗺️ Lộ Trình Học 12 Thì Tiếng Anh</h2>
 
   <div class="roadmap">
 
-    <!-- Hàng 1: Present -->
     <div class="roadmap-row">
       <div class="roadmap-item" data-file="present-simple.html">Present Simple</div>
       <div class="roadmap-item" data-file="present-continuous.html">Present Continuous</div>
@@ -436,15 +223,13 @@ body.dark .roadmap-item.soon {
       <div class="roadmap-item" data-file="present-perfect-continuous.html">P. Perfect Continuous</div>
     </div>
 
-    <!-- Hàng 2: Past -->
     <div class="roadmap-row">
       <div class="roadmap-item" data-file="past-simple.html">Past Simple</div>
       <div class="roadmap-item" data-file="past-continuous.html">Past Continuous</div>
       <div class="roadmap-item" data-file="past-perfect.html">Past Perfect</div>
-      <div class="roadmap-item" data-file="used-to.html">Used to/Be used to/Get used to</div>
+      <div class="roadmap-item" data-file="used-to.html">Used to / Be used to / Get used to</div>
     </div>
 
-    <!-- Hàng 3: Future -->
     <div class="roadmap-row">
       <div class="roadmap-item" data-file="future-simple.html">Future Simple</div>
       <div class="roadmap-item" data-file="future-continuous.html">Future Continuous</div>
@@ -452,45 +237,14 @@ body.dark .roadmap-item.soon {
       <div class="roadmap-item" data-file="will-vs-going-to.html">Will-vs-Going-to</div>
     </div>
 
-   card.innerHTML = `
-  <div class="grammar-card">
-      <img src="${post.thumbnail}" alt="${post.title}" class="thumb">
-
-      <div class="g-info">
-          <p class="done">✓ Đã học</p>
-          <h3>${post.title}</h3>
-          <p>${post.description}</p>
-
-          <a href="post.html?file=${post.file}" class="btn-read">Xem bài →</a>
-      </div>
   </div>
-  `;
-    
-  </div>
-</div>
-  
-  <p id="progress-text" class="subtitle" style="margin-top:-10px;">
-  Đang tải tiến độ học...
-  </p>
 
-  <div id="progress-bar" style="
-  width: 100%;
-  height: 16px;
-  background: #e9e4ff;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 25px;
-">
-  <div id="progress-fill" style="
-    height: 100%;
-    width: 0%;
-    background: #7b61ff;
-    transition: width 0.4s ease;
-  "></div>
-  </div>
-  <p class="subtitle">Tự động cập nhật từ posts.json — hỗ trợ Dark Mode + Bộ lọc nâng cao</p>
+  <p id="progress-text" class="subtitle">Đang tải tiến độ...</p>
 
-  <!-- FILTER BAR -->
+  <div id="progress-bar" style="width:100%;height:16px;background:#e9e4ff;border-radius:10px;">
+    <div id="progress-fill" style="height:100%;width:0%;background:#7b61ff;transition:0.4s;"></div>
+  </div>
+
   <div class="filters">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="present">Present</button>
@@ -500,242 +254,61 @@ body.dark .roadmap-item.soon {
     <button class="filter-btn active" data-status="all">All</button>
     <button class="filter-btn" data-status="completed">Completed</button>
     <button class="filter-btn" data-status="soon">Coming Soon</button>
+
     <button class="filter-btn" data-learn="learned">Đã học</button>
     <button class="filter-btn" data-learn="notlearned">Chưa học</button>
-    
   </div>
 
-  <!-- Search Box -->
   <input type="text" id="search-box" placeholder="🔍 Tìm kiếm...">
 
-  <!-- Card Grid -->
   <div id="card-container" class="card-grid"></div>
 
 </div>
 
-<!-- SCRIPT -->
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
 
-  // LOAD POSTS
   const res = await fetch("posts/posts.json");
   let posts = await res.json();
   posts = posts.filter(p => p.category === "Tiếng Anh");
 
   const container = document.getElementById("card-container");
 
-  // RENDER CARDS
   posts.forEach(post => {
     const card = document.createElement("div");
     card.className = "card";
     card.dataset.file = post.file;
 
-    // Group auto
     if (post.file.startsWith("present-")) card.dataset.group = "present";
     else if (post.file.startsWith("past-")) card.dataset.group = "past";
-    else if (post.file.startsWith("future-") || post.file.startsWith("near-future"))
-      card.dataset.group = "future";
-
-    // Icon
-    let icon = "📘";
-    if (card.dataset.group === "past") icon = "📙";
-    if (card.dataset.group === "future") icon = "📗";
+    else card.dataset.group = "future";
 
     card.innerHTML = `
-      <div class="card-icon">${icon}</div>
+      <div class="card-icon">📘</div>
       <div class="card-title">${post.title}</div>
       <div class="status">Đang kiểm tra...</div>
       <a class="btn-view">Xem bài</a>
     `;
 
-    // Check file exists
     fetch(`posts/${post.file}`).then(r => {
       const status = card.querySelector(".status");
       const btn = card.querySelector(".btn-view");
 
       if (r.ok) {
-        card.dataset.status = "completed";
         status.textContent = "✔ Completed";
+        card.dataset.status = "completed";
         btn.href = `post.html?file=${post.file}`;
       } else {
-        card.dataset.status = "soon";
         status.textContent = "⏳ Coming soon";
+        card.dataset.status = "soon";
         btn.remove();
       }
     });
 
     container.appendChild(card);
-
-    // Thêm delay animation theo thứ tự card
-    let index = 0;
-    document.querySelectorAll(".card").forEach(card => {
-    card.style.animationDelay = `${index * 0.07}s`;
-    index++;
-  });
-    
-  });
-
-  // FILTER FUNCTION
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const searchBox = document.getElementById("search-box");
-
-  function applyFilters() {
-    const cards = document.querySelectorAll(".card");
-    const filterGroup = document.querySelector(".filter-btn[data-filter].active").dataset.filter;
-    const filterStatus = document.querySelector(".filter-btn[data-status].active").dataset.status;
-    const search = searchBox.value.toLowerCase();
-
-    cards.forEach(card => {
-      const matchesGroup = (filterGroup === "all" || card.dataset.group === filterGroup);
-      const matchesStatus = (filterStatus === "all" || card.dataset.status === filterStatus);
-      const matchesSearch = card.innerText.toLowerCase().includes(search);
-
-      card.style.display = (matchesGroup && matchesStatus && matchesSearch) ? "flex" : "none";
-    });
-  }
-
-  // CLICK FILTER
-  filterButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      // Toggle active within same category
-      if (btn.dataset.filter) {
-        document.querySelectorAll(".filter-btn[data-filter]").forEach(b => b.classList.remove("active"));
-      }
-      if (btn.dataset.status) {
-        document.querySelectorAll(".filter-btn[data-status]").forEach(b => b.classList.remove("active"));
-      }
-
-      btn.classList.add("active");
-      applyFilters();
-    });
-  });
-
-  // SEARCH
-  searchBox.addEventListener("input", applyFilters);
-
-  // DARK MODE
-  const toggle = document.getElementById("darkToggle");
-  if (localStorage.getItem("darkmode") === "true") {
-    document.body.classList.add("dark");
-    toggle.textContent = "🌞 Light Mode";
-  }
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
-    localStorage.setItem("darkmode", isDark);
-    toggle.textContent = isDark ? "🌞 Light Mode" : "🌙 Dark Mode";
   });
 
 });
-
-// ⭐ LEARNING PROGRESS SYSTEM ⭐
-let learned = JSON.parse(localStorage.getItem("learned") || "[]");
-
-// Khi người dùng bấm xem bài → thêm vào danh sách đã học
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-view")) {
-    const file = e.target.href.split("file=")[1];
-    if (!learned.includes(file)) {
-      learned.push(file);
-      localStorage.setItem("learned", JSON.stringify(learned));
-    }
-  }
-});
-
-// Cập nhật tag "Đã học" trên từng card
-function updateLearnedStatus() {
-  document.querySelectorAll(".card").forEach(card => {
-    const file = card.dataset.file;
-    if (learned.includes(file)) {
-      if (!card.querySelector(".learned-tag")) {
-        const tag = document.createElement("div");
-        tag.className = "learned-tag";
-        tag.textContent = "✓ Đã học";
-        card.insertBefore(tag, card.children[1]);
-      }
-      card.dataset.learn = "learned";
-    } else {
-      card.dataset.learn = "notlearned";
-    }
-  });
-}
-
-// ⭐ Tiến trình học
-function updateProgress() {
-  const total = document.querySelectorAll(".card").length;
-  const done = learned.filter(file =>
-    document.querySelector(`.card[data-file="${file}"]`)
-  ).length;
-
-  const percent = Math.round((done / total) * 100);
-
-  document.getElementById("progress-text").textContent =
-    `Tiến độ học: ${done}/${total} bài (${percent}%)`;
-
-  document.getElementById("progress-fill").style.width = percent + "%";
-}
-
-// Gọi khi load trang
-setTimeout(() => {
-  updateLearnedStatus();
-  updateProgress();
-}, 800);
-
-// ⭐ Filter đã học / chưa học
-document.querySelectorAll('[data-learn]').forEach(btn => {
-  btn.addEventListener("click", () => {
-    const value = btn.dataset.learn;
-
-    document.querySelectorAll(".filter-btn[data-learn]")
-      .forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    document.querySelectorAll(".card").forEach(card => {
-      if (value === "all") {
-        card.style.display = "flex";
-      } else {
-        card.style.display = (card.dataset.learn === value) ? "flex" : "none";
-      }
-    });
-  });
-});
-
-// ⭐ ROADMAP SYSTEM
-function updateRoadmap() {
-  const roadmapItems = document.querySelectorAll(".roadmap-item");
-
-  roadmapItems.forEach(item => {
-    const file = item.dataset.file;
-
-    // Check file exists → Completed
-    fetch(`posts/${file}`).then(r => {
-      if (r.ok) {
-        item.classList.add("completed");
-      } else {
-        item.classList.add("soon");
-      }
-    });
-
-    // Check learned
-    if (learned.includes(file)) {
-      item.classList.add("learned");
-    }
-
-    // Click item → open bài nếu có
-    item.addEventListener("click", () => {
-      fetch(`posts/${file}`).then(r => {
-        if (r.ok) {
-          window.location.href = `post.html?file=${file}`;
-        } else {
-          alert("Bài này đang được xây dựng!");
-        }
-      });
-    });
-  });
-}
-
-setTimeout(updateRoadmap, 800);
-  
 </script>
 
 </body>
