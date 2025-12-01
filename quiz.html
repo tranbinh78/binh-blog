@@ -146,7 +146,7 @@ function loadQuiz(questions) {
    4. KIỂM TRA ĐÁP ÁN
 ====================== */
 function checkAnswer(qIndex, ansIndex, btn) {
-  const correct = window.correctMap[qIndex];
+  const correct = quiz.questions[qIndex].answer;
 
   const buttons = btn.parentNode.querySelectorAll("button");
   buttons.forEach(b => b.disabled = true);
@@ -159,11 +159,12 @@ function checkAnswer(qIndex, ansIndex, btn) {
     buttons[correct].classList.add("correct");
   }
 
-  const exp = document.getElementById("explain-" + qIndex);
-  exp.innerHTML = "➡ " + currentQuestions[qIndex].explain;
-  exp.style.display = "block";
+  // ⭐ FIX LỖI UNDEFINED
+  const exp = quiz.questions[qIndex].explain || "Không có giải thích.";
+  document.getElementById("explain-" + qIndex).innerHTML = "➡ " + exp;
+  document.getElementById("explain-" + qIndex).style.display = "block";
 
-  if (qIndex === currentQuestions.length - 1) finishQuiz();
+  if (qIndex === quiz.questions.length - 1) finishQuiz();
 }
 
 /* ======================
