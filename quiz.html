@@ -152,13 +152,13 @@ function loadQuiz(data) {
    Kiểm tra đáp án
 -----------------------------------*/
 function checkAnswer(qIndex, ansIndex, btn) {
-  const q = window.currentQuestions[qIndex];
-  if (!q) return;
+  const current = window.currentQuestions && window.currentQuestions[qIndex];
+  if (!current) return;
 
-  const correct = q.answer;
+  const correct = current.answer;
 
-  const group = btn.parentNode.querySelectorAll("button");
-  group.forEach(b => b.disabled = true);
+  const buttons = btn.parentNode.querySelectorAll("button");
+  buttons.forEach(b => b.disabled = true);
 
   if (ansIndex === correct) {
     btn.classList.add("correct");
@@ -169,16 +169,15 @@ function checkAnswer(qIndex, ansIndex, btn) {
     if (correctBtn) correctBtn.classList.add("correct");
   }
 
-  // show explanation
-  const exp = document.getElementById("explain-" + qIndex);
-  if (exp) exp.style.display = "block";
+  // ⭐ FIX QUAN TRỌNG — HIỂN THỊ GIẢI THÍCH
+  const explainEl = document.getElementById("explain-" + qIndex);
+  if (explainEl) {
+    explainEl.style.display = "block";
+    explainEl.innerHTML = "➡ " + (current.explain || "Không có giải thích.");
+  }
 
-  // kiểm tra xem TẤT CẢ các câu đã hoàn thành hay chưa
-  const allAnswered = [...document.querySelectorAll(".answers")].every(g =>
-      [...g.querySelectorAll("button")].every(b => b.disabled)
-  );
-
-  if (allAnswered) finishQuiz();
+  const allDisabled = Array.from(document.querySelectorAll(".answers button")).every(b => b.disabled);
+  if (allDisabled) finishQuiz();
 }
 
 /* ------------------------------
