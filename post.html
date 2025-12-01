@@ -359,6 +359,20 @@ function copyLink() {
 }
 
 </script>
+<script>
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("toggle-answers")) {
+        const answers = document.querySelectorAll(".answer-text");
 
+        answers.forEach(a => {
+            if (a.style.display === "none" || a.style.display === "") {
+                a.style.display = "block";
+            } else {
+                a.style.display = "none";
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>
