@@ -534,25 +534,86 @@ window.quizData["pronouns"] = {
   title: "Bài tập – Pronouns (Đại từ)",
   desc: "Chọn đáp án đúng cho đại từ trong câu.",
   questions: [
-    {question: "Mary is my sister. ___ is 20 years old.", options: ["He", "She", "Her", "They"], answer: 1, explain: "Mary → đại từ nhân xưng chủ ngữ (She)."},
-    {question: "This is my book. That one is ___.", options: ["me", "mine", "my", "ours"], answer: 1, explain: "Đại từ sở hữu (mine) đứng cuối câu."},
-    {question: "We did it all by ___.", options: ["we", "us", "ourselves", "ourself"], answer: 2, explain: "Đại từ phản thân: we → ourselves."},
-    {question: "Do you know the man ___ is talking to Jane?", options: ["who", "whom", "which", "that"], answer: 0, explain: "Chủ ngữ của mệnh đề quan hệ → who."},
-    {question: "Whose pen is this? – It’s ___.", options: ["my", "mine", "me", "ours"], answer: 1, explain: "Đại từ sở hữu đứng một mình: mine."},
-    {question: "These are my friends. ___ are from Canada.", options: ["Them", "They", "Their", "Those"], answer: 1, explain: "Chủ ngữ số nhiều → They."},
-    {question: "The teacher gave ___ homework today.", options: ["we", "our", "us", "ours"], answer: 2, explain: "Tân ngữ của động từ 'gave' → us."},
-    {question: "___ is your favorite color?", options: ["Who", "What", "Whom", "Which"], answer: 1, explain: "Hỏi về vật → What."},
-    {question: "I don't know ___ to choose.", options: ["what", "who", "whom", "when"], answer: 0, explain: "Tân ngữ gián tiếp không xác định → what."},
-    {question: "She hurt ___ while playing basketball.", options: ["herself", "her", "she", "them"], answer: 0, explain: "Đại từ phản thân: she → herself."},
-    {question: "Is this seat ___?", options: ["your", "yours", "you", "yourself"], answer: 1, explain: "Cuối câu dùng đại từ sở hữu → yours."},
-    {question: "I saw a boy ___ was crying.", options: ["who", "whom", "what", "when"], answer: 0, explain: "Who dùng cho người làm chủ ngữ."},
-    {question: "He didn't tell me ___ he was.", options: ["where", "who", "what", "whom"], answer: 0, explain: "Hỏi nơi chốn → where."},
-    {question: "Tom and I will do it ___.", options: ["ourself", "ourselves", "us", "we"], answer: 1, explain: "We → ourselves."},
-    {question: "___ book is this? – It’s mine.", options: ["Whose", "Who", "Which", "What"], answer: 0, explain: "Hỏi về sở hữu → Whose."},
-    {question: "Give this letter to ___.", options: ["she", "her", "hers", "herself"], answer: 1, explain: "Tân ngữ → her."},
-    {question: "I met a man ___ you talked about.", options: ["which", "whom", "who", "that"], answer: 1, explain: "Tân ngữ trong mệnh đề quan hệ → whom."},
-    {question: "The dog hurt ___ tail.", options: ["itself", "it", "its", "it‘s"], answer: 0, explain: "Đại từ phản thân: it → itself."},
-    {question: "___ of these bags is yours?", options: ["What", "Which", "Whose", "Who"], answer: 1, explain: "Which dùng khi có lựa chọn rõ ràng."},
-    {question: "They enjoyed ___.", options: ["themselves", "them", "their", "they"], answer: 0, explain: "Đại từ phản thân: they → themselves."}
+
+    {question: "Mary is my sister. ___ is 20 years old.",
+     options: ["He", "She", "Her", "They"], answer: 1,
+     explain: "Mary → đại từ nhân xưng chủ ngữ (She)."},
+
+    {question: "This is my book. That one is ___.",
+     options: ["me", "mine", "my", "ours"], answer: 1,
+     explain: "Đại từ sở hữu (mine) đứng cuối câu."},
+
+    {question: "We did it all by ___.",
+     options: ["we", "us", "ourselves", "ourself"], answer: 2,
+     explain: "Đại từ phản thân: we → ourselves."},
+
+    {question: "Do you know the man ___ is talking to Jane?",
+     options: ["who", "whom", "which", "that"], answer: 0,
+     explain: "Chủ ngữ của mệnh đề quan hệ → who."},
+
+    {question: "Whose pen is this? – It’s ___.",
+     options: ["my", "mine", "me", "ours"], answer: 1,
+     explain: "Đại từ sở hữu đứng một mình: mine."},
+
+    {question: "These are my friends. ___ are from Canada.",
+     options: ["Them", "They", "Their", "Those"], answer: 1,
+     explain: "Chủ ngữ số nhiều → They."},
+
+    {question: "The teacher gave ___ homework today.",
+     options: ["we", "our", "us", "ours"], answer: 2,
+     explain: "Tân ngữ của động từ 'gave' → us."},
+
+    {question: "___ is your favorite color?",
+     options: ["Who", "What", "Whom", "Which"], answer: 1,
+     explain: "Hỏi về vật → What."},
+
+    {question: "I don't know ___ to choose.",
+     options: ["what", "who", "whom", "when"], answer: 0,
+     explain: "Tân ngữ gián tiếp không xác định → what."},
+
+    {question: "She hurt ___ while playing basketball.",
+     options: ["herself", "her", "she", "them"], answer: 0,
+     explain: "Đại từ phản thân: she → herself."},
+
+    {question: "Is this seat ___?",
+     options: ["your", "yours", "you", "yourself"], answer: 1,
+     explain: "Cuối câu dùng đại từ sở hữu → yours."},
+
+    {question: "I saw a boy ___ was crying.",
+     options: ["who", "whom", "what", "when"], answer: 0,
+     explain: "Who dùng cho người làm chủ ngữ."},
+
+    {question: "He didn't tell me ___ he was.",
+     options: ["where", "who", "what", "whom"], answer: 0,
+     explain: "Hỏi nơi chốn → where."},
+
+    {question: "Tom and I will do it ___.",
+     options: ["ourself", "ourselves", "us", "we"], answer: 1,
+     explain: "We → ourselves."},
+
+    {question: "___ book is this? – It’s mine.",
+     options: ["Whose", "Who", "Which", "What"], answer: 0,
+     explain: "Hỏi về sở hữu → Whose."},
+
+    {question: "Give this letter to ___.",
+     options: ["she", "her", "hers", "herself"], answer: 1,
+     explain: "Tân ngữ → her."},
+
+    {question: "I met a man ___ you talked about.",
+     options: ["which", "whom", "who", "that"], answer: 1,
+     explain: "Tân ngữ trong mệnh đề quan hệ → whom."},
+
+    {question: "The dog hurt ___ tail.",
+     options: ["itself", "it", "its", "it‘s"], answer: 0,
+     explain: "Đại từ phản thân: it → itself."},
+
+    {question: "___ of these bags is yours?",
+     options: ["What", "Which", "Whose", "Who"], answer: 1,
+     explain: "Which dùng khi có lựa chọn rõ ràng."},
+
+    {question: "They enjoyed ___.",
+     options: ["themselves", "them", "their", "they"], answer: 0,
+     explain: "Đại từ phản thân: they → themselves."}
+
   ]
 };
