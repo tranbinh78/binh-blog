@@ -27,16 +27,18 @@
   {
   "file": "nouns.html",
   "title": "Nouns – Danh từ",
+  "description": "Định nghĩa, phân loại danh từ, ví dụ + bài tập.",
   "date": "2025-12-02",
-  "category": "Grammar",
-  "thumbnail": "https://picsum.photos/600/350?4""
+  "thumbnail": "https://picsum.photos/600/350?noun01",
+  "category": "Grammar"
   },
   {
   "file": "adjectives.html",
   "title": "Adjectives – Tính từ",
+  "description": "Cách dùng tính từ, vị trí trong câu, thứ tự tính từ + bài tập.",
   "date": "2025-12-03",
-  "category": "Grammar",
-  "thumbnail": "https://picsum.photos/600/350?5"
+  "thumbnail": "https://picsum.photos/600/350?adj01",
+  "category": "Grammar"
   },
   {
     "file": "present-simple.html",
