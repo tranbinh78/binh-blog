@@ -25,6 +25,20 @@
   },
 
   {
+  "file": "nouns.html",
+  "title": "Nouns – Danh từ",
+  "date": "2025-12-02",
+  "category": "Grammar",
+  "thumbnail": "/binh-blog/posts/img/nouns.png"
+  },
+  {
+  "file": "adjectives.html",
+  "title": "Adjectives – Tính từ",
+  "date": "2025-12-03",
+  "category": "Grammar",
+  "thumbnail": "https://i.imgur.com/6VBx3io.png"
+  },
+  {
     "file": "present-simple.html",
     "title": "Present Simple – Thì Hiện Tại Đơn",
     "description": "Giải thích dễ hiểu + ví dụ + bài tập.",
@@ -146,12 +160,5 @@
   "date": "2025-11-30",
   "thumbnail": "https://picsum.photos/600/350?used01",
   "category": "Tiếng Anh"
-  },
-  {
-  "file": "nouns.html",
-  "title": "Nouns – Danh từ",
-  "date": "2025-12-02",
-  "category": "Grammar",
-  "thumbnail": "/binh-blog/posts/img/nouns.png"
   }
 ]
