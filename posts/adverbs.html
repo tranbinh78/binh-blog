@@ -1,0 +1,77 @@
+<article>
+  <h1>Adverbs – Trạng từ</h1>
+
+  <p>
+    <strong>Adverbs (trạng từ)</strong> là từ dùng để bổ nghĩa cho động từ, tính từ hoặc một trạng từ khác.
+    Trạng từ giúp câu rõ nghĩa hơn: diễn tả cách thức, mức độ, tần suất, thời gian, nơi chốn…
+  </p>
+
+  <h2>1. Chức năng của trạng từ</h2>
+  <ul>
+    <li>Bổ nghĩa cho động từ → <em>She sings beautifully.</em></li>
+    <li>Bổ nghĩa cho tính từ → <em>It is very cold.</em></li>
+    <li>Bổ nghĩa cho trạng từ khác → <em>He runs quite fast.</em></li>
+  </ul>
+
+  <h2>2. Các loại trạng từ</h2>
+
+  <h3>2.1 Adverbs of Manner – Trạng từ chỉ cách thức</h3>
+  <p>Trả lời câu hỏi: How?</p>
+  <p>Ví dụ: slowly, quickly, well, badly…</p>
+
+  <h3>2.2 Adverbs of Frequency – Trạng từ chỉ tần suất</h3>
+  <p>Trả lời câu hỏi: How often?</p>
+  <p>Ví dụ: always, usually, often, sometimes, rarely, never…</p>
+
+  <h3>2.3 Adverbs of Time – Trạng từ thời gian</h3>
+  <p>Trả lời câu hỏi: When?</p>
+  <p>Ví dụ: now, today, yesterday, soon…</p>
+
+  <h3>2.4 Adverbs of Place – Trạng từ nơi chốn</h3>
+  <p>Trả lời câu hỏi: Where?</p>
+  <p>Ví dụ: here, there, everywhere…</p>
+
+  <h3>2.5 Adverbs of Degree – Trạng từ mức độ</h3>
+  <p>Ví dụ: very, too, enough, almost, quite…</p>
+
+  <h2>3. Quy tắc hình thành trạng từ</h2>
+  <ul>
+    <li>Thêm <strong>-ly</strong> vào tính từ: quick → quickly</li>
+    <li><strong>Bất quy tắc</strong>: good → well</li>
+    <li>Tính từ tận cùng bằng -y: happy → happily</li>
+    <li>Tính từ tận cùng -ic: basic → basically</li>
+  </ul>
+
+  <h2>4. Bài tập</h2>
+  <ol>
+    <li>She sings very ___ (beautiful).</li>
+    <li>He runs ___ (quick).</li>
+    <li>This coffee is ___ hot. (too)</li>
+    <li>She studies ___ (hard).</li>
+    <li>They usually wake up ___ (early).</li>
+  </ol>
+
+  <button id="toggle-answer">👉 Hiện đáp án</button>
+
+  <div id="answer-box" style="display:none;">
+    <ol>
+      <li>beautifully</li>
+      <li>quickly</li>
+      <li>too</li>
+      <li>hard</li>
+      <li>early</li>
+    </ol>
+  </div>
+
+  <script>
+    document.getElementById("toggle-answer")?.addEventListener("click", () => {
+      const box = document.getElementById("answer-box");
+      if (!box) return;
+
+      const isHidden = box.style.display === "none";
+      box.style.display = isHidden ? "block" : "none";
+      document.getElementById("toggle-answer").innerText =
+        isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+  </script>
+</article>
