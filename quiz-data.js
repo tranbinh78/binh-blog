@@ -746,3 +746,113 @@ window.quizData["articles"] = {
     }
   ]
 };
+
+/* ============================
+   19. Conjunctions - Liên từ
+   ============================ */
+window.quizData["conjunctions"] = {
+  title: "Conjunctions",
+  desc: "Chọn đáp án đúng cho liên từ (and, but, so, because, although…).",
+  questions: [
+    {question: "He was tired, ___ he went to bed early.",
+     options: ["and", "but", "so", "or"],
+     answer: 2,
+     explain: "so = nên → chỉ kết quả."},
+
+    {question: "I wanted to go out ___ it was raining.",
+     options: ["but", "so", "because", "although"],
+     answer: 0,
+     explain: "but = nhưng (tương phản)."},
+
+    {question: "She stayed home ___ she was sick.",
+     options: ["although", "because", "but", "and"],
+     answer: 1,
+     explain: "because = bởi vì → chỉ nguyên nhân."},
+
+    {question: "___ it rains, we will stay inside.",
+     options: ["If", "Because", "But", "So"],
+     answer: 0,
+     explain: "If = nếu → điều kiện."},
+
+    {question: "He passed the exam ___ he didn’t study much.",
+     options: ["although", "because", "so", "and"],
+     answer: 0,
+     explain: "although = mặc dù (nhượng bộ)."},
+
+    {question: "She is smart ___ hardworking.",
+     options: ["or", "but", "and", "so"],
+     answer: 2,
+     explain: "and = và → thêm thông tin."},
+
+    {question: "You can have tea ___ coffee.",
+     options: ["and", "or", "but", "so"],
+     answer: 1,
+     explain: "or = hoặc → chọn lựa."},
+
+    {question: "I didn’t go out ___ I was busy.",
+     options: ["so", "but", "because", "and"],
+     answer: 2,
+     explain: "because = bởi vì → nguyên nhân."},
+
+    {question: "He studied hard, ___ he passed the test.",
+     options: ["although", "but", "so", "because"],
+     answer: 2,
+     explain: "so = nên → kết quả."},
+
+    {question: "She is tired ___ she keeps working.",
+     options: ["so", "although", "because", "but"],
+     answer: 1,
+     explain: "although = mặc dù."},
+
+    {question: "I will call you ___ I arrive.",
+     options: ["if", "when", "because", "but"],
+     answer: 1,
+     explain: "when = khi mà → thời gian."},
+
+    {question: "We were late ___ the traffic jam.",
+     options: ["because", "so", "but", "although"],
+     answer: 0,
+     explain: "because = bởi vì."},
+
+    {question: "He didn’t pass the exam, ___ he didn't study.",
+     options: ["and", "so", "because", "although"],
+     answer: 2,
+     explain: "because = bởi vì."},
+
+    {question: "___ it was cold, we went swimming.",
+     options: ["So", "Although", "Because", "When"],
+     answer: 1,
+     explain: "Although = mặc dù."},
+
+    {question: "She likes both cats ___ dogs.",
+     options: ["or", "and", "but", "so"],
+     answer: 1,
+     explain: "both… and = cả… và."},
+
+    {question: "He is not only handsome ___ also smart.",
+     options: ["and", "but", "or", "but also"],
+     answer: 3,
+     explain: "not only… but also = không chỉ… mà còn."},
+
+    {question: "Either you apologize ___ you leave.",
+     options: ["and", "or", "but", "so"],
+     answer: 1,
+     explain: "either… or = hoặc… hoặc."},
+
+    {question: "Neither my sister ___ my brother likes fish.",
+     options: ["and", "or", "nor", "but"],
+     answer: 2,
+     explain: "neither… nor = cả hai đều không."},
+
+    {question: "He stayed up late ___ he was tired.",
+     options: ["although", "because", "so", "and"],
+     answer: 0,
+     explain: "although = mặc dù."},
+
+    {question: "I opened the window ___ it was too hot.",
+     options: ["although", "so", "because", "but"],
+     answer: 2,
+     explain: "because = bởi vì."}
+  ]
+};
+
