@@ -1,124 +1,148 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <title>Quantifiers – Định lượng từ | Binh Blog</title>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;800&display=swap" rel="stylesheet">
 
+  <!-- Nội bộ CSS để đảm bảo file không phụ thuộc đường dẫn ngoài (tránh lỗi 404 style.css) -->
   <style>
-    body { font-family:"Be Vietnam Pro",sans-serif; line-height:1.7; padding:20px; max-width:900px; margin:auto; }
-    h1 { font-size:28px; margin-bottom:10px; }
-    h2 { color:#5a3fd1; margin-top:32px; }
-    .example { background:#eef4ff; padding:12px 18px; border-left:4px solid #5a3fd1; border-radius:8px; margin:15px 0; }
-    .btn { background:#d9d1ff; padding:8px 14px; border-radius:8px; cursor:pointer; margin-top:10px; display:inline-block; }
-    .btn:hover { background:#c7bbff; }
-    .exercise-box { margin-top:15px; padding:15px 20px; background:#fafafa; border-radius:10px; border:1px solid #ddd; }
-    .answer { display:none; color:#444; margin-top:6px; }
-    .related { padding:15px; background:#f2ecff; border-radius:12px; margin-top:30px; }
+    :root{
+      --bg:#faf9ff; --card:#fff; --accent:#7b61ff; --muted:#666;
+      --btn:#d9d1ff; --btn-hover:#c7b6ff;
+    }
+    html,body{font-family:"Be Vietnam Pro",system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; background:var(--bg); margin:0; padding:20px;}
+    .wrap{max-width:900px;margin:0 auto;}
+    h1{color:#2a235a;margin:6px 0 8px;font-size:26px;}
+    p.lead{color:var(--muted);margin-top:0;}
+    .theory{background:#ffffff;border-radius:12px;padding:16px;border:1px solid #eee;margin:14px 0;}
+    .example{background:#eef4ff;border-left:4px solid var(--accent);padding:14px;border-radius:8px;margin:12px 0;color:#173;}
+    .btn{display:inline-block;background:var(--btn);padding:8px 14px;border-radius:10px;cursor:pointer;border:1px solid rgba(0,0,0,0.06);text-decoration:none;color:#222;font-weight:600}
+    .btn:hover{background:var(--btn-hover)}
+    .exercise{background:#fff;border-radius:12px;padding:14px;border:1px solid #eee;margin-top:18px;}
+    .q{margin:12px 0;padding:10px 12px;background:#fafafa;border-radius:8px;border:1px solid #f0f0f0;}
+    .answer{display:none;margin-top:8px;padding:10px;background:#f7f7fb;border-radius:8px;color:#111;border-left:4px solid var(--accent)}
+    .meta{color:var(--muted);font-size:14px;margin-top:10px}
+    .related{background:#f2ecff;padding:12px;border-radius:10px;margin-top:22px}
+    a.link{color:var(--accent);text-decoration:none}
+    .center { text-align:center; }
+    /* responsive */
+    @media (max-width:600px){ .wrap{padding:10px} h1{font-size:22px} }
   </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <h1>Quantifiers — Định lượng từ</h1>
+    <p class="lead">Tóm tắt nhanh: dùng many/much, a few/few, a little/little, enough, too many/too much, some/any...</p>
 
-<h1>Quantifiers – Định lượng từ</h1>
-<p>Quantifiers là những từ chỉ số lượng: many, much, a few, few, a little, little, enough, too many, too much…</p>
+    <div class="theory">
+      <h3>Những điểm chính</h3>
+      <ul>
+        <li><strong>Much</strong> dùng với danh từ không đếm được (uncountable).</li>
+        <li><strong>Many</strong> dùng với danh từ đếm được (countable) số nhiều.</li>
+        <li><strong>A few / Few</strong> (countable) — a few = một vài (dương), few = rất ít (tiêu cực).</li>
+        <li><strong>A little / Little</strong> (uncountable) — a little = một chút (đủ), little = gần như không.</li>
+        <li><strong>Too many / Too much</strong> = quá nhiều.</li>
+        <li><strong>Enough</strong> = đủ (đứng trước danh từ hoặc sau động từ: "have enough time").</li>
+      </ul>
 
-<hr>
+      <div class="example">
+        Ví dụ: <br>
+        ✓ He drank <strong>too much</strong> water. — <br>
+        ✓ There are <strong>too many</strong> cars here. — <br>
+        ✓ We have <strong>enough</strong> time.
+      </div>
+    </div>
 
-<h2>1. Much / Many</h2>
-<ul>
-  <li><b>Much</b>: dùng với danh từ không đếm được.</li>
-  <li><b>Many</b>: dùng với danh từ đếm được số nhiều.</li>
-</ul>
+    <h2>Bài tập — Chọn đáp án đúng (10 câu)</h2>
+    <p class="meta">Chọn từ định lượng thích hợp cho mỗi câu.</p>
 
-<div class="example">
-  ✓ I don’t have <b>much</b> money.<br>
-  ✓ There are <b>many</b> students here.
-</div>
+    <div class="center" style="margin:12px 0;">
+      <button class="btn" id="toggleBtn">👁 Ẩn/Hiện đáp án</button>
+    </div>
 
-<h2>2. A little / Little – A few / Few</h2>
-<ul>
-  <li><b>A little</b>: một chút (không đếm được).</li>
-  <li><b>Little</b>: rất ít, gần như không.</li>
-  <li><b>A few</b>: một vài (đếm được).</li>
-  <li><b>Few</b>: rất ít, gần như không.</li>
-</ul>
+    <div class="exercise" id="exerciseBox">
+      <div class="q">
+        <strong>1.</strong> There are ___ apples in the basket.
+        <div class="answer"><strong>Đáp án:</strong> many — "apples" là danh từ đếm được số nhiều.</div>
+      </div>
 
-<div class="example">
-  ✓ We have <b>a few</b> ideas.<br>
-  ✓ He has <b>few</b> friends.
-</div>
+      <div class="q">
+        <strong>2.</strong> She drank ___ water today.
+        <div class="answer"><strong>Đáp án:</strong> too much — "water" là danh từ không đếm được; quá nhiều.</div>
+      </div>
 
-<h2>3. Too much / Too many</h2>
-<div class="example">
-  ✓ She ate <b>too much</b> sugar.<br>
-  ✓ There are <b>too many</b> cars on the road.
-</div>
+      <div class="q">
+        <strong>3.</strong> We have ___ time left, so hurry up!
+        <div class="answer"><strong>Đáp án:</strong> little — mang nghĩa tiêu cực "rất ít" (không đủ).</div>
+      </div>
 
-<h2>4. Enough</h2>
-<div class="example">
-  ✓ We have <b>enough</b> chairs.
-</div>
+      <div class="q">
+        <strong>4.</strong> He has ___ friends — maybe only two.
+        <div class="answer"><strong>Đáp án:</strong> few — rất ít bạn bè (tiêu cực).</div>
+      </div>
 
-<hr>
+      <div class="q">
+        <strong>5.</strong> I need ___ money to buy the book.
+        <div class="answer"><strong>Đáp án:</strong> a little — một chút tiền (không đếm được) là đủ để mua.</div>
+      </div>
 
-<h2>📝 Bài tập (10 câu)</h2>
-<p>Chọn đáp án đúng:</p>
+      <div class="q">
+        <strong>6.</strong> There are ___ students in the class — almost 40!
+        <div class="answer"><strong>Đáp án:</strong> many — số lượng lớn (đếm được).</div>
+      </div>
 
-<button class="btn" onclick="toggleAnswers()">👁 Ẩn/Hiện đáp án</button>
+      <div class="q">
+        <strong>7.</strong> Do we have ___ chairs for everyone?
+        <div class="answer"><strong>Đáp án:</strong> enough — "đủ" chairs; có thể đứng trước danh từ hoặc sau động từ.</div>
+      </div>
 
-<div class="exercise-box">
-  <p>1. There are ___ apples in the basket.</p>
-  <p class="answer"><b>→ many</b></p>
+      <div class="q">
+        <strong>8.</strong> They made ___ mistakes in the test.
+        <div class="answer"><strong>Đáp án:</strong> many — nhiều lỗi (đếm được).</div>
+      </div>
 
-  <p>2. She drank ___ water today.</p>
-  <p class="answer"><b>→ too much</b></p>
+      <div class="q">
+        <strong>9.</strong> She put ___ salt in the soup. It’s too salty.
+        <div class="answer"><strong>Đáp án:</strong> too much — "salt" là uncountable; quá nhiều.</div>
+      </div>
 
-  <p>3. We have ___ time left, so hurry up!</p>
-  <p class="answer"><b>→ little</b></p>
+      <div class="q">
+        <strong>10.</strong> We have ___ options — we must decide soon.
+        <div class="answer"><strong>Đáp án:</strong> a few — "a few" = một vài (không quá nhiều nhưng có lựa chọn).</div>
+      </div>
 
-  <p>4. He has ___ friends — maybe only two.</p>
-  <p class="answer"><b>→ few</b></p>
+    </div>
 
-  <p>5. I need ___ money to buy the book.</p>
-  <p class="answer"><b>→ a little</b></p>
+    <p class="meta" style="margin-top:14px">Muốn luyện tiếp? <a class="link" href="../quiz.html?type=quantifiers">Làm bài Quiz: Quantifiers</a></p>
 
-  <p>6. There are ___ students in the class — almost 40!</p>
-  <p class="answer"><b>→ too many</b></p>
+    <div class="related">
+      <strong>Bài viết liên quan</strong>
+      <ul>
+        <li><a class="link" href="nouns.html">Nouns – Danh từ</a></li>
+        <li><a class="link" href="adjectives.html">Adjectives – Tính từ</a></li>
+        <li><a class="link" href="articles.html">Articles – Mạo từ</a></li>
+      </ul>
+    </div>
+  </div>
 
-  <p>7. Do we have ___ chairs for everyone?</p>
-  <p class="answer"><b>→ enough</b></p>
+  <script>
+    // toggle ẩn/hiện đáp án (giống yêu cầu các bài trước)
+    (function(){
+      const btn = document.getElementById('toggleBtn');
+      const answers = document.querySelectorAll('.answer');
+      let visible = false;
 
-  <p>8. They made ___ mistakes in the test.</p>
-  <p class="answer"><b>→ many</b></p>
+      btn.addEventListener('click', function(){
+        visible = !visible;
+        answers.forEach(a => a.style.display = visible ? 'block' : 'none');
+        btn.textContent = visible ? '🙈 Ẩn đáp án' : '👁 Ẩn/Hiện đáp án';
+      });
 
-  <p>9. She put ___ salt in the soup. It's too salty.</p>
-  <p class="answer"><b>→ too much</b></p>
-
-  <p>10. We have ___ options — we must decide soon.</p>
-  <p class="answer"><b>→ few</b></p>
-</div>
-
-<br>
-<a href="../quiz.html?type=quantifiers" class="btn">👉 Làm bài tập Quiz: Quantifiers</a>
-
-<div class="related">
-  <h3>Bài viết liên quan</h3>
-  <ul>
-    <li><a href="nouns.html">Nouns – Danh từ</a></li>
-    <li><a href="adjectives.html">Adjectives – Tính từ</a></li>
-    <li><a href="adverbs.html">Adverbs – Trạng từ</a></li>
-  </ul>
-</div>
-
-<script>
-function toggleAnswers() {
-  document.querySelectorAll('.answer').forEach(a => {
-    a.style.display = a.style.display === 'block' ? 'none' : 'block';
-  });
-}
-</script>
-
+      // mặc định: ẩn đáp án
+      answers.forEach(a => a.style.display = 'none');
+    })();
+  </script>
 </body>
 </html>
