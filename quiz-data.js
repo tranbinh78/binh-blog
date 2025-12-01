@@ -421,27 +421,27 @@ window.quizData["near-future"] = {
 
 window.quizData["will-vs-going-to"] = {
   title: "Bài tập – Will vs Be going to",
-  desc: "Chọn đáp án đúng cho Will vs Be going to",
+  desc: "Chọn đáp án đúng cho Will vs Be going to.",
   questions: [
-  {question: "Look at those clouds! It ___ rain soon.", options: ["will", "is going to", "won’t", "is"], answer: 1, explain: "Dựa vào dấu hiệu rõ ràng → dùng 'be going to'"},
-  {question: "I think he ___ pass the exam.", options: ["is going to", "will", "is passing", "passes"], answer: 1, explain: "Dự đoán không có cơ sở → dùng 'will'"},
+  {question: "Look at those clouds! It ___ rain soon.", options: ["will", "is going to", "won’t", "is"], answer: 0, explain: "Dựa vào dấu hiệu rõ ràng → dùng 'be going to'"},
+  {question: "I think he ___ pass the exam.", options: ["is going to", "will", "is passing", "passes"], answer: 0, explain: "Dự đoán không có cơ sở → dùng 'will'"},
   {question: "She bought paint. She ___ paint her bedroom.", options: ["is going to", "will", "is", "is going to be"], answer: 0, explain: "Có kế hoạch và chuẩn bị sẵn → dùng 'be going to'"},
-  {question: "A: The phone is ringing! B: I ___ answer it.", options: ["am going to", "will", "am", "am answering"], answer: 1, explain: "Quyết định ngay lúc nói → dùng 'will'"},
-  {question: "Watch out! That glass ___ fall.", options: ["will", "is going to", "falls", "is"], answer: 1, explain: "Bằng chứng rõ ràng sắp xảy ra → dùng 'be going to'"},
-  {question: "We have already packed. We ___ leave now.", options: ["will", "are going to", "go", "will be"], answer: 1, explain: "Có chuẩn bị trước → 'be going to'"},
-  {question: "He hopes he ___ find a new job soon.", options: ["will", "is going to", "is", "finds"], answer: 1, explain: "Hy vọng, dự đoán → dùng 'will'"},
+  {question: "A: The phone is ringing! B: I ___ answer it.", options: ["am going to", "will", "am", "am answering"], answer: 0, explain: "Quyết định ngay lúc nói → dùng 'will'"},
+  {question: "Watch out! That glass ___ fall.", options: ["will", "is going to", "falls", "is"], answer: 0, explain: "Bằng chứng rõ ràng sắp xảy ra → dùng 'be going to'"},
+  {question: "We have already packed. We ___ leave now.", options: ["will", "are going to", "go", "will be"], answer: 0, explain: "Có chuẩn bị trước → 'be going to'"},
+  {question: "He hopes he ___ find a new job soon.", options: ["will", "is going to", "is", "finds"], answer: 0, explain: "Hy vọng, dự đoán → dùng 'will'"},
   {question: "I’m sure she ___ be happy with the gift.", options: ["will", "is going to", "is", "be going to"], answer: 0, explain: "Ý kiến cá nhân → dùng 'will'"},
-  {question: "They ___ get married next month. Everything is planned.", options: ["will", "are going to", "are", "will be"], answer: 1, explain: "Kế hoạch đã định → 'be going to'"},
+  {question: "They ___ get married next month. Everything is planned.", options: ["will", "are going to", "are", "will be"], answer: 0, explain: "Kế hoạch đã định → 'be going to'"},
   {question: "The weather forecast says it ___ be sunny today.", options: ["will", "is going to", "is", "goes to"], answer: 0, explain: "Dự báo thời tiết → dùng 'will'"},
   {question: "A: I’m thirsty. B: I ___ get you some water.", options: ["will", "am going to", "get", "am getting"], answer: 0, explain: "Hành động tự nguyện → dùng 'will'"},
   {question: "He is holding the ball. He ___ throw it.", options: ["is going to", "will", "throws", "is"], answer: 0, explain: "Bằng chứng rõ ràng → 'be going to'"},
-  {question: "I think our team ___ win the match.", options: ["is going to", "wins", "will", "is"], answer: 2, explain: "Dự đoán không có căn cứ → 'will'"},
-  {question: "She feels sick. She ___ faint.", options: ["will", "is going to", "is", "may"], answer: 1, explain: "Dấu hiệu nhìn thấy rõ → 'be going to'"},
-  {question: "We don’t have milk. I ___ buy some.", options: ["am going to", "will", "am", "might"], answer: 1, explain: "Quyết định ngay khi nói → 'will'"},
+  {question: "I think our team ___ win the match.", options: ["is going to", "wins", "will", "is"], answer: 0, explain: "Dự đoán không có căn cứ → 'will'"},
+  {question: "She feels sick. She ___ faint.", options: ["will", "is going to", "is", "may"], answer: 0, explain: "Dấu hiệu nhìn thấy rõ → 'be going to'"},
+  {question: "We don’t have milk. I ___ buy some.", options: ["am going to", "will", "am", "might"], answer: 0, explain: "Quyết định ngay khi nói → 'will'"},
   {question: "Tom has decided. He ___ quit his job.", options: ["is going to", "will", "is", "quits"], answer: 0, explain: "Kế hoạch đã quyết định → 'be going to'"},
   {question: "The sky is dark. It ___ rain.", options: ["will", "is going to", "rains", "is"], answer: 1, explain: "Dấu hiệu rõ ràng → 'be going to'"},
   {question: "I’m sure you ___ enjoy the trip.", options: ["will", "are going to", "enjoy", "are enjoy"], answer: 0, explain: "Sự chắc chắn của người nói → 'will'"},
-  {question: "We ___ visit our grandparents this weekend. It’s already planned.", options: ["will", "are going to", "visit", "going to"], answer: 1, explain: "Kế hoạch đã định → 'be going to'"},
-  {question: "A: I can’t fix this. B: Don’t worry. I ___ help you.", options: ["am going to", "will", "am helping", "help"], answer: 1, explain: "Hứa giúp ngay tại thời điểm nói → 'will'."
+  {question: "We ___ visit our grandparents this weekend. It’s already planned.", options: ["will", "are going to", "visit", "going to"], answer: 0, explain: "Kế hoạch đã định → 'be going to'"},
+  {question: "A: I can’t fix this. B: Don’t worry. I ___ help you.", options: ["am going to", "will", "am helping", "help"], answer: 0, explain: "Hứa giúp ngay tại thời điểm nói → 'will'"}
 ]
 };
