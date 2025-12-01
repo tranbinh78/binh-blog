@@ -856,3 +856,32 @@ window.quizData["conjunctions"] = {
   ]
 };
 
+/* ============================
+   20. Quantifiers – Định lượng từ trong tiếng Anh
+   ============================ */
+window.quizData["quantifiers"] = {
+  title: "Quantifiers – Định lượng từ",
+  desc: "Chọn đáp án đúng cho định lượng từ.",
+  questions: [
+    {question:"I don’t have ___ time.", options:["many","much","a few","few"], answer:1, explain:"time → uncountable → much"},
+    {question:"There are ___ apples left.", options:["much","many","little","no"], answer:1, explain:"apples → countable plural → many"},
+    {question:"She has ___ friends. She isn’t lonely.", options:["few","a few","little","much"], answer:1, explain:"a few = một vài (tích cực)"},
+    {question:"He drank ___ water.", options:["many","a few","too much","too many"], answer:2, explain:"water → uncountable → too much"},
+    {question:"We don’t have ___ chairs for everyone.", options:["much","many","a little","few"], answer:1, explain:"chairs → countable plural → many"},
+    {question:"There is ___ noise in this street.", options:["many","much","a few","few"], answer:1, explain:"noise → uncountable → much"},
+    {question:"I ate ___ rice.", options:["a little","a few","many","no"], answer:0, explain:"rice → uncountable → a little"},
+    {question:"She has ___ books.", options:["too much","too many","little","no"], answer:1, explain:"books → countable plural → too many"},
+    {question:"___ of the students passed the test.", options:["Most","Most of","Any","Little"], answer:0, explain:"Most + plural noun"},
+    {question:"___ my classmates are friendly.", options:["Most","Most of","Much","Few"], answer:1, explain:"Most of + my + noun"},
+    {question:"There is ___ coffee left.", options:["a few","a little","many","few"], answer:1, explain:"coffee → uncountable"},
+    {question:"Do you have ___ questions?", options:["some","any","few","little"], answer:1, explain:"Câu hỏi → any"},
+    {question:"She has ___ problems today.", options:["too much","too many","a little","little"], answer:1, explain:"problems → plural → too many"},
+    {question:"He made ___ mistakes.", options:["a few","a little","little","much"], answer:0, explain:"mistakes → countable plural"},
+    {question:"They need ___ money to buy the tickets.", options:["many","much","a few","few"], answer:1, explain:"money → uncountable"},
+    {question:"I saw ___ people at the concert.", options:["a little","no","a few","little"], answer:2, explain:"people → plural → a few"},
+    {question:"There is ___ hope left.", options:["many","much","a few","little"], answer:1, explain:"hope → uncountable"},
+    {question:"She spent ___ time studying.", options:["many","much","a few","no"], answer:1, explain:"time → uncountable"},
+    {question:"We ate ___ of the cake.", options:["most","most of","a little","too many"], answer:1, explain:"most of + the"},
+    {question:"He has ___ friends.", options:["many","much","little","a little"], answer:0, explain:"friends → plural → many"}
+  ]
+};
