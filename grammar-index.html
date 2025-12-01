@@ -452,16 +452,19 @@ body.dark .roadmap-item.soon {
       <div class="roadmap-item" data-file="will-vs-going-to.html">Will-vs-Going-to</div>
     </div>
 
-   <div class="grammar-card">
-      <img src="${post.thumbnail}" class="thumb" alt="${post.title}">
-  
+   card.innerHTML = `
+  <div class="grammar-card">
+      <img src="${post.thumbnail}" alt="${post.title}" class="thumb">
+
       <div class="g-info">
-        <p class="done">✓ Đã học</p>
-        <h3>${post.title}</h3>
-        <p>${post.description}</p>
-        <a class="btn" href="post.html?file=${post.file}">Xem bài →</a>
+          <p class="done">✓ Đã học</p>
+          <h3>${post.title}</h3>
+          <p>${post.description}</p>
+
+          <a href="post.html?file=${post.file}" class="btn-read">Xem bài →</a>
       </div>
-    </div>
+  </div>
+  `;
     
   </div>
 </div>
