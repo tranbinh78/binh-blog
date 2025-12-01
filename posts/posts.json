@@ -25,21 +25,22 @@
   },
 
   {
-  "file": "nouns.html",
-  "title": "Nouns – Danh từ",
-  "category": "Tiếng Anh",
-  "date": "2025-12-02",
-  "thumbnail": "images/nouns.jpg",
-  "excerpt": "Định nghĩa, phân loại danh từ, ví dụ + bài tập."
+    "file": "nouns.html",
+    "title": "Nouns – Danh từ",
+    "category": "Tiếng Anh",
+    "date": "2025-12-02",
+    "thumbnail": "images/nouns.jpg",
+    "description": "Định nghĩa, phân loại danh từ, ví dụ + bài tập."
   },
   {
-  "file": "adjectives.html",
-  "title": "Adjectives – Tính từ",
-  "category": "Tiếng Anh",
-  "date": "2025-12-03",
-  "thumbnail": "images/adjectives.jpg",
-  "excerpt": "Cách dùng tính từ, vị trí trong câu, thứ tự tính từ + bài tập."
+    "file": "adjectives.html",
+    "title": "Adjectives – Tính từ",
+    "category": "Tiếng Anh",
+    "date": "2025-12-03",
+    "thumbnail": "images/adjectives.jpg",
+    "description": "Cách dùng tính từ, vị trí trong câu, thứ tự tính từ + bài tập."
   },
+
   {
     "file": "present-simple.html",
     "title": "Present Simple – Thì Hiện Tại Đơn",
@@ -67,7 +68,7 @@
   {
     "file": "present-perfect-continuous.html",
     "title": "Present Perfect Continuous – Thì Hiện Tại Hoàn Thành Tiếp Diễn",
-    "description": "Cách dùng, ví dụ, bài tập.",
+    "description": "Cách dùng, ví dụ + bài tập.",
     "date": "2025-02-04",
     "thumbnail": "https://picsum.photos/600/350?13",
     "category": "Tiếng Anh"
@@ -148,19 +149,19 @@
     "category": "Tiếng Anh"
   },
   {
-  "file": "will-vs-going-to.html",
-  "title": "Will vs Be going to — Phân biệt Will và Be going to",
-  "description": "Phân biệt cách dùng 'will' và 'be going to' + ví dụ và bài tập có đáp án.",
-  "date": "2025-11-29",
-  "thumbnail": "https://picsum.photos/600/350?will01",
-  "category": "Tiếng Anh"
+    "file": "will-vs-going-to.html",
+    "title": "Will vs Be going to — Phân biệt Will và Be going to",
+    "description": "Phân biệt cách dùng 'will' và 'be going to' + ví dụ và bài tập có đáp án.",
+    "date": "2025-11-29",
+    "thumbnail": "https://picsum.photos/600/350?will01",
+    "category": "Tiếng Anh"
   },
   {
-  "file": "used-to.html",
-  "title": "Used to / Be used to / Get used to",
-  "description": "Phân biệt chi tiết 3 cấu trúc dễ nhầm + ví dụ + bài tập + đáp án.",
-  "date": "2025-11-30",
-  "thumbnail": "https://picsum.photos/600/350?used01",
-  "category": "Tiếng Anh"
+    "file": "used-to.html",
+    "title": "Used to / Be used to / Get used to",
+    "description": "Phân biệt chi tiết 3 cấu trúc dễ nhầm + ví dụ + bài tập + đáp án.",
+    "date": "2025-11-30",
+    "thumbnail": "https://picsum.photos/600/350?used01",
+    "category": "Tiếng Anh"
   }
 ]
