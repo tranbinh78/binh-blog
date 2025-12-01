@@ -622,27 +622,127 @@ window.quizData["pronouns"] = {
    ============================ */
 window.quizData["articles"] = {
   title: "Bài tập – Articles",
-  desc: "Chọn đáp án đúng cho mạo từ (a, an, the, zero article).",
+  desc: "Chọn mạo từ đúng (a, an, the hoặc zero article).",
   questions: [
-    {question:"I bought ___ umbrella.", options:["a","an","the","zero"], answer:1},
-    {question:"___ Earth is round.", options:["A","An","The","zero"], answer:2},
-    {question:"She is ___ honest person.", options:["a","an","the","zero"], answer:1},
-    {question:"He wants to buy ___ new laptop.", options:["a","an","the","zero"], answer:0},
-    {question:"___ Pacific Ocean is the largest.", options:["A","An","The","zero"], answer:2},
-    {question:"I love ___ music.", options:["a","an","the","zero"], answer:3},
-    {question:"___ dogs are friendly animals.", options:["A","The","zero","An"], answer:2},
-    {question:"She has ___ idea.", options:["a","an","the","zero"], answer:1},
-    {question:"I visited ___ Louvre last year.", options:["a","an","the","zero"], answer:2},
-    {question:"We had ___ dinner at 7PM.", options:["a","an","the","zero"], answer:3},
-    {question:"He is ___ teacher.", options:["a","an","the","zero"], answer:0},
-    {question:"They went to ___ school early.", options:["a","an","the","zero"], answer:3},
-    {question:"___ Nile is the longest river in Africa.", options:["A","An","The","zero"], answer:2},
-    {question:"She adopted ___ cat.", options:["a","an","the","zero"], answer:0},
-    {question:"___ sun is very bright today.", options:["A","An","The","zero"], answer:2},
-    {question:"I have never seen ___ elephant.", options:["a","an","the","zero"], answer:1},
-    {question:"He likes ___ books.", options:["a","an","the","zero"], answer:3},
-    {question:"She went to ___ university in London.", options:["a","an","the","zero"], answer:1},
-    {question:"Turn off ___ lights, please.", options:["a","an","the","zero"], answer:2},
-    {question:"We took ___ taxi to the airport.", options:["a","an","the","zero"], answer:0}
+    {
+      question: "I saw ___ elephant at the zoo.",
+      options: ["a", "an", "the", "—"],
+      answer: 1,
+      explain: "Dùng 'an' trước âm bắt đầu bằng nguyên âm → elephant."
+    },
+    {
+      question: "Can you pass me ___ salt, please?",
+      options: ["a", "an", "the", "—"],
+      answer: 2,
+      explain: "Dùng 'the' khi cả người nói & nghe đều biết vật đó."
+    },
+    {
+      question: "She is ___ teacher.",
+      options: ["a", "an", "the", "—"],
+      answer: 0,
+      explain: "Dùng 'a' trước từ bắt đầu bằng phụ âm → teacher."
+    },
+    {
+      question: "He bought ___ umbrella yesterday.",
+      options: ["a", "an", "the", "—"],
+      answer: 1,
+      explain: "'Umbrella' bắt đầu bằng âm nguyên âm → dùng an."
+    },
+    {
+      question: "We live near ___ ocean.",
+      options: ["a", "an", "the", "—"],
+      answer: 2,
+      explain: "Dùng 'the' trước danh từ duy nhất (unique) → the ocean."
+    },
+    {
+      question: "She goes to ___ school by bus.",
+      options: ["a", "an", "the", "—"],
+      answer: 3,
+      explain: "Dùng zero article với nơi chốn: school, hospital, church."
+    },
+    {
+      question: "This is ___ best day ever!",
+      options: ["a", "an", "the", "—"],
+      answer: 2,
+      explain: "Dùng 'the' trước tính từ so sánh nhất → the best."
+    },
+    {
+      question: "I need ___ new notebook.",
+      options: ["a", "an", "the", "—"],
+      answer: 0,
+      explain: "Notebook bắt đầu bằng phụ âm → dùng 'a'."
+    },
+    {
+      question: "She wants to be ___ engineer.",
+      options: ["a", "an", "the", "—"],
+      answer: 1,
+      explain: "Engineer bắt đầu bằng âm nguyên âm → dùng 'an'."
+    },
+    {
+      question: "He is playing ___ piano.",
+      options: ["a", "an", "the", "—"],
+      answer: 2,
+      explain: "Dùng 'the' trước nhạc cụ → play the piano."
+    },
+    {
+      question: "Do you have ___ pen I can borrow?",
+      options: ["a", "an", "the", "—"],
+      answer: 0,
+      explain: "Pen là vật bất kỳ → dùng 'a'."
+    },
+    {
+      question: "___ Mount Everest is very high.",
+      options: ["a", "an", "the", "—"],
+      answer: 2,
+      explain: "Tên núi dùng 'the'."
+    },
+    {
+      question: "He visited ___ United States last year.",
+      options: ["a", "an", "the", "—"],
+      answer: 2,
+      explain: "Tên nước có 'states' (số nhiều) dùng 'the'."
+    },
+    {
+      question: "I go to ___ bed at 11 p.m.",
+      options: ["a", "an", "the", "—"],
+      answer: 3,
+      explain: "Zero article với go to bed, school, church..."
+    },
+    {
+      question: "She lives in ___ small village.",
+      options: ["a", "an", "the", "—"],
+      answer: 0,
+      explain: "'Small' bắt đầu bằng phụ âm → dùng 'a'."
+    },
+    {
+      question: "He wants to buy ___ iPhone.",
+      options: ["a", "an", "the", "—"],
+      answer: 1,
+      explain: "'iPhone' phát âm /ai/ → âm nguyên âm → dùng 'an'."
+    },
+    {
+      question: "___ sun rises in the east.",
+      options: ["a", "an", "the", "—"],
+      answer: 2,
+      explain: "Dùng 'the' cho vật thể duy nhất → the sun."
+    },
+    {
+      question: "She is reading ___ book I gave her.",
+      options: ["a", "an", "the", "—"],
+      answer: 2,
+      explain: "Xác định cụ thể → book I gave her → dùng 'the'."
+    },
+    {
+      question: "We usually have ___ dinner at 7 p.m.",
+      options: ["a", "an", "the", "—"],
+      answer: 3,
+      explain: "Bữa ăn → dùng zero article (have dinner)."
+    },
+    {
+      question: "He adopted ___ dog from the shelter.",
+      options: ["a", "an", "the", "—"],
+      answer: 0,
+      explain: "Dog là vật chưa được xác định → dùng 'a'."
+    }
   ]
 };
