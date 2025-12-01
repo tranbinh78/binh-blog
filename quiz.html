@@ -73,79 +73,75 @@
 <script src="/binh-blog/quiz-data.js"></script>
 
 <script>
-/* --- Assumes:
-   - quizData[type] trả về array câu hỏi với {question, options, answer, explain}
-   - 'answer' ban đầu là index (0..)
-   - biến global `score` được khai báo bên trên (nếu chưa, khai báo ở đây)
-*/
+// ======== LẤY TYPE TỪ URL + FALLBACK AN TOÀN ========
+const params = new URLSearchParams(window.location.search);
+let type = params.get("type");
 
-let score = 0;               // đảm bảo có khai báo
-window.currentQuestions = []; // lưu phiên bản đã shuffle
+// ⭐ Nếu URL không có type hoặc type không tồn tại → fallback
+if (!type || !quizData[type]) {
+    type = "present-simple";
+}
 
-// helper: shuffle mảng và trả về mảng mới + chỉ số mới của phần tử ban đầu (oldIndex)
+let score = 0;
+window.currentQuestions = [];
+
+// ======== SHUFFLE ========
 function shuffleWithNewIndex(arr, oldIndex) {
-  // copy
   const items = arr.map((v, i) => ({v, i}));
-  // Fisher-Yates shuffle
+
   for (let i = items.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [items[i], items[j]] = [items[j], items[i]];
   }
-  // build shuffled values
+
   const shuffled = items.map(x => x.v);
-  // find new index where original oldIndex ended up
   const newIndex = items.findIndex(x => x.i === oldIndex);
   return {shuffled, newIndex};
 }
 
-// loadQuiz: tạo bản copy của questions, shuffle option cho từng câu (và cập nhật answer)
+// ======== LOAD QUIZ ========
 function loadQuiz(questions) {
   score = 0;
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
 
-  // deep-copy questions để không thay đổi dữ liệu gốc
   const copied = questions.map(q => ({
     question: q.question,
-    options: Array.isArray(q.options) ? q.options.slice() : [],
+    options: q.options.slice(),
     answer: q.answer,
     explain: q.explain || ""
   }));
 
-  // shuffle options per question -> set new answer index
-  copied.forEach((q, idx) => {
-    if (!Array.isArray(q.options)) q.options = [];
-    // nếu answer undefined hoặc không phải số thì giữ nguyên
-    const oldAns = (typeof q.answer === "number") ? q.answer : 0;
+  copied.forEach(q => {
+    const oldAns = typeof q.answer === "number" ? q.answer : 0;
     const {shuffled, newIndex} = shuffleWithNewIndex(q.options, oldAns);
     q.options = shuffled;
-    q.answer = newIndex; // cập nhật chỉ số đúng sau khi shuffle
+    q.answer = newIndex;
   });
 
-  // optionally: shuffle order of questions too (uncomment if wanted)
-  // copied.sort(() => Math.random() - 0.5);
-
-  // lưu vào global để checkAnswer truy cập
   window.currentQuestions = copied;
 
-  // render
   copied.forEach((q, index) => {
     const box = document.createElement("div");
     box.className = "question-box";
 
-    let html = `<p><strong>${index + 1}. ${q.question}</strong></p><div class="answers">`;
+    let html = `<p><strong>${index + 1}. ${q.question}</strong></p>
+                <div class="answers">`;
 
     q.options.forEach((ans, i) => {
-      // dùng data- attributes thay vì inline onclick để an toàn hơn
       html += `<button data-q="${index}" data-a="${i}">${ans}</button>`;
     });
 
-    html += `</div><p id="explain-${index}" style="display:none; margin-top:10px;">${q.explain ? "➡ " + q.explain : ""}</p>`;
+    html += `</div>
+             <p id="explain-${index}" style="display:none;margin-top:10px;">
+               ${q.explain ? "➡ " + q.explain : ""}
+             </p>`;
+
     box.innerHTML = html;
     container.appendChild(box);
   });
 
-  // gắn event listener cho tất cả các nút (delegation)
+  // Gắn click cho tất cả nút
   container.querySelectorAll(".answers button").forEach(btn => {
     btn.addEventListener("click", function () {
       const qIndex = Number(this.dataset.q);
@@ -153,16 +149,21 @@ function loadQuiz(questions) {
       checkAnswer(qIndex, aIndex, this);
     });
   });
+
+  // Cập nhật tiêu đề
+  document.getElementById("quiz-title").innerText =
+    "Bài tập – " + type.replace(/-/g, " ").toUpperCase();
+
+  document.getElementById("quiz-desc").innerText =
+    "Chọn đáp án đúng cho thì " + type.replace(/-/g, " ") + ".";
 }
 
-// checkAnswer sử dụng window.currentQuestions (đã có answer = newIndex)
+// ======== CHECK ANSWER ========
 function checkAnswer(qIndex, ansIndex, btn) {
-  const current = window.currentQuestions && window.currentQuestions[qIndex];
+  const current = window.currentQuestions[qIndex];
   if (!current) return;
 
-  const correct = current.answer; // index sau khi shuffle
-
-  // disable tất cả nút trong group
+  const correct = current.answer;
   const buttons = btn.parentNode.querySelectorAll("button");
   buttons.forEach(b => b.disabled = true);
 
@@ -171,38 +172,37 @@ function checkAnswer(qIndex, ansIndex, btn) {
     score++;
   } else {
     btn.classList.add("wrong");
-    // tô đáp án đúng (nếu vẫn còn nút đúng hiển thị)
     const correctBtn = btn.parentNode.querySelector(`button[data-a="${correct}"]`);
     if (correctBtn) correctBtn.classList.add("correct");
   }
 
-  // hiện giải thích (nếu có)
   const explainEl = document.getElementById("explain-" + qIndex);
-  if (explainEl) {
-    explainEl.style.display = "block";
-    // ensure text already set in render; if you want to set dynamically:
-    // explainEl.innerText = "➡ " + (current.explain || "Không có giải thích.");
-  }
+  if (explainEl) explainEl.style.display = "block";
 
-  // nếu đây là câu cuối cùng (all buttons disabled?) — kiểm tra:
-  const allDisabled = Array.from(document.querySelectorAll(".answers button")).every(b => b.disabled);
+  // Khi trả lời xong tất cả → hiện kết quả
+  const allDisabled = Array.from(document.querySelectorAll(".answers button"))
+    .every(b => b.disabled);
+
   if (allDisabled) finishQuiz();
 }
 
 function finishQuiz() {
   const box = document.getElementById("result-box");
+  const total = window.currentQuestions.length;
   box.style.display = "block";
-  const total = window.currentQuestions ? window.currentQuestions.length : 0;
   box.innerHTML =
     `<h3>Kết quả: ${score}/${total}</h3><p>Bạn đã hoàn thành bài kiểm tra!</p>`;
   document.getElementById("restart-btn").style.display = "block";
 }
 
 document.getElementById("restart-btn").onclick = () => {
-  loadQuiz(window.currentQuestions || []);
+  loadQuiz(window.currentQuestions);
   document.getElementById("result-box").style.display = "none";
   document.getElementById("restart-btn").style.display = "none";
 };
+
+// ======== KHỞI ĐỘNG ========
+loadQuiz(quizData[type]);
 </script>
 
 </body>
