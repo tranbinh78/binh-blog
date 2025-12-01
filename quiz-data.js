@@ -445,3 +445,34 @@ window.quizData["will-vs-going-to"] = {
   {question: "A: I can’t fix this. B: Don’t worry. I ___ help you.", options: ["am going to", "will", "am helping", "help"], answer: 1, explain: "Hứa giúp ngay tại thời điểm nói → 'will'"}
 ]
 };
+
+/* ============================
+   15. Phần Nouns - Danh từ
+   ============================ */
+
+window.quizData["nouns"] = {
+  title: "Bài tập – Danh từ (Nouns)",
+  desc: "Chọn đáp án đúng về danh từ.",
+  questions: [
+    {question: "Which word is a countable noun?", options:["water","rice","apple","music"], answer:2, explain:"Apple là danh từ đếm được."},
+    {question: "Which is an uncountable noun?", options:["chair","milk","book","phone"], answer:1, explain:"Milk là danh từ không đếm được."},
+    {question: "The plural of 'baby' is…", options:["babys","babies","babys","babys"], answer:1, explain:"y → ies"},
+    {question: "'Women' is the plural of…", options:["woman","man","girl","kid"], answer:0, explain:"woman → women"},
+    {question: "Which is a proper noun?", options:["city","girl","Vietnam","car"], answer:2, explain:"Tên riêng viết hoa."},
+    {question: "The plural of 'dish' is…", options:["dishs","dishes","dishies","dish"], answer:1, explain:"-sh → es"},
+    {question: "Which word is a common noun?", options:["London","John","teacher","Vietnam"], answer:2, explain:"teacher là danh từ chung"},
+    {question: "Child →", options:["childs","childes","children","child"], answer:2, explain:"child → children"},
+    {question: "Which one is uncountable?", options:["juice","apple","banana","dog"], answer:0, explain:"Juice là danh từ không đếm được"},
+    {question: "Foot →", options:["foots","feet","feets","foot"], answer:1, explain:"foot → feet"},
+    {question: "Which noun is countable?", options:["sugar","music","bread","car"], answer:3, explain:"car đếm được"},
+    {question: "Tooth →", options:["tooths","teeth","toothes","teets"], answer:1, explain:"tooth → teeth"},
+    {question: "Which is a plural noun?", options:["book","cat","cars","dog"], answer:2, explain:"cars"},
+    {question: "Country →", options:["countrys","countries","countryes","countrys"], answer:1, explain:"y → ies"},
+    {question: "Which group contains only uncountable nouns?", options:["milk–water–rice","milk–apple–rice","milk–cat–water","apple–rice–water"], answer:0, explain:"milk, water, rice đều không đếm được"},
+    {question: "Mouse →", options:["mouses","mices","mice","mouse"], answer:2, explain:"mouse → mice"},
+    {question: "Which is a proper noun?", options:["teacher","Asia","city","man"], answer:1, explain:"Asia là tên riêng"},
+    {question: "Which of these is NOT countable?", options:["chair","pen","sugar","phone"], answer:2, explain:"sugar không đếm được"},
+    {question: "Man →", options:["mans","mens","men","mans"], answer:2, explain:"man → men"},
+    {question: "Which noun can be both countable & uncountable?", options:["water","coffee","milk","rice"], answer:1, explain:"coffee → a coffee / coffee (không đếm được)"}
+  ]
+};
