@@ -860,28 +860,68 @@ window.quizData["conjunctions"] = {
    20. Quantifiers – Định lượng từ
    ============================ */
 window.quizData["quantifiers"] = {
-  title: "Quantifiers – Định lượng từ",
-  desc: "Chọn đáp án đúng cho định lượng từ.",
+  title: "Bài tập – Quantifiers",
+  desc: "Chọn định lượng từ đúng (much, many, a few, a little, some, any, enough...).",
   questions: [
-    {question:"I don’t have ___ time.", options:["many","much","a few","few"], answer:1, explain:"time → uncountable → much"},
-    {question:"There are ___ apples left.", options:["much","many","little","no"], answer:1, explain:"apples → countable plural → many"},
-    {question:"She has ___ friends. She isn’t lonely.", options:["few","a few","little","much"], answer:1, explain:"a few = một vài (tích cực)"},
-    {question:"He drank ___ water.", options:["many","a few","too much","too many"], answer:2, explain:"water → uncountable → too much"},
-    {question:"We don’t have ___ chairs for everyone.", options:["much","many","a little","few"], answer:1, explain:"chairs → countable plural → many"},
-    {question:"There is ___ noise in this street.", options:["many","much","a few","few"], answer:1, explain:"noise → uncountable → much"},
-    {question:"I ate ___ rice.", options:["a little","a few","many","no"], answer:0, explain:"rice → uncountable → a little"},
-    {question:"She has ___ books.", options:["too much","too many","little","no"], answer:1, explain:"books → countable plural → too many"},
-    {question:"___ of the students passed the test.", options:["Most","Most of","Any","Little"], answer:0, explain:"Most + plural noun"},
-    {question:"___ my classmates are friendly.", options:["Most","Most of","Much","Few"], answer:1, explain:"Most of + my + noun"},
-    {question:"There is ___ coffee left.", options:["a few","a little","many","few"], answer:1, explain:"coffee → uncountable"},
-    {question:"Do you have ___ questions?", options:["some","any","few","little"], answer:1, explain:"Câu hỏi → any"},
-    {question:"She has ___ problems today.", options:["too much","too many","a little","little"], answer:1, explain:"problems → plural → too many"},
-    {question:"He made ___ mistakes.", options:["a few","a little","little","much"], answer:0, explain:"mistakes → countable plural"},
-    {question:"They need ___ money to buy the tickets.", options:["many","much","a few","few"], answer:1, explain:"money → uncountable"},
-    {question:"I saw ___ people at the concert.", options:["a little","no","a few","little"], answer:2, explain:"people → plural → a few"},
-    {question:"There is ___ hope left.", options:["many","much","a few","little"], answer:1, explain:"hope → uncountable"},
-    {question:"She spent ___ time studying.", options:["many","much","a few","no"], answer:1, explain:"time → uncountable"},
-    {question:"We ate ___ of the cake.", options:["most","most of","a little","too many"], answer:1, explain:"most of + the"},
-    {question:"He has ___ friends.", options:["many","much","little","a little"], answer:0, explain:"friends → plural → many"}
+    {
+      question: "There are ___ apples in the basket.",
+      options: ["much", "many", "a little", "enough"],
+      answer: 1,
+      explain: "Apples là danh từ đếm được số nhiều → dùng many."
+    },
+    {
+      question: "I don’t have ___ money today.",
+      options: ["some", "any", "many", "a few"],
+      answer: 1,
+      explain: "Câu phủ định + danh từ không đếm được → dùng any."
+    },
+    {
+      question: "We only need ___ minutes to finish.",
+      options: ["a little", "a few", "much", "many"],
+      answer: 1,
+      explain: "Minutes là danh từ đếm được số nhiều → dùng a few."
+    },
+    {
+      question: "She drank too ___ water.",
+      options: ["many", "much", "few", "a little"],
+      answer: 1,
+      explain: "Water là danh từ không đếm được → dùng much."
+    },
+    {
+      question: "He has ___ friends, so he is often lonely.",
+      options: ["a little", "few", "a few", "much"],
+      answer: 1,
+      explain: "Few = gần như không có (nghĩa tiêu cực)."
+    },
+    {
+      question: "There is ___ milk left. We need to buy more.",
+      options: ["little", "few", "a few", "many"],
+      answer: 0,
+      explain: "Little = gần như không có (với danh từ không đếm được)."
+    },
+    {
+      question: "Can I have ___ sugar?",
+      options: ["some", "any", "many", "few"],
+      answer: 0,
+      explain: "Some dùng trong câu xin phép, đề nghị lịch sự."
+    },
+    {
+      question: "Are there ___ chairs in the room?",
+      options: ["some", "many", "any", "a few"],
+      answer: 2,
+      explain: "Any dùng trong câu hỏi."
+    },
+    {
+      question: "We have ___ time, so don’t rush.",
+      options: ["many", "a few", "much", "a little"],
+      answer: 3,
+      explain: "Time là danh từ không đếm được → dùng a little."
+    },
+    {
+      question: "There are too ___ students in this class.",
+      options: ["much", "many", "a little", "few"],
+      answer: 1,
+      explain: "Students là danh từ đếm được số nhiều → dùng many."
+    }
   ]
 };
