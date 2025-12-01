@@ -419,10 +419,10 @@ window.quizData["near-future"] = {
    14. Will vs Be going to – 20 câu
    ============================ */
 
-quizData["will-vs-going-to"] = {
-    title: "Bài tập – Will vs Be going to",
-    desc: "Chọn đáp án đúng cho Will vs Be going to.",
-    questions: [
+window.quizData["will-vs-going-to"] = {
+  title: "Bài tập – Will vs Be going to",
+  desc: "Chọn đáp án đúng cho Will vs Be going to",
+  questions: [
   {question: "Look at those clouds! It ___ rain soon.", options: ["will", "is going to", "won’t", "is"], answer: 1, explain: "Dựa vào dấu hiệu rõ ràng → dùng 'be going to'"},
   {question: "I think he ___ pass the exam.", options: ["is going to", "will", "is passing", "passes"], answer: 1, explain: "Dự đoán không có cơ sở → dùng 'will'"},
   {question: "She bought paint. She ___ paint her bedroom.", options: ["is going to", "will", "is", "is going to be"], answer: 0, explain: "Có kế hoạch và chuẩn bị sẵn → dùng 'be going to'"},
@@ -443,5 +443,5 @@ quizData["will-vs-going-to"] = {
   {question: "I’m sure you ___ enjoy the trip.", options: ["will", "are going to", "enjoy", "are enjoy"], answer: 0, explain: "Sự chắc chắn của người nói → 'will'"},
   {question: "We ___ visit our grandparents this weekend. It’s already planned.", options: ["will", "are going to", "visit", "going to"], answer: 1, explain: "Kế hoạch đã định → 'be going to'"},
   {question: "A: I can’t fix this. B: Don’t worry. I ___ help you.", options: ["am going to", "will", "am helping", "help"], answer: 1, explain: "Hứa giúp ngay tại thời điểm nói → 'will'."
-  ]
+]
 };
