@@ -506,3 +506,23 @@ window.quizData["adjectives"] = {
     {question:"He is ___ to finish the work.", options:["able","ability","ably","abling"], answer:0, explain:"able = tính từ"}
   ]
 };
+
+/* ============================
+   17. Adverbs - Trạng từ
+   ============================ */
+window.quizData["adverbs"] = {
+  title: "Bài tập – Adverbs",
+  desc: "Chọn đáp án đúng về trạng từ.",
+  questions: [
+    {question: "She sings very ___.", options: ["beautiful", "beauty", "beautifully", "more beautiful"], answer: 2, explain: "Trạng từ bổ nghĩa cho động từ 'sings' → beautifully"},
+    {question: "He runs ___.", options: ["quick", "quickly", "quicker", "quickness"], answer: 1, explain: "Trạng từ bổ nghĩa cho động từ → quickly"},
+    {question: "She works ___.", options: ["hard", "hardly", "harder", "more hard"], answer: 0, explain: "'hard' là trạng từ bất quy tắc"},
+    {question: "This coffee is ___ hot.", options: ["very", "too", "enough", "so"], answer: 1, explain: "too + adj"},
+    {question: "They ___ wake up early.", options: ["always", "quickly", "well", "beautifully"], answer: 0, explain: "Trạng từ chỉ tần suất"},
+    {question: "He speaks English ___.", options: ["fluent", "fluently", "fluency", "more fluent"], answer: 1, explain: "Trạng từ bổ nghĩa cho động từ"},
+    {question: "I will see you ___.", options: ["yesterday", "soon", "late", "quick"], answer: 1, explain: "Trạng từ thời gian"},
+    {question: "They live ___.", options: ["there", "very", "too", "fastly"], answer: 0, explain: "Trạng từ nơi chốn"},
+    {question: "She is ___ tired.", options: ["very", "too", "quite", "almost"], answer: 2, explain: "quite + adj"},
+    {question: "He arrived ___.", options: ["early", "earlier", "earliest", "soon"], answer: 0, explain: "Trạng từ mô tả thời gian"}
+  ]
+};
