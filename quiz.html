@@ -73,81 +73,96 @@
 <script src="/binh-blog/quiz-data.js"></script>
 
 <script>
-/* ======================
-   1. LẤY LOẠI QUIZ
-====================== */
-const params = new URLSearchParams(window.location.search);
-const type = params.get("type");
+/* --- Assumes:
+   - quizData[type] trả về array câu hỏi với {question, options, answer, explain}
+   - 'answer' ban đầu là index (0..)
+   - biến global `score` được khai báo bên trên (nếu chưa, khai báo ở đây)
+*/
 
-/* ======================
-   2. LẤY DỮ LIỆU THEO TYPE
-====================== */
-const quiz = window.quizData?.[type];
-let score = 0;
+let score = 0;               // đảm bảo có khai báo
+window.currentQuestions = []; // lưu phiên bản đã shuffle
 
-if (!quiz) {
-  document.getElementById("quiz-title").innerText = "Chưa có bài tập cho phần này!";
-  document.getElementById("quiz-desc").innerText = "Vui lòng kiểm tra lại URL.";
-} else {
-  document.getElementById("quiz-title").innerText = quiz.title;
-  document.getElementById("quiz-desc").innerText = quiz.desc;
-  loadQuiz(quiz.questions);
+// helper: shuffle mảng và trả về mảng mới + chỉ số mới của phần tử ban đầu (oldIndex)
+function shuffleWithNewIndex(arr, oldIndex) {
+  // copy
+  const items = arr.map((v, i) => ({v, i}));
+  // Fisher-Yates shuffle
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  // build shuffled values
+  const shuffled = items.map(x => x.v);
+  // find new index where original oldIndex ended up
+  const newIndex = items.findIndex(x => x.i === oldIndex);
+  return {shuffled, newIndex};
 }
 
-/* ======================
-   3. HIỂN THỊ CÂU HỎI
-====================== */
+// loadQuiz: tạo bản copy của questions, shuffle option cho từng câu (và cập nhật answer)
 function loadQuiz(questions) {
   score = 0;
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
-  window.currentQuestions = questions;
 
-  questions.forEach((q, index) => {
+  // deep-copy questions để không thay đổi dữ liệu gốc
+  const copied = questions.map(q => ({
+    question: q.question,
+    options: Array.isArray(q.options) ? q.options.slice() : [],
+    answer: q.answer,
+    explain: q.explain || ""
+  }));
 
-    // ====== SHUFFLE OPTIONS ======
-    const opts = q.options.map((opt, i) => ({
-        text: opt,
-        isCorrect: i === q.answer
-    }));
+  // shuffle options per question -> set new answer index
+  copied.forEach((q, idx) => {
+    if (!Array.isArray(q.options)) q.options = [];
+    // nếu answer undefined hoặc không phải số thì giữ nguyên
+    const oldAns = (typeof q.answer === "number") ? q.answer : 0;
+    const {shuffled, newIndex} = shuffleWithNewIndex(q.options, oldAns);
+    q.options = shuffled;
+    q.answer = newIndex; // cập nhật chỉ số đúng sau khi shuffle
+  });
 
-    // Fisher-Yates shuffle
-    for (let i = opts.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [opts[i], opts[j]] = [opts[j], opts[i]];
-    }
+  // optionally: shuffle order of questions too (uncomment if wanted)
+  // copied.sort(() => Math.random() - 0.5);
 
-    // SAVE back shuffled options + new correct index
-    const shuffledOptions = opts.map(o => o.text);
-    const newCorrectIndex = opts.findIndex(o => o.isCorrect);
+  // lưu vào global để checkAnswer truy cập
+  window.currentQuestions = copied;
 
-    // ====== RENDERING ======
+  // render
+  copied.forEach((q, index) => {
     const box = document.createElement("div");
     box.className = "question-box";
 
-    let html = `<p><strong>${index+1}. ${q.question}</strong></p><div class="answers">`;
+    let html = `<p><strong>${index + 1}. ${q.question}</strong></p><div class="answers">`;
 
-    shuffledOptions.forEach((ans, i) => {
-      html += `<button onclick="checkAnswer(${index}, ${i}, this)">${ans}</button>`;
+    q.options.forEach((ans, i) => {
+      // dùng data- attributes thay vì inline onclick để an toàn hơn
+      html += `<button data-q="${index}" data-a="${i}">${ans}</button>`;
     });
 
-    html += `</div><p id="explain-${index}" style="display:none; margin-top:10px; color:#444;"></p>`;
-
-    // Lưu lại index đúng mới
-    if (!window.correctMap) window.correctMap = {};
-    window.correctMap[index] = newCorrectIndex;
-
+    html += `</div><p id="explain-${index}" style="display:none; margin-top:10px;">${q.explain ? "➡ " + q.explain : ""}</p>`;
     box.innerHTML = html;
     container.appendChild(box);
-});
+  });
+
+  // gắn event listener cho tất cả các nút (delegation)
+  container.querySelectorAll(".answers button").forEach(btn => {
+    btn.addEventListener("click", function () {
+      const qIndex = Number(this.dataset.q);
+      const aIndex = Number(this.dataset.a);
+      checkAnswer(qIndex, aIndex, this);
+    });
+  });
 }
 
-/* ======================
-   4. KIỂM TRA ĐÁP ÁN
-====================== */
+// checkAnswer sử dụng window.currentQuestions (đã có answer = newIndex)
 function checkAnswer(qIndex, ansIndex, btn) {
-  const correct = quiz.questions[qIndex].answer;
+  const current = window.currentQuestions && window.currentQuestions[qIndex];
+  if (!current) return;
 
+  const correct = current.answer; // index sau khi shuffle
+
+  // disable tất cả nút trong group
   const buttons = btn.parentNode.querySelectorAll("button");
   buttons.forEach(b => b.disabled = true);
 
@@ -156,31 +171,35 @@ function checkAnswer(qIndex, ansIndex, btn) {
     score++;
   } else {
     btn.classList.add("wrong");
-    buttons[correct].classList.add("correct");
+    // tô đáp án đúng (nếu vẫn còn nút đúng hiển thị)
+    const correctBtn = btn.parentNode.querySelector(`button[data-a="${correct}"]`);
+    if (correctBtn) correctBtn.classList.add("correct");
   }
 
-  // ⭐ FIX LỖI UNDEFINED
-  const exp = quiz.questions[qIndex].explain || "Không có giải thích.";
-  document.getElementById("explain-" + qIndex).innerHTML = "➡ " + exp;
-  document.getElementById("explain-" + qIndex).style.display = "block";
+  // hiện giải thích (nếu có)
+  const explainEl = document.getElementById("explain-" + qIndex);
+  if (explainEl) {
+    explainEl.style.display = "block";
+    // ensure text already set in render; if you want to set dynamically:
+    // explainEl.innerText = "➡ " + (current.explain || "Không có giải thích.");
+  }
 
-  if (qIndex === quiz.questions.length - 1) finishQuiz();
+  // nếu đây là câu cuối cùng (all buttons disabled?) — kiểm tra:
+  const allDisabled = Array.from(document.querySelectorAll(".answers button")).every(b => b.disabled);
+  if (allDisabled) finishQuiz();
 }
 
-/* ======================
-   5. HIỆN KẾT QUẢ
-====================== */
 function finishQuiz() {
   const box = document.getElementById("result-box");
-  box.innerHTML = `<h3>Kết quả: ${score}/${currentQuestions.length}</h3>
-                   <p>Bạn đã hoàn thành bài kiểm tra!</p>`;
   box.style.display = "block";
-
+  const total = window.currentQuestions ? window.currentQuestions.length : 0;
+  box.innerHTML =
+    `<h3>Kết quả: ${score}/${total}</h3><p>Bạn đã hoàn thành bài kiểm tra!</p>`;
   document.getElementById("restart-btn").style.display = "block";
 }
 
 document.getElementById("restart-btn").onclick = () => {
-  loadQuiz(currentQuestions);
+  loadQuiz(window.currentQuestions || []);
   document.getElementById("result-box").style.display = "none";
   document.getElementById("restart-btn").style.display = "none";
 };
