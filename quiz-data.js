@@ -128,32 +128,128 @@ window.quizData["present-perfect-continuous"] = {
 /* ========================================================
    5) PAST SIMPLE – 20 QUESTIONS
 ======================================================== */
-window.quizData["past-simple"] = {
-  title: "Bài tập – Past Simple",
-  desc: "Chọn đáp án đúng cho thì Quá khứ đơn.",
-  questions: [
-    {question:"I ___ to school yesterday.", options:["went","go","goes","am going"], answer:0},
-    {question:"She ___ a new car.", options:["bought","buy","buys","is buying"], answer:0},
-    {question:"They ___ football last week.", options:["played","play","plays","are playing"], answer:0},
-    {question:"He ___ TV last night.", options:["watched","watch","watches","is watching"], answer:0},
-    {question:"We ___ late.", options:["were","are","was","be"], answer:0},
-    {question:"I ___ him two days ago.", options:["met","meet","meets","am meeting"], answer:0},
-    {question:"The weather ___ cold.", options:["was","were","is","be"], answer:0},
-    {question:"She ___ her homework.", options:["did","does","do","doing"], answer:0},
-    {question:"They ___ home early.", options:["left","leave","leaves","are leaving"], answer:0},
-    {question:"I ___ a cake yesterday.", options:["made","make","makes","am making"], answer:0},
-    {question:"He ___ sick.", options:["felt","feel","feels","is feeling"], answer:0},
-    {question:"We ___ a movie.", options:["saw","see","sees","are seeing"], answer:0},
-    {question:"She ___ sad.", options:["was","were","is","be"], answer:0},
-    {question:"They ___ happy.", options:["were","was","are","be"], answer:0},
-    {question:"He ___ the window.", options:["opened","open","opens","opening"], answer:0},
-    {question:"I ___ the book.", options:["read","reads","readed","am reading"], answer:0},
-    {question:"We ___ to Da Nang.", options:["traveled","travel","travels","are traveling"], answer:0},
-    {question:"He ___ the guitar.", options:["played","play","plays","playing"], answer:0},
-    {question:"She ___ English.", options:["studied","study","studies","is studying"], answer:0},
-    {question:"They ___ dinner.", options:["had","have","has","are having"], answer:0}
-  ]
-};
+window.quizData["past-simple"] = [
+  {
+    question: "I ___ to school yesterday.",
+    options: ["go", "am going", "went", "goes"],
+    answer: 2,
+    explain: "Yesterday → hành động quá khứ → went."
+  },
+  {
+    question: "She ___ a new car last month.",
+    options: ["buys", "is buying", "bought", "buy"],
+    answer: 2,
+    explain: "Quá khứ đơn của buy là bought."
+  },
+  {
+    question: "They ___ football last Sunday.",
+    options: ["play", "played", "are playing", "plays"],
+    answer: 1,
+    explain: "Last Sunday → played."
+  },
+  {
+    question: "My father ___ very tired yesterday.",
+    options: ["is", "was", "were", "be"],
+    answer: 1,
+    explain: "He/she/it → was (quá khứ)."
+  },
+  {
+    question: "We ___ at home all day.",
+    options: ["stay", "stayed", "stays", "are staying"],
+    answer: 1,
+    explain: "Hành động toàn bộ ngày → stayed."
+  },
+  {
+    question: "Tom ___ his homework last night.",
+    options: ["did", "does", "is doing", "do"],
+    answer: 0,
+    explain: "Do → quá khứ irregular → did."
+  },
+  {
+    question: "The movie ___ at 9 PM.",
+    options: ["finish", "finishes", "finished", "finishing"],
+    answer: 2,
+    explain: "Hành động kết thúc trong quá khứ → finished."
+  },
+  {
+    question: "Kate ___ me a letter two days ago.",
+    options: ["send", "sends", "sent", "is sending"],
+    answer: 2,
+    explain: "Send → quá khứ: sent."
+  },
+  {
+    question: "We ___ to Paris last summer.",
+    options: ["travel", "travelled", "travelling", "travels"],
+    answer: 1,
+    explain: "Last summer → travelled."
+  },
+  {
+    question: "I ___ a delicious cake yesterday.",
+    options: ["bake", "baked", "bakes", "am baking"],
+    answer: 1,
+    explain: "Baked = quá khứ của bake."
+  },
+  {
+    question: "The cat ___ on the sofa all night.",
+    options: ["sleep", "slept", "sleeps", "sleeping"],
+    answer: 1,
+    explain: "Sleep → slept (quá khứ)."
+  },
+  {
+    question: "She ___ the window because it was hot.",
+    options: ["open", "opened", "opens", "is opening"],
+    answer: 1,
+    explain: "Opened = hành động hoàn tất."
+  },
+  {
+    question: "They ___ late for school yesterday.",
+    options: ["are", "were", "was", "be"],
+    answer: 1,
+    explain: "They → were (quá khứ)."
+  },
+  {
+    question: "I ___ a new phone last week.",
+    options: ["buy", "bought", "buys", "am buying"],
+    answer: 1,
+    explain: "Buy → bought."
+  },
+  {
+    question: "He ___ the guitar at the party.",
+    options: ["play", "played", "plays", "is playing"],
+    answer: 1,
+    explain: "Played = quá khứ đơn."
+  },
+  {
+    question: "The weather ___ very cold yesterday.",
+    options: ["is", "was", "were", "be"],
+    answer: 1,
+    explain: "It → was (quá khứ)."
+  },
+  {
+    question: "We ___ dinner early yesterday.",
+    options: ["eat", "ate", "eaten", "eating"],
+    answer: 1,
+    explain: "Eat → ate (V2)."
+  },
+  {
+    question: "My sister ___ a beautiful picture.",
+    options: ["paint", "painted", "paints", "is painting"],
+    answer: 1,
+    explain: "Painted = hành động hoàn thành."
+  },
+  {
+    question: "They ___ their hands before eating.",
+    options: ["wash", "washed", "washes", "are washing"],
+    answer: 1,
+    explain: "Washed = hành động trong quá khứ."
+  },
+  {
+    question: "She ___ her keys yesterday.",
+    options: ["lose", "lost", "loses", "is losing"],
+    answer: 1,
+    explain: "Lose → lost (quá khứ)."
+  }
+];
 
 /* ========================================================
    6) PAST CONTINUOUS – 20 QUESTIONS
