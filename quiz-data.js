@@ -857,7 +857,7 @@ window.quizData["conjunctions"] = {
 };
 
 /* ============================
-   20. Quantifiers – Định lượng từ trong tiếng Anh
+   20. Quantifiers – Định lượng từ
    ============================ */
 window.quizData["quantifiers"] = {
   title: "Quantifiers – Định lượng từ",
