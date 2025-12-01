@@ -8,8 +8,7 @@
 <style>
 body {
   font-family: "Be Vietnam Pro", sans-serif;
-  background: #faf8ff;
-  margin: 0;
+  background: #faf9ff;
   padding: 20px;
 }
 
@@ -18,41 +17,28 @@ body {
   margin: auto;
 }
 
-h1 {
-  font-size: 28px;
-  color: #4635d4;
-}
-
-.section {
-  background: #fff;
-  padding: 18px;
-  border-radius: 12px;
-  margin-top: 16px;
-  border: 1px solid #ece9ff;
-}
-
-.q {
-  padding: 10px;
-  background: #f7f4ff;
-  border-radius: 8px;
-  margin: 10px 0;
+.q { 
+  padding: 14px;
+  margin: 8px 0;
+  background: #f3f0ff;
+  border-radius: 10px;
+  border: 1px solid #e0d9ff;
 }
 
 #answers {
   display: none;
-  background: #fff3d6;
-  border-left: 6px solid #ffb300;
-  padding: 15px;
-  border-radius: 8px;
   margin-top: 20px;
+  background: #fff3d6;
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 6px solid #ffc400;
 }
 
 button {
   padding: 10px 18px;
-  background: #dcd1ff;
-  border: 1px solid #bcb0ff;
   border-radius: 8px;
-  font-weight: 600;
+  margin-top: 10px;
+  background: #dcd1ff;
   cursor: pointer;
 }
 </style>
@@ -61,54 +47,48 @@ button {
 <body>
 <div class="wrap">
 
-<h1>Quantifiers – Định lượng từ</h1>
+<h2>Bài tập – Chọn đáp án đúng (10 câu)</h2>
 
-<div class="section">
-  <h2>Bài tập – Chọn đáp án đúng (10 câu)</h2>
-  <p>Chọn từ định lượng thích hợp cho mỗi câu.</p>
+<div class="q">1. There are ___ apples in the basket.</div>
+<div class="q">2. She drank ___ water today.</div>
+<div class="q">3. We have ___ time left, so hurry up!</div>
+<div class="q">4. He has ___ friends – maybe only two.</div>
+<div class="q">5. I need ___ money to buy the book.</div>
+<div class="q">6. There are ___ students in the class – almost 40!</div>
+<div class="q">7. Do we have ___ chairs for everyone?</div>
+<div class="q">8. They made ___ mistakes in the test.</div>
+<div class="q">9. She put ___ salt in the soup. It’s too salty.</div>
+<div class="q">10. We have ___ options – we must decide soon.</div>
 
-  <div class="q">1. There are ___ apples in the basket.</div>
-  <div class="q">2. She drank ___ water today.</div>
-  <div class="q">3. We have ___ time left, so hurry up!</div>
-  <div class="q">4. He has ___ friends — maybe only two.</div>
-  <div class="q">5. I need ___ money to buy the book.</div>
-  <div class="q">6. There are ___ students in the class — almost 40!</div>
-  <div class="q">7. Do we have ___ chairs for everyone?</div>
-  <div class="q">8. They made ___ mistakes in the test.</div>
-  <div class="q">9. She put ___ salt in the soup. It’s too salty.</div>
-  <div class="q">10. We have ___ options — we must decide soon.</div>
+<button id="toggle">👉 Hiện đáp án</button>
 
-  <!-- Nút có ID CHÍNH XÁC -->
-  <button id="toggle">👉 Hiện đáp án</button>
-
-  <div id="answers">
-    <b>Đáp án & Giải thích:</b><br><br>
-    1. many – danh từ đếm được số nhiều.<br>
-    2. too much – water không đếm được.<br>
-    3. little – rất ít (tiêu cực).<br>
-    4. few – rất ít bạn.<br>
-    5. a little – một chút đủ dùng.<br>
-    6. many – số lượng lớn.<br>
-    7. enough – đủ cho mọi người.<br>
-    8. many – nhiều lỗi.<br>
-    9. too much – muối không đếm được, quá nhiều.<br>
-    10. a few – một vài lựa chọn.<br>
-  </div>
+<div id="answers">
+<b>Đáp án:</b><br><br>
+1. many<br>
+2. too much<br>
+3. little<br>
+4. few<br>
+5. a little<br>
+6. many<br>
+7. enough<br>
+8. many<br>
+9. too much<br>
+10. a few<br>
 </div>
+
 </div>
 
 <script>
-const btn = document.getElementById("toggle");
-const box = document.getElementById("answers");
+document.getElementById("toggle").addEventListener("click", function () {
+    const box = document.getElementById("answers");
 
-btn.addEventListener("click", () => {
-  if (box.style.display === "block") {
-    box.style.display = "none";
-    btn.textContent = "👉 Hiện đáp án";
-  } else {
-    box.style.display = "block";
-    btn.textContent = "🙈 Ẩn đáp án";
-  }
+    if (box.style.display === "block") {
+        box.style.display = "none";
+        this.textContent = "👉 Hiện đáp án";
+    } else {
+        box.style.display = "block";
+        this.textContent = "🙈 Ẩn đáp án";
+    }
 });
 </script>
 
