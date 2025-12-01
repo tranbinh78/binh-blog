@@ -5,92 +5,105 @@
   <title>Quantifiers – Định lượng từ | Binh Blog</title>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+
   <style>
-    body { font-family: "Be Vietnam Pro", sans-serif; line-height: 1.7; padding: 20px; max-width: 900px; margin: auto; }
-    h1 { font-size: 28px; margin-bottom: 10px; color: #333; }
-    h2 { margin-top: 30px; color: #5a3fd1; }
-    .example-box {
-      background: #eef4ff;
-      border-left: 4px solid #5a3fd1;
-      padding: 12px 18px;
-      margin: 12px 0;
-      border-radius: 8px;
-    }
-    .btn-quiz {
-      display: inline-block;
-      margin-top: 15px;
-      background: #d9d1ff;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      color: #333;
-      transition: 0.25s;
-    }
-    .btn-quiz:hover { background: #c7bbff; }
-    .related-box {
-      background: #f7f4ff;
-      padding: 15px;
-      margin-top: 30px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-    }
-    .share-box { margin-top: 25px; }
+    body { font-family:"Be Vietnam Pro",sans-serif; line-height:1.7; padding:20px; max-width:900px; margin:auto; }
+    h1 { font-size:28px; margin-bottom:10px; }
+    h2 { color:#5a3fd1; margin-top:32px; }
+    .example { background:#eef4ff; padding:12px 18px; border-left:4px solid #5a3fd1; border-radius:8px; margin:15px 0; }
+    .btn { background:#d9d1ff; padding:8px 14px; border-radius:8px; cursor:pointer; margin-top:10px; display:inline-block; }
+    .btn:hover { background:#c7bbff; }
+    .exercise-box { margin-top:15px; padding:15px 20px; background:#fafafa; border-radius:10px; border:1px solid #ddd; }
+    .answer { display:none; color:#444; margin-top:6px; }
+    .related { padding:15px; background:#f2ecff; border-radius:12px; margin-top:30px; }
   </style>
 </head>
 
 <body>
 
 <h1>Quantifiers – Định lượng từ</h1>
-<p>Định lượng từ (Quantifiers) dùng để diễn tả số lượng: nhiều, ít, đủ, không đủ… tùy loại danh từ.</p>
+<p>Quantifiers là những từ chỉ số lượng: many, much, a few, few, a little, little, enough, too many, too much…</p>
 
 <hr>
 
 <h2>1. Much / Many</h2>
 <ul>
-  <li><b>Much</b> dùng cho danh từ <b>không đếm được</b>.</li>
-  <li><b>Many</b> dùng cho danh từ <b>đếm được số nhiều</b>.</li>
+  <li><b>Much</b>: dùng với danh từ không đếm được.</li>
+  <li><b>Many</b>: dùng với danh từ đếm được số nhiều.</li>
 </ul>
 
-<div class="example-box">
-  <p>❖ I don’t have <b>much</b> money.</p>
-  <p>❖ There are <b>many</b> books on the table.</p>
+<div class="example">
+  – I don’t have <b>much</b> money.<br>
+  – There are <b>many</b> students here.
 </div>
 
 <h2>2. A little / Little – A few / Few</h2>
 <ul>
-  <li><b>A little</b> = một chút (danh từ không đếm được, nghĩa tích cực).</li>
-  <li><b>Little</b> = rất ít, hầu như không (nghĩa tiêu cực).</li>
-  <li><b>A few</b> = một vài (danh từ đếm được, tích cực).</li>
-  <li><b>Few</b> = rất ít, hầu như không (tiêu cực).</li>
+  <li><b>A little</b>: một chút (không đếm được).</li>
+  <li><b>Little</b>: rất ít, gần như không.</li>
+  <li><b>A few</b>: một vài (đếm được).</li>
+  <li><b>Few</b>: rất ít, gần như không.</li>
 </ul>
 
-<div class="example-box">
-  <p>❖ We have <b>a few</b> friends → đủ dùng.</p>
-  <p>❖ He has <b>few</b> friends → mang nghĩa tiêu cực.</p>
+<div class="example">
+  – We have <b>a few</b> ideas.<br>
+  – He has <b>few</b> friends.
 </div>
 
 <h2>3. Too much / Too many</h2>
-<p>Dùng để diễn tả “quá nhiều”, vượt mức cần thiết.</p>
-<div class="example-box">
-  <p>❖ He drank <b>too much</b> water.</p>
-  <p>❖ There are <b>too many</b> cars here.</p>
+<div class="example">
+  – She ate <b>too much</b> sugar.<br>
+  – There are <b>too many</b> cars on the road.
 </div>
 
 <h2>4. Enough</h2>
-<p>Dùng để diễn tả “đủ”.</p>
-<div class="example-box">
-  <p>❖ We have <b>enough</b> time.</p>
+<div class="example">
+  – We have <b>enough</b> chairs.
 </div>
 
 <hr>
 
-<h2>Bài tập</h2>
-<p>Hãy chọn đáp án đúng cho 10 câu bài tập phía dưới.</p>
+<h2>Bài tập (10 câu)</h2>
+<p>Chọn đáp án đúng:</p>
 
-<a href="../quiz.html?type=quantifiers" class="btn-quiz">👉 Làm bài tập: QUANTIFIERS</a>
+<button class="btn" onclick="toggleAnswers()">👁 Ẩn/Hiện đáp án</button>
 
-<div class="related-box">
+<div class="exercise-box">
+  <p>1. There are ___ apples in the basket.</p>
+  <p><b>Đáp án:</b> <span class="answer">many</span></p>
+
+  <p>2. She drank ___ water today.</p>
+  <p><b>Đáp án:</b> <span class="answer">too much</span></p>
+
+  <p>3. We have ___ time left, so hurry up!</p>
+  <p><b>Đáp án:</b> <span class="answer">little</span></p>
+
+  <p>4. He has ___ friends — maybe only two.</p>
+  <p><b>Đáp án:</b> <span class="answer">few</span></p>
+
+  <p>5. I need ___ money to buy the book.</p>
+  <p><b>Đáp án:</b> <span class="answer">a little</span></p>
+
+  <p>6. There are ___ students in the class — almost 40!</p>
+  <p><b>Đáp án:</b> <span class="answer">too many</span></p>
+
+  <p>7. Do we have ___ chairs for everyone?</p>
+  <p><b>Đáp án:</b> <span class="answer">enough</span></p>
+
+  <p>8. They made ___ mistakes in the test.</p>
+  <p><b>Đáp án:</b> <span class="answer">many</span></p>
+
+  <p>9. She put ___ salt in the soup. It’s too salty.</p>
+  <p><b>Đáp án:</b> <span class="answer">too much</span></p>
+
+  <p>10. We have ___ options — we must decide soon.</p>
+  <p><b>Đáp án:</b> <span class="answer">few</span></p>
+</div>
+
+<br>
+<a href="../quiz.html?type=quantifiers" class="btn">👉 Làm bài tập Quiz: Quantifiers</a>
+
+<div class="related">
   <h3>Bài viết liên quan</h3>
   <ul>
     <li><a href="nouns.html">Nouns – Danh từ</a></li>
@@ -99,10 +112,13 @@
   </ul>
 </div>
 
-<div class="share-box">
-  <a href="#" class="btn-quiz">📘 Chia sẻ Facebook</a>
-  <a href="#" class="btn-quiz">📘 Chia sẻ Zalo</a>
-</div>
+<script>
+function toggleAnswers() {
+  document.querySelectorAll('.answer').forEach(a => {
+    a.style.display = a.style.display === 'inline' ? 'none' : 'inline';
+  });
+}
+</script>
 
 </body>
 </html>
