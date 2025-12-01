@@ -476,3 +476,33 @@ window.quizData["nouns"] = {
     {question: "Which noun can be both countable & uncountable?", options:["water","coffee","milk","rice"], answer:1, explain:"coffee → a coffee / coffee (không đếm được)"}
   ]
 };
+
+/* ============================
+   16. Adjectives - Tính từ
+   ============================ */
+window.quizData["adjectives"] = {
+  title: "Bài tập – Adjectives (Tính từ)",
+  desc: "Chọn đáp án đúng cho phần Tính từ.",
+  questions: [
+    {question:"She is a very ___ girl.", options:["beauty","beautiful","beautify","beautifying"], answer:1, explain:"Tính từ đứng trước danh từ → beautiful"},
+    {question:"This food tastes ___.", options:["delicious","deliciously","delight","delighted"], answer:0, explain:"Sau linking verb → adjective"},
+    {question:"He looks really ___.", options:["happy","happily","happiness","happier"], answer:0, explain:"Linking verb → adjective"},
+    {question:"A ___ cat is sleeping on the sofa.", options:["black small","small black","blackly small","smallly black"], answer:1, explain:"Thứ tự tính từ: size → color"},
+    {question:"This is the ___ building in town.", options:["tall","taller","tallest","most tall"], answer:2, explain:"So sánh nhất → tallest"},
+    {question:"The movie was ___.", options:["boring","bored","bore","boringly"], answer:0, explain:"Tính từ mô tả tính chất"},
+    {question:"She bought a ___ bag.", options:["Italian leather beautiful","beautiful Italian leather","leather Italian beautiful","Italian beautiful leather"], answer:1, explain:"Opinion → origin → material"},
+    {question:"He is ___ than his brother.", options:["smart","smarter","smartest","more smart"], answer:1, explain:"So sánh hơn → adjective + -er"},
+    {question:"This exercise is the ___ of all.", options:["difficult","more difficult","most difficult","difficultest"], answer:2, explain:"So sánh nhất → most + adj (dài)"},
+    {question:"She feels ___.", options:["terrible","terribly","terrified","terrify"], answer:0, explain:"Sau linking verb → dùng adjective"},
+    {question:"We need a ___ room.", options:["big clean","clean big","bigly clean","cleanly big"], answer:1, explain:"Opinion → size → tính từ clean trước big không đúng thứ tự 'size → age → color’"},
+    {question:"The soup smells ___.", options:["well","good","better","best"], answer:1, explain:"Linking verb smell → adjective"},
+    {question:"She is the ___ student in the class.", options:["more intelligent","most intelligent","intelligentest","intelligently"], answer:1, explain:"So sánh nhất không có the more"},
+    {question:"This test is ___ than the last one.", options:["hard","harder","hardly","more hard"], answer:1, explain:"So sánh hơn → harder"},
+    {question:"He bought something ___.", options:["interest","interested","interesting","interestingly"], answer:2, explain:"Sau 'something' → dùng adjective"},
+    {question:"The weather becomes ___.", options:["cold","coldly","colder","coldest"], answer:0, explain:"Sau linking verb → dùng adjective"},
+    {question:"That was a very ___ story.", options:["amazing","amazingly","amazed","amazeful"], answer:0, explain:"Tính từ mô tả tính chất"},
+    {question:"She has a ___ voice.", options:["sweet","sweetly","sweetest","more sweet"], answer:0, explain:"Adjective + noun"},
+    {question:"They adopted a ___ dog.", options:["small cute black","cute black small","cute small black","black small cute"], answer:2, explain:"Opinion → size → color"},
+    {question:"He is ___ to finish the work.", options:["able","ability","ably","abling"], answer:0, explain:"able = tính từ"}
+  ]
+};
