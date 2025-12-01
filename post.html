@@ -219,7 +219,7 @@ if (!file) {
           generateTOC();
 
           /* ============================
-             🟣 TỰ ĐỘNG THÊM NÚT QUIZ 12 THÌ
+             AUTO QUIZ BUTTON GENERATOR
           ============================ */
           const quizMap = {
             "present-simple.html": "present-simple",
@@ -233,10 +233,9 @@ if (!file) {
             "past-perfect-continuous.html": "past-perfect-continuous",
 
             "future-simple.html": "future-simple",
-            "near-future.html": "near-future",           // ✅ vừa thêm dòng này
             "future-continuous.html": "future-continuous",
             "future-perfect.html": "future-perfect",
-
+            "near-future.html": "near-future",
             "will-vs-going-to.html": "will-vs-going-to",
 
             "nouns.html": "nouns",
@@ -247,7 +246,6 @@ if (!file) {
             "conjunctions.html": "conjunctions",
             "quantifiers.html": "quantifiers",
 
-            /* ⚠️ BẠN ĐANG DÙNG file “future-near.html” */
             "future-near.html": "near-future"
           };
 
@@ -268,21 +266,26 @@ if (!file) {
             document.getElementById("post-content").innerHTML += quizBtn;
           }
 
-
-          /* ANSWER TOGGLE */
+          /* ============================
+             ANSWER TOGGLE SYSTEM
+          ============================ */
           setTimeout(() => {
-            const toggleBtn = document.getElementById("toggle-answer");
-            const answerBox = document.getElementById("answer-box");
+            const btn = document.querySelector(".toggle-answers");
+            const answers = document.querySelectorAll(".answer-text");
 
-            if (toggleBtn && answerBox) {
-              toggleBtn.addEventListener("click", () => {
-                const hidden = answerBox.style.display === "none";
-                answerBox.style.display = hidden ? "block" : "none";
-                toggleBtn.innerText = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+            if (btn && answers.length > 0) {
+              btn.addEventListener("click", () => {
+                answers.forEach(a => {
+                  a.style.display = (a.style.display === "block") ? "none" : "block";
+                });
+
+                btn.textContent =
+                  (answers[0].style.display === "block")
+                  ? "🙈 Ẩn đáp án"
+                  : "👉 Hiện đáp án";
               });
             }
-          }, 50);
-
+          }, 100);
 
           /* RELATED POSTS */
           const related = posts
@@ -359,20 +362,6 @@ function copyLink() {
 }
 
 </script>
-<script>
-document.addEventListener("click", function (e) {
-    if (e.target.classList.contains("toggle-answers")) {
-        const answers = document.querySelectorAll(".answer-text");
 
-        answers.forEach(a => {
-            if (a.style.display === "none" || a.style.display === "") {
-                a.style.display = "block";
-            } else {
-                a.style.display = "none";
-            }
-        });
-    }
-});
-</script>
 </body>
 </html>
