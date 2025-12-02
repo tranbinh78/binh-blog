@@ -1,89 +1,78 @@
 <h1>Pronouns – Đại từ</h1>
 
-<p>Đại từ (Pronouns) là những từ dùng để thay thế cho danh từ nhằm tránh lặp lại trong câu.</p>
+<p>Đại từ (pronouns) là từ dùng để thay thế cho danh từ nhằm tránh lặp lại.</p>
 
-<div class="formula">→ Pronouns = Thay thế cho Nouns</div>
-
-<h2>1. Các loại đại từ chính</h2>
-
-<h3>a. Personal Pronouns – Đại từ nhân xưng</h3>
+<h2>1. Các loại đại từ</h2>
 <ul>
-  <li>I, you, he, she, it, we, they</li>
-</ul>
-
-<div class="example">
-  <strong>Ví dụ:</strong><br>
-  <em>Mary is my friend. She</em> is very kind.
-</div>
-
-<h3>b. Possessive Pronouns – Đại từ sở hữu</h3>
-<ul>
-  <li>mine, yours, his, hers, ours, theirs</li>
-</ul>
-
-<div class="example">
-  <strong>Ví dụ:</strong><br>
-  This book is <em>mine</em>.
-</div>
-
-<h3>c. Reflexive Pronouns – Đại từ phản thân</h3>
-<ul>
-  <li>myself, yourself, himself, herself, itself, ourselves, yourselves, themselves</li>
-</ul>
-
-<h3>d. Demonstrative Pronouns – Đại từ chỉ định</h3>
-<ul>
-  <li>this, that, these, those</li>
-</ul>
-
-<h3>e. Interrogative Pronouns – Đại từ nghi vấn</h3>
-<ul>
-  <li>what, which, who, whom, whose</li>
-</ul>
-
-<h3>f. Relative Pronouns – Đại từ quan hệ</h3>
-<ul>
-  <li>who, whom, which, that, whose</li>
+  <li><strong>Personal pronouns</strong>: I, you, he, she, it, we, they</li>
+  <li><strong>Possessive pronouns</strong>: mine, yours, his, hers...</li>
+  <li><strong>Reflexive pronouns</strong>: myself, yourself…</li>
+  <li><strong>Demonstrative pronouns</strong>: this, that, these, those</li>
+  <li><strong>Interrogative pronouns</strong>: who, whom, which, whose</li>
 </ul>
 
 <h2>2. Vị trí của đại từ</h2>
 <ul>
-  <li>Thường đứng vị trí chủ ngữ hoặc tân ngữ.</li>
+  <li>Đứng ở vị trí chủ ngữ hoặc tân ngữ.</li>
   <li>Đại từ sở hữu đứng cuối câu.</li>
 </ul>
 
-<!-- BẮT ĐẦU: phần Bài tập / Đáp án (thay thế toàn bộ phần cũ) -->
 <h2>3. Bài tập</h2>
-
 <p>Điền đúng đại từ:</p>
 
-<ol>
-  <li>Mary is my sister. <strong>___</strong> is 20 years old.</li>
-  <li>Is this pencil <strong>___</strong>?</li>
-  <li>We did it all by <strong>___</strong>.</li>
-  <li><strong>___</strong> are my best friends. (those / them)</li>
-  <li>Do you know the man <strong>___</strong> is talking to Jane?</li>
-</ol>
+<button id="toggle-answer"
+        style="background:#d9d1ff;padding:10px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:600;">
+    👉 Hiện đáp án
+</button>
 
-<!-- nút hiển đáp án (một dạng chuẩn) -->
-<button id="toggle-answer" style="
-  background:#f0e7ff;
-  padding:8px 12px;
-  border-radius:8px;
-  border:1px solid #d5c3ff;
-  font-weight:600;
-  cursor:pointer;
-  margin:8px 0;
-">👉 Hiện đáp án</button>
+<div id="exercise-box" style="margin-top:15px;">
 
-<!-- phần đáp án (mỗi câu có class answer-text). Ẩn mặc định bằng style (nếu script chưa được thêm) -->
-<div id="exercise-box" style="margin-top:12px;">
-  <h3>Đáp án</h3>
+  <p>1. Mary is my sister. ___ is 20 years old.</p>
+  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> She</p>
 
-  <p class="answer-text" style="display:none"><strong>1.</strong> She / Her → <em>She is 20 years old.</em></p>
-  <p class="answer-text" style="display:none"><strong>2.</strong> this → <em>Is this pencil?</em></p>
-  <p class="answer-text" style="display:none"><strong>3.</strong> ourselves / ourselves (tùy ngữ cảnh) → <em>We did it all by ourselves.</em></p>
-  <p class="answer-text" style="display:none"><strong>4.</strong> Those → <em>Those are my best friends.</em></p>
-  <p class="answer-text" style="display:none"><strong>5.</strong> who → <em>Do you know the man who is talking to Jane?</em></p>
+  <p>2. Is this pencil ___?</p>
+  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> yours</p>
+
+  <p>3. We did it all by ___.</p>
+  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> ourselves</p>
+
+  <p>4. ___ are my best friends. (those / them)</p>
+  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> They</p>
+
+  <p>5. Do you know the man ___ is talking to Jane?</p>
+  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> who</p>
+
 </div>
-<!-- KẾT THÚC: phần Bài tập / Đáp án -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("toggle-answer");
+    const answers = document.querySelectorAll(".answer-text");
+
+    if (!btn) return;
+
+    btn.addEventListener("click", function () {
+        const hidden = answers[0].style.display === "none";
+
+        answers.forEach(a => {
+            a.style.display = hidden ? "block" : "none";
+        });
+
+        btn.textContent = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+});
+</script>
+
+<div style="margin-top:25px;">
+  <a href="/binh-blog/quiz.html?type=pronouns"
+     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;">
+     👉 Làm bài tập: PRONOUNS
+  </a>
+</div>
+
+<h3>Bài viết liên quan</h3>
+<ul>
+  <li><a href="/binh-blog/post.html?file=nouns.html">Nouns – Danh từ</a></li>
+  <li><a href="/binh-blog/post.html?file=adjectives.html">Adjectives – Tính từ</a></li>
+  <li><a href="/binh-blog/post.html?file=adverbs.html">Adverbs – Trạng từ</a></li>
+</ul>
