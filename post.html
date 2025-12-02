@@ -383,6 +383,114 @@ function setupAnswerToggle() {
 
 })();
 </script>
+
+<script>
+/*
+  Universal answer-toggle for blog posts
+  - Works with buttons:
+      id="toggle-answer"
+      OR data-toggle="answers"
+      OR class="toggle-answers"
+  - Looks only inside the current post content container (#post-content)
+  - Toggles elements with class "answer-text"
+*/
+
+(function () {
+  // helper: finds the closest ancestor that is the article container
+  function findPostContainer(el) {
+    // prefer #post-content
+    var pc = document.getElementById('post-content');
+    if (pc) return pc;
+    // fallback: try to find ancestor with id "post-article" or role=main
+    var a = el.closest('#post-article') || el.closest('main') || document.body;
+    return a;
+  }
+
+  function toggleAnswersIn(container) {
+    if (!container) return;
+    var answers = Array.from(container.querySelectorAll('.answer-text'));
+    if (!answers.length) {
+      console.warn('Không tìm thấy phần tử .answer-text để hiển thị/ẩn đáp án.');
+      return false;
+    }
+    // determine new state: if at least one hidden -> show all, else hide all
+    var anyHidden = answers.some(a => {
+      // computed style fallback (handles inline style or stylesheet)
+      var s = window.getComputedStyle(a);
+      return s.display === 'none' || s.visibility === 'hidden' || a.dataset.hidden === "true";
+    });
+
+    answers.forEach(a => {
+      if (anyHidden) {
+        a.style.display = '';           // remove inline hiding
+        a.dataset.hidden = "false";
+      } else {
+        a.style.display = 'none';
+        a.dataset.hidden = "true";
+      }
+    });
+
+    return anyHidden; // true if we were showing (there was hidden -> now shown)
+  }
+
+  // event delegation: one click listener for whole document
+  document.addEventListener('click', function (e) {
+    var target = e.target;
+
+    // support click on child nodes inside the button (e.g., icon <span> inside)
+    var toggleButton = target.closest('[data-toggle="answers"], #toggle-answer, .toggle-answers');
+
+    if (!toggleButton) return;
+
+    e.preventDefault();
+
+    var postContainer = findPostContainer(toggleButton);
+
+    var shownBefore = toggleAnswersIn(postContainer);
+
+    // update button text if possible
+    try {
+      var btnTextShow = '👉 Hiện đáp án';
+      var btnTextHide = '🙈 Ẩn đáp án';
+
+      // if answers were hidden before (so we showed them), set label to Hide
+      var isNowShown = shownBefore; // shownBefore true means we just showed them
+      if (isNowShown) {
+        if (toggleButton.tagName.toLowerCase() === 'button' || toggleButton.tagName.toLowerCase() === 'a') {
+          toggleButton.textContent = btnTextHide;
+        } else {
+          // try to find inner label
+          var lbl = toggleButton.querySelector('.label') || toggleButton;
+          if (lbl) lbl.textContent = btnTextHide;
+        }
+      } else {
+        if (toggleButton.tagName.toLowerCase() === 'button' || toggleButton.tagName.toLowerCase() === 'a') {
+          toggleButton.textContent = btnTextShow;
+        } else {
+          var lbl2 = toggleButton.querySelector('.label') || toggleButton;
+          if (lbl2) lbl2.textContent = btnTextShow;
+        }
+      }
+    } catch (err) {
+      // ignore any errors updating text
+      console.error(err);
+    }
+  });
+
+  // Optional: when page loads, ensure all .answer-text are hidden by default
+  document.addEventListener('DOMContentLoaded', function () {
+    var post = document.getElementById('post-content') || document.body;
+    Array.from(post.querySelectorAll('.answer-text')).forEach(a => {
+      // if inline style not explicitly set, ensure hidden
+      var cs = window.getComputedStyle(a);
+      if (cs.display !== 'none') {
+        a.style.display = 'none';
+        a.dataset.hidden = "true";
+      }
+    });
+  });
+})();
+</script>
   
 </body>
 </html>
