@@ -925,3 +925,33 @@ window.quizData["quantifiers"] = {
     }
   ]
 };
+
+/* ============================
+   21. Prepositions – Giới từ
+   ============================ */
+window.quizData["prepositions"] = {
+  title: "Bài tập – Prepositions",
+  desc: "Chọn giới từ đúng trong câu.",
+  questions: [
+    { question: "The cat is ___ the table.", options: ["in", "on", "at"], answer: 1, explain: "on = trên bề mặt." },
+    { question: "She was born ___ May.", options: ["at", "on", "in"], answer: 2, explain: "in + tháng." },
+    { question: "I am waiting ___ the bus stop.", options: ["at", "on", "in"], answer: 0, explain: "at = điểm cụ thể." },
+    { question: "He walked ___ the room.", options: ["into", "in", "on"], answer: 0, explain: "into = vào trong." },
+    { question: "The kids are playing ___ the park.", options: ["in", "on", "at"], answer: 0, explain: "in the park." },
+    { question: "We are going ___ school.", options: ["to", "in", "at"], answer: 0, explain: "go to + nơi chốn." },
+    { question: "The picture is ___ the wall.", options: ["in", "on", "at"], answer: 1, explain: "on the wall." },
+    { question: "He is ___ home now.", options: ["on", "in", "at"], answer: 2, explain: "at home = cụm cố định." },
+    { question: "They walked ___ the river.", options: ["along", "to", "into"], answer: 0, explain: "along = dọc theo." },
+    { question: "The ball rolled ___ the box.", options: ["out of", "into", "on"], answer: 1, explain: "into = vào trong." },
+    { question: "We arrived ___ the same time.", options: ["at", "in", "on"], answer: 0, explain: "at the same time = cụm cố định." },
+    { question: "The children ran ___ the playground.", options: ["into", "around", "through"], answer: 1, explain: "around = chạy vòng quanh khu vực."},
+    { question: "He sat ___ the corner of the room.", options: ["at", "in", "on"], answer: 1, explain: "in the corner (bên trong phòng)."},
+    { question: "She jumped ___ the pool.", options: ["into", "in", "on"], answer: 0, explain: "into = nhảy vào bên trong."},
+    { question: "The school is ___ the left side of the street.", options: ["in", "at", "on"], answer: 2, explain: "on the left side = bên phía bên trái."},
+    { question: "They live ___ a small village.", options: ["at", "on", "in"], answer: 2, explain: "in a village = sống trong 1 nơi (vùng/địa điểm lớn)."},
+    { question: "The plane is flying ___ the clouds.", options: ["over", "above", "both are possible"], answer: 2, explain: "over/above đều đúng (bay phía trên)."},
+    { question: "He walked ___ the house quietly.", options: ["into", "around", "over"], answer: 1, explain: "around the house = quanh nhà."},
+    { question: "The train goes ___ the tunnel.", options: ["through", "into", "over"], answer: 0, explain: "through the tunnel = xuyên qua đường hầm."},
+    { question: "She will arrive ___ Monday morning.", options: ["on", "at", "in"], answer: 0, explain: "on Monday; in the morning → nhưng khi ghép → 'on Monday morning'."}
+    ]
+};
