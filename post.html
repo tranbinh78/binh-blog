@@ -364,6 +364,27 @@ function copyLink() {
 }
 
 </script>
+<script>
+document.addEventListener("click", function (e) {
 
+    // Khi click nút hiện/ẩn đáp án
+    if (e.target.classList.contains("toggle-answer")) {
+
+        const btn = e.target;
+        const answers = document.querySelectorAll(".answer-text");
+
+        answers.forEach(a => {
+            a.style.display = 
+                (a.style.display === "none" || a.style.display === "")
+                ? "block"
+                : "none";
+        });
+
+        const showing = answers[0].style.display === "block";
+
+        btn.textContent = showing ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    }
+});
+</script>
 </body>
 </html>
