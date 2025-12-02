@@ -1,14 +1,17 @@
 <h1>Pronouns – Đại từ</h1>
 
-<p>Đại từ (pronouns) là từ dùng để thay thế cho danh từ nhằm tránh lặp lại.</p>
+<p>Đại từ là từ dùng để thay thế cho danh từ nhằm tránh lặp lại trong câu.</p>
+
+<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200"
+     style="width:100%; border-radius:12px; margin:20px 0;">
 
 <h2>1. Các loại đại từ</h2>
 <ul>
   <li><strong>Personal pronouns</strong>: I, you, he, she, it, we, they</li>
-  <li><strong>Possessive pronouns</strong>: mine, yours, his, hers...</li>
-  <li><strong>Reflexive pronouns</strong>: myself, yourself…</li>
+  <li><strong>Possessive pronouns</strong>: mine, yours, his, hers, ours, theirs</li>
+  <li><strong>Reflexive pronouns</strong>: myself, yourself, himself, herself…</li>
   <li><strong>Demonstrative pronouns</strong>: this, that, these, those</li>
-  <li><strong>Interrogative pronouns</strong>: who, whom, which, whose</li>
+  <li><strong>Interrogative pronouns</strong>: who, whom, which, what</li>
 </ul>
 
 <h2>2. Vị trí của đại từ</h2>
@@ -21,47 +24,34 @@
 <p>Điền đúng đại từ:</p>
 
 <button id="toggle-answer"
-        style="background:#d9d1ff;padding:10px 16px;border-radius:8px;border:none;cursor:pointer;font-weight:600;">
-    👉 Hiện đáp án
-</button>
+  style="
+    background:#d9d1ff;
+    padding:10px 16px;
+    border-radius:8px;
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+    margin:10px 0;
+">👉 Hiện đáp án</button>
 
 <div id="exercise-box" style="margin-top:15px;">
 
   <p>1. Mary is my sister. ___ is 20 years old.</p>
-  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> She</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> She</p>
 
-  <p>2. Is this pencil ___?</p>
-  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> yours</p>
+  <p>2. Is this pencil ___ ?</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> yours</p>
 
   <p>3. We did it all by ___.</p>
-  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> ourselves</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> ourselves</p>
 
   <p>4. ___ are my best friends. (those / them)</p>
-  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> They</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> They</p>
 
   <p>5. Do you know the man ___ is talking to Jane?</p>
-  <p class="answer-text" style="display:none;"><strong>Đáp án:</strong> who</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> who</p>
 
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("toggle-answer");
-    const answers = document.querySelectorAll(".answer-text");
-
-    if (!btn) return;
-
-    btn.addEventListener("click", function () {
-        const hidden = answers[0].style.display === "none";
-
-        answers.forEach(a => {
-            a.style.display = hidden ? "block" : "none";
-        });
-
-        btn.textContent = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-    });
-});
-</script>
 
 <div style="margin-top:25px;">
   <a href="/binh-blog/quiz.html?type=pronouns"
@@ -76,3 +66,36 @@ document.addEventListener("DOMContentLoaded", function () {
   <li><a href="/binh-blog/post.html?file=adjectives.html">Adjectives – Tính từ</a></li>
   <li><a href="/binh-blog/post.html?file=adverbs.html">Adverbs – Trạng từ</a></li>
 </ul>
+
+<!-- SCRIPT HIỆN/ẨN ĐÁP ÁN - PHIÊN BẢN CHUẨN -->
+<script>
+(function(){
+  function initToggle() {
+    const btn = document.getElementById("toggle-answer");
+    if (!btn) return;
+
+    const container = document.getElementById("exercise-box") || document;
+    const answers = Array.from(container.querySelectorAll(".answer-text"));
+
+    if (!answers.length) return;
+
+    const isVisible = el => window.getComputedStyle(el).display !== "none";
+
+    const anyVisible = answers.some(isVisible);
+    answers.forEach(a => a.style.display = anyVisible ? "block" : "none");
+    btn.textContent = anyVisible ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+
+    btn.addEventListener("click", () => {
+      const visible = answers.some(isVisible);
+      answers.forEach(a => a.style.display = visible ? "none" : "block");
+      btn.textContent = visible ? "👉 Hiện đáp án" : "🙈 Ẩn đáp án";
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initToggle);
+  } else {
+    initToggle();
+  }
+})();
+</script>
