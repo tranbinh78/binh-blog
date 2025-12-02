@@ -10,129 +10,63 @@
   <!-- Highlight.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
 
-<style>
-
-/* ==== CUSTOM STYLES ==== */
-#post-content .formula {
-  font-size: 24px;
-  font-weight: 700;
-  background: #f3edff;
-  padding: 10px 15px;
-  border-left: 4px solid #7b5dff;
-  border-radius: 6px;
-  margin: 15px 0;
-  display: inline-block;
-}
-
-#post-content .example {
-  background: #eefaff;
-  border-left: 4px solid #3bb4d8;
-  padding: 12px 15px;
-  margin: 10px 0 22px;
-  border-radius: 6px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-#post-content .example em {
-  color: #444;
-}
-#post-content .example strong {
-  color: #1d63a5;
-}
-
-/* ==== GENERAL ==== */
-body {
-  font-family: "Be Vietnam Pro", sans-serif;
-  background: #fafafa;
-  color: #222;
-  margin: 0;
-  padding: 0;
-  line-height: 1.85;
-}
-
-.post-layout {
-  max-width: 1150px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: flex;
-  gap: 40px;
-}
-
-/* ==== SIDEBAR ==== */
-#sidebar {
-  flex: 1;
-  background: #f8f1ff;
-  border: 1px solid #e7dbff;
-  border-radius: 12px;
-  padding: 20px;
-  height: fit-content;
-  position: sticky;
-  top: 20px;
-  text-align: center;
-}
-
-#sidebar img {
-  width: 80px;
-  border-radius: 50%;
-}
-
-#post-article {
-  flex: 3;
-}
-
-/* ==== TITLES ==== */
-#post-title {
-  font-size: 32px;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.meta {
-  color: #555;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-/* ==== THUMBNAIL ==== */
-.thumb {
-  width: 100%;
-  border-radius: 14px;
-  margin: 22px 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* ==== CONTENT ==== */
-#post-content h2 {
-  border-left: 4px solid #7a64ff;
-  padding-left: 10px;
-  margin-top: 35px;
-}
-
-#post-content h3 {
-  margin-top: 20px;
-}
-
-/* ==== RELATED POSTS ==== */
-.related-box {
-  background: #f7f3ff;
-  padding: 18px;
-  margin-top: 40px;
-  border-radius: 12px;
-  border: 1px solid #e1d4ff;
-}
-
-/* ==== SHARE ==== */
-#share-box button {
-  padding: 10px 15px;
-  border-radius: 8px;
-  background: #e7dbff;
-  border: 1px solid #c5b0ff;
-  cursor: pointer;
-}
-
-</style>
+  <style>
+    body {
+      font-family: "Be Vietnam Pro", sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
+    }
+    .post-layout {
+      max-width: 1150px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 40px;
+    }
+    #sidebar {
+      flex: 1;
+      background: #f8f1ff;
+      border: 1px solid #e7dbff;
+      border-radius: 12px;
+      padding: 20px;
+      position: sticky;
+      height: fit-content;
+      top: 20px;
+      text-align: center;
+    }
+    #post-article {
+      flex: 3;
+    }
+    img.thumb {
+      width: 100%;
+      border-radius: 14px;
+      margin: 20px 0;
+    }
+    #post-content h2 {
+      border-left: 4px solid #7a64ff;
+      padding-left: 10px;
+      margin-top: 35px;
+    }
+    #post-content .answer-text {
+      background: #f2edff;
+      padding: 10px 12px;
+      border-left: 4px solid #8c74ff;
+      border-radius: 6px;
+      margin: 8px 0 18px;
+    }
+    button.toggle-answer-btn {
+      background: #d9d1ff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -141,7 +75,7 @@ body {
 
   <!-- SIDEBAR -->
   <aside id="sidebar">
-    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
+    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar" width="80" style="border-radius:50%">
     <h3>Xin chào, mình là Bình 👋</h3>
     <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
     <p>
@@ -150,7 +84,7 @@ body {
     </p>
   </aside>
 
-  
+
   <!-- MAIN ARTICLE -->
   <main id="post-article">
 
@@ -161,25 +95,20 @@ body {
     </p>
 
     <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
- 
-    <!-- CONTENT -->
+
     <div id="post-content">Đang tải nội dung...</div>
 
-    <!-- RELATED -->
-    <div id="related-posts" class="related-box">
+    <div id="related-posts" class="related-box" style="margin-top: 40px; background:#f7f3ff; padding:18px; border-radius:12px;">
       <h3>Bài viết liên quan</h3>
       <div id="related-list"></div>
     </div>
 
-
-    <!-- PREV / NEXT -->
     <div id="post-nav" style="margin-top:40px; display:flex; justify-content:space-between;">
       <span id="prev-post"></span>
       <span id="next-post"></span>
     </div>
-    
-    <!-- SHARE -->
-    <div id="share-box">
+
+    <div id="share-box" style="margin-top:25px;">
       <button onclick="shareFB()">📘 Chia sẻ Facebook</button>
       <button onclick="shareZalo()">💬 Chia sẻ Zalo</button>
       <button onclick="copyLink()">🔗 Copy link</button>
@@ -191,200 +120,127 @@ body {
 
 
 <script>
-
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
 if (!file) {
   document.getElementById("post-content").innerHTML = "<p>Lỗi: không tìm thấy bài viết.</p>";
-} else {
-
-  fetch("posts/posts.json")
-    .then(res => res.json())
-    .then(posts => {
-
-      const post = posts.find(p => p.file === file);
-      if (!post) return;
-
-      document.getElementById("post-title").textContent = post.title;
-      document.getElementById("post-date").textContent = "📅 " + post.date;
-      document.getElementById("post-category").textContent = "📂 " + post.category;
-      document.getElementById("post-thumb").src = post.thumbnail;
-
-
-      fetch("posts/" + post.file)
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById("post-content").innerHTML = html;
-          generateTOC();
-
-          /* ============================
-             AUTO QUIZ BUTTON GENERATOR
-          ============================ */
-          const quizMap = {
-            "present-simple.html": "present-simple",
-            "present-continuous.html": "present-continuous",
-            "present-perfect.html": "present-perfect",
-            "present-perfect-continuous.html": "present-perfect-continuous",
-
-            "past-simple.html": "past-simple",
-            "past-continuous.html": "past-continuous",
-            "past-perfect.html": "past-perfect",
-            "past-perfect-continuous.html": "past-perfect-continuous",
-
-            "future-simple.html": "future-simple",
-            "future-continuous.html": "future-continuous",
-            "future-perfect.html": "future-perfect",
-            "near-future.html": "near-future",
-            "will-vs-going-to.html": "will-vs-going-to",
-
-            "nouns.html": "nouns",
-            "adjectives.html": "adjectives",
-            "adverbs.html": "adverbs",
-            "pronouns.html": "pronouns",
-            "articles.html": "articles",
-            "conjunctions.html": "conjunctions",
-            "quantifiers.html": "quantifiers",
-            "prepositions.html": "prepositions",
-            "modal-verbs.html":  "modal-verbs",
-
-            "future-near.html": "near-future"
-          };
-
-          if (quizMap[file]) {
-            const quizType = quizMap[file];
-
-            const quizBtn = `
-              <div style="margin-top:25px;">
-                <a href="/binh-blog/quiz.html?type=${quizType}"
-                   style="display:inline-block; padding:12px 22px;
-                          background:#d9d1ff; border-radius:10px;
-                          font-weight:600; font-size:18px;">
-                  👉 Làm bài tập: ${quizType.replace(/-/g, " ").toUpperCase()}
-                </a>
-              </div>
-            `;
-
-            document.getElementById("post-content").innerHTML += quizBtn;
-          }
-
-          /* ============================
-             ANSWER TOGGLE SYSTEM
-          ============================ */
-          setTimeout(() => {
-            const btn = document.querySelector(".toggle-answers");
-            const answers = document.querySelectorAll(".answer-text");
-
-            if (btn && answers.length > 0) {
-              btn.addEventListener("click", () => {
-                answers.forEach(a => {
-                  a.style.display = (a.style.display === "block") ? "none" : "block";
-                });
-
-                btn.textContent =
-                  (answers[0].style.display === "block")
-                  ? "🙈 Ẩn đáp án"
-                  : "👉 Hiện đáp án";
-              });
-            }
-          }, 100);
-
-          /* RELATED POSTS */
-          const related = posts
-            .filter(p => p.category === post.category && p.file !== post.file)
-            .slice(0, 3);
-
-          if (related.length === 0) {
-            document.getElementById("related-posts").style.display = "none";
-          } else {
-            const list = document.getElementById("related-list");
-            related.forEach(r => {
-              list.innerHTML += `<div class="related-item">
-                <a href="/binh-blog/post.html?file=${r.file}">${r.title}</a>
-              </div>`;
-            });
-          }
-
-          /* PREV / NEXT */
-          const index = posts.findIndex(p => p.file === file);
-
-          if (index > 0) {
-            const prev = posts[index - 1];
-            document.getElementById("prev-post").innerHTML =
-              `⬅ <a href="/binh-blog/post.html?file=${prev.file}">${prev.title}</a>`;
-          }
-
-          if (index < posts.length - 1) {
-            const next = posts[index + 1];
-            document.getElementById("next-post").innerHTML =
-              `<a href="/binh-blog/post.html?file=${next.file}">${next.title}</a> ➡`;
-          }
-        });
-    });
 }
 
-/* TOC GENERATOR */
-function generateTOC() {
-  const content = document.getElementById("post-content");
+/* Load bài */
+fetch("posts/posts.json")
+  .then(res => res.json())
+  .then(posts => {
+    const post = posts.find(p => p.file === file);
+    if (!post) return;
 
-  const headings = content.querySelectorAll("h1, h2, h3");
+    document.getElementById("post-title").textContent = post.title;
+    document.getElementById("post-date").textContent = "📅 " + post.date;
+    document.getElementById("post-category").textContent = "📂 " + post.category;
+    document.getElementById("post-thumb").src = post.thumbnail;
 
-  const tocList = document.getElementById("toc-list");
-  if (!tocList) return;
+    fetch("posts/" + post.file)
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("post-content").innerHTML = html;
+        activateAnswerToggle();
+        activateQuizButton(post.file);
+        loadRelated(posts, post);
+        loadPrevNext(posts, post);
+      });
+  });
 
-  tocList.innerHTML = "";
 
-  headings.forEach((h, i) => {
-    if (!h.id) h.id = "heading-" + i;
+/* === Toggle Answer (Fix chính) === */
+function activateAnswerToggle() {
+  const btn = document.querySelector("#toggle-answer, .toggle-answer-btn");
+  const answers = document.querySelectorAll(".answer-text");
 
-    const li = document.createElement("li");
-    li.textContent = h.textContent;
+  if (!btn || answers.length === 0) return;
 
-    li.onclick = () => document.getElementById(h.id).scrollIntoView({ behavior: "smooth" });
-
-    tocList.appendChild(li);
+  btn.addEventListener("click", () => {
+    const hiding = answers[0].style.display === "none" || answers[0].style.display === "";
+    answers.forEach(a => a.style.display = hiding ? "block" : "none");
+    btn.textContent = hiding ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
   });
 }
 
-/* SHARE BUTTONS */
-function shareFB() {
-  window.open(
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`,
-    "_blank"
-  );
+
+/* === Tự động thêm nút Quiz cho từng bài === */
+function activateQuizButton(file) {
+  const quizMap = {
+    "nouns.html": "nouns",
+    "adjectives.html": "adjectives",
+    "adverbs.html": "adverbs",
+    "pronouns.html": "pronouns",
+    "articles.html": "articles",
+    "conjunctions.html": "conjunctions",
+    "quantifiers.html": "quantifiers",
+    "prepositions.html": "prepositions",
+    "modal-verbs.html": "modal-verbs",
+
+    "present-simple.html": "present-simple",
+    "present-continuous.html": "present-continuous",
+    "present-perfect.html": "present-perfect",
+    "present-perfect-continuous.html": "present-perfect-continuous",
+    "past-simple.html": "past-simple",
+    "past-continuous.html": "past-continuous",
+    "past-perfect.html": "past-perfect",
+    "future-simple.html": "future-simple",
+    "future-continuous.html": "future-continuous",
+    "near-future.html": "near-future",
+    "will-vs-going-to.html": "will-vs-going-to"
+  };
+
+  if (quizMap[file]) {
+    document.getElementById("post-content").innerHTML += `
+      <div style="margin-top:25px;">
+        <a href="/binh-blog/quiz.html?type=${quizMap[file]}"
+           style="background:#d9d1ff;padding:12px 20px;
+           border-radius:10px;font-weight:700;display:inline-block;">
+           👉 Làm bài Quiz: ${quizMap[file].toUpperCase()}
+        </a>
+      </div>`;
+  }
 }
 
+
+/* === Related posts === */
+function loadRelated(posts, post) {
+  const related = posts
+    .filter(p => p.category === post.category && p.file !== post.file)
+    .slice(0, 3);
+
+  if (related.length === 0)
+    document.getElementById("related-posts").style.display = "none";
+
+  const box = document.getElementById("related-list");
+  related.forEach(r => {
+    box.innerHTML += `<div><a href="/binh-blog/post.html?file=${r.file}">${r.title}</a></div>`;
+  });
+}
+
+/* === Prev / Next === */
+function loadPrevNext(posts, post) {
+  const index = posts.findIndex(p => p.file === post.file);
+  if (index > 0)
+    prev-post.innerHTML = `⬅ <a href="/binh-blog/post.html?file=${posts[index-1].file}">${posts[index-1].title}</a>`;
+  if (index < posts.length - 1)
+    next-post.innerHTML = `<a href="/binh-blog/post.html?file=${posts[index+1].file}">${posts[index+1].title}</a> ➡`;
+}
+
+/* SHARE */
+function shareFB() {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`, "_blank");
+}
 function shareZalo() {
   window.open(`https://zalo.me/share?url=${encodeURIComponent(location.href)}`, "_blank");
 }
-
 function copyLink() {
   navigator.clipboard.writeText(window.location.href);
   alert("Đã copy link bài viết!");
 }
 
-</script>
-<script>
-document.addEventListener("click", function (e) {
-
-    // Khi click nút hiện/ẩn đáp án
-    if (e.target.classList.contains("toggle-answer")) {
-
-        const btn = e.target;
-        const answers = document.querySelectorAll(".answer-text");
-
-        answers.forEach(a => {
-            a.style.display = 
-                (a.style.display === "none" || a.style.display === "")
-                ? "block"
-                : "none";
-        });
-
-        const showing = answers[0].style.display === "block";
-
-        btn.textContent = showing ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-    }
-});
 </script>
 </body>
 </html>
