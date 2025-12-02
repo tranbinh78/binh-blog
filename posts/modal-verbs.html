@@ -1,0 +1,95 @@
+<h1>Modal Verbs – Động từ khuyết thiếu</h1>
+
+<p>Modal verbs là những động từ đặc biệt được dùng để diễn tả khả năng, lời khuyên, sự cho phép, nghĩa vụ,...</p>
+
+<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200" style="width:100%; border-radius:12px; margin:20px 0;">
+
+<h2>1. Các động từ khuyết thiếu phổ biến</h2>
+<ul>
+  <li><strong>can / could</strong> – khả năng, xin phép</li>
+  <li><strong>may / might</strong> – khả năng (có thể)</li>
+  <li><strong>should / ought to</strong> – lời khuyên</li>
+  <li><strong>must / have to</strong> – bắt buộc, phải</li>
+  <li><strong>will / would</strong> – tương lai, đề nghị lịch sự</li>
+</ul>
+
+<h2>2. Cấu trúc chung</h2>
+<p class="formula">Modal verb + V₁</p>
+
+<p>Modal verbs luôn đi với <strong>động từ nguyên mẫu không "to"</strong> (trừ “ought to”).</p>
+
+<h2>3. Ví dụ</h2>
+<div class="example">
+  – I <strong>can speak</strong> English.<br>
+  – You <strong>should study</strong> harder.<br>
+  – She <strong>must go</strong> now.<br>
+  – He <strong>might come</strong> tomorrow.<br>
+</div>
+
+<h2>4. Bài tập – Chọn đáp án đúng (10 câu)</h2>
+
+<button id="toggle-answer" style="
+  background:#d9d1ff;
+  padding:10px 16px;
+  border-radius:8px;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+  margin:10px 0;
+">👉 Hiện đáp án</button>
+
+<div id="exercise-box" style="margin-top:15px;">
+
+  <p>1. I ___ speak French when I was 10.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> could</p>
+
+  <p>2. You ___ see a doctor. This looks serious.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> should</p>
+
+  <p>3. He ___ be at home. I saw him go out.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> can't</p>
+
+  <p>4. ___ I open the window?</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> May / Can</p>
+
+  <p>5. You ___ drive so fast. It's dangerous!</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> mustn't</p>
+
+  <p>6. She ___ play the guitar very well.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> can</p>
+
+  <p>7. We ___ finish the project today. It's the deadline.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> must / have to</p>
+
+  <p>8. They ___ come to the party. They're busy.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> might not</p>
+
+  <p>9. ___ you help me with this exercise?</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> Could</p>
+
+  <p>10. We ___ go now or we'll be late.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> should</p>
+
+</div>
+
+<script>
+document.getElementById("toggle-answer").addEventListener("click", function () {
+  const answers = document.querySelectorAll(".answer-text");
+
+  answers.forEach(a => {
+    a.style.display = (a.style.display === "none") ? "block" : "none";
+  });
+
+  this.textContent =
+    (answers[0].style.display === "none")
+    ? "👉 Hiện đáp án"
+    : "🙈 Ẩn đáp án";
+});
+</script>
+
+<div style="margin-top:25px;">
+  <a href="/binh-blog/quiz.html?type=modal-verbs"
+     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;">
+     👉 Làm bài Quiz: MODAL VERBS
+  </a>
+</div>
