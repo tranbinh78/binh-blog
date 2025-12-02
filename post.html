@@ -223,10 +223,14 @@ function loadRelated(posts, post) {
 /* === Prev / Next === */
 function loadPrevNext(posts, post) {
   const index = posts.findIndex(p => p.file === post.file);
-  if (index > 0)
-    prev-post.innerHTML = `⬅ <a href="/binh-blog/post.html?file=${posts[index-1].file}">${posts[index-1].title}</a>`;
-  if (index < posts.length - 1)
-    next-post.innerHTML = `<a href="/binh-blog/post.html?file=${posts[index+1].file}">${posts[index+1].title}</a> ➡`;
+  if (index > 0) {
+  document.getElementById("prev-post").innerHTML =
+    `⬅ <a href="/binh-blog/post.html?file=${posts[index - 1].file}">${posts[index - 1].title}</a>`;
+}
+
+if (index < posts.length - 1) {
+  document.getElementById("next-post").innerHTML =
+    `<a href="/binh-blog/post.html?file=${posts[index + 1].file}">${posts[index + 1].title}</a> ➡`;
 }
 
 /* SHARE */
