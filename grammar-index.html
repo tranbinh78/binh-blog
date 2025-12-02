@@ -331,6 +331,17 @@
     progressFill.style.width = pct + '%';
   }
 
+  function updateProgress() {
+  const total = cards.length;
+  const done = cards.filter(c => c.dataset.status === "completed").length;
+
+  const pct = Math.round((done / total || 0) * 100);
+
+  progressText.textContent = `${pct}% hoàn thành`;
+  counterText.textContent = `${done}/${total} bài`;
+
+  progressFill.style.width = pct + "%";
+  }
   // set up filter handlers
   function setupFilters(){
     groupFilters.addEventListener('click', (e)=>{
