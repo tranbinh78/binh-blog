@@ -8,74 +8,107 @@
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Highlight.js -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 
   <style>
     body {
       font-family: "Be Vietnam Pro", sans-serif;
       background: #fafafa;
-      margin: 0;
-      padding: 0;
-      line-height: 1.8;
+      margin: 0; padding: 0;
+      line-height: 1.85;
+      color: #222;
     }
+
     .post-layout {
       max-width: 1150px;
-      margin: 30px auto;
+      margin: 40px auto;
       padding: 0 20px;
       display: flex;
       gap: 40px;
     }
+
     #sidebar {
       flex: 1;
-      background: #f8f1ff;
-      border: 1px solid #e7dbff;
+      background: #f4ecff;
+      border: 1px solid #e5d9ff;
       border-radius: 12px;
       padding: 20px;
-      position: sticky;
       height: fit-content;
-      top: 20px;
       text-align: center;
+      position: sticky;
+      top: 20px;
     }
+
+    #sidebar img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
     #post-article {
       flex: 3;
     }
-    img.thumb {
-      width: 100%;
-      border-radius: 14px;
-      margin: 20px 0;
+
+    #post-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
+
+    .thumb {
+      width: 100%;
+      border-radius: 15px;
+      margin: 18px 0 25px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
     #post-content h2 {
-      border-left: 4px solid #7a64ff;
+      border-left: 4px solid #7c67ff;
       padding-left: 10px;
       margin-top: 35px;
     }
-    #post-content .answer-text {
-      background: #f2edff;
-      padding: 10px 12px;
-      border-left: 4px solid #8c74ff;
-      border-radius: 6px;
-      margin: 8px 0 18px;
-    }
-    button.toggle-answer-btn {
-      background: #d9d1ff;
-      padding: 10px 16px;
+
+    #post-content .formula {
+      padding: 10px 14px;
+      background: #efe8ff;
+      border-left: 4px solid #7b5dff;
       border-radius: 8px;
+      font-weight: 700;
+      font-size: 20px;
+      display: inline-block;
+      margin: 12px 0;
+    }
+
+    #post-content .example {
+      background: #e7f7ff;
+      border-left: 4px solid #27a8e0;
+      padding: 12px 16px;
+      border-radius: 8px;
+    }
+
+    .related-box {
+      background: #f7f3ff;
+      border: 1px solid #e3d8ff;
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
+    #prev-post, #next-post a {
       font-weight: 600;
-      border: none;
-      cursor: pointer;
-      margin: 10px 0;
     }
   </style>
 </head>
 
 <body>
-
 <div class="post-layout">
 
-  <!-- SIDEBAR -->
+  <!-- Sidebar -->
   <aside id="sidebar">
-    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar" width="80" style="border-radius:50%">
+    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar" />
     <h3>Xin chào, mình là Bình 👋</h3>
     <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
     <p>
@@ -84,31 +117,29 @@
     </p>
   </aside>
 
-
-  <!-- MAIN ARTICLE -->
+  <!-- Main Content -->
   <main id="post-article">
-
     <h1 id="post-title"></h1>
     <p class="meta">
-      <span id="post-date"></span> • 
+      <span id="post-date"></span> •
       <span id="post-category"></span>
     </p>
 
-    <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
+    <img id="post-thumb" class="thumb" alt="Thumbnail">
 
     <div id="post-content">Đang tải nội dung...</div>
 
-    <div id="related-posts" class="related-box" style="margin-top: 40px; background:#f7f3ff; padding:18px; border-radius:12px;">
+    <div class="related-box">
       <h3>Bài viết liên quan</h3>
       <div id="related-list"></div>
     </div>
 
-    <div id="post-nav" style="margin-top:40px; display:flex; justify-content:space-between;">
+    <div id="post-nav" style="display:flex;justify-content:space-between;margin-top:30px;">
       <span id="prev-post"></span>
       <span id="next-post"></span>
     </div>
 
-    <div id="share-box" style="margin-top:25px;">
+    <div id="share-box" style="margin-top:35px;">
       <button onclick="shareFB()">📘 Chia sẻ Facebook</button>
       <button onclick="shareZalo()">💬 Chia sẻ Zalo</button>
       <button onclick="copyLink()">🔗 Copy link</button>
@@ -118,56 +149,65 @@
 
 </div>
 
-
 <script>
+
+  /* =====================================================
+   LẤY FILE TỪ URL
+===================================================== */
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
 if (!file) {
-  document.getElementById("post-content").innerHTML = "<p>Lỗi: không tìm thấy bài viết.</p>";
+  document.getElementById("post-content").innerHTML =
+    "<p>Lỗi: không tìm thấy bài viết.</p>";
 }
 
-/* Load bài */
+/* =====================================================
+   LOAD DANH SÁCH POSTS
+===================================================== */
 fetch("posts/posts.json")
   .then(res => res.json())
   .then(posts => {
     const post = posts.find(p => p.file === file);
-    if (!post) return;
 
+    if (!post) {
+      document.getElementById("post-content").innerHTML =
+        "<p>Không tìm thấy nội dung bài viết.</p>";
+      return;
+    }
+
+    // Set metadata
     document.getElementById("post-title").textContent = post.title;
     document.getElementById("post-date").textContent = "📅 " + post.date;
     document.getElementById("post-category").textContent = "📂 " + post.category;
     document.getElementById("post-thumb").src = post.thumbnail;
 
+    /* =====================================================
+       LOAD HTML NỘI DUNG BÀI
+    ===================================================== */
     fetch("posts/" + post.file)
-      .then(res => res.text())
+      .then(r => r.text())
       .then(html => {
         document.getElementById("post-content").innerHTML = html;
-        activateAnswerToggle();
-        activateQuizButton(post.file);
+
+        // Sau khi chèn HTML — chạy lại toggle đáp án
+        setupAnswerToggle();
+
+        // Sinh nút quiz tự động
+        autoAddQuizButton(post.file);
+
+        // Gợi ý bài liên quan
         loadRelated(posts, post);
-        loadPrevNext(posts, post);
+
+        // Điều hướng prev / next
+        loadNavigation(posts, post);
       });
   });
 
-
-/* === Toggle Answer (Fix chính) === */
-function activateAnswerToggle() {
-  const btn = document.querySelector("#toggle-answer, .toggle-answer-btn");
-  const answers = document.querySelectorAll(".answer-text");
-
-  if (!btn || answers.length === 0) return;
-
-  btn.addEventListener("click", () => {
-    const hiding = answers[0].style.display === "none" || answers[0].style.display === "";
-    answers.forEach(a => a.style.display = hiding ? "block" : "none");
-    btn.textContent = hiding ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-  });
-}
-
-
-/* === Tự động thêm nút Quiz cho từng bài === */
-function activateQuizButton(file) {
+/* =====================================================
+   AUTO QUIZ BUTTON — TỰ THÊM NÚT "Làm bài Quiz"
+===================================================== */
+function autoAddQuizButton(file) {
   const quizMap = {
     "nouns.html": "nouns",
     "adjectives.html": "adjectives",
@@ -179,72 +219,124 @@ function activateQuizButton(file) {
     "prepositions.html": "prepositions",
     "modal-verbs.html": "modal-verbs",
 
+    // 12 thì
     "present-simple.html": "present-simple",
     "present-continuous.html": "present-continuous",
     "present-perfect.html": "present-perfect",
     "present-perfect-continuous.html": "present-perfect-continuous",
+
     "past-simple.html": "past-simple",
     "past-continuous.html": "past-continuous",
     "past-perfect.html": "past-perfect",
+
     "future-simple.html": "future-simple",
     "future-continuous.html": "future-continuous",
+    "future-perfect.html": "future-perfect",
     "near-future.html": "near-future",
+
     "will-vs-going-to.html": "will-vs-going-to"
   };
 
-  if (quizMap[file]) {
-    document.getElementById("post-content").innerHTML += `
-      <div style="margin-top:25px;">
-        <a href="/binh-blog/quiz.html?type=${quizMap[file]}"
-           style="background:#d9d1ff;padding:12px 20px;
-           border-radius:10px;font-weight:700;display:inline-block;">
-           👉 Làm bài Quiz: ${quizMap[file].toUpperCase()}
-        </a>
-      </div>`;
-  }
+  if (!quizMap[file]) return;
+
+  const code = `
+    <div style="margin-top:25px;">
+      <a href="/binh-blog/quiz.html?type=${quizMap[file]}"
+         style="background:#d9d1ff; padding:12px 22px; border-radius:10px;
+                font-weight:700; display:inline-block; margin-top:10px;">
+        👉 Làm bài tập: ${quizMap[file].toUpperCase()}
+      </a>
+    </div>
+  `;
+
+  document.getElementById("post-content").innerHTML += code;
 }
 
-
-/* === Related posts === */
-function loadRelated(posts, post) {
+/* =====================================================
+   LIÊN QUAN
+===================================================== */
+function loadRelated(posts, current) {
   const related = posts
-    .filter(p => p.category === post.category && p.file !== post.file)
+    .filter(p => p.category === current.category && p.file !== current.file)
     .slice(0, 3);
 
-  if (related.length === 0)
-    document.getElementById("related-posts").style.display = "none";
-
   const box = document.getElementById("related-list");
-  related.forEach(r => {
-    box.innerHTML += `<div><a href="/binh-blog/post.html?file=${r.file}">${r.title}</a></div>`;
+
+  if (related.length === 0) {
+    box.innerHTML = "<p>Không có bài liên quan.</p>";
+    return;
+  }
+
+  related.forEach(p => {
+    box.innerHTML += `
+      <p><a href="/binh-blog/post.html?file=${p.file}">${p.title}</a></p>
+    `;
   });
 }
 
-/* === Prev / Next === */
-function loadPrevNext(posts, post) {
+/* =====================================================
+   PREVIOUS / NEXT
+===================================================== */
+function loadNavigation(posts, post) {
   const index = posts.findIndex(p => p.file === post.file);
+
+  const prevBox = document.getElementById("prev-post");
+  const nextBox = document.getElementById("next-post");
+
   if (index > 0) {
-  document.getElementById("prev-post").innerHTML =
-    `⬅ <a href="/binh-blog/post.html?file=${posts[index - 1].file}">${posts[index - 1].title}</a>`;
+    const prev = posts[index - 1];
+    prevBox.innerHTML = `⬅ <a href="/binh-blog/post.html?file=${prev.file}">${prev.title}</a>`;
+  }
+
+  if (index < posts.length - 1) {
+    const next = posts[index + 1];
+    nextBox.innerHTML = `<a href="/binh-blog/post.html?file=${next.file}">${next.title}</a> ➡`;
+  }
 }
 
-if (index < posts.length - 1) {
-  document.getElementById("next-post").innerHTML =
-    `<a href="/binh-blog/post.html?file=${posts[index + 1].file}">${posts[index + 1].title}</a> ➡`;
-}
-
-/* SHARE */
+/* =====================================================
+   SHARE BUTTONS
+===================================================== */
 function shareFB() {
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`, "_blank");
+  window.open(
+    "https://www.facebook.com/sharer/sharer.php?u=" +
+      encodeURIComponent(location.href),
+    "_blank"
+  );
 }
+
 function shareZalo() {
-  window.open(`https://zalo.me/share?url=${encodeURIComponent(location.href)}`, "_blank");
+  window.open(
+    "https://zalo.me/share?url=" + encodeURIComponent(location.href),
+    "_blank"
+  );
 }
+
 function copyLink() {
   navigator.clipboard.writeText(window.location.href);
-  alert("Đã copy link bài viết!");
+  alert("Đã copy link!");
 }
 
+/* =====================================================
+   TOGGLE ĐÁP ÁN — HỖ TRỢ CHO TẤT CẢ BÀI
+===================================================== */
+function setupAnswerToggle() {
+  const answers = document.querySelectorAll(".answer-text");
+  const btn = document.getElementById("toggle-answer");
+
+  if (!btn || answers.length === 0) return;
+
+  btn.addEventListener("click", () => {
+    const hidden = answers[0].style.display === "none" || answers[0].style.display === "";
+
+    answers.forEach(a => {
+      a.style.display = hidden ? "block" : "none";
+    });
+
+    btn.innerText = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+  });
+}
 </script>
+
 </body>
 </html>
