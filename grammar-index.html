@@ -226,6 +226,7 @@
   <button class="filter-btn" data-filter="present">Present</button>
   <button class="filter-btn" data-filter="past">Past</button>
   <button class="filter-btn" data-filter="future">Future</button>
+  <button class="filter-btn" data-filter="grammar">Grammar</button>
   <button class="filter-btn" data-filter="completed">Completed</button>
   <button class="filter-btn" data-filter="soon">Coming Soon</button>
 </div>
@@ -256,10 +257,22 @@ async function loadPosts() {
       card.dataset.file = post.file;
 
       /* Gán group auto */
+      // Loại bỏ các bài viết không thuộc Grammar
+      if (post.title.includes("Bài viết đầu tiên") ||
+          post.title.includes("Bài viết thứ 2") ||
+          post.title.includes("Bài viết thứ 3")) return;
+
+      // Auto group
       if (post.file.startsWith("present-")) card.dataset.group = "present";
       else if (post.file.startsWith("past-")) card.dataset.group = "past";
       else if (post.file.startsWith("future-") || post.file.includes("near") || post.file.includes("will"))
-        card.dataset.group = "future";
+            card.dataset.group = "future";
+
+      // Group Grammar
+      else if (["nouns","adjectives","adverbs","pronouns","articles","conjunctions","quantifiers","prepositions","modal-verbs"]
+        .some(key => post.file.includes(key)))
+        card.dataset.group = "grammar";
+
       else card.dataset.group = "other";
 
       /* Kiểm tra Completed */
