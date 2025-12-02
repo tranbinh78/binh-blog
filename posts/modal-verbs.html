@@ -74,16 +74,20 @@
 
 <script>
 document.getElementById("toggle-answer").addEventListener("click", function () {
-  const answers = document.querySelectorAll(".answer-text");
+    
+    const btn = this; // nút bấm
+    const answers = document.querySelectorAll(".answer-text");
 
-  answers.forEach(a => {
-    a.style.display = (a.style.display === "none") ? "block" : "none";
-  });
+    answers.forEach(a => {
+        a.style.display = (a.style.display === "none" || a.style.display === "") 
+            ? "block" 
+            : "none";
+    });
 
-  this.textContent =
-    (answers[0].style.display === "none")
-    ? "👉 Hiện đáp án"
-    : "🙈 Ẩn đáp án";
+    // Kiểm tra phần tử đầu tiên để xác định trạng thái
+    const showing = answers[0].style.display === "block";
+
+    btn.textContent = showing ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
 });
 </script>
 
