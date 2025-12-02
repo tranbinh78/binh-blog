@@ -338,5 +338,51 @@ function setupAnswerToggle() {
 }
 </script>
 
+<script>
+(function () {
+  // Hàm toggle: bật/tắt tất cả phần .answer-text
+  function toggleAnswers() {
+    const answers = document.querySelectorAll('.answer-text');
+    if (!answers || answers.length === 0) {
+      console.warn('Không tìm thấy phần tử .answer-text để hiển thị/ẩn đáp án.');
+      return;
+    }
+
+    // Dùng computed style để biết hiện/ẩn thực tế
+    const currentlyHidden = window.getComputedStyle(answers[0]).display === 'none';
+
+    answers.forEach(a => {
+      // nếu phần tử có inline style display, ta override; nếu không có thì set/block
+      a.style.display = currentlyHidden ? 'block' : 'none';
+    });
+
+    // cập nhật text của nút (nếu tồn tại)
+    const btn = document.getElementById('toggle-answer');
+    if (btn) btn.innerText = currentlyHidden ? '🙈 Ẩn đáp án' : '👉 Hiện đáp án';
+  }
+
+  // Gắn event bắt mọi click; dùng closest để hỗ trợ click vào icon bên trong nút
+  document.addEventListener('click', function (ev) {
+    const btn = ev.target.closest && ev.target.closest('#toggle-answer');
+    if (btn) {
+      ev.preventDefault();
+      toggleAnswers();
+    }
+  });
+
+  // Option: nếu trang load nội dung động bằng fetch và bạn muốn mặc định ẩn hết
+  // khi nội dung vừa được chèn, có thể gọi lần đầu sau 200ms để ẩn nếu cần:
+  setTimeout(() => {
+    const answers = document.querySelectorAll('.answer-text');
+    if (answers.length) {
+      answers.forEach(a => a.style.display = 'none');
+      const btn = document.getElementById('toggle-answer');
+      if (btn) btn.innerText = '👉 Hiện đáp án';
+    }
+  }, 250);
+
+})();
+</script>
+  
 </body>
 </html>
