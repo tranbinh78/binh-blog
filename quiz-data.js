@@ -955,3 +955,133 @@ window.quizData["prepositions"] = {
     { question: "She will arrive ___ Monday morning.", options: ["on", "at", "in"], answer: 0, explain: "on Monday; in the morning → nhưng khi ghép → 'on Monday morning'."}
     ]
 };
+
+/* ============================
+   22. Modal Verbs – Động từ khuyết thiếu
+   ============================ */
+window.quizData["modal-verbs"] = {
+  title: "Bài tập – modal-verbs",
+  desc: "Chọn Động từ khuyết thiếu đúng trong câu.",
+  questions: [
+  {
+    question: "I ___ speak English when I was 7.",
+    options: ["can", "could", "may", "must"],
+    answer: "could",
+    explain: "'Could' diễn tả khả năng trong quá khứ."
+  },
+  {
+    question: "You ___ see a doctor. This looks serious.",
+    options: ["should", "might", "must", "can"],
+    answer: "should",
+    explain: "'Should' dùng để khuyên."
+  },
+  {
+    question: "He ___ be at home. I saw him leave.",
+    options: ["must", "should", "can't", "might"],
+    answer: "can't",
+    explain: "'Can't' = không thể (suy luận phủ định)."
+  },
+  {
+    question: "___ I open the window?",
+    options: ["May", "Must", "Should", "Would"],
+    answer: "May",
+    explain: "'May I...' dùng để xin phép lịch sự."
+  },
+  {
+    question: "You ___ drive so fast! It's dangerous.",
+    options: ["must", "mustn't", "should", "can"],
+    answer: "mustn't",
+    explain: "'Mustn't' diễn tả cấm tuyệt đối."
+  },
+  {
+    question: "She ___ play the piano very well.",
+    options: ["can", "must", "might", "should"],
+    answer: "can",
+    explain: "'Can' diễn tả khả năng hiện tại."
+  },
+  {
+    question: "We ___ finish the project today. It's the deadline.",
+    options: ["may", "have to", "might", "could"],
+    answer: "have to",
+    explain: "'Have to' = nghĩa vụ bắt buộc từ hoàn cảnh."
+  },
+  {
+    question: "They ___ come to the party. They're busy.",
+    options: ["must", "might not", "can", "should"],
+    answer: "might not",
+    explain: "'Might not' = khả năng không xảy ra."
+  },
+  {
+    question: "___ you help me with this exercise?",
+    options: ["Could", "Must", "Should", "Might"],
+    answer: "Could",
+    explain: "'Could you...' là cách nhờ lịch sự."
+  },
+  {
+    question: "We ___ go now or we’ll be late.",
+    options: ["might", "should", "could", "can"],
+    answer: "should",
+    explain: "'Should' dùng để khuyên."
+  },
+  {
+    question: "Students ___ wear uniforms at this school.",
+    options: ["may", "should", "must", "can"],
+    answer: "must",
+    explain: "'Must' = luật lệ bắt buộc."
+  },
+  {
+    question: "He ___ be very tired. He has worked all day.",
+    options: ["might", "should", "must", "could"],
+    answer: "must",
+    explain: "'Must' = suy luận chắc chắn."
+  },
+  {
+    question: "You ___ speak loudly here. It's a library.",
+    options: ["shouldn't", "must", "can", "might"],
+    answer: "shouldn't",
+    explain: "'Shouldn't' = không nên."
+  },
+  {
+    question: "___ I borrow your pen?",
+    options: ["Should", "Must", "May", "Would"],
+    answer: "May",
+    explain: "'May I' là xin phép lịch sự."
+  },
+  {
+    question: "He ___ play football when he was 5.",
+    options: ["could", "must", "might", "would"],
+    answer: "could",
+    explain: "'Could' = khả năng quá khứ."
+  },
+  {
+    question: "You ___ answer all the questions. Only five are required.",
+    options: ["mustn't", "don't have to", "can't", "may not"],
+    answer: "don't have to",
+    explain: "'Don't have to' = không cần thiết."
+  },
+  {
+    question: "It ___ rain later, so take an umbrella.",
+    options: ["might", "must", "should", "can"],
+    answer: "might",
+    explain: "'Might' = khả năng thấp."
+  },
+  {
+    question: "She ___ be the winner. She finished last.",
+    options: ["must", "can't", "should", "might"],
+    answer: "can't",
+    explain: "'Can't' = suy luận phủ định."
+  },
+  {
+    question: "We ___ arrive before 7. The show starts at 7.",
+    options: ["should", "might", "must", "may"],
+    answer: "should",
+    explain: "'Should' = lời khuyên."
+  },
+  {
+    question: "___ you pass me the salt, please?",
+    options: ["Might", "Should", "Would", "Must"],
+    answer: "Would",
+    explain: "'Would you...' = đề nghị lịch sự nhất."
+  }
+]
+};
