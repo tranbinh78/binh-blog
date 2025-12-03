@@ -1220,8 +1220,8 @@ window.quizData["determiners"] = {
    24. Gerunds - Infinitives
    ============================ */
 quizData["gerunds-infinitives"] = {
-     title: "Bài tập – Prepositions",
-     desc: "Chọn giới từ đúng trong câu.",
+     title: "Bài tập – Gerunds - Infinitives",
+     desc: "Chọn đáp án đúng trong câu.",
      questions: [
   {
     question: "1. She enjoys ___ books.",
