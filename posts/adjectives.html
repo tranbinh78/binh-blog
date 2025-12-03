@@ -1,113 +1,168 @@
-<h1>Adjectives – Tính từ</h1>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adjectives – Tính từ | Binh Blog</title>
 
-<p>Tính từ (Adjectives) là từ dùng để miêu tả tính chất, đặc điểm, màu sắc, kích thước… của danh từ.</p>
+  <style>
+    body{font-family:Inter, system-ui, Arial, sans-serif; margin:0; padding:24px; background:#fff;}
+    .container{max-width:980px; margin:0 auto; padding:0 20px;}
+    header{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+    h1{font-size:28px; margin:6px 0;}
+    .meta{color:#666; font-size:14px; margin-bottom:18px;}
+    .grid{display:flex; gap:24px;}
+    .left{width:260px;}
+    .card{background:#faf5ff;border-radius:10px;padding:18px;box-shadow:0 6px 20px rgba(120,80,200,0.08);}
+    .content{flex:1;}
+    .section-title{display:flex; align-items:center; gap:12px; margin-top:22px; margin-bottom:12px;}
 
-<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200"
-     style="width:100%; border-radius:12px; margin:20px 0;">
+    /* Exercise styles */
+    .exercise-box{margin-top:12px;}
+    button#toggle-answer{background:#e8dfff;border:1px solid #d7c7ff;padding:8px 12px;border-radius:8px; cursor:pointer;}
+    .answer-text{display:none; margin:6px 0 18px; padding:10px 12px; background:#f7fff5; border-left:4px solid #7bd389;}
+    .answer-text.show{display:block;}
+    p.question{margin:12px 0; color:#222;}
 
-<h2>1. Vị trí của tính từ</h2>
-<ul>
-  <li>✔ Đứng trước danh từ: <em>a <strong>beautiful</strong> girl</em></li>
-  <li>✔ Đứng sau động từ to be: <em>She is <strong>smart</strong>.</em></li>
-  <li>✔ Đứng sau động từ liên kết (look, seem, feel):  
-      <em>The soup tastes <strong>good</strong>.</em></li>
-</ul>
+    .quiz-button{display:inline-block;margin-top:14px;padding:10px 14px;background:#ead8ff;border-radius:10px;color:#4b2fb3;text-decoration:none;font-weight:700;}
 
-<h2>2. So sánh của tính từ</h2>
-<ul>
-  <li><strong>So sánh hơn:</strong> taller, bigger, more modern…</li>
-  <li><strong>So sánh nhất:</strong> the tallest, the biggest, the most modern…</li>
-</ul>
+    .related{background:#faf5ff;border-radius:10px;padding:12px;margin-top:18px;}
+    footer{margin-top:40px; text-align:center; color:#999; font-size:13px;}
 
-<h2>3. Các loại tính từ</h2>
-<ul>
-  <li><strong>Adjectives of quality:</strong> beautiful, long, happy</li>
-  <li><strong>Adjectives of quantity:</strong> many, much, few</li>
-  <li><strong>Possessive adjectives:</strong> my, your, his, her</li>
-  <li><strong>Demonstrative adjectives:</strong> this, that, these, those</li>
-  <li><strong>Interrogative adjectives:</strong> which, whose</li>
-</ul>
+    @media (max-width:880px){.grid{flex-direction:column}.left{width:100%}}
+  </style>
+</head>
 
-<hr>
+<body>
+  <div class="container">
 
-<h2>4. Bài tập – Chọn đáp án đúng (10 câu)</h2>
+    <!-- HEADER -->
+    <header>
+      <div style="width:56px;height:56px;background:#e9e7ff;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#4b2fb3">BB</div>
+      <div>
+        <h1>Adjectives – Tính từ</h1>
+        <div class="meta">📅 2025-12-04 • Category: Tiếng Anh</div>
+      </div>
+    </header>
 
-<button id="toggle-answer" style="
-  background:#d9d1ff;
-  padding:10px 16px;
-  border-radius:8px;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0;
-">👉 Hiện đáp án</button>
+    <div class="grid">
 
-<div id="exercise-box" style="margin-top:15px;">
+      <!-- SIDEBAR -->
+      <aside class="left">
+        <div class="card">
+          <div style="width:72px;height:72px;background:#fff;border-radius:50%;margin:0 auto 10px;
+          display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700">🙂</div>
 
-  <p>1. She is a very ___ student. (careful)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> careful</p>
+          <div style="text-align:center;font-weight:700">Xin chào, mình là Bình 👋</div>
+          <div style="color:#666;margin-top:8px;font-size:14px">
+            Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.
+          </div>
+        </div>
+      </aside>
 
-  <p>2. It was a ___ decision. (easy)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> easy</p>
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <article class="card" style="padding:22px;">
 
-  <p>3. This is a ___ example. (clear)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> clear</p>
+          <h2 style="margin-top:0">Tính từ là gì?</h2>
+          <p style="color:#333; line-height:1.6">
+            Tính từ (adjective) là từ dùng để mô tả tính chất, đặc điểm của danh từ.
+          </p>
 
-  <p>4. The movie was really ___ . (excite)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> exciting</p>
+          <h3 class="section-title">
+            <span style="width:6px;height:28px;background:#7b61ff;display:inline-block;border-radius:2px"></span>
+            Bài tập – Chọn tính từ đúng (15 câu)
+          </h3>
 
-  <p>5. He gave a very ___ explanation. (short)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> short</p>
+          <!-- BUTTON -->
+          <button id="toggle-answer">👉 Hiện đáp án</button>
 
-  <p>6. They live in a ___ house. (big)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> big</p>
+          <!-- EXERCISE -->
+          <div id="exercise-box" class="exercise-box">
 
-  <p>7. It's quite a ___ problem. (serious)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> serious</p>
+            <p class="question">1. She is very ______ today. (happy)</p>
+            <p class="answer-text">Đáp án: happy</p>
 
-  <p>8. She wore a ___ dress. (beautiful)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> beautiful</p>
+            <p class="question">2. This test is too ______. (difficult)</p>
+            <p class="answer-text">Đáp án: difficult</p>
 
-  <p>9. His answer was ___ and useful. (brief)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> brief</p>
+            <p class="question">3. The weather is ______ this morning. (cold)</p>
+            <p class="answer-text">Đáp án: cold</p>
 
-  <p>10. The task is very ___ for beginners. (hard)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> hard</p>
+            <p class="question">4. He is a very ______ man. (strong)</p>
+            <p class="answer-text">Đáp án: strong</p>
 
-</div>
+            <p class="question">5. Her house is ______ than mine. (big)</p>
+            <p class="answer-text">Đáp án: bigger</p>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const btn = document.getElementById('toggle-answer');
-  if (!btn) return;
+            <p class="question">6. This is the ______ movie I’ve ever seen. (good)</p>
+            <p class="answer-text">Đáp án: best</p>
 
-  btn.addEventListener('click', () => {
-    const answers = Array.from(document.querySelectorAll('.answer-text'));
-    if (answers.length === 0) return;
+            <p class="question">7. That girl is extremely ______. (beautiful)</p>
+            <p class="answer-text">Đáp án: beautiful</p>
 
-    const allHidden = answers.every(a => getComputedStyle(a).display === 'none');
+            <p class="question">8. This exercise is ______ than the last one. (easy)</p>
+            <p class="answer-text">Đáp án: easier</p>
 
-    answers.forEach(a => {
-      a.style.display = allHidden ? 'block' : 'none';
-    });
+            <p class="question">9. He is the ______ student in the class. (smart)</p>
+            <p class="answer-text">Đáp án: smartest</p>
 
-    btn.textContent = allHidden ? '🙈 Ẩn đáp án' : '👉 Hiện đáp án';
-  });
-});
-</script>
+            <p class="question">10. My brother is very ______. (funny)</p>
+            <p class="answer-text">Đáp án: funny</p>
 
-<div style="margin-top:25px;">
-  <a href="/binh-blog/quiz.html?type=adjectives"
-     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;">
-     👉 Làm bài tập: ADJECTIVES
-  </a>
-</div>
+            <p class="question">11. His idea is really ______. (interesting)</p>
+            <p class="answer-text">Đáp án: interesting</p>
 
-<hr>
+            <p class="question">12. These shoes are too ______. (expensive)</p>
+            <p class="answer-text">Đáp án: expensive</p>
 
-<h3>Bài viết liên quan</h3>
-<ul>
-  <li><a href="/binh-blog/post.html?file=nouns.html">Nouns – Danh từ</a></li>
-  <li><a href="/binh-blog/post.html?file=adverbs.html">Adverbs – Trạng từ</a></li>
-  <li><a href="/binh-blog/post.html?file=pronouns.html">Pronouns – Đại từ</a></li>
-</ul>
+            <p class="question">13. She looks ______ in that dress. (pretty)</p>
+            <p class="answer-text">Đáp án: pretty</p>
+
+            <p class="question">14. This road is ______ than before. (narrow)</p>
+            <p class="answer-text">Đáp án: narrower</p>
+
+            <p class="question">15. He is ______ at math. (bad)</p>
+            <p class="answer-text">Đáp án: bad</p>
+
+          </div>
+
+          <a class="quiz-button" href="/binh-blog/quiz.html?type=adjectives">
+            👉 Làm bài tập: ADJECTIVES
+          </a>
+
+          <div class="related">
+            <strong>Bài viết liên quan</strong>
+            <ul style="margin-left:20px;color:#4b2fb3">
+              <li><a href="/binh-blog/post.html?file=nouns.html">Nouns – Danh từ</a></li>
+              <li><a href="/binh-blog/post.html?file=adverbs.html">Adverbs – Trạng từ</a></li>
+              <li><a href="/binh-blog/post.html?file=pronouns.html">Pronouns – Đại từ</a></li>
+            </ul>
+          </div>
+
+        </article>
+      </main>
+
+    </div>
+
+    <footer>©2025 — Binh Blog</footer>
+  </div>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('toggle-answer');
+      const box = document.getElementById('exercise-box');
+      if(!btn || !box) return;
+      const answers = box.querySelectorAll('.answer-text');
+
+      btn.addEventListener('click', () => {
+        const hidden = [...answers].every(a => !a.classList.contains('show'));
+        answers.forEach(a => a.classList.toggle('show', hidden));
+        btn.textContent = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+      });
+    })();
+  </script>
+
+</body>
+</html>
