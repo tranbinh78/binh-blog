@@ -385,7 +385,123 @@ window.quizData["future-perfect"] = {
 };
 
 /* ============================
-   13. NEAR FUTURE – 20 câu
+   13. FUTURE PERFECT CONTINUOUS – 20 câu
+   ============================ */
+window.quizData["future-perfect-continuous"] = {
+  title: "Bài tập – Future Perfect continuous",
+  desc: "Chọn đáp án đúng cho thì Tương lai hoàn thành tiếp diễn.",
+  questions: [
+{
+    question: "By 2025, I ______ here for 10 years.",
+    options: ["will be working", "will have worked", "will have been working", "am going to work"],
+    answer: "will have been working",
+    explanation: "Future Perfect Continuous = will have been + V-ing."
+  },
+  {
+    question: "She ______ for 3 hours by the time you arrive.",
+    options: ["will study", "will have studied", "will have been studying", "is studying"],
+    answer: "will have been studying",
+    explanation: "Diễn tả hành động kéo dài đến một mốc tương lai."
+  },
+  {
+    question: "They ______ in Hanoi for 2 years by next June.",
+    options: ["will live", "will be living", "will have been living", "have lived"],
+    answer: "will have been living",
+    explanation: "for + khoảng thời gian → hành động kéo dài."
+  },
+  {
+    question: "He ______ for 6 hours by midnight.",
+    options: ["will drive", "will have driven", "will have been driving", "is driving"],
+    answer: "will have been driving"
+  },
+  {
+    question: "We ______ for an hour by 9 PM.",
+    options: ["will wait", "will be waiting", "will have been waiting", "wait"],
+    answer: "will have been waiting"
+  },
+  {
+    question: "My mom ______ dinner for 2 hours by then.",
+    options: ["will cook", "will be cooking", "will have been cooking", "cooks"],
+    answer: "will have been cooking"
+  },
+  {
+    question: "You ______ for 10 hours by the time I return.",
+    options: ["sleep", "will sleep", "will have been sleeping", "will be slept"],
+    answer: "will have been sleeping"
+  },
+  {
+    question: "The kids ______ outside for 3 hours.",
+    options: ["will play", "will be playing", "will have been playing", "have played"],
+    answer: "will have been playing"
+  },
+  {
+    question: "My dad ______ the car for 2 hours by noon.",
+    options: ["will fix", "will have fixed", "will have been fixing", "is fixing"],
+    answer: "will have been fixing"
+  },
+  {
+    question: "I ______ this book for a week by tomorrow.",
+    options: ["read", "will read", "will have read", "will have been reading"],
+    answer: "will have been reading"
+  },
+
+  /* thêm 10 câu nữa để đủ 20 câu */
+
+  {
+    question: "By next year, she ______ English for 5 years.",
+    options: ["will study", "will have studied", "will have been studying", "studies"],
+    answer: "will have been studying"
+  },
+  {
+    question: "They ______ this project for months by the time it ends.",
+    options: ["will work", "will have worked", "will have been working", "are working"],
+    answer: "will have been working"
+  },
+  {
+    question: "He ______ football for 3 hours by 6 PM.",
+    options: ["will play", "will be playing", "will have been playing", "plays"],
+    answer: "will have been playing"
+  },
+  {
+    question: "She ______ for 30 minutes by the time the bus comes.",
+    options: ["will wait", "will have waited", "will have been waiting", "waits"],
+    answer: "will have been waiting"
+  },
+  {
+    question: "By this time tomorrow, my sister ______ for the exam all day.",
+    options: ["will study", "will have studied", "will have been studying", "studies"],
+    answer: "will have been studying"
+  },
+  {
+    question: "You ______ for too long by the time the doctor sees you.",
+    options: ["will wait", "will have been waiting", "wait", "will be waited"],
+    answer: "will have been waiting"
+  },
+  {
+    question: "She ______ here for hours by the time we arrive.",
+    options: ["will sit", "will be sitting", "will have been sitting", "sits"],
+    answer: "will have been sitting"
+  },
+  {
+    question: "They ______ around the city for 5 hours.",
+    options: ["will walk", "will have walked", "will have been walking", "walk"],
+    answer: "will have been walking"
+  },
+  {
+    question: "He ______ the piano for years by the time he turns 18.",
+    options: ["will practice", "will be practicing", "will have been practicing", "practices"],
+    answer: "will have been practicing"
+  },
+  {
+    question: "I ______ this game for too long by tonight.",
+    options: ["will play", "will be playing", "will have been playing", "play"],
+    answer: "will have been playing"
+  }
+]
+};
+     
+/* ============================
+   14. NEAR FUTURE – 20 câu
    ============================ */
 
 window.quizData["near-future"] = {
@@ -416,7 +532,7 @@ window.quizData["near-future"] = {
 };
 
 /* ============================
-   14. Will vs Be going to – 20 câu
+   15. Will vs Be going to – 20 câu
    ============================ */
 
 window.quizData["will-vs-going-to"] = {
@@ -447,7 +563,7 @@ window.quizData["will-vs-going-to"] = {
 };
 
 /* ============================
-   15. Phần Nouns - Danh từ
+   16. Phần Nouns - Danh từ
    ============================ */
 
 window.quizData["nouns"] = {
@@ -478,7 +594,7 @@ window.quizData["nouns"] = {
 };
 
 /* ============================
-   16. Adjectives - Tính từ
+   17. Adjectives - Tính từ
    ============================ */
 window.quizData["adjectives"] = {
   title: "Bài tập – Adjectives (Tính từ)",
@@ -508,7 +624,7 @@ window.quizData["adjectives"] = {
 };
 
 /* ============================
-   17. Adverbs - Trạng từ
+   18. Adverbs - Trạng từ
    ============================ */
 window.quizData["adverbs"] = {
   title: "Bài tập – Adverbs",
@@ -528,7 +644,7 @@ window.quizData["adverbs"] = {
 };
 
 /* ============================
-   18. Pronouns - Đại từ
+   19. Pronouns - Đại từ
    ============================ */
 window.quizData["pronouns"] = {
   title: "Bài tập – Pronouns (Đại từ)",
@@ -618,7 +734,7 @@ window.quizData["pronouns"] = {
 };
 
 /* ============================
-   19. Articles - Mạo từ
+   20. Articles - Mạo từ
    ============================ */
 window.quizData["articles"] = {
   title: "Bài tập – Articles",
@@ -748,7 +864,7 @@ window.quizData["articles"] = {
 };
 
 /* ============================
-   19. Conjunctions - Liên từ
+   21. Conjunctions - Liên từ
    ============================ */
 window.quizData["conjunctions"] = {
   title: "Conjunctions",
@@ -857,7 +973,7 @@ window.quizData["conjunctions"] = {
 };
 
 /* ============================
-   20. Quantifiers – Định lượng từ
+   22. Quantifiers – Định lượng từ
    ============================ */
 window.quizData["quantifiers"] = {
   title: "Bài tập – Quantifiers",
@@ -927,7 +1043,7 @@ window.quizData["quantifiers"] = {
 };
 
 /* ============================
-   21. Prepositions – Giới từ
+   23. Prepositions – Giới từ
    ============================ */
 window.quizData["prepositions"] = {
   title: "Bài tập – Prepositions",
@@ -957,7 +1073,7 @@ window.quizData["prepositions"] = {
 };
 
 /* ============================
-   22. Modal Verbs – Động từ khuyết thiếu
+   24. Modal Verbs – Động từ khuyết thiếu
    ============================ */
 window.quizData["modal-verbs"] = {
   title: "Bài tập – modal-verbs",
@@ -1087,7 +1203,7 @@ window.quizData["modal-verbs"] = {
 };
 
 /* ============================
-   23. Determiners (Từ hạn định)
+   25. Determiners (Từ hạn định)
    ============================ */
 window.quizData["determiners"] = {
   title: "Bài tập – Determiners (Từ hạn định)",
@@ -1217,7 +1333,7 @@ window.quizData["determiners"] = {
 };
 
 /* ============================
-   24. Gerunds - Infinitives
+   26. Gerunds - Infinitives
    ============================ */
 quizData["gerunds-infinitives"] = {
      title: "Bài tập – Gerunds - Infinitives",
@@ -1347,7 +1463,7 @@ quizData["gerunds-infinitives"] = {
 };
 
 /* ============================
-   25. Comparative & Superlative – So sánh hơn & so sánh nhất
+   27. Comparative & Superlative – So sánh hơn & so sánh nhất
    ============================ */
 window.quizData["comparatives-superlatives"] = {
   title: "Bài tập – Comparatives & Superlatives",
