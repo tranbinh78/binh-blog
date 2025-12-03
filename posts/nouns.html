@@ -1,83 +1,159 @@
-<h1>Nouns – Danh từ</h1>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nouns – Danh từ | Binh Blog</title>
+  <style>
+    body{font-family:Inter, system-ui, Arial, sans-serif; margin:0; padding:24px; background:#fff;}
+    .container{max-width:980px; margin:0 auto; padding:0 20px;}
+    header{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+    h1{font-size:28px; margin:6px 0;}
+    .meta{color:#666; font-size:14px; margin-bottom:18px;}
+    .grid{display:flex; gap:24px;}
+    .left{width:260px;}
+    .card{background:#faf5ff;border-radius:10px;padding:18px;box-shadow:0 6px 20px rgba(120,80,200,0.08);}
+    .content{flex:1;}
+    .section-title{display:flex; align-items:center; gap:12px; margin-top:22px; margin-bottom:12px;}
+    .exercise-box{margin-top:12px;}
+    button#toggle-answer{background:#e8dfff;border:1px solid #d7c7ff;padding:8px 12px;border-radius:8px; cursor:pointer;}
+    .answer-text{display:none; margin:6px 0 18px; padding:10px 12px; background:#f7fff5; border-left:4px solid #7bd389;}
+    .answer-text.show{display:block;}
+    p.question{margin:12px 0; color:#222;}
+    .quiz-button{display:inline-block;margin-top:14px;padding:10px 14px;background:#ead8ff;border-radius:10px;color:#4b2fb3;text-decoration:none;font-weight:700;}
+    .related{background:#faf5ff;border-radius:10px;padding:12px;margin-top:18px;}
+    footer{margin-top:40px; text-align:center; color:#999; font-size:13px;}
+    @media (max-width:880px){.grid{flex-direction:column}.left{width:100%}}
+  </style>
+</head>
 
-<p>Danh từ (noun) là từ dùng để gọi tên người, vật, địa điểm, ý tưởng,…</p>
+<body>
+  <div class="container">
 
-<h2>1. Các loại danh từ</h2>
-<ul>
-  <li><strong>Danh từ chung</strong>: teacher, city, dog…</li>
-  <li><strong>Danh từ riêng</strong>: John, Vietnam, Paris…</li>
-  <li><strong>Danh từ đếm được</strong>: book, apple…</li>
-  <li><strong>Danh từ không đếm được</strong>: water, rice, money…</li>
-</ul>
+    <header>
+      <div style="width:56px;height:56px;background:#e9e7ff;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#4b2fb3">BB</div>
+      <div>
+        <h1>Nouns – Danh từ</h1>
+        <div class="meta">📅 2025-12-04 • Category: Tiếng Anh</div>
+      </div>
+    </header>
 
-<h2>2. Quy tắc thêm “s/es”</h2>
-<ul>
-  <li>book → books</li>
-  <li>class → classes</li>
-  <li>baby → babies</li>
-</ul>
+    <div class="grid">
 
-<h2>3. Bài tập – Điền dạng đúng của danh từ (15 câu)</h2>
+      <!-- SIDEBAR -->
+      <aside class="left">
+        <div class="card">
+          <div style="width:72px;height:72px;background:#fff;border-radius:50%;margin:0 auto 10px;
+          display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700">🙂</div>
 
-<button data-toggle="answers" style="
-  background:#d9d1ff;padding:10px 16px;border-radius:8px;
-  border:none;font-weight:600;cursor:pointer;margin:10px 0;">
-👉 Hiện đáp án
-</button>
+          <div style="text-align:center;font-weight:700">Xin chào, mình là Bình 👋</div>
+          <div style="color:#666;margin-top:8px;font-size:14px">
+            Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.
+          </div>
+        </div>
+      </aside>
 
-<div class="exercise-box" style="margin-top:15px;">
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <article class="card" style="padding:22px;">
 
-  <p>1. She has two _______ (child).</p>
-  <p class="answer-text" style="display:none;">children</p>
+          <h2 style="margin-top:0">Danh từ là gì?</h2>
+          <p style="color:#333;line-height:1.6">
+            Danh từ (noun) là từ dùng để chỉ người, vật, sự việc, địa điểm, cảm xúc…
+          </p>
 
-  <p>2. The _______ (city) are very crowded.</p>
-  <p class="answer-text" style="display:none;">cities</p>
+          <h3 class="section-title">
+            <span style="width:6px;height:28px;background:#7b61ff;display:inline-block;border-radius:2px"></span>
+            Bài tập – Điền dạng đúng của danh từ (15 câu)
+          </h3>
 
-  <p>3. I need some _______ (water).</p>
-  <p class="answer-text" style="display:none;">(uncountable — water)</p>
+          <button id="toggle-answer">👉 Hiện đáp án</button>
 
-  <p>4. They bought three _______ (book).</p>
-  <p class="answer-text" style="display:none;">books</p>
+          <div id="exercise-box" class="exercise-box">
 
-  <p>5. My _______ (foot) hurts.</p>
-  <p class="answer-text" style="display:none;">feet</p>
+            <p class="question">1. She has two ______ (child).</p>
+            <p class="answer-text">Đáp án: children</p>
 
-  <p>6. The _______ (baby) is crying.</p>
-  <p class="answer-text" style="display:none;">baby</p>
+            <p class="question">2. The ______ (city) are very crowded.</p>
+            <p class="answer-text">Đáp án: cities</p>
 
-  <p>7. How many _______ (person) are there?</p>
-  <p class="answer-text" style="display:none;">people</p>
+            <p class="question">3. I need some ______ (water).</p>
+            <p class="answer-text">Đáp án: water</p>
 
-  <p>8. We visited many _______ (country).</p>
-  <p class="answer-text" style="display:none;">countries</p>
+            <p class="question">4. They bought three ______ (book).</p>
+            <p class="answer-text">Đáp án: books</p>
 
-  <p>9. The _______ (dish) are clean.</p>
-  <p class="answer-text" style="display:none;">dishes</p>
+            <p class="question">5. My ______ (foot) hurts.</p>
+            <p class="answer-text">Đáp án: feet</p>
 
-  <p>10. There is little _______ (milk) left.</p>
-  <p class="answer-text" style="display:none;">(uncountable — milk)</p>
+            <p class="question">6. The ______ (baby) is crying.</p>
+            <p class="answer-text">Đáp án: baby</p>
 
-  <p>11. These _______ (woman) are teachers.</p>
-  <p class="answer-text" style="display:none;">women</p>
+            <p class="question">7. How many ______ (person) are there?</p>
+            <p class="answer-text">Đáp án: people</p>
 
-  <p>12. I saw two _______ (mouse) in the kitchen.</p>
-  <p class="answer-text" style="display:none;">mice</p>
+            <p class="question">8. We visited many ______ (country).</p>
+            <p class="answer-text">Đáp án: countries</p>
 
-  <p>13. She has long _______ (tooth).</p>
-  <p class="answer-text" style="display:none;">teeth</p>
+            <p class="question">9. The ______ (dish) are clean.</p>
+            <p class="answer-text">Đáp án: dishes</p>
 
-  <p>14. The _______ (bus) is full.</p>
-  <p class="answer-text" style="display:none;">bus</p>
+            <p class="question">10. There is little ______ (milk) left.</p>
+            <p class="answer-text">Đáp án: milk</p>
 
-  <p>15. They have five _______ (car).</p>
-  <p class="answer-text" style="display:none;">cars</p>
+            <p class="question">11. These ______ (woman) are teachers.</p>
+            <p class="answer-text">Đáp án: women</p>
 
-</div>
+            <p class="question">12. I saw two ______ (mouse) in the kitchen.</p>
+            <p class="answer-text">Đáp án: mice</p>
 
-<div style="margin-top:25px;">
-  <a href="/binh-blog/quiz.html?type=nouns"
-     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;
-     font-weight:700;display:inline-block;">
-     👉 Làm bài tập: NOUNS
-  </a>
-</div>
+            <p class="question">13. She has long ______ (tooth).</p>
+            <p class="answer-text">Đáp án: teeth</p>
+
+            <p class="question">14. The ______ (bus) is full.</p>
+            <p class="answer-text">Đáp án: bus</p>
+
+            <p class="question">15. They have five ______ (car).</p>
+            <p class="answer-text">Đáp án: cars</p>
+
+          </div>
+
+          <a class="quiz-button" href="/binh-blog/quiz.html?type=nouns">
+            👉 Làm bài tập: NOUNS
+          </a>
+
+          <div class="related">
+            <strong>Bài viết liên quan</strong>
+            <ul style="margin-left:20px;color:#4b2fb3">
+              <li><a href="/binh-blog/post.html?file=adjectives.html">Adjectives – Tính từ</a></li>
+              <li><a href="/binh-blog/post.html?file=adverbs.html">Adverbs – Trạng từ</a></li>
+              <li><a href="/binh-blog/post.html?file=pronouns.html">Pronouns – Đại từ</a></li>
+            </ul>
+          </div>
+
+        </article>
+      </main>
+
+    </div>
+
+    <footer>©2025 — Binh Blog</footer>
+  </div>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('toggle-answer');
+      const box = document.getElementById('exercise-box');
+      if(!btn || !box) return;
+      const answers = box.querySelectorAll('.answer-text');
+
+      btn.addEventListener('click', () => {
+        const hidden = [...answers].every(a => !a.classList.contains('show'));
+        answers.forEach(a => a.classList.toggle('show', hidden));
+        btn.textContent = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+      });
+    })();
+  </script>
+
+</body>
+</html>
