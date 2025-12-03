@@ -1,272 +1,151 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bài viết | Binh Blog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài viết • Binh Blog</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Highlight.js -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
+  <link rel="stylesheet" href="../assets/style.css">
 
   <style>
-    body {
-      font-family: "Be Vietnam Pro", sans-serif;
-      background: #fafafa;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      line-height: 1.65;
-    }
-
-    .post-layout {
-      max-width: 1150px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: flex;
-      gap: 40px;
-    }
-
-    /* SIDEBAR */
-    #sidebar {
-      flex: 1;
-      background: #f1ebff;
-      border: 1px solid #e1d5ff;
-      border-radius: 12px;
-      padding: 20px;
-      height: fit-content;
-      position: sticky;
-      top: 20px;
-      text-align: center;
-    }
-
-    #sidebar img {
-      width: 80px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-
-    #post-article {
-      flex: 3;
-    }
-
-    /* TITLES */
-    #post-title {
-      font-size: 32px;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    .meta {
-      color: #555;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    /* THUMBNAIL */
-    .thumb {
-      width: 100%;
-      border-radius: 14px;
-      margin: 22px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    /* RELATED */
-    .related-box {
-      background: #f7f3ff;
-      padding: 18px;
-      margin-top: 40px;
-      border-radius: 12px;
-      border: 1px solid #e1d4ff;
-    }
-
-    #share-box button {
-      padding: 10px 15px;
-      border-radius: 8px;
-      background: #e7dbff;
-      border: 1px solid #c5b0ff;
-      cursor: pointer;
-    }
-
-    /* ANSWERS */
     .answer-text {
-      display: none;
-      background: #eefaff;
-      padding: 8px 14px;
-      border-left: 4px solid #3bb4d8;
-      margin: 4px 0 15px;
-      border-radius: 6px;
+        display: none;
+        background: #f6f0ff;
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        border-left: 4px solid #a67cff;
+        border-radius: 6px;
+    }
+    #toggle-answer {
+        background: #d8c7ff;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        margin: 10px 0;
     }
   </style>
 </head>
 
 <body>
 
-<div class="post-layout">
-
-  <!-- SIDEBAR -->
-  <aside id="sidebar">
-    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
-    <h3>Xin chào, mình là Bình 👋</h3>
-    <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
-    <p>
-      <a href="https://facebook.com/binh.tran.599839" target="_blank">Facebook</a> ·
-      <a href="https://github.com/tranbin78" target="_blank">GitHub</a>
-    </p>
-  </aside>
-
-  <!-- MAIN CONTENT -->
-  <main id="post-article">
-    <h1 id="post-title"></h1>
-    <p class="meta">
-      <span id="post-date"></span> • 
-      <span id="post-category"></span>
-    </p>
-
-    <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
-
-    <div id="post-content">Đang tải nội dung...</div>
-
-    <div id="related-posts" class="related-box" style="margin-top:40px;">
-      <h3>Bài viết liên quan</h3>
-      <div id="related-list"></div>
-    </div>
-
-    <div id="post-nav" style="margin-top:40px; display:flex; justify-content:space-between;">
-      <span id="prev-post"></span>
-      <span id="next-post"></span>
-    </div>
-
-    <div id="share-box" style="margin-top:25px;">
-      <button onclick="shareFB()">📘 Chia sẻ Facebook</button>
-      <button onclick="shareZalo()">💬 Chia sẻ Zalo</button>
-      <button onclick="copyLink()">🔗 Copy link</button>
-    </div>
-  </main>
-
-</div>
+  <div id="post-container">
+    <div id="post-content"></div>
+  </div>
 
 <script>
-/* Get ?file=... */
-const params = new URLSearchParams(window.location.search);
-const file = params.get("file");
+// =========================================
+// 1) LOAD NỘI DUNG FILE BÀI HỌC
+// =========================================
+async function loadPost() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const file = urlParams.get("file");
 
-if (!file) {
-  document.getElementById("post-content").innerHTML = "<p>Lỗi: không tìm thấy bài viết.</p>";
-}
+    if (!file) {
+        document.getElementById("post-content").innerHTML = "<p>Không tìm thấy bài viết.</p>";
+        return;
+    }
 
-/* LOAD POSTS.JSON */
-fetch("posts/posts.json")
-  .then(res => res.json())
-  .then(posts => {
-    const post = posts.find(p => p.file === file);
-    if (!post) return;
-
-    document.getElementById("post-title").textContent = post.title;
-    document.getElementById("post-date").textContent = "📅 " + post.date;
-    document.getElementById("post-category").textContent = "📂 " + post.category;
-    document.getElementById("post-thumb").src = post.thumbnail;
-
-    /* LOAD HTML CONTENT */
-    fetch("posts/" + post.file)
-      .then(res => res.text())
-      .then(html => {
+    try {
+        let response = await fetch("./" + file);
+        let html = await response.text();
         document.getElementById("post-content").innerHTML = html;
 
-        // 🔥 KÍCH HOẠT TOGGLE ĐÁP ÁN SAU KHI LOAD HTML
-        activateAnswerToggle();
+        autoFixAnswers(); // chuẩn hóa phần câu trả lời
+    } catch (err) {
+        document.getElementById("post-content").innerHTML = "<p>Lỗi tải bài viết.</p>";
+        console.error(err);
+    }
+}
 
-        // LOAD RELATED
-        const related = posts.filter(p => p.category === post.category && p.file !== post.file).slice(0, 3);
-        if (related.length === 0) {
-          document.getElementById("related-posts").style.display = "none";
-        } else {
-          const list = document.getElementById("related-list");
-          related.forEach(r => {
-            list.innerHTML += `<div><a href="post.html?file=${r.file}">${r.title}</a></div>`;
-          });
+loadPost();
+
+
+// =========================================
+// 2) AUTO FIX PHẦN ĐÁP ÁN – CHUẨN HOÁ 100%
+// =========================================
+
+function autoFixAnswers() {
+
+    const content = document.getElementById("post-content");
+    if (!content) return;
+
+    // tìm tiêu đề mục đáp án
+    const answerHeader = [...content.querySelectorAll("h2, h3, h4")]
+        .find(h => h.textContent.toLowerCase().includes("đáp án"));
+
+    if (!answerHeader) return;  // không có phần đáp án → bỏ qua
+
+    // tạo exercise-box nếu chưa có
+    let box = content.querySelector("#exercise-box");
+    if (!box) {
+        box = document.createElement("div");
+        box.id = "exercise-box";
+        answerHeader.insertAdjacentElement("afterend", box);
+    }
+
+    // gom toàn bộ phần tử từ sau header cho đến header kế tiếp
+    let cur = answerHeader.nextElementSibling;
+    let collected = [];
+
+    while (cur && !["H2","H3","H4"].includes(cur.tagName)) {
+        collected.push(cur);
+        cur = cur.nextElementSibling;
+    }
+
+    // đưa vào box
+    collected.forEach(el => box.appendChild(el));
+
+    // chuẩn hóa từng câu trả lời
+    const paras = box.querySelectorAll("p");
+
+    paras.forEach(p => {
+        // nếu chưa có answer-text ngay sau → tạo mới
+        if (!p.nextElementSibling || !p.nextElementSibling.classList.contains("answer-text")) {
+
+            const hasAnswerInside = p.innerHTML.toLowerCase().includes("đáp án:");
+            if (!hasAnswerInside) return;
+
+            let ans = document.createElement("p");
+            ans.className = "answer-text";
+            ans.innerHTML = p.innerHTML;  // lấy toàn bộ nội dung
+            p.insertAdjacentElement("afterend", ans);
+
+            // xoá đáp án gốc trong câu hỏi
+            p.innerHTML = p.innerHTML.split("Đáp án:")[0].trim();
         }
-
-        // PREV / NEXT
-        const index = posts.findIndex(p => p.file === file);
-
-        if (index > 0) {
-          const prev = posts[index - 1];
-          document.getElementById("prev-post").innerHTML =
-            `⬅ <a href="post.html?file=${prev.file}">${prev.title}</a>`;
-        }
-
-        if (index < posts.length - 1) {
-          const next = posts[index + 1];
-          document.getElementById("next-post").innerHTML =
-            `<a href="post.html?file=${next.file}">${next.title}</a> ➡`;
-        }
-      });
-  });
-
-
-/* ⭐⭐ FUNCTION: Toggle đáp án ⭐⭐ */
-function activateAnswerToggle() {
-  const btn = document.getElementById("toggle-answer");
-  const answers = document.querySelectorAll(".answer-text");
-
-  if (!btn || answers.length === 0) return;
-
-  btn.addEventListener("click", () => {
-    const show = [...answers].every(a => a.style.display === "none" || a.style.display === "");
-    answers.forEach(a => a.style.display = show ? "block" : "none");
-    btn.textContent = show ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-  });
-}
-
-/* SHARE BUTTONS */
-function shareFB() {
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`, "_blank");
-}
-function shareZalo() {
-  window.open(`https://zalo.me/share?url=${encodeURIComponent(location.href)}`, "_blank");
-}
-function copyLink() {
-  navigator.clipboard.writeText(window.location.href);
-  alert("Đã copy link bài viết!");
-}
-</script>
-<script>
-// Tự tạo answer-text cho các bài Tenses nếu thiếu
-document.addEventListener("DOMContentLoaded", () => {
-    const exBox = document.querySelector("#exercise-box");
-    if (!exBox) return;
-
-    const items = Array.from(exBox.querySelectorAll("p")).filter(p => !p.classList.contains("answer-text"));
-
-    items.forEach(p => {
-        // Nếu câu đã có đáp án => bỏ qua
-        if (p.nextElementSibling && p.nextElementSibling.classList.contains("answer-text")) return;
-
-        // Nếu không có đáp án -> tạo placeholder
-        const ans = document.createElement("p");
-        ans.className = "answer-text";
-        ans.style.display = "none";
-        ans.innerHTML = "<strong>Đáp án:</strong> (đang cập nhật)";
-        p.insertAdjacentElement("afterend", ans);
     });
-});
 
-// Toggle đáp án
-document.addEventListener("click", function (e) {
-    if (!e.target.closest("#toggle-answer")) return;
+    // tạo nút toggle nếu chưa có
+    if (!content.querySelector("#toggle-answer")) {
+        let btn = document.createElement("button");
+        btn.id = "toggle-answer";
+        btn.textContent = "👉 Hiện đáp án";
+        answerHeader.insertAdjacentElement("afterend", btn);
+    }
+}
+
+
+// =========================================
+// 3) NÚT ẨN / HIỆN ĐÁP ÁN
+// =========================================
+
+document.addEventListener("click", e => {
+    if (e.target.id !== "toggle-answer") return;
 
     const answers = document.querySelectorAll(".answer-text");
     if (!answers.length) return;
 
-    const isHidden = answers[0].style.display === "none";
+    const showing = answers[0].style.display === "block";
 
-    answers.forEach(a => a.style.display = isHidden ? "block" : "none");
+    answers.forEach(a => {
+        a.style.display = showing ? "none" : "block";
+    });
 
-    e.target.textContent = isHidden ? "🔒 Ẩn đáp án" : "👉 Hiện đáp án";
+    e.target.textContent = showing ? "👉 Hiện đáp án" : "🔒 Ẩn đáp án";
 });
 </script>
+
 </body>
 </html>
