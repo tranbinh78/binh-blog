@@ -233,6 +233,40 @@ function copyLink() {
   alert("Đã copy link bài viết!");
 }
 </script>
+<script>
+// Tự tạo answer-text cho các bài Tenses nếu thiếu
+document.addEventListener("DOMContentLoaded", () => {
+    const exBox = document.querySelector("#exercise-box");
+    if (!exBox) return;
 
+    const items = Array.from(exBox.querySelectorAll("p")).filter(p => !p.classList.contains("answer-text"));
+
+    items.forEach(p => {
+        // Nếu câu đã có đáp án => bỏ qua
+        if (p.nextElementSibling && p.nextElementSibling.classList.contains("answer-text")) return;
+
+        // Nếu không có đáp án -> tạo placeholder
+        const ans = document.createElement("p");
+        ans.className = "answer-text";
+        ans.style.display = "none";
+        ans.innerHTML = "<strong>Đáp án:</strong> (đang cập nhật)";
+        p.insertAdjacentElement("afterend", ans);
+    });
+});
+
+// Toggle đáp án
+document.addEventListener("click", function (e) {
+    if (!e.target.closest("#toggle-answer")) return;
+
+    const answers = document.querySelectorAll(".answer-text");
+    if (!answers.length) return;
+
+    const isHidden = answers[0].style.display === "none";
+
+    answers.forEach(a => a.style.display = isHidden ? "block" : "none");
+
+    e.target.textContent = isHidden ? "🔒 Ẩn đáp án" : "👉 Hiện đáp án";
+});
+</script>
 </body>
 </html>
