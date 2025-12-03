@@ -388,116 +388,118 @@ window.quizData["future-perfect"] = {
    13. FUTURE PERFECT CONTINUOUS – 20 câu
    ============================ */
 window.quizData["future-perfect-continuous"] = {
-  title: "Bài tập – Future Perfect continuous",
+  title: "Bài tập – Future Perfect Continuous",
   desc: "Chọn đáp án đúng cho thì Tương lai hoàn thành tiếp diễn.",
   questions: [
-{
-    question: "By 2025, I ______ here for 10 years.",
-    options: ["will be working", "will have worked", "will have been working", "am going to work"],
-    answer: "will have been working",
-    explanation: "Future Perfect Continuous = will have been + V-ing."
-  },
-  {
-    question: "She ______ for 3 hours by the time you arrive.",
-    options: ["will study", "will have studied", "will have been studying", "is studying"],
-    answer: "will have been studying",
-    explanation: "Diễn tả hành động kéo dài đến một mốc tương lai."
-  },
-  {
-    question: "They ______ in Hanoi for 2 years by next June.",
-    options: ["will live", "will be living", "will have been living", "have lived"],
-    answer: "will have been living",
-    explanation: "for + khoảng thời gian → hành động kéo dài."
-  },
-  {
-    question: "He ______ for 6 hours by midnight.",
-    options: ["will drive", "will have driven", "will have been driving", "is driving"],
-    answer: "will have been driving"
-  },
-  {
-    question: "We ______ for an hour by 9 PM.",
-    options: ["will wait", "will be waiting", "will have been waiting", "wait"],
-    answer: "will have been waiting"
-  },
-  {
-    question: "My mom ______ dinner for 2 hours by then.",
-    options: ["will cook", "will be cooking", "will have been cooking", "cooks"],
-    answer: "will have been cooking"
-  },
-  {
-    question: "You ______ for 10 hours by the time I return.",
-    options: ["sleep", "will sleep", "will have been sleeping", "will be slept"],
-    answer: "will have been sleeping"
-  },
-  {
-    question: "The kids ______ outside for 3 hours.",
-    options: ["will play", "will be playing", "will have been playing", "have played"],
-    answer: "will have been playing"
-  },
-  {
-    question: "My dad ______ the car for 2 hours by noon.",
-    options: ["will fix", "will have fixed", "will have been fixing", "is fixing"],
-    answer: "will have been fixing"
-  },
-  {
-    question: "I ______ this book for a week by tomorrow.",
-    options: ["read", "will read", "will have read", "will have been reading"],
-    answer: "will have been reading"
-  },
-
-  /* thêm 10 câu nữa để đủ 20 câu */
-
-  {
-    question: "By next year, she ______ English for 5 years.",
-    options: ["will study", "will have studied", "will have been studying", "studies"],
-    answer: "will have been studying"
-  },
-  {
-    question: "They ______ this project for months by the time it ends.",
-    options: ["will work", "will have worked", "will have been working", "are working"],
-    answer: "will have been working"
-  },
-  {
-    question: "He ______ football for 3 hours by 6 PM.",
-    options: ["will play", "will be playing", "will have been playing", "plays"],
-    answer: "will have been playing"
-  },
-  {
-    question: "She ______ for 30 minutes by the time the bus comes.",
-    options: ["will wait", "will have waited", "will have been waiting", "waits"],
-    answer: "will have been waiting"
-  },
-  {
-    question: "By this time tomorrow, my sister ______ for the exam all day.",
-    options: ["will study", "will have studied", "will have been studying", "studies"],
-    answer: "will have been studying"
-  },
-  {
-    question: "You ______ for too long by the time the doctor sees you.",
-    options: ["will wait", "will have been waiting", "wait", "will be waited"],
-    answer: "will have been waiting"
-  },
-  {
-    question: "She ______ here for hours by the time we arrive.",
-    options: ["will sit", "will be sitting", "will have been sitting", "sits"],
-    answer: "will have been sitting"
-  },
-  {
-    question: "They ______ around the city for 5 hours.",
-    options: ["will walk", "will have walked", "will have been walking", "walk"],
-    answer: "will have been walking"
-  },
-  {
-    question: "He ______ the piano for years by the time he turns 18.",
-    options: ["will practice", "will be practicing", "will have been practicing", "practices"],
-    answer: "will have been practicing"
-  },
-  {
-    question: "I ______ this game for too long by tonight.",
-    options: ["will play", "will be playing", "will have been playing", "play"],
-    answer: "will have been playing"
-  }
-]
+    {
+      question: "By 2025, I ______ here for 10 years.",
+      options: [
+        "will be working",
+        "will have worked",
+        "will have been working",
+        "am going to work"
+      ],
+      answer: 2,
+      explain: "Future Perfect Continuous = will have been + V-ing."
+    },
+    {
+      question: "She ______ for 3 hours by the time you arrive.",
+      options: ["will study", "will have studied", "will have been studying", "is studying"],
+      answer: 2,
+      explain: "Diễn tả hành động kéo dài đến một mốc tương lai."
+    },
+    {
+      question: "They ______ in Hanoi for 2 years by next June.",
+      options: ["will live", "will be living", "will have been living", "have lived"],
+      answer: 2,
+      explain: "for + khoảng thời gian → hành động kéo dài."
+    },
+    {
+      question: "He ______ for 6 hours by midnight.",
+      options: ["will drive", "will have driven", "will have been driving", "is driving"],
+      answer: 2
+    },
+    {
+      question: "We ______ for an hour by 9 PM.",
+      options: ["will wait", "will be waiting", "will have been waiting", "wait"],
+      answer: 2
+    },
+    {
+      question: "My mom ______ dinner for 2 hours by then.",
+      options: ["will cook", "will be cooking", "will have been cooking", "cooks"],
+      answer: 2
+    },
+    {
+      question: "You ______ for 10 hours by the time I return.",
+      options: ["sleep", "will sleep", "will have been sleeping", "will be slept"],
+      answer: 2
+    },
+    {
+      question: "The kids ______ outside for 3 hours.",
+      options: ["will play", "will be playing", "will have been playing", "have played"],
+      answer: 2
+    },
+    {
+      question: "My dad ______ the car for 2 hours by noon.",
+      options: ["will fix", "will have fixed", "will have been fixing", "is fixing"],
+      answer: 2
+    },
+    {
+      question: "I ______ this book for a week by tomorrow.",
+      options: ["read", "will read", "will have read", "will have been reading"],
+      answer: 3
+    },
+    {
+      question: "By next year, she ______ English for 5 years.",
+      options: ["will study", "will have studied", "will have been studying", "studies"],
+      answer: 2
+    },
+    {
+      question: "They ______ this project for months by the time it ends.",
+      options: ["will work", "will have worked", "will have been working", "are working"],
+      answer: 2
+    },
+    {
+      question: "He ______ football for 3 hours by 6 PM.",
+      options: ["will play", "will be playing", "will have been playing", "plays"],
+      answer: 2
+    },
+    {
+      question: "She ______ for 30 minutes by the time the bus comes.",
+      options: ["will wait", "will have waited", "will have been waiting", "waits"],
+      answer: 2
+    },
+    {
+      question: "By this time tomorrow, my sister ______ for the exam all day.",
+      options: ["will study", "will have studied", "will have been studying", "studies"],
+      answer: 2
+    },
+    {
+      question: "You ______ for too long by the time the doctor sees you.",
+      options: ["will wait", "will have been waiting", "wait", "will be waited"],
+      answer: 1
+    },
+    {
+      question: "She ______ here for hours by the time we arrive.",
+      options: ["will sit", "will be sitting", "will have been sitting", "sits"],
+      answer: 2
+    },
+    {
+      question: "They ______ around the city for 5 hours.",
+      options: ["will walk", "will have walked", "will have been walking", "walk"],
+      answer: 2
+    },
+    {
+      question: "He ______ the piano for years by the time he turns 18.",
+      options: ["will practice", "will be practicing", "will have been practicing", "practices"],
+      answer: 2
+    },
+    {
+      question: "I ______ this game for too long by tonight.",
+      options: ["will play", "will be playing", "will have been playing", "play"],
+      answer: 2
+    }
+  ]
 };
      
 /* ============================
