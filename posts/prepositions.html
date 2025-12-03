@@ -1,92 +1,211 @@
-<h1>Prepositions – Giới từ</h1>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prepositions – Giới từ | Binh Blog</title>
 
-<p>Giới từ (prepositions) là những từ dùng để chỉ <strong>thời gian, địa điểm, vị trí, hướng di chuyển</strong> hoặc mối quan hệ giữa các từ trong câu.</p>
+  <style>
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0; padding: 24px;
+      background: #fff;
+    }
 
-<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200"
-     style="width:100%; border-radius:12px; margin:20px 0;">
+    .container { max-width: 980px; margin: 0 auto; }
 
-<h2>1. Giới từ chỉ thời gian (Prepositions of Time)</h2>
+    header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+    h1 { font-size:28px; margin:6px 0; }
+    .meta { font-size:14px; color:#666; margin-bottom:18px; }
 
-<ul>
-  <li><strong>in</strong> – tháng, năm, mùa, buổi (in 2020, in July, in winter)</li>
-  <li><strong>on</strong> – ngày, thứ (on Monday, on March 2nd)</li>
-  <li><strong>at</strong> – giờ (at 7 a.m., at midnight)</li>
-</ul>
+    .grid { display:flex; gap:24px; }
+    .left { width:260px; }
 
-<h2>2. Giới từ chỉ nơi chốn (Prepositions of Place)</h2>
-<ul>
-  <li><strong>in</strong> – ở trong (in the room)</li>
-  <li><strong>on</strong> – trên bề mặt (on the table)</li>
-  <li><strong>at</strong> – tại một điểm (at the bus stop)</li>
-</ul>
+    .card {
+      background:#faf5ff;
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(120,80,200,0.1);
+    }
 
-<h2>3. Giới từ chỉ hướng (Prepositions of Direction)</h2>
-<ul>
-  <li><strong>to</strong> – tới</li>
-  <li><strong>into</strong> – vào trong</li>
-  <li><strong>onto</strong> – lên trên</li>
-  <li><strong>from</strong> – từ</li>
-</ul>
+    .content { flex:1; }
 
-<h2>4. Ví dụ</h2>
+    .example {
+      background:#eefaff;
+      border-left:4px solid #3bb4d8;
+      padding:12px;
+      border-radius:8px;
+      margin-bottom:18px;
+    }
 
-<div class="example">
-  – She was born <strong>in</strong> 2002.<br>
-  – They meet <strong>at</strong> 6 p.m.<br>
-  – The cat is <strong>on</strong> the table.<br>
-  – He walked <strong>into</strong> the room.<br>
+    /* Exercises */
+    button#toggle-answer {
+      background:#e8dfff;
+      border:1px solid #d7c7ff;
+      padding:8px 12px; border-radius:8px;
+      cursor:pointer; margin:10px 0;
+      font-weight:600;
+    }
+
+    .answer-text {
+      display:none;
+      background:#f6fff5;
+      border-left:4px solid #7bd389;
+      padding:10px 12px;
+      border-radius:4px;
+      margin:4px 0 12px;
+    }
+
+    .answer-text.show { display:block; }
+
+    p.question { margin:12px 0; color:#222; }
+
+    .quiz-button {
+      display:inline-block;
+      background:#ead8ff;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      margin-top:16px;
+      color:#4b2fb3;
+      text-decoration:none;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div style="
+      width:56px;height:56px;background:#e8e5ff;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      color:#4b2fb3;font-weight:700;">
+      BB
+    </div>
+
+    <div>
+      <h1>Prepositions – Giới từ</h1>
+      <p class="meta">📅 2025-12-04 • Category: Tiếng Anh</p>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <!-- SIDEBAR -->
+    <aside class="left">
+      <div class="card">
+        <div style="
+          width:72px;height:72px;background:#fff;border-radius:50%;margin:0 auto 10px;
+          display:flex;align-items:center;justify-content:center;
+          color:#4b2fb3;font-weight:700;">
+          🙂
+        </div>
+
+        <p style="text-align:center;font-weight:700;">Xin chào, mình là Bình 👋</p>
+        <p style="font-size:14px;color:#666;">Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <article class="card" style="padding:22px;">
+
+        <h2 style="margin-top:0;">Giới từ là gì?</h2>
+        <p>
+          Giới từ (prepositions) là từ dùng để nối danh từ/đại từ với những thành phần khác trong câu,
+          thể hiện thời gian, vị trí, hướng di chuyển, mục đích,...
+        </p>
+
+        <h3>1. Các loại giới từ phổ biến</h3>
+        <ul>
+          <li><strong>Giới từ chỉ nơi chốn:</strong> in, on, at, between, behind...</li>
+          <li><strong>Giới từ chỉ thời gian:</strong> in, on, at, before, after...</li>
+          <li><strong>Giới từ chỉ hướng:</strong> to, into, towards, onto...</li>
+        </ul>
+
+        <div class="example">
+          – The cat is <strong>under</strong> the table.<br>
+          – I will see you <strong>at</strong> 7 PM.<br>
+          – She walked <strong>to</strong> school.
+        </div>
+
+        <h3>2. Một số quy tắc quan trọng</h3>
+        <ul>
+          <li><strong>In</strong> → không gian lớn (in the room, in Vietnam)</li>
+          <li><strong>On</strong> → bề mặt, ngày tháng (on the table, on Monday)</li>
+          <li><strong>At</strong> → vị trí chính xác, thời điểm (at the door, at 7 PM)</li>
+        </ul>
+
+        <div class="example">
+          – The book is <strong>on</strong> the shelf.<br>
+          – She lives <strong>in</strong> Hanoi.<br>
+          – He is waiting <strong>at</strong> the bus stop.
+        </div>
+
+        <!-- EXERCISES -->
+        <h3>Bài tập – Chọn giới từ đúng (10 câu)</h3>
+
+        <button id="toggle-answer">👉 Hiện đáp án</button>
+
+        <div id="exercise-box">
+
+          <p class="question">1. The dog is ___ the garden.</p>
+          <p class="answer-text">Đáp án: in</p>
+
+          <p class="question">2. The picture is ___ the wall.</p>
+          <p class="answer-text">Đáp án: on</p>
+
+          <p class="question">3. I will meet you ___ the airport.</p>
+          <p class="answer-text">Đáp án: at</p>
+
+          <p class="question">4. They walked ___ the river.</p>
+          <p class="answer-text">Đáp án: along</p>
+
+          <p class="question">5. She jumped ___ the pool.</p>
+          <p class="answer-text">Đáp án: into</p>
+
+          <p class="question">6. The restaurant is ___ the corner.</p>
+          <p class="answer-text">Đáp án: on</p>
+
+          <p class="question">7. The cat ran ___ the chair.</p>
+          <p class="answer-text">Đáp án: under</p>
+
+          <p class="question">8. My office is ___ the 2nd floor.</p>
+          <p class="answer-text">Đáp án: on</p>
+
+          <p class="question">9. We traveled ___ the city.</p>
+          <p class="answer-text">Đáp án: across</p>
+
+          <p class="question">10. The bus stops ___ the station.</p>
+          <p class="answer-text">Đáp án: at</p>
+
+        </div>
+
+        <a class="quiz-button" href="/binh-blog/quiz.html?type=prepositions">
+          👉 Làm bài Quiz: PREPOSITIONS
+        </a>
+
+      </article>
+    </main>
+
+  </div>
 </div>
 
-<h2>5. Bài tập – Chọn giới từ đúng (10 câu)</h2>
+<!-- Toggle Answers Script -->
+<script>
+  (function(){
+    const btn = document.getElementById("toggle-answer");
+    const answers = document.querySelectorAll(".answer-text");
 
-<button data-toggle="answers" style="
-  background:#d9d1ff;
-  padding:10px 16px;
-  border-radius:8px;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0;">
-👉 Hiện đáp án
-</button>
+    btn.addEventListener("click", () => {
+      const isHidden = [...answers].every(a => !a.classList.contains("show"));
+      answers.forEach(a => a.classList.toggle("show", isHidden));
+      btn.textContent = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+  })();
+</script>
 
-<div class="exercise-box">
-
-  <p>1. She goes ___ school by bus.</p>
-  <p class="answer-text" style="display:none;">to</p>
-
-  <p>2. The book is ___ the table.</p>
-  <p class="answer-text" style="display:none;">on</p>
-
-  <p>3. I was born ___ 1998.</p>
-  <p class="answer-text" style="display:none;">in</p>
-
-  <p>4. They arrived ___ 10 a.m.</p>
-  <p class="answer-text" style="display:none;">at</p>
-
-  <p>5. He walked ___ the house and sat down.</p>
-  <p class="answer-text" style="display:none;">into</p>
-
-  <p>6. There is a blue lamp ___ the corner.</p>
-  <p class="answer-text" style="display:none;">in</p>
-
-  <p>7. The kids are playing ___ the park.</p>
-  <p class="answer-text" style="display:none;">in</p>
-
-  <p>8. The picture is hanging ___ the wall.</p>
-  <p class="answer-text" style="display:none;">on</p>
-
-  <p>9. She will be back ___ a few minutes.</p>
-  <p class="answer-text" style="display:none;">in</p>
-
-  <p>10. Please meet me ___ the bus stop.</p>
-  <p class="answer-text" style="display:none;">at</p>
-
-</div>
-
-<div style="margin-top:25px;">
-  <a href="/binh-blog/quiz.html?type=prepositions"
-     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;">
-     👉 Làm bài Quiz: PREPOSITIONS
-  </a>
-</div>
+</body>
+</html>
