@@ -1,46 +1,88 @@
-<h1>Thì Tương Lai Hoàn Thành (Future Perfect)</h1>
+<h1>Future Perfect – Thì Tương Lai Hoàn Thành</h1>
 
-<p>Dùng để diễn tả hành động sẽ hoàn thành trước một mốc thời gian trong tương lai.</p>
+<p>Thì Tương Lai Hoàn Thành dùng để diễn tả hành động sẽ hoàn tất trước một thời điểm trong tương lai.</p>
 
-<h2>Công thức</h2>
-<div class="formula">S + will have + V<sub>3</sub></div>
-
-<h3>Ví dụ</h3>
+<h2>1. Công thức</h2>
 <ul>
-  <li>I will have finished by 8 PM.  
-      <br><small>(Tôi sẽ hoàn thành trước 8 giờ.)</small></li>
-  <li>She will have left by tomorrow.  
-      <br><small>(Cô ấy sẽ rời đi trước ngày mai.)</small></li>
+  <li><strong>Khẳng định:</strong> S + will have + V3/ed</li>
+  <li><strong>Phủ định:</strong> S + will not have + V3/ed</li>
+  <li><strong>Nghi vấn:</strong> Will + S + have + V3/ed?</li>
 </ul>
 
-<h2>Bài tập</h2>
-<ol>
-  <li>I ______ (finish) by 9 PM.</li>
-  <li>She ______ (leave).</li>
-  <li>They ______ (eat) already.</li>
-  <li>We ______ (study) by then.</li>
-  <li>He ______ (call).</li>
-  <li>You ______ (arrive)?</li>
-  <li>The kids ______ (sleep).</li>
-  <li>My mom ______ (cook).</li>
-  <li>They ______ (travel).</li>
-  <li>I ______ (write).</li>
-</ol>
+<h2>2. Dấu hiệu nhận biết</h2>
+<ul>
+  <li>By + thời điểm tương lai (by tomorrow, by next year…)</li>
+  <li>Before + mốc thời gian trong tương lai</li>
+</ul>
 
-<h2>Đáp án</h2>
-<button id="toggle-answer">👉 Hiện đáp án</button>
-
-<div id="answer-box" style="display:none;">
-<ol>
-  <li>will have finished</li>
-  <li>will have left</li>
-  <li>will have eaten</li>
-  <li>will have studied</li>
-  <li>will have called</li>
-  <li>Will you have arrived</li>
-  <li>will have slept</li>
-  <li>will have cooked</li>
-  <li>will have traveled</li>
-  <li>will have written</li>
-</ol>
+<h2>3. Ví dụ</h2>
+<div style="background:#eef3ff;padding:12px;border-radius:10px;">
+– By next month, I <strong>will have finished</strong> the course.<br>
+– She <strong>won’t have completed</strong> the report by Monday.<br>
+– <strong>Will</strong> they <strong>have arrived</strong> by 9 PM?<br>
 </div>
+
+<h2>4. Bài tập – Chọn dạng đúng (10 câu)</h2>
+
+<button id="toggle-answer"
+        style="background:#dec9ff;padding:10px 18px;border:none;border-radius:8px;
+               font-weight:600;cursor:pointer;">
+👉 Hiện đáp án
+</button>
+
+<div id="exercise-box" style="margin-top:15px;">
+
+  <p>1. By next week, she ______ (finish) the project.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will have finished</p>
+
+  <p>2. They ______ (leave) before you arrive.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will have left</p>
+
+  <p>3. I ______ (complete) the assignment by tomorrow.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will have completed</p>
+
+  <p>4. She ______ (not/graduate) by next year.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will not have graduated</p>
+
+  <p>5. We ______ (arrive) by 6 PM.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will have arrived</p>
+
+  <p>6. He ______ (finish) work before the party starts.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will have finished</p>
+
+  <p>7. You ______ (read) the book by next month.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will have read</p>
+
+  <p>8. They ______ (build) the house by 2026.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will have built</p>
+
+  <p>9. She ______ (not/return) before midnight.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will not have returned</p>
+
+  <p>10. The team ______ (win) the match by then.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will have won</p>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("toggle-answer");
+  const answers = document.querySelectorAll(".answer-text");
+
+  let shown = false;
+
+  btn.addEventListener("click", () => {
+    answers.forEach(a => a.style.display = shown ? "none" : "block");
+    shown = !shown;
+    btn.textContent = shown ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+  });
+});
+</script>
+
+<br>
+
+<a href="/binh-blog/quiz.html?type=future-perfect"
+   style="display:inline-block;background:#dec9ff;padding:12px 20px;border-radius:10px;
+          font-weight:700;margin-top:15px;">
+👉 Làm bài Quiz: FUTURE PERFECT
+</a>
