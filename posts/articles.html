@@ -1,237 +1,214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Articles – Mạo từ | Binh Blog</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Articles – Mạo từ | Binh Blog</title>
 
-  <style>
-    body {
-      font-family: Inter, system-ui, sans-serif;
-      margin: 0; padding: 24px;
-      background: #fff;
-    }
+<style>
+  body {
+    font-family: "Inter", sans-serif;
+    background: #fafaff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+  }
 
-    .container { max-width: 980px; margin: 0 auto; }
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
 
-    header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
-    h1 { font-size:28px; margin:6px 0; }
-    .meta { font-size:14px; color:#666; margin-bottom:18px; }
+  h1 { font-size: 32px; margin-bottom: 10px; color: #4a3aff; }
+  h2 { margin-top: 32px; color: #4a3aff; }
+  h3 { margin-top: 18px; color: #4a3aff; }
 
-    .grid { display:flex; gap:24px; }
-    .left { width:260px; }
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    margin-top: 20px;
+  }
 
-    .card {
-      background:#faf5ff;
-      padding:18px;
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(120,80,200,0.1);
-    }
+  .example-box {
+    background: #eef3ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 12px;
+  }
 
-    .content { flex:1; }
+  .tip-box {
+    background: #fff8d6;
+    padding: 15px;
+    border-left: 5px solid #f7d342;
+    border-radius: 6px;
+    margin: 15px 0;
+  }
 
-    .section-title {
-      display:flex; align-items:center; gap:10px;
-      margin-top:22px; margin-bottom:10px;
-    }
+  .answer-btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #d9d1ff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 18px 0;
+  }
 
-    /* Exercises */
-    button#toggle-answer {
-      background:#e8dfff;
-      border:1px solid #d7c7ff;
-      padding:8px 12px; border-radius:8px;
-      cursor:pointer; margin:10px 0;
-    }
+  .answer-text {
+    display: none;
+    background: #f3f1ff;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
 
-    .answer-text {
-      display:none;
-      padding:10px 12px;
-      background:#f6fff5;
-      border-left:4px solid #7bd389;
-      margin:4px 0 14px;
-    }
-    .answer-text.show { display:block; }
+  .quiz-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: #d9d1ff;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #333;
+  }
 
-    p.question { margin:12px 0; color:#222; }
+  .related-box {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f7f5ff;
+    border-radius: 10px;
+  }
 
-    .quiz-button {
-      display:inline-block;
-      background:#ead8ff;
-      padding:10px 14px;
-      border-radius:10px;
-      font-weight:700;
-      margin-top:16px;
-      color:#4b2fb3;
-      text-decoration:none;
-    }
-
-    .related {
-      background:#faf5ff; padding:14px;
-      margin-top:20px; border-radius:10px;
-    }
-
-    footer {
-      text-align:center; margin-top:40px;
-      font-size:13px; color:#999;
-    }
-
-    @media(max-width:880px) {
-      .grid { flex-direction:column; }
-      .left { width:100%; }
-    }
-  </style>
+  .related-box a {
+    display: block;
+    margin: 6px 0;
+    text-decoration: none;
+    color: #4a3aff;
+  }
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <!-- HEADER -->
-  <header>
-    <div style="width:56px;height:56px;background:#e8e5ff;border-radius:12px;
-    display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700;">
-      BB
+  <!-- ===== TITLE ===== -->
+  <h1>Articles – Mạo từ</h1>
+  <p>Mạo từ dùng để đứng trước danh từ nhằm xác định danh từ đó là chung chung hay cụ thể.</p>
+
+  <!-- ===== SECTION 1 ===== -->
+  <div class="card">
+    <h2>🌟 1. Có mấy loại mạo từ?</h2>
+
+    <p>Tiếng Anh có 3 loại mạo từ chính:</p>
+    <ul>
+      <li><strong>a / an</strong> — mạo từ không xác định</li>
+      <li><strong>the</strong> — mạo từ xác định</li>
+      <li><strong>Ø (zero article)</strong> — không dùng mạo từ</li>
+    </ul>
+
+    <div class="example-box">
+      <p>✔ I bought <strong>a</strong> book. (Không xác định)</p>
+      <p>✔ <strong>The</strong> book is on the table. (Đã xác định)</p>
+      <p>✔ I like <strong>Ø</strong> music. (Danh từ chung)</p>
     </div>
-
-    <div>
-      <h1>Articles – Mạo từ</h1>
-      <p class="meta">📅 2025-12-04 • Category: Tiếng Anh</p>
-    </div>
-  </header>
-
-  <div class="grid">
-
-    <!-- SIDEBAR -->
-    <aside class="left">
-      <div class="card">
-        <div style="
-        width:72px;height:72px;background:#fff;border-radius:50%;margin:0 auto 10px;
-        display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700;">
-          🙂
-        </div>
-
-        <p style="text-align:center;font-weight:700;">Xin chào, mình là Bình 👋</p>
-        <p style="font-size:14px;color:#666;">Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
-      </div>
-    </aside>
-
-    <!-- MAIN -->
-    <main class="content">
-      <article class="card" style="padding:22px;">
-
-        <h2 style="margin-top:0">Mạo từ là gì?</h2>
-        <p>Mạo từ (Articles) trong tiếng Anh gồm 3 loại: <strong>a</strong>, <strong>an</strong> và <strong>the</strong>.</p>
-
-        <h3>1. A / An – Mạo từ không xác định</h3>
-        <ul>
-          <li><strong>a</strong> dùng trước danh từ số ít bắt đầu bằng phụ âm.</li>
-          <li><strong>an</strong> dùng trước danh từ số ít bắt đầu bằng nguyên âm (a, e, i, o, u).</li>
-        </ul>
-
-        <div class="example" style="
-          background:#eefaff;border-left:4px solid #3bb4d8;padding:12px;border-radius:8px;margin-bottom:18px;">
-          – a book, a dog, a teacher <br>
-          – an apple, an hour, an umbrella
-        </div>
-
-        <h3>2. The – Mạo từ xác định</h3>
-        <p>Dùng khi người nghe biết chính xác bạn đang nói đến điều gì.</p>
-        <div class="example" style="
-          background:#eefaff;border-left:4px solid #3bb4d8;padding:12px;border-radius:8px;margin-bottom:18px;">
-          – The sun is hot. <br>
-          – The book on the table is mine.
-        </div>
-
-        <h3 class="section-title">
-          <span style="width:6px;height:24px;background:#7b61ff;border-radius:2px;"></span>
-          Bài tập – Chọn mạo từ đúng (15 câu)
-        </h3>
-
-        <!-- BUTTON -->
-        <button id="toggle-answer">👉 Hiện đáp án</button>
-
-        <!-- EXERCISES -->
-        <div id="exercise-box">
-
-          <p class="question">1. She bought ___ umbrella.</p>
-          <p class="answer-text">Đáp án: an</p>
-
-          <p class="question">2. I saw ___ dog in the garden.</p>
-          <p class="answer-text">Đáp án: a</p>
-
-          <p class="question">3. ___ sun rises in the east.</p>
-          <p class="answer-text">Đáp án: The</p>
-
-          <p class="question">4. I need ___ hour to finish this.</p>
-          <p class="answer-text">Đáp án: an</p>
-
-          <p class="question">5. He is ___ best player in our team.</p>
-          <p class="answer-text">Đáp án: the</p>
-
-          <p class="question">6. She wants to buy ___ new phone.</p>
-          <p class="answer-text">Đáp án: a</p>
-
-          <p class="question">7. They live in ___ old house.</p>
-          <p class="answer-text">Đáp án: an</p>
-
-          <p class="question">8. I visited ___ museum yesterday.</p>
-          <p class="answer-text">Đáp án: the (nói đến nơi đã biết)</p>
-
-          <p class="question">9. He drank ___ cup of tea.</p>
-          <p class="answer-text">Đáp án: a</p>
-
-          <p class="question">10. Can you close ___ door?</p>
-          <p class="answer-text">Đáp án: the</p>
-
-          <p class="question">11. She is ___ honest person.</p>
-          <p class="answer-text">Đáp án: an (âm /h/ câm)</p>
-
-          <p class="question">12. I want to read ___ interesting book.</p>
-          <p class="answer-text">Đáp án: an</p>
-
-          <p class="question">13. My father bought ___ car yesterday.</p>
-          <p class="answer-text">Đáp án: a</p>
-
-          <p class="question">14. ___ moon looks beautiful tonight.</p>
-          <p class="answer-text">Đáp án: The</p>
-
-          <p class="question">15. She wants to be ___ engineer.</p>
-          <p class="answer-text">Đáp án: an</p>
-
-        </div>
-
-        <a class="quiz-button" href="/binh-blog/quiz.html?type=articles">
-          👉 Làm bài tập: ARTICLES
-        </a>
-
-        <div class="related">
-          <strong>Bài viết liên quan</strong>
-          <ul style="margin-left:20px;color:#4b2fb3">
-            <li><a href="/binh-blog/post.html?file=adjectives.html">Adjectives – Tính từ</a></li>
-            <li><a href="/binh-blog/post.html?file=nouns.html">Nouns – Danh từ</a></li>
-            <li><a href="/binh-blog/post.html?file=pronouns.html">Pronouns – Đại từ</a></li>
-          </ul>
-        </div>
-
-      </article>
-    </main>
   </div>
 
-  <footer>©2025 — Binh Blog</footer>
+  <!-- ===== SECTION 2 ===== -->
+  <div class="card">
+    <h2>📌 2. Khi nào dùng "a / an"?</h2>
+    <p>• Dùng trước danh từ số ít, đếm được, lần đầu nhắc đến.</p>
+    <p>• <strong>a</strong> đứng trước âm phụ / <strong>an</strong> đứng trước âm nguyên âm.</p>
+
+    <div class="example-box">
+      <p>✔ I saw <strong>a</strong> dog.</p>
+      <p>✔ She is <strong>an</strong> engineer.</p>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3 ===== -->
+  <div class="card">
+    <h2>📌 3. Khi nào dùng "the"?</h2>
+    <p>• Dùng khi cả người nói và người nghe đều biết danh từ đó là gì.</p>
+    <p>• Dùng với vật duy nhất: the sun, the sky...</p>
+    <p>• Dùng trước địa danh đặc biệt: the UK, the Philippines...</p>
+
+    <div class="example-box">
+      <p>✔ Turn off <strong>the</strong> light.</p>
+      <p>✔ The sun rises in the east.</p>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4 ===== -->
+  <div class="card">
+    <h2>📌 4. Khi nào KHÔNG dùng mạo từ?</h2>
+    <p>• Danh từ không đếm được dùng theo nghĩa chung.</p>
+    <p>• Danh từ số nhiều nói chung.</p>
+
+    <div class="example-box">
+      <p>✔ I love <strong>music</strong>.</p>
+      <p>✔ Dogs are loyal animals.</p>
+    </div>
+  </div>
+
+  <!-- ===== EXERCISE ===== -->
+  <div class="card">
+    <h2>📝 5. Bài tập – Điền a / an / the / Ø</h2>
+
+    <button id="toggle-answer" class="answer-btn">👀 Hiện đáp án</button>
+
+    <div id="exercise-area">
+
+      <p>1. I bought ___ apple.</p>
+      <p class="answer-text">Đáp án: an</p>
+
+      <p>2. She is ___ teacher.</p>
+      <p class="answer-text">Đáp án: a</p>
+
+      <p>3. I want to see ___ doctor.</p>
+      <p class="answer-text">Đáp án: the (người nghe hiểu là bác sĩ cụ thể)</p>
+
+      <p>4. ___ sun is very bright today.</p>
+      <p class="answer-text">Đáp án: The</p>
+
+      <p>5. He likes ___ music.</p>
+      <p class="answer-text">Đáp án: Ø</p>
+
+    </div>
+  </div>
+
+  <!-- ===== QUIZ BUTTON ===== -->
+  <a href="/binh-blog/quiz.html?type=articles" class="quiz-btn">
+    👉 Làm bài Quiz: ARTICLES
+  </a>
+
+  <!-- ===== RELATED ===== -->
+  <div class="related-box">
+    <h3>Bài viết liên quan</h3>
+    <a href="nouns.html">📘 Nouns – Danh từ</a>
+    <a href="adjectives.html">📘 Adjectives – Tính từ</a>
+    <a href="quantifiers.html">📘 Quantifiers – Định lượng từ</a>
+  </div>
 
 </div>
 
+<!-- ===== ANSWER SCRIPT ===== -->
 <script>
-  (function(){
-    const btn = document.getElementById("toggle-answer");
-    const answers = document.querySelectorAll(".answer-text");
+document.getElementById("toggle-answer").addEventListener("click", function () {
+  const answers = document.querySelectorAll(".answer-text");
 
-    btn.addEventListener("click", () => {
-      const isHidden = [...answers].every(a => !a.classList.contains("show"));
-      answers.forEach(a => a.classList.toggle("show", isHidden));
-      btn.textContent = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-    });
-  })();
+  answers.forEach(a => {
+    a.style.display = (a.style.display === "none" || a.style.display === "") ? "block" : "none";
+  });
+
+  this.textContent = answers[0].style.display === "block"
+    ? "🙈 Ẩn đáp án"
+    : "👀 Hiện đáp án";
+});
 </script>
 
 </body>
