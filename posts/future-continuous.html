@@ -1,46 +1,89 @@
-<h1>Thì Tương Lai Tiếp Diễn (Future Continuous)</h1>
+<h1>Future Continuous – Thì Tương Lai Tiếp Diễn</h1>
 
-<p>Dùng để diễn tả hành động sẽ đang diễn ra tại một thời điểm trong tương lai.</p>
+<p>Thì Tương Lai Tiếp Diễn dùng để diễn tả hành động sẽ đang diễn ra tại một thời điểm xác định trong tương lai.</p>
 
-<h2>Công thức</h2>
-<div class="formula">S + will be + V-ing</div>
-
-<h3>Ví dụ</h3>
+<h2>1. Công thức</h2>
 <ul>
-  <li>I will be studying at 8 PM.  
-      <br><small>(Tôi sẽ đang học lúc 8 giờ tối.)</small></li>
-  <li>She will be working tomorrow morning.  
-      <br><small>(Cô ấy sẽ đang làm việc vào sáng mai.)</small></li>
+  <li><strong>Khẳng định:</strong> S + will be + V-ing</li>
+  <li><strong>Phủ định:</strong> S + will not be + V-ing</li>
+  <li><strong>Nghi vấn:</strong> Will + S + be + V-ing?</li>
 </ul>
 
-<h2>Bài tập</h2>
-<ol>
-  <li>I ______ (study) at 9 PM.</li>
-  <li>She ______ (cook) tomorrow.</li>
-  <li>They ______ (play) at that time.</li>
-  <li>We ______ (not/work).</li>
-  <li>He ______ (drive) soon.</li>
-  <li>You ______ (sleep)?</li>
-  <li>The kids ______ (run).</li>
-  <li>My father ______ (travel).</li>
-  <li>She ______ (write).</li>
-  <li>I ______ (read).</li>
-</ol>
+<h2>2. Dấu hiệu nhận biết</h2>
+<ul>
+  <li>At + thời điểm trong tương lai</li>
+  <li>This time tomorrow / next week</li>
+  <li>In the future (khi nói về hành động đang xảy ra)</li>
+</ul>
 
-<h2>Đáp án</h2>
-<button id="toggle-answer">👉 Hiện đáp án</button>
-
-<div id="answer-box" style="display:none;">
-<ol>
-  <li>will be studying</li>
-  <li>will be cooking</li>
-  <li>will be playing</li>
-  <li>won’t be working</li>
-  <li>will be driving</li>
-  <li>Will you be sleeping</li>
-  <li>will be running</li>
-  <li>will be traveling</li>
-  <li>will be writing</li>
-  <li>will be reading</li>
-</ol>
+<h2>3. Ví dụ</h2>
+<div style="background:#eef3ff;padding:12px;border-radius:10px;">
+– At 10 PM tomorrow, I <strong>will be studying</strong>.<br>
+– She <strong>won’t be working</strong> next week.<br>
+– <strong>Will</strong> they <strong>be traveling</strong> at this time tomorrow?<br>
 </div>
+
+<h2>4. Bài tập – Chọn dạng đúng (10 câu)</h2>
+
+<button id="toggle-answer"
+        style="background:#dec9ff;padding:10px 18px;border:none;border-radius:8px;
+               font-weight:600;cursor:pointer;">
+👉 Hiện đáp án
+</button>
+
+<div id="exercise-box" style="margin-top:15px;">
+
+  <p>1. At 8 PM tonight, I ______ (study).</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will be studying</p>
+
+  <p>2. She ______ (not/work) at this time tomorrow.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> won’t be working</p>
+
+  <p>3. They ______ (travel) next week at this time.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will be traveling</p>
+
+  <p>4. He ______ (sleep) when you arrive.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will be sleeping</p>
+
+  <p>5. We ______ (play) football tomorrow afternoon.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will be playing</p>
+
+  <p>6. What ______ you ______ (do) at 9 PM?</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will you be doing</p>
+
+  <p>7. My mom ______ (cook) dinner when I get home.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will be cooking</p>
+
+  <p>8. The students ______ (study) for the test tomorrow morning.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will be studying</p>
+
+  <p>9. I ______ (not/use) the computer at that time.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> won’t be using</p>
+
+  <p>10. He ______ (drive) to work at 7 AM tomorrow.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> will be driving</p>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("toggle-answer");
+  const answers = document.querySelectorAll(".answer-text");
+
+  let shown = false;
+
+  btn.addEventListener("click", () => {
+    answers.forEach(a => a.style.display = shown ? "none" : "block");
+    shown = !shown;
+    btn.textContent = shown ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+  });
+});
+</script>
+
+<br>
+
+<a href="/binh-blog/quiz.html?type=future-continuous"
+   style="display:inline-block;background:#dec9ff;padding:12px 20px;border-radius:10px;
+          font-weight:700;margin-top:15px;">
+👉 Làm bài Quiz: FUTURE CONTINUOUS
+</a>
