@@ -1226,102 +1226,122 @@ quizData["gerunds-infinitives"] = {
   {
     question: "1. She enjoys ___ books.",
     options: ["read", "reading", "to read"],
-    answer: "reading"
+    answer: "reading",
+    explanation: "enjoy + gerund. Sau 'enjoy' phải dùng V-ing (đọc = reading)."
   },
   {
     question: "2. I decided ___ to another city.",
     options: ["move", "moving", "to move"],
-    answer: "to move"
+    answer: "to move",
+    explanation: "decide + to-infinitive. Quyết định làm gì → to move."
   },
   {
     question: "3. They finished ___ at 8 PM.",
     options: ["work", "working", "to work"],
-    answer: "working"
+    answer: "working",
+    explanation: "finish + gerund. Hoàn thành việc gì → working."
   },
   {
     question: "4. He promised ___ me later.",
     options: ["calling", "to call", "call"],
-    answer: "to call"
+    answer: "to call",
+    explanation: "promise + to-infinitive. Hứa làm gì → to call."
   },
   {
     question: "5. She avoided ___ him.",
     options: ["meet", "meeting", "to meet"],
-    answer: "meeting"
+    answer: "meeting",
+    explanation: "avoid + gerund. Tránh làm gì → meeting."
   },
   {
     question: "6. I want ___ Japanese.",
     options: ["to learn", "learning", "learn"],
-    answer: "to learn"
+    answer: "to learn",
+    explanation: "want + to-infinitive. Muốn làm gì → to learn."
   },
   {
     question: "7. He stopped ___ because it’s unhealthy.",
     options: ["smoke", "to smoke", "smoking"],
-    answer: "smoking"
+    answer: "smoking",
+    explanation: "stop + gerund = dừng thói quen. 'He stopped smoking' = ngừng hút (không còn hút nữa)."
   },
   {
     question: "8. He stopped ___ milk on the way home.",
     options: ["buy", "buying", "to buy"],
-    answer: "to buy"
+    answer: "to buy",
+    explanation: "stop + to-infinitive = dừng để làm việc gì. 'He stopped to buy milk' = dừng lại để mua sữa."
   },
   {
     question: "9. She forgot ___ the door.",
     options: ["locking", "to lock", "lock"],
-    answer: "to lock"
+    answer: "to lock",
+    explanation: "forget + to-infinitive = quên phải làm điều gì. (quên khóa cửa = forgot to lock)."
   },
   {
     question: "10. I miss ___ with you.",
     options: ["talk", "talking", "to talk"],
-    answer: "talking"
+    answer: "talking",
+    explanation: "miss + gerund = nhớ việc đã xảy ra/kinh nghiệm. 'Miss talking' = nhớ được nói chuyện."
   },
   {
     question: "11. They agreed ___ the project together.",
     options: ["start", "to start", "starting"],
-    answer: "to start"
+    answer: "to start",
+    explanation: "agree + to-infinitive. Đồng ý làm gì → to start."
   },
   {
     question: "12. He suggested ___ a break.",
     options: ["take", "to take", "taking"],
-    answer: "taking"
+    answer: "taking",
+    explanation: "suggest + gerund (hoặc 'suggest that we take'). Sau 'suggest' thường dùng V-ing: 'suggest taking a break'."
   },
   {
     question: "13. She hopes ___ a scholarship.",
     options: ["get", "getting", "to get"],
-    answer: "to get"
+    answer: "to get",
+    explanation: "hope + to-infinitive. Hy vọng sẽ làm gì → to get."
   },
   {
     question: "14. I’m interested in ___ new skills.",
     options: ["learn", "learning", "to learn"],
-    answer: "learning"
+    answer: "learning",
+    explanation: "'be interested in' + gerund. Quan tâm tới việc gì → learning."
   },
   {
     question: "15. Remember ___ the lights before leaving.",
     options: ["turn off", "turning off", "to turn off"],
-    answer: "to turn off"
+    answer: "to turn off",
+    explanation: "remember + to-infinitive = nhớ phải làm điều gì trong tương lai. (Nhớ tắt đèn = remember to turn off)."
   },
   {
     question: "16. I remember ___ him last year.",
     options: ["meet", "to meet", "meeting"],
-    answer: "meeting"
+    answer: "meeting",
+    explanation: "remember + gerund = nhớ đã làm điều gì trong quá khứ. (I remember meeting him = tôi nhớ đã gặp anh ấy)."
   },
   {
     question: "17. She managed ___ the problem.",
     options: ["solve", "solving", "to solve"],
-    answer: "to solve"
+    answer: "to solve",
+    explanation: "manage + to-infinitive = xoay sở/đạt được làm gì → to solve."
   },
   {
     question: "18. He denied ___ the window.",
     options: ["break", "to break", "breaking"],
-    answer: "breaking"
+    answer: "breaking",
+    explanation: "deny + gerund = phủ nhận hành động → breaking."
   },
   {
     question: "19. My mom made me ___ my room.",
     options: ["clean", "to clean", "cleaning"],
-    answer: "clean"
+    answer: "clean",
+    explanation: "make (causative) + bare infinitive (V nguyên mẫu không 'to'). 'made me clean' = bắt tôi dọn."
   },
   {
     question: "20. Let’s stop ___ about it and start working.",
     options: ["talk", "talking", "to talk"],
-    answer: "talking"
+    answer: "talking",
+    explanation: "stop + gerund = ngừng hành động hiện tại. 'Stop talking' = ngừng nói."
   }
 ]
 };
