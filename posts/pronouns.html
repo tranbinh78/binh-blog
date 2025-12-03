@@ -1,101 +1,125 @@
-<h1>Pronouns – Đại từ</h1>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pronouns – Đại từ — Binh Blog</title>
+  <style>
+    body{font-family:Inter, system-ui, Arial, sans-serif; margin:0; padding:24px; background:#fff;}
+    .container{max-width:980px; margin:0 auto; padding:0 20px;}
+    header{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+    h1{font-size:28px; margin:6px 0;}
+    .meta{color:#666; font-size:14px; margin-bottom:18px;}
+    .grid{display:flex; gap:24px;}
+    .left{width:260px;}
+    .card{background:#faf5ff;border-radius:10px;padding:18px;box-shadow:0 6px 20px rgba(120,80,200,0.08);}
+    .content{flex:1;}
+    .section-title{display:flex; align-items:center; gap:12px; margin-top:22px; margin-bottom:12px;}
+    .exercise-box{margin-top:12px;}
+    button#toggle-answer{background:#e8dfff;border:1px solid #d7c7ff;padding:8px 12px;border-radius:8px; cursor:pointer;}
+    .answer-text{display:none; margin:6px 0 18px; padding:10px 12px; background:#f7fff5; border-left:4px solid #7bd389;}
+    .answer-text.show{display:block;}
+    p.question{margin:12px 0; color:#222;}
+    .quiz-button{display:inline-block;margin-top:14px;padding:10px 14px;background:#ead8ff;border-radius:10px;color:#4b2fb3;text-decoration:none;font-weight:700;}
+    .related{background:#faf5ff;border-radius:10px;padding:12px;margin-top:18px;}
+    footer{margin-top:40px; text-align:center; color:#999; font-size:13px;}
+    @media (max-width:880px){.grid{flex-direction:column}.left{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="width:56px;height:56px;background:#e9e7ff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#4b2fb3">BB</div>
+      <div>
+        <h1>Pronouns – Đại từ</h1>
+        <div class="meta">📅 2025-12-04 • Category: Tiếng Anh</div>
+      </div>
+    </header>
 
-<p>Đại từ là từ dùng để thay thế cho danh từ nhằm tránh lặp lại trong câu.</p>
+    <div class="grid">
+      <aside class="left">
+        <div class="card">
+          <div style="width:72px;height:72px;background:#fff;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700">🙂</div>
+          <div style="text-align:center;font-weight:700">Xin chào, mình là Bình 👋</div>
+          <div style="color:#666;margin-top:8px;font-size:14px">Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</div>
+        </div>
+      </aside>
 
-<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200"
-     style="width:100%; border-radius:12px; margin:20px 0;">
+      <main class="content">
+        <article class="card" style="padding:22px;">
+          <h2 style="margin-top:0">Các loại đại từ chính</h2>
+          <p style="color:#333;line-height:1.6">
+            Đại từ (pronouns) thay thế cho danh từ. Ví dụ: I, you, he, she, it, we, they, me, him, her, us, them, my, your, ours, themselves...
+          </p>
 
-<h2>1. Các loại đại từ</h2>
-<ul>
-  <li><strong>Personal pronouns</strong>: I, you, he, she, it, we, they</li>
-  <li><strong>Possessive pronouns</strong>: mine, yours, his, hers, ours, theirs</li>
-  <li><strong>Reflexive pronouns</strong>: myself, yourself, himself, herself…</li>
-  <li><strong>Demonstrative pronouns</strong>: this, that, these, those</li>
-  <li><strong>Interrogative pronouns</strong>: who, whom, which, what</li>
-</ul>
+          <h3 class="section-title"><span style="width:6px;height:28px;background:#7b61ff;display:inline-block;border-radius:2px"></span> 3. Bài tập</h3>
 
-<h2>2. Vị trí của đại từ</h2>
-<ul>
-  <li>Đứng ở vị trí chủ ngữ hoặc tân ngữ.</li>
-  <li>Đại từ sở hữu đứng cuối câu.</li>
-</ul>
+          <div>
+            <button id="toggle-answer">👉 Hiện đáp án</button>
+          </div>
 
-<h2>3. Bài tập</h2>
-<p>Điền đúng đại từ:</p>
+          <div id="exercise-box" class="exercise-box">
 
-<button id="toggle-answer"
-  style="
-    background:#d9d1ff;
-    padding:10px 16px;
-    border-radius:8px;
-    border:none;
-    font-weight:600;
-    cursor:pointer;
-    margin:10px 0;
-">👉 Hiện đáp án</button>
+            <p class="question">1. Mary is my sister. ____ is 20 years old.</p>
+            <p class="answer-text" data-q="1">Đáp án: She</p>
 
-<div id="exercise-box" style="margin-top:15px;">
+            <p class="question">2. Is this pencil ____?</p>
+            <p class="answer-text" data-q="2">Đáp án: yours</p>
 
-  <p>1. Mary is my sister. ___ is 20 years old.</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> She</p>
+            <p class="question">3. We did it all by ____.</p>
+            <p class="answer-text" data-q="3">Đáp án: ourselves</p>
 
-  <p>2. Is this pencil ___ ?</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> yours</p>
+            <p class="question">4. ____ are my best friends. (those / them)</p>
+            <p class="answer-text" data-q="4">Đáp án: They</p>
 
-  <p>3. We did it all by ___.</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> ourselves</p>
+            <p class="question">5. Do you know the man ____ is talking to Jane?</p>
+            <p class="answer-text" data-q="5">Đáp án: who</p>
 
-  <p>4. ___ are my best friends. (those / them)</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> They</p>
+          </div>
 
-  <p>5. Do you know the man ___ is talking to Jane?</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> who</p>
+          <a class="quiz-button" href="/binh-blog/quiz.html?type=pronouns">👉 Làm bài tập: PRONOUNS</a>
 
-</div>
+          <div class="related">
+            <strong>Bài viết liên quan</strong>
+            <ul style="margin:10px 0 0;padding-left:18px;color:#4b2fb3">
+              <li><a href="/binh-blog/post.html?file=nouns.html">Nouns – Danh từ</a></li>
+              <li><a href="/binh-blog/post.html?file=adjectives.html">Adjectives – Tính từ</a></li>
+              <li><a href="/binh-blog/post.html?file=adverbs.html">Adverbs – Trạng từ</a></li>
+            </ul>
+          </div>
+        </article>
+      </main>
+    </div>
 
-<div style="margin-top:25px;">
-  <a href="/binh-blog/quiz.html?type=pronouns"
-     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;">
-     👉 Làm bài tập: PRONOUNS
-  </a>
-</div>
+    <footer>©2025 — Binh Blog</footer>
+  </div>
 
-<h3>Bài viết liên quan</h3>
-<ul>
-  <li><a href="/binh-blog/post.html?file=nouns.html">Nouns – Danh từ</a></li>
-  <li><a href="/binh-blog/post.html?file=adjectives.html">Adjectives – Tính từ</a></li>
-  <li><a href="/binh-blog/post.html?file=adverbs.html">Adverbs – Trạng từ</a></li>
-</ul>
+  <script>
+    (function(){
+      const btn = document.getElementById('toggle-answer');
+      if(!btn) return;
+      const exerciseBox = document.getElementById('exercise-box');
+      if(!exerciseBox){ console.warn('Không tìm thấy #exercise-box'); return; }
+      const answers = exerciseBox.querySelectorAll('.answer-text');
 
-<!-- SCRIPT HIỆN/ẨN ĐÁP ÁN - PHIÊN BẢN CHUẨN -->
-<script>
-(function(){
-  function initToggle() {
-    const btn = document.getElementById("toggle-answer");
-    if (!btn) return;
+      function areAnswersHidden(){
+        if(answers.length===0) return true;
+        return Array.from(answers).every(a => window.getComputedStyle(a).display==='none' || !a.classList.contains('show'));
+      }
 
-    const container = document.getElementById("exercise-box") || document;
-    const answers = Array.from(container.querySelectorAll(".answer-text"));
-
-    if (!answers.length) return;
-
-    const isVisible = el => window.getComputedStyle(el).display !== "none";
-
-    const anyVisible = answers.some(isVisible);
-    answers.forEach(a => a.style.display = anyVisible ? "block" : "none");
-    btn.textContent = anyVisible ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-
-    btn.addEventListener("click", () => {
-      const visible = answers.some(isVisible);
-      answers.forEach(a => a.style.display = visible ? "none" : "block");
-      btn.textContent = visible ? "👉 Hiện đáp án" : "🙈 Ẩn đáp án";
-    });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initToggle);
-  } else {
-    initToggle();
-  }
-})();
-</script>
+      btn.addEventListener('click', function(){
+        if(answers.length===0){
+          console.warn('Không tìm thấy phần tử .answer-text để hiển/ẩn đáp án.');
+          alert('Chưa có phần đáp án (class="answer-text") — kiểm tra file bài.'); 
+          return;
+        }
+        const show = areAnswersHidden();
+        answers.forEach(a=>{
+          if(show) a.classList.add('show'); else a.classList.remove('show');
+        });
+        btn.textContent = show ? '🙈 Ẩn đáp án' : '👉 Hiện đáp án';
+      });
+    })();
+  </script>
+</body>
+</html>
