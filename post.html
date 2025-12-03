@@ -17,9 +17,10 @@
     body {
       font-family: "Be Vietnam Pro", sans-serif;
       background: #fafafa;
-      margin: 0; padding: 0;
-      line-height: 1.85;
       color: #222;
+      margin: 0;
+      padding: 0;
+      line-height: 1.85;
     }
 
     .post-layout {
@@ -32,20 +33,19 @@
 
     #sidebar {
       flex: 1;
-      background: #f4ecff;
-      border: 1px solid #e5d9ff;
+      background: #f8f1ff;
+      border: 1px solid #e7dbff;
       border-radius: 12px;
       padding: 20px;
       height: fit-content;
-      text-align: center;
       position: sticky;
       top: 20px;
+      text-align: center;
     }
 
     #sidebar img {
       width: 80px;
       border-radius: 50%;
-      margin-bottom: 10px;
     }
 
     #post-article {
@@ -54,61 +54,38 @@
 
     #post-title {
       font-size: 32px;
-      font-weight: 700;
       margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .meta {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 20px;
     }
 
     .thumb {
       width: 100%;
-      border-radius: 15px;
-      margin: 18px 0 25px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      border-radius: 14px;
+      margin: 22px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     #post-content h2 {
-      border-left: 4px solid #7c67ff;
+      border-left: 4px solid #7a64ff;
       padding-left: 10px;
       margin-top: 35px;
-    }
-
-    #post-content .formula {
-      padding: 10px 14px;
-      background: #efe8ff;
-      border-left: 4px solid #7b5dff;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 20px;
-      display: inline-block;
-      margin: 12px 0;
-    }
-
-    #post-content .example {
-      background: #e7f7ff;
-      border-left: 4px solid #27a8e0;
-      padding: 12px 16px;
-      border-radius: 8px;
-    }
-
-    .related-box {
-      background: #f7f3ff;
-      border: 1px solid #e3d8ff;
-      padding: 18px;
-      border-radius: 12px;
-      margin-top: 40px;
-    }
-
-    #prev-post, #next-post a {
-      font-weight: 600;
     }
   </style>
 </head>
 
 <body>
+
 <div class="post-layout">
 
-  <!-- Sidebar -->
+  <!-- SIDEBAR -->
   <aside id="sidebar">
-    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar" />
+    <img src="https://i.imgur.com/6VBx3io.png" alt="Avatar">
     <h3>Xin chào, mình là Bình 👋</h3>
     <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
     <p>
@@ -117,29 +94,33 @@
     </p>
   </aside>
 
-  <!-- Main Content -->
+  <!-- MAIN ARTICLE -->
   <main id="post-article">
+
     <h1 id="post-title"></h1>
     <p class="meta">
-      <span id="post-date"></span> •
+      <span id="post-date"></span> • 
       <span id="post-category"></span>
     </p>
 
-    <img id="post-thumb" class="thumb" alt="Thumbnail">
+    <img id="post-thumb" class="thumb" src="" alt="Thumbnail">
 
     <div id="post-content">Đang tải nội dung...</div>
 
-    <div class="related-box">
+    <!-- RELATED POSTS -->
+    <div id="related-posts" class="related-box" style="
+        background:#f7f3ff; padding:18px; margin-top:40px;
+        border-radius:12px; border:1px solid #e1d4ff;">
       <h3>Bài viết liên quan</h3>
       <div id="related-list"></div>
     </div>
 
-    <div id="post-nav" style="display:flex;justify-content:space-between;margin-top:30px;">
+    <div id="post-nav" style="margin-top:40px; display:flex; justify-content:space-between;">
       <span id="prev-post"></span>
       <span id="next-post"></span>
     </div>
 
-    <div id="share-box" style="margin-top:35px;">
+    <div id="share-box" style="margin-top:20px;">
       <button onclick="shareFB()">📘 Chia sẻ Facebook</button>
       <button onclick="shareZalo()">💬 Chia sẻ Zalo</button>
       <button onclick="copyLink()">🔗 Copy link</button>
@@ -150,65 +131,54 @@
 </div>
 
 <script>
-
-  /* =====================================================
-   LẤY FILE TỪ URL
-===================================================== */
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
 if (!file) {
   document.getElementById("post-content").innerHTML =
     "<p>Lỗi: không tìm thấy bài viết.</p>";
+} else {
+  fetch("posts/posts.json")
+    .then(res => res.json())
+    .then(posts => {
+
+      const post = posts.find(p => p.file === file);
+      if (!post) return;
+
+      document.getElementById("post-title").textContent = post.title;
+      document.getElementById("post-date").textContent = "📅 " + post.date;
+      document.getElementById("post-category").textContent = "📂 " + post.category;
+      document.getElementById("post-thumb").src = post.thumbnail;
+
+      fetch("posts/" + post.file)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("post-content").innerHTML = html;
+
+          loadQuizButton(post.file);
+
+          /* RELATED POSTS */
+          const related = posts
+            .filter(p => p.category === post.category && p.file !== post.file)
+            .slice(0, 3);
+
+          const list = document.getElementById("related-list");
+          related.forEach(r => {
+            list.innerHTML += `<div><a href="post.html?file=${r.file}">${r.title}</a></div>`;
+          });
+        });
+    });
 }
 
-/* =====================================================
-   LOAD DANH SÁCH POSTS
-===================================================== */
-fetch("posts/posts.json")
-  .then(res => res.json())
-  .then(posts => {
-    const post = posts.find(p => p.file === file);
-
-    if (!post) {
-      document.getElementById("post-content").innerHTML =
-        "<p>Không tìm thấy nội dung bài viết.</p>";
-      return;
-    }
-
-    // Set metadata
-    document.getElementById("post-title").textContent = post.title;
-    document.getElementById("post-date").textContent = "📅 " + post.date;
-    document.getElementById("post-category").textContent = "📂 " + post.category;
-    document.getElementById("post-thumb").src = post.thumbnail;
-
-    /* =====================================================
-       LOAD HTML NỘI DUNG BÀI
-    ===================================================== */
-    fetch("posts/" + post.file)
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("post-content").innerHTML = html;
-
-        // Sau khi chèn HTML — chạy lại toggle đáp án
-        setupAnswerToggle();
-
-        // Sinh nút quiz tự động
-        autoAddQuizButton(post.file);
-
-        // Gợi ý bài liên quan
-        loadRelated(posts, post);
-
-        // Điều hướng prev / next
-        loadNavigation(posts, post);
-      });
-  });
-
-/* =====================================================
-   AUTO QUIZ BUTTON — TỰ THÊM NÚT "Làm bài Quiz"
-===================================================== */
-function autoAddQuizButton(file) {
+/* QUIZ BUTTON MAP */
+function loadQuizButton(file) {
   const quizMap = {
+    "present-simple.html": "present-simple",
+    "present-continuous.html": "present-continuous",
+    "present-perfect.html": "present-perfect",
+    "past-simple.html": "past-simple",
+    "future-simple.html": "future-simple",
+    "modal-verbs.html": "modal-verbs",
     "nouns.html": "nouns",
     "adjectives.html": "adjectives",
     "adverbs.html": "adverbs",
@@ -217,307 +187,57 @@ function autoAddQuizButton(file) {
     "conjunctions.html": "conjunctions",
     "quantifiers.html": "quantifiers",
     "prepositions.html": "prepositions",
-    "modal-verbs.html": "modal-verbs",
     "determiners.html": "determiners",
     "gerunds-infinitives.html": "gerunds-infinitives",
-    "comparatives-superlatives.html": "comparatives-superlatives",
-
-    // 12 thì
-    "present-simple.html": "present-simple",
-    "present-continuous.html": "present-continuous",
-    "present-perfect.html": "present-perfect",
-    "present-perfect-continuous.html": "present-perfect-continuous",
-
-    "past-simple.html": "past-simple",
-    "past-continuous.html": "past-continuous",
-    "past-perfect.html": "past-perfect",
-
-    "future-simple.html": "future-simple",
-    "future-continuous.html": "future-continuous",
-    "future-perfect.html": "future-perfect",
-    "near-future.html": "near-future",
-
-    "will-vs-going-to.html": "will-vs-going-to"
+    "comparatives-superlatives.html": "comparatives-superlatives"
   };
 
-  if (!quizMap[file]) return;
-
-  const code = `
-    <div style="margin-top:25px;">
-      <a href="/binh-blog/quiz.html?type=${quizMap[file]}"
-         style="background:#d9d1ff; padding:12px 22px; border-radius:10px;
-                font-weight:700; display:inline-block; margin-top:10px;">
-        👉 Làm bài tập: ${quizMap[file].toUpperCase()}
-      </a>
-    </div>
-  `;
-
-  document.getElementById("post-content").innerHTML += code;
-}
-
-/* =====================================================
-   LIÊN QUAN
-===================================================== */
-function loadRelated(posts, current) {
-  const related = posts
-    .filter(p => p.category === current.category && p.file !== current.file)
-    .slice(0, 3);
-
-  const box = document.getElementById("related-list");
-
-  if (related.length === 0) {
-    box.innerHTML = "<p>Không có bài liên quan.</p>";
-    return;
-  }
-
-  related.forEach(p => {
-    box.innerHTML += `
-      <p><a href="/binh-blog/post.html?file=${p.file}">${p.title}</a></p>
+  if (quizMap[file]) {
+    document.getElementById("post-content").innerHTML += `
+      <div style="margin-top:25px;">
+        <a href="/binh-blog/quiz.html?type=${quizMap[file]}"
+           style="display:inline-block; padding:12px 22px;
+                  background:#d9d1ff; border-radius:10px;
+                  font-weight:600; font-size:18px;">
+          👉 Làm bài Quiz: ${quizMap[file].replace(/-/g," ").toUpperCase()}
+        </a>
+      </div>
     `;
-  });
-}
-
-/* =====================================================
-   PREVIOUS / NEXT
-===================================================== */
-function loadNavigation(posts, post) {
-  const index = posts.findIndex(p => p.file === post.file);
-
-  const prevBox = document.getElementById("prev-post");
-  const nextBox = document.getElementById("next-post");
-
-  if (index > 0) {
-    const prev = posts[index - 1];
-    prevBox.innerHTML = `⬅ <a href="/binh-blog/post.html?file=${prev.file}">${prev.title}</a>`;
-  }
-
-  if (index < posts.length - 1) {
-    const next = posts[index + 1];
-    nextBox.innerHTML = `<a href="/binh-blog/post.html?file=${next.file}">${next.title}</a> ➡`;
   }
 }
 
-/* =====================================================
-   SHARE BUTTONS
-===================================================== */
+/* SHARE BUTTONS */
 function shareFB() {
-  window.open(
-    "https://www.facebook.com/sharer/sharer.php?u=" +
-      encodeURIComponent(location.href),
-    "_blank"
-  );
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`, "_blank");
 }
-
 function shareZalo() {
-  window.open(
-    "https://zalo.me/share?url=" + encodeURIComponent(location.href),
-    "_blank"
-  );
+  window.open(`https://zalo.me/share?url=${encodeURIComponent(location.href)}`, "_blank");
 }
-
 function copyLink() {
-  navigator.clipboard.writeText(window.location.href);
+  navigator.clipboard.writeText(location.href);
   alert("Đã copy link!");
 }
-
-/* =====================================================
-   TOGGLE ĐÁP ÁN — HỖ TRỢ CHO TẤT CẢ BÀI
-===================================================== */
-function setupAnswerToggle() {
-  const answers = document.querySelectorAll(".answer-text");
-  const btn = document.getElementById("toggle-answer");
-
-  if (!btn || answers.length === 0) return;
-
-  btn.addEventListener("click", () => {
-    const hidden = answers[0].style.display === "none" || answers[0].style.display === "";
-
-    answers.forEach(a => {
-      a.style.display = hidden ? "block" : "none";
-    });
-
-    btn.innerText = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-  });
-}
 </script>
 
+<!-- GLOBAL ANSWER TOGGLE FIX -->
 <script>
-(function () {
-  // Hàm toggle: bật/tắt tất cả phần .answer-text
-  function toggleAnswers() {
-    const answers = document.querySelectorAll('.answer-text');
-    if (!answers || answers.length === 0) {
-      console.warn('Không tìm thấy phần tử .answer-text để hiển thị/ẩn đáp án.');
-      return;
-    }
-
-    // Dùng computed style để biết hiện/ẩn thực tế
-    const currentlyHidden = window.getComputedStyle(answers[0]).display === 'none';
-
-    answers.forEach(a => {
-      // nếu phần tử có inline style display, ta override; nếu không có thì set/block
-      a.style.display = currentlyHidden ? 'block' : 'none';
-    });
-
-    // cập nhật text của nút (nếu tồn tại)
-    const btn = document.getElementById('toggle-answer');
-    if (btn) btn.innerText = currentlyHidden ? '🙈 Ẩn đáp án' : '👉 Hiện đáp án';
-  }
-
-  // Gắn event bắt mọi click; dùng closest để hỗ trợ click vào icon bên trong nút
-  document.addEventListener('click', function (ev) {
-    const btn = ev.target.closest && ev.target.closest('#toggle-answer');
-    if (btn) {
-      ev.preventDefault();
-      toggleAnswers();
-    }
-  });
-
-  // Option: nếu trang load nội dung động bằng fetch và bạn muốn mặc định ẩn hết
-  // khi nội dung vừa được chèn, có thể gọi lần đầu sau 200ms để ẩn nếu cần:
-  setTimeout(() => {
-    const answers = document.querySelectorAll('.answer-text');
-    if (answers.length) {
-      answers.forEach(a => a.style.display = 'none');
-      const btn = document.getElementById('toggle-answer');
-      if (btn) btn.innerText = '👉 Hiện đáp án';
-    }
-  }, 250);
-
-})();
-</script>
-
-<script>
-/*
-  Universal answer-toggle for blog posts
-  - Works with buttons:
-      id="toggle-answer"
-      OR data-toggle="answers"
-      OR class="toggle-answers"
-  - Looks only inside the current post content container (#post-content)
-  - Toggles elements with class "answer-text"
-*/
-
-(function () {
-  // helper: finds the closest ancestor that is the article container
-  function findPostContainer(el) {
-    // prefer #post-content
-    var pc = document.getElementById('post-content');
-    if (pc) return pc;
-    // fallback: try to find ancestor with id "post-article" or role=main
-    var a = el.closest('#post-article') || el.closest('main') || document.body;
-    return a;
-  }
-
-  function toggleAnswersIn(container) {
-    if (!container) return;
-    var answers = Array.from(container.querySelectorAll('.answer-text'));
-    if (!answers.length) {
-      console.warn('Không tìm thấy phần tử .answer-text để hiển thị/ẩn đáp án.');
-      return false;
-    }
-    // determine new state: if at least one hidden -> show all, else hide all
-    var anyHidden = answers.some(a => {
-      // computed style fallback (handles inline style or stylesheet)
-      var s = window.getComputedStyle(a);
-      return s.display === 'none' || s.visibility === 'hidden' || a.dataset.hidden === "true";
-    });
-
-    answers.forEach(a => {
-      if (anyHidden) {
-        a.style.display = '';           // remove inline hiding
-        a.dataset.hidden = "false";
-      } else {
-        a.style.display = 'none';
-        a.dataset.hidden = "true";
-      }
-    });
-
-    return anyHidden; // true if we were showing (there was hidden -> now shown)
-  }
-
-  // event delegation: one click listener for whole document
-  document.addEventListener('click', function (e) {
-    var target = e.target;
-
-    // support click on child nodes inside the button (e.g., icon <span> inside)
-    var toggleButton = target.closest('[data-toggle="answers"], #toggle-answer, .toggle-answers');
-
-    if (!toggleButton) return;
-
-    e.preventDefault();
-
-    var postContainer = findPostContainer(toggleButton);
-
-    var shownBefore = toggleAnswersIn(postContainer);
-
-    // update button text if possible
-    try {
-      var btnTextShow = '👉 Hiện đáp án';
-      var btnTextHide = '🙈 Ẩn đáp án';
-
-      // if answers were hidden before (so we showed them), set label to Hide
-      var isNowShown = shownBefore; // shownBefore true means we just showed them
-      if (isNowShown) {
-        if (toggleButton.tagName.toLowerCase() === 'button' || toggleButton.tagName.toLowerCase() === 'a') {
-          toggleButton.textContent = btnTextHide;
-        } else {
-          // try to find inner label
-          var lbl = toggleButton.querySelector('.label') || toggleButton;
-          if (lbl) lbl.textContent = btnTextHide;
-        }
-      } else {
-        if (toggleButton.tagName.toLowerCase() === 'button' || toggleButton.tagName.toLowerCase() === 'a') {
-          toggleButton.textContent = btnTextShow;
-        } else {
-          var lbl2 = toggleButton.querySelector('.label') || toggleButton;
-          if (lbl2) lbl2.textContent = btnTextShow;
-        }
-      }
-    } catch (err) {
-      // ignore any errors updating text
-      console.error(err);
-    }
-  });
-
-  // Optional: when page loads, ensure all .answer-text are hidden by default
-  document.addEventListener('DOMContentLoaded', function () {
-    var post = document.getElementById('post-content') || document.body;
-    Array.from(post.querySelectorAll('.answer-text')).forEach(a => {
-      // if inline style not explicitly set, ensure hidden
-      var cs = window.getComputedStyle(a);
-      if (cs.display !== 'none') {
-        a.style.display = 'none';
-        a.dataset.hidden = "true";
-      }
-    });
-  });
-})();
-</script>
- <script>
-// TỰ ĐỘNG KÍCH HOẠT SAU KHI NỘI DUNG BÀI ĐƯỢC LOAD
 const observer = new MutationObserver(() => {
-    const btn = document.getElementById("toggle-answer");
-    const answers = document.querySelectorAll(".answer-text");
+  const btn = document.getElementById("toggle-answer");
+  const answers = document.querySelectorAll(".answer-text");
 
-    if (btn && answers.length > 0) {
-        btn.onclick = function () {
-            const isHidden =
-                answers[0].style.display === "none" || answers[0].style.display === "";
+  if (btn && answers.length > 0) {
+    btn.onclick = function () {
+      const isHidden = (answers[0].style.display === "none" || answers[0].style.display === "");
+      answers.forEach(a => { a.style.display = isHidden ? "block" : "none"; });
+      btn.textContent = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    };
 
-            answers.forEach(a => {
-                a.style.display = isHidden ? "block" : "none";
-            });
-
-            btn.textContent = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-        };
-
-        observer.disconnect(); // tránh chạy nhiều lần
-    }
+    observer.disconnect();
+  }
 });
 
-// Quan sát nội dung tải vào post-content
 observer.observe(document.getElementById("post-content"), { childList: true, subtree: true });
-</script> 
+</script>
+
 </body>
 </html>
