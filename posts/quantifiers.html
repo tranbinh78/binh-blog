@@ -1,94 +1,209 @@
-<h1>Quantifiers – Định lượng từ</h1>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quantifiers – Định lượng từ | Binh Blog</title>
 
-<p>Quantifiers là những từ chỉ số lượng, dùng trước danh từ hoặc trước cụm danh từ để mô tả “nhiều, ít, một vài, hầu hết…”.</p>
+  <style>
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0; padding: 24px;
+      background: #fff;
+    }
 
-<img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?q=80&w=1200"
-     style="width:100%; border-radius:12px; margin:20px 0;">
+    .container { max-width: 980px; margin: 0 auto; }
 
-<h2>1. Các loại định lượng từ phổ biến</h2>
+    header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+    h1 { font-size:28px; margin:6px 0; }
+    .meta { font-size:14px; color:#666; margin-bottom:18px; }
 
-<h3>• Dùng cho danh từ đếm được (countable nouns)</h3>
-<ul>
-  <li><strong>many</strong> – nhiều</li>
-  <li><strong>a few</strong> – một vài</li>
-  <li><strong>few</strong> – rất ít</li>
-</ul>
+    .grid { display:flex; gap:24px; }
+    .left { width:260px; }
 
-<h3>• Dùng cho danh từ không đếm được (uncountable nouns)</h3>
-<ul>
-  <li><strong>much</strong> – nhiều</li>
-  <li><strong>a little</strong> – một chút</li>
-  <li><strong>little</strong> – rất ít</li>
-</ul>
+    .card {
+      background:#faf5ff;
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(120,80,200,0.1);
+    }
 
-<h3>• Dùng cho cả hai</h3>
-<ul>
-  <li><strong>a lot of / lots of</strong> – nhiều</li>
-  <li><strong>some / any</strong> – một ít, vài</li>
-  <li><strong>plenty of</strong> – rất nhiều</li>
-  <li><strong>all / most / none</strong> – tất cả / hầu hết / không cái nào</li>
-</ul>
+    .content { flex:1; }
 
-<h2>2. Ví dụ</h2>
+    .example {
+      background:#eefaff;
+      border-left:4px solid #3bb4d8;
+      padding:12px;
+      border-radius:8px;
+      margin-bottom:18px;
+    }
 
-<div class="example">
-  – I have <strong>a few</strong> friends in this city. (danh từ đếm được)<br>
-  – There is <strong>a little</strong> milk left. (không đếm được)<br>
-  – She has <strong>many</strong> books. (đếm được)<br>
-  – We don’t have <strong>much</strong> time. (không đếm được)<br>
-  – He ate <strong>a lot of</strong> food. (cả hai)
+    /* Exercises */
+    button#toggle-answer {
+      background:#e8dfff;
+      border:1px solid #d7c7ff;
+      padding:8px 12px; border-radius:8px;
+      cursor:pointer; margin:10px 0;
+    }
+
+    .answer-text {
+      display:none;
+      background:#f6fff5;
+      border-left:4px solid #7bd389;
+      padding:10px 12px;
+      border-radius:4px;
+      margin:4px 0 12px;
+    }
+
+    .answer-text.show { display:block; }
+
+    p.question { margin:12px 0; color:#222; }
+
+    .quiz-button {
+      display:inline-block;
+      background:#ead8ff;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      margin-top:16px;
+      color:#4b2fb3;
+      text-decoration:none;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div style="width:56px;height:56px;background:#e8e5ff;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700;">
+      BB
+    </div>
+
+    <div>
+      <h1>Quantifiers – Định lượng từ</h1>
+      <p class="meta">📅 2025-12-04 • Category: Tiếng Anh</p>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <!-- SIDEBAR -->
+    <aside class="left">
+      <div class="card">
+        <div style="
+        width:72px;height:72px;background:#fff;border-radius:50%;margin:0 auto 10px;
+        display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700;">
+          🙂
+        </div>
+
+        <p style="text-align:center;font-weight:700;">Xin chào, mình là Bình 👋</p>
+        <p style="font-size:14px;color:#666;">Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <article class="card" style="padding:22px;">
+
+        <h2 style="margin-top:0;">Quantifiers là gì?</h2>
+        <p>
+          Quantifiers (định lượng từ) dùng để chỉ số lượng.  
+          Có thể đi với danh từ đếm được hoặc không đếm được.
+        </p>
+
+        <h3>1. Nhóm cơ bản</h3>
+        <ul>
+          <li><strong>some, any</strong></li>
+          <li><strong>a lot of, lots of</strong></li>
+          <li><strong>much, many</strong></li>
+          <li><strong>a few, few, a little, little</strong></li>
+        </ul>
+
+        <div class="example">
+          – I have <strong>a few</strong> friends.<br>
+          – There is <strong>little</strong> water left.
+        </div>
+
+        <h3>2. Cách dùng nhanh</h3>
+        <ul>
+          <li><strong>Much</strong> → danh từ không đếm được</li>
+          <li><strong>Many</strong> → danh từ đếm được</li>
+          <li><strong>A few</strong> → một ít (đếm được)</li>
+          <li><strong>A little</strong> → một ít (không đếm được)</li>
+          <li><strong>Some</strong> → câu khẳng định</li>
+          <li><strong>Any</strong> → câu phủ định / nghi vấn</li>
+        </ul>
+
+        <div class="example">
+          – She has <strong>many</strong> books.<br>
+          – Do you have <strong>any</strong> money?
+        </div>
+
+        <h3>Bài tập – Chọn đáp án đúng (10 câu)</h3>
+
+        <button id="toggle-answer">👉 Hiện đáp án</button>
+
+        <!-- EXERCISES -->
+        <div id="exercise-box">
+
+          <p class="question">1. She has ___ friends in London.</p>
+          <p class="answer-text">Đáp án: a few</p>
+
+          <p class="question">2. There isn’t ___ water left.</p>
+          <p class="answer-text">Đáp án: much</p>
+
+          <p class="question">3. We have ___ time. Hurry up!</p>
+          <p class="answer-text">Đáp án: little</p>
+
+          <p class="question">4. He doesn’t have ___ money.</p>
+          <p class="answer-text">Đáp án: any</p>
+
+          <p class="question">5. I need ___ sugar for my coffee.</p>
+          <p class="answer-text">Đáp án: a little</p>
+
+          <p class="question">6. There are ___ apples on the table.</p>
+          <p class="answer-text">Đáp án: many</p>
+
+          <p class="question">7. She has ___ homework today.</p>
+          <p class="answer-text">Đáp án: a lot of</p>
+
+          <p class="question">8. I drank ___ cups of tea.</p>
+          <p class="answer-text">Đáp án: a few</p>
+
+          <p class="question">9. Do you have ___ questions?</p>
+          <p class="answer-text">Đáp án: any</p>
+
+          <p class="question">10. He put ___ milk in the cup.</p>
+          <p class="answer-text">Đáp án: a little</p>
+
+        </div>
+
+        <a class="quiz-button" href="/binh-blog/quiz.html?type=quantifiers">
+          👉 Làm bài Quiz: QUANTIFIERS
+        </a>
+
+      </article>
+    </main>
+
+  </div>
 </div>
 
-<h2>3. Bài tập – Chọn quantifier đúng (10 câu)</h2>
+<!-- Toggle Answers Script -->
+<script>
+  (function(){
+    const btn = document.getElementById("toggle-answer");
+    const answers = document.querySelectorAll(".answer-text");
 
-<button data-toggle="answers" style="
-  background:#d9d1ff;
-  padding:10px 16px;
-  border-radius:8px;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0;">
-👉 Hiện đáp án
-</button>
+    btn.addEventListener("click", () => {
+      const isHidden = [...answers].every(a => !a.classList.contains("show"));
+      answers.forEach(a => a.classList.toggle("show", isHidden));
+      btn.textContent = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+  })();
+</script>
 
-<div class="exercise-box">
-
-  <p>1. There isn’t ___ water in the bottle.</p>
-  <p class="answer-text" style="display:none;">much</p>
-
-  <p>2. She has ___ books on the shelf.</p>
-  <p class="answer-text" style="display:none;">many</p>
-
-  <p>3. We have ___ time left. Hurry up!</p>
-  <p class="answer-text" style="display:none;">little</p>
-
-  <p>4. He has ___ friends, so he often feels lonely.</p>
-  <p class="answer-text" style="display:none;">few</p>
-
-  <p>5. They bought ___ apples for the trip.</p>
-  <p class="answer-text" style="display:none;">a lot of</p>
-
-  <p>6. There are ___ people at the party — it's crowded!</p>
-  <p class="answer-text" style="display:none;">a lot of / many</p>
-
-  <p>7. I only need ___ sugar for the recipe.</p>
-  <p class="answer-text" style="display:none;">a little</p>
-
-  <p>8. We don’t have ___ money to buy that laptop.</p>
-  <p class="answer-text" style="display:none;">much</p>
-
-  <p>9. ___ students passed the exam. It was difficult.</p>
-  <p class="answer-text" style="display:none;">Few</p>
-
-  <p>10. She has ___ free time during the week.</p>
-  <p class="answer-text" style="display:none;">little</p>
-
-</div>
-
-<div style="margin-top:25px;">
-  <a href="/binh-blog/quiz.html?type=quantifiers"
-     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;">
-     👉 Làm bài Quiz: QUANTIFIERS
-  </a>
-</div>
+</body>
+</html>
