@@ -1,98 +1,238 @@
-<h1>Articles – Mạo từ (a / an / the)</h1>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Articles – Mạo từ | Binh Blog</title>
 
-<p>
-Mạo từ (<strong>articles</strong>) được dùng trước danh từ để xác định danh từ đó chung chung hay cụ thể.  
-Có 3 loại mạo từ trong tiếng Anh: <strong>a, an, the</strong>.
-</p>
+  <style>
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0; padding: 24px;
+      background: #fff;
+    }
 
-<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200"
-     style="width:100%; border-radius:12px; margin:20px 0;">
+    .container { max-width: 980px; margin: 0 auto; }
 
-<h2>1. A / An – Mạo từ bất định</h2>
-<p>Dùng khi nói về một thứ <strong>không cụ thể</strong>, hoặc nhắc đến lần đầu.</p>
+    header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+    h1 { font-size:28px; margin:6px 0; }
+    .meta { font-size:14px; color:#666; margin-bottom:18px; }
 
-<ul>
-  <li><strong>a</strong> + danh từ đếm được số ít bắt đầu bằng phụ âm:  
-    <div class="example">a dog, a book, a student</div>
-  </li>
+    .grid { display:flex; gap:24px; }
+    .left { width:260px; }
 
-  <li><strong>an</strong> + danh từ đếm được số ít bắt đầu bằng nguyên âm (a, e, i, o, u):  
-    <div class="example">an apple, an hour, an umbrella</div>
-  </li>
-</ul>
+    .card {
+      background:#faf5ff;
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(120,80,200,0.1);
+    }
 
-<h2>2. The – Mạo từ xác định</h2>
-<p>Dùng khi danh từ đã được xác định hoặc ai cũng biết đó là gì.</p>
+    .content { flex:1; }
 
-<div class="example">
-  – Please close <strong>the</strong> door. (cái cửa ai cũng biết)<br>
-  – I saw <strong>the</strong> movie you recommended. (cụ thể)
+    .section-title {
+      display:flex; align-items:center; gap:10px;
+      margin-top:22px; margin-bottom:10px;
+    }
+
+    /* Exercises */
+    button#toggle-answer {
+      background:#e8dfff;
+      border:1px solid #d7c7ff;
+      padding:8px 12px; border-radius:8px;
+      cursor:pointer; margin:10px 0;
+    }
+
+    .answer-text {
+      display:none;
+      padding:10px 12px;
+      background:#f6fff5;
+      border-left:4px solid #7bd389;
+      margin:4px 0 14px;
+    }
+    .answer-text.show { display:block; }
+
+    p.question { margin:12px 0; color:#222; }
+
+    .quiz-button {
+      display:inline-block;
+      background:#ead8ff;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      margin-top:16px;
+      color:#4b2fb3;
+      text-decoration:none;
+    }
+
+    .related {
+      background:#faf5ff; padding:14px;
+      margin-top:20px; border-radius:10px;
+    }
+
+    footer {
+      text-align:center; margin-top:40px;
+      font-size:13px; color:#999;
+    }
+
+    @media(max-width:880px) {
+      .grid { flex-direction:column; }
+      .left { width:100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div style="width:56px;height:56px;background:#e8e5ff;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700;">
+      BB
+    </div>
+
+    <div>
+      <h1>Articles – Mạo từ</h1>
+      <p class="meta">📅 2025-12-04 • Category: Tiếng Anh</p>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <!-- SIDEBAR -->
+    <aside class="left">
+      <div class="card">
+        <div style="
+        width:72px;height:72px;background:#fff;border-radius:50%;margin:0 auto 10px;
+        display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700;">
+          🙂
+        </div>
+
+        <p style="text-align:center;font-weight:700;">Xin chào, mình là Bình 👋</p>
+        <p style="font-size:14px;color:#666;">Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="content">
+      <article class="card" style="padding:22px;">
+
+        <h2 style="margin-top:0">Mạo từ là gì?</h2>
+        <p>Mạo từ (Articles) trong tiếng Anh gồm 3 loại: <strong>a</strong>, <strong>an</strong> và <strong>the</strong>.</p>
+
+        <h3>1. A / An – Mạo từ không xác định</h3>
+        <ul>
+          <li><strong>a</strong> dùng trước danh từ số ít bắt đầu bằng phụ âm.</li>
+          <li><strong>an</strong> dùng trước danh từ số ít bắt đầu bằng nguyên âm (a, e, i, o, u).</li>
+        </ul>
+
+        <div class="example" style="
+          background:#eefaff;border-left:4px solid #3bb4d8;padding:12px;border-radius:8px;margin-bottom:18px;">
+          – a book, a dog, a teacher <br>
+          – an apple, an hour, an umbrella
+        </div>
+
+        <h3>2. The – Mạo từ xác định</h3>
+        <p>Dùng khi người nghe biết chính xác bạn đang nói đến điều gì.</p>
+        <div class="example" style="
+          background:#eefaff;border-left:4px solid #3bb4d8;padding:12px;border-radius:8px;margin-bottom:18px;">
+          – The sun is hot. <br>
+          – The book on the table is mine.
+        </div>
+
+        <h3 class="section-title">
+          <span style="width:6px;height:24px;background:#7b61ff;border-radius:2px;"></span>
+          Bài tập – Chọn mạo từ đúng (15 câu)
+        </h3>
+
+        <!-- BUTTON -->
+        <button id="toggle-answer">👉 Hiện đáp án</button>
+
+        <!-- EXERCISES -->
+        <div id="exercise-box">
+
+          <p class="question">1. She bought ___ umbrella.</p>
+          <p class="answer-text">Đáp án: an</p>
+
+          <p class="question">2. I saw ___ dog in the garden.</p>
+          <p class="answer-text">Đáp án: a</p>
+
+          <p class="question">3. ___ sun rises in the east.</p>
+          <p class="answer-text">Đáp án: The</p>
+
+          <p class="question">4. I need ___ hour to finish this.</p>
+          <p class="answer-text">Đáp án: an</p>
+
+          <p class="question">5. He is ___ best player in our team.</p>
+          <p class="answer-text">Đáp án: the</p>
+
+          <p class="question">6. She wants to buy ___ new phone.</p>
+          <p class="answer-text">Đáp án: a</p>
+
+          <p class="question">7. They live in ___ old house.</p>
+          <p class="answer-text">Đáp án: an</p>
+
+          <p class="question">8. I visited ___ museum yesterday.</p>
+          <p class="answer-text">Đáp án: the (nói đến nơi đã biết)</p>
+
+          <p class="question">9. He drank ___ cup of tea.</p>
+          <p class="answer-text">Đáp án: a</p>
+
+          <p class="question">10. Can you close ___ door?</p>
+          <p class="answer-text">Đáp án: the</p>
+
+          <p class="question">11. She is ___ honest person.</p>
+          <p class="answer-text">Đáp án: an (âm /h/ câm)</p>
+
+          <p class="question">12. I want to read ___ interesting book.</p>
+          <p class="answer-text">Đáp án: an</p>
+
+          <p class="question">13. My father bought ___ car yesterday.</p>
+          <p class="answer-text">Đáp án: a</p>
+
+          <p class="question">14. ___ moon looks beautiful tonight.</p>
+          <p class="answer-text">Đáp án: The</p>
+
+          <p class="question">15. She wants to be ___ engineer.</p>
+          <p class="answer-text">Đáp án: an</p>
+
+        </div>
+
+        <a class="quiz-button" href="/binh-blog/quiz.html?type=articles">
+          👉 Làm bài tập: ARTICLES
+        </a>
+
+        <div class="related">
+          <strong>Bài viết liên quan</strong>
+          <ul style="margin-left:20px;color:#4b2fb3">
+            <li><a href="/binh-blog/post.html?file=adjectives.html">Adjectives – Tính từ</a></li>
+            <li><a href="/binh-blog/post.html?file=nouns.html">Nouns – Danh từ</a></li>
+            <li><a href="/binh-blog/post.html?file=pronouns.html">Pronouns – Đại từ</a></li>
+          </ul>
+        </div>
+
+      </article>
+    </main>
+  </div>
+
+  <footer>©2025 — Binh Blog</footer>
+
 </div>
 
-<h2>3. Không dùng mạo từ (Zero Article)</h2>
+<script>
+  (function(){
+    const btn = document.getElementById("toggle-answer");
+    const answers = document.querySelectorAll(".answer-text");
 
-<ul>
-  <li>Dùng cho danh từ số nhiều nói chung:  
-    <div class="example">Cats are cute.</div></li>
+    btn.addEventListener("click", () => {
+      const isHidden = [...answers].every(a => !a.classList.contains("show"));
+      answers.forEach(a => a.classList.toggle("show", isHidden));
+      btn.textContent = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+  })();
+</script>
 
-  <li>Dùng cho danh từ không đếm được mang ý chung:  
-    <div class="example">Water is important.</div></li>
-
-  <li>Không dùng trước bữa ăn, ngày, tháng, tên người:  
-    <div class="example">I ate breakfast. / I met John.</div>
-  </li>
-</ul>
-
-<h2>4. Bài tập – Chọn mạo từ đúng (10 câu)</h2>
-
-<button data-toggle="answers" style="
-  background:#d9d1ff;
-  padding:10px 16px;
-  border-radius:8px;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0;">
-👉 Hiện đáp án
-</button>
-
-<div class="exercise-box">
-
-  <p>1. She is ___ engineer.</p>
-  <p class="answer-text" style="display:none;">an</p>
-
-  <p>2. I bought ___ new laptop yesterday.</p>
-  <p class="answer-text" style="display:none;">a</p>
-
-  <p>3. Please open ___ window.</p>
-  <p class="answer-text" style="display:none;">the</p>
-
-  <p>4. He wants to become ___ actor.</p>
-  <p class="answer-text" style="display:none;">an</p>
-
-  <p>5. ___ water in this bottle is cold.</p>
-  <p class="answer-text" style="display:none;">The</p>
-
-  <p>6. ___ dogs are friendly animals.</p>
-  <p class="answer-text" style="display:none;">— (không dùng mạo từ)</p>
-
-  <p>7. I saw ___ movie last night.</p>
-  <p class="answer-text" style="display:none;">a</p>
-
-  <p>8. ___ sun is very bright today.</p>
-  <p class="answer-text" style="display:none;">The</p>
-
-  <p>9. She doesn't like ___ milk.</p>
-  <p class="answer-text" style="display:none;">— (không dùng mạo từ)</p>
-
-  <p>10. He is ___ most talented student in the class.</p>
-  <p class="answer-text" style="display:none;">the</p>
-
-</div>
-
-<div style="margin-top:25px;">
-  <a href="/binh-blog/quiz.html?type=articles"
-     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;">
-     👉 Làm bài Quiz: ARTICLES
-  </a>
-</div>
+</body>
+</html>
