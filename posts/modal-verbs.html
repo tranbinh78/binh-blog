@@ -1,81 +1,205 @@
-<h1>Modal Verbs – Động từ khuyết thiếu</h1>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modal Verbs – Động từ khuyết thiếu | Binh Blog</title>
 
-<p>Modal verbs là những động từ đặc biệt dùng để diễn tả <strong>khả năng, xin phép, lời khuyên, sự bắt buộc, dự đoán</strong>…</p>
+  <style>
+    body {
+      font-family: "Be Vietnam Pro", system-ui, sans-serif;
+      margin: 0; padding: 24px;
+      background: #fffdf9;
+      color: #222;
+    }
 
-<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200"
-     style="width:100%; border-radius:12px; margin:20px 0;">
+    .container { max-width: 980px; margin: 0 auto; }
 
-<h2>1. Các Modal Verbs phổ biến</h2>
-<ul>
-  <li><strong>can / could</strong> – khả năng, xin phép</li>
-  <li><strong>may / might</strong> – khả năng có thể xảy ra</li>
-  <li><strong>should / ought to</strong> – lời khuyên</li>
-  <li><strong>must / have to</strong> – bắt buộc</li>
-  <li><strong>will / would</strong> – tương lai, lời đề nghị</li>
-</ul>
+    header { display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+    h1 { font-size:28px; margin:6px 0; color:#2a235a; }
+    .meta { font-size:13px; color:#666; margin-bottom:16px; }
 
-<h2>2. Cấu trúc chung</h2>
-<p class="formula">Modal Verb + V₁</p>
-<p>→ Đi với động từ nguyên mẫu không “to” (trừ <strong>ought to</strong>).</p>
+    .card {
+      background: #faf5ff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(120,80,200,0.06);
+    }
 
-<h2>3. Ví dụ</h2>
-<div class="example">
-  – I <strong>can speak</strong> English.<br>
-  – You <strong>should study</strong> harder.<br>
-  – She <strong>must go</strong> now.<br>
-  – He <strong>might come</strong> tomorrow.<br>
-</div>
+    h2 { margin-top:18px; color:#4635d4; }
 
-<h2>4. Bài tập – Chọn đáp án đúng (10 câu)</h2>
+    .example {
+      background:#eefaff;
+      border-left:4px solid #3bb4d8;
+      padding:12px;
+      border-radius:8px;
+      margin:14px 0;
+      line-height:1.6;
+    }
 
-<button data-toggle="answers" style="
-  background:#d9d1ff;
-  padding:10px 16px;
-  border-radius:8px;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0;">
-👉 Hiện đáp án
-</button>
+    .formula {
+      display:inline-block;
+      background:#fff4e6;
+      padding:8px 12px;
+      border-left:4px solid #ffb74d;
+      border-radius:6px;
+      font-weight:700;
+      margin:10px 0;
+    }
 
-<div class="exercise-box">
+    /* Exercises & answers */
+    #toggle-answer {
+      background:#e7dbff;
+      border:1px solid #cbbcff;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:700;
+      margin:14px 0;
+    }
 
-  <p>1. I ___ speak French when I was 10.</p>
-  <p class="answer-text" style="display:none;">could</p>
+    .question { margin:12px 0; font-size:16px; }
 
-  <p>2. You ___ see a doctor. This looks serious.</p>
-  <p class="answer-text" style="display:none;">should</p>
+    .answer-text {
+      display:none;
+      background:#f6fff5;
+      border-left:4px solid #7bd389;
+      padding:10px 12px;
+      border-radius:6px;
+      margin:6px 0 12px;
+    }
+    .answer-text.show { display:block; }
 
-  <p>3. He ___ be at home. I saw him go out.</p>
-  <p class="answer-text" style="display:none;">can’t</p>
+    .quiz-button {
+      display:inline-block;
+      margin-top:16px;
+      background:#d9f0ff;
+      color:#0b6b8f;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      text-decoration:none;
+    }
 
-  <p>4. ___ I open the window?</p>
-  <p class="answer-text" style="display:none;">May / Can</p>
+    footer { margin-top:18px; color:#666; font-size:13px; }
+  </style>
+</head>
 
-  <p>5. You ___ drive so fast. It's dangerous!</p>
-  <p class="answer-text" style="display:none;">mustn't</p>
+<body>
+  <div class="container">
 
-  <p>6. She ___ play the guitar very well.</p>
-  <p class="answer-text" style="display:none;">can</p>
+    <header>
+      <div style="
+        width:56px;height:56px;border-radius:12px;background:#fff;
+        display:flex;align-items:center;justify-content:center;
+        font-weight:800;color:#4b2fb3;box-shadow:0 6px 12px rgba(75,47,179,0.06);
+      ">MB</div>
 
-  <p>7. We ___ finish this today. It's the deadline.</p>
-  <p class="answer-text" style="display:none;">must / have to</p>
+      <div>
+        <h1>Modal Verbs – Động từ khuyết thiếu</h1>
+        <div class="meta">📅 2025-12-04 • Category: Tiếng Anh</div>
+      </div>
+    </header>
 
-  <p>8. They ___ come to the party. They're busy.</p>
-  <p class="answer-text" style="display:none;">might not</p>
+    <article class="card">
+      <h2>Giới thiệu</h2>
+      <p>
+        Modal verbs là những động từ đặc biệt dùng để diễn tả khả năng, sự cho phép, yêu cầu, lời khuyên, nghĩa vụ, dự đoán,...
+        Một số modal verbs phổ biến: <strong>can, could, may, might, must, should, ought to, will, would</strong>.
+      </p>
 
-  <p>9. ___ you help me with this exercise?</p>
-  <p class="answer-text" style="display:none;">Could</p>
+      <h3>1. Cấu trúc chung</h3>
+      <p class="formula">Modal verb + V (bare infinitive)</p>
+      <p>Ví dụ: <em>She <strong>can</strong> swim.</em> (Không dùng "to" sau modal ngoại trừ "ought to")</p>
 
-  <p>10. We ___ go now or we'll be late.</p>
-  <p class="answer-text" style="display:none;">should</p>
+      <h3>2. Chức năng chính (tóm tắt)</h3>
+      <ul>
+        <li><strong>can / could</strong> — khả năng, xin phép</li>
+        <li><strong>may / might</strong> — có thể (ít chắc chắn hơn)</li>
+        <li><strong>must / have to</strong> — bắt buộc, cần phải</li>
+        <li><strong>should / ought to</strong> — lời khuyên</li>
+        <li><strong>would</strong> — lịch sự, thói quen trong quá khứ</li>
+      </ul>
 
-</div>
+      <div class="example">
+        – I <strong>can</strong> speak English.<br>
+        – You <strong>should</strong> see a doctor.<br>
+        – He <strong>must</strong> wear a helmet.<br>
+        – She <strong>might</strong> come tomorrow.
+      </div>
 
-<div style="margin-top:25px;">
-  <a href="/binh-blog/quiz.html?type=modal-verbs"
-     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;">
-     👉 Làm bài Quiz: MODAL VERBS
-  </a>
-</div>
+      <h3>3. Lưu ý</h3>
+      <ul>
+        <li>Modal verbs không chia theo chủ ngữ (no -s ở ngôi thứ 3).</li>
+        <li>Để phủ định, thêm <strong>not</strong> sau modal: <em>must not, should not, may not</em>.</li>
+      </ul>
+
+      <h2>Bài tập – Chọn đáp án đúng (10 câu)</h2>
+
+      <button id="toggle-answer">👉 Hiện đáp án</button>
+
+      <div id="exercise-box" style="margin-top:12px;">
+
+        <p class="question">1. When I was a kid, I ___ climb trees easily.</p>
+        <p class="answer-text">Đáp án: could — (khả năng trong quá khứ).</p>
+
+        <p class="question">2. You ___ finish your homework before you go out.</p>
+        <p class="answer-text">Đáp án: must / have to — (nhiệm vụ, yêu cầu cần thực hiện).</p>
+
+        <p class="question">3. ___ I open the window? It's hot here.</p>
+        <p class="answer-text">Đáp án: May / Can — (xin phép).</p>
+
+        <p class="question">4. She ___ be at home now; the light is on.</p>
+        <p class="answer-text">Đáp án: might / could — (dự đoán có căn cứ có thể xảy ra).</p>
+
+        <p class="question">5. You ___ smoke here. It's prohibited.</p>
+        <p class="answer-text">Đáp án: mustn't — (bị cấm).</p>
+
+        <p class="question">6. If I were you, I ___ apologize to her.</p>
+        <p class="answer-text">Đáp án: would — (đưa ra lời khuyên/đề nghị mang tính giả định).</p>
+
+        <p class="question">7. She ___ drive when she was 18.</p>
+        <p class="answer-text">Đáp án: could — (khả năng/khả năng trong quá khứ).</p>
+
+        <p class="question">8. You ___ see the doctor if the pain continues.</p>
+        <p class="answer-text">Đáp án: should — (lời khuyên).</p>
+
+        <p class="question">9. I ___ help you with your bags — would you like me to?</p>
+        <p class="answer-text">Đáp án: can / will / would — (lời đề nghị; natural choice: I can / I'll help you / Would you like me to?).</p>
+
+        <p class="question">10. It's late; they ___ have arrived by now.</p>
+        <p class="answer-text">Đáp án: must — (dự đoán chắc chắn dựa trên bằng chứng).</p>
+
+      </div>
+
+      <a class="quiz-button" href="/binh-blog/quiz.html?type=modal-verbs">
+        👉 Làm bài Quiz: MODAL VERBS
+      </a>
+
+      <footer>
+        <p><strong>Ghi chú:</strong> Một số câu có thể chấp nhận nhiều modal verbs (ví dụ may/might, can/will) — phần đáp án trên cho phương án phù hợp nhất theo ngữ cảnh.</p>
+      </footer>
+    </article>
+
+  </div>
+  <!-- /container -->
+  </div>
+
+<script>
+  // Toggle show/hide answers — globaI script (same pattern as other pages)
+  (function(){
+    const btn = document.getElementById("toggle-answer");
+    if (!btn) return;
+    const answers = document.querySelectorAll(".answer-text");
+
+    btn.addEventListener("click", () => {
+      // nếu tất cả đang ẩn → show; ngược lại hide
+      const showNow = [...answers].every(a => !a.classList.contains("show"));
+      answers.forEach(a => a.classList.toggle("show", showNow));
+      btn.textContent = showNow ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+  })();
+</script>
+
+</body>
+</html>
