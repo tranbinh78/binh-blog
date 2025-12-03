@@ -1085,3 +1085,133 @@ window.quizData["modal-verbs"] = {
   }
 ]
 };
+
+/* ============================
+   23. Determiners (Từ hạn định)
+   ============================ */
+window.quizData["determiners"] = {
+  title: "Bài tập – Determiners (Từ hạn định)",
+  desc: "Chọn đáp án đúng để hoàn thành câu.",
+  questions: [
+    {
+      question: "I saw ___ cat in the garden.",
+      options: ["a", "the", "some", "any"],
+      answer: 0,
+      explain: "a + danh từ số ít, không xác định."
+    },
+    {
+      question: "___ book on the table is mine.",
+      options: ["A", "Some", "The", "Any"],
+      answer: 2,
+      explain: "The dùng khi danh từ đã xác định."
+    },
+    {
+      question: "She has ___ friends in London.",
+      options: ["any", "some", "a", "the"],
+      answer: 1,
+      explain: "Some dùng trong câu khẳng định."
+    },
+    {
+      question: "Do you have ___ sugar?",
+      options: ["some", "a", "the", "any"],
+      answer: 3,
+      explain: "Any dùng trong câu hỏi và phủ định."
+    },
+    {
+      question: "___ apples are red.",
+      options: ["This", "Those", "A", "An"],
+      answer: 1,
+      explain: "Those + danh từ số nhiều 'apples'."
+    },
+    {
+      question: "He doesn’t have ___ money.",
+      options: ["some", "any", "the", "a"],
+      answer: 1,
+      explain: "Any dùng trong câu phủ định."
+    },
+    {
+      question: "I bought ___ new phone yesterday.",
+      options: ["the", "a", "any", "those"],
+      answer: 1,
+      explain: "a + danh từ số ít khi mới đề cập lần đầu."
+    },
+    {
+      question: "___ water in the glass is cold.",
+      options: ["Some", "The", "A", "Any"],
+      answer: 1,
+      explain: "The khi xác định lượng nước cụ thể."
+    },
+    {
+      question: "She lost ___ keys this morning.",
+      options: ["her", "their", "a", "some"],
+      answer: 0,
+      explain: "Possessive determiner (sở hữu)."
+    },
+    {
+      question: "___ students in this class are hardworking.",
+      options: ["Some", "Any", "Every", "A"],
+      answer: 0,
+      explain: "Some + danh từ số nhiều."
+    },
+    {
+      question: "He has visited ___ countries in Asia.",
+      options: ["a", "some", "the", "that"],
+      answer: 1,
+      explain: "Some + danh từ số nhiều."
+    },
+    {
+      question: "She finished ___ homework already.",
+      options: ["her", "some", "any", "the"],
+      answer: 0,
+      explain: "her + danh từ → sở hữu."
+    },
+    {
+      question: "There are ___ books on the shelf.",
+      options: ["little", "a", "some", "the"],
+      answer: 2,
+      explain: "Some + danh từ đếm được số nhiều."
+    },
+    {
+      question: "He drank ___ glass of milk.",
+      options: ["a", "an", "the", "any"],
+      answer: 0,
+      explain: "a + glass (phụ âm)."
+    },
+    {
+      question: "___ of my friends can speak Japanese.",
+      options: ["Some", "A", "An", "The"],
+      answer: 0,
+      explain: "Some + danh từ số nhiều."
+    },
+    {
+      question: "___ people like spicy food.",
+      options: ["Most", "A", "An", "Any"],
+      answer: 0,
+      explain: "Most + danh từ số nhiều."
+    },
+    {
+      question: "I don’t have ___ time today.",
+      options: ["some", "the", "any", "these"],
+      answer: 2,
+      explain: "Any dùng trong câu phủ định."
+    },
+    {
+      question: "She bought ___ umbrella because it was raining.",
+      options: ["an", "the", "a", "any"],
+      answer: 0,
+      explain: "an + từ bắt đầu bằng nguyên âm (umbrella)."
+    },
+    {
+      question: "___ car outside is my brother’s.",
+      options: ["Those", "A", "The", "Some"],
+      answer: 2,
+      explain: "The dùng khi nói về cái cụ thể."
+    },
+    {
+      question: "___ of the answers were correct.",
+      options: ["Much", "Many", "Most", "Any"],
+      answer: 2,
+      explain: "Most + danh từ số nhiều."
+    }
+  ]
+};
