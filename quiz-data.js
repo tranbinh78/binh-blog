@@ -1345,3 +1345,133 @@ quizData["gerunds-infinitives"] = {
   }
 ]
 };
+
+/* ============================
+   25. Comparative & Superlative – So sánh hơn & so sánh nhất
+   ============================ */
+window.quizData["comparatives-superlatives"] = {
+  title: "Bài tập – Comparatives & Superlatives",
+  desc: "Chọn đáp án đúng cho so sánh hơn và so sánh nhất.",
+  questions: [
+    {
+      question: "She is ___ than her sister.",
+      options: ["taller", "tallest", "more tall", "most tall"],
+      answer: 0,
+      explain: "So sánh hơn của 'tall' → taller + than."
+    },
+    {
+      question: "This exercise is ___ than the last one.",
+      options: ["easy", "the easiest", "easier", "more easy"],
+      answer: 2,
+      explain: "'Easy' → easier (tính từ ngắn)."
+    },
+    {
+      question: "This is ___ movie I have ever seen.",
+      options: ["worse", "the worst", "badder", "most bad"],
+      answer: 1,
+      explain: "So sánh nhất của 'bad' → the worst."
+    },
+    {
+      question: "Today is ___ than yesterday.",
+      options: ["hotter", "more hot", "hottest", "most hot"],
+      answer: 0,
+      explain: "Tính từ ngắn, gấp đôi phụ âm cuối → hotter."
+    },
+    {
+      question: "He is ___ student in the class.",
+      options: ["better", "best", "the best", "the better"],
+      answer: 2,
+      explain: "So sánh nhất cần 'the' → the best."
+    },
+    {
+      question: "This laptop is ___ expensive than mine.",
+      options: ["much", "more", "most", "very"],
+      answer: 1,
+      explain: "So sánh hơn của tính từ dài → more + adj."
+    },
+    {
+      question: "My bag is ___ than yours.",
+      options: ["heavy", "heavier", "more heavy", "the heaviest"],
+      answer: 1,
+      explain: "Tính từ ngắn → heavier."
+    },
+    {
+      question: "She is ___ than her brother.",
+      options: ["more intelligent", "intelligenter", "intelligentest", "the most intelligent"],
+      answer: 0,
+      explain: "Tính từ dài → more + adj + than."
+    },
+    {
+      question: "This road is ___ than the old one.",
+      options: ["wide", "widest", "wider", "more wide"],
+      answer: 2,
+      explain: "Wide → wider."
+    },
+    {
+      question: "He is the ___ in the team.",
+      options: ["fast", "faster", "fastest", "most fast"],
+      answer: 2,
+      explain: "So sánh nhất của fast → fastest."
+    },
+    {
+      question: "This building is ___ in the city.",
+      options: ["taller", "the tallest", "most tall", "tallest"],
+      answer: 1,
+      explain: "So sánh nhất → the + adj + est."
+    },
+    {
+      question: "This book is ___ more interesting than that one.",
+      options: ["a bit", "the most", "the best", "most"],
+      answer: 0,
+      explain: "Dùng mức độ: 'a bit + comparative'."
+    },
+    {
+      question: "She sings ___ than anyone else.",
+      options: ["more beautifully", "beautiful", "most beautifully", "the most beautiful"],
+      answer: 0,
+      explain: "Trạng từ dài → more + adv."
+    },
+    {
+      question: "This chair is ___ comfortable.",
+      options: ["much more", "more", "most", "the most"],
+      answer: 0,
+      explain: "Nhấn mạnh so sánh hơn → much + more."
+    },
+    {
+      question: "He is ___ person I know.",
+      options: ["kinder", "the kinder", "kindest", "the kindest"],
+      answer: 3,
+      explain: "So sánh nhất → the + adj + est."
+    },
+    {
+      question: "The new car is ___ than the old one.",
+      options: ["more fast", "faster", "fastest", "the faster"],
+      answer: 1,
+      explain: "Fast → faster (tính từ ngắn)."
+    },
+    {
+      question: "This task is ___ difficult than I expected.",
+      options: ["more", "most", "the most", "more than"],
+      answer: 0,
+      explain: "Tính từ dài → more + adj."
+    },
+    {
+      question: "This lake is ___ than that river.",
+      options: ["deeper", "deepest", "more deep", "the more deep"],
+      answer: 0,
+      explain: "Deep → deeper."
+    },
+    {
+      question: "He is ___ at math than English.",
+      options: ["good", "better", "best", "the best"],
+      answer: 1,
+      explain: "Good → better (so sánh hơn)."
+    },
+    {
+      question: "This is by far ___ restaurant in town.",
+      options: ["better", "good", "the best", "best"],
+      answer: 2,
+      explain: "'By far' đi với so sánh nhất → the best."
+    }
+  ]
+};
