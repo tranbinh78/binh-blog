@@ -1,101 +1,241 @@
-<h1>Conjunctions – Liên từ</h1>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Conjunctions – Liên từ | Binh Blog</title>
 
-<p>Conjunctions (liên từ) là những từ dùng để nối từ, cụm từ hoặc mệnh đề.</p>
+  <style>
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0; padding: 24px;
+      background: #fff;
+    }
 
-<img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1200"
-     style="width:100%; border-radius:12px; margin:20px 0;">
+    .container { max-width: 980px; margin: 0 auto; }
 
-<h2>1. Các loại liên từ chính</h2>
+    header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+    h1 { font-size:28px; margin:6px 0; }
+    .meta { font-size:14px; color:#666; margin-bottom:18px; }
 
-<h3>• 1) Coordinating Conjunctions – Liên từ kết hợp</h3>
-<p>Gồm 7 từ nổi tiếng trong nhóm <strong>FANBOYS</strong>:</p>
-<ul>
-  <li><strong>For</strong> – vì</li>
-  <li><strong>And</strong> – và</li>
-  <li><strong>Nor</strong> – cũng không</li>
-  <li><strong>But</strong> – nhưng</li>
-  <li><strong>Or</strong> – hoặc</li>
-  <li><strong>Yet</strong> – nhưng (dù vậy)</li>
-  <li><strong>So</strong> – nên</li>
-</ul>
+    .grid { display:flex; gap:24px; }
+    .left { width:260px; }
 
-<h3>• 2) Subordinating Conjunctions – Liên từ phụ thuộc</h3>
-<ul>
-  <li>because – bởi vì</li>
-  <li>although – mặc dù</li>
-  <li>if – nếu</li>
-  <li>when – khi</li>
-  <li>while – trong khi</li>
-  <li>before / after – trước / sau khi</li>
-  <li>since – kể từ khi / bởi vì</li>
-</ul>
+    .card {
+      background:#faf5ff;
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(120,80,200,0.1);
+    }
 
-<h3>• 3) Correlative Conjunctions – Liên từ tương quan</h3>
-<ul>
-  <li>either … or – hoặc … hoặc</li>
-  <li>neither … nor – không … cũng không</li>
-  <li>both … and – cả … và</li>
-  <li>not only … but also – không chỉ … mà còn</li>
-</ul>
+    .content { flex:1; }
 
-<h2>2. Ví dụ</h2>
-<div class="example">
-  – I wanted to go for a walk, <strong>but</strong> it was raining.<br>
-  – You can have tea <strong>or</strong> coffee.<br>
-  – <strong>Although</strong> he was tired, he finished the work.<br>
-  – She is <strong>both</strong> smart <strong>and</strong> kind.<br>
+    .section-title {
+      display:flex; align-items:center; gap:10px;
+      margin-top:22px; margin-bottom:10px;
+    }
+
+    /* Exercises */
+    button#toggle-answer {
+      background:#e8dfff;
+      border:1px solid #d7c7ff;
+      padding:8px 12px; border-radius:8px;
+      cursor:pointer; margin:10px 0;
+    }
+
+    .answer-text {
+      display:none;
+      padding:10px 12px;
+      background:#f6fff5;
+      border-left:4px solid #7bd389;
+      margin:4px 0 14px;
+    }
+
+    .answer-text.show { display:block; }
+
+    p.question { margin:12px 0; color:#222; }
+
+    .quiz-button {
+      display:inline-block;
+      background:#ead8ff;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      margin-top:16px;
+      color:#4b2fb3;
+      text-decoration:none;
+    }
+
+    .related {
+      background:#faf5ff; padding:14px;
+      margin-top:20px; border-radius:10px;
+    }
+
+    footer {
+      text-align:center; margin-top:40px;
+      font-size:13px; color:#999;
+    }
+
+    @media(max-width:880px) {
+      .grid { flex-direction:column; }
+      .left { width:100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div style="width:56px;height:56px;background:#e8e5ff;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700;">
+      BB
+    </div>
+
+    <div>
+      <h1>Conjunctions – Liên từ</h1>
+      <p class="meta">📅 2025-12-04 • Category: Tiếng Anh</p>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <!-- SIDEBAR -->
+    <aside class="left">
+      <div class="card">
+        <div style="
+        width:72px;height:72px;background:#fff;border-radius:50%;margin:0 auto 10px;
+        display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700;">
+          🙂
+        </div>
+
+        <p style="text-align:center;font-weight:700;">Xin chào, mình là Bình 👋</p>
+        <p style="font-size:14px;color:#666;">Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <article class="card" style="padding:22px;">
+
+        <h2 style="margin-top:0">Liên từ là gì?</h2>
+        <p>
+          Liên từ (Conjunctions) là từ dùng để nối các từ, cụm từ hoặc mệnh đề.
+          Có 3 nhóm chính:
+        </p>
+
+        <h3>1. Coordinating Conjunctions – Liên từ đẳng lập (FANBOYS)</h3>
+        <ul>
+          <li><strong>For</strong> – vì</li>
+          <li><strong>And</strong> – và</li>
+          <li><strong>Nor</strong> – cũng không</li>
+          <li><strong>But</strong> – nhưng</li>
+          <li><strong>Or</strong> – hoặc</li>
+          <li><strong>Yet</strong> – nhưng mà</li>
+          <li><strong>So</strong> – vì thế</li>
+        </ul>
+
+        <div class="example" style="
+          background:#eefaff;border-left:4px solid #3bb4d8;padding:12px;border-radius:8px;margin-bottom:18px;">
+          – She is tired, <strong>so</strong> she goes to bed early.  
+        </div>
+
+        <h3>2. Subordinating Conjunctions – Liên từ phụ thuộc</h3>
+        <p>because, although, though, since, while, if, unless, before, after…</p>
+
+        <div class="example" style="
+          background:#eefaff;border-left:4px solid #3bb4d8;padding:12px;border-radius:8px;margin-bottom:18px;">
+          – <strong>Although</strong> it rained, we went out.
+        </div>
+
+        <h3>3. Correlative Conjunctions – Liên từ cặp</h3>
+        <p>either…or, neither…nor, both…and, not only…but also</p>
+
+        <div class="example" style="
+          background:#eefaff;border-left:4px solid #3bb4d8;padding:12px;border-radius:8px;margin-bottom:18px;">
+          – <strong>Either</strong> you study hard <strong>or</strong> you fail.
+        </div>
+
+        <h3 class="section-title">
+          <span style="width:6px;height:24px;background:#7b61ff;border-radius:2px;"></span>
+          Bài tập – Chọn liên từ đúng (10 câu)
+        </h3>
+
+        <!-- BUTTON -->
+        <button id="toggle-answer">👉 Hiện đáp án</button>
+
+        <!-- EXERCISES -->
+        <div id="exercise-box">
+
+          <p class="question">1. She is smart ___ she is lazy.</p>
+          <p class="answer-text">Đáp án: but</p>
+
+          <p class="question">2. We stayed home ___ it was raining.</p>
+          <p class="answer-text">Đáp án: because</p>
+
+          <p class="question">3. I want tea ___ coffee.</p>
+          <p class="answer-text">Đáp án: or</p>
+
+          <p class="question">4. He didn’t study, ___ he failed the exam.</p>
+          <p class="answer-text">Đáp án: so</p>
+
+          <p class="question">5. ___ he is rich, he is not happy.</p>
+          <p class="answer-text">Đáp án: Although</p>
+
+          <p class="question">6. You can take this one ___ that one.</p>
+          <p class="answer-text">Đáp án: or</p>
+
+          <p class="question">7. She likes both cats ___ dogs.</p>
+          <p class="answer-text">Đáp án: and</p>
+
+          <p class="question">8. I will go ___ it stops raining.</p>
+          <p class="answer-text">Đáp án: when</p>
+
+          <p class="question">9. He is tired, ___ he keeps working.</p>
+          <p class="answer-text">Đáp án: yet</p>
+
+          <p class="question">10. She will fail ___ she studies harder.</p>
+          <p class="answer-text">Đáp án: unless</p>
+
+        </div>
+
+        <a class="quiz-button" href="/binh-blog/quiz.html?type=conjunctions">
+          👉 Làm bài Quiz: CONJUNCTIONS
+        </a>
+
+        <div class="related">
+          <strong>Bài viết liên quan</strong>
+          <ul style="margin-left:20px;color:#4b2fb3">
+            <li><a href="/binh-blog/post.html?file=articles.html">Articles – Mạo từ</a></li>
+            <li><a href="/binh-blog/post.html?file=quantifiers.html">Quantifiers – Định lượng từ</a></li>
+            <li><a href="/binh-blog/post.html?file=prepositions.html">Prepositions – Giới từ</a></li>
+          </ul>
+        </div>
+
+      </article>
+    </main>
+
+  </div>
+
+  <footer>©2025 — Binh Blog</footer>
+
 </div>
 
-<h2>3. Bài tập – Chọn liên từ đúng (10 câu)</h2>
+<!-- Toggle answers script -->
+<script>
+  (function(){
+    const btn = document.getElementById("toggle-answer");
+    const answers = document.querySelectorAll(".answer-text");
 
-<button data-toggle="answers" style="
-  background:#d9d1ff;
-  padding:10px 16px;
-  border-radius:8px;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  margin:10px 0;">
-👉 Hiện đáp án
-</button>
+    btn.addEventListener("click", () => {
+      const isHidden = [...answers].every(a => !a.classList.contains("show"));
+      answers.forEach(a => a.classList.toggle("show", isHidden));
+      btn.textContent = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+  })();
+</script>
 
-<div class="exercise-box">
-
-  <p>1. I was hungry, ___ I made a sandwich.</p>
-  <p class="answer-text" style="display:none;">so</p>
-
-  <p>2. She is tired ___ she stayed up late.</p>
-  <p class="answer-text" style="display:none;">because</p>
-
-  <p>3. I like coffee, ___ I don’t like tea.</p>
-  <p class="answer-text" style="display:none;">but</p>
-
-  <p>4. You can choose pasta ___ pizza.</p>
-  <p class="answer-text" style="display:none;">or</p>
-
-  <p>5. He neither drinks ___ smokes.</p>
-  <p class="answer-text" style="display:none;">nor</p>
-
-  <p>6. ___ it was raining, we went out.</p>
-  <p class="answer-text" style="display:none;">Although</p>
-
-  <p>7. I will call you ___ I arrive.</p>
-  <p class="answer-text" style="display:none;">when</p>
-
-  <p>8. She is not only beautiful ___ also intelligent.</p>
-  <p class="answer-text" style="display:none;">but</p>
-
-  <p>9. Either you apologize ___ leave.</p>
-  <p class="answer-text" style="display:none;">or</p>
-
-  <p>10. He was sick, ___ he didn’t go to school.</p>
-  <p class="answer-text" style="display:none;">so</p>
-
-</div>
-
-<div style="margin-top:25px;">
-  <a href="/binh-blog/quiz.html?type=conjunctions"
-     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;font-weight:700;display:inline-block;">
-     👉 Làm bài Quiz: CONJUNCTIONS
-  </a>
-</div>
+</body>
+</html>
