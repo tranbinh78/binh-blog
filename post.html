@@ -494,6 +494,30 @@ function setupAnswerToggle() {
   });
 })();
 </script>
-  
+ <script>
+// TỰ ĐỘNG KÍCH HOẠT SAU KHI NỘI DUNG BÀI ĐƯỢC LOAD
+const observer = new MutationObserver(() => {
+    const btn = document.getElementById("toggle-answer");
+    const answers = document.querySelectorAll(".answer-text");
+
+    if (btn && answers.length > 0) {
+        btn.onclick = function () {
+            const isHidden =
+                answers[0].style.display === "none" || answers[0].style.display === "";
+
+            answers.forEach(a => {
+                a.style.display = isHidden ? "block" : "none";
+            });
+
+            btn.textContent = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+        };
+
+        observer.disconnect(); // tránh chạy nhiều lần
+    }
+});
+
+// Quan sát nội dung tải vào post-content
+observer.observe(document.getElementById("post-content"), { childList: true, subtree: true });
+</script> 
 </body>
 </html>
