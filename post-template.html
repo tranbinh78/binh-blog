@@ -125,5 +125,22 @@
       });
     })();
   </script>
+<script>
+// =====================
+// Toggle đáp án cho tất cả bài học
+// =====================
+function activateAnswerToggle() {
+    const btn = document.getElementById("toggle-answer");
+    const answers = document.querySelectorAll(".answer-text");
+
+    if (!btn || answers.length === 0) return;
+
+    btn.addEventListener("click", () => {
+        const show = [...answers].every(a => a.style.display === "none" || a.style.display === "");
+        answers.forEach(a => a.style.display = show ? "block" : "none");
+        btn.textContent = show ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+}
+</script>
 </body>
 </html>
