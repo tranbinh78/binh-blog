@@ -269,7 +269,7 @@ async function loadPosts() {
             card.dataset.group = "future";
 
       // Group Grammar
-      else if (["nouns","adjectives","adverbs","pronouns","articles","conjunctions","quantifiers","prepositions","modal-verbs"]
+      else if (["nouns","adjectives","adverbs","pronouns","articles","conjunctions","quantifiers","prepositions","modal-verbs","determiners"]
         .some(key => post.file.includes(key)))
         card.dataset.group = "grammar";
 
