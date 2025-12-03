@@ -5,68 +5,74 @@
 <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1200"
      style="width:100%; border-radius:12px; margin:20px 0;">
 
-<h2>1. Công thức</h2>
 
+<h2>1. Công thức</h2>
 <p class="formula"><strong>Khẳng định:</strong> S + had + V₃/ed</p>
-<p class="formula"><strong>Phủ định:</strong> S + had not (hadn't) + V₃/ed</p>
+<p class="formula"><strong>Phủ định:</strong> S + hadn’t + V₃/ed</p>
 <p class="formula"><strong>Nghi vấn:</strong> Had + S + V₃/ed?</p>
 
-<h2>2. Khi nào dùng Past Perfect?</h2>
+<h2>2. Dấu hiệu nhận biết</h2>
 <ul>
-  <li>Hành động xảy ra <strong>trước</strong> một hành động khác trong quá khứ.</li>
-  <li>Dùng với <strong>before / after / by the time</strong>.</li>
-  <li>Nhấn mạnh trình tự thời gian.</li>
-</ul>
-
-<h2>3. Dấu hiệu nhận biết</h2>
-<ul>
-  <li>before</li>
-  <li>after</li>
+  <li>before + quá khứ đơn</li>
+  <li>after + quá khứ hoàn thành</li>
   <li>by the time</li>
-  <li>already</li>
 </ul>
 
-<h2>4. Bài tập – Chọn dạng đúng của động từ</h2>
+<h2>3. Bài tập – Chọn dạng đúng (10 câu)</h2>
 
-<button id="toggle-answer"
-        style="background:#d9d1ff; padding:10px 16px; border:none; border-radius:8px;
-               cursor:pointer; font-weight:600; margin:10px 0;">
+<button id="toggle-answer" style="background:#d9d1ff; padding:10px 16px;
+                                   border:none; border-radius:8px;
+                                   cursor:pointer; font-weight:600; margin:10px 0;">
   👉 Hiện đáp án
 </button>
 
 <div id="exercise-box">
 
-  <p>1. They ______ (leave) before we arrived.</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had left</p>
-
-  <p>2. She ______ (finish) her homework before 8 PM.</p>
+  <p>1. I ______ (finish) the test before you came.</p>
   <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had finished</p>
 
-  <p>3. I ______ (never/see) that movie before last night.</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had never seen</p>
+  <p>2. She ______ (leave) before 7 PM.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had left</p>
 
-  <p>4. We ______ (eat) dinner when he called.</p>
+  <p>3. They ______ (eat) when he arrived.</p>
   <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had eaten</p>
 
-  <p>5. She ______ (go) home when I met her.</p>
+  <p>4. We ______ (go) home before it rained.</p>
   <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had gone</p>
 
-  <p>6. The train ______ (already/leave) when we arrived.</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had already left</p>
+  <p>5. He ______ (already/see) the movie.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had already seen</p>
 
-  <p>7. He ______ (study) English before he moved to the UK.</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had studied</p>
+  <p>6. The teacher ______ (check) the homework.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had checked</p>
 
-  <p>8. They ______ (not/finish) the work when the boss came.</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> hadn’t finished</p>
+  <p>7. You ______ (not/call) me.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> hadn’t called</p>
 
-  <p>9. I ______ (meet) him before the party.</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had met</p>
+  <p>8. They ______ (leave) already.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had left</p>
 
-  <p>10. She ______ (live) in Hanoi before she moved to Da Nang.</p>
-  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had lived</p>
+  <p>9. The boy ______ (break) the window.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had broken</p>
+
+  <p>10. I ______ (forget) my key.</p>
+  <p class="answer-text" style="display:none"><strong>Đáp án:</strong> had forgotten</p>
 
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("toggle-answer");
+  const answers = document.querySelectorAll(".answer-text");
+  let isShown = false;
+
+  btn.addEventListener("click", () => {
+    answers.forEach(a => a.style.display = isShown ? "none" : "block");
+    isShown = !isShown;
+    btn.textContent = isShown ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+  });
+});
+</script>
 
 <br>
 
