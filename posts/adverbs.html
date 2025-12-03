@@ -1,60 +1,211 @@
-<h1>Adverbs – Trạng từ</h1>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adverbs – Trạng từ | Binh Blog</title>
 
-<p>Adverbs là trạng từ, dùng để bổ nghĩa cho động từ, tính từ hoặc toàn bộ câu.</p>
+  <style>
+    body{font-family:Inter, system-ui, Arial, sans-serif; margin:0; padding:24px; background:#fff;}
+    .container{max-width:980px; margin:0 auto; padding:0 20px;}
 
-<h2>1. Chức năng của trạng từ</h2>
-<ul>
-  <li>Bổ nghĩa cho <strong>động từ</strong>: She sings <em>beautifully</em>.</li>
-  <li>Bổ nghĩa cho <strong>tính từ</strong>: very tall, extremely hot…</li>
-  <li>Bổ nghĩa cho <strong>cả câu</strong>: Luckily, he passed the exam.</li>
-</ul>
+    header{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+    h1{font-size:28px; margin:6px 0;}
+    .meta{color:#666; font-size:14px; margin-bottom:18px;}
 
-<h2>2. Trạng từ cách hình thành</h2>
-<ul>
-  <li>Tính từ + <strong>ly</strong>: quick → quickly</li>
-  <li>tính từ kết thúc bằng -y: happy → happily</li>
-  <li>Bất quy tắc: good → well</li>
-</ul>
+    .grid{display:flex; gap:24px;}
+    .left{width:260px;}
 
-<h2>3. Ví dụ</h2>
-<div class="example">
-  – She runs <strong>quickly</strong>.<br>
-  – He answered <strong>politely</strong>.<br>
-  – It was <strong>extremely</strong> hot yesterday.<br>
+    .card{
+      background:#faf5ff;
+      border-radius:10px;
+      padding:18px;
+      box-shadow:0 6px 20px rgba(120,80,200,0.08);
+    }
+
+    .content{flex:1;}
+    .section-title{display:flex; align-items:center; gap:12px; margin-top:22px; margin-bottom:12px;}
+
+    /* Exercises */
+    button#toggle-answer{
+      background:#e8dfff;
+      border:1px solid #d7c7ff;
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      margin-top:10px;
+    }
+
+    .answer-text{
+      display:none;
+      margin:6px 0 18px;
+      padding:10px 12px;
+      background:#f7fff5;
+      border-left:4px solid #7bd389;
+    }
+    .answer-text.show{display:block;}
+
+    p.question{margin:12px 0; color:#222;}
+    .quiz-button{
+      display:inline-block;
+      margin-top:14px;
+      padding:10px 14px;
+      background:#ead8ff;
+      border-radius:10px;
+      color:#4b2fb3;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .related{background:#faf5ff;border-radius:10px;padding:12px;margin-top:18px;}
+    footer{text-align:center;margin-top:40px;color:#999;font-size:13px;}
+
+    @media(max-width:880px){
+      .grid{flex-direction:column}
+      .left{width:100%}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div style="width:56px;height:56px;background:#e9e7ff;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;font-weight:700;color:#4b2fb3">BB</div>
+
+    <div>
+      <h1>Adverbs – Trạng từ</h1>
+      <div class="meta">📅 2025-12-04 • Category: Tiếng Anh</div>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <!-- SIDEBAR -->
+    <aside class="left">
+      <div class="card">
+        <div style="width:72px;height:72px;background:#fff;border-radius:50%;margin:0 auto 10px;
+        display:flex;align-items:center;justify-content:center;color:#4b2fb3;font-weight:700">🙂</div>
+
+        <div style="text-align:center;font-weight:700">Xin chào, mình là Bình 👋</div>
+        <div style="color:#666;margin-top:8px;font-size:14px">
+          Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+      <article class="card" style="padding:22px;">
+
+        <h2 style="margin-top:0">Trạng từ là gì?</h2>
+        <p style="color:#333; line-height:1.6">
+          Trạng từ (adverb) là từ dùng để bổ nghĩa cho <strong>động từ, tính từ hoặc cả câu</strong>.
+        </p>
+
+        <p>
+          Ví dụ:<br>
+          – She sings <strong>beautifully</strong>.<br>
+          – He is <strong>very</strong> tall.<br>
+          – <strong>Luckily</strong>, he passed the exam.
+        </p>
+
+        <h3 class="section-title">
+          <span style="width:6px;height:28px;background:#7b61ff;display:inline-block;border-radius:2px"></span>
+          Bài tập – Chọn trạng từ đúng (15 câu)
+        </h3>
+
+        <!-- BUTTON -->
+        <button id="toggle-answer">👉 Hiện đáp án</button>
+
+        <!-- EXERCISES -->
+        <div id="exercise-box">
+
+          <p class="question">1. She sings very ______. (beautiful)</p>
+          <p class="answer-text">Đáp án: beautifully</p>
+
+          <p class="question">2. He runs ______ than me. (fast)</p>
+          <p class="answer-text">Đáp án: faster</p>
+
+          <p class="question">3. They speak English very ______. (good)</p>
+          <p class="answer-text">Đáp án: well</p>
+
+          <p class="question">4. The test was ______ easy. (surprising)</p>
+          <p class="answer-text">Đáp án: surprisingly</p>
+
+          <p class="question">5. She arrived ______ for the meeting. (late)</p>
+          <p class="answer-text">Đáp án: late</p>
+
+          <p class="question">6. He drives too ______. (dangerous)</p>
+          <p class="answer-text">Đáp án: dangerously</p>
+
+          <p class="question">7. The baby slept ______ through the night. (quiet)</p>
+          <p class="answer-text">Đáp án: quietly</p>
+
+          <p class="question">8. He learns very ______. (quick)</p>
+          <p class="answer-text">Đáp án: quickly</p>
+
+          <p class="question">9. They work ______ together. (good)</p>
+          <p class="answer-text">Đáp án: well</p>
+
+          <p class="question">10. She answered the question ______. (correct)</p>
+          <p class="answer-text">Đáp án: correctly</p>
+
+          <p class="question">11. She smiled ______ at me. (happy)</p>
+          <p class="answer-text">Đáp án: happily</p>
+
+          <p class="question">12. The rain fell ______. (heavy)</p>
+          <p class="answer-text">Đáp án: heavily</p>
+
+          <p class="question">13. He shouted ______. (angry)</p>
+          <p class="answer-text">Đáp án: angrily</p>
+
+          <p class="question">14. The dog barked ______. (loud)</p>
+          <p class="answer-text">Đáp án: loudly</p>
+
+          <p class="question">15. They waited ______ for the bus. (patient)</p>
+          <p class="answer-text">Đáp án: patiently</p>
+
+        </div>
+
+        <a class="quiz-button" href="/binh-blog/quiz.html?type=adverbs">
+          👉 Làm bài tập: ADVERBS
+        </a>
+
+        <div class="related">
+          <strong>Bài viết liên quan</strong>
+          <ul style="margin-left:20px;color:#4b2fb3">
+            <li><a href="/binh-blog/post.html?file=nouns.html">Nouns – Danh từ</a></li>
+            <li><a href="/binh-blog/post.html?file=adjectives.html">Adjectives – Tính từ</a></li>
+            <li><a href="/binh-blog/post.html?file=pronouns.html">Pronouns – Đại từ</a></li>
+          </ul>
+        </div>
+
+      </article>
+
+    </main>
+  </div>
+
+  <footer>©2025 — Binh Blog</footer>
+
 </div>
 
-<h2>4. Bài tập – Điền trạng từ đúng (5 câu)</h2>
+<script>
+  (function(){
+    const btn = document.getElementById('toggle-answer');
+    const answers = document.querySelectorAll('.answer-text');
 
-<button data-toggle="answers" style="
-  background:#d9d1ff;padding:10px 16px;
-  border-radius:8px;border:none;font-weight:600;
-  cursor:pointer;margin:10px 0;">
-👉 Hiện đáp án
-</button>
+    btn.addEventListener("click", () => {
+      const hidden = [...answers].every(a => !a.classList.contains("show"));
+      answers.forEach(a => a.classList.toggle("show", hidden));
+      btn.textContent = hidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+  })();
+</script>
 
-<div class="exercise-box" style="margin-top:15px;">
-
-  <p>1. She sings very ___ (beautiful).</p>
-  <p class="answer-text" style="display:none;">beautifully</p>
-
-  <p>2. He runs ___ (quick).</p>
-  <p class="answer-text" style="display:none;">quickly</p>
-
-  <p>3. This coffee is ___ hot. (too)</p>
-  <p class="answer-text" style="display:none;">too</p>
-
-  <p>4. She studies ___ (hard).</p>
-  <p class="answer-text" style="display:none;">hard</p>
-
-  <p>5. They usually wake up ___ (early).</p>
-  <p class="answer-text" style="display:none;">early</p>
-
-</div>
-
-<div style="margin-top:25px;">
-  <a href="/binh-blog/quiz.html?type=adverbs"
-     style="background:#d9d1ff;padding:12px 20px;border-radius:10px;
-     font-weight:700;display:inline-block;">
-     👉 Làm bài tập: ADVERBS
-  </a>
-</div>
+</body>
+</html>
