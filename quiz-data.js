@@ -1215,3 +1215,113 @@ window.quizData["determiners"] = {
     }
   ]
 };
+
+/* ============================
+   24. Gerunds - Infinitives
+   ============================ */
+quizData["gerunds-infinitives"] = {
+     title: "Bài tập – Prepositions",
+     desc: "Chọn giới từ đúng trong câu.",
+     questions: [
+  {
+    question: "1. She enjoys ___ books.",
+    options: ["read", "reading", "to read"],
+    answer: "reading"
+  },
+  {
+    question: "2. I decided ___ to another city.",
+    options: ["move", "moving", "to move"],
+    answer: "to move"
+  },
+  {
+    question: "3. They finished ___ at 8 PM.",
+    options: ["work", "working", "to work"],
+    answer: "working"
+  },
+  {
+    question: "4. He promised ___ me later.",
+    options: ["calling", "to call", "call"],
+    answer: "to call"
+  },
+  {
+    question: "5. She avoided ___ him.",
+    options: ["meet", "meeting", "to meet"],
+    answer: "meeting"
+  },
+  {
+    question: "6. I want ___ Japanese.",
+    options: ["to learn", "learning", "learn"],
+    answer: "to learn"
+  },
+  {
+    question: "7. He stopped ___ because it’s unhealthy.",
+    options: ["smoke", "to smoke", "smoking"],
+    answer: "smoking"
+  },
+  {
+    question: "8. He stopped ___ milk on the way home.",
+    options: ["buy", "buying", "to buy"],
+    answer: "to buy"
+  },
+  {
+    question: "9. She forgot ___ the door.",
+    options: ["locking", "to lock", "lock"],
+    answer: "to lock"
+  },
+  {
+    question: "10. I miss ___ with you.",
+    options: ["talk", "talking", "to talk"],
+    answer: "talking"
+  },
+  {
+    question: "11. They agreed ___ the project together.",
+    options: ["start", "to start", "starting"],
+    answer: "to start"
+  },
+  {
+    question: "12. He suggested ___ a break.",
+    options: ["take", "to take", "taking"],
+    answer: "taking"
+  },
+  {
+    question: "13. She hopes ___ a scholarship.",
+    options: ["get", "getting", "to get"],
+    answer: "to get"
+  },
+  {
+    question: "14. I’m interested in ___ new skills.",
+    options: ["learn", "learning", "to learn"],
+    answer: "learning"
+  },
+  {
+    question: "15. Remember ___ the lights before leaving.",
+    options: ["turn off", "turning off", "to turn off"],
+    answer: "to turn off"
+  },
+  {
+    question: "16. I remember ___ him last year.",
+    options: ["meet", "to meet", "meeting"],
+    answer: "meeting"
+  },
+  {
+    question: "17. She managed ___ the problem.",
+    options: ["solve", "solving", "to solve"],
+    answer: "to solve"
+  },
+  {
+    question: "18. He denied ___ the window.",
+    options: ["break", "to break", "breaking"],
+    answer: "breaking"
+  },
+  {
+    question: "19. My mom made me ___ my room.",
+    options: ["clean", "to clean", "cleaning"],
+    answer: "clean"
+  },
+  {
+    question: "20. Let’s stop ___ about it and start working.",
+    options: ["talk", "talking", "to talk"],
+    answer: "talking"
+  }
+]
+};
