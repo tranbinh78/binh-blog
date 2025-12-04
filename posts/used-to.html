@@ -69,36 +69,63 @@
 
 <hr>
 
-<h2>5. Bài tập</h2>
-<ol>
-  <li>I ______ (live) in the countryside when I was young.</li>
-  <li>She is ______ (get) used to the new school.</li>
-  <li>They are used to ______ (work) at night.</li>
-  <li>He didn’t ______ (use) to eat vegetables.</li>
-  <li>Are you ______ (be) used to the hot weather?</li>
-  <li>It took me weeks to get used to ______ (drive) here.</li>
-  <li>We used to ______ (go) fishing every summer.</li>
-  <li>He is getting used to ______ (speak) English at work.</li>
-  <li>Did she ______ (use) to live alone?</li>
-  <li>I’m not used to ______ (stay) up late.</li>
-</ol>
+<h2>5. Bài tập - Chọn Used to hoặc Be used to hoặc Get used to </h2>
 
-<h2>Đáp án</h2>
-<button id="toggle-answer">👉 Hiện đáp án</button>
+<button id="toggle-answer"
+        style="background:#d9c9ff;padding:10px 16px;border:none;border-radius:8px;font-weight:600;cursor:pointer;margin-bottom:15px;">
+        👉 Hiện đáp án
+      </button>
+  <div id="exercise-box">
+    <p>1. I ______ (live) in the countryside when I was young.</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> used to live</p>
+ 
+    <p>2. She is ______ (get) used to the new school.</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> getting</p>
 
-<div id="answer-box" style="display:none;">
-  <ol>
-    <li>used to live</li>
-    <li>getting</li>
-    <li>working</li>
-    <li>use</li>
-    <li>be</li>
-    <li>driving</li>
-    <li>go</li>
-    <li>speaking</li>
-    <li>use</li>
-    <li>staying</li>
-  </ol>
-</div>
+    <p>3. They are used to ______ (work) at night.</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> working</p>
 
-<p><strong>Chúc bạn học tốt! 💪🔥</strong></p>
+    <p>4. He didn’t ______ (use) to eat vegetables.</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> use</p>
+
+    <p>5. Are you ______ (be) used to the hot weather?</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> be</p>
+
+    <p>6. It took me weeks to get used to ______ (drive) here.</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> driving</p>
+
+    <p>7. We used to ______ (go) fishing every summer.</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> go</p>
+
+    <p>8. He is getting used to ______ (speak) English at work.</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> speaking</p>
+
+    <p>9. Did she ______ (use) to live alone?</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> use</p>
+
+    <p>10. I’m not used to ______ (stay) up late.</p>
+    <p class="answer-text" style="display:none"><strong>Đáp án:</strong> staying</p> 
+  </div>
+
+<!-- SCRIPT TOGGLE -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("toggle-answer");
+        const answers = document.querySelectorAll(".answer-text");
+
+        let shown = false;
+
+        btn.addEventListener("click", () => {
+        answers.forEach(a => a.style.display = shown ? "none" : "block");
+        shown = !shown;
+        btn.textContent = shown ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+        });
+      });
+      </script>
+      <br>
+
+      <a href="/binh-blog/quiz.html?type=used-to"
+         style="display:inline-block;background:#dec9ff;padding:12px 20px;border-radius:10px;
+          font-weight:700;margin-top:15px;">
+      👉 Làm bài Quiz: Used to / Be used to / Get used to
+      </a>
