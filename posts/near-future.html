@@ -1,54 +1,122 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Near Future – Sắp xảy ra</title>
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Near Future – Thì Tương Lai Gần (Be Going To)</title>
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 
 <body>
+  <div class="container">
 
-<div class="container">
-
-<h2>Near Future – Thì tương lai gần</h2>
-
-<p>...</p>
-
-<h3>4. Bài tập</h3>
-
-<ol>
-    <li>I ______ (visit) my grandparents tomorrow.</li>
-    <li>She ______ (not/buy) that dress.</li>
-    <li>They ______ (travel) to Hanoi next week.</li>
-    <li>Look! The dog ______ (jump) into the water.</li>
-    <li>We ______ (eat) out tonight.</li>
-    <li>He ______ (not/go) to school today.</li>
-    <li>You ______ (help) me later?</li>
-    <li>The boys ______ (play) football soon.</li>
-    <li>It ______ (rain) very soon.</li>
-    <li>My mom ______ (cook) dinner.</li>
-</ol>
-
-<!-- 🔥 KHỐI ĐÁP ÁN CHUẨN -->
-<div class="answer-box">
-    <button class="toggle-answer">👉 Hiện đáp án</button>
-
-    <div class="answer-text" style="display:none">
-        <p><b>1.</b> is going to visit</p>
-        <p><b>2.</b> is not going to buy</p>
-        <p><b>3.</b> are going to travel</p>
-        <p><b>4.</b> is going to jump</p>
-        <p><b>5.</b> are going to eat</p>
-        <p><b>6.</b> is not going to go</p>
-        <p><b>7.</b> are you going to help?</p>
-        <p><b>8.</b> are going to play</p>
-        <p><b>9.</b> is going to rain</p>
-        <p><b>10.</b> is going to cook</p>
+    <!-- PROFILE BOX -->
+    <div class="profile-box">
+      <img src="../images/avatar.png" class="avatar" alt="Avatar" />
+      <h3>Xin chào, mình là Bình 👋</h3>
+      <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
+      <p><a href="https://facebook.com">Facebook</a> · <a href="https://github.com">GitHub</a></p>
     </div>
-</div>
 
-</div>
+    <!-- MAIN CONTENT -->
+    <div class="post-content">
 
+      <h1>Near Future – Thì Tương Lai Gần (Be Going To)</h1>
+
+      <p>Thì Near Future dùng để diễn tả kế hoạch, dự định đã được quyết định trước hoặc điều chắc chắn sẽ xảy ra dựa trên dấu hiệu hiện tại.</p>
+
+      <h2>1. Công thức</h2>
+      <div class="note-box">
+        <p><strong>S + am/is/are + going to + V</strong></p>
+      </div>
+
+      <h2>2. Cách dùng</h2>
+      <ul>
+        <li>Nói về kế hoạch tương lai đã quyết định.</li>
+        <li>Dựa trên dấu hiệu rõ ràng cho thấy điều gì sắp xảy ra.</li>
+      </ul>
+
+      <h2>3. Dấu hiệu nhận biết</h2>
+      <ul>
+        <li>tomorrow, next week</li>
+        <li>soon, in a few minutes</li>
+        <li>Dấu hiệu hiện tại: “Look!”, “Watch out!”</li>
+      </ul>
+
+      <h2>4. Bài tập</h2>
+
+      <!-- BUTTON -->
+      <button id="toggle-answer"
+        style="background:#d9c9ff;padding:10px 16px;border:none;border-radius:8px;font-weight:600;cursor:pointer;margin-bottom:15px;">
+        👉 Hiện đáp án
+      </button>
+
+      <!-- EXERCISE BOX -->
+      <div id="exercise-box">
+
+        <p>1. I ______ (visit) my grandparents tomorrow.</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> am going to visit</p>
+
+        <p>2. She ______ (not/buy) that dress.</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> is not going to buy</p>
+
+        <p>3. They ______ (travel) to Hanoi next week.</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> are going to travel</p>
+
+        <p>4. Look! The dog ______ (jump) into the water.</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> is going to jump</p>
+
+        <p>5. We ______ (eat) out tonight.</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> are going to eat</p>
+
+        <p>6. He ______ (not/go) to school today.</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> is not going to go</p>
+
+        <p>7. You ______ (help) me later?</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> are you going to help?</p>
+
+        <p>8. The boys ______ (play) football soon.</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> are going to play</p>
+
+        <p>9. It ______ (rain) very soon.</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> is going to rain</p>
+
+        <p>10. My mom ______ (cook) dinner.</p>
+        <p class="answer-text" style="display:none"><strong>Đáp án:</strong> is going to cook</p>
+
+      </div>
+
+      <!-- SCRIPT TOGGLE -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const btn = document.getElementById("toggle-answer");
+          const answers = document.querySelectorAll(".answer-text");
+
+          let shown = false;
+
+          btn.addEventListener("click", () => {
+            answers.forEach(a => a.style.display = shown ? "none" : "block");
+            shown = !shown;
+            btn.textContent = shown ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+          });
+        });
+      </script>
+
+      <!-- QUIZ -->
+      <a href="/binh-blog/quiz.html?type=near-future" class="quiz-btn">
+        👉 Làm bài Quiz: NEAR FUTURE
+      </a>
+
+      <h2>Bài viết liên quan</h2>
+      <ul>
+        <li><a href="future-simple.html">Future Simple</a></li>
+        <li><a href="future-continuous.html">Future Continuous</a></li>
+        <li><a href="future-perfect.html">Future Perfect</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
 </body>
 </html>
