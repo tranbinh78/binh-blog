@@ -42,20 +42,34 @@
   <li>My mom ______ (cook) dinner.</li>
 </ol>
 
-<h2>Đáp án</h2>
-<button id="toggle-answer">👉 Hiện đáp án</button>
+<div class="answer-section">
+  <h3>Đáp án</h3>
+  <button class="toggle-answer">👉 Hiện đáp án</button>
 
-<div id="answer-box" style="display:none;">
-<ol>
-  <li>am going to visit</li>
-  <li>isn’t going to buy</li>
-  <li>are going to travel</li>
-  <li>is going to jump</li>
-  <li>are going to eat</li>
-  <li>isn’t going to go</li>
-  <li>Are you going to help</li>
-  <li>are going to play</li>
-  <li>is going to rain</li>
-  <li>is going to cook</li>
-</ol>
+  <div class="answer-text" style="display: none;">
+    <p>1. am going to visit</p>
+    <p>2. is not going to buy</p>
+    <p>3. are going to travel</p>
+    <p>4. is going to jump</p>
+    <p>5. are going to eat</p>
+    <p>6. is not going to go</p>
+    <p>7. are going to help</p>
+    <p>8. are going to play</p>
+    <p>9. is going to rain</p>
+    <p>10. is going to cook</p>
+  </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector(".toggle-answer");
+  const answer = document.querySelector(".answer-text");
+
+  if (btn && answer) {
+    btn.addEventListener("click", () => {
+      const isHidden = answer.style.display === "none";
+      answer.style.display = isHidden ? "block" : "none";
+      btn.textContent = isHidden ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
+    });
+  }
+});
+</script>
