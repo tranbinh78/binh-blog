@@ -176,8 +176,18 @@ function checkAnswer(qIndex, ansIndex, btn) {
     explainEl.innerHTML = "➡ " + (current.explain || "Không có giải thích.");
   }
 
-  const allDisabled = Array.from(document.querySelectorAll(".answers button")).every(b => b.disabled);
-  if (allDisabled) finishQuiz();
+  // ⭐ FIX CHUẨN: kiểm tra số câu đã trả lời thay vì kiểm tra disabled
+  function countAnswered() {
+  let n = 0;
+  document.querySelectorAll(".answers").forEach(group => {
+    if ([...group.querySelectorAll("button")].some(b => b.disabled)) n++;
+  });
+  return n;
+  }
+
+    if (countAnswered() === window.currentQuestions.length) {
+    finishQuiz();
+  }
 }
 
 /* ------------------------------
