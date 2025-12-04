@@ -392,112 +392,224 @@ window.quizData["future-perfect-continuous"] = {
   desc: "Chọn đáp án đúng cho thì Tương lai hoàn thành tiếp diễn.",
   questions: [
     {
-      question: "By 2025, I ______ here for 10 years.",
+      question: "1. By 2025, I ______ here for 10 years.",
       options: [
+        "am going to work",
         "will be working",
-        "will have worked",
         "will have been working",
-        "am going to work"
+        "will have worked"
       ],
       answer: 2,
-      explain: "Future Perfect Continuous = will have been + V-ing."
+      explain: "Diễn tả hành động kéo dài đến một mốc trong tương lai: 'will have been + V-ing'."
     },
     {
-      question: "She ______ for 3 hours by the time you arrive.",
-      options: ["will study", "will have studied", "will have been studying", "is studying"],
+      question: "2. She ______ for 3 hours by the time you arrive.",
+      options: [
+        "is studying",
+        "will study",
+        "will have been studying",
+        "will have studied"
+      ],
       answer: 2,
-      explain: "Diễn tả hành động kéo dài đến một mốc tương lai."
+      explain: "Hành động đang kéo dài đến thời điểm tương lai → will have been + V-ing."
     },
     {
-      question: "They ______ in Hanoi for 2 years by next June.",
-      options: ["will live", "will be living", "will have been living", "have lived"],
+      question: "3. They ______ in Hanoi for 2 years by next June.",
+      options: [
+        "will live",
+        "will be living",
+        "will have been living",
+        "have lived"
+      ],
       answer: 2,
-      explain: "for + khoảng thời gian → hành động kéo dài."
+      explain: "'for + khoảng thời gian' cùng với 'by (mốc thời gian)' → future perfect continuous."
     },
     {
-      question: "He ______ for 6 hours by midnight.",
-      options: ["will drive", "will have driven", "will have been driving", "is driving"],
-      answer: 2
+      question: "4. He ______ for 6 hours by midnight.",
+      options: [
+        "will drive",
+        "will have driven",
+        "will have been driving",
+        "is driving"
+      ],
+      answer: 2,
+      explain: "Khi cần nhấn mạnh thời lượng trước mốc tương lai → will have been + V-ing."
     },
     {
-      question: "We ______ for an hour by 9 PM.",
-      options: ["will wait", "will be waiting", "will have been waiting", "wait"],
-      answer: 2
+      question: "5. We ______ for an hour by 9 PM.",
+      options: [
+        "will wait",
+        "will be waiting",
+        "will have been waiting",
+        "wait"
+      ],
+      answer: 2,
+      explain: "Hành động kéo dài đến một mốc (9 PM) → will have been waiting."
     },
     {
-      question: "My mom ______ dinner for 2 hours by then.",
-      options: ["will cook", "will be cooking", "will have been cooking", "cooks"],
-      answer: 2
+      question: "6. My mom ______ dinner for 2 hours by then.",
+      options: [
+        "will cook",
+        "will be cooking",
+        "will have been cooking",
+        "cooks"
+      ],
+      answer: 2,
+      explain: "Diễn tả hành động kéo dài (nấu ăn) đến một thời điểm tương lai."
     },
     {
-      question: "You ______ for 10 hours by the time I return.",
-      options: ["sleep", "will sleep", "will have been sleeping", "will be slept"],
-      answer: 2
+      question: "7. You ______ for 10 hours by the time I return.",
+      options: [
+        "sleep",
+        "will sleep",
+        "will have been sleeping",
+        "will be slept"
+      ],
+      answer: 2,
+      explain: "Nhấn mạnh thời lượng (10 giờ) trước mốc tương lai."
     },
     {
-      question: "The kids ______ outside for 3 hours.",
-      options: ["will play", "will be playing", "will have been playing", "have played"],
-      answer: 2
+      question: "8. The kids ______ outside for 3 hours.",
+      options: [
+        "will play",
+        "will be playing",
+        "will have been playing",
+        "have played"
+      ],
+      answer: 2,
+      explain: "Hành động kéo dài đến một mốc → will have been + V-ing."
     },
     {
-      question: "My dad ______ the car for 2 hours by noon.",
-      options: ["will fix", "will have fixed", "will have been fixing", "is fixing"],
-      answer: 2
+      question: "9. My dad ______ the car for 2 hours by noon.",
+      options: [
+        "will fix",
+        "will have fixed",
+        "will have been fixing",
+        "is fixing"
+      ],
+      answer: 2,
+      explain: "Sử dụng để nhấn mạnh thời lượng công việc trước mốc (noon)."
     },
     {
-      question: "I ______ this book for a week by tomorrow.",
-      options: ["read", "will read", "will have read", "will have been reading"],
-      answer: 3
+      question: "10. I ______ this book for a week by tomorrow.",
+      options: [
+        "read",
+        "will read",
+        "will have read",
+        "will have been reading"
+      ],
+      answer: 3,
+      explain: "Nếu muốn nhấn mạnh thời lượng (một tuần) → 'will have been reading'."
     },
     {
-      question: "By next year, she ______ English for 5 years.",
-      options: ["will study", "will have studied", "will have been studying", "studies"],
-      answer: 2
+      question: "11. By next year, she ______ English for 5 years.",
+      options: [
+        "will study",
+        "will have studied",
+        "will have been studying",
+        "studies"
+      ],
+      answer: 2,
+      explain: "Khi nhấn mạnh thời lượng hành động học → will have been studying."
     },
     {
-      question: "They ______ this project for months by the time it ends.",
-      options: ["will work", "will have worked", "will have been working", "are working"],
-      answer: 2
+      question: "12. They ______ this project for months by the time it ends.",
+      options: [
+        "will work",
+        "will have worked",
+        "will have been working",
+        "are working"
+      ],
+      answer: 2,
+      explain: "Diễn tả việc kéo dài (many months) đến mốc kết thúc."
     },
     {
-      question: "He ______ football for 3 hours by 6 PM.",
-      options: ["will play", "will be playing", "will have been playing", "plays"],
-      answer: 2
+      question: "13. He ______ football for 3 hours by 6 PM.",
+      options: [
+        "will play",
+        "will be playing",
+        "will have been playing",
+        "plays"
+      ],
+      answer: 2,
+      explain: "Thời lượng hành động (3 hours) trước thời điểm tương lai → future perfect continuous."
     },
     {
-      question: "She ______ for 30 minutes by the time the bus comes.",
-      options: ["will wait", "will have waited", "will have been waiting", "waits"],
-      answer: 2
+      question: "14. She ______ for 30 minutes by the time the bus comes.",
+      options: [
+        "will wait",
+        "will have waited",
+        "will have been waiting",
+        "waits"
+      ],
+      answer: 2,
+      explain: "Hành động chờ kéo dài đến mốc (bus comes) → will have been waiting."
     },
     {
-      question: "By this time tomorrow, my sister ______ for the exam all day.",
-      options: ["will study", "will have studied", "will have been studying", "studies"],
-      answer: 2
+      question: "15. By this time tomorrow, my sister ______ for the exam all day.",
+      options: [
+        "will study",
+        "will have studied",
+        "will have been studying",
+        "studies"
+      ],
+      answer: 2,
+      explain: "Cách dùng tương tự: nhấn mạnh thời lượng (all day) trước mốc."
     },
     {
-      question: "You ______ for too long by the time the doctor sees you.",
-      options: ["will wait", "will have been waiting", "wait", "will be waited"],
-      answer: 1
+      question: "16. You ______ for too long by the time the doctor sees you.",
+      options: [
+        "will wait",
+        "will have been waiting",
+        "wait",
+        "will be waited"
+      ],
+      answer: 1,
+      explain: "'Will have been waiting' là biểu thức chuẩn cho hành động chờ kéo dài."
     },
     {
-      question: "She ______ here for hours by the time we arrive.",
-      options: ["will sit", "will be sitting", "will have been sitting", "sits"],
-      answer: 2
+      question: "17. She ______ here for hours by the time we arrive.",
+      options: [
+        "will sit",
+        "will be sitting",
+        "will have been sitting",
+        "sits"
+      ],
+      answer: 2,
+      explain: "Hành động ngồi kéo dài đến mốc → will have been sitting."
     },
     {
-      question: "They ______ around the city for 5 hours.",
-      options: ["will walk", "will have walked", "will have been walking", "walk"],
-      answer: 2
+      question: "18. They ______ around the city for 5 hours.",
+      options: [
+        "will walk",
+        "will have walked",
+        "will have been walking",
+        "walk"
+      ],
+      answer: 2,
+      explain: "Nhấn mạnh thời lượng (5 hours) trước mốc thời gian."
     },
     {
-      question: "He ______ the piano for years by the time he turns 18.",
-      options: ["will practice", "will be practicing", "will have been practicing", "practices"],
-      answer: 2
+      question: "19. He ______ the piano for years by the time he turns 18.",
+      options: [
+        "will practice",
+        "will be practicing",
+        "will have been practicing",
+        "practices"
+      ],
+      answer: 2,
+      explain: "Diễn tả hành động luyện tập kéo dài đến mốc tương lai."
     },
     {
-      question: "I ______ this game for too long by tonight.",
-      options: ["will play", "will be playing", "will have been playing", "play"],
-      answer: 2
+      question: "20. I ______ this game for too long by tonight.",
+      options: [
+        "will play",
+        "will be playing",
+        "will have been playing",
+        "play"
+      ],
+      answer: 2,
+      explain: "Hành động kéo dài tới mốc 'tonight' → will have been playing."
     }
   ]
 };
