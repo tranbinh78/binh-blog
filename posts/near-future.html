@@ -1,35 +1,12 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Near Future – Thì Tương Lai Gần (Be Going To)</title>
-  <link rel="stylesheet" href="../styles.css">
-</head>
-
-<body>
-  <div class="container">
-
-    <!-- PROFILE BOX -->
-    <div class="profile-box">
-      <img src="../images/avatar-binh.png.jpg" class="avatar" alt="Avatar" />
-      <h3>Xin chào, mình là Bình 👋</h3>
-      <p>Chia sẻ tiếng Anh, lập trình và cuộc sống mỗi ngày.</p>
-      <p><a href="https://facebook.com">Facebook</a> · <a href="https://github.com">GitHub</a></p>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div class="post-content">
-
       <h1>Near Future – Thì Tương Lai Gần (Be Going To)</h1>
 
       <p>Thì Near Future dùng để diễn tả kế hoạch, dự định đã được quyết định trước hoặc điều chắc chắn sẽ xảy ra dựa trên dấu hiệu hiện tại.</p>
 
       <h2>1. Công thức</h2>
-      <div class="note-box">
-        <p><strong>S + am/is/are + going to + V</strong></p>
-      </div>
-
+       <ul>
+        <li><strong>S + am/is/are + going to + V<</strong></li>
+       </ul>
+      
       <h2>2. Cách dùng</h2>
       <ul>
         <li>Nói về kế hoạch tương lai đã quyết định.</li>
@@ -43,7 +20,21 @@
         <li>Dấu hiệu hiện tại: “Look!”, “Watch out!”</li>
       </ul>
 
-      <h2>4. Bài tập</h2>
+      <h2>4. Ví dụ</h2>
+      <div style="background:#eef3ff;padding:12px;border-radius:10px;">
+      - I <strong> am going to </strong> visit my grandparents tomorrow.
+        (Tôi sẽ đi thăm ông bà vào ngày mai.)
+        ➡ Đây là kế hoạch đã quyết định từ trước → dùng going to. <br>
+      – Look at those dark clouds! It <strong> is going to </strong> rain.
+        (Nhìn những đám mây đen kia! Trời sắp mưa rồi.)
+        ➡ Có bằng chứng rõ ràng (mây đen) → dùng going to.<br>
+      - She <strong> is going to </strong> start a new job next week.
+        (Cô ấy sẽ bắt đầu công việc mới vào tuần sau.)
+        ➡ Đã có lịch trình cụ thể → dùng going to.<br>
+      </div>
+
+
+      <h2>5. Bài tập – Chọn đáp án đúng (10 câu)</h2>
 
       <!-- BUTTON -->
       <button id="toggle-answer"
@@ -89,34 +80,22 @@
       <!-- SCRIPT TOGGLE -->
       <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const btn = document.getElementById("toggle-answer");
-          const answers = document.querySelectorAll(".answer-text");
+        const btn = document.getElementById("toggle-answer");
+        const answers = document.querySelectorAll(".answer-text");
 
-          let shown = false;
+        let shown = false;
 
-          btn.addEventListener("click", () => {
-            answers.forEach(a => a.style.display = shown ? "none" : "block");
-            shown = !shown;
-            btn.textContent = shown ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
-          });
+        btn.addEventListener("click", () => {
+        answers.forEach(a => a.style.display = shown ? "none" : "block");
+        shown = !shown;
+        btn.textContent = shown ? "🙈 Ẩn đáp án" : "👉 Hiện đáp án";
         });
+      });
       </script>
+      <br>
 
-      <!-- QUIZ -->
-      <a href="/binh-blog/quiz.html?type=near-future" class="quiz-btn">
-        👉 Làm bài Quiz: NEAR FUTURE
+      <a href="/binh-blog/quiz.html?type=near-future"
+         style="display:inline-block;background:#dec9ff;padding:12px 20px;border-radius:10px;
+          font-weight:700;margin-top:15px;">
+      👉 Làm bài Quiz: NEAR FUTURE
       </a>
-
-      <h2>Bài viết liên quan</h2>
-      <ul>
-        <li><a href="future-simple.html">Future Simple</a></li>
-        <li><a href="future-continuous.html">Future Continuous</a></li>
-        <li><a href="future-perfect.html">Future Perfect</a></li>
-      </ul>
-
-    </div>
-  </div>
-
-  <script src="../script.js"></script>
-</body>
-</html>
