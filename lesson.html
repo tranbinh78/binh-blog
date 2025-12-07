@@ -9,15 +9,20 @@
 <style>
   body {
     font-family: "Be Vietnam Pro", sans-serif;
-    max-width: 860px;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
     background: #faf9f4;
     color: #333;
     line-height: 1.8;
     transition: 0.3s;
+    display: flex;
+    gap: 25px;
   }
   body.dark { background:#1b1b1b; color:#eee; }
+
+  /* Left content */
+  .content-area { flex: 1; }
 
   /* Header */
   header {
@@ -42,16 +47,11 @@
   }
   .back-btn:hover { background:#d1c3ff; }
 
-  /* Content */
   h2, h3 {
     margin-top: 30px;
     color: #4a3fa8;
   }
   body.dark h2, body.dark h3 { color:#cfc4ff; }
-
-  ul, li {
-    margin: 6px 0;
-  }
 
   /* Highlight Box */
   .box {
@@ -63,53 +63,117 @@
   }
   body.dark .box { background:#2a2a2a; border-color:#bba0ff; }
 
-  /* Code / pre formatting */
-  pre, code {
-    background: #f1f1f1;
-    padding: 6px 8px;
-    border-radius: 6px;
+  /* TOC */
+  #toc {
+    width: 250px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    height: fit-content;
+    border: 1px solid #ddd;
+    position: sticky;
+    top: 20px;
   }
-  body.dark pre, body.dark code { background:#333; }
+  body.dark #toc { background:#2d2d2d; border-color:#555; }
 
-  /* Mobile */
-  @media(max-width:600px){
-    body { padding:15px; }
-    header h1 { font-size:22px; }
+  #toc h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #333;
   }
+  body.dark #toc h3 { color:#ddd; }
+
+  #toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  #toc li {
+    margin-bottom: 8px;
+  }
+  #toc a {
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  body.dark #toc a { color:#eee; }
+
+  #toc a:hover {
+    text-decoration: underline;
+  }
+
+  /* MOBILE */
+  @media(max-width:900px){
+    body { flex-direction: column; }
+    #toc {
+      width: 100%;
+      position: relative;
+      top: 0;
+      margin-bottom: 20px;
+    }
+  }
+
 </style>
-
 </head>
 
 <body>
 
-<header>
-  <a href="/binh-blog/grammar-index.html" class="back-btn">← Quay lại</a>
-  <h1 id="title">Đang tải bài học...</h1>
-  <div></div>
-</header>
+<div class="content-area">
+  <header>
+    <a href="/binh-blog/grammar-index.html" class="back-btn">← Quay lại</a>
+    <h1 id="title">Đang tải bài học...</h1>
+    <div></div>
+  </header>
 
-<div id="content">Vui lòng chờ...</div>
+  <div id="content">Vui lòng chờ...</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div id="toc">
+  <h3>Mục lục</h3>
+  <ul id="toc-list">
+    <li>Đang tạo...</li>
+  </ul>
+</div>
 
 <script>
 // Lấy tên file từ URL
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
-// Markdown → HTML (parser mini)
+// Markdown → HTML
 function mdToHtml(text) {
   return text
-    .replace(/^# (.*$)/gim, "<h1>$1</h1>")
-    .replace(/^## (.*$)/gim, "<h2>$1</h2>")
-    .replace(/^### (.*$)/gim, "<h3>$1</h3>")
+    .replace(/^# (.*$)/gim, "<h1 id='$1'>$1</h1>")
+    .replace(/^## (.*$)/gim, "<h2 id='$1'>$1</h2>")
+    .replace(/^### (.*$)/gim, "<h3 id='$1'>$1</h3>")
     .replace(/^\> (.*$)/gim, "<div class='box'>$1</div>")
     .replace(/^- (.*$)/gim, "<li>$1</li>")
     .replace(/\*\*(.*?)\*\*/gim, "<b>$1</b>")
     .replace(/\*(.*?)\*/gim, "<i>$1</i>")
-    .replace(/`(.*?)`/gim, "<code>$1</code>")
-    .replace(/\n$/gim, "<br>");
+    .replace(/`(.*?)`/gim, "<code>$1</code>");
 }
 
-// Load bài học
+// Tạo TOC từ h1, h2, h3
+function generateTOC() {
+  const toc = document.getElementById("toc-list");
+  toc.innerHTML = "";
+
+  const headers = document.querySelectorAll("h2, h3");
+
+  headers.forEach(h => {
+    const id = h.innerText.replace(/\s+/g, "-");
+    h.id = id;
+
+    toc.innerHTML += `
+      <li style="margin-left:${h.tagName === 'H3' ? '15px' : '0'}">
+        <a href="#${id}">${h.innerText}</a>
+      </li>
+    `;
+  });
+}
+
+// LOAD bài học
 async function loadLesson() {
   if (!file) {
     document.getElementById("content").innerHTML = "<p>Không tìm thấy file.</p>";
@@ -123,6 +187,8 @@ async function loadLesson() {
     file.replace(".md","").replace(/-/g," ").replace(/\b\w/g, c => c.toUpperCase());
 
   document.getElementById("content").innerHTML = mdToHtml(text);
+
+  generateTOC();
 }
 
 loadLesson();
