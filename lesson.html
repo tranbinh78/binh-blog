@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 <meta charset="UTF-8">
 <title>Bài học | Binh Blog</title>
@@ -8,29 +9,85 @@
 <style>
   body {
     font-family: "Be Vietnam Pro", sans-serif;
-    max-width: 900px;
+    max-width: 860px;
     margin: auto;
     padding: 20px;
-    background: #fffdf9;
+    background: #faf9f4;
     color: #333;
-    line-height: 1.7;
+    line-height: 1.8;
+    transition: 0.3s;
   }
-  body.dark { background:#1a1a1a; color:#eee; }
+  body.dark { background:#1b1b1b; color:#eee; }
 
-  h1, h2, h3 { margin-top: 25px; }
+  /* Header */
+  header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 12px 0;
+  }
+  header h1 {
+    font-size: 26px;
+    margin: 0;
+  }
+  .back-btn {
+    background: #e6ddff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+  .back-btn:hover { background:#d1c3ff; }
+
+  /* Content */
+  h2, h3 {
+    margin-top: 30px;
+    color: #4a3fa8;
+  }
+  body.dark h2, body.dark h3 { color:#cfc4ff; }
+
+  ul, li {
+    margin: 6px 0;
+  }
+
+  /* Highlight Box */
+  .box {
+    padding: 14px 18px;
+    background:#fff;
+    border-left: 5px solid #9c7bff;
+    border-radius: 6px;
+    margin: 20px 0;
+  }
+  body.dark .box { background:#2a2a2a; border-color:#bba0ff; }
+
+  /* Code / pre formatting */
   pre, code {
-    background: #f3f3f3;
+    background: #f1f1f1;
     padding: 6px 8px;
     border-radius: 6px;
   }
   body.dark pre, body.dark code { background:#333; }
+
+  /* Mobile */
+  @media(max-width:600px){
+    body { padding:15px; }
+    header h1 { font-size:22px; }
+  }
 </style>
 
 </head>
 
 <body>
 
-<h1 id="title">Đang tải bài học...</h1>
+<header>
+  <a href="/binh-blog/grammar-index.html" class="back-btn">← Quay lại</a>
+  <h1 id="title">Đang tải bài học...</h1>
+  <div></div>
+</header>
+
 <div id="content">Vui lòng chờ...</div>
 
 <script>
@@ -38,31 +95,34 @@
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
-// Hàm tải Markdown
+// Markdown → HTML (parser mini)
+function mdToHtml(text) {
+  return text
+    .replace(/^# (.*$)/gim, "<h1>$1</h1>")
+    .replace(/^## (.*$)/gim, "<h2>$1</h2>")
+    .replace(/^### (.*$)/gim, "<h3>$1</h3>")
+    .replace(/^\> (.*$)/gim, "<div class='box'>$1</div>")
+    .replace(/^- (.*$)/gim, "<li>$1</li>")
+    .replace(/\*\*(.*?)\*\*/gim, "<b>$1</b>")
+    .replace(/\*(.*?)\*/gim, "<i>$1</i>")
+    .replace(/`(.*?)`/gim, "<code>$1</code>")
+    .replace(/\n$/gim, "<br>");
+}
+
+// Load bài học
 async function loadLesson() {
   if (!file) {
     document.getElementById("content").innerHTML = "<p>Không tìm thấy file.</p>";
     return;
   }
 
-  // Tải file Markdown
   const res = await fetch(`/binh-blog/grammar/${file}`);
   let text = await res.text();
 
-  // Chuyển Markdown → HTML (mini parser)
-  let html = text
-    .replace(/^# (.*$)/gim, "<h1>$1</h1>")
-    .replace(/^## (.*$)/gim, "<h2>$1</h2>")
-    .replace(/^### (.*$)/gim, "<h3>$1</h3>")
-    .replace(/^- (.*$)/gim, "<li>$1</li>")
-    .replace(/\*\*(.*?)\*\*/gim, "<b>$1</b>")
-    .replace(/\*(.*?)\*/gim, "<i>$1</i>")
-    .replace(/\n$/gim, "<br>");
+  document.getElementById("title").innerText =
+    file.replace(".md","").replace(/-/g," ").replace(/\b\w/g, c => c.toUpperCase());
 
-  document.getElementById("content").innerHTML = html;
-
-  // Set title
-  document.getElementById("title").innerText = file.replace(".md","").replace("-"," ");
+  document.getElementById("content").innerHTML = mdToHtml(text);
 }
 
 loadLesson();
