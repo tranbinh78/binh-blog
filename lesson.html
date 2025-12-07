@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài học | Binh Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    font-family: "Be Vietnam Pro", sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #fffdf9;
+    color: #333;
+    line-height: 1.7;
+  }
+  body.dark { background:#1a1a1a; color:#eee; }
+
+  h1, h2, h3 { margin-top: 25px; }
+  pre, code {
+    background: #f3f3f3;
+    padding: 6px 8px;
+    border-radius: 6px;
+  }
+  body.dark pre, body.dark code { background:#333; }
+</style>
+
+</head>
+
+<body>
+
+<h1 id="title">Đang tải bài học...</h1>
+<div id="content">Vui lòng chờ...</div>
+
+<script>
+// Lấy tên file từ URL
+const params = new URLSearchParams(window.location.search);
+const file = params.get("file");
+
+// Hàm tải Markdown
+async function loadLesson() {
+  if (!file) {
+    document.getElementById("content").innerHTML = "<p>Không tìm thấy file.</p>";
+    return;
+  }
+
+  // Tải file Markdown
+  const res = await fetch(`/binh-blog/grammar/${file}`);
+  let text = await res.text();
+
+  // Chuyển Markdown → HTML (mini parser)
+  let html = text
+    .replace(/^# (.*$)/gim, "<h1>$1</h1>")
+    .replace(/^## (.*$)/gim, "<h2>$1</h2>")
+    .replace(/^### (.*$)/gim, "<h3>$1</h3>")
+    .replace(/^- (.*$)/gim, "<li>$1</li>")
+    .replace(/\*\*(.*?)\*\*/gim, "<b>$1</b>")
+    .replace(/\*(.*?)\*/gim, "<i>$1</i>")
+    .replace(/\n$/gim, "<br>");
+
+  document.getElementById("content").innerHTML = html;
+
+  // Set title
+  document.getElementById("title").innerText = file.replace(".md","").replace("-"," ");
+}
+
+loadLesson();
+</script>
+
+</body>
+</html>
