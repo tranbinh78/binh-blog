@@ -2,7 +2,7 @@
 
 ## 1. Định nghĩa
 **English:**  
-The Present Simple is used for habits, daily routines, general truths, permanent situations, and timetables. It expresses things that happen regularly or facts that are always true.
+The Present Simple is used for habits, daily routines, general truths, permanent situations, and timetables. It expresses things that happen regularly or facts that are always true.<br>
 
 **Tiếng Việt:**  
 Thì Hiện tại đơn dùng để diễn tả thói quen, hoạt động lặp lại hằng ngày, sự thật hiển nhiên, trạng thái lâu dài và lịch trình. Đây là thì dùng để mô tả những điều xảy ra thường xuyên hoặc đúng trong mọi thời điểm.
