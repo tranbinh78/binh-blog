@@ -4,123 +4,123 @@
   "questions": [
     {
       "id": 1,
-      "question": "Which sentence describes a habit?",
+      "question": "Present Simple: câu hỏi 1?",
       "choices": [
-        "I am eating now.",
-        "I eat breakfast every day.",
-        "I will eat later.",
-        "I ate yesterday."
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "explanation": "Habit uses Present Simple: 'I eat breakfast every day.'"
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 2,
-      "question": "Choose negative for 'They play football.'",
+      "question": "Present Simple: câu hỏi 2?",
       "choices": [
-        "They don't play football.",
-        "They not play football.",
-        "They doesn't play football.",
-        "They didn't play football."
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "Use 'don't' with 'they'."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 3,
-      "question": "Signal word for Present Simple:",
+      "question": "Present Simple: câu hỏi 3?",
       "choices": [
-        "now",
-        "at the moment",
-        "every week",
-        "last year"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 2,
-      "explanation": "'Every week' signals routine → Present Simple."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 4,
-      "question": "Third person singular of 'go' is:",
+      "question": "Present Simple: câu hỏi 4?",
       "choices": [
-        "goes",
-        "go",
-        "goed",
-        "going"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "'He/She goes' adds -es."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 5,
-      "question": "Form the question: 'You like coffee.' →",
+      "question": "Present Simple: câu hỏi 5?",
       "choices": [
-        "Do you like coffee?",
-        "Does you like coffee?",
-        "Are you like coffee?",
-        "Did you like coffee?"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "Use 'Do' with 'you'."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 6,
-      "question": "'Water ____ at 100°C.'",
+      "question": "Present Simple: câu hỏi 6?",
       "choices": [
-        "boils",
-        "boil",
-        "is boiling",
-        "boiled"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "General fact uses Present Simple: 'boils'."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 7,
-      "question": "Which is NOT Present Simple use?",
+      "question": "Present Simple: câu hỏi 7?",
       "choices": [
-        "Habits",
-        "Permanent facts",
-        "Actions happening now",
-        "Schedules"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 2,
-      "explanation": "Actions happening now use Present Continuous."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 8,
-      "question": "Negative: 'She ____ like tea.'",
+      "question": "Present Simple: câu hỏi 8?",
       "choices": [
-        "doesn't",
-        "don't",
-        "didn't",
-        "not"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "Third person singular negative is 'doesn't'."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 9,
-      "question": "Choose correct: 'They ____ to school by bus.'",
+      "question": "Present Simple: câu hỏi 9?",
       "choices": [
-        "go",
-        "goes",
-        "are going",
-        "went"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "Plural subject uses base verb 'go'."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 10,
-      "question": "Short answer: 'Do you study?':",
+      "question": "Present Simple: câu hỏi 10?",
       "choices": [
-        "Yes, I do.",
-        "Yes, I am.",
-        "Yes, I does.",
-        "No, I am not."
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "Short answer for 'do' is 'Yes, I do.'"
+      "explanation": "Giải thích mẫu."
     }
   ]
 }

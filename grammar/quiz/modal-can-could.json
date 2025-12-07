@@ -4,123 +4,123 @@
   "questions": [
     {
       "id": 1,
-      "question": "Ability now: 'She ____ swim.'",
+      "question": "Can & Could: câu hỏi 1?",
       "choices": [
-        "can",
-        "must",
-        "should",
-        "may"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "'Can' expresses ability."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 2,
-      "question": "Past ability:",
+      "question": "Can & Could: câu hỏi 2?",
       "choices": [
-        "can",
-        "could",
-        "may",
-        "must"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "explanation": "'Could' is past of 'can'."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 3,
-      "question": "Permission: '____ I open the window?'",
+      "question": "Can & Could: câu hỏi 3?",
       "choices": [
-        "May",
-        "Must",
-        "Should",
-        "Will"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "'May I' asks permission."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 4,
-      "question": "Negative ability: 'He ____ speak Chinese.' meaning he cannot",
+      "question": "Can & Could: câu hỏi 4?",
       "choices": [
-        "can't",
-        "mustn't",
-        "shouldn't",
-        "mightn't"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "'can't' means cannot."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 5,
-      "question": "Polite request: '____ you help me?'",
+      "question": "Can & Could: câu hỏi 5?",
       "choices": [
-        "Can",
-        "Do",
-        "Will",
-        "Shall"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "'Can you...' is common for requests."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 6,
-      "question": "Which expresses possibility?",
+      "question": "Can & Could: câu hỏi 6?",
       "choices": [
-        "must",
-        "should",
-        "could",
-        "have to"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 2,
-      "explanation": "'Could' suggests possibility."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 7,
-      "question": "Offer: '____ I carry that for you?'",
+      "question": "Can & Could: câu hỏi 7?",
       "choices": [
-        "Shall",
-        "May",
-        "Must",
-        "Can"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "'Shall I...' used for offers."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 8,
-      "question": "Choose: 'You ____ try harder.' (advice)",
+      "question": "Can & Could: câu hỏi 8?",
       "choices": [
-        "can",
-        "could",
-        "should",
-        "must"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 2,
-      "explanation": "'Should' gives advice."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 9,
-      "question": "Which is stronger obligation?",
+      "question": "Can & Could: câu hỏi 9?",
       "choices": [
-        "should",
-        "must",
-        "can",
-        "may"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "explanation": "'Must' indicates strong obligation."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 10,
-      "question": "Polite past possibility: 'He ____ have left earlier.'",
+      "question": "Can & Could: câu hỏi 10?",
       "choices": [
-        "might",
-        "must",
-        "should",
-        "can"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "'Might have' indicates past possibility.'"
+      "explanation": "Giải thích mẫu."
     }
   ]
 }

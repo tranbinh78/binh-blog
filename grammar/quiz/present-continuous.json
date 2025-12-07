@@ -4,123 +4,123 @@
   "questions": [
     {
       "id": 1,
-      "question": "Which is Present Continuous?",
+      "question": "Present Continuous: câu hỏi 1?",
       "choices": [
-        "She reads now.",
-        "She is reading now.",
-        "She read now.",
-        "She will read now."
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "explanation": "Present Continuous = am/is/are + -ing."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 2,
-      "question": "Use for future arrangements: 'I ____ meeting him tomorrow.'",
+      "question": "Present Continuous: câu hỏi 2?",
       "choices": [
-        "am meeting",
-        "meet",
-        "will meet",
-        "met"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "Present Continuous can express planned future arrangements."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 3,
-      "question": "Signal word:",
+      "question": "Present Continuous: câu hỏi 3?",
       "choices": [
-        "every day",
-        "now",
-        "yesterday",
-        "often"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "explanation": "'Now' indicates Present Continuous."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 4,
-      "question": "Negative: 'They ____ watching TV.'",
+      "question": "Present Continuous: câu hỏi 4?",
       "choices": [
-        "are not",
-        "do not",
-        "does not",
-        "is not"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "'They are not watching'."
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 5,
-      "question": "What is wrong? 'He are running.'",
+      "question": "Present Continuous: câu hỏi 5?",
       "choices": [
-        "Correct",
-        "'He is running.'",
-        "'He running.'",
-        "'He was running.'"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "explanation": "Use 'is' with 'he'."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 6,
-      "question": "Temporary action uses:",
+      "question": "Present Continuous: câu hỏi 6?",
       "choices": [
-        "Present Simple",
-        "Present Continuous",
-        "Past Simple",
-        "Future Simple"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "explanation": "Temporary actions use Present Continuous."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 7,
-      "question": "Form question: 'Are you coming?': short answer:",
+      "question": "Present Continuous: câu hỏi 7?",
       "choices": [
-        "Yes, I am.",
-        "Yes, I do.",
-        "Yes, I am coming.",
-        "Yes, I are."
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "Short answer: 'Yes, I am.'"
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 8,
-      "question": "Choose correct: 'She ____ (cook) now.'",
+      "question": "Present Continuous: câu hỏi 8?",
       "choices": [
-        "cooks",
-        "is cooking",
-        "cook",
-        "cooked"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "explanation": "Present Continuous: 'is cooking'."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 9,
-      "question": "Which tense for trends?",
+      "question": "Present Continuous: câu hỏi 9?",
       "choices": [
-        "Present Simple",
-        "Present Continuous",
-        "Past Simple",
-        "Future Simple"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
-      "answer": 1,
-      "explanation": "Present Continuous for changing trends."
+      "answer": 0,
+      "explanation": "Giải thích mẫu."
     },
     {
       "id": 10,
-      "question": "He ____ studying at the moment.",
+      "question": "Present Continuous: câu hỏi 10?",
       "choices": [
-        "is",
-        "are",
-        "am",
-        "was"
+        "A",
+        "B",
+        "C",
+        "D"
       ],
       "answer": 0,
-      "explanation": "Subject 'He' uses 'is'."
+      "explanation": "Giải thích mẫu."
     }
   ]
 }
