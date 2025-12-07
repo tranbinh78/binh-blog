@@ -99,7 +99,7 @@
     display: block;
   }
 
-  /* 🔥 TOC Highlight */
+  /* TOC Highlight */
   #toc a.active {
     background: #d7caff;
     font-weight: 700;
@@ -113,7 +113,30 @@
     text-decoration: underline;
   }
 
-  /* Mobile */
+  /* Next/Prev Buttons */
+  .nav-buttons {
+    display:flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    gap: 10px;
+  }
+  .np-btn {
+    flex: 1;
+    padding: 14px;
+    background:#e6ddff;
+    text-align:center;
+    border-radius:10px;
+    text-decoration: none;
+    color:#333;
+    font-weight:600;
+  }
+  .np-btn:hover { background:#d1c3ff; }
+  body.dark .np-btn {
+    background:#5b4fa8;
+    color:white;
+  }
+  body.dark .np-btn:hover { background:#483c8c; }
+
   @media(max-width:900px){
     body { flex-direction: column; }
     #toc {
@@ -137,9 +160,11 @@
   </header>
 
   <div id="content">Vui lòng chờ...</div>
+
+  <div class="nav-buttons" id="nav-buttons"></div>
 </div>
 
-<!-- TABLE OF CONTENTS -->
+<!-- TOC Sidebar -->
 <div id="toc">
   <h3>Mục lục</h3>
   <ul id="toc-list">
@@ -148,7 +173,6 @@
 </div>
 
 <script>
-// Lấy tên file
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
@@ -165,11 +189,10 @@ function mdToHtml(text) {
     .replace(/`(.*?)`/gim, "<code>$1</code>");
 }
 
-// TOC
+// Tạo TOC
 function generateTOC() {
   const toc = document.getElementById("toc-list");
   toc.innerHTML = "";
-
   const headers = document.querySelectorAll("h2, h3");
 
   headers.forEach(h => {
@@ -184,7 +207,7 @@ function generateTOC() {
   });
 }
 
-// 🔥 Scroll Spy Highlight
+// Scroll Spy
 function activateTOCHighlight() {
   const sections = document.querySelectorAll("h2, h3");
   const tocLinks = document.querySelectorAll("#toc a");
@@ -204,6 +227,28 @@ function activateTOCHighlight() {
   });
 }
 
+// 🟦 Next / Previous bài
+async function loadNextPrev(currentFile) {
+  const res = await fetch("/binh-blog/grammar/grammar.json");
+  const list = await res.json();
+
+  const index = list.findIndex(x => x.file === currentFile);
+
+  const prev = list[index - 1];
+  const next = list[index + 1];
+
+  let html = "";
+
+  if (prev) {
+    html += `<a class="np-btn" href="/binh-blog/lesson.html?file=${prev.file}">← ${prev.title}</a>`;
+  }
+  if (next) {
+    html += `<a class="np-btn" href="/binh-blog/lesson.html?file=${next.file}">${next.title} →</a>`;
+  }
+
+  document.getElementById("nav-buttons").innerHTML = html;
+}
+
 // LOAD bài học
 async function loadLesson() {
   const res = await fetch(`/binh-blog/grammar/${file}`);
@@ -216,6 +261,7 @@ async function loadLesson() {
 
   generateTOC();
   activateTOCHighlight();
+  loadNextPrev(file);
 }
 
 loadLesson();
