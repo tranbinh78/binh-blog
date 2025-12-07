@@ -2,105 +2,117 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grammar Index | Binh Blog</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>English Grammar Lessons | Binh Blog</title>
 
-  <style>
-    body {
-      font-family: "Be Vietnam Pro", sans-serif;
-      margin: 0;
-      background: #fdfcf8;
-      color: #333;
-      padding: 20px;
-    }
-    body.dark {
-      background: #1a1a1a;
-      color: #eee;
-    }
+<style>
+  body {
+    font-family: "Be Vietnam Pro", sans-serif;
+    background: #faf9f4;
+    padding: 20px;
+    color: #333;
+    transition: 0.3s;
+    max-width: 900px;
+    margin: auto;
+  }
+  body.dark { background:#1b1b1b; color:#eee; }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 32px;
-    }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+  .module {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+  }
+  body.dark .module { background:#2a2a2a; border-color:#555; }
 
-    .card {
-      background: #ffffff;
-      padding: 18px;
-      border-radius: 18px;
-      border: 2px solid #e4e4e4;
-      cursor: pointer;
-      transition: 0.25s;
-    }
+  .module-title {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: #4a3fa8;
+  }
+  body.dark .module-title { color:#cfc4ff; }
 
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #d7caff;
-      box-shadow: 0 6px 16px rgba(120, 90, 255, 0.12);
-    }
+  .lesson-list a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.2s;
+  }
+  body.dark .lesson-list a { color:#eee; }
 
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-      height: 140px;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
+  .lesson-list a:hover {
+    background: #ede3ff;
+  }
+  body.dark .lesson-list a:hover {
+    background:#5b4fa8;
+  }
 
-    .card h3 {
-      margin-bottom: 6px;
-      font-size: 22px;
-    }
-
-    .desc {
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    body.dark .card {
-      background: #2d2d2d;
-      border-color: #555;
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <h1>📘 English Grammar Lessons</h1>
+<h1>📘 English Grammar Lessons</h1>
 
-  <div class="grid" id="grammar-list">
-    <p>Đang tải...</p>
-  </div>
+<div id="modules-container">Đang tải...</div>
 
- <script>
-  async function loadGrammar() {
-    const res = await fetch("/binh-blog/grammar/grammar.json");
-    const data = await res.json();
+<script>
+async function loadModules() {
+  const res = await fetch("/binh-blog/grammar/grammar.json");
+  const list = await res.json();
 
-    const container = document.getElementById("grammar-list");
-    container.innerHTML = "";
+  // Chia module giống lesson.html
+  const modules = {
+    "Tenses": list.slice(0, 12),
+    "Modal Verbs": list.slice(12, 16),
+    "Passive Voice": list.slice(16, 21),
+    "Conditionals": list.slice(21, 25),
+    "Verb Forms": list.slice(25, 30),
+    "Nouns / Articles": list.slice(30, 36)
+  };
 
-    data.forEach(item => {
-      container.innerHTML += `
-        <div class="card" onclick="location.href='/binh-blog/lesson.html?file=${item.file}'">
-          <img src="${item.thumbnail}" alt="${item.title}">
-          <h3>${item.title}</h3>
-          <p class="desc">${item.description}</p>
-        </div>
-      `;
+  const container = document.getElementById("modules-container");
+  container.innerHTML = "";
+
+  for (const moduleName in modules) {
+    const lessons = modules[moduleName];
+
+    const moduleDiv = document.createElement("div");
+    moduleDiv.className = "module";
+
+    moduleDiv.innerHTML = `
+      <div class="module-title">📘 ${moduleName}</div>
+      <div class="lesson-list"></div>
+    `;
+
+    const listDiv = moduleDiv.querySelector(".lesson-list");
+
+    lessons.forEach(item => {
+      const a = document.createElement("a");
+      a.href = `/binh-blog/lesson.html?file=${item.file}`;
+      a.innerText = item.title;
+      listDiv.appendChild(a);
     });
-  }
 
-  loadGrammar();
+    container.appendChild(moduleDiv);
+  }
+}
+
+loadModules();
 </script>
 
 </body>
