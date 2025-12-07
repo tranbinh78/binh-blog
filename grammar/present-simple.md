@@ -7,7 +7,6 @@ The Present Simple is used for habits, daily routines, general truths, permanent
 **Tiếng Việt:**  
 Thì Hiện tại đơn dùng để diễn tả thói quen, hoạt động lặp lại hằng ngày, sự thật hiển nhiên, trạng thái lâu dài và lịch trình. Đây là thì dùng để mô tả những điều xảy ra thường xuyên hoặc đúng trong mọi thời điểm.
 
----
 
 ## 2. Công thức kèm ví dụ
 
@@ -24,10 +23,9 @@ Thì Hiện tại đơn dùng để diễn tả thói quen, hoạt động lặp
 - Còn lại → thêm **-s**
 
 **Ví dụ:**  
-EN: She works in a hospital.<br>  
+EN: She works in a hospital.<br>
 VI: Cô ấy làm việc trong một bệnh viện.
 
----
 
 ### 🔸 Phủ định
 **Công thức:**  
@@ -40,7 +38,6 @@ VI: Cô ấy làm việc trong một bệnh viện.
 EN: He doesn’t like chocolate.<br>
 VI: Anh ấy không thích sô-cô-la.
 
----
 
 ### 🔸 Nghi vấn
 **Công thức:**  
@@ -52,31 +49,30 @@ VI: Anh ấy không thích sô-cô-la.
 - Yes, he does. / No, he doesn’t.
 
 **Ví dụ:**  
-EN: Do you play tennis?<br>  
+EN: Do you play tennis?<br>
 VI: Bạn có chơi tennis không?
 
----
 
 ## 3. Cách dùng (4–5 mục)
 
 ### ✔ 1. Diễn tả thói quen, hoạt động lặp đi lặp lại  
-EN: I get up at 6 AM every day.<br>  
+EN: I get up at 6 AM every day.<br>
 VI: Tôi thức dậy lúc 6 giờ mỗi ngày.
 
 ### ✔ 2. Diễn tả sự thật hiển nhiên  
-EN: Water boils at 100°C.<br>  
+EN: Water boils at 100°C.<br>
 VI: Nước sôi ở 100°C.
 
 ### ✔ 3. Diễn tả lịch trình, thời khóa biểu (tàu xe, TV, lịch học…)  
-EN: The train leaves at 8 AM.<br>  
+EN: The train leaves at 8 AM.<br>
 VI: Tàu rời ga lúc 8 giờ sáng.
 
 ### ✔ 4. Diễn tả tính cách, sở thích, trạng thái lâu dài  
-EN: She loves music.<br>  
+EN: She loves music.<br>
 VI: Cô ấy thích âm nhạc.
 
 ### ✔ 5. Diễn tả hướng dẫn, chỉ dẫn  
-EN: You turn left at the end of the street.<br>  
+EN: You turn left at the end of the street.<br>
 VI: Bạn rẽ trái ở cuối con đường.
 
 ---
@@ -90,7 +86,6 @@ VI: Bạn rẽ trái ở cuối con đường.
 - every day / every week / every morning  
 - on Mondays  
 
----
 
 ## 5. Bài tập (10 câu – 5 điền + 5 chọn)
 
@@ -132,7 +127,6 @@ VI: Bạn rẽ trái ở cuối con đường.
     c. opening<br>  
     d. opened<br>  
 
----
 
 ## → Đáp án
 1. goes<br>  
