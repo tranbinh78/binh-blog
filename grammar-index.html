@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grammar Index | Binh Blog</title>
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <style>
     body {
       font-family: "Be Vietnam Pro", sans-serif;
@@ -16,9 +13,7 @@
       background: #fdfcf8;
       color: #333;
       padding: 20px;
-      transition: 0.3s;
     }
-
     body.dark {
       background: #1a1a1a;
       color: #eee;
@@ -28,12 +23,11 @@
       text-align: center;
       margin-bottom: 20px;
       font-size: 32px;
-      color: #4b4b4b;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       max-width: 1100px;
       margin: auto;
@@ -41,13 +35,11 @@
 
     .card {
       background: #ffffff;
-      padding: 22px;
+      padding: 18px;
       border-radius: 18px;
-      text-align: center;
       border: 2px solid #e4e4e4;
       cursor: pointer;
       transition: 0.25s;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
     .card:hover {
@@ -56,34 +48,27 @@
       box-shadow: 0 6px 16px rgba(120, 90, 255, 0.12);
     }
 
-    .card i {
-      font-size: 40px;
-      margin-bottom: 12px;
-      color: #9560ff;
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin-bottom: 6px;
+      font-size: 22px;
+    }
+
+    .desc {
+      font-size: 14px;
+      opacity: 0.8;
     }
 
     body.dark .card {
       background: #2d2d2d;
       border-color: #555;
-    }
-
-    body.dark .card i {
-      color: #c7a8ff;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .desc {
-      font-size: 14px;
-      color: #555;
-      margin-top: 6px;
-    }
-
-    body.dark .desc {
-      color: #ccc;
     }
   </style>
 </head>
@@ -92,74 +77,31 @@
 
   <h1>📘 English Grammar Lessons</h1>
 
-  <div class="grid">
-
-    <a href="grammar/tenses.html">
-      <div class="card">
-        <i class="fa-solid fa-clock"></i>
-        <h3>12 Tenses</h3>
-        <p class="desc">Hiện tại – Quá khứ – Tương lai</p>
-      </div>
-    </a>
-
-    <a href="grammar/modal-verbs.html">
-      <div class="card">
-        <i class="fa-solid fa-key"></i>
-        <h3>Modal Verbs</h3>
-        <p class="desc">Can, Could, May, Might…</p>
-      </div>
-    </a>
-
-    <a href="grammar/passive.html">
-      <div class="card">
-        <i class="fa-solid fa-people-group"></i>
-        <h3>Passive Voice</h3>
-        <p class="desc">Câu bị động - công thức & ví dụ</p>
-      </div>
-    </a>
-
-    <a href="grammar/conditional.html">
-      <div class="card">
-        <i class="fa-solid fa-shuffle"></i>
-        <h3>Conditionals</h3>
-        <p class="desc">If 0 → 3, Mixed</p>
-      </div>
-    </a>
-
-    <a href="grammar/gerund-infinitive.html">
-      <div class="card">
-        <i class="fa-solid fa-pen-nib"></i>
-        <h3>Gerund & Infinitive</h3>
-        <p class="desc">V-ing / To V</p>
-      </div>
-    </a>
-
-    <a href="grammar/articles.html">
-      <div class="card">
-        <i class="fa-solid fa-book-open"></i>
-        <h3>Articles</h3>
-        <p class="desc">A – An – The</p>
-      </div>
-    </a>
-
-    <a href="grammar/relative-clauses.html">
-      <div class="card">
-        <i class="fa-solid fa-link"></i>
-        <h3>Relative Clauses</h3>
-        <p class="desc">Who – Which – That…</p>
-      </div>
-    </a>
-
-    <a href="grammar/comparatives.html">
-      <div class="card">
-        <i class="fa-solid fa-arrow-up-wide-short"></i>
-        <h3>Comparatives</h3>
-        <p class="desc">So sánh hơn / nhất</p>
-      </div>
-    </a>
-
+  <div class="grid" id="grammar-list">
+    <p>Đang tải...</p>
   </div>
 
-</body>
+  <script>
+    async function loadGrammar() {
+      const res = await fetch("/binh-blog/grammar/grammar.json");
+      const data = await res.json();
 
+      const container = document.getElementById("grammar-list");
+      container.innerHTML = "";
+
+      data.forEach(item => {
+        container.innerHTML += `
+          <div class="card" onclick="location.href='/binh-blog/grammar/${item.file}'">
+            <img src="${item.thumbnail}" alt="${item.title}">
+            <h3>${item.title}</h3>
+            <p class="desc">${item.description}</p>
+          </div>
+        `;
+      });
+    }
+
+    loadGrammar();
+  </script>
+
+</body>
 </html>
