@@ -7,7 +7,6 @@ The Present Simple is used for habits, daily routines, general truths, permanent
 **Tiếng Việt:**  
 Thì Hiện tại đơn dùng để diễn tả thói quen, hoạt động lặp lại hằng ngày, sự thật hiển nhiên, trạng thái lâu dài và lịch trình. Đây là thì dùng để mô tả những điều xảy ra thường xuyên hoặc đúng trong mọi thời điểm.
 
-
 ## 2. Công thức kèm ví dụ
 
 ### 🔸 Khẳng định
@@ -24,8 +23,7 @@ Thì Hiện tại đơn dùng để diễn tả thói quen, hoạt động lặp
 
 **Ví dụ:**  
 EN: She works in a hospital.<br>
-VI: Cô ấy làm việc trong một bệnh viện.
-
+VI: Cô ấy làm việc trong một bệnh viện.<br>
 
 ### 🔸 Phủ định
 **Công thức:**  
@@ -36,7 +34,7 @@ VI: Cô ấy làm việc trong một bệnh viện.
 
 **Ví dụ:**  
 EN: He doesn’t like chocolate.<br>
-VI: Anh ấy không thích sô-cô-la.
+VI: Anh ấy không thích sô-cô-la.<br>
 
 
 ### 🔸 Nghi vấn
@@ -50,30 +48,30 @@ VI: Anh ấy không thích sô-cô-la.
 
 **Ví dụ:**  
 EN: Do you play tennis?<br>
-VI: Bạn có chơi tennis không?
+VI: Bạn có chơi tennis không?<br>
 
 
 ## 3. Cách dùng (4–5 mục)
 
 ### ✔ 1. Diễn tả thói quen, hoạt động lặp đi lặp lại  
 EN: I get up at 6 AM every day.<br>
-VI: Tôi thức dậy lúc 6 giờ mỗi ngày.
+VI: Tôi thức dậy lúc 6 giờ mỗi ngày.<br>
 
 ### ✔ 2. Diễn tả sự thật hiển nhiên  
 EN: Water boils at 100°C.<br>
-VI: Nước sôi ở 100°C.
+VI: Nước sôi ở 100°C.<br>
 
 ### ✔ 3. Diễn tả lịch trình, thời khóa biểu (tàu xe, TV, lịch học…)  
 EN: The train leaves at 8 AM.<br>
-VI: Tàu rời ga lúc 8 giờ sáng.
+VI: Tàu rời ga lúc 8 giờ sáng.<br>
 
 ### ✔ 4. Diễn tả tính cách, sở thích, trạng thái lâu dài  
 EN: She loves music.<br>
-VI: Cô ấy thích âm nhạc.
+VI: Cô ấy thích âm nhạc.<br>
 
 ### ✔ 5. Diễn tả hướng dẫn, chỉ dẫn  
 EN: You turn left at the end of the street.<br>
-VI: Bạn rẽ trái ở cuối con đường.
+VI: Bạn rẽ trái ở cuối con đường.<br>
 
 ---
 
