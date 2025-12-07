@@ -244,60 +244,6 @@ body.reading-mode { grid-template-columns:1fr !important; }
 body.reading-mode #sidebar, body.reading-mode #toc { display:none !important; }
 body.reading-mode .content-area { max-width:800px; margin:auto; }
 
-/* ===============================
-   Flashcard
-================================= */
-.flashcard {
-  width: 260px;
-  height: 160px;
-  perspective: 1000px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.flashcard-inner {
-  width: 100%; height: 100%;
-  position: relative;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.flashcard.flipped .flashcard-inner {
-  transform: rotateY(180deg);
-}
-
-.flashcard-face {
-  position: absolute;
-  width: 100%; height: 100%;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  background: #ffffff;
-  border: 1px solid #ddd;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  font-size:17px;
-  font-weight:500;
-}
-
-.flashcard-face.back {
-  transform: rotateY(180deg);
-  background:#f7f5ff;
-}
-
-body.dark .flashcard-face {
-  background:#2c2c2c !important;
-  color:white;
-  border-color:#555;
-}
-
-body.dark .flashcard-face.back {
-  background:#3b3466 !important;
-}
-
 </style>
 </head>
 
@@ -334,27 +280,7 @@ body.dark .flashcard-face.back {
       📘 Luyện tập
     </button>
     </div>
-
-<!-- FLASHCARDS (Fix position) -->
-<div id="flashcard-section" style="
-  margin:25px 0;
-  padding:20px;
-  background:#fff;
-  border-radius:12px;
-  border:1px solid #ddd;
-  display:none;
-">
-  <h2 style="color:#4a3fa8;margin-top:0;">📘 Flashcards</h2>
-
-  <div id="flashcard-container" style="
-    display:flex;
-    gap:20px;
-    overflow-x:auto;
-    padding:15px 5px;
-    max-width:100%;
-  "></div>
-</div>
-     
+   
   </header>
 
   <div id="content">Đang tải nội dung...</div>
@@ -821,46 +747,7 @@ enableMobileAccordion();
 
 // ensure mobile TOC prepared
 setTimeout(enableMobileTOCButton, 500);
-
-/* ===============================
-   FLASHCARDS LOADER
-================================= */
-
-async function loadFlashcards() {
-  const slug = currentSlug();
-  const fcSection = document.getElementById("flashcard-section");
-  const fcContainer = document.getElementById("flashcard-container");
-
-  try {
-    const res = await fetch(`/binh-blog/grammar/flashcards/${slug}.json`);
-    if (!res.ok) return; // Không có flashcards → ẩn
-
-    const data = await res.json();
-    if (!data.cards || data.cards.length === 0) return;
-
-    // Hiện flashcard section
-    fcSection.style.display = "block";
-
-    // Render flashcards
-    data.cards.forEach(card => {
-      const div = document.createElement("div");
-      div.className = "flashcard";
-      div.innerHTML = `
-        <div class="flashcard-inner">
-          <div class="flashcard-face front">${card.front}</div>
-          <div class="flashcard-face back">${card.back}</div>
-        </div>
-      `;
-      div.onclick = () => div.classList.toggle("flipped");
-      fcContainer.appendChild(div);
-    });
-  } catch (e) {
-    console.warn("Không tìm thấy flashcards cho bài:", slug);
-  }
-}
-
-loadFlashcards();
-   
+ 
 </script>
 
 </body>
