@@ -5,7 +5,9 @@
 <meta charset="UTF-8">
 <title>Bài học | Binh Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<input id="search-box" type="text" placeholder="🔍 Tìm trong bài..."
+       style="padding:8px 12px; border-radius:6px; border:1px solid #ccc;
+              font-size:15px; width:200px; margin-left:10px;">
 <style>
   body {
     font-family: "Be Vietnam Pro", sans-serif;
@@ -22,6 +24,26 @@
   }
   body.dark { background:#1b1b1b; color:#eee; }
 
+/* Search highlight */
+mark {
+  background: #ffed8a;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* Dark mode highlight */
+body.dark mark {
+  background: #c49b1f;
+}
+
+/* Search box style */
+#search-box {
+  outline:none;
+}
+#search-box:focus {
+  border-color:#a88bff;
+}
+  
   /* ===== PROGRESS BAR ===== */
   #progress-container {
     position: fixed;
@@ -410,6 +432,38 @@ readingBtn.addEventListener("click", () => {
 document.getElementById("mobile-sidebar-btn").onclick = () => {
   document.getElementById("sidebar").classList.toggle("mobile-open");
 };
+
+  /* =========================
+   SEARCH TRONG BÀI HỌC
+========================= */
+function removeHighlights() {
+  const content = document.getElementById("content");
+  content.innerHTML = content.innerHTML.replace(/<mark>(.*?)<\/mark>/g, "$1");
+}
+
+function highlightKeyword(keyword) {
+  if (!keyword.trim()) return;
+
+  const content = document.getElementById("content");
+  const text = content.innerHTML;
+
+  const regex = new RegExp(`(${keyword})`, "gi");
+  const newText = text.replace(regex, "<mark>$1</mark>");
+
+  content.innerHTML = newText;
+
+  // Cuộn tới kết quả đầu tiên
+  const firstMark = document.querySelector("mark");
+  if (firstMark) firstMark.scrollIntoView({ behavior:"smooth", block:"center" });
+}
+
+document.getElementById("search-box").addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    removeHighlights();
+    highlightKeyword(e.target.value);
+  }
+});
+  
 </script>
 
 </body>
