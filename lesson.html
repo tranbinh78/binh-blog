@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <title>Bài học | Binh Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<!-- Chèn vào header (nơi có title) -->
+<button id="open-quiz-btn" style="background:#ffdede;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;">📋 Làm Quiz</button>
 <style>
 /* ===============================
    GLOBAL LAYOUT
@@ -673,5 +674,165 @@ if (window.innerWidth < 768) {
    
 </script>
 
+<!-- QUIZ POPUP -->
+<div id="quiz-modal" style="display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:99999;align-items:center;justify-content:center;">
+  <div id="quiz-box" style="width:96%;max-width:760px;background:#fff;padding:20px;border-radius:10px;max-height:90vh;overflow:auto;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+      <h3 id="quiz-title" style="margin:0">Quiz</h3>
+      <div>
+        <button id="quiz-close" style="background:#eee;border:none;padding:6px 10px;border-radius:6px;cursor:pointer;">Đóng</button>
+      </div>
+    </div>
+    <div id="quiz-content">Đang tải quiz...</div>
+    <div id="quiz-footer" style="margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
+      <div id="quiz-result"></div>
+      <div>
+        <button id="quiz-submit" style="background:#c9b3ff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;">Nộp bài</button>
+        <button id="quiz-retry" style="background:#eee;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;display:none;margin-left:6px;">Làm lại</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* QUIZ POPUP ENGINE */
+
+// helper to get current lesson slug (from ?file=present-simple.md)
+function currentSlug() {
+  const p = new URLSearchParams(window.location.search);
+  const file = p.get("file") || "";
+  return file.replace(".md",""); // returns 'present-simple'
+}
+
+const openBtn = document.getElementById("open-quiz-btn");
+const modal = document.getElementById("quiz-modal");
+const quizContent = document.getElementById("quiz-content");
+const quizTitle = document.getElementById("quiz-title");
+const quizSubmit = document.getElementById("quiz-submit");
+const quizClose = document.getElementById("quiz-close");
+const quizResult = document.getElementById("quiz-result");
+const quizRetry = document.getElementById("quiz-retry");
+
+let quizData = null;
+let userAnswers = {};
+
+// Open modal
+openBtn && openBtn.addEventListener("click", async () => {
+  const slug = currentSlug();
+  if (!slug) { alert("Không xác định được bài học."); return; }
+  modal.style.display = "flex";
+  await loadQuiz(slug);
+});
+
+// Close
+quizClose.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Load quiz JSON
+async function loadQuiz(slug) {
+  quizContent.innerHTML = "Đang tải quiz...";
+  quizResult.innerHTML = "";
+  quizRetry.style.display = "none";
+  quizSubmit.style.display = "inline-block";
+  userAnswers = {};
+  try {
+    const res = await fetch(`/binh-blog/grammar/quiz/${slug}.json`);
+    if (!res.ok) { quizContent.innerHTML = "<p>Không tìm thấy quiz cho bài này.</p>"; return; }
+    quizData = await res.json();
+    renderQuiz(quizData);
+  } catch (e) {
+    quizContent.innerHTML = "<p>Lỗi khi tải quiz.</p>";
+    console.error(e);
+  }
+}
+
+// Render quiz questions (multiple choice)
+function renderQuiz(data) {
+  quizTitle.innerText = data.title + " — Quiz";
+  const html = data.questions.map((q, idx) => {
+    const choices = q.choices.map((c, ci) => {
+      return `<label style="display:block;padding:8px;border-radius:6px;margin-bottom:6px;border:1px solid #eee;cursor:pointer;">
+        <input type="radio" name="q${idx}" value="${ci}" style="margin-right:8px">${String.fromCharCode(65+ci)}. ${c}
+      </label>`;
+    }).join("");
+    return `<div style="margin-bottom:12px;" data-qid="${q.id}">
+      <div style="font-weight:600;margin-bottom:6px;">${idx+1}. ${q.question}</div>
+      <div>${choices}</div>
+      <div class="q-explain" style="display:none;margin-top:6px;color:#444;background:#fafafa;padding:8px;border-radius:6px;">${q.explanation}</div>
+    </div>`;
+  }).join("");
+  quizContent.innerHTML = html;
+  // attach change listeners
+  data.questions.forEach((q, idx) => {
+    const radios = quizContent.querySelectorAll(`input[name="q${idx}"]`);
+    radios.forEach(r => {
+      r.addEventListener("change", () => {
+        userAnswers[q.id] = parseInt(r.value,10);
+      });
+    });
+  });
+  // scroll top of modal
+  quizContent.scrollTop = 0;
+}
+
+// Submit quiz
+quizSubmit.addEventListener("click", () => {
+  if (!quizData) return;
+  const total = quizData.questions.length;
+  let correct = 0;
+  // check answers
+  quizData.questions.forEach((q, idx) => {
+    const u = userAnswers[q.id];
+    const qDiv = quizContent.querySelector(`[data-qid="${q.id}"]`);
+    const explainDiv = qDiv.querySelector(".q-explain");
+    if (u === undefined) {
+      // unanswered
+      qDiv.style.opacity = "0.9";
+    }
+    if (u === q.answer) {
+      correct++;
+      // mark selected label green
+      const labels = qDiv.querySelectorAll("label");
+      labels.forEach((lab, ci) => {
+        if (ci === u) lab.style.background = "#d4ffd9";
+      });
+    } else {
+      // mark correct answer and wrong
+      const labels = qDiv.querySelectorAll("label");
+      labels.forEach((lab, ci) => {
+        if (ci === q.answer) lab.style.background = "#d4ffd9";
+        if (ci === (userAnswers[q.id] || -1) && ci !== q.answer) lab.style.background = "#ffd9d9";
+      });
+    }
+    // show explanation
+    explainDiv.style.display = "block";
+  });
+
+  const score = Math.round((correct/total)*100);
+  quizResult.innerHTML = `<div style="font-weight:700">Điểm: ${score}% — ${correct}/${total} đúng</div>`;
+  // save to localStorage
+  const slug = currentSlug();
+  try {
+    localStorage.setItem('quiz-score-'+slug, JSON.stringify({score, correct, total, time:Date.now()}));
+  } catch(e){}
+
+  quizSubmit.style.display = "none";
+  quizRetry.style.display = "inline-block";
+});
+
+// Retry
+quizRetry.addEventListener("click", () => {
+  // reload quiz for the same slug (clear selections)
+  const slug = currentSlug();
+  loadQuiz(slug);
+});
+
+// allow closing modal with ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") modal.style.display = "none";
+});
+</script>
+   
 </body>
 </html>
