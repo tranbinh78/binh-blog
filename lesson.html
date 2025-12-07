@@ -5,11 +5,9 @@
 <meta charset="UTF-8">
 <title>Bài học | Binh Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Chèn vào header (nơi có title) -->
-<button id="open-quiz-btn" style="background:#ffdede;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;">📋 Làm Quiz</button>
 <style>
 /* ===============================
-   GLOBAL LAYOUT
+   GLOBAL LAYOUT & THEME
 ================================= */
 body {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -65,6 +63,7 @@ body.dark #sidebar { background:#2b2b2b; border-color:#666; }
   cursor:pointer;
   display:flex;
   justify-content:space-between;
+  align-items:center;
 }
 
 .lesson-item {
@@ -110,25 +109,27 @@ header {
 }
 .back-btn:hover { background:#d1c3ff; }
 
+.header-controls { display:flex; gap:8px; align-items:center; }
+
+/* Reading button */
 .reading-btn {
   background:#ffe9c6;
-  padding:8px 14px;
+  padding:8px 12px;
   border-radius:6px;
   border:none;
   cursor:pointer;
   font-weight:600;
-  margin-left:10px;
 }
 .reading-btn:hover { background:#ffdfad; }
 body.dark .reading-btn { background:#705f33; color:white; }
 
-/* search box */
+/* Search */
 #search-box {
   padding:8px 12px;
   border-radius:6px;
   border:1px solid #ccc;
   font-size:15px;
-  width:230px;
+  width:220px;
 }
 #search-box:focus { border-color:#a88bff; }
 
@@ -137,9 +138,7 @@ body.dark .reading-btn { background:#705f33; color:white; }
   opacity:0; transform:translateY(10px);
   animation:fadeIn 0.5s ease-out forwards;
 }
-@keyframes fadeIn {
-  to { opacity:1; transform:translateY(0); }
-}
+@keyframes fadeIn { to { opacity:1; transform:translateY(0); } }
 
 /* markdown content styling */
 h2, h3 { margin-top:30px; color:#4a3fa8; }
@@ -154,7 +153,7 @@ body.dark h2, body.dark h3 { color:#cfc4ff; }
 }
 body.dark .box { background:#2a2a2a; border-color:#bba0ff; }
 
-mark { background:#ffed8a; }
+mark { background:#ffed8a; padding:2px 4px; border-radius:4px; }
 body.dark mark { background:#caa52c; }
 
 /* ===============================
@@ -209,142 +208,41 @@ body.dark #toc a.active { background:#5b4fa8; color:#fff; }
 body.dark .np-btn { background:#5b4fa8; color:white; }
 
 /* ===============================
-   MOBILE RESPONSIVE
+   QUIZ MODAL STYLES
+================================= */
+#quiz-modal { display:none; position:fixed; left:0; top:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:99999; align-items:center; justify-content:center; }
+#quiz-box { width:96%; max-width:780px; background:#fff; padding:18px; border-radius:10px; max-height:90vh; overflow:auto; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
+body.dark #quiz-box { background:#222; color:#eee; }
+#quiz-box h3 { margin:0 0 6px 0; }
+#quiz-box label { display:block; padding:8px; border-radius:8px; margin-bottom:8px; border:1px solid #eee; cursor:pointer; }
+body.dark #quiz-box label { border:1px solid #444; }
+#quiz-box label input { margin-right:8px; }
+
+/* ===============================
+   MOBILE RESPONSIVE & MOBILE OPTIMIZATIONS
 ================================= */
 @media(max-width:900px){
-  body { grid-template-columns:1fr; }
-
-  #sidebar { display:none; }
-  #toc { display:none; }
-
-  #mobile-sidebar-btn {
-    display:block;
-    background:#d7caff;
-    padding:10px 15px;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    margin-bottom:15px;
-  }
+  body { grid-template-columns:1fr; padding:10px; }
+  #sidebar, #toc { display:none; }
+  #mobile-sidebar-btn { display:inline-block; margin-bottom:12px; background:#d7caff; padding:10px 12px; border-radius:8px; border:none; }
+  header { flex-direction: column; align-items:flex-start; gap:10px; }
+  header h1 { font-size:20px; }
+  #search-box { width:100%; }
+  .nav-buttons { flex-direction:column; gap:10px; }
+  .np-btn { width:100%; font-size:16px; padding:14px; }
+  /* mobile slide sidebar */
+  #sidebar.mobile-open { display:block !important; position:fixed; top:0; left:0; width:80%; max-width:300px; height:100vh; background:#fff; z-index:99998; padding:20px; border-right:1px solid #ddd; box-shadow:2px 0 10px rgba(0,0,0,0.12); }
+  body.dark #sidebar.mobile-open { background:#2b2b2b; }
+  #mobile-overlay { display:none; }
+  #mobile-overlay.show { display:block; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:99997; }
 }
 
 /* ===============================
    READING MODE
 ================================= */
-body.reading-mode {
-  grid-template-columns:1fr !important;
-}
-body.reading-mode #sidebar,
-body.reading-mode #toc {
-  display:none !important;
-}
-body.reading-mode .content-area {
-  max-width:800px; margin:auto;
-}
-
-/* =====================================
-   MOBILE OPTIMIZATION FOR LESSON PAGE
-===================================== */
-@media(max-width: 768px) {
-
-  body {
-    grid-template-columns: 1fr !important;
-    padding: 10px;
-  }
-
-  /* Hide Desktop Sidebar + TOC */
-  #sidebar,
-  #toc {
-    display: none !important;
-  }
-
-  /* Mobile Sidebar Slide-in */
-  #sidebar.mobile-open {
-    display: block !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    max-width: 260px;
-    height: 100vh;
-    overflow-y: auto;
-    z-index: 9998;
-    background: white;
-    padding: 20px;
-    border-radius: 0;
-    border-right: 1px solid #ddd;
-    animation: slideIn 0.3s ease;
-  }
-  body.dark #sidebar.mobile-open {
-    background: #2b2b2b;
-  }
-  @keyframes slideIn {
-    from { transform: translateX(-100%); }
-    to   { transform: translateX(0); }
-  }
-
-  /* Dark overlay behind sidebar */
-  #mobile-overlay {
-    display: none;
-  }
-  #mobile-overlay.show {
-    display: block;
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.4);
-    z-index: 9997;
-  }
-
-  /* Button mở sidebar */
-  #mobile-sidebar-btn {
-    display: inline-block !important;
-    margin-bottom: 15px;
-  }
-
-  /* Header mobile */
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  /* Title */
-  header h1 {
-    font-size: 22px;
-    margin-bottom: 5px;
-  }
-
-  /* Search box */
-  #search-box {
-    width: 100%;
-    margin: 0;
-  }
-
-  /* Reading mode button */
-  .reading-btn {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-  }
-
-  /* Main content */
-  .content-area {
-    padding: 0 5px;
-  }
-
-  /* Next/Prev buttons */
-  .nav-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .np-btn {
-    width: 100%;
-    font-size: 16px;
-    padding: 14px;
-  }
-}
-   
+body.reading-mode { grid-template-columns:1fr !important; }
+body.reading-mode #sidebar, body.reading-mode #toc { display:none !important; }
+body.reading-mode .content-area { max-width:800px; margin:auto; }
 </style>
 </head>
 
@@ -365,9 +263,11 @@ body.reading-mode .content-area {
 
     <h1 id="title">Đang tải...</h1>
 
-    <div style="display:flex; gap:10px;">
+    <div class="header-controls">
       <input id="search-box" type="text" placeholder="🔍 Tìm trong bài...">
       <button id="reading-toggle" class="reading-btn">📖 Reading Mode</button>
+      <!-- Quiz open button -->
+      <button id="open-quiz-btn" style="background:#ffdede;padding:8px 10px;border-radius:6px;border:none;cursor:pointer;">📋 Làm Quiz</button>
     </div>
   </header>
 
@@ -379,7 +279,30 @@ body.reading-mode .content-area {
 <!-- TOC -->
 <div id="toc">
   <h3>Mục lục</h3>
-  <ul id="toc-list">Đang tạo...</ul>
+  <ul id="toc-list"><li>Đang tạo...</li></ul>
+</div>
+
+<!-- Mobile overlay for sidebar/TOC -->
+<div id="mobile-overlay"></div>
+
+<!-- QUIZ POPUP -->
+<div id="quiz-modal" aria-hidden="true">
+  <div id="quiz-box" role="dialog" aria-modal="true">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+      <h3 id="quiz-title" style="margin:0">Quiz</h3>
+      <div>
+        <button id="quiz-close" style="background:#eee;border:none;padding:6px 10px;border-radius:6px;cursor:pointer;">Đóng</button>
+      </div>
+    </div>
+    <div id="quiz-content">Đang tải quiz...</div>
+    <div id="quiz-footer" style="margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
+      <div id="quiz-result"></div>
+      <div>
+        <button id="quiz-submit" style="background:#c9b3ff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;">Nộp bài</button>
+        <button id="quiz-retry" style="background:#eee;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;display:none;margin-left:6px;">Làm lại</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -389,9 +312,7 @@ body.reading-mode .content-area {
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
-/* ===============================
-   Markdown parser đơn giản
-================================= */
+/* Markdown -> HTML (mini parser) */
 function mdToHtml(text) {
   return text
     .replace(/^# (.*$)/gim,"<h1>$1</h1>")
@@ -479,11 +400,9 @@ function generateTOC() {
   toc.innerHTML = "";
 
   const headers = document.querySelectorAll("h2,h3");
-
   headers.forEach(h => {
     const id = h.innerText.replace(/\s+/g,"-");
     h.id = id;
-
     toc.innerHTML += `
       <li style="margin-left:${h.tagName==='H3'?'15px':'0'}">
         <a href="#${id}" data-id="${id}">${h.innerText}</a>
@@ -494,14 +413,12 @@ function generateTOC() {
 function activateTOCHighlight() {
   const sections = document.querySelectorAll("h2,h3");
   const tocLinks = document.querySelectorAll("#toc a");
-
   window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(sec => {
       const top = sec.offsetTop - 140;
       if (scrollY >= top) current = sec.id;
     });
-
     tocLinks.forEach(link => {
       link.classList.remove("active");
       if (link.dataset.id === current) link.classList.add("active");
@@ -538,12 +455,10 @@ function removeHighlights() {
 function highlightKeyword(keyword) {
   if (!keyword.trim()) return;
   removeHighlights();
-
   const content = document.getElementById("content");
   const html = content.innerHTML;
   const regex = new RegExp(`(${keyword})`,"gi");
   content.innerHTML = html.replace(regex,"<mark>$1</mark>");
-
   const firstHit = document.querySelector("mark");
   if (firstHit) firstHit.scrollIntoView({behavior:"smooth", block:"center"});
 }
@@ -557,12 +472,12 @@ document.getElementById("search-box")
    READING MODE (auto save)
 ================================= */
 const readingBtn = document.getElementById("reading-toggle");
-
 if (localStorage.getItem("readingMode") === "on") {
   document.body.classList.add("reading-mode");
   readingBtn.textContent = "🔙 Thoát Reading Mode";
+} else {
+  readingBtn.textContent = "📖 Reading Mode";
 }
-
 readingBtn.onclick = () => {
   document.body.classList.toggle("reading-mode");
   if (document.body.classList.contains("reading-mode")) {
@@ -575,9 +490,60 @@ readingBtn.onclick = () => {
 };
 
 /* ===============================
-   LOAD MAIN CONTENT
+   MOBILE SIDEBAR SLIDE-IN + TOC POPUP
+================================= */
+const mobileBtn = document.getElementById("mobile-sidebar-btn");
+const sidebar = document.getElementById("sidebar");
+const mobileOverlay = document.getElementById("mobile-overlay");
+
+mobileBtn.onclick = () => {
+  sidebar.classList.add("mobile-open");
+  mobileOverlay.classList.add("show");
+};
+mobileOverlay.onclick = () => {
+  sidebar.classList.remove("mobile-open");
+  mobileOverlay.classList.remove("show");
+};
+
+/* Create mobile TOC popup when small */
+function enableMobileTOCButton() {
+  if (window.innerWidth >= 768) return;
+  const existing = document.getElementById("mobile-toc-btn");
+  if (existing) return;
+
+  const tocBtn = document.createElement("button");
+  tocBtn.id = "mobile-toc-btn";
+  tocBtn.textContent = "☰ Mục lục";
+  tocBtn.style = "width:100%;padding:10px;background:#e6ddff;border:none;border-radius:6px;margin:12px 0;font-weight:600;";
+  document.querySelector(".content-area").insertBefore(tocBtn, document.getElementById("content"));
+
+  const tocPopup = document.createElement("div");
+  tocPopup.id = "toc-popup";
+  tocPopup.style = "display:none;position:fixed;top:0;right:0;width:80%;max-width:300px;height:100vh;background:#fff;z-index:99999;padding:20px;overflow:auto;border-left:1px solid #ddd;";
+  if (document.body.classList.contains("dark")) tocPopup.style.background = "#2a2a2a";
+  tocPopup.innerHTML = "<h3>Mục lục</h3><div id='toc-copy'></div>";
+  document.body.appendChild(tocPopup);
+
+  tocBtn.onclick = () => {
+    document.getElementById("toc-copy").innerHTML = document.getElementById("toc-list").outerHTML;
+    tocPopup.style.display = "block";
+    mobileOverlay.classList.add("show");
+  };
+
+  mobileOverlay.onclick = () => {
+    tocPopup.style.display = "none";
+    mobileOverlay.classList.remove("show");
+  };
+}
+
+/* ===============================
+   LOAD LESSON
 ================================= */
 async function loadLesson() {
+  if (!file) {
+    document.getElementById("content").innerHTML = "<p>Không tìm thấy file.</p>";
+    return;
+  }
   const res = await fetch(`/binh-blog/grammar/${file}`);
   const text = await res.text();
 
@@ -590,118 +556,29 @@ async function loadLesson() {
 
   generateTOC();
   activateTOCHighlight();
+  enableMobileTOCButton();
 }
 
-loadLesson();
-loadSidebar();
-loadNextPrev();
-
-/* =====================================
-   MOBILE SIDEBAR SLIDE-IN
-===================================== */
-const mobileBtn = document.getElementById("mobile-sidebar-btn");
-const sidebar = document.getElementById("sidebar");
-
-// overlay tạo background mờ
-const mobileOverlay = document.createElement("div");
-mobileOverlay.id = "mobile-overlay";
-document.body.appendChild(mobileOverlay);
-
-mobileBtn.onclick = () => {
-  sidebar.classList.add("mobile-open");
-  mobileOverlay.classList.add("show");
-};
-
-// Click outside → close
-mobileOverlay.onclick = () => {
-  sidebar.classList.remove("mobile-open");
-  mobileOverlay.classList.remove("show");
-};
-
-/* =====================================
-   MOBILE TOC SLIDE (OPEN BY BUTTON)
-===================================== */
-
-// Tạo nút mở TOC trên mobile
-if (window.innerWidth < 768) {
-  const tocBtn = document.createElement("button");
-  tocBtn.textContent = "☰ Mục lục";
-  tocBtn.style = `
-    width: 100%;
-    padding: 10px;
-    background: #e6ddff;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    margin: 15px 0;
-  `;
-  document.querySelector(".content-area").insertBefore(tocBtn, document.getElementById("content"));
-
-  // Tạo popup TOC
-  const tocPopup = document.createElement("div");
-  tocPopup.id = "toc-popup";
-  tocPopup.style = `
-    display:none;
-    position:fixed;
-    top:0; right:0;
-    width:80%;
-    max-width:260px;
-    height:100vh;
-    background:white;
-    z-index:9999;
-    padding:20px;
-    overflow-y:auto;
-    border-left:1px solid #ddd;
-  `;
-  document.body.appendChild(tocPopup);
-
-  // Copy TOC nội dung vào popup
-  tocPopup.innerHTML = "<h3>Mục lục</h3>" + document.getElementById("toc-list").outerHTML;
-
-  // Event: mở TOC popup
-  tocBtn.onclick = () => {
-    tocPopup.style.display = "block";
-    mobileOverlay.classList.add("show");
-  };
-
-  // Bấm overlay đóng popup
-  mobileOverlay.onclick = () => {
-    tocPopup.style.display = "none";
-    sidebar.classList.remove("mobile-open");
-    mobileOverlay.classList.remove("show");
-  };
+/* ===============================
+   MOBILE ACCORDION FOR MODULES
+================================= */
+function enableMobileAccordion() {
+  if (window.innerWidth > 768) return;
+  const modules = document.querySelectorAll(".module");
+  modules.forEach(m => {
+    const title = m.querySelector(".module-title");
+    title.addEventListener("click", () => m.classList.toggle("module-open"));
+  });
 }
-   
-</script>
 
-<!-- QUIZ POPUP -->
-<div id="quiz-modal" style="display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:99999;align-items:center;justify-content:center;">
-  <div id="quiz-box" style="width:96%;max-width:760px;background:#fff;padding:20px;border-radius:10px;max-height:90vh;overflow:auto;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-      <h3 id="quiz-title" style="margin:0">Quiz</h3>
-      <div>
-        <button id="quiz-close" style="background:#eee;border:none;padding:6px 10px;border-radius:6px;cursor:pointer;">Đóng</button>
-      </div>
-    </div>
-    <div id="quiz-content">Đang tải quiz...</div>
-    <div id="quiz-footer" style="margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
-      <div id="quiz-result"></div>
-      <div>
-        <button id="quiz-submit" style="background:#c9b3ff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;">Nộp bài</button>
-        <button id="quiz-retry" style="background:#eee;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;display:none;margin-left:6px;">Làm lại</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-/* QUIZ POPUP ENGINE */
-
+/* ===============================
+   QUIZ POPUP ENGINE (loads / renders / scores)
+================================= */
 // helper to get current lesson slug (from ?file=present-simple.md)
 function currentSlug() {
   const p = new URLSearchParams(window.location.search);
-  const file = p.get("file") || "";
-  return file.replace(".md",""); // returns 'present-simple'
+  const f = p.get("file") || "";
+  return f.replace(".md","");
 }
 
 const openBtn = document.getElementById("open-quiz-btn");
@@ -772,7 +649,6 @@ function renderQuiz(data) {
       });
     });
   });
-  // scroll top of modal
   quizContent.scrollTop = 0;
 }
 
@@ -781,31 +657,22 @@ quizSubmit.addEventListener("click", () => {
   if (!quizData) return;
   const total = quizData.questions.length;
   let correct = 0;
-  // check answers
   quizData.questions.forEach((q, idx) => {
     const u = userAnswers[q.id];
     const qDiv = quizContent.querySelector(`[data-qid="${q.id}"]`);
     const explainDiv = qDiv.querySelector(".q-explain");
-    if (u === undefined) {
-      // unanswered
-      qDiv.style.opacity = "0.9";
-    }
+    if (u === undefined) qDiv.style.opacity = "0.9";
     if (u === q.answer) {
       correct++;
-      // mark selected label green
       const labels = qDiv.querySelectorAll("label");
-      labels.forEach((lab, ci) => {
-        if (ci === u) lab.style.background = "#d4ffd9";
-      });
+      labels.forEach((lab, ci) => { if (ci === u) lab.style.background = "#d4ffd9"; });
     } else {
-      // mark correct answer and wrong
       const labels = qDiv.querySelectorAll("label");
       labels.forEach((lab, ci) => {
         if (ci === q.answer) lab.style.background = "#d4ffd9";
         if (ci === (userAnswers[q.id] || -1) && ci !== q.answer) lab.style.background = "#ffd9d9";
       });
     }
-    // show explanation
     explainDiv.style.display = "block";
   });
 
@@ -813,26 +680,32 @@ quizSubmit.addEventListener("click", () => {
   quizResult.innerHTML = `<div style="font-weight:700">Điểm: ${score}% — ${correct}/${total} đúng</div>`;
   // save to localStorage
   const slug = currentSlug();
-  try {
-    localStorage.setItem('quiz-score-'+slug, JSON.stringify({score, correct, total, time:Date.now()}));
-  } catch(e){}
-
+  try { localStorage.setItem('quiz-score-'+slug, JSON.stringify({score, correct, total, time:Date.now()})); } catch(e){}
   quizSubmit.style.display = "none";
   quizRetry.style.display = "inline-block";
 });
 
 // Retry
 quizRetry.addEventListener("click", () => {
-  // reload quiz for the same slug (clear selections)
   const slug = currentSlug();
   loadQuiz(slug);
 });
 
-// allow closing modal with ESC
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") modal.style.display = "none";
-});
+// allow closing modal with ESC and clicking outside
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") modal.style.display = "none"; });
+modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+
+/* ===============================
+   INIT
+================================= */
+loadLesson();
+loadSidebar();
+loadNextPrev();
+enableMobileAccordion();
+
+// ensure mobile TOC prepared
+setTimeout(enableMobileTOCButton, 500);
 </script>
-   
+
 </body>
 </html>
