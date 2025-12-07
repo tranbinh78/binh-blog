@@ -1,3 +1,0 @@
-# Passive Voice
-
-...

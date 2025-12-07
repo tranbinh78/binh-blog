@@ -1,3 +1,0 @@
-# Gerund & Infinitive
-
-...
