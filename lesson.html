@@ -22,13 +22,11 @@
   }
   body.dark { background:#1b1b1b; color:#eee; }
 
-  /* ======= PROGRESS BAR ======= */
+  /* ===== PROGRESS BAR ===== */
   #progress-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
+    top: 0; left: 0;
+    width: 100%; height: 6px;
     background: transparent;
     z-index: 9999;
   }
@@ -38,9 +36,10 @@
     background: #c9b3ff;
     transition: width 0.1s linear;
   }
-  body.dark #progress-bar { background: #7a6adf; }
+  body.dark #progress-bar { background:#7a6adf; }
 
-  /* ======= SIDEBAR ======= */
+
+  /* ===== SIDEBAR ===== */
   #sidebar {
     background:#ffffff;
     border-radius:10px;
@@ -63,14 +62,12 @@
     text-decoration:none;
     color:#333;
     border-radius:6px;
+    transition:0.2s;
   }
   body.dark #sidebar a { color:#eee; }
 
   #sidebar a:hover { background:#e6ddff; }
-  #sidebar a.active {
-    background:#d7caff;
-    font-weight:700;
-  }
+  #sidebar a.active { background:#d7caff; font-weight:700; }
   body.dark #sidebar a.active { background:#5b4fa8; color:white; }
 
   #mobile-sidebar-btn {
@@ -84,7 +81,8 @@
   }
   body.dark #mobile-sidebar-btn { background:#5b4fa8; color:white; }
 
-  /* ======= CONTENT ======= */
+
+  /* ===== CONTENT ===== */
   .content-area { padding:0 10px; }
 
   header {
@@ -104,13 +102,24 @@
   }
   .back-btn:hover { background:#d1c3ff; }
 
+  .reading-btn {
+    background:#ffe9c6;
+    padding:8px 14px;
+    border-radius:6px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    margin-left:10px;
+  }
+  body.dark .reading-btn { background:#705f33; color:white; }
+  .reading-btn:hover { background:#ffdfad; }
+
   h2, h3 {
     margin-top: 30px;
     color: #4a3fa8;
   }
   body.dark h2, body.dark h3 { color:#cfc4ff; }
 
-  /* Highlight Box */
   .box {
     padding:14px 18px;
     background:#fff;
@@ -120,7 +129,8 @@
   }
   body.dark .box { background:#2a2a2a; border-color:#bba0ff; }
 
-  /* ======= TOC ======= */
+
+  /* ===== TOC ===== */
   #toc {
     background:#ffffff;
     border-radius:10px;
@@ -132,6 +142,16 @@
   }
   body.dark #toc { background:#2a2a2a; border-color:#555; }
 
+  #toc a {
+    display:block;
+    padding:4px 6px;
+    margin-bottom:6px;
+    text-decoration:none;
+    color:#444;
+    border-radius:6px;
+  }
+  body.dark #toc a { color:#eee; }
+
   #toc a.active {
     background:#d7caff;
     font-weight:700;
@@ -141,19 +161,7 @@
     color:#fff;
   }
 
-  #toc a {
-    display:block;
-    padding:4px 6px;
-    text-decoration:none;
-    color:#444;
-    border-radius:6px;
-    margin-bottom:6px;
-  }
-  body.dark #toc a { color:#eee; }
-
-  #toc a:hover { text-decoration:underline; }
-
-  /* ======= NEXT / PREV ======= */
+  /* ===== NEXT / PREV ===== */
   .nav-buttons {
     display:flex;
     justify-content: space-between;
@@ -173,9 +181,11 @@
   .np-btn:hover { background:#d1c3ff; }
   body.dark .np-btn { background:#5b4fa8; color:white; }
 
-  /* ======= MOBILE ======= */
+
+  /* ===== MOBILE MODE ===== */
   @media(max-width:900px){
     body { grid-template-columns: 1fr; }
+
     #sidebar, #toc { display:none; }
 
     #mobile-sidebar-btn { display:block; }
@@ -186,6 +196,23 @@
       max-height:none;
     }
   }
+
+
+  /* ===== READING MODE ===== */
+  body.reading-mode {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.reading-mode #sidebar,
+  body.reading-mode #toc {
+    display: none !important;
+  }
+
+  body.reading-mode .content-area {
+    max-width: 800px;
+    margin:auto;
+  }
+  
 </style>
 </head>
 
@@ -206,8 +233,11 @@
 
   <header>
     <a href="/binh-blog/grammar-index.html" class="back-btn">← Quay lại</a>
+
     <h1 id="title">Đang tải...</h1>
-    <div></div>
+
+    <!-- Reading mode button -->
+    <button id="reading-toggle" class="reading-btn">📖 Reading Mode</button>
   </header>
 
   <div id="content">Đang tải nội dung...</div>
@@ -225,7 +255,6 @@
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
-// ===== Markdown → HTML =====
 function mdToHtml(text) {
   return text
     .replace(/^# (.*$)/gim, "<h1 id='$1'>$1</h1>")
@@ -237,7 +266,7 @@ function mdToHtml(text) {
     .replace(/\*(.*?)\*/gim, "<i>$1</i>");
 }
 
-// ===== Progress Bar =====
+/* ===== Progress Bar ===== */
 function updateProgressBar() {
   const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
   const scrolled = (window.scrollY / pageHeight) * 100;
@@ -245,10 +274,12 @@ function updateProgressBar() {
 }
 window.addEventListener("scroll", updateProgressBar);
 
-// ===== SIDEBAR =====
+
+/* ===== SIDEBAR ===== */
 async function loadSidebar() {
   const res = await fetch("/binh-blog/grammar/grammar.json");
   const list = await res.json();
+
   const sb = document.getElementById("sidebar-list");
   sb.innerHTML = "";
 
@@ -261,12 +292,13 @@ async function loadSidebar() {
   });
 }
 
-// ===== TOC =====
+
+/* ===== TOC ===== */
 function generateTOC() {
   const toc = document.getElementById("toc-list");
   toc.innerHTML = "";
-  const headers = document.querySelectorAll("h2,h3");
 
+  const headers = document.querySelectorAll("h2, h3");
   headers.forEach(h => {
     const id = h.innerText.replace(/\s+/g,"-");
     h.id = id;
@@ -278,7 +310,7 @@ function generateTOC() {
   });
 }
 
-// ===== TOC Scroll Highlight =====
+/* ===== TOC Highlight ===== */
 function activateTOCHighlight() {
   const sections = document.querySelectorAll("h2,h3");
   const tocLinks = document.querySelectorAll("#toc a");
@@ -286,9 +318,10 @@ function activateTOCHighlight() {
   window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(sec => {
-      const top = sec.offsetTop - 130;
+      const top = sec.offsetTop - 140;
       if (scrollY >= top) current = sec.id;
     });
+
     tocLinks.forEach(link => {
       link.classList.remove("active");
       if (link.dataset.id === current) link.classList.add("active");
@@ -296,7 +329,8 @@ function activateTOCHighlight() {
   });
 }
 
-// ===== Next / Previous =====
+
+/* ===== NEXT / PREV ===== */
 async function loadNextPrev() {
   const res = await fetch("/binh-blog/grammar/grammar.json");
   const list = await res.json();
@@ -312,7 +346,8 @@ async function loadNextPrev() {
   document.getElementById("nav-buttons").innerHTML = html;
 }
 
-// ===== Load lesson =====
+
+/* ===== LOAD LESSON ===== */
 async function loadLesson() {
   const res = await fetch(`/binh-blog/grammar/${file}`);
   const text = await res.text();
@@ -330,10 +365,24 @@ loadLesson();
 loadSidebar();
 loadNextPrev();
 
-// Mobile Sidebar Toggle
-document.getElementById("mobile-sidebar-btn").onclick = () =>
-  document.getElementById("sidebar").classList.toggle("mobile-open");
 
+/* ===== Reading Mode Toggle ===== */
+const readingBtn = document.getElementById("reading-toggle");
+readingBtn.addEventListener("click", () => {
+  document.body.classList.toggle("reading-mode");
+
+  if (document.body.classList.contains("reading-mode")) {
+    readingBtn.textContent = "🔙 Thoát Reading Mode";
+  } else {
+    readingBtn.textContent = "📖 Reading Mode";
+  }
+});
+
+
+/* ===== Mobile Sidebar Toggle ===== */
+document.getElementById("mobile-sidebar-btn").onclick = () => {
+  document.getElementById("sidebar").classList.toggle("mobile-open");
+};
 </script>
 
 </body>
