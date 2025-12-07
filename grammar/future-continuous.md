@@ -1,56 +1,53 @@
 # Future Continuous
 
 ## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+**English:** This tense describes its typical time reference and usage.  
+**Tiếng Việt:** Thì này dùng để diễn tả các hành động phù hợp theo thời điểm của nó.
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+## 1. Công thức kèm ví dụ
+
+### 🔸 Khẳng định
+**Công thức:**  
+- …  
+**Ví dụ:**  
+- EN: Future Continuous affirmative example.  
+  VI: Ví dụ khẳng định.
+
+### 🔸 Phủ định
+**Công thức:**  
+- …  
+**Ví dụ:**  
+- EN: Future Continuous negative example.  
+  VI: Ví dụ phủ định.
+
+### 🔸 Nghi vấn
+**Công thức:**  
+- …  
+**Ví dụ:**  
+- EN: Future Continuous question example.  
+  VI: Ví dụ nghi vấn.
 
 ## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+1. Usage 1 – English explanation. (Giải thích tiếng Việt)  
+2. Usage 2 – English explanation. (Giải thích tiếng Việt)  
+3. Usage 3 – English explanation. (Giải thích tiếng Việt)
 
 ## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+- Signal 1  
+- Signal 2  
+- Signal 3  
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
-
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+## 4. Bài tập (10 câu)
+1. Question 1  
+2. Question 2  
+3. Question 3  
+4. Question 4  
+5. Question 5  
+6. Question 6  
+7. Question 7  
+8. Question 8  
+9. Question 9  
+10. Question 10  
 
 ### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+1…,2…,3…,4…,5…,6…,7…,8…,9…,10…
