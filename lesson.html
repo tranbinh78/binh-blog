@@ -241,6 +241,109 @@ body.reading-mode .content-area {
   max-width:800px; margin:auto;
 }
 
+/* =====================================
+   MOBILE OPTIMIZATION FOR LESSON PAGE
+===================================== */
+@media(max-width: 768px) {
+
+  body {
+    grid-template-columns: 1fr !important;
+    padding: 10px;
+  }
+
+  /* Hide Desktop Sidebar + TOC */
+  #sidebar,
+  #toc {
+    display: none !important;
+  }
+
+  /* Mobile Sidebar Slide-in */
+  #sidebar.mobile-open {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 9998;
+    background: white;
+    padding: 20px;
+    border-radius: 0;
+    border-right: 1px solid #ddd;
+    animation: slideIn 0.3s ease;
+  }
+  body.dark #sidebar.mobile-open {
+    background: #2b2b2b;
+  }
+  @keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
+  }
+
+  /* Dark overlay behind sidebar */
+  #mobile-overlay {
+    display: none;
+  }
+  #mobile-overlay.show {
+    display: block;
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 9997;
+  }
+
+  /* Button mở sidebar */
+  #mobile-sidebar-btn {
+    display: inline-block !important;
+    margin-bottom: 15px;
+  }
+
+  /* Header mobile */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Title */
+  header h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
+  /* Search box */
+  #search-box {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Reading mode button */
+  .reading-btn {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* Main content */
+  .content-area {
+    padding: 0 5px;
+  }
+
+  /* Next/Prev buttons */
+  .nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .np-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px;
+  }
+}
+   
 </style>
 </head>
 
@@ -491,6 +594,83 @@ async function loadLesson() {
 loadLesson();
 loadSidebar();
 loadNextPrev();
+
+/* =====================================
+   MOBILE SIDEBAR SLIDE-IN
+===================================== */
+const mobileBtn = document.getElementById("mobile-sidebar-btn");
+const sidebar = document.getElementById("sidebar");
+
+// overlay tạo background mờ
+const mobileOverlay = document.createElement("div");
+mobileOverlay.id = "mobile-overlay";
+document.body.appendChild(mobileOverlay);
+
+mobileBtn.onclick = () => {
+  sidebar.classList.add("mobile-open");
+  mobileOverlay.classList.add("show");
+};
+
+// Click outside → close
+mobileOverlay.onclick = () => {
+  sidebar.classList.remove("mobile-open");
+  mobileOverlay.classList.remove("show");
+};
+
+/* =====================================
+   MOBILE TOC SLIDE (OPEN BY BUTTON)
+===================================== */
+
+// Tạo nút mở TOC trên mobile
+if (window.innerWidth < 768) {
+  const tocBtn = document.createElement("button");
+  tocBtn.textContent = "☰ Mục lục";
+  tocBtn.style = `
+    width: 100%;
+    padding: 10px;
+    background: #e6ddff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    margin: 15px 0;
+  `;
+  document.querySelector(".content-area").insertBefore(tocBtn, document.getElementById("content"));
+
+  // Tạo popup TOC
+  const tocPopup = document.createElement("div");
+  tocPopup.id = "toc-popup";
+  tocPopup.style = `
+    display:none;
+    position:fixed;
+    top:0; right:0;
+    width:80%;
+    max-width:260px;
+    height:100vh;
+    background:white;
+    z-index:9999;
+    padding:20px;
+    overflow-y:auto;
+    border-left:1px solid #ddd;
+  `;
+  document.body.appendChild(tocPopup);
+
+  // Copy TOC nội dung vào popup
+  tocPopup.innerHTML = "<h3>Mục lục</h3>" + document.getElementById("toc-list").outerHTML;
+
+  // Event: mở TOC popup
+  tocBtn.onclick = () => {
+    tocPopup.style.display = "block";
+    mobileOverlay.classList.add("show");
+  };
+
+  // Bấm overlay đóng popup
+  mobileOverlay.onclick = () => {
+    tocPopup.style.display = "none";
+    sidebar.classList.remove("mobile-open");
+    mobileOverlay.classList.remove("show");
+  };
+}
+   
 </script>
 
 </body>
