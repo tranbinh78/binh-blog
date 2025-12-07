@@ -318,18 +318,7 @@ body.dark .flashcard-face.back {
 
     <h1 id="title">Đang tải...</h1>
 
-    <div id="flashcard-section" style="margin:25px 0; display:none;">
-  <h2 style="color:#4a3fa8;">📘 Flashcards</h2>
-
-  <div id="flashcard-container" style="
-      display:flex;
-      gap:20px;
-      overflow-x:auto;
-      padding-bottom:10px;
-  "></div>
-</div>
-
-    <div class="header-controls">
+     <div class="header-controls">
       <input id="search-box" type="text" placeholder="🔍 Tìm trong bài...">
       <button id="reading-toggle" class="reading-btn">📖 Reading Mode</button>
 
@@ -345,6 +334,27 @@ body.dark .flashcard-face.back {
       📘 Luyện tập
     </button>
     </div>
+
+<!-- FLASHCARDS (Fix position) -->
+<div id="flashcard-section" style="
+  margin:25px 0;
+  padding:20px;
+  background:#fff;
+  border-radius:12px;
+  border:1px solid #ddd;
+  display:none;
+">
+  <h2 style="color:#4a3fa8;margin-top:0;">📘 Flashcards</h2>
+
+  <div id="flashcard-container" style="
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding:15px 5px;
+    max-width:100%;
+  "></div>
+</div>
+     
   </header>
 
   <div id="content">Đang tải nội dung...</div>
