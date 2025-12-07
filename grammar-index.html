@@ -81,27 +81,27 @@
     <p>Đang tải...</p>
   </div>
 
-  <script>
-    async function loadGrammar() {
-      const res = await fetch("/binh-blog/grammar/grammar.json");
-      const data = await res.json();
+ <script>
+  async function loadGrammar() {
+    const res = await fetch("/binh-blog/grammar/grammar.json");
+    const data = await res.json();
 
-      const container = document.getElementById("grammar-list");
-      container.innerHTML = "";
+    const container = document.getElementById("grammar-list");
+    container.innerHTML = "";
 
-      data.forEach(item => {
-        container.innerHTML += `
-          <div class="card" onclick="location.href='/binh-blog/grammar/${item.file}'">
-            <img src="${item.thumbnail}" alt="${item.title}">
-            <h3>${item.title}</h3>
-            <p class="desc">${item.description}</p>
-          </div>
-        `;
-      });
-    }
+    data.forEach(item => {
+      container.innerHTML += `
+        <div class="card" onclick="location.href='/binh-blog/lesson.html?file=${item.file}'">
+          <img src="${item.thumbnail}" alt="${item.title}">
+          <h3>${item.title}</h3>
+          <p class="desc">${item.description}</p>
+        </div>
+      `;
+    });
+  }
 
-    loadGrammar();
-  </script>
+  loadGrammar();
+</script>
 
 </body>
 </html>
