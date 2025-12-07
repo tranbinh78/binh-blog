@@ -22,7 +22,25 @@
   }
   body.dark { background:#1b1b1b; color:#eee; }
 
-  /* ========== SIDEBAR ========== */
+  /* ======= PROGRESS BAR ======= */
+  #progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: transparent;
+    z-index: 9999;
+  }
+  #progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #c9b3ff;
+    transition: width 0.1s linear;
+  }
+  body.dark #progress-bar { background: #7a6adf; }
+
+  /* ======= SIDEBAR ======= */
   #sidebar {
     background:#ffffff;
     border-radius:10px;
@@ -36,11 +54,7 @@
   }
   body.dark #sidebar { background:#2b2b2b; border-color:#666; }
 
-  #sidebar h3 {
-    margin-top:0;
-    font-size:18px;
-    margin-bottom:10px;
-  }
+  #sidebar h3 { margin-top:0; }
 
   #sidebar a {
     display:block;
@@ -49,33 +63,28 @@
     text-decoration:none;
     color:#333;
     border-radius:6px;
-    transition:0.2s;
   }
   body.dark #sidebar a { color:#eee; }
 
-  #sidebar a:hover {
-    background:#e6ddff;
-  }
+  #sidebar a:hover { background:#e6ddff; }
   #sidebar a.active {
     background:#d7caff;
     font-weight:700;
   }
   body.dark #sidebar a.active { background:#5b4fa8; color:white; }
 
-  /* Mobile Sidebar Button */
   #mobile-sidebar-btn {
     display:none;
     background:#d7caff;
-    border:none;
     padding:10px 15px;
+    border:none;
     border-radius:6px;
-    font-size:16px;
-    margin-bottom:15px;
+    margin-bottom: 15px;
     cursor:pointer;
   }
   body.dark #mobile-sidebar-btn { background:#5b4fa8; color:white; }
 
-  /* ========== LESSON CONTENT ========== */
+  /* ======= CONTENT ======= */
   .content-area { padding:0 10px; }
 
   header {
@@ -95,6 +104,12 @@
   }
   .back-btn:hover { background:#d1c3ff; }
 
+  h2, h3 {
+    margin-top: 30px;
+    color: #4a3fa8;
+  }
+  body.dark h2, body.dark h3 { color:#cfc4ff; }
+
   /* Highlight Box */
   .box {
     padding:14px 18px;
@@ -105,7 +120,7 @@
   }
   body.dark .box { background:#2a2a2a; border-color:#bba0ff; }
 
-  /* ========== TOC ========== */
+  /* ======= TOC ======= */
   #toc {
     background:#ffffff;
     border-radius:10px;
@@ -126,7 +141,19 @@
     color:#fff;
   }
 
-  /* ========== NEXT / PREV ========== */
+  #toc a {
+    display:block;
+    padding:4px 6px;
+    text-decoration:none;
+    color:#444;
+    border-radius:6px;
+    margin-bottom:6px;
+  }
+  body.dark #toc a { color:#eee; }
+
+  #toc a:hover { text-decoration:underline; }
+
+  /* ======= NEXT / PREV ======= */
   .nav-buttons {
     display:flex;
     justify-content: space-between;
@@ -146,16 +173,13 @@
   .np-btn:hover { background:#d1c3ff; }
   body.dark .np-btn { background:#5b4fa8; color:white; }
 
-  /* MOBILE RESPONSIVE */
+  /* ======= MOBILE ======= */
   @media(max-width:900px){
-    body {
-      grid-template-columns: 1fr;
-    }
+    body { grid-template-columns: 1fr; }
     #sidebar, #toc { display:none; }
 
-    #mobile-sidebar-btn {
-      display:block;
-    }
+    #mobile-sidebar-btn { display:block; }
+
     #sidebar.mobile-open {
       display:block;
       position:relative;
@@ -167,9 +191,12 @@
 
 <body>
 
+<!-- Progress Bar -->
+<div id="progress-container"><div id="progress-bar"></div></div>
+
 <!-- SIDEBAR -->
 <div id="sidebar">
-  <h3>📚 Danh sách bài học</h3>
+  <h3>📚 Bài học</h3>
   <div id="sidebar-list">Đang tải...</div>
 </div>
 
@@ -198,7 +225,7 @@
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
-// Markdown → HTML
+// ===== Markdown → HTML =====
 function mdToHtml(text) {
   return text
     .replace(/^# (.*$)/gim, "<h1 id='$1'>$1</h1>")
@@ -210,11 +237,18 @@ function mdToHtml(text) {
     .replace(/\*(.*?)\*/gim, "<i>$1</i>");
 }
 
-// ========== LOAD SIDEBAR ==========
+// ===== Progress Bar =====
+function updateProgressBar() {
+  const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = (window.scrollY / pageHeight) * 100;
+  document.getElementById("progress-bar").style.width = scrolled + "%";
+}
+window.addEventListener("scroll", updateProgressBar);
+
+// ===== SIDEBAR =====
 async function loadSidebar() {
   const res = await fetch("/binh-blog/grammar/grammar.json");
   const list = await res.json();
-
   const sb = document.getElementById("sidebar-list");
   sb.innerHTML = "";
 
@@ -223,12 +257,11 @@ async function loadSidebar() {
       <a href="/binh-blog/lesson.html?file=${item.file}"
          class="${item.file === file ? 'active' : ''}">
          ${item.title}
-      </a>
-    `;
+      </a>`;
   });
 }
 
-// ========== Load TOC ==========
+// ===== TOC =====
 function generateTOC() {
   const toc = document.getElementById("toc-list");
   toc.innerHTML = "";
@@ -245,16 +278,16 @@ function generateTOC() {
   });
 }
 
-// Highlight TOC
+// ===== TOC Scroll Highlight =====
 function activateTOCHighlight() {
   const sections = document.querySelectorAll("h2,h3");
   const tocLinks = document.querySelectorAll("#toc a");
 
   window.addEventListener("scroll", () => {
     let current = "";
-    sections.forEach(section => {
-      const top = section.offsetTop - 120;
-      if (scrollY >= top) current = section.id;
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 130;
+      if (scrollY >= top) current = sec.id;
     });
     tocLinks.forEach(link => {
       link.classList.remove("active");
@@ -263,7 +296,7 @@ function activateTOCHighlight() {
   });
 }
 
-// Next / Prev
+// ===== Next / Previous =====
 async function loadNextPrev() {
   const res = await fetch("/binh-blog/grammar/grammar.json");
   const list = await res.json();
@@ -279,7 +312,7 @@ async function loadNextPrev() {
   document.getElementById("nav-buttons").innerHTML = html;
 }
 
-// Load lesson
+// ===== Load lesson =====
 async function loadLesson() {
   const res = await fetch(`/binh-blog/grammar/${file}`);
   const text = await res.text();
@@ -297,10 +330,10 @@ loadLesson();
 loadSidebar();
 loadNextPrev();
 
-// Mobile sidebar toggle
-document.getElementById("mobile-sidebar-btn").onclick = () => {
+// Mobile Sidebar Toggle
+document.getElementById("mobile-sidebar-btn").onclick = () =>
   document.getElementById("sidebar").classList.toggle("mobile-open");
-};
+
 </script>
 
 </body>
