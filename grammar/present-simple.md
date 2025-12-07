@@ -34,10 +34,10 @@ VI: Cô ấy làm việc trong một bệnh viện.
 - S + do not (don’t) + V  
 - S + does not (doesn’t) + V  *(He/She/It)*
 
-**Lưu ý:** Sau “do/does not”, động từ **không thêm s/es**
+**Lưu ý:** Sau “do/does not”, động từ **không thêm s/es**<br>
 
 **Ví dụ:**  
-EN: He doesn’t like chocolate.  
+EN: He doesn’t like chocolate.<br>
 VI: Anh ấy không thích sô-cô-la.
 
 ---
@@ -95,53 +95,53 @@ VI: Bạn rẽ trái ở cuối con đường.
 ## 5. Bài tập (10 câu – 5 điền + 5 chọn)
 
 ### A. Fill-in  
-1. She ___ to school by bus. (**go**)  
-2. They ___ football on Sundays. (**play**)  
-3. I ___ coffee in the morning. (**not/drink**)  
-4. ___ he ___ English well? (**speak**)  
-5. The sun ___ in the east. (**rise**)  
+1. She ___ to school by bus. (**go**)<br>  
+2. They ___ football on Sundays. (**play**)<br>  
+3. I ___ coffee in the morning. (**not/drink**)<br>  
+4. ___ he ___ English well? (**speak**)<br>  
+5. The sun ___ in the east. (**rise**)<br>  
 
 ### B. Multiple-choice  
-6. She ____ very well.  
-   a. sings  
-   b. sing  
-   c. singing  
-   d. sang  
+6. She ____ very well.<br>  
+   a. sings<br>  
+   b. sing<br>  
+   c. singing<br>  
+   d. sang<br>  
 
-7. They ____ to work by train.  
-   a. goes  
-   b. go  
-   c. going  
-   d. gone  
+7. They ____ to work by train.<br>  
+   a. goes<br>  
+   b. go<br>  
+   c. going<br>  
+   d. gone<br>  
 
-8. He ____ his homework every day.  
-   a. do  
-   b. does  
-   c. doing  
-   d. did  
+8. He ____ his homework every day.<br>  
+   a. do<br>  
+   b. does<br>  
+   c. doing<br>  
+   d. did<br>  
 
-9. ____ you ____ TV every night?  
-   a. Do / watch  
-   b. Are / watching  
-   c. Did / watch  
-   d. Will / watch  
+9. ____ you ____ TV every night?<br>  
+   a. Do / watch<br>  
+   b. Are / watching<br>  
+   c. Did / watch<br>  
+   d. Will / watch<br>  
 
-10. The shop ____ at 9 AM.  
-    a. open  
-    b. opens  
-    c. opening  
-    d. opened  
+10. The shop ____ at 9 AM.<br>  
+    a. open<br>  
+    b. opens<br>  
+    c. opening<br>  
+    d. opened<br>  
 
 ---
 
 ## → Đáp án
-1. goes  
-2. play  
-3. don’t drink  
-4. Does…speak  
-5. rises  
-6. a  
-7. b  
-8. b  
-9. a  
-10. b  
+1. goes<br>  
+2. play<br>  
+3. don’t drink<br>  
+4. Does…speak<br>  
+5. rises<br>  
+6. a<br>  
+7. b<br>  
+8. b<br>  
+9. a<br>  
+10. b<br>  
