@@ -1,53 +1,62 @@
 # Present Simple
 
-## 0. Định nghĩa
-**English:** This tense describes its typical time reference and usage.  
-**Tiếng Việt:** Thì này dùng để diễn tả các hành động phù hợp theo thời điểm của nó.
+## 1. Định nghĩa
+**English:** Used for habits, routines, facts, and general truths.  
+**Vietnamese:** Dùng để diễn tả thói quen, lịch trình, sự thật hiển nhiên.
 
-## 1. Công thức kèm ví dụ
+## 2. Công thức kèm ví dụ
 
 ### 🔸 Khẳng định
-**Công thức:**  
-- …  
-**Ví dụ:**  
-- EN: Present Simple affirmative example.  
-  VI: Ví dụ khẳng định.
+- I/You/We/They + V  
+- He/She/It + V(s/es)  
+**Example:** EN: She works in a bank.  
+VI: Cô ấy làm việc ở một ngân hàng.
 
 ### 🔸 Phủ định
-**Công thức:**  
-- …  
-**Ví dụ:**  
-- EN: Present Simple negative example.  
-  VI: Ví dụ phủ định.
+- I/You/We/They + do not + V  
+- He/She/It + does not + V  
+**Example:** EN: He doesn’t like coffee.  
+VI: Anh ấy không thích cà phê.
 
 ### 🔸 Nghi vấn
-**Công thức:**  
-- …  
-**Ví dụ:**  
-- EN: Present Simple question example.  
-  VI: Ví dụ nghi vấn.
+- Do/Does + S + V?  
+**Example:** EN: Do you play chess?  
+VI: Bạn có chơi cờ không?
 
-## 2. Cách dùng
-1. Usage 1 – English explanation. (Giải thích tiếng Việt)  
-2. Usage 2 – English explanation. (Giải thích tiếng Việt)  
-3. Usage 3 – English explanation. (Giải thích tiếng Việt)
+## 3. Cách dùng
+1. Habits → I get up early.  
+2. Facts → Water boils at 100°C.  
+3. Timetables → The train leaves at 8.
 
-## 3. Dấu hiệu nhận biết
-- Signal 1  
-- Signal 2  
-- Signal 3  
+## 4. Dấu hiệu nhận biết
+always, usually, often, sometimes, every day
 
-## 4. Bài tập (10 câu)
-1. Question 1  
-2. Question 2  
-3. Question 3  
-4. Question 4  
-5. Question 5  
-6. Question 6  
-7. Question 7  
-8. Question 8  
-9. Question 9  
-10. Question 10  
+## 5. Bài tập (10 câu – 5 điền + 5 chọn)
+1. She ___ early. (**wake**)  
+2. They ___ coffee. (**not/like**)  
+3. ___ he ___ here? (**work**)  
+4. I ___ English. (**study**)  
+5. The bus ___ at 7. (**leave**)
 
-### → Đáp án
-1…,2…,3…,4…,5…,6…,7…,8…,9…,10…
+6. She ____ to school.  
+a. go  b. goes  c. going  d. gone  
+7. They ____ football.  
+a. play  b. plays  c. played  d. playing  
+8. He ____ tea.  
+a. not like  b. doesn’t like  c. don’t like  d. isn’t like  
+9. ____ you ____ music?  
+a. Do/like  b. Does/like  c. Are/like  d. Did/like  
+10. The sun ____ in the east.  
+a. rise  b. rises  c. rising  d. rose
+
+## → Đáp án
+1 wakes  
+2 don’t like  
+3 Does…work  
+4 study  
+5 leaves  
+6 b  
+7 a  
+8 b  
+9 a  
+10 b
