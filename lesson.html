@@ -212,6 +212,20 @@
     max-width: 800px;
     margin:auto;
   }
+
+/* Fade-in animation cho content */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInAnim 0.5s ease-out forwards;
+}
+
+@keyframes fadeInAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   
 </style>
 </head>
@@ -356,6 +370,7 @@ async function loadLesson() {
     file.replace(".md","").replace(/-/g," ").replace(/\b\w/g,c=>c.toUpperCase());
 
   document.getElementById("content").innerHTML = mdToHtml(text);
+  document.getElementById("content").classList.add("fade-in");
 
   generateTOC();
   activateTOCHighlight();
