@@ -366,15 +366,27 @@ loadSidebar();
 loadNextPrev();
 
 
-/* ===== Reading Mode Toggle ===== */
+/* ===== Reading Mode Toggle + Save State ===== */
 const readingBtn = document.getElementById("reading-toggle");
+
+/* Khôi phục trạng thái khi load trang */
+if (localStorage.getItem("readingMode") === "on") {
+  document.body.classList.add("reading-mode");
+  readingBtn.textContent = "🔙 Thoát Reading Mode";
+} else {
+  readingBtn.textContent = "📖 Reading Mode";
+}
+
+/* Khi click nút */
 readingBtn.addEventListener("click", () => {
   document.body.classList.toggle("reading-mode");
 
   if (document.body.classList.contains("reading-mode")) {
     readingBtn.textContent = "🔙 Thoát Reading Mode";
+    localStorage.setItem("readingMode", "on");
   } else {
     readingBtn.textContent = "📖 Reading Mode";
+    localStorage.setItem("readingMode", "off");
   }
 });
 
