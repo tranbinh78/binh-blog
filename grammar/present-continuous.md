@@ -1,60 +1,90 @@
 # Present Continuous
 
 ## 1. Định nghĩa
-Used for actions happening now or temporary situations.  
-Dùng cho hành động đang diễn ra hoặc tạm thời.
+**English:** The Present Continuous is used for actions happening now, temporary situations, and for planned near-future arrangements.  
+**Tiếng Việt:** Thì Hiện tại tiếp diễn dùng để diễn tả hành động đang xảy ra ngay lúc nói, các tình huống tạm thời, và các kế hoạch đã sắp xếp cho tương lai gần.
 
-## 2. Công thức + ví dụ
+---
+
+## 2. Công thức kèm ví dụ
 
 ### 🔸 Khẳng định
-S + am/is/are + V-ing  
-**Example:** EN: She is cooking.  
-VI: Cô ấy đang nấu ăn.
+**Công thức:**  
+- I + am + V-ing  
+- He / She / It + is + V-ing  
+- We / You / They + are + V-ing  
+
+**Ví dụ:**  
+- EN: She is cooking dinner now.  
+- VI: Cô ấy đang nấu bữa tối.  
+
+---
 
 ### 🔸 Phủ định
-S + am/is/are not + V-ing  
-**Example:** EN: They are not studying.  
-VI: Họ không đang học.
+**Công thức:**  
+- I + am not + V-ing  
+- He / She / It + is not (isn’t) + V-ing  
+- We / You / They + are not (aren’t) + V-ing  
+
+**Ví dụ:**  
+- EN: They aren’t working today.  
+- VI: Họ không làm việc hôm nay.  
+
+---
 
 ### 🔸 Nghi vấn
-Am/Is/Are + S + V-ing?  
-**Example:** EN: Are you watching TV?  
-VI: Bạn đang xem TV à?
+**Công thức:**  
+- Am / Is / Are + S + V-ing?  
+
+**Ví dụ:**  
+- EN: Are you listening to me?  
+- VI: Bạn đang nghe tôi nói phải không?  
+
+---
 
 ## 3. Cách dùng
-1. Now → I am eating now.  
-2. Temporary → She is living in Hanoi.  
-3. Changing situations → Prices are rising.
+- **Hành động đang diễn ra:** I am reading a book now. → Tôi đang đọc sách.  
+- **Tình huống tạm thời:** She is living in Hanoi this month. → Cô ấy đang sống ở Hà Nội tháng này.  
+- **Kế hoạch tương lai gần:** I am meeting Tom tomorrow. → Tôi sẽ gặp Tom vào ngày mai (kế hoạch).
 
-## 4. Dấu hiệu
-now, right now, at the moment, currently
+---
 
-## 5. Bài tập
+## 4. Dấu hiệu nhận biết
+now, at the moment, currently, right now, tonight (when planned)
+
+---
+
+## 5. Bài tập (10 câu – 5 điền + 5 chọn)
+
+### A. Điền vào chỗ trống (gợi ý động từ)
 1. She ___ dinner now. (**cook**)  
-2. They ___ a movie. (**not/watch**)  
-3. ___ he ___? (**drive**)  
-4. I ___ English now. (**learn**)  
-5. The baby ___ . (**sleep**)
+2. They ___ a movie. (**watch**)  
+3. I ___ to music now. (**listen**)  
+4. ___ he ___ at the moment? (**work**)  
+5. We ___ in Hanoi this week. (**live**)  
 
+### B. Multiple-choice
 6. She ____ now.  
-a. works b. is working c. work d. working  
-7. They ____ TV.  
-a. watch b. watching c. are watching d. watches  
-8. He ____ today.  
-a. is not working b. not works c. doesn't working d. no working  
-9. ____ you ____ English now?  
-a. Do/study b. Are/studying c. Are/study d. Is/studying  
-10. Prices ____ .  
-a. rise b. is rising c. are rising d. rising
+a. works  b. is working  c. work  d. worked  
+7. They ____ TV at 8pm.  
+a. watches  b. watching  c. are watching  d. watch  
+8. He ____ a book now.  
+a. reads  b. read  c. is reading  d. was reading  
+9. ____ you ____ to him now?  
+a. Do / talk  b. Are / talking  c. Did / talk  d. Will / talk  
+10. The children ____ outside at the moment.  
+a. plays  b. are playing  c. play  d. played  
+
+---
 
 ## → Đáp án
-1 is cooking  
-2 are not watching  
-3 Is…driving  
-4 am learning  
-5 is sleeping  
-6 b  
-7 c  
-8 a  
-9 b  
-10 c
+1. is cooking  
+2. are watching  
+3. am listening  
+4. Is…working  
+5. are living  
+6. b  
+7. c  
+8. c  
+9. b  
+10. b
