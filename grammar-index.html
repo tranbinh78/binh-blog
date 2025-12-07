@@ -1,376 +1,165 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grammar Index | Binh Blog</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     body {
       font-family: "Be Vietnam Pro", sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f7f7ff;
+      background: #fdfcf8;
+      color: #333;
+      padding: 20px;
       transition: 0.3s;
     }
+
     body.dark {
-      background: #1d1b26;
-      color: white;
+      background: #1a1a1a;
+      color: #eee;
     }
 
-    /* HEADER */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 40px;
-      background: #ffffff;
-      border-bottom: 1px solid #eee;
-    }
-    body.dark .header {
-      background: #2a2636;
-      border-color: #444;
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #4b4b4b;
     }
 
-    .logo-box {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo-box .icon {
-      width: 48px;
-      height: 48px;
-      background: #7b61ff;
-      color: white;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 700;
-    }
-    .logo-title {
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    .controls {
-      display: flex;
-      gap: 12px;
-    }
-    .btn {
-      padding: 8px 16px;
-      background: #eae4ff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-    .btn:hover { opacity: 0.85; }
-    body.dark .btn { background: #4a4266; color: white; }
-
-    /* PROGRESS BAR */
-    .progress-box {
-      max-width: 900px;
-      margin: 25px auto;
-      padding: 10px;
-    }
-    .progress-title {
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .progress-bar {
-      width: 100%;
-      height: 14px;
-      background: #e6e0ff;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #7b61ff, #a78bff);
-      width: 0%;
-      transition: 0.3s;
-    }
-    .progress-text {
-      margin-top: 6px;
-      font-size: 14px;
-      color: #555;
-    }
-    body.dark .progress-text { color: #ddd; }
-
-    /* FILTER */
-    .filters {
-      max-width: 900px;
-      margin: auto;
-      display: flex;
-      gap: 10px;
-      padding: 10px;
-      justify-content: center;
-    }
-    .filter-btn {
-      padding: 8px 16px;
-      background: #f1edff;
-      border-radius: 20px;
-      border: 1px solid #d3caff;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .filter-btn.active {
-      background: #7b61ff;
-      color: white;
-      border-color: #7b61ff;
-    }
-
-    /* SEARCH */
-    .search-box {
-      max-width: 900px;
-      margin: 10px auto 30px;
-      display: flex;
-      justify-content: center;
-    }
-    .search-box input {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 2px solid #d2c6ff;
-      font-size: 16px;
-      outline: none;
-    }
-
-    /* CARDS */
     .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
       max-width: 1100px;
       margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      padding-bottom: 60px;
     }
+
     .card {
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      transition: 0.2s;
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 18px;
+      text-align: center;
+      border: 2px solid #e4e4e4;
+      cursor: pointer;
+      transition: 0.25s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-    body.dark .card {
-      background: #2e2a3d;
-      box-shadow: none;
-    }
+
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      transform: translateY(-5px);
+      border-color: #d7caff;
+      box-shadow: 0 6px 16px rgba(120, 90, 255, 0.12);
     }
 
-    .card-title {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      height: 50px;
+    .card i {
+      font-size: 40px;
+      margin-bottom: 12px;
+      color: #9560ff;
     }
 
-    .badge {
-      background: #dfffe4;
-      color: #0e7a27;
-      padding: 4px 10px;
-      border-radius: 8px;
-      font-size: 13px;
-      display: inline-block;
-      margin-bottom: 10px;
+    body.dark .card {
+      background: #2d2d2d;
+      border-color: #555;
     }
-    body.dark .badge { background: #1e4228; color: #71ff9d; }
 
-    .btn-view {
-      display: inline-block;
-      margin-top: 10px;
-      font-weight: 700;
-      color: #7b61ff;
+    body.dark .card i {
+      color: #c7a8ff;
+    }
+
+    a {
       text-decoration: none;
+      color: inherit;
     }
-    .btn-view:hover { text-decoration: underline; }
 
+    .desc {
+      font-size: 14px;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    body.dark .desc {
+      color: #ccc;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="logo-box">
-    <div class="icon">BB</div>
-    <div>
-      <div class="logo-title">Grammar Index</div>
-      <small>Lộ trình 12 thì & các chủ điểm Ngữ pháp — Binh Blog</small>
-    </div>
+  <h1>📘 English Grammar Lessons</h1>
+
+  <div class="grid">
+
+    <a href="grammar/tenses.html">
+      <div class="card">
+        <i class="fa-solid fa-clock"></i>
+        <h3>12 Tenses</h3>
+        <p class="desc">Hiện tại – Quá khứ – Tương lai</p>
+      </div>
+    </a>
+
+    <a href="grammar/modal-verbs.html">
+      <div class="card">
+        <i class="fa-solid fa-key"></i>
+        <h3>Modal Verbs</h3>
+        <p class="desc">Can, Could, May, Might…</p>
+      </div>
+    </a>
+
+    <a href="grammar/passive.html">
+      <div class="card">
+        <i class="fa-solid fa-people-group"></i>
+        <h3>Passive Voice</h3>
+        <p class="desc">Câu bị động - công thức & ví dụ</p>
+      </div>
+    </a>
+
+    <a href="grammar/conditional.html">
+      <div class="card">
+        <i class="fa-solid fa-shuffle"></i>
+        <h3>Conditionals</h3>
+        <p class="desc">If 0 → 3, Mixed</p>
+      </div>
+    </a>
+
+    <a href="grammar/gerund-infinitive.html">
+      <div class="card">
+        <i class="fa-solid fa-pen-nib"></i>
+        <h3>Gerund & Infinitive</h3>
+        <p class="desc">V-ing / To V</p>
+      </div>
+    </a>
+
+    <a href="grammar/articles.html">
+      <div class="card">
+        <i class="fa-solid fa-book-open"></i>
+        <h3>Articles</h3>
+        <p class="desc">A – An – The</p>
+      </div>
+    </a>
+
+    <a href="grammar/relative-clauses.html">
+      <div class="card">
+        <i class="fa-solid fa-link"></i>
+        <h3>Relative Clauses</h3>
+        <p class="desc">Who – Which – That…</p>
+      </div>
+    </a>
+
+    <a href="grammar/comparatives.html">
+      <div class="card">
+        <i class="fa-solid fa-arrow-up-wide-short"></i>
+        <h3>Comparatives</h3>
+        <p class="desc">So sánh hơn / nhất</p>
+      </div>
+    </a>
+
   </div>
-  <div class="controls">
-    <button class="btn" id="toggleDark">🌙 Dark Mode</button>
-    <button class="btn" id="refreshBtn">🔄 Refresh</button>
-  </div>
-</div>
-
-<!-- PROGRESS BAR -->
-<div class="progress-box">
-  <div class="progress-title">Tiến độ học</div>
-  <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-  <div class="progress-text" id="progress-text">Đang tải...</div>
-</div>
-
-<!-- FILTERS -->
-<div class="filters">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="present">Present</button>
-  <button class="filter-btn" data-filter="past">Past</button>
-  <button class="filter-btn" data-filter="future">Future</button>
-  <button class="filter-btn" data-filter="grammar">Grammar</button>
-  <button class="filter-btn" data-filter="completed">Completed</button>
-  <button class="filter-btn" data-filter="soon">Coming Soon</button>
-</div>
-
-<!-- SEARCH -->
-<div class="search-box">
-  <input type="text" id="search" placeholder="🔍 Tìm bài viết...">
-</div>
-
-<!-- CARD GRID -->
-<div class="grid" id="grid"></div>
-
-<script>
-/* ============================
-   LOAD POSTS
-============================ */
-async function loadPosts() {
-  try {
-    const res = await fetch("posts/posts.json");
-    const posts = await res.json();
-
-    const grid = document.getElementById("grid");
-    grid.innerHTML = "";
-
-    posts.forEach(post => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.dataset.file = post.file;
-
-      /* Gán group auto */
-      // Loại bỏ các bài viết không thuộc Grammar
-      if (post.title.includes("Bài viết đầu tiên") ||
-          post.title.includes("Bài viết thứ 2") ||
-          post.title.includes("Bài viết thứ 3")) return;
-
-      // Auto group
-      if (post.file.startsWith("present-")) card.dataset.group = "present";
-      else if (post.file.startsWith("past-")) card.dataset.group = "past";
-      else if (post.file.startsWith("future-") || post.file.includes("near") || post.file.includes("will"))
-            card.dataset.group = "future";
-
-      // Group Grammar
-      else if (["nouns","adjectives","adverbs","pronouns","articles","conjunctions","quantifiers","prepositions","modal-verbs","determiners"]
-        .some(key => post.file.includes(key)))
-        card.dataset.group = "grammar";
-
-      else card.dataset.group = "other";
-
-      /* Kiểm tra Completed */
-      fetch("posts/" + post.file).then(r => {
-        card.dataset.status = r.ok ? "completed" : "soon";
-      });
-
-      card.innerHTML = `
-        <div class="card-title">${post.title}</div>
-        <span class="badge">✔ Completed</span>
-        <a href="post.html?file=${post.file}" class="btn-view">Xem bài</a>
-      `;
-
-      grid.appendChild(card);
-    });
-
-    updateProgress();
-    enableFilters();
-    enableSearch();
-
-  } catch(e) {
-    console.error(e);
-  }
-}
-
-/* ============================
-   PROGRESS
-============================ */
-function updateProgress() {
-  const total = document.querySelectorAll(".card").length;
-  const done = document.querySelectorAll('.card[data-status="completed"]').length;
-
-  const percent = Math.round(done / total * 100);
-
-  document.getElementById("progress-fill").style.width = percent + "%";
-  document.getElementById("progress-text").textContent = `${done}/${total} bài • ${percent}% hoàn thành`;
-}
-
-/* ============================
-   FILTERS
-============================ */
-function enableFilters() {
-  const buttons = document.querySelectorAll(".filter-btn");
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const filter = btn.dataset.filter;
-      const cards = document.querySelectorAll(".card");
-
-      cards.forEach(card => {
-        let show = true;
-
-        if (filter !== "all" && filter !== card.dataset.group && filter !== card.dataset.status)
-          show = false;
-
-        card.style.display = show ? "block" : "none";
-      });
-    });
-  });
-}
-
-/* ============================
-   SEARCH
-============================ */
-function enableSearch() {
-  document.getElementById("search").addEventListener("input", e => {
-    const text = e.target.value.toLowerCase();
-
-    document.querySelectorAll(".card").forEach(card => {
-      card.style.display = card.innerText.toLowerCase().includes(text)
-        ? "block"
-        : "none";
-    });
-  });
-}
-
-/* ============================
-   DARK MODE
-============================ */
-document.getElementById("toggleDark").onclick = () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem("dark", document.body.classList.contains("dark"));
-};
-if (localStorage.getItem("dark") === "true") {
-  document.body.classList.add("dark");
-}
-
-/* ============================
-   REFRESH
-============================ */
-document.getElementById("refreshBtn").onclick = () => location.reload();
-
-/* INIT */
-loadPosts();
-</script>
 
 </body>
+
 </html>
