@@ -1,0 +1,126 @@
+{
+  "title": "Present Continuous",
+  "slug": "present-continuous",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which is Present Continuous?",
+      "choices": [
+        "She reads now.",
+        "She is reading now.",
+        "She read now.",
+        "She will read now."
+      ],
+      "answer": 1,
+      "explanation": "Present Continuous = am/is/are + -ing."
+    },
+    {
+      "id": 2,
+      "question": "Use for future arrangements: 'I ____ meeting him tomorrow.'",
+      "choices": [
+        "am meeting",
+        "meet",
+        "will meet",
+        "met"
+      ],
+      "answer": 0,
+      "explanation": "Present Continuous can express planned future arrangements."
+    },
+    {
+      "id": 3,
+      "question": "Signal word:",
+      "choices": [
+        "every day",
+        "now",
+        "yesterday",
+        "often"
+      ],
+      "answer": 1,
+      "explanation": "'Now' indicates Present Continuous."
+    },
+    {
+      "id": 4,
+      "question": "Negative: 'They ____ watching TV.'",
+      "choices": [
+        "are not",
+        "do not",
+        "does not",
+        "is not"
+      ],
+      "answer": 0,
+      "explanation": "'They are not watching'."
+    },
+    {
+      "id": 5,
+      "question": "What is wrong? 'He are running.'",
+      "choices": [
+        "Correct",
+        "'He is running.'",
+        "'He running.'",
+        "'He was running.'"
+      ],
+      "answer": 1,
+      "explanation": "Use 'is' with 'he'."
+    },
+    {
+      "id": 6,
+      "question": "Temporary action uses:",
+      "choices": [
+        "Present Simple",
+        "Present Continuous",
+        "Past Simple",
+        "Future Simple"
+      ],
+      "answer": 1,
+      "explanation": "Temporary actions use Present Continuous."
+    },
+    {
+      "id": 7,
+      "question": "Form question: 'Are you coming?': short answer:",
+      "choices": [
+        "Yes, I am.",
+        "Yes, I do.",
+        "Yes, I am coming.",
+        "Yes, I are."
+      ],
+      "answer": 0,
+      "explanation": "Short answer: 'Yes, I am.'"
+    },
+    {
+      "id": 8,
+      "question": "Choose correct: 'She ____ (cook) now.'",
+      "choices": [
+        "cooks",
+        "is cooking",
+        "cook",
+        "cooked"
+      ],
+      "answer": 1,
+      "explanation": "Present Continuous: 'is cooking'."
+    },
+    {
+      "id": 9,
+      "question": "Which tense for trends?",
+      "choices": [
+        "Present Simple",
+        "Present Continuous",
+        "Past Simple",
+        "Future Simple"
+      ],
+      "answer": 1,
+      "explanation": "Present Continuous for changing trends."
+    },
+    {
+      "id": 10,
+      "question": "He ____ studying at the moment.",
+      "choices": [
+        "is",
+        "are",
+        "am",
+        "was"
+      ],
+      "answer": 0,
+      "explanation": "Subject 'He' uses 'is'."
+    }
+  ]
+}

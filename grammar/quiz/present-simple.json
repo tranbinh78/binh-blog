@@ -1,1 +1,126 @@
-
+{
+  "title": "Present Simple",
+  "slug": "present-simple",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which sentence describes a habit?",
+      "choices": [
+        "I am eating now.",
+        "I eat breakfast every day.",
+        "I will eat later.",
+        "I ate yesterday."
+      ],
+      "answer": 1,
+      "explanation": "Habit uses Present Simple: 'I eat breakfast every day.'"
+    },
+    {
+      "id": 2,
+      "question": "Choose negative for 'They play football.'",
+      "choices": [
+        "They don't play football.",
+        "They not play football.",
+        "They doesn't play football.",
+        "They didn't play football."
+      ],
+      "answer": 0,
+      "explanation": "Use 'don't' with 'they'."
+    },
+    {
+      "id": 3,
+      "question": "Signal word for Present Simple:",
+      "choices": [
+        "now",
+        "at the moment",
+        "every week",
+        "last year"
+      ],
+      "answer": 2,
+      "explanation": "'Every week' signals routine → Present Simple."
+    },
+    {
+      "id": 4,
+      "question": "Third person singular of 'go' is:",
+      "choices": [
+        "goes",
+        "go",
+        "goed",
+        "going"
+      ],
+      "answer": 0,
+      "explanation": "'He/She goes' adds -es."
+    },
+    {
+      "id": 5,
+      "question": "Form the question: 'You like coffee.' →",
+      "choices": [
+        "Do you like coffee?",
+        "Does you like coffee?",
+        "Are you like coffee?",
+        "Did you like coffee?"
+      ],
+      "answer": 0,
+      "explanation": "Use 'Do' with 'you'."
+    },
+    {
+      "id": 6,
+      "question": "'Water ____ at 100°C.'",
+      "choices": [
+        "boils",
+        "boil",
+        "is boiling",
+        "boiled"
+      ],
+      "answer": 0,
+      "explanation": "General fact uses Present Simple: 'boils'."
+    },
+    {
+      "id": 7,
+      "question": "Which is NOT Present Simple use?",
+      "choices": [
+        "Habits",
+        "Permanent facts",
+        "Actions happening now",
+        "Schedules"
+      ],
+      "answer": 2,
+      "explanation": "Actions happening now use Present Continuous."
+    },
+    {
+      "id": 8,
+      "question": "Negative: 'She ____ like tea.'",
+      "choices": [
+        "doesn't",
+        "don't",
+        "didn't",
+        "not"
+      ],
+      "answer": 0,
+      "explanation": "Third person singular negative is 'doesn't'."
+    },
+    {
+      "id": 9,
+      "question": "Choose correct: 'They ____ to school by bus.'",
+      "choices": [
+        "go",
+        "goes",
+        "are going",
+        "went"
+      ],
+      "answer": 0,
+      "explanation": "Plural subject uses base verb 'go'."
+    },
+    {
+      "id": 10,
+      "question": "Short answer: 'Do you study?':",
+      "choices": [
+        "Yes, I do.",
+        "Yes, I am.",
+        "Yes, I does.",
+        "No, I am not."
+      ],
+      "answer": 0,
+      "explanation": "Short answer for 'do' is 'Yes, I do.'"
+    }
+  ]
+}

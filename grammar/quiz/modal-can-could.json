@@ -1,0 +1,126 @@
+{
+  "title": "Can & Could",
+  "slug": "modal-can-could",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Ability now: 'She ____ swim.'",
+      "choices": [
+        "can",
+        "must",
+        "should",
+        "may"
+      ],
+      "answer": 0,
+      "explanation": "'Can' expresses ability."
+    },
+    {
+      "id": 2,
+      "question": "Past ability:",
+      "choices": [
+        "can",
+        "could",
+        "may",
+        "must"
+      ],
+      "answer": 1,
+      "explanation": "'Could' is past of 'can'."
+    },
+    {
+      "id": 3,
+      "question": "Permission: '____ I open the window?'",
+      "choices": [
+        "May",
+        "Must",
+        "Should",
+        "Will"
+      ],
+      "answer": 0,
+      "explanation": "'May I' asks permission."
+    },
+    {
+      "id": 4,
+      "question": "Negative ability: 'He ____ speak Chinese.' meaning he cannot",
+      "choices": [
+        "can't",
+        "mustn't",
+        "shouldn't",
+        "mightn't"
+      ],
+      "answer": 0,
+      "explanation": "'can't' means cannot."
+    },
+    {
+      "id": 5,
+      "question": "Polite request: '____ you help me?'",
+      "choices": [
+        "Can",
+        "Do",
+        "Will",
+        "Shall"
+      ],
+      "answer": 0,
+      "explanation": "'Can you...' is common for requests."
+    },
+    {
+      "id": 6,
+      "question": "Which expresses possibility?",
+      "choices": [
+        "must",
+        "should",
+        "could",
+        "have to"
+      ],
+      "answer": 2,
+      "explanation": "'Could' suggests possibility."
+    },
+    {
+      "id": 7,
+      "question": "Offer: '____ I carry that for you?'",
+      "choices": [
+        "Shall",
+        "May",
+        "Must",
+        "Can"
+      ],
+      "answer": 0,
+      "explanation": "'Shall I...' used for offers."
+    },
+    {
+      "id": 8,
+      "question": "Choose: 'You ____ try harder.' (advice)",
+      "choices": [
+        "can",
+        "could",
+        "should",
+        "must"
+      ],
+      "answer": 2,
+      "explanation": "'Should' gives advice."
+    },
+    {
+      "id": 9,
+      "question": "Which is stronger obligation?",
+      "choices": [
+        "should",
+        "must",
+        "can",
+        "may"
+      ],
+      "answer": 1,
+      "explanation": "'Must' indicates strong obligation."
+    },
+    {
+      "id": 10,
+      "question": "Polite past possibility: 'He ____ have left earlier.'",
+      "choices": [
+        "might",
+        "must",
+        "should",
+        "can"
+      ],
+      "answer": 0,
+      "explanation": "'Might have' indicates past possibility.'"
+    }
+  ]
+}
