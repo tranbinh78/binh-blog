@@ -5,275 +5,266 @@
 <meta charset="UTF-8">
 <title>Bài học | Binh Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<input id="search-box" type="text" placeholder="🔍 Tìm trong bài..."
-       style="padding:8px 12px; border-radius:6px; border:1px solid #ccc;
-              font-size:15px; width:200px; margin-left:10px;">
+
 <style>
-  body {
-    font-family: "Be Vietnam Pro", sans-serif;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    background: #faf9f4;
-    color: #333;
-    line-height: 1.8;
-    transition: 0.3s;
-    display: grid;
-    grid-template-columns: 240px 1fr 260px;
-    gap: 25px;
-  }
-  body.dark { background:#1b1b1b; color:#eee; }
+/* ===============================
+   GLOBAL LAYOUT
+================================= */
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px;
+  background: #faf9f4;
+  color: #333;
+  line-height: 1.8;
+  transition: 0.3s;
+  display: grid;
+  grid-template-columns: 260px 1fr 250px;
+  gap: 25px;
+}
+body.dark { background:#1b1b1b; color:#eee; }
 
-/* Search highlight */
-mark {
-  background: #ffed8a;
-  padding: 2px 4px;
-  border-radius: 4px;
+/* ===============================
+   PROGRESS BAR
+================================= */
+#progress-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 6px;
+  z-index: 9999;
+}
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #c9b3ff;
+  transition: width 0.1s linear;
+}
+body.dark #progress-bar { background:#7a6adf; }
+
+/* ===============================
+   SIDEBAR (MODULE CURRICULUM)
+================================= */
+#sidebar {
+  background:#ffffff;
+  border-radius:12px;
+  border:1px solid #ddd;
+  padding:15px;
+  position:sticky;
+  top:20px;
+  max-height:85vh;
+  overflow-y:auto;
+}
+body.dark #sidebar { background:#2b2b2b; border-color:#666; }
+
+.module-title {
+  font-size:17px;
+  font-weight:700;
+  margin:10px 0 8px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
 }
 
-/* Dark mode highlight */
-body.dark mark {
-  background: #c49b1f;
+.lesson-item {
+  padding:8px 12px;
+  margin:4px 0;
+  border-radius:8px;
+  cursor:pointer;
+  text-decoration:none;
+  display:block;
+  color:#333;
+}
+.lesson-item:hover { background:#ede3ff; }
+.lesson-item.active {
+  background:#d7caff;
+  font-weight:700;
+}
+body.dark .lesson-item { color:#eee; }
+body.dark .lesson-item.active { background:#5b4fa8; color:#fff; }
+
+/* collapse */
+.module-lessons { display:none; padding-left:5px; }
+.module-open .module-lessons { display:block; }
+
+/* ===============================
+   CONTENT AREA
+================================= */
+.content-area { padding:0 10px; }
+
+header {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-bottom:25px;
 }
 
-/* Search box style */
+.back-btn {
+  background:#e6ddff;
+  padding:8px 14px;
+  border-radius:6px;
+  text-decoration:none;
+  color:#333;
+  font-weight:600;
+}
+.back-btn:hover { background:#d1c3ff; }
+
+.reading-btn {
+  background:#ffe9c6;
+  padding:8px 14px;
+  border-radius:6px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  margin-left:10px;
+}
+.reading-btn:hover { background:#ffdfad; }
+body.dark .reading-btn { background:#705f33; color:white; }
+
+/* search box */
 #search-box {
-  outline:none;
+  padding:8px 12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:15px;
+  width:230px;
 }
-#search-box:focus {
-  border-color:#a88bff;
+#search-box:focus { border-color:#a88bff; }
+
+/* fade-in animation */
+.fade-in {
+  opacity:0; transform:translateY(10px);
+  animation:fadeIn 0.5s ease-out forwards;
 }
-  
-  /* ===== PROGRESS BAR ===== */
-  #progress-container {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 6px;
-    background: transparent;
-    z-index: 9999;
-  }
-  #progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #c9b3ff;
-    transition: width 0.1s linear;
-  }
-  body.dark #progress-bar { background:#7a6adf; }
+@keyframes fadeIn {
+  to { opacity:1; transform:translateY(0); }
+}
 
+/* markdown content styling */
+h2, h3 { margin-top:30px; color:#4a3fa8; }
+body.dark h2, body.dark h3 { color:#cfc4ff; }
 
-  /* ===== SIDEBAR ===== */
-  #sidebar {
-    background:#ffffff;
-    border-radius:10px;
-    border:1px solid #ddd;
-    padding:15px;
-    height: fit-content;
-    max-height: 85vh;
-    overflow-y: auto;
-    position: sticky;
-    top: 20px;
-  }
-  body.dark #sidebar { background:#2b2b2b; border-color:#666; }
+.box {
+  padding:14px 18px;
+  background:#fff;
+  border-left:5px solid #9c7bff;
+  border-radius:6px;
+  margin:20px 0;
+}
+body.dark .box { background:#2a2a2a; border-color:#bba0ff; }
 
-  #sidebar h3 { margin-top:0; }
+mark { background:#ffed8a; }
+body.dark mark { background:#caa52c; }
 
-  #sidebar a {
-    display:block;
-    padding:8px 10px;
-    margin-bottom:6px;
-    text-decoration:none;
-    color:#333;
-    border-radius:6px;
-    transition:0.2s;
-  }
-  body.dark #sidebar a { color:#eee; }
+/* ===============================
+   TOC FLOATING
+================================= */
+#toc {
+  background:#ffffff;
+  border-radius:12px;
+  border:1px solid #ddd;
+  padding:15px;
+  position:sticky;
+  top:20px;
+  height:fit-content;
+}
+body.dark #toc { background:#2a2a2a; border-color:#555; }
 
-  #sidebar a:hover { background:#e6ddff; }
-  #sidebar a.active { background:#d7caff; font-weight:700; }
-  body.dark #sidebar a.active { background:#5b4fa8; color:white; }
+#toc a {
+  display:block;
+  padding:4px 6px;
+  margin-bottom:6px;
+  text-decoration:none;
+  color:#444;
+  border-radius:6px;
+}
+#toc a.active {
+  background:#d7caff;
+  font-weight:700;
+}
+body.dark #toc a { color:#eee; }
+body.dark #toc a.active { background:#5b4fa8; color:#fff; }
+
+/* ===============================
+   NEXT / PREV BUTTON
+================================= */
+.nav-buttons {
+  display:flex;
+  justify-content: space-between;
+  margin-top:40px;
+  gap:10px;
+}
+.np-btn {
+  flex:1;
+  padding:14px;
+  background:#e6ddff;
+  border-radius:8px;
+  text-align:center;
+  text-decoration:none;
+  color:#333;
+  font-weight:600;
+}
+.np-btn:hover { background:#d1c3ff; }
+body.dark .np-btn { background:#5b4fa8; color:white; }
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================= */
+@media(max-width:900px){
+  body { grid-template-columns:1fr; }
+
+  #sidebar { display:none; }
+  #toc { display:none; }
 
   #mobile-sidebar-btn {
-    display:none;
+    display:block;
     background:#d7caff;
     padding:10px 15px;
     border:none;
     border-radius:6px;
-    margin-bottom: 15px;
     cursor:pointer;
+    margin-bottom:15px;
   }
-  body.dark #mobile-sidebar-btn { background:#5b4fa8; color:white; }
-
-
-  /* ===== CONTENT ===== */
-  .content-area { padding:0 10px; }
-
-  header {
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    margin-bottom:25px;
-  }
-
-  .back-btn {
-    background:#e6ddff;
-    padding:8px 14px;
-    border-radius:6px;
-    text-decoration:none;
-    color:#333;
-    font-weight:600;
-  }
-  .back-btn:hover { background:#d1c3ff; }
-
-  .reading-btn {
-    background:#ffe9c6;
-    padding:8px 14px;
-    border-radius:6px;
-    border:none;
-    cursor:pointer;
-    font-weight:600;
-    margin-left:10px;
-  }
-  body.dark .reading-btn { background:#705f33; color:white; }
-  .reading-btn:hover { background:#ffdfad; }
-
-  h2, h3 {
-    margin-top: 30px;
-    color: #4a3fa8;
-  }
-  body.dark h2, body.dark h3 { color:#cfc4ff; }
-
-  .box {
-    padding:14px 18px;
-    background:#fff;
-    border-left:5px solid #9c7bff;
-    border-radius:6px;
-    margin:20px 0;
-  }
-  body.dark .box { background:#2a2a2a; border-color:#bba0ff; }
-
-
-  /* ===== TOC ===== */
-  #toc {
-    background:#ffffff;
-    border-radius:10px;
-    padding:15px;
-    border:1px solid #ddd;
-    position:sticky;
-    top:20px;
-    height: fit-content;
-  }
-  body.dark #toc { background:#2a2a2a; border-color:#555; }
-
-  #toc a {
-    display:block;
-    padding:4px 6px;
-    margin-bottom:6px;
-    text-decoration:none;
-    color:#444;
-    border-radius:6px;
-  }
-  body.dark #toc a { color:#eee; }
-
-  #toc a.active {
-    background:#d7caff;
-    font-weight:700;
-  }
-  body.dark #toc a.active {
-    background:#5b4fa8;
-    color:#fff;
-  }
-
-  /* ===== NEXT / PREV ===== */
-  .nav-buttons {
-    display:flex;
-    justify-content: space-between;
-    margin-top:40px;
-    gap:10px;
-  }
-  .np-btn {
-    flex:1;
-    padding:14px;
-    background:#e6ddff;
-    border-radius:8px;
-    text-align:center;
-    text-decoration:none;
-    color:#333;
-    font-weight:600;
-  }
-  .np-btn:hover { background:#d1c3ff; }
-  body.dark .np-btn { background:#5b4fa8; color:white; }
-
-
-  /* ===== MOBILE MODE ===== */
-  @media(max-width:900px){
-    body { grid-template-columns: 1fr; }
-
-    #sidebar, #toc { display:none; }
-
-    #mobile-sidebar-btn { display:block; }
-
-    #sidebar.mobile-open {
-      display:block;
-      position:relative;
-      max-height:none;
-    }
-  }
-
-
-  /* ===== READING MODE ===== */
-  body.reading-mode {
-    grid-template-columns: 1fr !important;
-  }
-
-  body.reading-mode #sidebar,
-  body.reading-mode #toc {
-    display: none !important;
-  }
-
-  body.reading-mode .content-area {
-    max-width: 800px;
-    margin:auto;
-  }
-
-/* Fade-in animation cho content */
-.fade-in {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInAnim 0.5s ease-out forwards;
 }
 
-@keyframes fadeInAnim {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ===============================
+   READING MODE
+================================= */
+body.reading-mode {
+  grid-template-columns:1fr !important;
 }
-  
+body.reading-mode #sidebar,
+body.reading-mode #toc {
+  display:none !important;
+}
+body.reading-mode .content-area {
+  max-width:800px; margin:auto;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- Progress Bar -->
+<!-- Progress bar -->
 <div id="progress-container"><div id="progress-bar"></div></div>
 
 <!-- SIDEBAR -->
-<div id="sidebar">
-  <h3>📚 Bài học</h3>
-  <div id="sidebar-list">Đang tải...</div>
-</div>
+<div id="sidebar"></div>
 
 <!-- CONTENT -->
 <div class="content-area">
-  <button id="mobile-sidebar-btn">📚 Danh sách bài</button>
+  <button id="mobile-sidebar-btn" style="display:none">📚 Danh sách bài</button>
 
   <header>
     <a href="/binh-blog/grammar-index.html" class="back-btn">← Quay lại</a>
 
     <h1 id="title">Đang tải...</h1>
 
-    <!-- Reading mode button -->
-    <button id="reading-toggle" class="reading-btn">📖 Reading Mode</button>
+    <div style="display:flex; gap:10px;">
+      <input id="search-box" type="text" placeholder="🔍 Tìm trong bài...">
+      <button id="reading-toggle" class="reading-btn">📖 Reading Mode</button>
+    </div>
   </header>
 
   <div id="content">Đang tải nội dung...</div>
@@ -284,57 +275,107 @@ body.dark mark {
 <!-- TOC -->
 <div id="toc">
   <h3>Mục lục</h3>
-  <ul id="toc-list"><li>Đang tạo...</li></ul>
+  <ul id="toc-list">Đang tạo...</ul>
 </div>
 
 <script>
+/* ===============================
+   LẤY FILE HIỆN TẠI
+================================= */
 const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
+/* ===============================
+   Markdown parser đơn giản
+================================= */
 function mdToHtml(text) {
   return text
-    .replace(/^# (.*$)/gim, "<h1 id='$1'>$1</h1>")
-    .replace(/^## (.*$)/gim, "<h2 id='$1'>$1</h2>")
-    .replace(/^### (.*$)/gim, "<h3 id='$1'>$1</h3>")
-    .replace(/^\> (.*$)/gim, "<div class='box'>$1</div>")
-    .replace(/^- (.*$)/gim, "<li>$1</li>")
-    .replace(/\*\*(.*?)\*\*/gim, "<b>$1</b>")
-    .replace(/\*(.*?)\*/gim, "<i>$1</i>");
+    .replace(/^# (.*$)/gim,"<h1>$1</h1>")
+    .replace(/^## (.*$)/gim,"<h2>$1</h2>")
+    .replace(/^### (.*$)/gim,"<h3>$1</h3>")
+    .replace(/^\> (.*$)/gim,"<div class='box'>$1</div>")
+    .replace(/^- (.*$)/gim,"<li>$1</li>")
+    .replace(/\*\*(.*?)\*\*/gim,"<b>$1</b>")
+    .replace(/\*(.*?)\*/gim,"<i>$1</i>");
 }
 
-/* ===== Progress Bar ===== */
-function updateProgressBar() {
+/* ===============================
+   PROGRESS BAR
+================================= */
+window.addEventListener("scroll", () => {
   const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
   const scrolled = (window.scrollY / pageHeight) * 100;
   document.getElementById("progress-bar").style.width = scrolled + "%";
-}
-window.addEventListener("scroll", updateProgressBar);
+});
 
-
-/* ===== SIDEBAR ===== */
+/* ===============================
+   BUILD SIDEBAR (MODULE S1)
+================================= */
 async function loadSidebar() {
   const res = await fetch("/binh-blog/grammar/grammar.json");
   const list = await res.json();
 
-  const sb = document.getElementById("sidebar-list");
-  sb.innerHTML = "";
+  const sidebar = document.getElementById("sidebar");
+  sidebar.innerHTML = "<h3>📘 Bài học</h3>";
 
-  list.forEach(item => {
-    sb.innerHTML += `
-      <a href="/binh-blog/lesson.html?file=${item.file}"
-         class="${item.file === file ? 'active' : ''}">
-         ${item.title}
-      </a>`;
-  });
+  const modules = {
+    "Tenses": list.slice(0, 12),
+    "Modal Verbs": list.slice(12, 16),
+    "Passive Voice": list.slice(16, 21),
+    "Conditionals": list.slice(21, 25),
+    "Verb Forms": list.slice(25, 30),
+    "Nouns / Articles": list.slice(30, 36)
+  };
+
+  for (const moduleName in modules) {
+    let lessons = modules[moduleName];
+
+    const moduleDiv = document.createElement("div");
+    moduleDiv.className = "module";
+
+    moduleDiv.innerHTML = `
+      <div class="module-title">
+        <span>📚 ${moduleName}</span>
+        <span>▾</span>
+      </div>
+      <div class="module-lessons"></div>
+    `;
+
+    const listDiv = moduleDiv.querySelector(".module-lessons");
+
+    lessons.forEach(item => {
+      const a = document.createElement("a");
+      a.className = "lesson-item";
+      a.href = `/binh-blog/lesson.html?file=${item.file}`;
+      a.innerText = item.title;
+
+      if (item.file === file) a.classList.add("active");
+
+      listDiv.appendChild(a);
+    });
+
+    // auto open module chứa bài hiện tại
+    if (lessons.some(x => x.file === file)) {
+      moduleDiv.classList.add("module-open");
+    }
+
+    // toggle accordion
+    moduleDiv.querySelector(".module-title").onclick = () =>
+      moduleDiv.classList.toggle("module-open");
+
+    sidebar.appendChild(moduleDiv);
+  }
 }
 
-
-/* ===== TOC ===== */
+/* ===============================
+   TABLE OF CONTENTS
+================================= */
 function generateTOC() {
   const toc = document.getElementById("toc-list");
   toc.innerHTML = "";
 
-  const headers = document.querySelectorAll("h2, h3");
+  const headers = document.querySelectorAll("h2,h3");
+
   headers.forEach(h => {
     const id = h.innerText.replace(/\s+/g,"-");
     h.id = id;
@@ -346,7 +387,6 @@ function generateTOC() {
   });
 }
 
-/* ===== TOC Highlight ===== */
 function activateTOCHighlight() {
   const sections = document.querySelectorAll("h2,h3");
   const tocLinks = document.querySelectorAll("#toc a");
@@ -365,15 +405,16 @@ function activateTOCHighlight() {
   });
 }
 
-
-/* ===== NEXT / PREV ===== */
+/* ===============================
+   NEXT / PREV
+================================= */
 async function loadNextPrev() {
   const res = await fetch("/binh-blog/grammar/grammar.json");
   const list = await res.json();
 
-  const index = list.findIndex(x => x.file === file);
-  const prev = list[index - 1];
-  const next = list[index + 1];
+  const i = list.findIndex(x => x.file === file);
+  const prev = list[i - 1];
+  const next = list[i + 1];
 
   let html = "";
   if (prev) html += `<a class="np-btn" href="/binh-blog/lesson.html?file=${prev.file}">← ${prev.title}</a>`;
@@ -382,8 +423,56 @@ async function loadNextPrev() {
   document.getElementById("nav-buttons").innerHTML = html;
 }
 
+/* ===============================
+   SEARCH TRONG BÀI
+================================= */
+function removeHighlights() {
+  const content = document.getElementById("content");
+  content.innerHTML = content.innerHTML.replace(/<mark>(.*?)<\/mark>/g,"$1");
+}
 
-/* ===== LOAD LESSON ===== */
+function highlightKeyword(keyword) {
+  if (!keyword.trim()) return;
+  removeHighlights();
+
+  const content = document.getElementById("content");
+  const html = content.innerHTML;
+  const regex = new RegExp(`(${keyword})`,"gi");
+  content.innerHTML = html.replace(regex,"<mark>$1</mark>");
+
+  const firstHit = document.querySelector("mark");
+  if (firstHit) firstHit.scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+document.getElementById("search-box")
+  .addEventListener("keydown", e => {
+    if (e.key === "Enter") highlightKeyword(e.target.value);
+  });
+
+/* ===============================
+   READING MODE (auto save)
+================================= */
+const readingBtn = document.getElementById("reading-toggle");
+
+if (localStorage.getItem("readingMode") === "on") {
+  document.body.classList.add("reading-mode");
+  readingBtn.textContent = "🔙 Thoát Reading Mode";
+}
+
+readingBtn.onclick = () => {
+  document.body.classList.toggle("reading-mode");
+  if (document.body.classList.contains("reading-mode")) {
+    readingBtn.textContent = "🔙 Thoát Reading Mode";
+    localStorage.setItem("readingMode","on");
+  } else {
+    readingBtn.textContent = "📖 Reading Mode";
+    localStorage.setItem("readingMode","off");
+  }
+};
+
+/* ===============================
+   LOAD MAIN CONTENT
+================================= */
 async function loadLesson() {
   const res = await fetch(`/binh-blog/grammar/${file}`);
   const text = await res.text();
@@ -391,8 +480,9 @@ async function loadLesson() {
   document.getElementById("title").innerText =
     file.replace(".md","").replace(/-/g," ").replace(/\b\w/g,c=>c.toUpperCase());
 
-  document.getElementById("content").innerHTML = mdToHtml(text);
-  document.getElementById("content").classList.add("fade-in");
+  const cont = document.getElementById("content");
+  cont.innerHTML = mdToHtml(text);
+  cont.classList.add("fade-in");
 
   generateTOC();
   activateTOCHighlight();
@@ -401,69 +491,6 @@ async function loadLesson() {
 loadLesson();
 loadSidebar();
 loadNextPrev();
-
-
-/* ===== Reading Mode Toggle + Save State ===== */
-const readingBtn = document.getElementById("reading-toggle");
-
-/* Khôi phục trạng thái khi load trang */
-if (localStorage.getItem("readingMode") === "on") {
-  document.body.classList.add("reading-mode");
-  readingBtn.textContent = "🔙 Thoát Reading Mode";
-} else {
-  readingBtn.textContent = "📖 Reading Mode";
-}
-
-/* Khi click nút */
-readingBtn.addEventListener("click", () => {
-  document.body.classList.toggle("reading-mode");
-
-  if (document.body.classList.contains("reading-mode")) {
-    readingBtn.textContent = "🔙 Thoát Reading Mode";
-    localStorage.setItem("readingMode", "on");
-  } else {
-    readingBtn.textContent = "📖 Reading Mode";
-    localStorage.setItem("readingMode", "off");
-  }
-});
-
-
-/* ===== Mobile Sidebar Toggle ===== */
-document.getElementById("mobile-sidebar-btn").onclick = () => {
-  document.getElementById("sidebar").classList.toggle("mobile-open");
-};
-
-  /* =========================
-   SEARCH TRONG BÀI HỌC
-========================= */
-function removeHighlights() {
-  const content = document.getElementById("content");
-  content.innerHTML = content.innerHTML.replace(/<mark>(.*?)<\/mark>/g, "$1");
-}
-
-function highlightKeyword(keyword) {
-  if (!keyword.trim()) return;
-
-  const content = document.getElementById("content");
-  const text = content.innerHTML;
-
-  const regex = new RegExp(`(${keyword})`, "gi");
-  const newText = text.replace(regex, "<mark>$1</mark>");
-
-  content.innerHTML = newText;
-
-  // Cuộn tới kết quả đầu tiên
-  const firstMark = document.querySelector("mark");
-  if (firstMark) firstMark.scrollIntoView({ behavior:"smooth", block:"center" });
-}
-
-document.getElementById("search-box").addEventListener("keydown", e => {
-  if (e.key === "Enter") {
-    removeHighlights();
-    highlightKeyword(e.target.value);
-  }
-});
-  
 </script>
 
 </body>
