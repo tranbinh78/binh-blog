@@ -24,7 +24,7 @@ Thì Hiện tại đơn dùng để diễn tả thói quen, hoạt động lặp
 - Còn lại → thêm **-s**
 
 **Ví dụ:**  
-EN: She works in a hospital.  
+EN: She works in a hospital.<br>  
 VI: Cô ấy làm việc trong một bệnh viện.
 
 ---
@@ -52,7 +52,7 @@ VI: Anh ấy không thích sô-cô-la.
 - Yes, he does. / No, he doesn’t.
 
 **Ví dụ:**  
-EN: Do you play tennis?  
+EN: Do you play tennis?<br>  
 VI: Bạn có chơi tennis không?
 
 ---
@@ -60,23 +60,23 @@ VI: Bạn có chơi tennis không?
 ## 3. Cách dùng (4–5 mục)
 
 ### ✔ 1. Diễn tả thói quen, hoạt động lặp đi lặp lại  
-EN: I get up at 6 AM every day.  
+EN: I get up at 6 AM every day.<br>  
 VI: Tôi thức dậy lúc 6 giờ mỗi ngày.
 
 ### ✔ 2. Diễn tả sự thật hiển nhiên  
-EN: Water boils at 100°C.  
+EN: Water boils at 100°C.<br>  
 VI: Nước sôi ở 100°C.
 
 ### ✔ 3. Diễn tả lịch trình, thời khóa biểu (tàu xe, TV, lịch học…)  
-EN: The train leaves at 8 AM.  
+EN: The train leaves at 8 AM.<br>  
 VI: Tàu rời ga lúc 8 giờ sáng.
 
 ### ✔ 4. Diễn tả tính cách, sở thích, trạng thái lâu dài  
-EN: She loves music.  
+EN: She loves music.<br>  
 VI: Cô ấy thích âm nhạc.
 
 ### ✔ 5. Diễn tả hướng dẫn, chỉ dẫn  
-EN: You turn left at the end of the street.  
+EN: You turn left at the end of the street.<br>  
 VI: Bạn rẽ trái ở cuối con đường.
 
 ---
