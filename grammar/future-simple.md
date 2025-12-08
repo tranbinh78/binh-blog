@@ -1,7 +1,7 @@
 
 # Be Going To (Sắp / Có kế hoạch làm gì)
 
-## 1. Định nghĩa
+## 1.  Define: Định nghĩa
 **English:**  
 “Be going to” is used to talk about future plans, intentions, or predictions based on present evidence.<br>
 
@@ -9,9 +9,9 @@
 Cấu trúc “be going to” dùng để diễn tả dự định, kế hoạch trong tương lai hoặc dự đoán có căn cứ dựa trên dấu hiệu hiện tại.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸Affirmative: Khẳng định
 **Công thức:**  
 - S + am/is/are + going to + V (nguyên mẫu)
 
@@ -20,7 +20,7 @@ EN: She is going to study abroad next year.<br>
 VI: Cô ấy dự định du học vào năm sau.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + am/is/are + not + going to + V
 
@@ -29,7 +29,7 @@ EN: They are not going to join the trip.<br>
 VI: Họ sẽ không tham gia chuyến đi.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative: Nghi vấn
 **Công thức:**  
 - Am/Is/Are + S + going to + V?
 
@@ -38,7 +38,7 @@ EN: Are you going to buy a new laptop?<br>
 VI: Bạn có định mua laptop mới không?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Dự định trong tương lai  
 EN: I am going to start a new job.<br>
@@ -61,7 +61,7 @@ EN: I'm going to learn how to cook Korean food.<br>
 VI: Tôi định học nấu đồ ăn Hàn Quốc.<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - soon  
 - next (week, month, year)  
 - tomorrow  
@@ -70,7 +70,7 @@ VI: Tôi định học nấu đồ ăn Hàn Quốc.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. She ___ a doctor in the future. (**become**)<br>
@@ -112,7 +112,7 @@ VI: Tôi định học nấu đồ ăn Hàn Quốc.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. is going to become<br>
 2. are going to build<br>
 3. am not going to use<br>
