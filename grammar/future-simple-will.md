@@ -1,7 +1,7 @@
 
 # Future Simple – Will (Tương lai đơn)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Future Simple with *will* is used to talk about decisions made at the moment of speaking, predictions, promises, offers, and future facts.<br>
 
@@ -9,9 +9,9 @@ The Future Simple with *will* is used to talk about decisions made at the moment
 Thì Tương lai đơn với *will* được dùng để diễn tả quyết định xảy ra ngay lúc nói, dự đoán, lời hứa, đề nghị, hoặc sự thật trong tương lai.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example:  Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸Affirmative: Khẳng định
 **Công thức:**  
 - S + will + V (nguyên mẫu)
 
@@ -20,7 +20,7 @@ EN: I will call you later.<br>
 VI: Tôi sẽ gọi bạn sau.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + will not (won’t) + V
 
@@ -29,7 +29,7 @@ EN: She won’t come tomorrow.<br>
 VI: Cô ấy sẽ không đến vào ngày mai.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative: Nghi vấn
 **Công thức:**  
 - Will + S + V?
 
@@ -38,7 +38,7 @@ EN: Will they agree?<br>
 VI: Họ sẽ đồng ý chứ?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Quyết định tại thời điểm nói  
 EN: I’m thirsty. I will get some water.<br>
@@ -61,7 +61,7 @@ EN: The sun will rise at 6 AM tomorrow.<br>
 VI: Mặt trời sẽ mọc lúc 6 giờ sáng mai.<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - tomorrow  
 - next week / next month / next year  
 - soon  
@@ -71,7 +71,7 @@ VI: Mặt trời sẽ mọc lúc 6 giờ sáng mai.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. I ___ you as soon as I arrive. (**call**)<br>
@@ -113,7 +113,7 @@ VI: Mặt trời sẽ mọc lúc 6 giờ sáng mai.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. will call<br>
 2. will pass<br>
 3. will not (won’t) come<br>
