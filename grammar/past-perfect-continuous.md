@@ -9,7 +9,7 @@ The Past Perfect Continuous is used to describe an action that started before a 
 Thì Quá khứ hoàn thành tiếp diễn dùng để diễn tả hành động bắt đầu trước một thời điểm trong quá khứ và kéo dài đến thời điểm đó, hoặc hành động đang tiếp diễn thì có hành động khác xen vào.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
