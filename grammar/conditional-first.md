@@ -1,56 +1,113 @@
+
 # First Conditional
 
-## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+## 1. Definition
+**English:**  
+The First Conditional is used to talk about real and possible situations in the future. It describes a likely result if a certain condition is met.
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+**Tiếng Việt:**  
+Câu điều kiện loại 1 dùng để nói về những tình huống có thật hoặc có khả năng xảy ra trong tương lai nếu một điều kiện được đáp ứng.
 
-## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+---
 
-## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+## 2. Structure and Examples
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
+### 🔸 Structure (Công thức)
+**If + S + V (present simple), S + will + V (infinitive)**
 
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+### 🔸 Examples
+EN: If it rains, we will stay at home.  
+VI: Nếu trời mưa, chúng tôi sẽ ở nhà.
 
-### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+EN: If you study hard, you will pass the exam.  
+VI: Nếu bạn học chăm chỉ, bạn sẽ đậu kỳ thi.
+
+---
+
+## 3. Uses (Cách dùng – 4–5 mục)
+
+### ✔ 1. Diễn tả sự việc có khả năng xảy ra trong tương lai  
+EN: If you hurry, you will catch the bus.  
+VI: Nếu bạn nhanh lên, bạn sẽ kịp xe buýt.
+
+### ✔ 2. Đưa ra cảnh báo  
+EN: If you touch that wire, you will get shocked.  
+VI: Nếu bạn chạm vào dây đó, bạn sẽ bị giật điện.
+
+### ✔ 3. Đưa ra lời hứa hoặc cam kết  
+EN: If you need help, I will help you.  
+VI: Nếu bạn cần giúp, tôi sẽ giúp.
+
+### ✔ 4. Đưa ra lời đề nghị  
+EN: If you're hungry, I will make you something to eat.  
+VI: Nếu bạn đói, tôi sẽ làm gì đó cho bạn ăn.
+
+### ✔ 5. Nói về kết quả của hành động  
+EN: If he works hard, he will succeed.  
+VI: Nếu anh ấy làm việc chăm chỉ, anh ấy sẽ thành công.
+
+---
+
+## 4. Signal Words (Dấu hiệu nhận biết)
+- if + present simple  
+- will + V  
+- câu thể hiện điều kiện có thật  
+- khả năng xảy ra ở tương lai  
+
+---
+
+## 5. Exercises (10 questions — 5 fill-in + 5 multiple-choice)
+
+### A. Fill-in
+1. If it ___ tomorrow, we will cancel the trip. (**rain**)  
+2. If you ___ hard, you will improve. (**study**)  
+3. She will be sad if he ___ her. (**ignore**)  
+4. If they call me, I ___ them the news. (**tell**)  
+5. If you eat too much, you ___ sick. (**feel**)  
+
+---
+
+### B. Multiple-choice
+6. If he doesn't hurry, he ___ the train.  
+   a. misses  
+   b. will miss  
+   c. missed  
+   d. is missing  
+
+7. If they invite me, I ___.  
+   a. will come  
+   b. came  
+   c. come  
+   d. would come  
+
+8. If you heat ice, it ___.  
+   a. melts  
+   b. will melt  
+   c. melted  
+   d. is melting  
+
+9. If she studies, she ___ better grades.  
+   a. get  
+   b. will get  
+   c. getting  
+   d. gets  
+
+10. If we leave now, we ___ on time.  
+    a. will arrive  
+    b. arrived  
+    c. arrive  
+    d. arriving  
+
+---
+
+## → Answers
+1. rains  
+2. study  
+3. ignores  
+4. will tell  
+5. will feel  
+6. b  
+7. a  
+8. a  
+9. b  
+10. a  
