@@ -1,56 +1,113 @@
+
 # Third Conditional
 
-## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+## 1. Definition
+**English:**  
+The Third Conditional is used to talk about unreal situations in the past — things that did not happen. It expresses regret, criticism, or imagining a different past outcome.
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+**Tiếng Việt:**  
+Câu điều kiện loại 3 dùng để nói về những tình huống không có thật trong quá khứ — những điều đã không xảy ra. Thường dùng để diễn tả sự tiếc nuối, trách móc, hoặc tưởng tượng kết quả khác.
 
-## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+---
 
-## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+## 2. Structure and Examples
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
+### 🔸 Structure (Công thức)
+**If + S + had + V3 (past participle), S + would have + V3**
 
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+### 🔸 Examples  
+EN: If she had studied harder, she would have passed the exam.  
+VI: Nếu cô ấy học chăm hơn, cô ấy đã đậu kỳ thi rồi.
 
-### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+EN: If they had left earlier, they wouldn’t have missed the bus.  
+VI: Nếu họ đi sớm hơn, họ đã không lỡ xe buýt.
+
+---
+
+## 3. Uses (Cách dùng – 4–5 mục)
+
+### ✔ 1. Diễn tả điều không có thật trong quá khứ  
+EN: If I had known, I would have helped you.  
+VI: Nếu tôi biết, tôi đã giúp bạn rồi.
+
+### ✔ 2. Diễn tả sự tiếc nuối  
+EN: If we had prepared better, we would have won.  
+VI: Nếu chúng tôi chuẩn bị tốt hơn, chúng tôi đã thắng rồi.
+
+### ✔ 3. Trách móc nhẹ  
+EN: If you had listened to me, this wouldn’t have happened.  
+VI: Nếu bạn nghe lời tôi, chuyện này đã không xảy ra.
+
+### ✔ 4. Giả định quá khứ để suy ra kết quả khác  
+EN: If he had saved money, he would have bought a car.  
+VI: Nếu anh ấy tiết kiệm, anh ấy đã mua được xe rồi.
+
+### ✔ 5. Dùng trong câu chuyện “giá như…”  
+EN: If I had been there, I would have stopped it.  
+VI: Giá mà tôi ở đó, tôi đã ngăn chuyện đó rồi.
+
+---
+
+## 4. Signal Words (Dấu hiệu nhận biết)
+- if + had + V3  
+- would have / could have / might have  
+- diễn tả “giá như…”  
+- nói về điều đã không xảy ra trong quá khứ  
+
+---
+
+## 5. Exercises (10 questions — 5 fill-in + 5 multiple-choice)
+
+### A. Fill-in
+1. If she ___ earlier, she would have caught the train. (**leave**)  
+2. If they had known the truth, they ___ the decision. (**change**)  
+3. I would have helped you if you ___ me. (**ask**)  
+4. If he ___ more careful, he wouldn’t have made that mistake. (**be**)  
+5. We would have gone out if it ___ raining. (**not/be**)  
+
+---
+
+### B. Multiple-choice
+6. If I had seen him, I ___ hello.  
+   a. will say  
+   b. said  
+   c. would have said  
+   d. would say  
+
+7. They would have finished earlier if they ___ harder.  
+   a. work  
+   b. worked  
+   c. had worked  
+   d. have worked  
+
+8. If she ___ the map, she wouldn’t have gotten lost.  
+   a. read  
+   b. had read  
+   c. reads  
+   d. has read  
+
+9. He ___ the job if he had applied.  
+   a. gets  
+   b. got  
+   c. would have gotten  
+   d. get  
+
+10. If we had left on time, we ___ the meeting.  
+    a. wouldn’t miss  
+    b. wouldn’t have missed  
+    c. won’t miss  
+    d. didn’t miss  
+
+---
+
+## → Answers
+1. had left  
+2. would have changed  
+3. had asked  
+4. had been  
+5. hadn’t been  
+6. c  
+7. c  
+8. b  
+9. c  
+10. b  
