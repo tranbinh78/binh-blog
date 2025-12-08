@@ -11,7 +11,7 @@
 *Can* và *Could* được dùng để diễn tả khả năng, khả năng trong quá khứ, sự cho phép hoặc yêu cầu lịch sự.<br>
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức kèm ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
