@@ -1,7 +1,7 @@
 
 # Present Continuous (Hiện tại tiếp diễn)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Present Continuous is used for actions happening right now, around now, temporary situations, and fixed future arrangements.<br>
 
@@ -9,9 +9,9 @@ The Present Continuous is used for actions happening right now, around now, temp
 Thì Hiện tại tiếp diễn dùng để diễn tả hành động đang xảy ra ngay lúc nói, hành động diễn ra xung quanh thời điểm hiện tại, tình huống tạm thời hoặc kế hoạch đã sắp xếp trong tương lai gần.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸 Affirmative: Khẳng định
 **Công thức:**  
 - S + am/is/are + V-ing
 
@@ -20,7 +20,7 @@ EN: She is studying English now.<br>
 VI: Cô ấy đang học tiếng Anh bây giờ.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + am/is/are + not + V-ing
 
@@ -29,7 +29,7 @@ EN: They are not watching TV.<br>
 VI: Họ không đang xem TV.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative: Nghi vấn
 **Công thức:**  
 - Am/Is/Are + S + V-ing?
 
@@ -38,7 +38,7 @@ EN: Are you coming to the party?<br>
 VI: Bạn có đến bữa tiệc không?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Hành động đang diễn ra ngay lúc nói  
 EN: I am reading a book now.<br> 
@@ -60,7 +60,7 @@ VI: Chúng tôi sẽ gặp Tom vào ngày mai.<br>
 EN: The climate is getting warmer.<br>
 VI: Khí hậu đang trở nên nóng hơn.<br>
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - now  
 - right now  
 - at the moment  
@@ -71,7 +71,7 @@ VI: Khí hậu đang trở nên nóng hơn.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. She ___ in the library now. (**study**)<br>
@@ -113,7 +113,7 @@ VI: Khí hậu đang trở nên nóng hơn.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. is studying<br>
 2. am not watching<br>
 3. are moving<br>
