@@ -9,7 +9,7 @@ The Future Perfect is used to describe an action that will be completed before a
 Thì Tương lai hoàn thành dùng để diễn tả hành động sẽ hoàn thành trước một thời điểm xác định trong tương lai.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸Affirmative:  Khẳng định
 **Công thức:**  
