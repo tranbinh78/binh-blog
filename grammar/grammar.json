@@ -182,80 +182,87 @@
     "category": "Grammar"
   },
   {
-    "title": "Gerund & Infinitive",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "gerund-infinitive.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
+  "title": "Gerund & Infinitive",
+  "file": "gerund-infinitive.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Participles",
+  "file": "participles.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Verb Patterns",
+  "file": "verb-patterns.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Bare infinitive vs. To-infinitive",
+  "file": "bare-vs-to-infinitive.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Regular & Irregular Verbs",
+  "file": "regular-irregular-verbs.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
   {
-    "title": "Reported Speech",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "reported-speech.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
-  {
-    "title": "Relative Clauses",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "relative-clauses.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
-  {
-    "title": "Comparatives & Superlatives",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "comparatives.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
-  {
-    "title": "WH-Questions",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "wh-questions.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
-  {
-    "title": "Question Tags",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "question-tags.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
-  {
-    "title": "Articles",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "articles.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
-  {
-    "title": "Countable & Uncountable",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "countable-uncountable.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
-  {
-    "title": "Prepositions",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "prepositions.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
-  {
-    "title": "Adjective vs Adverb",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "adjective-adverb.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  },
-  {
-    "title": "Quantifiers",
-    "description": "Bài học ngắn gọn – công thức, cách dùng, ví dụ.",
-    "file": "quantifiers.md",
-    "thumbnail": "img/grammar.jpg",
-    "category": "Grammar"
-  }
+  "title": "Reported Speech",
+  "file": "reported-speech.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Relative Clauses",
+  "file": "relative-clauses.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Comparatives & Superlatives",
+  "file": "comparatives.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "WH-Questions",
+  "file": "wh-questions.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Question Tags",
+  "file": "question-tags.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Articles",
+  "file": "articles.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Prepositions",
+  "file": "prepositions.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Countable & Uncountable",
+  "file": "countable-uncountable.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+},
+{
+  "title": "Quantifiers",
+  "file": "quantifiers.md",
+  "thumbnail": "img/grammar.jpg",
+  "category": "Grammar"
+}
 ]
