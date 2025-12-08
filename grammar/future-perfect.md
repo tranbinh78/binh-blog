@@ -1,7 +1,7 @@
 
 # Future Perfect (Tương lai hoàn thành)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Future Perfect is used to describe an action that will be completed before a specific point of time in the future.<br>
 
@@ -9,9 +9,9 @@ The Future Perfect is used to describe an action that will be completed before a
 Thì Tương lai hoàn thành dùng để diễn tả hành động sẽ hoàn thành trước một thời điểm xác định trong tương lai.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸Affirmative:  Khẳng định
 **Công thức:**  
 - S + will have + V3 (past participle)
 
@@ -20,7 +20,7 @@ EN: She will have finished the report by tomorrow morning.<br>
 VI: Cô ấy sẽ hoàn thành bản báo cáo trước sáng mai.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + will not (won’t) have + V3
 
@@ -29,7 +29,7 @@ EN: They won’t have completed the project by next week.<br>
 VI: Họ sẽ không hoàn thành dự án trước tuần sau.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative: Nghi vấn
 **Công thức:**  
 - Will + S + have + V3?
 
@@ -38,7 +38,7 @@ EN: Will you have graduated by 2026?<br>
 VI: Bạn sẽ tốt nghiệp trước năm 2026 chứ?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Hành động sẽ hoàn tất trước một thời điểm tương lai  
 EN: By 10 PM, I will have finished my homework.<br>
@@ -61,7 +61,7 @@ EN: She will have written five books by the end of the year.<br>
 VI: Cô ấy sẽ viết xong năm cuốn sách trước cuối năm.<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - by + thời điểm tương lai  
 - before  
 - by the time  
@@ -70,7 +70,7 @@ VI: Cô ấy sẽ viết xong năm cuốn sách trước cuối năm.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. She ___ the assignment by tonight. (**finish**)<br>
@@ -112,7 +112,7 @@ VI: Cô ấy sẽ viết xong năm cuốn sách trước cuối năm.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. will have finished<br>
 2. will have saved<br>
 3. will have completed<br>
