@@ -9,7 +9,7 @@ The Past Simple is used to describe actions that started and finished in the pas
 Thì Quá khứ đơn dùng để diễn tả hành động đã xảy ra và kết thúc trong quá khứ, thường kèm theo thời điểm cụ thể hoặc ngầm hiểu.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
