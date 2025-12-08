@@ -13,8 +13,8 @@ Thì Hiện tại đơn dùng để diễn tả thói quen, hoạt động lặp
 **Với động từ to be**<br>
 - S (chủ ngữ) + am/is/are + N/Adj 
 - I + am + N/Adj
-- You / We / They / Danh từ số nhiều + are N/Adj 
-- He / She / It / Danh từ số ít + N/Adj 
+- You / We / They / Danh từ số nhiều + are + N/Adj 
+- He / She / It / Danh từ số ít + is + N/Adj 
 
 **Ví dụ:**  
 - EN: I am an engineer.<br>
@@ -56,7 +56,7 @@ VI: Tôi không phải là một kỹ sư.<br>
 VI: Ông ấy không phải là một bác sĩ.<br>
 
 **Với động từ thường**<br>
-**S (chủ ngữ) + do not/does not + V (động từ)** 
+**S (chủ ngữ) + do not/does not + V (động từ nguyên mẫu)** 
 - I/you/we/they + do not (don’t) + V (động từ nguyên mẫu)
 - He/She/It + does not (doesn’t) + V (động từ nguyên mẫu)
 
@@ -85,7 +85,7 @@ A: Yes, I am. (Đúng vậy)<br>
 
 **Với động từ thường**<br>
 
-**Do/Does + S (chủ ngữ) + V (động từ)?**
+**Do/Does + S (chủ ngữ) + V (động từ nguyên mẫu)?**
 - Do + I/you/we/they + V (động từ nguyên mẫu)?  
 - Does + he/she/it + V (động từ nguyên mẫu)?
 
@@ -100,13 +100,13 @@ AN: Yes, I do. / No, I don’t.<br>
 
 ### 🔸 Câu nghi vấn sử dụng từ hỏi bắt đầu bằng Wh-
 **Động từ to “be”** <br>
-**Wh- + am/ are/ is (not) + S + N/Adj?** <br>
+**Wh- + am/ are/ is + S + N/Adj?** <br>
 **Ví dụ:**  
 - Where are you from? (Bạn đến từ đâu?)<br>
 - Who are they? (Họ là ai?)<br>
 
 **Động từ chỉ hành động** <br>
-**Wh- + do/ does (not) + S + V (nguyên thể)….?** <br>
+**Wh- + do/ does + S + V (nguyên thể)….?** <br>
 **Ví dụ:**  
 - Where do you come from? (Bạn đến từ đâu?)<br>
 - What do you do? (Bạn làm nghề gì?)<br>
