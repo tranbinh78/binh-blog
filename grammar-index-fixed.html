@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>English Grammar Lessons | Binh Blog</title>
+
+<style>
+  body {
+    font-family: "Be Vietnam Pro", sans-serif;
+    background: #faf9f4;
+    padding: 20px;
+    color: #333;
+    transition: 0.3s;
+    max-width: 900px;
+    margin: auto;
+  }
+  body.dark { background:#1b1b1b; color:#eee; }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .module {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+  }
+  body.dark .module { background:#2a2a2a; border-color:#555; }
+
+  .module-title {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: #4a3fa8;
+  }
+  body.dark .module-title { color:#cfc4ff; }
+
+  .lesson-list a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.2s;
+  }
+  body.dark .lesson-list a { color:#eee; }
+
+  .lesson-list a:hover {
+    background: #ede3ff;
+  }
+  body.dark .lesson-list a:hover {
+    background:#5b4fa8;
+  }
+
+/* ============================
+   MOBILE OPTIMIZATION
+============================ */
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .module {
+    padding: 15px;
+    margin-bottom: 18px;
+  }
+
+  .module-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+  }
+
+  .lesson-list a {
+    padding: 12px 10px;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  /* Accordion animation */
+  .lesson-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  /* When module is open */
+  .module.open .lesson-list {
+    max-height: 800px; /* auto không dùng được với animation */
+    margin-top: 10px;
+  }
+}
+  
+</style>
+</head>
+
+<body>
+
+<h1>📘 English Grammar Lessons</h1>
+
+<div id="modules-container">Đang tải...</div>
+
+<script>
+async function loadModules() {
+  const res = await fetch("/binh-blog/grammar/grammar.json");
+  const list = await res.json();
+
+  // Chia module giống lesson.html
+ const categories = {
+  "Tenses": list.slice(0, 13),
+  "Modal Verbs": list.slice(13, 17),
+  "Passive Voice": list.slice(17, 22),
+  "Conditionals": list.slice(22, 26),
+  "Verb Forms": list.slice(26, 35),
+  "Advanced Grammar": list.slice(35, 40)
+};
+
+  const container = document.getElementById("modules-container");
+  container.innerHTML = "";
+
+  for (const moduleName in categories) {
+    const lessons = categories[moduleName];
+
+    const moduleDiv = document.createElement("div");
+    moduleDiv.className = "module";
+
+    moduleDiv.innerHTML = `
+      <div class="module-title">📘 ${moduleName}</div>
+      <div class="lesson-list"></div>
+    `;
+
+    const listDiv = moduleDiv.querySelector(".lesson-list");
+
+    lessons.forEach(item => {
+      const a = document.createElement("a");
+      a.href = `/binh-blog/lesson.html?file=${item.file}`;
+      a.innerText = item.title;
+      listDiv.appendChild(a);
+    });
+
+    container.appendChild(moduleDiv);
+  }
+}
+
+loadModules();
+
+  // MOBILE ACCORDION
+function enableMobileAccordion() {
+  if (window.innerWidth > 768) return;
+
+  const modules = document.querySelectorAll(".module");
+
+  modules.forEach(m => {
+    const title = m.querySelector(".module-title");
+
+    title.addEventListener("click", () => {
+      m.classList.toggle("open");
+    });
+  });
+}
+
+setTimeout(enableMobileAccordion, 500);
+  
+</script>
+
+</body>
+</html>
