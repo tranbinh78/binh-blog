@@ -11,6 +11,7 @@ Thì Hiện tại đơn dùng để diễn tả thói quen, hoạt động lặp
 
 ### 🔸 Khẳng định
 **Công thức:**  
+**S (chủ ngữ) + V (động từ)**
 - I / You / We / They + V (động từ nguyên mẫu)  
 - He / She / It + V(s/es)
 
@@ -27,8 +28,8 @@ VI: Cô ấy làm việc trong một bệnh viện.<br>
 
 ### 🔸 Phủ định
 **Công thức:**  
-- S + do not (don’t) + V  
-- S + does not (doesn’t) + V  *(He/She/It)*
+- I/you/we/they + do not (don’t) + V  
+- He/She/It + does not (doesn’t) + V  
 
 **Lưu ý:** Sau “do/does not”, động từ **không thêm s/es**<br>
 
