@@ -1,7 +1,7 @@
 
 # Future Continuous (Tương lai tiếp diễn)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Future Continuous is used to describe an action that will be happening at a specific time in the future, or an action that will be in progress when another action occurs.<br>
 
@@ -9,9 +9,9 @@ The Future Continuous is used to describe an action that will be happening at a 
 Thì Tương lai tiếp diễn dùng để diễn tả hành động sẽ đang diễn ra tại một thời điểm xác định trong tương lai, hoặc hành động đang diễn ra thì một hành động khác xen vào (trong tương lai).
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸Affirmative: Khẳng định
 **Công thức:**  
 - S + will be + V-ing
 
@@ -20,7 +20,7 @@ EN: She will be studying at 9 PM tonight.<br>
 VI: Cô ấy sẽ đang học vào lúc 9 giờ tối nay.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + will not (won’t) be + V-ing
 
@@ -29,7 +29,7 @@ EN: They won’t be working tomorrow afternoon.<br>
 VI: Họ sẽ không đang làm việc vào chiều mai.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative:  Nghi vấn
 **Công thức:**  
 - Will + S + be + V-ing?
 
@@ -38,7 +38,7 @@ EN: Will you be traveling next week?<br>
 VI: Bạn sẽ đang đi du lịch vào tuần tới chứ?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Hành động sẽ đang diễn ra tại một thời điểm trong tương lai  
 EN: At 10 AM tomorrow, I will be driving to work.<br>
@@ -61,7 +61,7 @@ EN: They will be meeting with the manager tomorrow.<br>
 VI: Họ sẽ đang họp với quản lý vào ngày mai.<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - at + thời gian trong tương lai  
 - this time tomorrow / next week  
 - when + hành động khác  
@@ -70,7 +70,7 @@ VI: Họ sẽ đang họp với quản lý vào ngày mai.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. At 7 PM tonight, I ___ dinner. (**cook**)<br>
@@ -112,7 +112,7 @@ VI: Họ sẽ đang họp với quản lý vào ngày mai.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. will be cooking<br>
 2. will be driving<br>
 3. will be sleeping<br>
