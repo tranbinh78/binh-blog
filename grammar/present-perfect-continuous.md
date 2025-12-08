@@ -1,7 +1,7 @@
 
 # Present Perfect Continuous (Hiện tại hoàn thành tiếp diễn)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Present Perfect Continuous is used to describe actions that started in the past and continue until now, or actions that have recently stopped but have visible results in the present.<br>
 
@@ -9,9 +9,9 @@ The Present Perfect Continuous is used to describe actions that started in the p
 Thì Hiện tại hoàn thành tiếp diễn dùng để diễn tả hành động bắt đầu trong quá khứ và tiếp tục kéo dài đến hiện tại, hoặc hành động vừa dừng lại nhưng vẫn còn dấu hiệu, kết quả ở hiện tại.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸Affirmative: Khẳng định
 **Công thức:**  
 - S + have/has + been + V-ing
 
@@ -20,7 +20,7 @@ EN: She has been studying for three hours.<br>
 VI: Cô ấy đã học suốt 3 tiếng rồi.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + have/has + not + been + V-ing
 
@@ -29,7 +29,7 @@ EN: They have not been working today.<br>
 VI: Họ không làm việc hôm nay.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative:  Nghi vấn
 **Công thức:**  
 - Have/Has + S + been + V-ing?
 
@@ -38,7 +38,7 @@ EN: Have you been waiting long?<br>
 VI: Bạn đã đợi lâu chưa?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Hành động bắt đầu trong quá khứ và kéo dài đến hiện tại  
 EN: I have been learning English for 5 years.<br>
@@ -61,7 +61,7 @@ EN: I have been reading that book. (I haven't finished it)<br>
 VI: Tôi đang đọc cuốn sách đó (chưa đọc xong).<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - for + khoảng thời gian  
 - since + mốc thời gian  
 - all day / all morning / all afternoon  
@@ -70,7 +70,7 @@ VI: Tôi đang đọc cuốn sách đó (chưa đọc xong).<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. I ___ English for two hours. (**study**)<br>
@@ -112,7 +112,7 @@ VI: Tôi đang đọc cuốn sách đó (chưa đọc xong).<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. have been studying<br>
 2. have not been going<br>
 3. have been waiting<br>
