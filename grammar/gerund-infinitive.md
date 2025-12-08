@@ -1,7 +1,7 @@
 
 # Gerund & Infinitive  (Danh động từ và động từ nguyên mẫu có “to” hoặc không “to”)
 
-## 1. Definition
+## 1. Definition: Định nghĩa
 **English:**  
 A **gerund** is the *-ing* form of a verb used as a noun (e.g., *swimming*, *reading*).<br>
 An **infinitive** is the base form of a verb, usually with “to” (e.g., *to swim*, *to read*).<br>
