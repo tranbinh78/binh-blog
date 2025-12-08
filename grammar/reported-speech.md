@@ -1,56 +1,162 @@
-# Reported Speech
 
-## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+# Reported Speech (Câu tường thuật)
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+## 1. Definition  
+**English:**  
+Reported speech is used to report what someone said without quoting their exact words.  
+It usually involves changes in pronouns, tense, time expressions, and sometimes word order.
 
-## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+**Tiếng Việt:**  
+Câu tường thuật dùng để kể lại lời nói của ai đó mà *không lặp lại nguyên văn*.  
+Thường phải thay đổi đại từ, thì, trạng từ chỉ thời gian và một số cấu trúc.
 
-## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+---
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
+## 2. Direct vs. Reported Speech
 
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+### ✔ Direct Speech (Lời nói trực tiếp)
+EN: She said, “I am tired.”  
+VI: Cô ấy nói, “Tôi mệt.”
 
-### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+### ✔ Reported Speech (Lời nói gián tiếp)
+EN: She said that she was tired.  
+VI: Cô ấy nói rằng cô ấy mệt.
+
+---
+
+## 3. Changes in Tense (Quy tắc đổi thì)
+
+| Direct | Reported |
+|--------|----------|
+| am / is → was | “I am happy” → He said he was happy. |
+| are → were | |
+| do → did | |
+| will → would | |
+| can → could | |
+| have → had | |
+| past simple → past perfect | “I bought it” → She said she had bought it. |
+
+---
+
+## 4. Changes in Pronouns (Đổi đại từ)
+- I → he / she  
+- my → his / her  
+- we → they  
+- our → their  
+
+Example:  
+EN: “I love my job,” she said.  
+→ She said that she loved her job.
+
+---
+
+## 5. Time & Place Changes  
+| Direct | Reported |
+|--------|----------|
+| today → that day |  
+| yesterday → the day before |  
+| tomorrow → the next day |  
+| now → then |  
+| here → there |  
+
+Example:  
+EN: “I will come tomorrow,” he said.  
+→ He said that he would come the next day.
+
+---
+
+## 6. Reporting Verbs (Động từ tường thuật)
+- say  
+- tell  
+- ask  
+- advise  
+- warn  
+- remind  
+
+Example:  
+EN: “Close the door,” he said.  
+→ He told me to close the door.
+
+---
+
+## 7. Reporting Questions (Tường thuật câu hỏi)
+
+### ✔ Yes/No Questions  
+Use **ask + if / whether**  
+EN: “Do you like tea?”  
+→ She asked if I liked tea.
+
+### ✔ WH- Questions  
+Use **ask + WH-word + clause**  
+EN: “Where do you live?”  
+→ She asked where I lived.
+
+---
+
+## 8. Reporting Commands (Câu mệnh lệnh)
+Use **tell/ask + object + to V**
+
+Example:  
+EN: “Please sit down.”  
+→ He asked me to sit down.
+
+EN: “Don’t go!”  
+→ She told me not to go.
+
+---
+
+## 9. Exercises (10 questions — 5 rewrite + 5 multiple-choice)
+
+### A. Rewrite into Reported Speech  
+1. “I am busy,” she said.  
+2. “We will go tomorrow,” they said.  
+3. “Don’t touch that,” he said.  
+4. “Where are you going?” she asked.  
+5. “I bought this yesterday,” he said.
+
+---
+
+### B. Multiple-choice  
+6. He said he ___ tired.  
+   a. is  
+   b. was  
+   c. were  
+   d. be  
+
+7. She told me ___ quiet.  
+   a. to be  
+   b. be  
+   c. being  
+   d. been  
+
+8. They asked me if I ___ coffee.  
+   a. like  
+   b. liked  
+   c. will like  
+   d. liking  
+
+9. She asked me where I ___.  
+   a. live  
+   b. lived  
+   c. living  
+   d. lives  
+
+10. He said he ___ to the party the next day.  
+    a. will come  
+    b. would come  
+    c. comes  
+    d. come  
+
+---
+
+## → Answers  
+1. She said that she was busy.  
+2. They said that they would go the next day.  
+3. He told me not to touch that.  
+4. She asked where I was going.  
+5. He said that he had bought it the day before.  
+6. b  
+7. a  
+8. b  
+9. b  
+10. b  
