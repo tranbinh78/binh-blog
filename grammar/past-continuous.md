@@ -1,7 +1,7 @@
 
 # Past Continuous (Quá khứ tiếp diễn)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Past Continuous is used to describe actions that were happening at a specific moment in the past or actions that were in progress when another action occurred.<br>
 
@@ -9,9 +9,9 @@ The Past Continuous is used to describe actions that were happening at a specifi
 Thì Quá khứ tiếp diễn dùng để diễn tả hành động đang diễn ra tại một thời điểm xác định trong quá khứ hoặc hành động đang xảy ra thì một hành động khác xen vào.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸 Affirmative: Khẳng định
 **Công thức:**  
 - S + was/were + V-ing
 
@@ -20,7 +20,7 @@ EN: She was reading at 8 PM last night.<br>
 VI: Cô ấy đang đọc sách lúc 8 giờ tối qua.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + was/were + not + V-ing
 
@@ -29,7 +29,7 @@ EN: They were not watching TV when I arrived.<br>
 VI: Họ không xem TV khi tôi đến.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative: Nghi vấn
 **Công thức:**  
 - Was/Were + S + V-ing?
 
@@ -38,7 +38,7 @@ EN: Were you sleeping at that time?<br>
 VI: Bạn đang ngủ vào lúc đó à?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Hành động đang diễn ra tại một thời điểm trong quá khứ  
 EN: At 9 PM, I was cooking dinner.<br>
@@ -61,7 +61,7 @@ EN: They were traveling around Europe last summer.<br>
 VI: Họ đã đi du lịch khắp châu Âu vào mùa hè năm ngoái.<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - while  
 - when  
 - at + thời điểm (at 9 PM)  
@@ -70,7 +70,7 @@ VI: Họ đã đi du lịch khắp châu Âu vào mùa hè năm ngoái.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. I ___ dinner at 7 PM yesterday. (**cook**)<br>
@@ -112,7 +112,7 @@ VI: Họ đã đi du lịch khắp châu Âu vào mùa hè năm ngoái.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. was cooking<br>
 2. was sleeping<br>
 3. were not watching<br>
