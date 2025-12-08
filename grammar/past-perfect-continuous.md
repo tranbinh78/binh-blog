@@ -1,7 +1,7 @@
 
 # Past Perfect Continuous (Quá khứ hoàn thành tiếp diễn)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Past Perfect Continuous is used to describe an action that started before a point in the past and continued up to that point, or an action that had been happening before another past action occurred.<br>
 
@@ -9,9 +9,9 @@ The Past Perfect Continuous is used to describe an action that started before a 
 Thì Quá khứ hoàn thành tiếp diễn dùng để diễn tả hành động bắt đầu trước một thời điểm trong quá khứ và kéo dài đến thời điểm đó, hoặc hành động đang tiếp diễn thì có hành động khác xen vào.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸Affirmative: Khẳng định
 **Công thức:**  
 - S + had been + V-ing
 
@@ -21,7 +21,7 @@ VI: Cô ấy đã học suốt 2 tiếng trước khi bài kiểm tra bắt đ�
 
 ---
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + had not been + V-ing
 
@@ -30,7 +30,7 @@ EN: They had not been working when we called.<br>
 VI: Họ không làm việc khi chúng tôi gọi.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative: Nghi vấn
 **Công thức:**  
 - Had + S + been + V-ing?
 
@@ -39,7 +39,7 @@ EN: Had he been waiting long when you arrived?<br>
 VI: Anh ấy đã đợi lâu khi bạn đến chưa?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3.  Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Hành động kéo dài đến một thời điểm trong quá khứ  
 EN: I had been living in London before I moved to France.<br>
@@ -62,7 +62,7 @@ EN: The ground was wet because it had been raining.<br>
 VI: Mặt đất ướt vì trời đã mưa.<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - before  
 - when  
 - for + khoảng thời gian  
@@ -72,7 +72,7 @@ VI: Mặt đất ướt vì trời đã mưa.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. She ___ for the exam for three hours before she took a break. (**study**)<br>
@@ -114,7 +114,7 @@ VI: Mặt đất ướt vì trời đã mưa.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. had been studying<br>
 2. had been working<br>
 3. had been waiting<br>
