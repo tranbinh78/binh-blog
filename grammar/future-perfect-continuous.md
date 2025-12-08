@@ -9,7 +9,7 @@ The Future Perfect Continuous is used to describe an action that will have been 
 Thì Tương lai hoàn thành tiếp diễn dùng để diễn tả hành động sẽ đã diễn ra liên tục trong một khoảng thời gian cho đến một thời điểm xác định trong tương lai.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸 Affirmative: Khẳng định
 **Công thức:**  
