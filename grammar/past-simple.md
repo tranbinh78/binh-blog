@@ -1,7 +1,7 @@
 
 # Past Simple (Quá khứ đơn)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Past Simple is used to describe actions that started and finished in the past, usually with a specific time mentioned or understood.<br>
 
@@ -9,9 +9,9 @@ The Past Simple is used to describe actions that started and finished in the pas
 Thì Quá khứ đơn dùng để diễn tả hành động đã xảy ra và kết thúc trong quá khứ, thường kèm theo thời điểm cụ thể hoặc ngầm hiểu.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸Affirmative: Khẳng định
 **Công thức:**  
 - S + V-ed (động từ có quy tắc)  
 - S + V2 (động từ bất quy tắc)
@@ -21,7 +21,7 @@ EN: She visited her grandparents yesterday.<br>
 VI: Cô ấy đã thăm ông bà vào hôm qua.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + did not (didn’t) + V (nguyên mẫu)
 
@@ -30,7 +30,7 @@ EN: I didn’t like the movie.<br>
 VI: Tôi không thích bộ phim đó.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative: Nghi vấn
 **Công thức:**  
 - Did + S + V?
 
@@ -39,7 +39,7 @@ EN: Did they arrive on time?<br>
 VI: Họ đến đúng giờ không?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses:  Cách dùng (4–5 mục)
 
 ### ✔ 1. Hành động đã xảy ra và kết thúc trong quá khứ  
 EN: He finished his homework last night.<br>
@@ -62,7 +62,7 @@ EN: People believed the Earth was flat.<br>
 VI: Mọi người từng tin Trái Đất là phẳng.<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - yesterday  
 - last night / last week / last month / last year  
 - … ago  
@@ -71,7 +71,7 @@ VI: Mọi người từng tin Trái Đất là phẳng.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. She ___ to the beach last Sunday. (**go**)<br>
@@ -113,7 +113,7 @@ VI: Mọi người từng tin Trái Đất là phẳng.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. went<br>
 2. didn’t watch<br>
 3. Did…see<br>
