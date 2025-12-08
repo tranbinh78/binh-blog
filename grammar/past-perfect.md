@@ -9,7 +9,7 @@ The Past Perfect is used to describe an action that happened before another acti
 Thì Quá khứ hoàn thành dùng để diễn tả một hành động xảy ra trước một hành động khác trong quá khứ hoặc trước một thời điểm xác định trong quá khứ.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
