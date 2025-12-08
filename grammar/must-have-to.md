@@ -13,7 +13,7 @@
 - **Have to** diễn tả sự bắt buộc do hoàn cảnh, quy tắc, luật lệ.<br>
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
