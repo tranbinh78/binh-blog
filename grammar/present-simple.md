@@ -27,7 +27,8 @@ EN: She works in a hospital.<br>
 VI: Cô ấy làm việc trong một bệnh viện.<br>
 
 ### 🔸 Phủ định
-**Công thức:**  
+**Công thức:** 
+**S (chủ ngữ) + do not/does not + V (động từ)**
 - I/you/we/they + do not (don’t) + V  
 - He/She/It + does not (doesn’t) + V  
 
@@ -39,7 +40,8 @@ VI: Anh ấy không thích sô-cô-la.<br>
 
 
 ### 🔸 Nghi vấn
-**Công thức:**  
+**Công thức:** 
+**Do/Does + S (chủ ngữ) + V (động từ)?**
 - Do + I/you/we/they + V?  
 - Does + he/she/it + V?
 
