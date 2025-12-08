@@ -9,7 +9,7 @@ The Future Simple with *will* is used to talk about decisions made at the moment
 Thì Tương lai đơn với *will* được dùng để diễn tả quyết định xảy ra ngay lúc nói, dự đoán, lời hứa, đề nghị, hoặc sự thật trong tương lai.
 
 
-## 2. Formula and Example:  Công thức kèm ví dụ
+## 2. Structure and Example:  Công thức và ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
