@@ -27,8 +27,8 @@ VI: Cô ấy làm việc trong một bệnh viện.<br>
 
 ### 🔸 Phủ định
 **Công thức: S (chủ ngữ) + do not/does not + V (động từ)** 
-- I/you/we/they + do not (don’t) + V  
-- He/She/It + does not (doesn’t) + V  
+- I/you/we/they + do not (don’t) + V (động từ nguyên mẫu)
+- He/She/It + does not (doesn’t) + V (động từ nguyên mẫu)
 
 **Lưu ý:** Sau “do/does not”, động từ **không thêm s/es**<br>
 
@@ -39,8 +39,8 @@ VI: Anh ấy không thích sô-cô-la.<br>
 
 ### 🔸 Nghi vấn
 **Công thức: Do/Does + S (chủ ngữ) + V (động từ)?**
-- Do + I/you/we/they + V?  
-- Does + he/she/it + V?
+- Do + I/you/we/they + V (động từ nguyên mẫu)?  
+- Does + he/she/it + V (động từ nguyên mẫu)?
 
 **Trả lời ngắn:**  
 - Yes, I do. / No, I don’t.  
