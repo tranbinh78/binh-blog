@@ -3,12 +3,11 @@
 
 ## 1. Định nghĩa
 **English:**  
-The Past Perfect Continuous is used to describe an action that started before a point in the past and continued up to that point, or an action that had been happening before another past action occurred.
+The Past Perfect Continuous is used to describe an action that started before a point in the past and continued up to that point, or an action that had been happening before another past action occurred.<br>
 
 **Tiếng Việt:**  
 Thì Quá khứ hoàn thành tiếp diễn dùng để diễn tả hành động bắt đầu trước một thời điểm trong quá khứ và kéo dài đến thời điểm đó, hoặc hành động đang tiếp diễn thì có hành động khác xen vào.
 
----
 
 ## 2. Công thức kèm ví dụ
 
@@ -17,8 +16,8 @@ Thì Quá khứ hoàn thành tiếp diễn dùng để diễn tả hành động
 - S + had been + V-ing
 
 **Ví dụ:**  
-EN: She had been studying for two hours before the test started.  
-VI: Cô ấy đã học suốt 2 tiếng trước khi bài kiểm tra bắt đầu.
+EN: She had been studying for two hours before the test started.<br>
+VI: Cô ấy đã học suốt 2 tiếng trước khi bài kiểm tra bắt đầu.<br>
 
 ---
 
@@ -27,44 +26,41 @@ VI: Cô ấy đã học suốt 2 tiếng trước khi bài kiểm tra bắt đ�
 - S + had not been + V-ing
 
 **Ví dụ:**  
-EN: They had not been working when we called.  
-VI: Họ không làm việc khi chúng tôi gọi.
+EN: They had not been working when we called.<br>
+VI: Họ không làm việc khi chúng tôi gọi.<br>
 
----
 
 ### 🔸 Nghi vấn
 **Công thức:**  
 - Had + S + been + V-ing?
 
 **Ví dụ:**  
-EN: Had he been waiting long when you arrived?  
-VI: Anh ấy đã đợi lâu khi bạn đến chưa?
+EN: Had he been waiting long when you arrived?<br>
+VI: Anh ấy đã đợi lâu khi bạn đến chưa?<br>
 
----
 
 ## 3. Cách dùng (4–5 mục)
 
 ### ✔ 1. Hành động kéo dài đến một thời điểm trong quá khứ  
-EN: I had been living in London before I moved to France.  
-VI: Tôi đã sống ở London trước khi chuyển sang Pháp.
+EN: I had been living in London before I moved to France.<br>
+VI: Tôi đã sống ở London trước khi chuyển sang Pháp.<br>
 
 ### ✔ 2. Hành động đang diễn ra thì hành động khác xen vào  
-EN: They had been walking for hours when it started to rain.  
-VI: Họ đã đi bộ hàng giờ khi trời bắt đầu mưa.
+EN: They had been walking for hours when it started to rain.<br>
+VI: Họ đã đi bộ hàng giờ khi trời bắt đầu mưa.<br>
 
 ### ✔ 3. Nhấn mạnh thời gian hành động diễn ra trong quá khứ  
-EN: She was tired because she had been working all day.  
-VI: Cô ấy mệt vì đã làm việc cả ngày.
+EN: She was tired because she had been working all day.<br>
+VI: Cô ấy mệt vì đã làm việc cả ngày.<br>
 
 ### ✔ 4. Hành động lặp lại nhiều lần trong quá khứ gần  
-EN: He had been calling her again and again.  
-VI: Anh ấy đã gọi cho cô ấy nhiều lần.
+EN: He had been calling her again and again.<br>
+VI: Anh ấy đã gọi cho cô ấy nhiều lần.<br>
 
 ### ✔ 5. Diễn tả nguyên nhân của một kết quả trong quá khứ  
-EN: The ground was wet because it had been raining.  
-VI: Mặt đất ướt vì trời đã mưa.
+EN: The ground was wet because it had been raining.<br>
+VI: Mặt đất ướt vì trời đã mưa.<br>
 
----
 
 ## 4. Dấu hiệu nhận biết
 - before  
@@ -79,53 +75,53 @@ VI: Mặt đất ướt vì trời đã mưa.
 ## 5. Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
-1. She ___ for the exam for three hours before she took a break. (**study**)  
-2. They ___ in the garden when it started to rain. (**work**)  
-3. I ___ for him since 5 PM. (**wait**)  
-4. ___ he ___ anything before the meeting started? (**do**)  
-5. The children ___ all afternoon before their mom came home. (**play**)  
+1. She ___ for the exam for three hours before she took a break. (**study**)<br>
+2. They ___ in the garden when it started to rain. (**work**)<br>
+3. I ___ for him since 5 PM. (**wait**)<br>
+4. ___ he ___ anything before the meeting started? (**do**)<br>
+5. The children ___ all afternoon before their mom came home. (**play**)<br>
 
 ### B. Multiple-choice
-6. She was tired because she ___ all day.  
-   a. worked  
-   b. had worked  
-   c. had been working  
-   d. was working  
+6. She was tired because she ___ all day.<br>
+   a. worked<br>
+   b. had worked<br>
+   c. had been working<br>
+   d. was working<br>
 
-7. They ___ for an hour when the train finally arrived.  
-   a. waited  
-   b. were waiting  
-   c. had been waiting  
-   d. had waited  
+7. They ___ for an hour when the train finally arrived.<br>
+   a. waited<br>
+   b. were waiting<br>
+   c. had been waiting<br>
+   d. had waited<br>
 
-8. He ___ before he finally understood the lesson.  
-   a. had been practicing  
-   b. practices  
-   c. practiced  
-   d. is practicing  
+8. He ___ before he finally understood the lesson.<br>
+   a. had been practicing<br>
+   b. practices<br>
+   c. practiced<br>
+   d. is practicing<br>
 
-9. By the time we met, she ___ for me.  
-   a. had been looking  
-   b. looked  
-   c. is looking  
-   d. was looking  
+9. By the time we met, she ___ for me.<br>
+   a. had been looking<br>
+   b. looked<br>
+   c. is looking<br>
+   d. was looking<br>
 
-10. The ground was wet because it ___.  
-    a. rained  
-    b. was raining  
-    c. had rained  
-    d. had been raining  
+10. The ground was wet because it ___.<br>
+    a. rained<br>
+    b. was raining<br>
+    c. had rained<br>
+    d. had been raining<br>
 
 ---
 
 ## → Đáp án
-1. had been studying  
-2. had been working  
-3. had been waiting  
-4. Had…been doing  
-5. had been playing  
-6. c  
-7. c  
-8. a  
-9. a  
-10. d  
+1. had been studying<br>
+2. had been working<br>
+3. had been waiting<br>
+4. Had…been doing<br>
+5. had been playing<br>
+6. c<br>
+7. c<br>
+8. a<br>
+9. a<br>
+10. d<br>
