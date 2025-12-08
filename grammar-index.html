@@ -137,8 +137,8 @@ async function loadModules() {
   const container = document.getElementById("modules-container");
   container.innerHTML = "";
 
-  for (const moduleName in modules) {
-    const lessons = modules[moduleName];
+  for (const moduleName in categories) {
+    const lessons = categories[moduleName];
 
     const moduleDiv = document.createElement("div");
     moduleDiv.className = "module";
