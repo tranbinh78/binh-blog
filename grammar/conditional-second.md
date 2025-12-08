@@ -1,56 +1,120 @@
+
 # Second Conditional
 
-## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+## 1. Definition
+**English:**  
+The Second Conditional is used to talk about unreal, imaginary, or unlikely situations in the present or future. It describes what *would* happen if the situation were different from reality.
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+**Tiếng Việt:**  
+Câu điều kiện loại 2 dùng để nói về những tình huống không có thật, giả định, hoặc khó xảy ra ở hiện tại hoặc tương lai. Mệnh đề kết quả dùng “would”.
 
-## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+---
 
-## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+## 2. Structure and Examples
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
+### 🔸 Structure (Công thức)
+**If + S + V (past simple), S + would + V (infinitive)**
 
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+### 🔸 Examples
+EN: If I had a million dollars, I would travel the world.  
+VI: Nếu tôi có một triệu đô, tôi sẽ đi du lịch khắp thế giới.
 
-### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+EN: If she were taller, she would play basketball.  
+VI: Nếu cô ấy cao hơn, cô ấy sẽ chơi bóng rổ.
+
+---
+
+## 3. Notes (Lưu ý)
+### ✔ “Were” dùng cho mọi chủ ngữ trong câu điều kiện loại 2  
+EN: If I were you, I would apologize.  
+VI: Nếu tôi là bạn, tôi sẽ xin lỗi.
+
+---
+
+## 4. Uses (Cách dùng – 4–5 mục)
+
+### ✔ 1. Giả định điều không thật ở hiện tại  
+EN: If he were here, he would help us.  
+VI: Nếu anh ấy ở đây, anh ấy đã giúp chúng ta rồi.
+
+### ✔ 2. Giả định điều khó xảy ra trong tương lai  
+EN: If she won the lottery, she would buy a new house.  
+VI: Nếu cô ấy trúng số, cô ấy sẽ mua nhà.
+
+### ✔ 3. Đưa ra lời khuyên (If I were you…)  
+EN: If I were you, I would take a break.  
+VI: Nếu tôi là bạn, tôi sẽ nghỉ ngơi.
+
+### ✔ 4. Mong ước trái hiện tại  
+EN: If I had more free time, I would learn guitar.  
+VI: Nếu tôi có nhiều thời gian hơn, tôi sẽ học guitar.
+
+### ✔ 5. Giả định điều không thể thực hiện  
+EN: If I could fly, I would visit many places.  
+VI: Nếu tôi có thể bay, tôi sẽ đi nhiều nơi.
+
+---
+
+## 5. Signal Words (Dấu hiệu nhận biết)
+- If + past simple  
+- would + V  
+- If I were you…  
+- Giả định trái với hiện thực  
+
+---
+
+## 6. Exercises (10 questions — 5 fill-in + 5 multiple-choice)
+
+### A. Fill-in
+1. If I ___ rich, I would buy a big house. (**be**)  
+2. If she ___ harder, she would get better results. (**study**)  
+3. They would travel more if they ___ enough money. (**have**)  
+4. If he ___ more time, he would learn Spanish. (**have**)  
+5. If I were you, I ___ a rest. (**take**)  
+
+---
+
+### B. Multiple-choice
+6. If he ___ a car, he would drive to work.  
+   a. has  
+   b. had  
+   c. will have  
+   d. have  
+
+7. If I were taller, I ___ basketball.  
+   a. would play  
+   b. will play  
+   c. play  
+   d. am playing  
+
+8. She would buy that dress if she ___ more money.  
+   a. had  
+   b. has  
+   c. will have  
+   d. would have  
+
+9. If they studied more, they ___ better grades.  
+   a. get  
+   b. got  
+   c. would get  
+   d. getting  
+
+10. If I ___ you, I would call him.  
+    a. am  
+    b. was  
+    c. were  
+    d. be  
+
+---
+
+## → Answers
+1. were / was  
+2. studied  
+3. had  
+4. had  
+5. would take  
+6. b  
+7. a  
+8. a  
+9. c  
+10. c  
