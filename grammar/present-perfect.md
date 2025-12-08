@@ -1,7 +1,7 @@
 
 # Present Perfect (Hiện tại hoàn thành)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Present Perfect is used to describe actions that happened at an unspecified time before now, actions that have results in the present, or actions that started in the past and continue until now.<br>
 
@@ -9,9 +9,9 @@ The Present Perfect is used to describe actions that happened at an unspecified 
 Thì Hiện tại hoàn thành dùng để diễn tả hành động xảy ra trong quá khứ nhưng không nói rõ thời điểm, hành động đã hoàn thành nhưng kết quả còn ảnh hưởng đến hiện tại, hoặc hành động bắt đầu trong quá khứ và kéo dài đến hiện tại.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸Affirmative: Khẳng định
 **Công thức:**  
 - S + have/has + V3 (past participle)
 
@@ -20,7 +20,7 @@ EN: I have visited Paris.<br>
 VI: Tôi đã từng đến Paris.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + have/has + not + V3
 
@@ -29,7 +29,7 @@ EN: She has not finished her homework.<br>
 VI: Cô ấy chưa hoàn thành bài tập.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative: Nghi vấn
 **Công thức:**  
 - Have/Has + S + V3?
 
@@ -38,7 +38,7 @@ EN: Have you ever tried sushi?<br>
 VI: Bạn từng thử sushi chưa?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Diễn tả kinh nghiệm (đã từng làm gì)  
 EN: I have seen that movie before.<br>
@@ -61,7 +61,7 @@ EN: I have read 5 books this month. (the month isn't over)<br>
 VI: Tôi đã đọc 5 cuốn sách tháng này.<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - already  
 - yet  
 - ever / never  
@@ -72,7 +72,7 @@ VI: Tôi đã đọc 5 cuốn sách tháng này.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. I ___ in this company for three years. (**work**)<br>
@@ -114,7 +114,7 @@ VI: Tôi đã đọc 5 cuốn sách tháng này.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. have worked<br>
 2. has not finished<br>
 3. Have…been<br>
