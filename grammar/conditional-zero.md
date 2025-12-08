@@ -1,56 +1,112 @@
 # Zero Conditional
 
-## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+## 1. Definition
+**English:**  
+The Zero Conditional is used to talk about general truths, facts, and things that are always true when certain conditions are met. It describes cause–effect relationships that are permanent and predictable.
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+**Tiếng Việt:**  
+Câu điều kiện loại 0 dùng để nói về sự thật hiển nhiên, thói quen, quy luật tự nhiên hoặc những điều luôn đúng khi một điều kiện xảy ra.
 
-## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+---
 
-## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+## 2. Structure and Examples
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
+### 🔸 Structure (Công thức)
+**If + S + V (present simple), S + V (present simple)**
 
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+### 🔸 Examples
+EN: If you heat water to 100°C, it boils.  
+VI: Nếu bạn đun nước đến 100°C, nó sẽ sôi.
 
-### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+EN: If people exercise regularly, they stay healthy.  
+VI: Nếu mọi người tập thể dục thường xuyên, họ sẽ khỏe mạnh.
+
+---
+
+## 3. Uses (Cách dùng – 4–5 mục)
+
+### ✔ 1. Diễn tả sự thật hiển nhiên  
+EN: If you mix red and white, you get pink.  
+VI: Nếu bạn trộn màu đỏ và trắng, bạn sẽ được màu hồng.
+
+### ✔ 2. Diễn tả thói quen  
+EN: If I finish work early, I go for a walk.  
+VI: Nếu tôi xong việc sớm, tôi đi dạo.
+
+### ✔ 3. Diễn tả quy luật tự nhiên  
+EN: If it rains, the ground gets wet.  
+VI: Nếu trời mưa, mặt đất sẽ ướt.
+
+### ✔ 4. Chỉ dẫn, hướng dẫn  
+EN: If you want to open the file, click here.  
+VI: Nếu bạn muốn mở tệp, hãy bấm vào đây.
+
+### ✔ 5. Sự kiện xảy ra theo thói quen chung  
+EN: If students study hard, they get good results.  
+VI: Nếu học sinh học chăm, họ sẽ có kết quả tốt.
+
+---
+
+## 4. Signal Words (Dấu hiệu nhận biết)
+- When / whenever  
+- If + present simple  
+- Quy luật, thói quen, mệnh đề chỉ sự thật  
+- Các câu dạng “When you…, you…”  
+
+---
+
+## 5. Exercises (10 questions — 5 fill-in + 5 multiple-choice)
+
+### A. Fill-in
+1. If you ___ ice, it melts. (**heat**)  
+2. If plants don’t get water, they ___. (**die**)  
+3. If you ___ too much junk food, you gain weight. (**eat**)  
+4. Water ___ into ice if the temperature is low enough. (**turn**)  
+5. If students ___ late, the teacher gets angry. (**arrive**)  
+
+---
+
+### B. Multiple-choice
+6. If you mix blue and yellow, you ___.  
+   a. get green  
+   b. got green  
+   c. will get green  
+   d. are getting green  
+
+7. If it rains, the streets ___.  
+   a. are flooding  
+   b. flood  
+   c. will flood  
+   d. flooded  
+
+8. If you ___ the button, the machine starts.  
+   a. will press  
+   b. pressed  
+   c. press  
+   d. are pressing  
+
+9. If people exercise, they ___ healthier.  
+   a. become  
+   b. will become  
+   c. are becoming  
+   d. became  
+
+10. If you don’t study, you ___.  
+    a. fail  
+    b. failed  
+    c. will fail  
+    d. are failing  
+
+---
+
+## → Answers
+1. heat  
+2. die  
+3. eat  
+4. turns  
+5. arrive  
+6. a  
+7. b  
+8. c  
+9. a  
+10. a  
