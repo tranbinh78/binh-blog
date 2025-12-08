@@ -1,56 +1,109 @@
-# Question Tags
 
-## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+# Question Tags (Câu hỏi đuôi)
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+## 1. Definition  
+**English:**  
+A question tag is a short question added at the end of a sentence to confirm information or ask for agreement.  
+They usually have the structure: **auxiliary + subject pronoun**.
 
-## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+**Tiếng Việt:**  
+Câu hỏi đuôi là một câu hỏi ngắn ở cuối câu, dùng để xác nhận thông tin hoặc xin sự đồng ý.  
+Cấu trúc thường là: **trợ động từ + đại từ chủ ngữ**.
 
-## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+---
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
+## 2. Structure  
+### ✔ Positive sentence → Negative tag  
+EN: She is a teacher, **isn't she?**  
+VI: Cô ấy là giáo viên, phải không?
 
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+### ✔ Negative sentence → Positive tag  
+EN: They don’t like coffee, **do they?**  
+VI: Họ không thích cà phê, đúng không?
 
-### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+---
+
+## 3. Rules (Quy tắc)
+
+### ✔ 1. Use the correct auxiliary  
+- present simple: do/does  
+- past simple: did  
+- present continuous: am/is/are  
+- present perfect: have/has  
+- modal verbs: can/could/should/will…
+
+### ✔ 2. Pronoun in tag must match subject  
+EN: Mary is coming, **isn't she?**
+
+### ✔ 3. If the main verb is “am”, use **aren’t I?**  
+EN: I am your friend, **aren’t I?**
+
+### ✔ 4. Imperatives  
+- Let’s… → **shall we?**  
+- Open the door → **will you?**  
+- Don’t go → **will you? / won’t you?**
+
+---
+
+## 4. Examples  
+EN: You can swim, **can’t you?**  
+VI: Bạn biết bơi, phải không?
+
+EN: He won’t come, **will he?**  
+VI: Anh ấy sẽ không đến, đúng không?
+
+EN: We have met before, **haven’t we?**  
+VI: Chúng ta từng gặp rồi đúng chứ?
+
+---
+
+## 5. Exercises (10 questions — 5 fill-in + 5 multiple-choice)
+
+### A. Fill-in  
+1. She is your sister, ___?  
+2. They don’t eat meat, ___?  
+3. He can drive, ___?  
+4. I am late, ___?  
+5. Let’s go, ___?  
+
+---
+
+### B. Multiple-choice  
+6. She won’t be late, ___?  
+   a. will she  
+   b. won’t she  
+   c. is she  
+
+7. You like coffee, ___?  
+   a. do you  
+   b. don’t you  
+   c. didn’t you  
+
+8. He studied last night, ___?  
+   a. does he  
+   b. didn’t he  
+   c. did he  
+
+9. They have finished the work, ___?  
+   a. don’t they  
+   b. haven’t they  
+   c. have they  
+
+10. I am your friend, ___?  
+    a. am I  
+    b. aren’t I  
+    c. isn’t I  
+
+---
+
+## → Answers  
+1. isn’t she  
+2. do they  
+3. can’t he  
+4. aren’t I  
+5. shall we  
+6. a  
+7. b  
+8. b  
+9. b  
+10. b  
