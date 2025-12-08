@@ -36,13 +36,13 @@ VI: Bơi lội tốt cho sức khỏe.<br>
 
 
 ### 🔹 2. Gerund after certain verbs  
-**Enjoy, avoid, consider, finish, mind, suggest, delay…**
+**Enjoy, avoid, consider, finish, mind, suggest, delay…**<br>
 EN: She enjoys reading books.<br>
 VI: Cô ấy thích đọc sách.<br>
 
 
 ### 🔹 3. Infinitive after certain verbs  
-**Want, need, hope, plan, decide, promise, expect, learn…**  
+**Want, need, hope, plan, decide, promise, expect, learn…**<br>
 EN: I want to travel abroad.<br>
 VI: Tôi muốn đi du lịch nước ngoài.<br>
 
