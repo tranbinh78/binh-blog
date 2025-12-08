@@ -394,8 +394,8 @@ async function loadSidebar() {
   "Advanced Grammar": list.slice(35, 40)
 };
 
-  for (const moduleName in modules) {
-    let lessons = modules[moduleName];
+  for (const moduleName in categories) {
+    let lessons = categories[moduleName];
 
     const moduleDiv = document.createElement("div");
     moduleDiv.className = "module";
