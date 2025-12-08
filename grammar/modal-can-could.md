@@ -82,12 +82,12 @@ VI: Tôi biết bơi từ năm 5 tuổi.<br>
 
 ## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
-### A. Fill-in
-1. She ___ speak Spanish fluently. (**can**)<br>
-2. When he was young, he ___ play the guitar. (**could**)<br>
-3. I ___ go to the party because I was sick. (**not/could**)<br>
-4. ___ you help me with this exercise? (**could**)<br>
-5. Sorry, I ___ swim. (**cannot**)<br>
+### A. Fill-in (can or could)
+1. She ___ speak Spanish fluently.<br>
+2. When he was young, he ___ play the guitar.<br>
+3. I ___ go to the party because I was sick.(**not/...**)<br>
+4. ___ you help me with this exercise?<br>
+5. Sorry, I ___ swim. (**....not**)<br>
 
 ---
 
