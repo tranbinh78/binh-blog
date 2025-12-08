@@ -3,42 +3,39 @@
 
 ## 1. Definition  
 **English:**  
-Prepositions are words placed before nouns or pronouns to show the relationship with another word in the sentence.  
-Common relationships include **time, place, direction, method, cause**, etc.
+Prepositions are words placed before nouns or pronouns to show the relationship with another word in the sentence.<br>
+Common relationships include **time, place, direction, method, cause**, etc.<br>
 
 **Tiếng Việt:**  
-Giới từ là từ đứng trước danh từ hoặc đại từ để chỉ mối quan hệ với các thành phần khác trong câu (thời gian, nơi chốn, hướng, nguyên nhân, cách thức…).
+Giới từ là từ đứng trước danh từ hoặc đại từ để chỉ mối quan hệ với các thành phần khác trong câu (thời gian, nơi chốn, hướng, nguyên nhân, cách thức…).<br>
 
----
 
 ## 2. Prepositions of Place (Giới từ chỉ nơi chốn)
 
 ### ✔ in  
 - in a city, in a country, in a room  
-EN: She lives **in** Hanoi.
+EN: She lives **in** Hanoi.<br>
 
 ### ✔ on  
 - on the table, on the wall, on a bus  
-EN: The book is **on** the table.
+EN: The book is **on** the table.<br>
 
 ### ✔ at  
 - at home, at school, at the bus stop  
-EN: They are waiting **at** the station.
+EN: They are waiting **at** the station.<br>
 
----
 
 ## 3. Prepositions of Time (Giới từ chỉ thời gian)
 
 ### ✔ at (giờ cụ thể)  
-at 7 o’clock, at midnight
+at 7 o’clock, at midnight<br>
 
 ### ✔ on (ngày, thứ)  
-on Monday, on July 4th
+on Monday, on July 4th<br>
 
 ### ✔ in (tháng, năm, mùa)  
-in 2020, in June, in winter
+in 2020, in June, in winter<br>
 
----
 
 ## 4. Prepositions of Direction (Giới từ chỉ hướng)
 
@@ -66,7 +63,6 @@ in 2020, in June, in winter
 - depend **on**  
 - belong **to**
 
----
 
 ## 7. Common Mistakes  
 ### ❌ Không dùng “in/on/at” lung tung  
@@ -79,56 +75,54 @@ in 2020, in June, in winter
 ### ❌ Không dùng “discuss about”  
 → đúng: **discuss (không dùng about)**
 
----
 
-## 8. Exercises  
-10 câu — 5 điền + 5 trắc nghiệm
+## 8. Exercises  (10 câu — 5 điền + 5 trắc nghiệm)
 
 ### A. Fill-in  
-1. She was born ___ 2005. (**in**)  
-2. The cat is ___ the sofa. (**on**)  
-3. We will meet ___ Monday. (**on**)  
-4. He is good ___ math. (**at**)  
-5. They are waiting ___ the bus stop. (**at**)  
+1. She was born ___ 2005.<br>
+2. The cat is ___ the sofa.<br>
+3. We will meet ___ Monday.<br>
+4. He is good ___ math.<br>  
+5. They are waiting ___ the bus stop.<br>
 
 ---
 
 ### B. Multiple-choice  
-6. He goes to work ___ bus.  
-   a. by  
-   b. with  
-   c. on  
+6. He goes to work ___ bus.<br>
+   a. by<br>
+   b. with<br>
+   c. on<br>
 
-7. She is afraid ___ spiders.  
-   a. from  
-   b. of  
-   c. with  
+7. She is afraid ___ spiders.<br>
+   a. from<br>
+   b. of<br>
+   c. with<br>
 
-8. They walked ___ the river.  
-   a. towards  
-   b. with  
-   c. into  
+8. They walked ___ the river.<br>
+   a. towards<br>
+   b. with<br>
+   c. into<br>
 
-9. We arrived ___ the airport early.  
-   a. on  
-   b. in  
-   c. at  
+9. We arrived ___ the airport early.<br>
+   a. on<br>
+   b. in<br>
+   c. at<br>
 
-10. She is looking ___ her keys.  
-    a. at  
-    b. after  
-    c. for  
+10. She is looking ___ her keys.<br>
+    a. at<br>
+    b. after<br>
+    c. for<br>
 
 ---
 
 ## → Answers  
-1. in  
-2. on  
-3. on  
-4. at  
-5. at  
-6. a  
-7. b  
-8. a  
-9. c  
-10. c  
+1. in<br>
+2. on<br>
+3. on<br>
+4. at<br>
+5. at<br>
+6. a<br>
+7. b<br>
+8. a<br>
+9. c<br>
+10. c<br>
