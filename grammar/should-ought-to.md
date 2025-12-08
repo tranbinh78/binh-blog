@@ -11,7 +11,7 @@ They have nearly the same meaning and are often interchangeable, with *ought to*
 Hai cấu trúc này gần như giống nhau, nhưng *ought to* mang sắc thái trang trọng hơn một chút.<br>
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
