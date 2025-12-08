@@ -9,7 +9,7 @@
 Cấu trúc “be going to” dùng để diễn tả dự định, kế hoạch trong tương lai hoặc dự đoán có căn cứ dựa trên dấu hiệu hiện tại.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức kèm ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
