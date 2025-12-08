@@ -9,7 +9,7 @@ The Present Perfect is used to describe actions that happened at an unspecified 
 Thì Hiện tại hoàn thành dùng để diễn tả hành động xảy ra trong quá khứ nhưng không nói rõ thời điểm, hành động đã hoàn thành nhưng kết quả còn ảnh hưởng đến hiện tại, hoặc hành động bắt đầu trong quá khứ và kéo dài đến hiện tại.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
