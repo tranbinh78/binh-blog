@@ -1,56 +1,139 @@
-# Countable & Uncountable Nouns
 
-## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+# Countable & Uncountable Nouns  
+(Danh từ đếm được & không đếm được)
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+## 1. Definition  
+**English:**  
+Nouns can be classified into **countable** (things we can count) and **uncountable** (things we cannot count directly).  
+This affects which articles, quantifiers, and verbs we use.
 
-## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+**Tiếng Việt:**  
+Danh từ được chia thành **đếm được** (có thể đếm) và **không đếm được** (không đếm trực tiếp).  
+Điều này ảnh hưởng đến mạo từ, từ chỉ số lượng và động từ đi kèm.
 
-## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+---
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
+## 2. Countable Nouns (Danh từ đếm được)
 
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+### ✔ Characteristics  
+- Có dạng số ít và số nhiều  
+- Đi với **a/an**, **many**, **few**, **a few**  
+- Dùng động từ số nhiều khi ở dạng plural
 
-### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+### ✔ Examples  
+EN: a book, two books  
+EN: an apple, three apples  
+
+---
+
+## 3. Uncountable Nouns (Danh từ không đếm được)
+
+### ✔ Characteristics  
+- Không dùng số nhiều  
+- Không dùng **a/an**  
+- Đi với **much**, **little**, **a little**, **some**, **any**  
+- Luôn dùng động từ **số ít**
+
+### ✔ Examples  
+water, rice, information, money, furniture, advice
+
+---
+
+## 4. Common Categories  
+
+### ✔ Countable  
+- people  
+- animals  
+- objects  
+- jobs  
+- foods in pieces: a sandwich, a cookie  
+
+### ✔ Uncountable  
+- liquids: water, milk, oil  
+- materials: wood, gold, plastic  
+- abstract nouns: happiness, advice  
+- mass nouns: rice, sugar, bread  
+
+---
+
+## 5. How to quantify uncountable nouns  
+(units of measurement)
+
+- a cup of tea  
+- a bottle of water  
+- a piece of advice  
+- a slice of bread  
+- a bowl of rice  
+
+---
+
+## 6. Quantifiers used  
+### ✔ Countable  
+- many  
+- few  
+- a few  
+- several  
+
+### ✔ Uncountable  
+- much  
+- little  
+- a little  
+
+### ✔ Both  
+- some  
+- any  
+- a lot of / lots of  
+
+---
+
+## 7. Exercises  
+10 câu — 5 điền + 5 trắc nghiệm
+
+### A. Fill-in  
+1. I don’t have ___ money. (**much**)  
+2. She bought ___ apples. (**some**)  
+3. There are ___ students in the class. (**many**)  
+4. Can I have a ___ of bread? (**slice**)  
+5. We need ___ information. (**some**)  
+
+---
+
+### B. Multiple-choice  
+6. How ___ water do you drink a day?  
+   a. many  
+   b. much  
+   c. few  
+
+7. There are ___ chairs in the room.  
+   a. much  
+   b. little  
+   c. a few  
+
+8. He gave me ___ advice.  
+   a. a  
+   b. an  
+   c. a piece of  
+
+9. We don’t have ___ time left.  
+   a. many  
+   b. much  
+   c. few  
+
+10. She has ___ friends here.  
+    a. a few  
+    b. little  
+    c. much  
+
+---
+
+## → Answers  
+1. much  
+2. some  
+3. many  
+4. slice  
+5. some  
+6. b  
+7. c  
+8. c  
+9. b  
+10. a  
