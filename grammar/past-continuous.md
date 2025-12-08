@@ -9,7 +9,7 @@ The Past Continuous is used to describe actions that were happening at a specifi
 Thì Quá khứ tiếp diễn dùng để diễn tả hành động đang diễn ra tại một thời điểm xác định trong quá khứ hoặc hành động đang xảy ra thì một hành động khác xen vào.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸 Affirmative: Khẳng định
 **Công thức:**  
