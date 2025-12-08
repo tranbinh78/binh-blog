@@ -7,7 +7,7 @@ The Present Simple is used for habits, daily routines, general truths, permanent
 **Tiếng Việt:**  
 Thì Hiện tại đơn dùng để diễn tả thói quen, hoạt động lặp lại hằng ngày, sự thật hiển nhiên, trạng thái lâu dài và lịch trình. Đây là thì dùng để mô tả những điều xảy ra thường xuyên hoặc đúng trong mọi thời điểm.
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸 Affirmative: Khẳng định
 **Với động từ to be**<br>
