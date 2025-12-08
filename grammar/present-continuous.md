@@ -9,7 +9,7 @@ The Present Continuous is used for actions happening right now, around now, temp
 Thì Hiện tại tiếp diễn dùng để diễn tả hành động đang xảy ra ngay lúc nói, hành động diễn ra xung quanh thời điểm hiện tại, tình huống tạm thời hoặc kế hoạch đã sắp xếp trong tương lai gần.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸 Affirmative: Khẳng định
 **Công thức:**  
