@@ -1,7 +1,7 @@
 
 # Past Perfect (Quá khứ hoàn thành)
 
-## 1. Định nghĩa
+## 1. Define: Định nghĩa
 **English:**  
 The Past Perfect is used to describe an action that happened before another action or a specific time in the past.<br>
 
@@ -9,9 +9,9 @@ The Past Perfect is used to describe an action that happened before another acti
 Thì Quá khứ hoàn thành dùng để diễn tả một hành động xảy ra trước một hành động khác trong quá khứ hoặc trước một thời điểm xác định trong quá khứ.
 
 
-## 2. Công thức kèm ví dụ
+## 2. Formula and Example: Công thức kèm ví dụ
 
-### 🔸 Khẳng định
+### 🔸Affirmative: Khẳng định
 **Công thức:**  
 - S + had + V3 (past participle)
 
@@ -20,7 +20,7 @@ EN: She had finished her homework before dinner.<br>
 VI: Cô ấy đã làm xong bài tập trước bữa tối.<br>
 
 
-### 🔸 Phủ định
+### 🔸Negative: Phủ định
 **Công thức:**  
 - S + had not (hadn't) + V3
 
@@ -29,7 +29,7 @@ EN: They hadn’t seen the movie before last week.<br>
 VI: Họ chưa xem bộ phim đó trước tuần trước.<br>
 
 
-### 🔸 Nghi vấn
+### 🔸Interrogative: Nghi vấn
 **Công thức:**  
 - Had + S + V3?
 
@@ -38,7 +38,7 @@ EN: Had he left when you arrived?<br>
 VI: Anh ấy đã rời đi khi bạn đến chưa?<br>
 
 
-## 3. Cách dùng (4–5 mục)
+## 3. Uses: Cách dùng (4–5 mục)
 
 ### ✔ 1. Hành động xảy ra trước một hành động khác trong quá khứ  
 EN: She had left when I arrived.<br>
@@ -61,7 +61,7 @@ EN: She was tired because she had worked all day.<br>
 VI: Cô ấy mệt vì cô ấy đã làm việc cả ngày.<br>
 
 
-## 4. Dấu hiệu nhận biết
+## 4. Signs of recognition: Dấu hiệu nhận biết
 - before  
 - after  
 - by the time  
@@ -71,7 +71,7 @@ VI: Cô ấy mệt vì cô ấy đã làm việc cả ngày.<br>
 
 ---
 
-## 5. Bài tập (10 câu — 5 điền + 5 chọn)
+## 5. Exercise: Bài tập (10 câu — 5 điền + 5 chọn)
 
 ### A. Fill-in
 1. She ___ her homework before she went out. (**finish**)<br>
@@ -113,7 +113,7 @@ VI: Cô ấy mệt vì cô ấy đã làm việc cả ngày.<br>
 
 ---
 
-## → Đáp án
+## → Answer: Đáp án
 1. had finished<br>
 2. had cleaned<br>
 3. had lost<br>
