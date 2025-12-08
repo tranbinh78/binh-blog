@@ -14,28 +14,28 @@ Một số động từ đi với **V-ing**, một số đi với **to V**, và 
 ## 2. Common Verb Patterns (Các mẫu phổ biến)
 
 ### 🔹 1. Verb + V-ing  
-Các động từ: enjoy, avoid, consider, imagine, finish, mind, suggest…  
+Các động từ: enjoy, avoid, consider, imagine, finish, mind, suggest…<br>
 **Example:**  
 EN: She enjoys reading.<br>
 VI: Cô ấy thích đọc sách.<br>
 
 
 ### 🔹 2. Verb + to V  
-Các động từ: want, need, decide, plan, hope, promise, expect…  
+Các động từ: want, need, decide, plan, hope, promise, expect…<br>
 **Example:**  
 EN: He decided to move abroad.<br>
 VI: Anh ấy quyết định ra nước ngoài.<br>
 
 
 ### 🔹 3. Verb + O + to V  
-Các động từ: tell, ask, advise, allow, want, expect…  
+Các động từ: tell, ask, advise, allow, want, expect…<br>
 **Example:**  
 EN: She asked me to help her.<br>
 VI: Cô ấy nhờ tôi giúp cô ấy.<br>
 
 
 ### 🔹 4. Verb + O + V (bare infinitive)  
-Các động từ: let, make, help  
+Các động từ: let, make, help<br>
 **Example:**  
 EN: They made him leave.<br>
 VI: Họ bắt anh ấy rời đi.<br>
@@ -56,17 +56,17 @@ VI: Cô ấy bắt đầu khóc.<br>
 
 
 ### 🔹 6. Verb + V-ing / to V (thay đổi nghĩa)  
-Một số động từ thay đổi ý nghĩa tùy cấu trúc:
+Một số động từ thay đổi ý nghĩa tùy cấu trúc:<br>
 
-#### ✔ remember  
+### ✔ remember  
 - remember doing = nhớ đã làm  
 - remember to do = nhớ phải làm  
 
-#### ✔ stop  
+### ✔ stop  
 - stop doing = ngừng làm việc gì  
 - stop to do = dừng lại để làm việc khác  
 
-#### ✔ try  
+### ✔ try  
 - try doing = thử làm  
 - try to do = cố gắng làm  
 
