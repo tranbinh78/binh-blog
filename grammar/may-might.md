@@ -13,7 +13,7 @@
 - **Might** diễn tả khả năng thấp hơn, ít chắc chắn hơn.<br>
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2.Structure and Example: Công thức và ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
