@@ -9,7 +9,7 @@ The Future Continuous is used to describe an action that will be happening at a 
 Thì Tương lai tiếp diễn dùng để diễn tả hành động sẽ đang diễn ra tại một thời điểm xác định trong tương lai, hoặc hành động đang diễn ra thì một hành động khác xen vào (trong tương lai).
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức kèm ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
