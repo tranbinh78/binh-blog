@@ -9,7 +9,7 @@ The Present Perfect Continuous is used to describe actions that started in the p
 Thì Hiện tại hoàn thành tiếp diễn dùng để diễn tả hành động bắt đầu trong quá khứ và tiếp tục kéo dài đến hiện tại, hoặc hành động vừa dừng lại nhưng vẫn còn dấu hiệu, kết quả ở hiện tại.
 
 
-## 2. Formula and Example: Công thức kèm ví dụ
+## 2. Structure and Example: Công thức và ví dụ
 
 ### 🔸Affirmative: Khẳng định
 **Công thức:**  
