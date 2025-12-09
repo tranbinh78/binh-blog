@@ -6,28 +6,6 @@
 <title>Bài học | Binh Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-.quiz-footer-container {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-
-.quiz-footer-btn {
-    background: #ffdde4;
-    padding: 10px 22px;
-    border-radius: 8px;
-    border: none;
-    color: #d14d7a;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-    font-size: 16px;
-}
-
-.quiz-footer-btn:hover {
-    background: #ffc7d6;
-}
-   
 /* ===============================
    GLOBAL LAYOUT & THEME
 ================================= */
@@ -296,15 +274,6 @@ body.reading-mode .content-area { max-width:800px; margin:auto; }
   <div id="content">Đang tải nội dung...</div>
 
   <div class="nav-buttons" id="nav-buttons"></div>
-
-<!-- QUIZ BUTTON AT BOTTOM -->
-<div style="text-align:center; margin-top:25px;">
-  <button id="open-quiz-btn-bottom"
-    style="background:#ffdede;padding:10px 16px;border-radius:6px;border:none;cursor:pointer;">
-    📋 Bài tập kiểm tra
-  </button>
-</div>
-    
 </div>
 
 <!-- TOC -->
@@ -603,70 +572,16 @@ function enableMobileAccordion() {
   });
 }
 
-// ======================= QUIZ POPUP ENGINE =======================
-
-// lấy slug từ URL
+/* ===============================
+   QUIZ POPUP ENGINE (loads / renders / scores)
+================================= */
+// helper to get current lesson slug (from ?file=present-simple.md)
 function currentSlug() {
-    const p = new URLSearchParams(window.location.search);
-    const f = p.get("file") || "";
-    return f.replace(".md", "");
+  const p = new URLSearchParams(window.location.search);
+  const f = p.get("file") || "";
+  return f.replace(".md","");
 }
 
-// GET ELEMENTS
-const quizModal = document.getElementById("quiz-modal");
-const quizContent = document.getElementById("quiz-content");
-const quizClose = document.getElementById("quiz-close");
-
-// mở quiz
-async function openQuiz() {
-    const slug = currentSlug();
-    if (!slug) {
-        alert("Không xác định được bài học.");
-        return;
-    }
-
-    quizModal.style.display = "flex";
-    await loadQuiz(slug);
-}
-
-// load quiz JSON
-async function loadQuiz(slug) {
-    quizContent.innerHTML = "Đang tải quiz...";
-
-    try {
-        const res = await fetch(`/binh-blog/quiz/${slug}.json`);
-        const data = await res.json();
-        renderQuiz(data);
-    } catch (err) {
-        quizContent.innerHTML = "<p>Không tìm thấy quiz cho bài này.</p>";
-    }
-}
-
-// render quiz
-function renderQuiz(data) {
-    let html = `<h3>${data.title}</h3>`;
-    data.questions.forEach((q, i) => {
-        html += `
-            <div class="quiz-item">
-                <p><b>${i + 1}. ${q.question}</b></p>
-                ${q.options.map((op, idx) => `
-                    <label><input type="radio" name="q${i}" value="${idx}"> ${op}</label><br>
-                `).join("")}
-            </div>
-        `;
-    });
-    quizContent.innerHTML = html;
-}
-
-// CLOSE QUIZ
-quizClose.addEventListener("click", () => {
-    quizModal.style.display = "none";
-});
-
-// 2 nút mở quiz
-document.getElementById("open-quiz-btn")?.addEventListener("click", openQuiz);
-document.getElementById("quiz-bottom-btn")?.addEventListener("click", openQuiz);
-    
 const openBtn = document.getElementById("open-quiz-btn");
 const modal = document.getElementById("quiz-modal");
 const quizContent = document.getElementById("quiz-content");
@@ -679,6 +594,36 @@ const quizRetry = document.getElementById("quiz-retry");
 let quizData = null;
 let userAnswers = {};
 
+// Open modal
+openBtn && openBtn.addEventListener("click", async () => {
+  const slug = currentSlug();
+  if (!slug) { alert("Không xác định được bài học."); return; }
+  modal.style.display = "flex";
+  await loadQuiz(slug);
+});
+
+// Close
+quizClose.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Load quiz JSON
+async function loadQuiz(slug) {
+  quizContent.innerHTML = "Đang tải quiz...";
+  quizResult.innerHTML = "";
+  quizRetry.style.display = "none";
+  quizSubmit.style.display = "inline-block";
+  userAnswers = {};
+  try {
+    const res = await fetch(`/binh-blog/grammar/quiz/${slug}.json`);
+    if (!res.ok) { quizContent.innerHTML = "<p>Không tìm thấy quiz cho bài này.</p>"; return; }
+    quizData = await res.json();
+    renderQuiz(quizData);
+  } catch (e) {
+    quizContent.innerHTML = "<p>Lỗi khi tải quiz.</p>";
+    console.error(e);
+  }
+}
 
 // Render quiz questions (multiple choice)
 function renderQuiz(data) {
@@ -751,39 +696,6 @@ quizRetry.addEventListener("click", () => {
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") modal.style.display = "none"; });
 modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
 
-/* ===============================
-   Open Quiz
-================================= */
-function openQuiz() {
-    const modal = document.getElementById("quiz-modal");
-    if (!modal) return;
-
-    modal.style.display = "block";
-
-    // Lấy file hiện tại từ URL
-    const params = new URLSearchParams(window.location.search);
-    const currentFile = params.get("file");
-
-    // Tạo tên file quiz
-    const quizFile = currentFile ? currentFile.replace(".md", "-quiz.json") : null;
-
-    if (quizFile) {
-        loadQuiz(quizFile);   // <<== QUAN TRỌNG
-    } else {
-        document.getElementById("quiz-content").innerHTML = "<p>Không tìm thấy file quiz.</p>";
-    }
-}
-// THÊM ĐOẠN NÀY NGAY TẠI ĐÂY
-document.addEventListener("click", (e) => {
-    if (e.target.closest("#open-quiz-btn") ||
-        e.target.closest(".quiz-bottom-btn") ||
-        e.target.closest(".quiz-footer-btn")) {
-
-        e.preventDefault();
-        openQuiz();
-    }
-});
-    
 /* ===============================
    INIT
 ================================= */
