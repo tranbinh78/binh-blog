@@ -305,11 +305,6 @@ body.reading-mode .content-area { max-width:800px; margin:auto; }
   </button>
 </div>
     
- <!-- QUIZ BUTTON AT BOTTOM -->
-   <div class="quiz-footer-container">
-   <button id="open-quiz-btn-bottom" class="quiz-bottom-btn">Bài tập kiểm tra</button>
-   </div>
-   
 </div>
 
 <!-- TOC -->
@@ -618,6 +613,34 @@ function currentSlug() {
   return f.replace(".md","");
 }
 
+/* =========================
+    QUIZ BUTTON HANDLER
+========================= */
+
+// LẤY NÚT QUIZ
+const openBtnTop = document.getElementById("open-quiz-btn");
+
+// LẤY MODAL + CONTENT
+const quizModal = document.getElementById("quiz-modal");
+const quizContent = document.getElementById("quiz-content");
+
+// ====== OPEN QUIZ ======
+openBtnTop && openBtnTop.addEventListener("click", async () => {
+    const slug = currentSlug();
+    if (!slug) {
+        alert("Không xác định được bài học.");
+        return;
+    }
+
+    quizModal.style.display = "flex";
+    await loadQuiz(slug);
+});
+
+// ====== CLOSE QUIZ ======
+document.getElementById("quiz-close").addEventListener("click", () => {
+    quizModal.style.display = "none";
+});
+    
 const openBtn = document.getElementById("open-quiz-btn");
 const modal = document.getElementById("quiz-modal");
 const quizContent = document.getElementById("quiz-content");
@@ -630,44 +653,6 @@ const quizRetry = document.getElementById("quiz-retry");
 let quizData = null;
 let userAnswers = {};
 
-// Open modal
-openBtn && openBtn.addEventListener("click", async () => {
-  const slug = currentSlug();
-  if (!slug) { alert("Không xác định được bài học."); return; }
-  modal.style.display = "flex";
-  await loadQuiz(slug);
-});
-
-const openBtnBottom = document.getElementById("open-quiz-btn-bottom");
-openBtnBottom && openBtnBottom.addEventListener("click", async () => {
-  const slug = currentSlug();
-  if (!slug) { alert("Không xác định được bài học."); return; }
-  modal.style.display = "flex";
-  await loadQuiz(slug);
-});
-    
-// Close
-quizClose.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// Load quiz JSON
-async function loadQuiz(slug) {
-  quizContent.innerHTML = "Đang tải quiz...";
-  quizResult.innerHTML = "";
-  quizRetry.style.display = "none";
-  quizSubmit.style.display = "inline-block";
-  userAnswers = {};
-  try {
-    const res = await fetch(`/binh-blog/grammar/quiz/${slug}.json`);
-    if (!res.ok) { quizContent.innerHTML = "<p>Không tìm thấy quiz cho bài này.</p>"; return; }
-    quizData = await res.json();
-    renderQuiz(quizData);
-  } catch (e) {
-    quizContent.innerHTML = "<p>Lỗi khi tải quiz.</p>";
-    console.error(e);
-  }
-}
 
 // Render quiz questions (multiple choice)
 function renderQuiz(data) {
