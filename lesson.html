@@ -724,6 +724,94 @@ quizRetry.addEventListener("click", () => {
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") modal.style.display = "none"; });
 modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
 
+<script>
+/* =========================
+   Quiz opener + loader
+   ========================= */
+
+// Mở popup quiz và load quiz tương ứng với bài hiện tại
+function openQuiz() {
+  const modal = document.getElementById("quiz-modal");
+  if (!modal) return console.warn("Không tìm thấy #quiz-modal");
+  // hiện popup
+  modal.style.display = "block";
+
+  // Lấy tên file quiz từ file hiện tại (file biến được lấy từ URL ở đầu script)
+  // VD: "present-simple.md" -> "present-simple-quiz.json"
+  let quizFile = null;
+  try {
+    if (typeof file !== "undefined" && file) {
+      quizFile = file.replace(/\.md$/i, "-quiz.json");
+    }
+  } catch (e) { quizFile = null; }
+
+  // Nếu đã có hàm loadQuiz (nếu bạn đã viết trước đó) thì dùng luôn
+  if (quizFile && typeof loadQuiz === "function") {
+    loadQuiz(quizFile);
+    return;
+  }
+
+  // Nếu không có loadQuiz(), tự load file quiz từ thư mục default /quiz/
+  if (quizFile) {
+    const quizPath = `quiz/${quizFile}`; // chỉnh nếu quiz ở chỗ khác
+    const quizContentEl = document.getElementById("quiz-content");
+    if (!quizContentEl) return console.warn("Không tìm thấy #quiz-content để hiển thị quiz");
+
+    // báo đang tải
+    quizContentEl.innerHTML = "Đang tải quiz...";
+
+    fetch(quizPath)
+      .then(res => {
+        if (!res.ok) throw new Error("Quiz file not found");
+        return res.json();
+      })
+      .then(qjson => {
+        // Hiển thị quiz đơn giản nếu quiz là JSON (ví dụ mảng câu hỏi)
+        // Bạn có thể chỉnh phần render này theo cấu trúc quiz của bạn
+        if (Array.isArray(qjson.questions)) {
+          let html = `<h3>${qjson.title || "Quiz"}</h3>`;
+          qjson.questions.forEach((q, i) => {
+            html += `<div class="q-item"><p><strong>${i+1}.</strong> ${q.question}</p>`;
+            if (q.choices) {
+              q.choices.forEach((c, idx) => {
+                html += `<div><label><input type="radio" name="q${i}" value="${idx}"> ${c}</label></div>`;
+              });
+            }
+            html += `</div>`;
+          });
+          quizContentEl.innerHTML = html;
+        } else {
+          // nếu quiz là markdown hoặc html raw
+          quizContentEl.innerHTML = "<pre>" + JSON.stringify(qjson, null, 2) + "</pre>";
+        }
+      })
+      .catch(err => {
+        quizContentEl.innerHTML = "<p style='color:#c00'>Không tìm thấy quiz cho bài này.</p>";
+        console.warn(err);
+      });
+  } else {
+    document.getElementById("quiz-content").innerHTML = "<p>Không có quiz được chỉ định cho bài này.</p>";
+  }
+}
+
+// Gắn sự kiện cho nút ở đầu trang (nếu có)
+const topQuizBtn = document.getElementById("open-quiz-btn");
+if (topQuizBtn) topQuizBtn.addEventListener("click", openQuiz);
+
+// Nếu bạn thêm nút mới có id khác, ví dụ id="quiz-footer-btn", gắn nó:
+const footerBtn = document.querySelector(".quiz-footer-btn");
+if (footerBtn) footerBtn.addEventListener("click", openQuiz);
+
+// Đóng popup (nút Đóng đã có id là quiz-close trong HTML bạn chụp)
+const quizClose = document.getElementById("quiz-close");
+if (quizClose) quizClose.addEventListener("click", () => {
+  const modal = document.getElementById("quiz-modal");
+  if (modal) modal.style.display = "none";
+});
+
+// Ngoài ra, nếu bạn muốn bấm ngoài modal hoặc ESC để đóng, hãy giữ phần xử lý hiện có trong file
+</script>
+    
 /* ===============================
    INIT
 ================================= */
