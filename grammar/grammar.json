@@ -15,9 +15,9 @@
   { "title": "Future Perfect", "file": "future-perfect.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
   { "title": "Future Perfect Continuous", "file": "future-perfect-continuous.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
 
-  { "title": "Can & Could", "file": "modal-can-could.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
-  { "title": "May & Might", "file": "modal-may-might.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
-  { "title": "Must & Have to", "file": "modal-must-have-to.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
+  { "title": "Can & Could", "file": "can-could.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
+  { "title": "May & Might", "file": "may-might.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
+  { "title": "Must & Have to", "file": "must-have-to.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
   { "title": "Should & Ought to", "file": "should-ought-to.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
 
   { "title": "Passive Voice - Present", "file": "passive-present.md", "thumbnail": "img/grammar.jpg", "category": "Grammar" },
