@@ -5,488 +5,439 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài học | Bình Blog</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Font + Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <style>
         body {
-            background: #f7f5ef;
-        }
-        .container {
-            max-width: 1280px;
-            margin: auto;
-            padding: 20px;
-            display: flex;
-        }
-        .sidebar {
-            width: 260px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            height: fit-content;
-            border: 1px solid #e0ded8;
-        }
-        .content {
-            flex: 1;
-            margin-left: 24px;
-            background: white;
-            padding: 32px;
-            border-radius: 14px;
-            border: 1px solid #e0ded8;
-        }
-        .toc {
-            width: 260px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-left: 24px;
-            height: fit-content;
-            border: 1px solid #e0ded8;
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: #f7f3eb;
+            color: #333;
         }
 
-        /* Modal Quiz */
+        .container {
+            display: grid;
+            grid-template-columns: 260px 1fr 260px;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* SIDEBAR */
+        #sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            height: max-content;
+        }
+        #sidebar h3 {
+            margin-top: 0;
+            color: #1a73e8;
+            font-size: 18px;
+        }
+        #sidebar ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+        #sidebar li {
+            margin: 6px 0;
+        }
+        #sidebar a {
+            text-decoration: none;
+            color: #444;
+        }
+        #sidebar a:hover {
+            color: #1a73e8;
+        }
+
+        /* CONTENT */
+        #lesson-content {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            min-height: 400px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        #lesson-title h1 {
+            margin-top: 0;
+        }
+
+        /* TOC */
+        #toc {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            height: max-content;
+        }
+        #toc h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #1a73e8;
+        }
+        #toc-list {
+            padding-left: 10px;
+        }
+        #toc-list li {
+            margin: 8px 0;
+        }
+        #toc-list a {
+            color: #444;
+            text-decoration: none;
+        }
+        #toc-list a:hover {
+            color: #1a73e8;
+        }
+
+        /* QUIZ BUTTON */
+        #practice-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        #open-quiz-btn {
+            padding: 10px 16px;
+            border: none;
+            background: #ff7675;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #open-quiz-btn:hover {
+            background: #e75a5a;
+        }
+
+        /* QUIZ MODAL */
         #quizModal {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.45);
+            inset: 0;
             display: none;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+            background: rgba(0,0,0,0.4);
+            padding-top: 40px;
             z-index: 9999;
         }
-        #quizBox {
-            width: 70%;
-            max-height: 90%;
-            overflow-y: auto;
+        #quizModal.show {
+            display: flex;
+        }
+        #quiz-box {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #ddd;
+            width: 80%;
+            max-width: 750px;
+            padding: 20px;
+            border-radius: 10px;
+            max-height: 85vh;
+            overflow-y: auto;
         }
-        .answer.correct {
-            background: #d4f8d4 !important;
-        }
-        .answer.wrong {
-            background: #ffd6d6 !important;
-        }
-
-        .quiz-choice {
-            padding: 10px 14px;
-            border: 1px solid #ccc;
-            margin-top: 4px;
+        .quiz-option {
+            display: block;
+            padding: 8px;
             border-radius: 6px;
             cursor: pointer;
         }
-        .quiz-choice:hover {
-            background: #f0f0f0;
+        .correct {
+            background: #c8ffc8 !important;
         }
-
-        .closeQuiz {
-            float: right;
-            background: #ddd;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        .submit-btn {
-            margin-top: 20px;
-            padding: 12px 20px;
-            background: #4a9cff;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        .submit-btn:hover {
-            background: #1f7cff;
+        .incorrect {
+            background: #ffd4d4 !important;
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
 
-<div class="container">
-    <div class="sidebar" id="sidebar">
-        <!-- sidebar load động bằng JS -->
-    </div>
+        <!-- LEFT SIDEBAR -->
+        <div id="sidebar">
+            <h3>📘 Mục lục Grammar</h3>
+        </div>
 
-    <div class="content">
-        <button onclick="history.back()" class="backBtn">← Quay lại</button>
-        <div id="lesson-title"></div>
-        <div id="lesson-content">Đang tải nội dung…</div>
+        <!-- MAIN CONTENT -->
+        <div>
+            <button onclick="history.back()">← Quay lại</button>
 
-        <div id="practice-box" style="margin-top:40px; padding:20px; border-radius:10px; border:1px solid #e0ded8;">
-            <h3>📘 Bài tập củng cố</h3>
-            <p>Nhấn nút <b>Luyện tập</b> để làm 10 câu kiểm tra riêng cho bài học này.</p>
-            <button id="startQuizBtn" class="submit-btn" style="background:#ff7777">Luyện tập</button>
+            <div id="lesson-title"></div>
+            <div id="lesson-content">Đang tải nội dung…</div>
+
+            <div id="practice-box">
+                <h3>📝 Bài tập củng cố</h3>
+                <p>Nhấn nút Luyện tập để làm bài trắc nghiệm cho bài học này.</p>
+                <button id="open-quiz-btn">Luyện tập</button>
+            </div>
+        </div>
+
+        <!-- RIGHT TOC -->
+        <div id="toc">
+            <h3>Mục lục</h3>
+            <ul id="toc-list"></ul>
         </div>
     </div>
 
-    <div class="toc" id="toc"></div>
-</div>
-
-<!-- QUIZ MODAL -->
-<div id="quizModal">
-    <div id="quizBox">
-        <span class="closeQuiz" onclick="closeQuiz()">Đóng</span>
-        <h2 id="quizTitle"></h2>
-        <div id="quizContainer"></div>
-        <button id="submitQuizBtn" class="submit-btn">Nộp bài</button>
+    <!-- QUIZ MODAL -->
+    <div id="quizModal">
+        <div id="quiz-box"></div>
+        <button onclick="closeQuizModal()" style="margin-left:10px;">Đóng</button>
     </div>
-</div>
+
+    <!-- SCRIPT: LOAD LESSON + SIDEBAR + TOC -->
 <script>
-// Lấy query ?file=
-function getQueryVariable(variable) {
-    const query = window.location.search.substring(1);
-    const vars = query.split("&");
-    for (let i = 0; i < vars.length; i++) {
-        const pair = vars[i].split("=");
-        if (pair[0] === variable) return decodeURIComponent(pair[1]);
+    // Lấy tên file từ URL
+    function getFileName() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("file");
     }
-    return null;
-}
 
-const lessonFile = getQueryVariable("file");
+    const markdownFile = getFileName();
+    const mdPath = `grammar/${markdownFile}`;
 
-// Tải file .md
-if (lessonFile) {
-    fetch(`grammar/${lessonFile}.md`)
-        .then(res => res.text())
-        .then(md => {
-            document.getElementById("lesson-content").innerHTML = marked.parse(md);
+    // Load Nội dung Markdown (.md)
+    async function loadMarkdown() {
+        try {
+            const res = await fetch(mdPath);
+            const text = await res.text();
 
-            const title = md.split("\n")[0].replace("#", "").trim();
-            document.getElementById("lesson-title").innerHTML = `<h1>${title}</h1>`;
+            // Render Markdown
+            document.getElementById("lesson-content").innerHTML = marked.parse(text);
 
-            buildTOC();
+            // Tạo tiêu đề bài học
+            const titleElement = document.getElementById("lesson-title");
+            const cleanTitle = markdownFile.replace(".md", "").replace(/-/g, " ");
+            titleElement.innerHTML = `<h1>${cleanTitle}</h1>`;
+
+            // Tạo TOC tự động
+            generateTOC();
+
+        } catch (err) {
+            document.getElementById("lesson-content").innerHTML = "❌ Không thể tải bài học.";
+        }
+    }
+
+    // Tạo mục lục tự động dựa trên các thẻ H2, H3
+    function generateTOC() {
+        const content = document.getElementById("lesson-content");
+        const headings = content.querySelectorAll("h2, h3");
+        const tocList = document.getElementById("toc-list");
+        tocList.innerHTML = "";
+
+        headings.forEach((h, index) => {
+            const id = "section-" + index;
+            h.id = id;
+
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="#${id}">${h.innerText}</a>`;
+            tocList.appendChild(li);
         });
-} else {
-    document.getElementById("lesson-content").innerHTML = "Không tìm thấy bài học.";
-}
+    }
 
-// Build Sidebar
-fetch("grammar/grammar.json")
-    .then(res => res.json())
-    .then(data => {
+    // Load Sidebar từ grammar.json
+    async function loadSidebar() {
         const sidebar = document.getElementById("sidebar");
-        sidebar.innerHTML = "<h3>📚 Mục lục Grammar</h3>";
 
-        Object.keys(data).forEach(sectionName => {
-            const sec = document.createElement("div");
-            sec.className = "sidebar-section";
-            sec.innerHTML = `<h4>${sectionName}</h4>`;
+        try {
+            const res = await fetch("grammar/grammar.json");
+            const data = await res.json();
 
-            const ul = document.createElement("ul");
-            data[sectionName].forEach(item => {
-                const li = document.createElement("li");
-                li.innerHTML = `<a href="lesson.html?file=${item.file}">${item.title}</a>`;
-                ul.appendChild(li);
-            });
+            let html = `<h3>📘 Bài học</h3><ul>`;
 
-            sec.appendChild(ul);
-            sidebar.appendChild(sec);
-        });
-    });
-
-// Build Table of Contents
-function buildTOC() {
-    const toc = document.getElementById("toc");
-    toc.innerHTML = "<h3>Mục lục</h3>";
-
-    const headers = document.querySelectorAll(".content h1, .content h2, .content h3");
-    headers.forEach((h, i) => {
-        const id = "section-" + i;
-        h.id = id;
-
-        const item = document.createElement("div");
-        item.className = "toc-item";
-        item.innerHTML = `<a href="#${id}">${h.innerText}</a>`;
-        toc.appendChild(item);
-    });
-}
-</script>
-
- 
-<!-- QUIZ ENGINE -->
-<script>
-const quizModal = document.getElementById("quizModal");
-const quizTitle = document.getElementById("quizTitle");
-const quizContainer = document.getElementById("quizContainer");
-const submitQuizBtn = document.getElementById("submitQuizBtn");
-const startQuizBtn = document.getElementById("startQuizBtn");
-
-// Mở modal luyện tập
-startQuizBtn.addEventListener("click", () => {
-    const file = getQueryVariable("file");
-    if (!file) {
-        alert("Không tìm thấy bài học!");
-        return;
-    }
-
-    loadQuiz(file);
-    quizModal.style.display = "flex";
-});
-
-// Đóng modal
-function closeQuiz() {
-    quizModal.style.display = "none";
-}
-
-// Tải file JSON đúng bài
-function loadQuiz(file) {
-    fetch(`../quiz/${file}.json`)
-        .then(res => res.json())
-        .then(data => {
-            quizTitle.innerText = data.title;
-            quizContainer.innerHTML = "";
-
-            data.questions.forEach((q, index) => {
-                let html = `
-                    <div class="quiz-block">
-                        <p><b>${index + 1}. ${q.question}</b></p>
-                `;
-
-                q.choices.forEach((c, i) => {
+            data.forEach(group => {
+                html += `<li><strong>${group.group}</strong><ul>`;
+                group.items.forEach(item => {
                     html += `
-                        <label class="quiz-option">
-                            <input type="radio" name="q${index}" value="${i}">
-                            ${String.fromCharCode(65 + i)}. ${c}
-                        </label>
-                    `;
+                        <li>
+                            <a href="lesson.html?file=${item.file}">
+                                ${item.title}
+                            </a>
+                        </li>`;
                 });
-
-                html += `
-                        <p id="exp${index}" style="display:none; margin-top:6px; color:#444;"></p>
-                        <hr>
-                    </div>
-                `;
-
-                quizContainer.innerHTML += html;
+                html += `</ul></li>`;
             });
 
-            // Gắn hành động nộp bài
-            submitQuizBtn.onclick = () => checkQuiz(data);
-        })
-        .catch(err => {
-            quizContainer.innerHTML = "<p>Không tải được bài luyện tập.</p>";
-            console.error(err);
-        });
-}
+            html += `</ul>`;
+            sidebar.innerHTML = html;
 
-// Kiểm tra bài
-function checkQuiz(data) {
-    data.questions.forEach((q, index) => {
-        const options = document.querySelectorAll(`input[name="q${index}"]`);
-
-        let selected = -1;
-
-        // reset màu trước
-        options.forEach(o => {
-            o.parentElement.style.background = "transparent";
-        });
-
-        // xác định đáp án chọn
-        options.forEach((o, i) => {
-            if (o.checked) selected = i;
-        });
-
-        // tô xanh đáp án đúng
-        const correct = options[q.answer];
-        if (correct) {
-            correct.parentElement.style.background = "#c8ffc8";
+        } catch (e) {
+            sidebar.innerHTML = "❌ Không thể tải danh sách bài học!";
         }
+    }
 
-        // tô đỏ nếu sai
-        if (selected !== -1 && selected !== q.answer) {
-            const wrong = options[selected];
-            if (wrong) wrong.parentElement.style.background = "#ffd6d6";
-        }
-
-        // hiện giải thích
-        const exp = document.getElementById("exp" + index);
-        exp.style.display = "block";
-        exp.innerText = q.explanation;
-    });
-}
+    loadMarkdown();
+    loadSidebar();
 </script>
 
-<script>
-/* -----------------------------------------------------
-   LẤY THAM SỐ FILE .MD TRÊN URL
---------------------------------------------------------*/
-function getQueryVariable(variable) {
-    const query = window.location.search.substring(1);
-    const vars = query.split("&");
-    for (let i = 0; i < vars.length; i++) {
-        const pair = vars[i].split("=");
-        if (pair[0] === variable) return decodeURIComponent(pair[1]);
-    }
-    return null;
-}
-
-/* -----------------------------------------------------
-   LOAD FILE .MD NỘI DUNG BÀI HỌC
---------------------------------------------------------*/
-async function loadLesson() {
-    const file = getQueryVariable("file");
-
-    if (!file) {
-        document.getElementById("lesson-content").innerHTML =
-            "<p>❌ Không tìm thấy file bài học.</p>";
-        return;
-    }
-
-    const path = "grammar/" + file;
-
-    try {
-        const response = await fetch(path);
-        const text = await response.text();
-        const content = marked.parse(text);
-
-        document.getElementById("lesson-content").innerHTML = content;
-
-        generateTableOfContents();
-        generateQuizButton(file.replace(".md", ""));
-    } catch (error) {
-        document.getElementById("lesson-content").innerHTML =
-            "<p>❌ Không tải được nội dung bài học.</p>";
-    }
-}
-
-loadLesson();
-
-/* -----------------------------------------------------
-   TẠO MỤC LỤC BÊN PHẢI
---------------------------------------------------------*/
-function generateTableOfContents() {
-    const content = document.getElementById("lesson-content");
-    const headers = content.querySelectorAll("h1, h2, h3");
-
-    let tocHTML = "";
-    headers.forEach((h, index) => {
-        const id = "section-" + index;
-        h.id = id;
-        tocHTML += `<li><a href="#${id}">${h.innerText}</a></li>`;
-    });
-
-    document.getElementById("toc-list").innerHTML = tocHTML;
-}
-
-/* -----------------------------------------------------
-   TẠO NÚT "LUYỆN TẬP" CHO TỪNG BÀI
---------------------------------------------------------*/
-function generateQuizButton(lessonName) {
-    const quizBtn = document.getElementById("open-quiz-btn");
-
-    quizBtn.onclick = () => {
-        openQuizModal(lessonName);
-    };
-}
-
-/* -----------------------------------------------------
-   HIỆN MODAL QUIZ
---------------------------------------------------------*/
-function openQuizModal(lessonName) {
-    document.getElementById("quizModal").classList.add("show");
-    loadQuiz(lessonName);
-}
-
-function closeQuizModal() {
-    document.getElementById("quizModal").classList.remove("show");
-}
-
-/* -----------------------------------------------------
-   LOAD QUIZ JSON
---------------------------------------------------------*/
-async function loadQuiz(lessonName) {
-    const quizBox = document.getElementById("quiz-box");
-    quizBox.innerHTML = "Đang tải quiz…";
-
-    try {
-        const response = await fetch("quiz/" + lessonName + ".json");
-        const data = await response.json();
-
-        let html = `<h2>${data.title}</h2>`;
-
-        data.questions.forEach((q, i) => {
-            html += `
-            <div class="question-block" data-id="${i}">
-                <p><b>${i + 1}. ${q.question}</b></p>
-
-                ${Object.keys(q.choices).map(letter => `
-                    <label class="option">
-                        <input type="radio" name="q${i}" value="${letter}">
-                        ${letter.toUpperCase()}. ${q.choices[letter]}
-                    </label>
-                `).join("")}
-
-                <p class="explanation" style="display:none; margin-top:6px; font-style:italic;"></p>
-            </div>`;
-        });
-
-        html += `
-            <button id="submitQuiz" class="quiz-submit">Nộp bài</button>
-        `;
-
-        quizBox.innerHTML = html;
-
-        document.getElementById("submitQuiz").onclick = () =>
-            checkQuiz(data);
-    } catch (error) {
-        quizBox.innerHTML = "<p>Không tải được bài quiz.</p>";
-    }
-}
-
-/* -----------------------------------------------------
-   CHẤM ĐIỂM QUIZ — HIỆN MÀU ĐÚNG SAI
---------------------------------------------------------*/
-function checkQuiz(data) {
-    const blocks = document.querySelectorAll(".question-block");
-
-    blocks.forEach((block, i) => {
-        const q = data.questions[i];
-        const selected = block.querySelector("input:checked");
-
-        const explanation = block.querySelector(".explanation");
-        explanation.style.display = "block";
-        explanation.innerHTML = "Giải thích: " + q.explanation;
-
-        const options = block.querySelectorAll("label");
-
-        options.forEach(label => {
-            label.classList.remove("correct", "incorrect");
-
-            const input = label.querySelector("input");
-            const letter = input.value;
-
-            if (letter === q.answer) {
-                label.classList.add("correct"); // màu xanh
-            }
-
-            if (selected && input.checked && letter !== q.answer) {
-                label.classList.add("incorrect"); // màu đỏ
-            }
-        });
-    });
-}
-</script>
+    <!-- ====================== QUIZ SCRIPT ====================== -->
 
 <style>
-/* Màu đáp án */
-.correct {
-    background: #c6ffd1 !important;
-}
-.incorrect {
-    background: #ffd4d4 !important;
-}
-.option {
-    display: block;
-    padding: 6px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-}
+    .correct {
+        background-color: #c8f7c5 !important;
+        border: 1px solid #27ae60 !important;
+    }
+    .incorrect {
+        background-color: #ffd4d4 !important;
+        border: 1px solid #e74c3c !important;
+    }
+    .explanation-box {
+        margin: 10px 0;
+        padding: 10px;
+        background: #f7f7f7;
+        border-left: 4px solid #3498db;
+    }
 </style>
+
+<script>
+/* ============================================================
+    1. MỞ QUIZ
+============================================================ */
+function openQuiz() {
+    document.getElementById("quiz-modal").style.display = "flex";
+
+    const mdName = getFileName().replace(".md", "");
+    const quizFile = `quiz/${mdName}.json`;
+
+    loadQuiz(quizFile);
+}
+
+/* ============================================================
+    2. LOAD QUIZ JSON
+============================================================ */
+function loadQuiz(file) {
+    fetch(file)
+        .then(res => res.json())
+        .then(data => {
+            const quizBox = document.getElementById("quiz-box");
+            quizBox.innerHTML = "";
+
+            data.forEach((q, i) => {
+                quizBox.innerHTML += generateQuestionHTML(q, i);
+            });
+
+            // Gắn sự kiện chọn đáp án
+            document.querySelectorAll(".quiz-choice").forEach(r => {
+                r.addEventListener("change", function () {
+                    const parent = this.closest(".quiz-item");
+                    parent.dataset.selected = this.value;
+                });
+            });
+        })
+        .catch(err => {
+            document.getElementById("quiz-box").innerHTML =
+                "<p style='color:red'>❌ Không tìm thấy file quiz.</p>";
+        });
+}
+
+/* ============================================================
+    3. HTML CHO MỖI CÂU HỎI
+============================================================ */
+function generateQuestionHTML(q, index) {
+    return `
+        <div class="quiz-item" data-index="${index}">
+            <p><b>${index + 1}. ${q.question}</b></p>
+
+            ${generateChoice("a", q.a, index)}
+            ${generateChoice("b", q.b, index)}
+            ${generateChoice("c", q.c, index)}
+            ${generateChoice("d", q.d, index)}
+
+            <div class="explanation-box" id="exp-${index}" style="display:none">
+                ${q.explanation ? q.explanation : ""}
+            </div>
+        </div>
+    `;
+}
+
+function generateChoice(key, text, index) {
+    if (!text) return ""; // nếu không có đáp án thì bỏ qua
+    
+    return `
+        <label class="quiz-option">
+            <input type="radio" name="q${index}" value="${key}" class="quiz-choice">
+            <span>${key.toUpperCase()}. ${text}</span>
+        </label>
+    `;
+}
+
+/* ============================================================
+    4. CHẤM ĐIỂM
+============================================================ */
+function submitQuiz() {
+    let correctCount = 0;
+
+    document.querySelectorAll(".quiz-item").forEach(item => {
+        const i = item.dataset.index;
+        const selected = item.dataset.selected;
+
+        fetch(`quiz/${getFileName().replace(".md", "")}.json`)
+            .then(res => res.json())
+            .then(data => {
+                const correct = data[i].answer;
+
+                const options = item.querySelectorAll("label");
+
+                options.forEach(opt => {
+                    const radio = opt.querySelector("input");
+
+                    if (radio.value === correct) {
+                        opt.classList.add("correct");
+                    }
+
+                    if (radio.checked && radio.value !== correct) {
+                        opt.classList.add("incorrect");
+                    }
+                });
+
+                // Giải thích
+                const exp = document.getElementById(`exp-${i}`);
+                exp.style.display = "block";
+
+                if (selected === correct) correctCount++;
+
+                document.getElementById("quiz-score").innerHTML =
+                    `Kết quả: <b>${correctCount}/${data.length}</b>`;
+            });
+    });
+}
+
+/* ============================================================
+    5. ĐÓNG QUIZ
+============================================================ */
+function closeQuiz() {
+    document.getElementById("quiz-modal").style.display = "none";
+}
+</script>
+
+
+<!-- ====================== QUIZ MODAL HTML ====================== -->
+<div id="quiz-modal"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); 
+    justify-content:center; align-items:flex-start; padding-top:40px; z-index:9999;">
+
+    <div style="background:white; width:90%; max-width:700px; max-height:90vh;
+        overflow-y:auto; padding:20px; border-radius:10px;">
+
+        <h2 id="quiz-title">Quiz</h2>
+
+        <div id="quiz-box"></div>
+
+        <br>
+        <button onclick="submitQuiz()" style="padding:10px 20px; background:#27ae60; color:white; border:none;">
+            Nộp bài
+        </button>
+
+        <p id="quiz-score" style="margin-top:10px; font-size:18px;"></p>
+
+        <br>
+        <button onclick="closeQuiz()" style="padding:10px 20px; background:#e74c3c; color:white; border:none;">
+            Đóng
+        </button>
+    </div>
+</div>
 </body>
 </html>
+    
