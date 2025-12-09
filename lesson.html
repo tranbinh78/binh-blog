@@ -603,29 +603,22 @@ function enableMobileAccordion() {
   });
 }
 
-/* ===============================
-   QUIZ POPUP ENGINE (loads / renders / scores)
-================================= */
-// helper to get current lesson slug (from ?file=present-simple.md)
+// ======================= QUIZ POPUP ENGINE =======================
+
+// lấy slug từ URL
 function currentSlug() {
-  const p = new URLSearchParams(window.location.search);
-  const f = p.get("file") || "";
-  return f.replace(".md","");
+    const p = new URLSearchParams(window.location.search);
+    const f = p.get("file") || "";
+    return f.replace(".md", "");
 }
 
-/* =========================
-    QUIZ BUTTON HANDLER
-========================= */
-
-// LẤY NÚT QUIZ
-const openBtnTop = document.getElementById("open-quiz-btn");
-
-// LẤY MODAL + CONTENT
+// GET ELEMENTS
 const quizModal = document.getElementById("quiz-modal");
 const quizContent = document.getElementById("quiz-content");
+const quizClose = document.getElementById("quiz-close");
 
-// ====== OPEN QUIZ ======
-openBtnTop && openBtnTop.addEventListener("click", async () => {
+// mở quiz
+async function openQuiz() {
     const slug = currentSlug();
     if (!slug) {
         alert("Không xác định được bài học.");
@@ -634,12 +627,45 @@ openBtnTop && openBtnTop.addEventListener("click", async () => {
 
     quizModal.style.display = "flex";
     await loadQuiz(slug);
-});
+}
 
-// ====== CLOSE QUIZ ======
-document.getElementById("quiz-close").addEventListener("click", () => {
+// load quiz JSON
+async function loadQuiz(slug) {
+    quizContent.innerHTML = "Đang tải quiz...";
+
+    try {
+        const res = await fetch(`/binh-blog/quiz/${slug}.json`);
+        const data = await res.json();
+        renderQuiz(data);
+    } catch (err) {
+        quizContent.innerHTML = "<p>Không tìm thấy quiz cho bài này.</p>";
+    }
+}
+
+// render quiz
+function renderQuiz(data) {
+    let html = `<h3>${data.title}</h3>`;
+    data.questions.forEach((q, i) => {
+        html += `
+            <div class="quiz-item">
+                <p><b>${i + 1}. ${q.question}</b></p>
+                ${q.options.map((op, idx) => `
+                    <label><input type="radio" name="q${i}" value="${idx}"> ${op}</label><br>
+                `).join("")}
+            </div>
+        `;
+    });
+    quizContent.innerHTML = html;
+}
+
+// CLOSE QUIZ
+quizClose.addEventListener("click", () => {
     quizModal.style.display = "none";
 });
+
+// 2 nút mở quiz
+document.getElementById("open-quiz-btn")?.addEventListener("click", openQuiz);
+document.getElementById("quiz-bottom-btn")?.addEventListener("click", openQuiz);
     
 const openBtn = document.getElementById("open-quiz-btn");
 const modal = document.getElementById("quiz-modal");
