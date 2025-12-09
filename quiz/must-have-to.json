@@ -1,0 +1,122 @@
+[
+  {
+    "question": "You ____ wear a helmet when you ride a motorbike. It’s the law.",
+    "a": "must",
+    "b": "have to",
+    "c": "should",
+    "d": "can",
+    "answer": "a"
+  },
+  {
+    "question": "I ____ finish this report before 5 p.m. My boss is waiting.",
+    "a": "must",
+    "b": "have to",
+    "c": "should",
+    "d": "might",
+    "answer": "b"
+  },
+  {
+    "question": "She ____ take the medicine every day. The doctor told her.",
+    "a": "has to",
+    "b": "must",
+    "c": "should",
+    "d": "can",
+    "answer": "a"
+  },
+  {
+    "question": "You ____ be quiet! The baby is sleeping.",
+    "a": "must",
+    "b": "have to",
+    "c": "should",
+    "d": "may",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ leave now if we want to catch the train.",
+    "a": "must",
+    "b": "have to",
+    "c": "should",
+    "d": "can",
+    "answer": "b"
+  },
+  {
+    "question": "Students ____ wear uniforms at this school. It’s a rule.",
+    "a": "have to",
+    "b": "must",
+    "c": "should",
+    "d": "may",
+    "answer": "a"
+  },
+  {
+    "question": "You ____ pay the bill today. You can do it tomorrow.",
+    "a": "don’t have to",
+    "b": "must not",
+    "c": "shouldn’t",
+    "d": "cannot",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ bring his passport. It’s required.",
+    "a": "must",
+    "b": "has to",
+    "c": "should",
+    "d": "could",
+    "answer": "b"
+  },
+  {
+    "question": "You ____ smoke here. It’s not allowed.",
+    "a": "must not",
+    "b": "don’t have to",
+    "c": "cannot",
+    "d": "should",
+    "answer": "a"
+  },
+  {
+    "question": "I ____ wake up early tomorrow, so I’m going to bed now.",
+    "a": "must",
+    "b": "have to",
+    "c": "should",
+    "d": "could",
+    "answer": "b"
+  },
+  {
+    "question": "We ____ hurry. We still have plenty of time.",
+    "a": "don’t have to",
+    "b": "must",
+    "c": "have to",
+    "d": "must not",
+    "answer": "a"
+  },
+  {
+    "question": "You ____ be late again! It’s very important.",
+    "a": "must not",
+    "b": "don’t have to",
+    "c": "cannot",
+    "d": "shouldn’t",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ work overtime. It isn’t necessary today.",
+    "a": "doesn’t have to",
+    "b": "mustn’t",
+    "c": "shouldn’t",
+    "d": "can’t",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ show our ID cards to enter the building.",
+    "a": "have to",
+    "b": "must",
+    "c": "can",
+    "d": "may",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ study more if he wants to pass the test.",
+    "a": "must",
+    "b": "have to",
+    "c": "should",
+    "d": "can",
+    "answer": "c"
+  }
+]
