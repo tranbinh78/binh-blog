@@ -1,0 +1,122 @@
+[
+  {
+    "question": "She ____ to school every day.",
+    "a": "go",
+    "b": "goes",
+    "c": "going",
+    "d": "gone",
+    "answer": "b"
+  },
+  {
+    "question": "Water ____ at 100°C.",
+    "a": "boils",
+    "b": "boil",
+    "c": "is boiling",
+    "d": "boiled",
+    "answer": "a"
+  },
+  {
+    "question": "They usually ____ lunch at 12.",
+    "a": "have",
+    "b": "has",
+    "c": "having",
+    "d": "had",
+    "answer": "a"
+  },
+  {
+    "question": "My father ____ coffee.",
+    "a": "don’t drink",
+    "b": "doesn’t drink",
+    "c": "not drink",
+    "d": "isn’t drink",
+    "answer": "b"
+  },
+  {
+    "question": "The sun ____ in the east.",
+    "a": "rise",
+    "b": "rises",
+    "c": "rising",
+    "d": "rose",
+    "answer": "b"
+  },
+  {
+    "question": "____ you like apples?",
+    "a": "Are",
+    "b": "Do",
+    "c": "Does",
+    "d": "Did",
+    "answer": "b"
+  },
+  {
+    "question": "Tom ____ football.",
+    "a": "play",
+    "b": "plays",
+    "c": "playing",
+    "d": "played",
+    "answer": "b"
+  },
+  {
+    "question": "We ____ TV in the evening.",
+    "a": "watch",
+    "b": "watches",
+    "c": "watching",
+    "d": "watched",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ English well.",
+    "a": "speak",
+    "b": "speaks",
+    "c": "speaking",
+    "d": "spoken",
+    "answer": "b"
+  },
+  {
+    "question": "He ____ to music every night.",
+    "a": "listen",
+    "b": "listens",
+    "c": "listening",
+    "d": "is listening",
+    "answer": "b"
+  },
+  {
+    "question": "I ____ coffee in the morning.",
+    "a": "not drink",
+    "b": "don’t drink",
+    "c": "doesn’t drink",
+    "d": "not drinking",
+    "answer": "b"
+  },
+  {
+    "question": "The shops ____ at 9 a.m.",
+    "a": "open",
+    "b": "opens",
+    "c": "opened",
+    "d": "opening",
+    "answer": "a"
+  },
+  {
+    "question": "Birds ____ in the sky.",
+    "a": "fly",
+    "b": "flies",
+    "c": "flying",
+    "d": "flew",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ her homework after dinner.",
+    "a": "do",
+    "b": "does",
+    "c": "did",
+    "d": "doing",
+    "answer": "b"
+  },
+  {
+    "question": "Dogs ____ meat.",
+    "a": "eat",
+    "b": "eats",
+    "c": "ate",
+    "d": "eating",
+    "answer": "a"
+  }
+]
