@@ -379,7 +379,7 @@ window.addEventListener("scroll", () => {
    BUILD SIDEBAR (MODULE S1)
 ================================= */
 async function loadSidebar() {
-  const res = await fetch("/binh-blog/grammar.json");
+  const res = await fetch("/binh-blog/grammar/grammar.json");
   const list = await res.json();
 
   const sidebar = document.getElementById("sidebar");
