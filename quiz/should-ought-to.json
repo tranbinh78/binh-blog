@@ -1,0 +1,122 @@
+[
+  {
+    "question": "You ____ study harder if you want to pass the exam.",
+    "a": "should",
+    "b": "ought to",
+    "c": "must",
+    "d": "have to",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ see a doctor. Her cough is getting worse.",
+    "a": "should",
+    "b": "ought to",
+    "c": "may",
+    "d": "can",
+    "answer": "b"
+  },
+  {
+    "question": "You ____ eat more vegetables. They’re good for your health.",
+    "a": "should",
+    "b": "ought to",
+    "c": "must",
+    "d": "may",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ be more careful when driving.",
+    "a": "should",
+    "b": "ought to",
+    "c": "must",
+    "d": "could",
+    "answer": "b"
+  },
+  {
+    "question": "We ____ leave early to avoid traffic.",
+    "a": "should",
+    "b": "ought to",
+    "c": "may",
+    "d": "can",
+    "answer": "a"
+  },
+  {
+    "question": "You ____ save money for emergencies.",
+    "a": "ought to",
+    "b": "should",
+    "c": "must",
+    "d": "have to",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ spend less time on her phone.",
+    "a": "should",
+    "b": "ought to",
+    "c": "must",
+    "d": "could",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ apologize for what he said.",
+    "a": "should",
+    "b": "ought to",
+    "c": "may",
+    "d": "can",
+    "answer": "b"
+  },
+  {
+    "question": "We ____ help elderly people whenever we can.",
+    "a": "should",
+    "b": "ought to",
+    "c": "must",
+    "d": "could",
+    "answer": "a"
+  },
+  {
+    "question": "You ____ check your email more often.",
+    "a": "ought to",
+    "b": "should",
+    "c": "must",
+    "d": "may",
+    "answer": "b"
+  },
+  {
+    "question": "He ____ be more polite to others.",
+    "a": "should",
+    "b": "ought to",
+    "c": "could",
+    "d": "must",
+    "answer": "a"
+  },
+  {
+    "question": "You ____ eat too much fast food.",
+    "a": "shouldn’t",
+    "b": "ought not to",
+    "c": "mustn’t",
+    "d": "couldn’t",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ tell the truth.",
+    "a": "ought to",
+    "b": "should",
+    "c": "may",
+    "d": "might",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ be more responsible.",
+    "a": "should",
+    "b": "ought to",
+    "c": "must",
+    "d": "can",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ listen to other people's opinions.",
+    "a": "ought to",
+    "b": "should",
+    "c": "can",
+    "d": "may",
+    "answer": "a"
+  }
+]
