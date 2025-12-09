@@ -1,0 +1,122 @@
+[
+  {
+    "question": "She was tired because she ____ for 3 hours.",
+    "a": "had been studying",
+    "b": "has been studying",
+    "c": "studied",
+    "d": "was studying",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ for the bus for 40 minutes before it arrived.",
+    "a": "had been waiting",
+    "b": "waited",
+    "c": "were waiting",
+    "d": "have waited",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ the guitar for years before joining the band.",
+    "a": "had been practicing",
+    "b": "practiced",
+    "c": "was practicing",
+    "d": "has practiced",
+    "answer": "a"
+  },
+  {
+    "question": "The ground was wet because it ____ earlier.",
+    "a": "had been raining",
+    "b": "was raining",
+    "c": "rained",
+    "d": "has been raining",
+    "answer": "a"
+  },
+  {
+    "question": "I ____ for you before you finally arrived.",
+    "a": "had been looking",
+    "b": "was looking",
+    "c": "looked",
+    "d": "have looked",
+    "answer": "a"
+  },
+  {
+    "question": "She failed the exam because she ____ enough.",
+    "a": "hadn’t been studying",
+    "b": "didn’t study",
+    "c": "hasn’t studied",
+    "d": "wasn’t studying",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ for hours when the rain stopped.",
+    "a": "had been walking",
+    "b": "walked",
+    "c": "were walking",
+    "d": "have walked",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ for the signal before crossing the street.",
+    "a": "had been waiting",
+    "b": "waited",
+    "c": "were waiting",
+    "d": "have been waiting",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ too much time on games before the test.",
+    "a": "had been spending",
+    "b": "was spending",
+    "c": "spent",
+    "d": "has spent",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ to find a job before she finally got one.",
+    "a": "had been trying",
+    "b": "tried",
+    "c": "was trying",
+    "d": "has tried",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ each other for years before they got married.",
+    "a": "had been seeing",
+    "b": "saw",
+    "c": "were seeing",
+    "d": "have seen",
+    "answer": "a"
+  },
+  {
+    "question": "I ____ all day before I took a break.",
+    "a": "had been working",
+    "b": "worked",
+    "c": "was working",
+    "d": "have been working",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ for an hour before he finally answered the phone.",
+    "a": "had been calling",
+    "b": "called",
+    "c": "was calling",
+    "d": "has been calling",
+    "answer": "a"
+  },
+  {
+    "question": "The students ____ for weeks before the exam.",
+    "a": "had been preparing",
+    "b": "prepared",
+    "c": "were preparing",
+    "d": "have prepared",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ the car for 2 months before it broke down.",
+    "a": "had been using",
+    "b": "used",
+    "c": "were using",
+    "d": "have used",
+    "answer": "a"
+  }
+]
