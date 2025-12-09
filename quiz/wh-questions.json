@@ -1,0 +1,122 @@
+[
+  {
+    "question": "____ is your name?",
+    "a": "What",
+    "b": "Who",
+    "c": "Where",
+    "d": "How",
+    "answer": "a"
+  },
+  {
+    "question": "____ do you live?",
+    "a": "Where",
+    "b": "What",
+    "c": "When",
+    "d": "How",
+    "answer": "a"
+  },
+  {
+    "question": "____ is she crying?",
+    "a": "Why",
+    "b": "When",
+    "c": "Who",
+    "d": "How",
+    "answer": "a"
+  },
+  {
+    "question": "____ did you meet yesterday?",
+    "a": "Who",
+    "b": "What",
+    "c": "Where",
+    "d": "Which",
+    "answer": "a"
+  },
+  {
+    "question": "____ are you going to do now?",
+    "a": "What",
+    "b": "How",
+    "c": "Why",
+    "d": "Where",
+    "answer": "a"
+  },
+  {
+    "question": "____ old are you?",
+    "a": "How",
+    "b": "What",
+    "c": "Who",
+    "d": "Which",
+    "answer": "a"
+  },
+  {
+    "question": "____ time does the class start?",
+    "a": "What",
+    "b": "When",
+    "c": "Which",
+    "d": "Why",
+    "answer": "a"
+  },
+  {
+    "question": "____ did you go on vacation?",
+    "a": "Where",
+    "b": "Who",
+    "c": "What",
+    "d": "How",
+    "answer": "a"
+  },
+  {
+    "question": "____ is your birthday?",
+    "a": "When",
+    "b": "What",
+    "c": "Why",
+    "d": "How",
+    "answer": "a"
+  },
+  {
+    "question": "____ is your favorite color?",
+    "a": "What",
+    "b": "Which",
+    "c": "Who",
+    "d": "How",
+    "answer": "a"
+  },
+  {
+    "question": "____ are you late?",
+    "a": "Why",
+    "b": "What",
+    "c": "Where",
+    "d": "How",
+    "answer": "a"
+  },
+  {
+    "question": "____ is this book? — It's mine.",
+    "a": "Whose",
+    "b": "Who",
+    "c": "Which",
+    "d": "Where",
+    "answer": "a"
+  },
+  {
+    "question": "____ did she call?",
+    "a": "Who",
+    "b": "Whose",
+    "c": "Which",
+    "d": "How",
+    "answer": "a"
+  },
+  {
+    "question": "____ is the boy wearing a red hat?",
+    "a": "Which",
+    "b": "Who",
+    "c": "What",
+    "d": "Where",
+    "answer": "b"
+  },
+  {
+    "question": "____ book do you prefer: this one or that one?",
+    "a": "Which",
+    "b": "What",
+    "c": "Why",
+    "d": "When",
+    "answer": "a"
+  }
+]
