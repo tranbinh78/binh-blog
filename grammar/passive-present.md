@@ -38,12 +38,11 @@ VI: Tiếng Anh có được dạy ở đây không?<br>
 
 
 ## 3. Uses: Cách dùng
-1. Khi không quan trọng người thực hiện hành động.  
-2. Nhấn mạnh kết quả hoặc đối tượng chịu tác động.  
-3. Dùng trong quy trình, nội quy, thông báo.  
-4. Mô tả sự thật hoặc hành động thường xuyên xảy ra.
+1. Khi không quan trọng người thực hiện hành động.<br>
+2. Nhấn mạnh kết quả hoặc đối tượng chịu tác động.<br>
+3. Dùng trong quy trình, nội quy, thông báo.<br>
+4. Mô tả sự thật hoặc hành động thường xuyên xảy ra.<br>
 
----
 
 ## 4. Signal Words: Dấu hiệu nhận biết
 - every day  
