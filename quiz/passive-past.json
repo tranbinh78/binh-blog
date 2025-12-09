@@ -1,0 +1,170 @@
+{
+  "title": "Passive Past Quiz",
+  "questions": [
+    {
+      "question": "The car ____ yesterday.",
+      "choices": [
+        "was washed",
+        "washed",
+        "was washing",
+        "is washed"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The letters ____ last week.",
+      "choices": [
+        "were sent",
+        "sent",
+        "are sent",
+        "were sending"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The house ____ in 1990.",
+      "choices": [
+        "was built",
+        "built",
+        "was building",
+        "is built"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The room ____ before we arrived.",
+      "choices": [
+        "was cleaned",
+        "cleaned",
+        "was cleaning",
+        "is cleaned"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The dishes ____ by Tom.",
+      "choices": [
+        "were washed",
+        "washed",
+        "are washed",
+        "were washing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The package ____ to the wrong address.",
+      "choices": [
+        "was delivered",
+        "delivered",
+        "was delivering",
+        "is delivered"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The movie ____ last night.",
+      "choices": [
+        "was shown",
+        "showed",
+        "is shown",
+        "was showing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The cake ____ by my mom.",
+      "choices": [
+        "was made",
+        "made",
+        "was making",
+        "is made"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The windows ____ yesterday afternoon.",
+      "choices": [
+        "were cleaned",
+        "cleaned",
+        "are cleaned",
+        "were cleaning"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The door ____ because it was broken.",
+      "choices": [
+        "was repaired",
+        "repaired",
+        "was repairing",
+        "is repaired"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The documents ____ two days ago.",
+      "choices": [
+        "were printed",
+        "printed",
+        "are printed",
+        "were printing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The table ____ by a carpenter.",
+      "choices": [
+        "was made",
+        "made",
+        "was making",
+        "makes"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The flowers ____ this morning.",
+      "choices": [
+        "were watered",
+        "watered",
+        "are watered",
+        "were watering"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The song ____ at the concert.",
+      "choices": [
+        "was performed",
+        "performed",
+        "is performed",
+        "was performing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The room decorations ____ by the students.",
+      "choices": [
+        "were prepared",
+        "prepared",
+        "are prepared",
+        "were preparing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    }
+  ]
+}

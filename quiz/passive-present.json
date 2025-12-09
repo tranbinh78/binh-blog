@@ -1,0 +1,170 @@
+{
+  "title": "Passive Present Quiz",
+  "questions": [
+    {
+      "question": "English ____ in many countries.",
+      "choices": [
+        "is spoken",
+        "speaks",
+        "spoken",
+        "is speaking"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The homework ____ every day.",
+      "choices": [
+        "is checked",
+        "checks",
+        "checked",
+        "is checking"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "Milk ____ from cows.",
+      "choices": [
+        "is produced",
+        "produces",
+        "produced",
+        "is producing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "This room ____ cleaned weekly.",
+      "choices": [
+        "is",
+        "is being",
+        "is cleaned",
+        "cleans"
+      ],
+      "answer": 2,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The letters ____ every morning.",
+      "choices": [
+        "are delivered",
+        "deliver",
+        "delivered",
+        "are delivering"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The door ____ at 7 a.m.",
+      "choices": [
+        "is opened",
+        "opens",
+        "opening",
+        "is opening"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "Coffee ____ in Brazil.",
+      "choices": [
+        "is grown",
+        "grows",
+        "growed",
+        "is growing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The news ____ every evening.",
+      "choices": [
+        "is broadcast",
+        "broadcasts",
+        "broadcasted",
+        "is broadcasting"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "These toys ____ in China.",
+      "choices": [
+        "are made",
+        "make",
+        "made",
+        "are making"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The guests ____ water when they arrive.",
+      "choices": [
+        "are given",
+        "give",
+        "giving",
+        "are giving"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The windows ____ every month.",
+      "choices": [
+        "are cleaned",
+        "clean",
+        "cleaned",
+        "are cleaning"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The shirts ____ in that factory.",
+      "choices": [
+        "are produced",
+        "produce",
+        "produced",
+        "are producing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "Ice cream ____ from milk and sugar.",
+      "choices": [
+        "is made",
+        "makes",
+        "made",
+        "is making"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "Books ____ in libraries.",
+      "choices": [
+        "are kept",
+        "keep",
+        "keeps",
+        "are keeping"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The tests ____ by teachers.",
+      "choices": [
+        "are marked",
+        "mark",
+        "marked",
+        "are marking"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    }
+  ]
+}

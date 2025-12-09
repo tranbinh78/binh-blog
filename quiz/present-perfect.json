@@ -1,0 +1,170 @@
+{
+  "title": "Present Perfect Quiz",
+  "questions": [
+    {
+      "question": "She ____ in London for 5 years.",
+      "choices": [
+        "lived",
+        "has lived",
+        "has been living",
+        "lives"
+      ],
+      "answer": 1,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "I ____ my homework already.",
+      "choices": [
+        "have finished",
+        "finished",
+        "finish",
+        "has finished"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "They ____ this movie before.",
+      "choices": [
+        "have seen",
+        "saw",
+        "see",
+        "has seen"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "He ____ to Japan three times.",
+      "choices": [
+        "has been",
+        "went",
+        "go",
+        "has gone"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "We ____ breakfast yet.",
+      "choices": [
+        "haven’t had",
+        "didn’t have",
+        "don’t have",
+        "not had"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "She ____ just ____ the report.",
+      "choices": [
+        "has / finished",
+        "have / finished",
+        "has / finish",
+        "finished / has"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "They ____ in this school since 2020.",
+      "choices": [
+        "studied",
+        "study",
+        "have studied",
+        "has studied"
+      ],
+      "answer": 2,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "I ____ seen him today.",
+      "choices": [
+        "have",
+        "has",
+        "have not",
+        "haven’t"
+      ],
+      "answer": 3,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "He ____ never ____ to Canada.",
+      "choices": [
+        "has / been",
+        "have / been",
+        "has / go",
+        "have / gone"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "She ____ the keys. She can't find them.",
+      "choices": [
+        "has lost",
+        "lost",
+        "loses",
+        "is losing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ you ever ____ sushi?",
+      "choices": [
+        "Do / try",
+        "Have / tried",
+        "Has / try",
+        "Did / tried"
+      ],
+      "answer": 1,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "We ____ him since Monday.",
+      "choices": [
+        "haven’t seen",
+        "didn’t see",
+        "don’t see",
+        "not seen"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The train ____ just ___.",
+      "choices": [
+        "has / arrived",
+        "have / arrived",
+        "has / arrive",
+        "arrived / has"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "They ____ finished the project.",
+      "choices": [
+        "has already",
+        "have already",
+        "already have been",
+        "already has"
+      ],
+      "answer": 1,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "I ____ this book before.",
+      "choices": [
+        "haven’t read",
+        "don’t read",
+        "didn’t read",
+        "not read"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    }
+  ]
+}

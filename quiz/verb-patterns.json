@@ -1,0 +1,170 @@
+{
+  "title": "Verb Patterns Quiz",
+  "questions": [
+    {
+      "question": "He promised ____ earlier next time.",
+      "choices": [
+        "to come",
+        "coming",
+        "come",
+        "to coming"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "She suggested ____ to the beach.",
+      "choices": [
+        "to go",
+        "going",
+        "go",
+        "goes"
+      ],
+      "answer": 1,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "They agreed ____ the project together.",
+      "choices": [
+        "to do",
+        "doing",
+        "do",
+        "to doing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "I want you ____ your best.",
+      "choices": [
+        "to try",
+        "trying",
+        "try",
+        "to trying"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "He asked me ____ the door.",
+      "choices": [
+        "to close",
+        "closing",
+        "close",
+        "to closing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "She enjoys ____ music.",
+      "choices": [
+        "listening to",
+        "to listen to",
+        "listen to",
+        "to listening to"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "My parents let me ____ out last night.",
+      "choices": [
+        "go",
+        "to go",
+        "going",
+        "to going"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "He told us ____ quiet.",
+      "choices": [
+        "to be",
+        "being",
+        "be",
+        "to being"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "She persuaded him ____ the job.",
+      "choices": [
+        "to take",
+        "take",
+        "taking",
+        "to taking"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "He admitted ____ the window.",
+      "choices": [
+        "breaking",
+        "to break",
+        "break",
+        "to breaking"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "They decided ____ early.",
+      "choices": [
+        "to leave",
+        "leaving",
+        "leave",
+        "to leaving"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "We encouraged him ____ harder.",
+      "choices": [
+        "to work",
+        "work",
+        "working",
+        "to working"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "He avoided ____ to the meeting.",
+      "choices": [
+        "going",
+        "to go",
+        "goes",
+        "to going"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "I expect you ____ on time.",
+      "choices": [
+        "to be",
+        "being",
+        "be",
+        "to being"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "She made me ____ my room.",
+      "choices": [
+        "clean",
+        "to clean",
+        "cleaning",
+        "to cleaning"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    }
+  ]
+}
