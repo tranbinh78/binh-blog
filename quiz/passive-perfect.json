@@ -1,0 +1,122 @@
+[
+  {
+    "question": "The project ____ already ____ .",
+    "a": "has / been finished",
+    "b": "has / finished",
+    "c": "have / been finished",
+    "d": "had / finished",
+    "answer": "a"
+  },
+  {
+    "question": "The work ____ by the team before the deadline.",
+    "a": "had been completed",
+    "b": "has been completed",
+    "c": "was completed",
+    "d": "completed",
+    "answer": "a"
+  },
+  {
+    "question": "The letter ____ by the time I arrived.",
+    "a": "had been sent",
+    "b": "was sent",
+    "c": "sent",
+    "d": "has been sent",
+    "answer": "a"
+  },
+  {
+    "question": "The documents ____ just ____ .",
+    "a": "have / been printed",
+    "b": "have / printed",
+    "c": "has / printed",
+    "d": "had / printed",
+    "answer": "a"
+  },
+  {
+    "question": "The room ____ before the guests came.",
+    "a": "had been cleaned",
+    "b": "was being cleaned",
+    "c": "has been cleaned",
+    "d": "cleaned",
+    "answer": "a"
+  },
+  {
+    "question": "The news ____ already ____ .",
+    "a": "has / been announced",
+    "b": "was / announced",
+    "c": "had / been announced",
+    "d": "has / announced",
+    "answer": "a"
+  },
+  {
+    "question": "The cake ____ before we arrived.",
+    "a": "had been eaten",
+    "b": "was eaten",
+    "c": "has been eaten",
+    "d": "ate",
+    "answer": "a"
+  },
+  {
+    "question": "The tasks ____ before lunchtime.",
+    "a": "had been finished",
+    "b": "finished",
+    "c": "were finished",
+    "d": "have been finished",
+    "answer": "a"
+  },
+  {
+    "question": "The machine ____ not ____ properly.",
+    "a": "has / been working",
+    "b": "had / been working",
+    "c": "has / worked",
+    "d": "had / worked",
+    "answer": "a"
+  },
+  {
+    "question": "The emails ____ by noon yesterday.",
+    "a": "had been sent",
+    "b": "were sent",
+    "c": "has been sent",
+    "d": "sent",
+    "answer": "a"
+  },
+  {
+    "question": "The book ____ already ____ to the students.",
+    "a": "has / been given",
+    "b": "had / given",
+    "c": "is / giving",
+    "d": "has / gave",
+    "answer": "a"
+  },
+  {
+    "question": "The file ____ before the meeting.",
+    "a": "had been prepared",
+    "b": "has been prepared",
+    "c": "was preparing",
+    "d": "prepared",
+    "answer": "a"
+  },
+  {
+    "question": "The project report ____ already ____ .",
+    "a": "has / been submitted",
+    "b": "had / submitted",
+    "c": "was / submitting",
+    "d": "has / submitted",
+    "answer": "a"
+  },
+  {
+    "question": "The problem ____ by the engineers.",
+    "a": "has been solved",
+    "b": "had been solved",
+    "c": "was solved",
+    "d": "solved",
+    "answer": "a"
+  },
+  {
+    "question": "The schedule ____ already ____ .",
+    "a": "has / been changed",
+    "b": "had / changed",
+    "c": "is / changing",
+    "d": "was / changed",
+    "answer": "a"
+  }
+]
