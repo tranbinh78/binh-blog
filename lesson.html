@@ -773,5 +773,86 @@ setTimeout(enableMobileTOCButton, 500);
 
 </script>
 
+<script>
+function loadQuiz(file) {
+
+    fetch(`../quiz/${file}.json`)
+        .then(res => res.json())
+        .then(data => {
+
+            document.getElementById("quiz-title").innerText = data.title;
+            const box = document.getElementById("quiz-questions");
+
+            // XÓA SẠCH nội dung cũ (fix trùng)
+            box.innerHTML = "";
+
+            // Render từng câu hỏi
+            data.questions.forEach((q, index) => {
+
+                let html = `
+                    <div class="quiz-question-block">
+                        <p><b>${index + 1}. ${q.question}</b></p>
+                `;
+
+                q.choices.forEach((c, i) => {
+                    html += `
+                        <label class="quiz-option">
+                            <input type="radio" name="q${index}" value="${i}">
+                            ${String.fromCharCode(65 + i)}. ${c}
+                        </label>
+                    `;
+                });
+
+                html += `
+                        <p id="exp${index}" class="explanation" style="display:none;margin-top:6px;"></p>
+                        <hr>
+                    </div>
+                `;
+
+                box.innerHTML += html;
+            });
+
+            // Liên kết nút nộp bài
+            document.getElementById("submitQuiz").onclick = () => checkQuiz(data);
+
+        });
+}
+
+function checkQuiz(data) {
+    data.questions.forEach((q, index) => {
+
+        const options = document.querySelectorAll(`input[name="q${index}"]`);
+        let selected = -1;
+
+        // reset màu
+        options.forEach(o => {
+            o.parentElement.style.background = "transparent";
+        });
+
+        // tìm lựa chọn của user
+        options.forEach((o, i) => {
+            if (o.checked) selected = i;
+        });
+
+        // tô xanh đáp án đúng
+        const correct = options[q.answer];
+        if (correct) {
+            correct.parentElement.style.background = "#c8ffc8";
+        }
+
+        // tô đỏ lựa chọn sai
+        if (selected !== -1 && selected !== q.answer) {
+            const wrong = options[selected];
+            if (wrong) wrong.parentElement.style.background = "#ffd1d1";
+        }
+
+        // hiện giải thích
+        const exp = document.getElementById("exp" + index);
+        exp.style.display = "block";
+        exp.innerText = q.explanation;
+    });
+}
+</script>
+   
 </body>
 </html>
