@@ -1,56 +1,118 @@
 # Passive Voice – Past
 
-## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+## 1. Definition: Định nghĩa
+**English:**  
+The Past Passive Voice is used when the focus is on the receiver of an action in the past rather than the person who performed it.
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+**Tiếng Việt:**  
+Câu bị động ở thì quá khứ đơn dùng để nhấn mạnh đối tượng chịu tác động trong quá khứ, không quan trọng người thực hiện hành động.
 
-## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+---
 
-## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+## 2. Forms: Công thức
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
+### ✔ Affirmative (Khẳng định)
+**Công thức:**  
+S + was/were + V3/ed
 
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+**Ví dụ:**  
+EN: The window was opened.  
+VI: Cửa sổ đã được mở.
 
-### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+---
+
+### ✔ Negative (Phủ định)
+**Công thức:**  
+S + was/were + not + V3/ed
+
+**Ví dụ:**  
+EN: The room wasn’t cleaned yesterday.  
+VI: Căn phòng hôm qua đã không được dọn.
+
+---
+
+### ✔ Interrogative (Nghi vấn)
+**Công thức:**  
+Was/Were + S + V3/ed?
+
+**Ví dụ:**  
+EN: Were the letters delivered on time?  
+VI: Những bức thư có được gửi đúng giờ không?
+
+---
+
+## 3. Uses: Cách dùng
+1. Nhấn mạnh hành động xảy ra trong quá khứ.  
+2. Không biết hoặc không quan trọng người thực hiện hành động.  
+3. Dùng trong báo cáo, tin tức, sự kiện quá khứ.  
+
+---
+
+## 4. Signal Words: Dấu hiệu nhận biết
+- yesterday  
+- last night/week/year  
+- ago  
+- in + mốc thời gian quá khứ  
+
+---
+
+## 5. Examples (Ví dụ)
+- EN: The cake was made yesterday.  
+  VI: Chiếc bánh được làm vào hôm qua.  
+
+- EN: The books were moved to the new room.  
+  VI: Những cuốn sách được chuyển đến phòng mới.  
+
+- EN: The news was announced last night.  
+  VI: Tin tức được công bố tối qua.  
+
+---
+
+## 6. Exercises (Bài tập)
+
+### A. Fill in the blanks
+1. The car ___ (wash) yesterday.  
+2. The letters ___ (not/send) last week.  
+3. The room ___ (decorate) by the staff.  
+4. ___ the problem ___ (solve) in time?  
+5. The animals ___ (feed) every afternoon.
+
+### B. Multiple choice
+6. The report ___ last night.  
+   a. is written  
+   b. was written  
+   c. were written  
+
+7. The chairs ___ to another class.  
+   a. was moved  
+   b. were moved  
+   c. are moved  
+
+8. The movie ___ in 1990.  
+   a. was released  
+   b. released  
+   c. is released  
+
+9. ___ the windows ___ yesterday?  
+   a. Were / clean  
+   b. Was / cleaned  
+   c. Were / cleaned  
+
+10. The cake ___ by my mother.  
+    a. was made  
+    b. made  
+    c. is made  
+
+---
+
+## → Answer Key
+1. was washed  
+2. were not sent  
+3. was decorated  
+4. Was…solved  
+5. were fed  
+6. b  
+7. b  
+8. a  
+9. c  
+10. a
