@@ -34,24 +34,12 @@
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
             height: max-content;
         }
-        #sidebar h3 {
-            margin-top: 0;
-            color: #1a73e8;
-            font-size: 18px;
-        }
         #sidebar ul {
             list-style: none;
             padding-left: 10px;
         }
         #sidebar li {
             margin: 6px 0;
-        }
-        #sidebar a {
-            text-decoration: none;
-            color: #444;
-        }
-        #sidebar a:hover {
-            color: #1a73e8;
         }
 
         /* CONTENT */
@@ -62,9 +50,6 @@
             min-height: 400px;
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
-        #lesson-title h1 {
-            margin-top: 0;
-        }
 
         /* TOC */
         #toc {
@@ -74,26 +59,8 @@
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
             height: max-content;
         }
-        #toc h3 {
-            margin-top: 0;
-            font-size: 18px;
-            color: #1a73e8;
-        }
-        #toc-list {
-            padding-left: 10px;
-        }
-        #toc-list li {
-            margin: 8px 0;
-        }
-        #toc-list a {
-            color: #444;
-            text-decoration: none;
-        }
-        #toc-list a:hover {
-            color: #1a73e8;
-        }
 
-        /* QUIZ BUTTON */
+        /* Practice box */
         #practice-box {
             margin-top: 20px;
             padding: 15px;
@@ -101,6 +68,7 @@
             border-radius: 10px;
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
+
         #open-quiz-btn {
             padding: 10px 16px;
             border: none;
@@ -110,33 +78,8 @@
             cursor: pointer;
             font-weight: bold;
         }
-        #open-quiz-btn:hover {
-            background: #e75a5a;
-        }
 
-        /* QUIZ MODAL */
-        #quizModal {
-            position: fixed;
-            inset: 0;
-            display: none;
-            justify-content: center;
-            align-items: flex-start;
-            background: rgba(0,0,0,0.4);
-            padding-top: 40px;
-            z-index: 9999;
-        }
-        #quizModal.show {
-            display: flex;
-        }
-        #quiz-box {
-            background: white;
-            width: 80%;
-            max-width: 750px;
-            padding: 20px;
-            border-radius: 10px;
-            max-height: 85vh;
-            overflow-y: auto;
-        }
+        /* QUIZ STYLES */
         .quiz-option {
             display: block;
             padding: 8px;
@@ -144,10 +87,43 @@
             cursor: pointer;
         }
         .correct {
-            background: #c8ffc8 !important;
+            background-color: #c8f7c5 !important;
+            border-left: 4px solid #27ae60;
         }
         .incorrect {
-            background: #ffd4d4 !important;
+            background-color: #ffd4d4 !important;
+            border-left: 4px solid #e74c3c;
+        }
+        .explanation-box {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f7f7f7;
+            border-left: 4px solid #3498db;
+        }
+
+        /* QUIZ MODAL FIXED */
+        #quizModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+            z-index: 99999;
+        }
+        #quizModal.show {
+            display: flex;
+        }
+
+        #quiz-container {
+            width: 90%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
         }
     </style>
 </head>
@@ -155,7 +131,7 @@
 <body>
     <div class="container">
 
-        <!-- LEFT SIDEBAR -->
+        <!-- SIDEBAR -->
         <div id="sidebar">
             <h3>📘 Mục lục Grammar</h3>
         </div>
@@ -170,191 +146,129 @@
             <div id="practice-box">
                 <h3>📝 Bài tập củng cố</h3>
                 <p>Nhấn nút Luyện tập để làm bài trắc nghiệm cho bài học này.</p>
-                <button id="open-quiz-btn">Luyện tập</button>
+                <button id="open-quiz-btn" onclick="openQuiz()">Luyện tập</button>
             </div>
         </div>
 
-        <!-- RIGHT TOC -->
+        <!-- TOC -->
         <div id="toc">
             <h3>Mục lục</h3>
             <ul id="toc-list"></ul>
         </div>
     </div>
 
-    <!-- QUIZ MODAL -->
-    <div id="quizModal">
+<!-- QUIZ MODAL -->
+<div id="quizModal">
+    <div id="quiz-container">
+        <h2 id="quiz-title">Quiz</h2>
         <div id="quiz-box"></div>
-        <button onclick="closeQuizModal()" style="margin-left:10px;">Đóng</button>
+
+        <button onclick="submitQuiz()" 
+            style="padding:10px 20px; background:#27ae60; color:white; border:none;">
+            Nộp bài
+        </button>
+
+        <p id="quiz-score" style="margin-top:10px; font-size:18px;"></p>
+
+        <button onclick="closeQuiz()" 
+            style="padding:10px 20px; background:#e74c3c; color:white; border:none; margin-top:10px;">
+            Đóng
+        </button>
     </div>
+</div>
 
-    <!-- SCRIPT: LOAD LESSON + SIDEBAR + TOC -->
 <script>
-    // Lấy tên file từ URL
-    function getFileName() {
-        const params = new URLSearchParams(window.location.search);
-        return params.get("file");
+/* ===================== LOAD MARKDOWN ===================== */
+function getFileName() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("file");
+}
+
+const markdownFile = getFileName();
+const mdPath = `grammar/${markdownFile}`;
+
+async function loadMarkdown() {
+    try {
+        const res = await fetch(mdPath);
+        const text = await res.text();
+
+        document.getElementById("lesson-content").innerHTML = marked.parse(text);
+
+        const cleanTitle = markdownFile.replace(".md", "").replace(/-/g, " ");
+        document.getElementById("lesson-title").innerHTML = `<h1>${cleanTitle}</h1>`;
+
+        generateTOC();
+    } catch {
+        document.getElementById("lesson-content").innerHTML = "❌ Không thể tải bài học.";
     }
+}
 
-    const markdownFile = getFileName();
-    const mdPath = `grammar/${markdownFile}`;
+/* ===================== TOC ===================== */
+function generateTOC() {
+    const content = document.getElementById("lesson-content");
+    const headings = content.querySelectorAll("h2, h3");
+    const tocList = document.getElementById("toc-list");
 
-    // Load Nội dung Markdown (.md)
-    async function loadMarkdown() {
-        try {
-            const res = await fetch(mdPath);
-            const text = await res.text();
+    tocList.innerHTML = "";
 
-            // Render Markdown
-            document.getElementById("lesson-content").innerHTML = marked.parse(text);
+    headings.forEach((h, i) => {
+        const id = "section-" + i;
+        h.id = id;
 
-            // Tạo tiêu đề bài học
-            const titleElement = document.getElementById("lesson-title");
-            const cleanTitle = markdownFile.replace(".md", "").replace(/-/g, " ");
-            titleElement.innerHTML = `<h1>${cleanTitle}</h1>`;
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#${id}">${h.innerText}</a>`;
+        tocList.appendChild(li);
+    });
+}
 
-            // Tạo TOC tự động
-            generateTOC();
+/* ===================== SIDEBAR ===================== */
+async function loadSidebar() {
+    const sidebar = document.getElementById("sidebar");
 
-        } catch (err) {
-            document.getElementById("lesson-content").innerHTML = "❌ Không thể tải bài học.";
-        }
-    }
+    try {
+        const res = await fetch("grammar/grammar.json");
+        const data = await res.json();
 
-    // Tạo mục lục tự động dựa trên các thẻ H2, H3
-    function generateTOC() {
-        const content = document.getElementById("lesson-content");
-        const headings = content.querySelectorAll("h2, h3");
-        const tocList = document.getElementById("toc-list");
-        tocList.innerHTML = "";
+        let html = `<h3>📘 Bài học</h3><ul>`;
 
-        headings.forEach((h, index) => {
-            const id = "section-" + index;
-            h.id = id;
-
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="#${id}">${h.innerText}</a>`;
-            tocList.appendChild(li);
-        });
-    }
-
-    // Load Sidebar từ grammar.json
-    async function loadSidebar() {
-        const sidebar = document.getElementById("sidebar");
-
-        try {
-            const res = await fetch("grammar/grammar.json");
-            const data = await res.json();
-
-            let html = `<h3>📘 Bài học</h3><ul>`;
-
-            data.forEach(group => {
-                html += `<li><strong>${group.group}</strong><ul>`;
-                group.items.forEach(item => {
-                    html += `
-                        <li>
-                            <a href="lesson.html?file=${item.file}">
-                                ${item.title}
-                            </a>
-                        </li>`;
-                });
-                html += `</ul></li>`;
+        data.forEach(group => {
+            html += `<li><strong>${group.group}</strong><ul>`;
+            group.items.forEach(item => {
+                html += `
+                    <li><a href="lesson.html?file=${item.file}">${item.title}</a></li>
+                `;
             });
+            html += `</ul></li>`;
+        });
 
-            html += `</ul>`;
-            sidebar.innerHTML = html;
-
-        } catch (e) {
-            sidebar.innerHTML = "❌ Không thể tải danh sách bài học!";
-        }
+        html += `</ul>`;
+        sidebar.innerHTML = html;
+    } catch (e) {
+        sidebar.innerHTML = "❌ Không thể tải danh sách bài học!";
     }
+}
 
-    loadMarkdown();
-    loadSidebar();
-</script>
+loadMarkdown();
+loadSidebar();
 
-    <!-- ====================== QUIZ SCRIPT ====================== -->
+/* ===================== QUIZ ===================== */
 
-<style>
-    .correct {
-        background-color: #c8f7c5 !important;
-        border: 1px solid #27ae60 !important;
-    }
-    .incorrect {
-        background-color: #ffd4d4 !important;
-        border: 1px solid #e74c3c !important;
-    }
-    .explanation-box {
-        margin: 10px 0;
-        padding: 10px;
-        background: #f7f7f7;
-        border-left: 4px solid #3498db;
-    }
-</style>
-
-<script>
-/* ============================================================
-    1. MỞ QUIZ
-============================================================ */
 function openQuiz() {
-    document.getElementById("quiz-modal").style.display = "flex";
+    document.getElementById("quizModal").classList.add("show");
 
-    const mdName = getFileName().replace(".md", "");
-    const quizFile = `quiz/${mdName}.json`;
+    const name = getFileName().replace(".md", "");
+    const file = `quiz/${name}.json`;
 
-    loadQuiz(quizFile);
+    loadQuiz(file);
 }
 
-/* ============================================================
-    2. LOAD QUIZ JSON
-============================================================ */
-function loadQuiz(file) {
-    fetch(file)
-        .then(res => res.json())
-        .then(data => {
-            const quizBox = document.getElementById("quiz-box");
-            quizBox.innerHTML = "";
-
-            data.forEach((q, i) => {
-                quizBox.innerHTML += generateQuestionHTML(q, i);
-            });
-
-            // Gắn sự kiện chọn đáp án
-            document.querySelectorAll(".quiz-choice").forEach(r => {
-                r.addEventListener("change", function () {
-                    const parent = this.closest(".quiz-item");
-                    parent.dataset.selected = this.value;
-                });
-            });
-        })
-        .catch(err => {
-            document.getElementById("quiz-box").innerHTML =
-                "<p style='color:red'>❌ Không tìm thấy file quiz.</p>";
-        });
-}
-
-/* ============================================================
-    3. HTML CHO MỖI CÂU HỎI
-============================================================ */
-function generateQuestionHTML(q, index) {
-    return `
-        <div class="quiz-item" data-index="${index}">
-            <p><b>${index + 1}. ${q.question}</b></p>
-
-            ${generateChoice("a", q.a, index)}
-            ${generateChoice("b", q.b, index)}
-            ${generateChoice("c", q.c, index)}
-            ${generateChoice("d", q.d, index)}
-
-            <div class="explanation-box" id="exp-${index}" style="display:none">
-                ${q.explanation ? q.explanation : ""}
-            </div>
-        </div>
-    `;
+function closeQuiz() {
+    document.getElementById("quizModal").classList.remove("show");
 }
 
 function generateChoice(key, text, index) {
-    if (!text) return ""; // nếu không có đáp án thì bỏ qua
-    
+    if (!text) return "";
+
     return `
         <label class="quiz-option">
             <input type="radio" name="q${index}" value="${key}" class="quiz-choice">
@@ -363,81 +277,71 @@ function generateChoice(key, text, index) {
     `;
 }
 
-/* ============================================================
-    4. CHẤM ĐIỂM
-============================================================ */
-function submitQuiz() {
-    let correctCount = 0;
+function generateQuestionHTML(q, i) {
+    return `
+        <div class="quiz-item" data-index="${i}">
+            <p><b>${i + 1}. ${q.question}</b></p>
 
-    document.querySelectorAll(".quiz-item").forEach(item => {
-        const i = item.dataset.index;
-        const selected = item.dataset.selected;
+            ${generateChoice("a", q.a, i)}
+            ${generateChoice("b", q.b, i)}
+            ${generateChoice("c", q.c, i)}
+            ${generateChoice("d", q.d, i)}
 
-        fetch(`quiz/${getFileName().replace(".md", "")}.json`)
-            .then(res => res.json())
-            .then(data => {
-                const correct = data[i].answer;
-
-                const options = item.querySelectorAll("label");
-
-                options.forEach(opt => {
-                    const radio = opt.querySelector("input");
-
-                    if (radio.value === correct) {
-                        opt.classList.add("correct");
-                    }
-
-                    if (radio.checked && radio.value !== correct) {
-                        opt.classList.add("incorrect");
-                    }
-                });
-
-                // Giải thích
-                const exp = document.getElementById(`exp-${i}`);
-                exp.style.display = "block";
-
-                if (selected === correct) correctCount++;
-
-                document.getElementById("quiz-score").innerHTML =
-                    `Kết quả: <b>${correctCount}/${data.length}</b>`;
-            });
-    });
+            <div class="explanation-box" id="exp-${i}" style="display:none">
+                ${q.explanation ?? ""}
+            </div>
+        </div>
+    `;
 }
 
-/* ============================================================
-    5. ĐÓNG QUIZ
-============================================================ */
-function closeQuiz() {
-    document.getElementById("quiz-modal").style.display = "none";
+let QUIZ_DATA = [];
+
+function loadQuiz(file) {
+    fetch(file)
+        .then(res => res.json())
+        .then(data => {
+            QUIZ_DATA = data;
+            const box = document.getElementById("quiz-box");
+            box.innerHTML = "";
+
+            data.forEach((q, i) => {
+                box.innerHTML += generateQuestionHTML(q, i);
+            });
+        })
+        .catch(() => {
+            document.getElementById("quiz-box").innerHTML =
+                "<p style='color:red'>❌ Không tìm thấy file quiz.</p>";
+        });
+}
+
+function submitQuiz() {
+    let score = 0;
+
+    QUIZ_DATA.forEach((q, i) => {
+        const item = document.querySelector(`.quiz-item[data-index="${i}"]`);
+        const selected = item.querySelector("input:checked")?.value;
+
+        const correct = q.answer;
+
+        item.querySelectorAll("label").forEach(label => {
+            const radio = label.querySelector("input");
+
+            if (radio.value === correct) {
+                label.classList.add("correct");
+            } else if (radio.checked) {
+                label.classList.add("incorrect");
+            }
+        });
+
+        if (selected === correct) score++;
+
+        document.getElementById(`exp-${i}`).style.display = "block";
+    });
+
+    document.getElementById("quiz-score").innerHTML =
+        `Kết quả: <b>${score}/${QUIZ_DATA.length}</b>`;
 }
 </script>
 
-
-<!-- ====================== QUIZ MODAL HTML ====================== -->
-<div id="quiz-modal"
-    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); 
-    justify-content:center; align-items:flex-start; padding-top:40px; z-index:9999;">
-
-    <div style="background:white; width:90%; max-width:700px; max-height:90vh;
-        overflow-y:auto; padding:20px; border-radius:10px;">
-
-        <h2 id="quiz-title">Quiz</h2>
-
-        <div id="quiz-box"></div>
-
-        <br>
-        <button onclick="submitQuiz()" style="padding:10px 20px; background:#27ae60; color:white; border:none;">
-            Nộp bài
-        </button>
-
-        <p id="quiz-score" style="margin-top:10px; font-size:18px;"></p>
-
-        <br>
-        <button onclick="closeQuiz()" style="padding:10px 20px; background:#e74c3c; color:white; border:none;">
-            Đóng
-        </button>
-    </div>
-</div>
 </body>
 </html>
-    
