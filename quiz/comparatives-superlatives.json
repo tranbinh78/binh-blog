@@ -1,0 +1,122 @@
+[
+  {
+    "question": "This book is ____ than that one.",
+    "a": "more interesting",
+    "b": "most interesting",
+    "c": "interesting",
+    "d": "interestinger",
+    "answer": "a"
+  },
+  {
+    "question": "Mount Everest is the ____ mountain in the world.",
+    "a": "highest",
+    "b": "higher",
+    "c": "high",
+    "d": "most high",
+    "answer": "a"
+  },
+  {
+    "question": "My house is ____ from the school than yours.",
+    "a": "farther",
+    "b": "farthest",
+    "c": "more far",
+    "d": "most far",
+    "answer": "a"
+  },
+  {
+    "question": "She is the ____ student in the class.",
+    "a": "smartest",
+    "b": "smarter",
+    "c": "most smart",
+    "d": "smart",
+    "answer": "a"
+  },
+  {
+    "question": "This chair is ____ than that one.",
+    "a": "more comfortable",
+    "b": "most comfortable",
+    "c": "comfortable",
+    "d": "comfortabler",
+    "answer": "a"
+  },
+  {
+    "question": "He runs ____ than me.",
+    "a": "faster",
+    "b": "fastest",
+    "c": "more fast",
+    "d": "most fast",
+    "answer": "a"
+  },
+  {
+    "question": "This is the ____ restaurant in town.",
+    "a": "best",
+    "b": "better",
+    "c": "gooder",
+    "d": "most good",
+    "answer": "a"
+  },
+  {
+    "question": "Today is ____ than yesterday.",
+    "a": "hotter",
+    "b": "hottest",
+    "c": "more hot",
+    "d": "most hot",
+    "answer": "a"
+  },
+  {
+    "question": "She is ____ than her sister.",
+    "a": "more beautiful",
+    "b": "most beautiful",
+    "c": "beautifuler",
+    "d": "beautifulest",
+    "answer": "a"
+  },
+  {
+    "question": "This road is the ____ in the city.",
+    "a": "longest",
+    "b": "longer",
+    "c": "more long",
+    "d": "most long",
+    "answer": "a"
+  },
+  {
+    "question": "Your handwriting is ____ than mine.",
+    "a": "neater",
+    "b": "neatest",
+    "c": "more neat",
+    "d": "most neat",
+    "answer": "a"
+  },
+  {
+    "question": "He is the ____ player on the team.",
+    "a": "strongest",
+    "b": "stronger",
+    "c": "more strong",
+    "d": "most strong",
+    "answer": "a"
+  },
+  {
+    "question": "This movie is ____ than the previous one.",
+    "a": "better",
+    "b": "best",
+    "c": "good",
+    "d": "gooder",
+    "answer": "a"
+  },
+  {
+    "question": "This is the ____ day of my life!",
+    "a": "happiest",
+    "b": "happier",
+    "c": "more happy",
+    "d": "most happy",
+    "answer": "a"
+  },
+  {
+    "question": "My bag is ____ than yours.",
+    "a": "heavier",
+    "b": "heaviest",
+    "c": "more heavy",
+    "d": "most heavy",
+    "answer": "a"
+  }
+]
