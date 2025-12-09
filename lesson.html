@@ -724,12 +724,7 @@ quizRetry.addEventListener("click", () => {
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") modal.style.display = "none"; });
 modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
 
-const footerBtn = document.getElementById("quiz-footer-btn");
-const topBtn = document.getElementById("open-quiz-btn");
 
-if (footerBtn && topBtn) {
-    footerBtn.addEventListener("click", () => topBtn.click());
-}    
 /* ===============================
    INIT
 ================================= */
