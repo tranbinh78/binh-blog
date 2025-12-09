@@ -6,6 +6,28 @@
 <title>Bài học | Binh Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+.quiz-footer-container {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.quiz-footer-btn {
+    background: #ffdde4;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    color: #d14d7a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 16px;
+}
+
+.quiz-footer-btn:hover {
+    background: #ffc7d6;
+}
+   
 /* ===============================
    GLOBAL LAYOUT & THEME
 ================================= */
@@ -274,6 +296,12 @@ body.reading-mode .content-area { max-width:800px; margin:auto; }
   <div id="content">Đang tải nội dung...</div>
 
   <div class="nav-buttons" id="nav-buttons"></div>
+
+ <!-- QUIZ BUTTON AT BOTTOM -->
+   <div class="quiz-footer-container">
+    <button onclick="openQuiz()" class="quiz-footer-btn">Bài tập kiểm tra</button>
+   </div>
+   
 </div>
 
 <!-- TOC -->
