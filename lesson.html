@@ -770,7 +770,68 @@ enableMobileAccordion();
 
 // ensure mobile TOC prepared
 setTimeout(enableMobileTOCButton, 500);
- 
+ <script>
+function loadQuiz(file) {
+    fetch(`grammar/quiz/${file}.json`)
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("quiz-title").innerText = data.title;
+            const container = document.getElementById("quiz-questions");
+            container.innerHTML = "";
+
+            data.questions.forEach((q, index) => {
+                const div = document.createElement("div");
+                div.className = "quiz-question-block";
+
+                div.innerHTML = `
+                    <p><b>${index + 1}. ${q.question}</b></p>
+                    ${q.choices.map((c, i) => `
+                        <label class="quiz-option">
+                            <input type="radio" name="q${index}" value="${i}">
+                            ${String.fromCharCode(65 + i)}. ${c}
+                        </label>
+                    `).join("")}
+                    <p class="explanation" id="exp${index}" style="display:none;color:#444;margin-top:6px;"></p>
+                    <hr>
+                `;
+
+                container.appendChild(div);
+            });
+
+            document.getElementById("submitQuiz").onclick = () => checkQuiz(data);
+        });
+}
+
+function checkQuiz(data) {
+    data.questions.forEach((q, index) => {
+        const options = document.querySelectorAll(`input[name="q${index}"]`);
+        const explanation = document.getElementById(`exp${index}`);
+
+        let selected = -1;
+        options.forEach((op, i) => {
+            if (op.checked) selected = i;
+        });
+
+        // reset màu trước
+        options.forEach(op => {
+            op.parentElement.style.background = "transparent";
+        });
+
+        // tô màu đáp án đúng
+        const correctOption = options[q.answer];
+        correctOption.parentElement.style.background = "#c8ffc8"; // xanh nhạt
+
+        // tô màu sai nếu chọn sai
+        if (selected !== -1 && selected !== q.answer) {
+            const wrongOption = options[selected];
+            wrongOption.parentElement.style.background = "#ffd1d1"; // đỏ nhạt
+        }
+
+        explanation.style.display = "block";
+        explanation.innerText = q.explanation;
+    });
+}
+</script>
 </script>
 
 </body>
