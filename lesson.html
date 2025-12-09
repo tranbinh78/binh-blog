@@ -1,796 +1,250 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-<meta charset="UTF-8">
-<title>Bài học | Binh Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-/* ===============================
-   GLOBAL LAYOUT & THEME
-================================= */
-body {
-  font-family: "Be Vietnam Pro", sans-serif;
-  max-width: 1250px;
-  margin: auto;
-  padding: 20px;
-  background: #faf9f4;
-  color: #333;
-  line-height: 1.8;
-  transition: 0.3s;
-  display: grid;
-  grid-template-columns: 260px 1fr 250px;
-  gap: 25px;
-}
-body.dark { background:#1b1b1b; color:#eee; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài học | Bình Blog</title>
 
-/* ===============================
-   PROGRESS BAR
-================================= */
-#progress-container {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 6px;
-  z-index: 9999;
-}
-#progress-bar {
-  height: 100%;
-  width: 0%;
-  background: #c9b3ff;
-  transition: width 0.1s linear;
-}
-body.dark #progress-bar { background:#7a6adf; }
+    <link rel="stylesheet" href="style.css">
 
-/* ===============================
-   SIDEBAR (MODULE CURRICULUM)
-================================= */
-#sidebar {
-  background:#ffffff;
-  border-radius:12px;
-  border:1px solid #ddd;
-  padding:15px;
-  position:sticky;
-  top:20px;
-  max-height:85vh;
-  overflow-y:auto;
-}
-body.dark #sidebar { background:#2b2b2b; border-color:#666; }
+    <style>
+        body {
+            background: #f7f5ef;
+        }
+        .container {
+            max-width: 1280px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+        }
+        .sidebar {
+            width: 260px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+            border: 1px solid #e0ded8;
+        }
+        .content {
+            flex: 1;
+            margin-left: 24px;
+            background: white;
+            padding: 32px;
+            border-radius: 14px;
+            border: 1px solid #e0ded8;
+        }
+        .toc {
+            width: 260px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 24px;
+            height: fit-content;
+            border: 1px solid #e0ded8;
+        }
 
-.module-title {
-  font-size:17px;
-  font-weight:700;
-  margin:10px 0 8px;
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+        /* Modal Quiz */
+        #quizModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.45);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #quizBox {
+            width: 70%;
+            max-height: 90%;
+            overflow-y: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+        }
+        .answer.correct {
+            background: #d4f8d4 !important;
+        }
+        .answer.wrong {
+            background: #ffd6d6 !important;
+        }
 
-.lesson-item {
-  padding:8px 12px;
-  margin:4px 0;
-  border-radius:8px;
-  cursor:pointer;
-  text-decoration:none;
-  display:block;
-  color:#333;
-}
-.lesson-item:hover { background:#ede3ff; }
-.lesson-item.active {
-  background:#d7caff;
-  font-weight:700;
-}
-body.dark .lesson-item { color:#eee; }
-body.dark .lesson-item.active { background:#5b4fa8; color:#fff; }
+        .quiz-choice {
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            margin-top: 4px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .quiz-choice:hover {
+            background: #f0f0f0;
+        }
 
-/* collapse */
-.module-lessons { display:none; padding-left:5px; }
-.module-open .module-lessons { display:block; }
-
-/* ===============================
-   CONTENT AREA
-================================= */
-.content-area { padding:0 10px; }
-
-header {
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
-  margin-bottom:25px;
-}
-
-.back-btn {
-  background:#e6ddff;
-  padding:8px 14px;
-  border-radius:6px;
-  text-decoration:none;
-  color:#333;
-  font-weight:600;
-}
-.back-btn:hover { background:#d1c3ff; }
-
-.header-controls { display:flex; gap:8px; align-items:center; }
-
-/* Reading button */
-.reading-btn {
-  background:#ffe9c6;
-  padding:8px 12px;
-  border-radius:6px;
-  border:none;
-  cursor:pointer;
-  font-weight:600;
-}
-.reading-btn:hover { background:#ffdfad; }
-body.dark .reading-btn { background:#705f33; color:white; }
-
-/* Search */
-#search-box {
-  padding:8px 12px;
-  border-radius:6px;
-  border:1px solid #ccc;
-  font-size:15px;
-  width:220px;
-}
-#search-box:focus { border-color:#a88bff; }
-
-/* fade-in animation */
-.fade-in {
-  opacity:0; transform:translateY(10px);
-  animation:fadeIn 0.5s ease-out forwards;
-}
-@keyframes fadeIn { to { opacity:1; transform:translateY(0); } }
-
-/* markdown content styling */
-h2, h3 { margin-top:30px; color:#4a3fa8; }
-body.dark h2, body.dark h3 { color:#cfc4ff; }
-
-.box {
-  padding:14px 18px;
-  background:#fff;
-  border-left:5px solid #9c7bff;
-  border-radius:6px;
-  margin:20px 0;
-}
-body.dark .box { background:#2a2a2a; border-color:#bba0ff; }
-
-mark { background:#ffed8a; padding:2px 4px; border-radius:4px; }
-body.dark mark { background:#caa52c; }
-
-/* ===============================
-   TOC FLOATING
-================================= */
-#toc {
-  background:#ffffff;
-  border-radius:12px;
-  border:1px solid #ddd;
-  padding:15px;
-  position:sticky;
-  top:20px;
-  height:fit-content;
-}
-body.dark #toc { background:#2a2a2a; border-color:#555; }
-
-#toc a {
-  display:block;
-  padding:4px 6px;
-  margin-bottom:6px;
-  text-decoration:none;
-  color:#444;
-  border-radius:6px;
-}
-#toc a.active {
-  background:#d7caff;
-  font-weight:700;
-}
-body.dark #toc a { color:#eee; }
-body.dark #toc a.active { background:#5b4fa8; color:#fff; }
-
-/* ===============================
-   NEXT / PREV BUTTON
-================================= */
-.nav-buttons {
-  display:flex;
-  justify-content: space-between;
-  margin-top:40px;
-  gap:10px;
-}
-.np-btn {
-  flex:1;
-  padding:14px;
-  background:#e6ddff;
-  border-radius:8px;
-  text-align:center;
-  text-decoration:none;
-  color:#333;
-  font-weight:600;
-}
-.np-btn:hover { background:#d1c3ff; }
-body.dark .np-btn { background:#5b4fa8; color:white; }
-
-/* ===============================
-   QUIZ MODAL STYLES
-================================= */
-#quiz-modal { display:none; position:fixed; left:0; top:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:99999; align-items:center; justify-content:center; }
-#quiz-box { width:96%; max-width:780px; background:#fff; padding:18px; border-radius:10px; max-height:90vh; overflow:auto; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
-body.dark #quiz-box { background:#222; color:#eee; }
-#quiz-box h3 { margin:0 0 6px 0; }
-#quiz-box label { display:block; padding:8px; border-radius:8px; margin-bottom:8px; border:1px solid #eee; cursor:pointer; }
-body.dark #quiz-box label { border:1px solid #444; }
-#quiz-box label input { margin-right:8px; }
-
-/* ===============================
-   MOBILE RESPONSIVE & MOBILE OPTIMIZATIONS
-================================= */
-@media(max-width:900px){
-  body { grid-template-columns:1fr; padding:10px; }
-  #sidebar, #toc { display:none; }
-  #mobile-sidebar-btn { display:inline-block; margin-bottom:12px; background:#d7caff; padding:10px 12px; border-radius:8px; border:none; }
-  header { flex-direction: column; align-items:flex-start; gap:10px; }
-  header h1 { font-size:20px; }
-  #search-box { width:100%; }
-  .nav-buttons { flex-direction:column; gap:10px; }
-  .np-btn { width:100%; font-size:16px; padding:14px; }
-  /* mobile slide sidebar */
-  #sidebar.mobile-open { display:block !important; position:fixed; top:0; left:0; width:80%; max-width:300px; height:100vh; background:#fff; z-index:99998; padding:20px; border-right:1px solid #ddd; box-shadow:2px 0 10px rgba(0,0,0,0.12); }
-  body.dark #sidebar.mobile-open { background:#2b2b2b; }
-  #mobile-overlay { display:none; }
-  #mobile-overlay.show { display:block; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:99997; }
-}
-
-/* ===============================
-   READING MODE
-================================= */
-body.reading-mode { grid-template-columns:1fr !important; }
-body.reading-mode #sidebar, body.reading-mode #toc { display:none !important; }
-body.reading-mode .content-area { max-width:800px; margin:auto; }
-
-</style>
+        .closeQuiz {
+            float: right;
+            background: #ddd;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #4a9cff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #1f7cff;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Progress bar -->
-<div id="progress-container"><div id="progress-bar"></div></div>
-
-<!-- SIDEBAR -->
-<div id="sidebar"></div>
- 
-<!-- CONTENT -->
-<div class="content-area">
-  <button id="mobile-sidebar-btn" style="display:none">📚 Danh sách bài</button>
-
-  <header>
-    <a href="/binh-blog/grammar-index.html" class="back-btn">← Quay lại</a>
-
-    <h1 id="title">Đang tải...</h1>
-
-     <div class="header-controls">
-      <input id="search-box" type="text" placeholder="🔍 Tìm trong bài...">
-      <button id="reading-toggle" class="reading-btn">📖 Reading Mode</button>
-
-   <!-- Nút mở QUIZ popup -->
-    <button id="open-quiz-btn" style="
-      background:#ffdede;
-      padding:8px 12px;
-      border-radius:6px;
-      border:none;
-      cursor:pointer;
-      font-weight:600;
-    ">
-      📘 Luyện tập
-    </button>
+<div class="container">
+    <div class="sidebar" id="sidebar">
+        <!-- sidebar load động bằng JS -->
     </div>
-   
-  </header>
 
-  <div id="content">Đang tải nội dung...</div>
+    <div class="content">
+        <button onclick="history.back()" class="backBtn">← Quay lại</button>
+        <div id="lesson-title"></div>
+        <div id="lesson-content">Đang tải nội dung…</div>
 
-<!-- BÀI TẬP CUỐI BÀI -->
-<div id="exercise-section" style="
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 40px;
-    margin-bottom: 25px;
-">
-  <h2 style="margin-top:0; color:#4a3fa8;">📘 Bài tập củng cố</h2>
-  <p style="margin-bottom:15px;">
-    Nhấn nút <b>Luyện tập</b> để làm 10 câu kiểm tra dành riêng cho bài học này.
-  </p>
-
-  <button onclick="document.getElementById('open-quiz-btn').click()"
-    style="
-      background:#ffdede;
-      padding:10px 16px;
-      border-radius:8px;
-      border:none;
-      cursor:pointer;
-      font-size:16px;
-      font-weight:600;
-    ">
-    📘 Luyện tập
-  </button>
-   
-  <div class="nav-buttons" id="nav-buttons"></div>
-
-</div>
-   
-</div>
-
-<!-- TOC -->
-<div id="toc">
-  <h3>Mục lục</h3>
-  <ul id="toc-list"><li>Đang tạo...</li></ul>
-</div>
-
-<!-- Mobile overlay for sidebar/TOC -->
-<div id="mobile-overlay"></div>
-
-<!-- QUIZ POPUP -->
-<div id="quiz-modal" aria-hidden="true">
-  <div id="quiz-box" role="dialog" aria-modal="true">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-      <h3 id="quiz-title" style="margin:0">Quiz</h3>
-      <div>
-        <button id="quiz-close" style="background:#eee;border:none;padding:6px 10px;border-radius:6px;cursor:pointer;">Đóng</button>
-      </div>
-    </div>
-    <div id="quiz-content">Đang tải quiz...</div>
-    <div id="quiz-footer" style="margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
-      <div id="quiz-result"></div>
-      <div>
-        <button id="quiz-submit" style="background:#c9b3ff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;">Nộp bài</button>
-        <button id="quiz-retry" style="background:#eee;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;display:none;margin-left:6px;">Làm lại</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-/* ===============================
-   LẤY FILE HIỆN TẠI
-================================= */
-const params = new URLSearchParams(window.location.search);
-const file = params.get("file");
-
-/* Markdown -> HTML (mini parser) */
-function mdToHtml(text) {
-  return text
-    .replace(/^# (.*$)/gim,"<h1>$1</h1>")
-    .replace(/^## (.*$)/gim,"<h2>$1</h2>")
-    .replace(/^### (.*$)/gim,"<h3>$1</h3>")
-    .replace(/^\> (.*$)/gim,"<div class='box'>$1</div>")
-    .replace(/^- (.*$)/gim,"<li>$1</li>")
-    .replace(/\*\*(.*?)\*\*/gim,"<b>$1</b>")
-    .replace(/\*(.*?)\*/gim,"<i>$1</i>");
-}
-
-/* ===============================
-   PROGRESS BAR
-================================= */
-window.addEventListener("scroll", () => {
-  const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrolled = (window.scrollY / pageHeight) * 100;
-  document.getElementById("progress-bar").style.width = scrolled + "%";
-});
-
-/* ===============================
-   BUILD SIDEBAR (MODULE S1)
-================================= */
-async function loadSidebar() {
-  const res = await fetch("/binh-blog/grammar/grammar.json");
-  const list = await res.json();
-
-  const sidebar = document.getElementById("sidebar");
-  sidebar.innerHTML = "<h3>📘 Bài học</h3>";
-
- const categories = {
-  "Tenses": list.slice(0, 13),
-  "Modal Verbs": list.slice(13, 17),
-  "Passive Voice": list.slice(17, 22),
-  "Conditionals": list.slice(22, 26),
-  "Verb Forms": list.slice(26, 35),
-  "Advanced Grammar": list.slice(35, 40)
-};
-
-  for (const moduleName in categories) {
-    let lessons = categories[moduleName];
-
-    const moduleDiv = document.createElement("div");
-    moduleDiv.className = "module";
-
-    moduleDiv.innerHTML = `
-      <div class="module-title">
-        <span>📚 ${moduleName}</span>
-        <span>▾</span>
-      </div>
-      <div class="module-lessons"></div>
-    `;
-
-    const listDiv = moduleDiv.querySelector(".module-lessons");
-
-    lessons.forEach(item => {
-      const a = document.createElement("a");
-      a.className = "lesson-item";
-      a.href = `/binh-blog/lesson.html?file=${item.file}`;
-      a.innerText = item.title;
-
-      if (item.file === file) a.classList.add("active");
-
-      listDiv.appendChild(a);
-    });
-
-    // auto open module chứa bài hiện tại
-    if (lessons.some(x => x.file === file)) {
-      moduleDiv.classList.add("module-open");
-    }
-
-    // toggle accordion
-    moduleDiv.querySelector(".module-title").onclick = () =>
-      moduleDiv.classList.toggle("module-open");
-
-    sidebar.appendChild(moduleDiv);
-  }
-}
-
-/* ===============================
-   TABLE OF CONTENTS
-================================= */
-function generateTOC() {
-  const toc = document.getElementById("toc-list");
-  toc.innerHTML = "";
-
-  const headers = document.querySelectorAll("h2,h3");
-  headers.forEach(h => {
-    const id = h.innerText.replace(/\s+/g,"-");
-    h.id = id;
-    toc.innerHTML += `
-      <li style="margin-left:${h.tagName==='H3'?'15px':'0'}">
-        <a href="#${id}" data-id="${id}">${h.innerText}</a>
-      </li>`;
-  });
-}
-
-function activateTOCHighlight() {
-  const sections = document.querySelectorAll("h2,h3");
-  const tocLinks = document.querySelectorAll("#toc a");
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(sec => {
-      const top = sec.offsetTop - 140;
-      if (scrollY >= top) current = sec.id;
-    });
-    tocLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.dataset.id === current) link.classList.add("active");
-    });
-  });
-}
-
-/* ===============================
-   NEXT / PREV
-================================= */
-async function loadNextPrev() {
-  const res = await fetch("/binh-blog/grammar/grammar.json");
-  const list = await res.json();
-
-  const i = list.findIndex(x => x.file === file);
-  const prev = list[i - 1];
-  const next = list[i + 1];
-
-  let html = "";
-  if (prev) html += `<a class="np-btn" href="/binh-blog/lesson.html?file=${prev.file}">← ${prev.title}</a>`;
-  if (next) html += `<a class="np-btn" href="/binh-blog/lesson.html?file=${next.file}">${next.title} →</a>`;
-
-  document.getElementById("nav-buttons").innerHTML = html;
-}
-
-/* ===============================
-   SEARCH TRONG BÀI
-================================= */
-function removeHighlights() {
-  const content = document.getElementById("content");
-  content.innerHTML = content.innerHTML.replace(/<mark>(.*?)<\/mark>/g,"$1");
-}
-
-function highlightKeyword(keyword) {
-  if (!keyword.trim()) return;
-  removeHighlights();
-  const content = document.getElementById("content");
-  const html = content.innerHTML;
-  const regex = new RegExp(`(${keyword})`,"gi");
-  content.innerHTML = html.replace(regex,"<mark>$1</mark>");
-  const firstHit = document.querySelector("mark");
-  if (firstHit) firstHit.scrollIntoView({behavior:"smooth", block:"center"});
-}
-
-document.getElementById("search-box")
-  .addEventListener("keydown", e => {
-    if (e.key === "Enter") highlightKeyword(e.target.value);
-  });
-
-/* ===============================
-   READING MODE (auto save)
-================================= */
-const readingBtn = document.getElementById("reading-toggle");
-if (localStorage.getItem("readingMode") === "on") {
-  document.body.classList.add("reading-mode");
-  readingBtn.textContent = "🔙 Thoát Reading Mode";
-} else {
-  readingBtn.textContent = "📖 Reading Mode";
-}
-readingBtn.onclick = () => {
-  document.body.classList.toggle("reading-mode");
-  if (document.body.classList.contains("reading-mode")) {
-    readingBtn.textContent = "🔙 Thoát Reading Mode";
-    localStorage.setItem("readingMode","on");
-  } else {
-    readingBtn.textContent = "📖 Reading Mode";
-    localStorage.setItem("readingMode","off");
-  }
-};
-
-/* ===============================
-   MOBILE SIDEBAR SLIDE-IN + TOC POPUP
-================================= */
-const mobileBtn = document.getElementById("mobile-sidebar-btn");
-const sidebar = document.getElementById("sidebar");
-const mobileOverlay = document.getElementById("mobile-overlay");
-
-mobileBtn.onclick = () => {
-  sidebar.classList.add("mobile-open");
-  mobileOverlay.classList.add("show");
-};
-mobileOverlay.onclick = () => {
-  sidebar.classList.remove("mobile-open");
-  mobileOverlay.classList.remove("show");
-};
-
-/* Create mobile TOC popup when small */
-function enableMobileTOCButton() {
-  if (window.innerWidth >= 768) return;
-  const existing = document.getElementById("mobile-toc-btn");
-  if (existing) return;
-
-  const tocBtn = document.createElement("button");
-  tocBtn.id = "mobile-toc-btn";
-  tocBtn.textContent = "☰ Mục lục";
-  tocBtn.style = "width:100%;padding:10px;background:#e6ddff;border:none;border-radius:6px;margin:12px 0;font-weight:600;";
-  document.querySelector(".content-area").insertBefore(tocBtn, document.getElementById("content"));
-
-  const tocPopup = document.createElement("div");
-  tocPopup.id = "toc-popup";
-  tocPopup.style = "display:none;position:fixed;top:0;right:0;width:80%;max-width:300px;height:100vh;background:#fff;z-index:99999;padding:20px;overflow:auto;border-left:1px solid #ddd;";
-  if (document.body.classList.contains("dark")) tocPopup.style.background = "#2a2a2a";
-  tocPopup.innerHTML = "<h3>Mục lục</h3><div id='toc-copy'></div>";
-  document.body.appendChild(tocPopup);
-
-  tocBtn.onclick = () => {
-    document.getElementById("toc-copy").innerHTML = document.getElementById("toc-list").outerHTML;
-    tocPopup.style.display = "block";
-    mobileOverlay.classList.add("show");
-  };
-
-  mobileOverlay.onclick = () => {
-    tocPopup.style.display = "none";
-    mobileOverlay.classList.remove("show");
-  };
-}
-
-/* ===============================
-   LOAD LESSON
-================================= */
-async function loadLesson() {
-  if (!file) {
-    document.getElementById("content").innerHTML = "<p>Không tìm thấy file.</p>";
-    return;
-  }
-  const res = await fetch(`/binh-blog/grammar/${file}`);
-  const text = await res.text();
-
-  document.getElementById("title").innerText =
-    file.replace(".md","").replace(/-/g," ").replace(/\b\w/g,c=>c.toUpperCase());
-
-  const cont = document.getElementById("content");
-  cont.innerHTML = mdToHtml(text);
-  cont.classList.add("fade-in");
-
-  generateTOC();
-  activateTOCHighlight();
-  enableMobileTOCButton();
-}
-
-/* ===============================
-   MOBILE ACCORDION FOR MODULES
-================================= */
-function enableMobileAccordion() {
-  if (window.innerWidth > 768) return;
-  const modules = document.querySelectorAll(".module");
-  modules.forEach(m => {
-    const title = m.querySelector(".module-title");
-    title.addEventListener("click", () => m.classList.toggle("module-open"));
-  });
-}
-
-/* ===============================
-   QUIZ POPUP ENGINE (Auto-load correct quiz file)
-================================= */
-
-// Helper: lấy slug từ file .md
-function currentSlug() {
-  const p = new URLSearchParams(window.location.search);
-  const f = p.get("file") || "";
-  return f.replace(".md", ""); // VD: present-simple.md → present-simple
-}
-
-const openBtn = document.getElementById("open-quiz-btn");
-const modal = document.getElementById("quiz-modal");
-const quizContent = document.getElementById("quiz-content");
-const quizTitle = document.getElementById("quiz-title");
-const quizSubmit = document.getElementById("quiz-submit");
-const quizClose = document.getElementById("quiz-close");
-const quizResult = document.getElementById("quiz-result");
-const quizRetry = document.getElementById("quiz-retry");
-
-let quizData = null;
-let userAnswers = {};
-
-// 🟦 Mở quiz
-openBtn.addEventListener("click", async () => {
-  const slug = currentSlug();
-  if (!slug) {
-    alert("Không xác định được bài học.");
-    return;
-  }
-  modal.style.display = "flex";
-  await loadQuiz(slug);
-});
-
-// 🟥 Đóng quiz
-quizClose.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// 🟩 Load file JSON khớp slug
-async function loadQuiz(slug) {
-  quizContent.innerHTML = "Đang tải quiz...";
-  quizResult.innerHTML = "";
-  quizRetry.style.display = "none";
-  quizSubmit.style.display = "inline-block";
-  userAnswers = {};
-
-  try {
-    // Tự động load JSON theo slug: present-simple.json, future-perfect.json, ...
-    const res = await fetch(`/binh-blog/grammar/quiz/${slug}.json`);
-
-    if (!res.ok) {
-      quizContent.innerHTML = `<p>❌ Không tìm thấy quiz cho bài: <b>${slug}</b></p>`;
-      return;
-    }
-
-    quizData = await res.json();
-    renderQuiz(quizData);
-
-  } catch (e) {
-    quizContent.innerHTML = "<p>Lỗi khi tải quiz.</p>";
-    console.error(e);
-  }
-}
-
-// 🟨 Render câu hỏi
-function renderQuiz(data) {
-  quizTitle.innerText = `${data.title} — Quiz`;
-
-  const html = data.questions.map((q, idx) => {
-    const choices = q.choices
-      .map((c, ci) => {
-        return `
-          <label>
-            <input type="radio" name="q${idx}" value="${ci}">
-            <b>${String.fromCharCode(65 + ci)}.</b> ${c}
-          </label>`;
-      })
-      .join("");
-
-    return `
-      <div data-qid="${q.id}" style="margin-bottom:20px;">
-        <div style="font-weight:600; margin-bottom:6px;">${idx + 1}. ${q.question}</div>
-        ${choices}
-        <div class="q-explain" style="display:none;margin-top:8px;padding:8px;background:#f7f7f7;border-radius:6px;">
-          ${q.explanation}
+        <div id="practice-box" style="margin-top:40px; padding:20px; border-radius:10px; border:1px solid #e0ded8;">
+            <h3>📘 Bài tập củng cố</h3>
+            <p>Nhấn nút <b>Luyện tập</b> để làm 10 câu kiểm tra riêng cho bài học này.</p>
+            <button id="startQuizBtn" class="submit-btn" style="background:#ff7777">Luyện tập</button>
         </div>
-      </div>`;
-  }).join("");
+    </div>
 
-  quizContent.innerHTML = html;
+    <div class="toc" id="toc"></div>
+</div>
 
-  // Lưu lựa chọn của user
-  data.questions.forEach((q, idx) => {
-    quizContent
-      .querySelectorAll(`input[name="q${idx}"]`)
-      .forEach(radio => {
-        radio.addEventListener("change", () => {
-          userAnswers[q.id] = Number(radio.value);
-        });
-      });
-  });
+<!-- QUIZ MODAL -->
+<div id="quizModal">
+    <div id="quizBox">
+        <span class="closeQuiz" onclick="closeQuiz()">Đóng</span>
+        <h2 id="quizTitle"></h2>
+        <div id="quizContainer"></div>
+        <button id="submitQuizBtn" class="submit-btn">Nộp bài</button>
+    </div>
+</div>
+<script>
+// Lấy query ?file=
+function getQueryVariable(variable) {
+    const query = window.location.search.substring(1);
+    const vars = query.split("&");
+    for (let i = 0; i < vars.length; i++) {
+        const pair = vars[i].split("=");
+        if (pair[0] === variable) return decodeURIComponent(pair[1]);
+    }
+    return null;
 }
 
-// 🟧 Nộp bài
-quizSubmit.addEventListener("click", () => {
-  let correct = 0;
-  const total = quizData.questions.length;
+const lessonFile = getQueryVariable("file");
 
-  quizData.questions.forEach((q) => {
-    const chosen = userAnswers[q.id];
-    const qDiv = quizContent.querySelector(`[data-qid="${q.id}"]`);
-    const explanation = qDiv.querySelector(".q-explain");
+// Tải file .md
+if (lessonFile) {
+    fetch(`grammar/${lessonFile}.md`)
+        .then(res => res.text())
+        .then(md => {
+            document.getElementById("lesson-content").innerHTML = marked.parse(md);
 
-    const labels = qDiv.querySelectorAll("label");
+            const title = md.split("\n")[0].replace("#", "").trim();
+            document.getElementById("lesson-title").innerHTML = `<h1>${title}</h1>`;
 
-    labels.forEach((lab, ci) => {
-      if (ci === q.answer) lab.style.background = "#d4ffd9";
-      if (ci === chosen && ci !== q.answer) lab.style.background = "#ffd6d6";
+            buildTOC();
+        });
+} else {
+    document.getElementById("lesson-content").innerHTML = "Không tìm thấy bài học.";
+}
+
+// Build Sidebar
+fetch("grammar/grammar.json")
+    .then(res => res.json())
+    .then(data => {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.innerHTML = "<h3>📚 Mục lục Grammar</h3>";
+
+        Object.keys(data).forEach(sectionName => {
+            const sec = document.createElement("div");
+            sec.className = "sidebar-section";
+            sec.innerHTML = `<h4>${sectionName}</h4>`;
+
+            const ul = document.createElement("ul");
+            data[sectionName].forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="lesson.html?file=${item.file}">${item.title}</a>`;
+                ul.appendChild(li);
+            });
+
+            sec.appendChild(ul);
+            sidebar.appendChild(sec);
+        });
     });
 
-    if (chosen === q.answer) correct++;
-    explanation.style.display = "block";
-  });
+// Build Table of Contents
+function buildTOC() {
+    const toc = document.getElementById("toc");
+    toc.innerHTML = "<h3>Mục lục</h3>";
 
-  const score = Math.round((correct / total) * 100);
-  quizResult.innerHTML = `<b>Điểm: ${correct}/${total} — ${score}%</b>`;
+    const headers = document.querySelectorAll(".content h1, .content h2, .content h3");
+    headers.forEach((h, i) => {
+        const id = "section-" + i;
+        h.id = id;
 
-  quizSubmit.style.display = "none";
-  quizRetry.style.display = "inline-block";
-});
-
-// 🟦 Làm lại
-quizRetry.addEventListener("click", () => {
-  loadQuiz(currentSlug());
-});
-
-// ESC để đóng modal
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") modal.style.display = "none";
-});
-
-// Click ngoài để đóng
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) modal.style.display = "none";
-});
-
-/* ===============================
-   INIT
-================================= */
-loadLesson();
-loadSidebar();
-loadNextPrev();
-enableMobileAccordion();
-
-// ensure mobile TOC prepared
-setTimeout(enableMobileTOCButton, 500);
-
+        const item = document.createElement("div");
+        item.className = "toc-item";
+        item.innerHTML = `<a href="#${id}">${h.innerText}</a>`;
+        toc.appendChild(item);
+    });
+}
 </script>
 
+ 
+<!-- QUIZ ENGINE -->
 <script>
-function loadQuiz(file) {
+const quizModal = document.getElementById("quizModal");
+const quizTitle = document.getElementById("quizTitle");
+const quizContainer = document.getElementById("quizContainer");
+const submitQuizBtn = document.getElementById("submitQuizBtn");
+const startQuizBtn = document.getElementById("startQuizBtn");
 
+// Mở modal luyện tập
+startQuizBtn.addEventListener("click", () => {
+    const file = getQueryVariable("file");
+    if (!file) {
+        alert("Không tìm thấy bài học!");
+        return;
+    }
+
+    loadQuiz(file);
+    quizModal.style.display = "flex";
+});
+
+// Đóng modal
+function closeQuiz() {
+    quizModal.style.display = "none";
+}
+
+// Tải file JSON đúng bài
+function loadQuiz(file) {
     fetch(`../quiz/${file}.json`)
         .then(res => res.json())
         .then(data => {
+            quizTitle.innerText = data.title;
+            quizContainer.innerHTML = "";
 
-            document.getElementById("quiz-title").innerText = data.title;
-            const box = document.getElementById("quiz-questions");
-
-            // XÓA SẠCH nội dung cũ (fix trùng)
-            box.innerHTML = "";
-
-            // Render từng câu hỏi
             data.questions.forEach((q, index) => {
-
                 let html = `
-                    <div class="quiz-question-block">
+                    <div class="quiz-block">
                         <p><b>${index + 1}. ${q.question}</b></p>
                 `;
 
@@ -804,32 +258,36 @@ function loadQuiz(file) {
                 });
 
                 html += `
-                        <p id="exp${index}" class="explanation" style="display:none;margin-top:6px;"></p>
+                        <p id="exp${index}" style="display:none; margin-top:6px; color:#444;"></p>
                         <hr>
                     </div>
                 `;
 
-                box.innerHTML += html;
+                quizContainer.innerHTML += html;
             });
 
-            // Liên kết nút nộp bài
-            document.getElementById("submitQuiz").onclick = () => checkQuiz(data);
-
+            // Gắn hành động nộp bài
+            submitQuizBtn.onclick = () => checkQuiz(data);
+        })
+        .catch(err => {
+            quizContainer.innerHTML = "<p>Không tải được bài luyện tập.</p>";
+            console.error(err);
         });
 }
 
+// Kiểm tra bài
 function checkQuiz(data) {
     data.questions.forEach((q, index) => {
-
         const options = document.querySelectorAll(`input[name="q${index}"]`);
+
         let selected = -1;
 
-        // reset màu
+        // reset màu trước
         options.forEach(o => {
             o.parentElement.style.background = "transparent";
         });
 
-        // tìm lựa chọn của user
+        // xác định đáp án chọn
         options.forEach((o, i) => {
             if (o.checked) selected = i;
         });
@@ -840,10 +298,10 @@ function checkQuiz(data) {
             correct.parentElement.style.background = "#c8ffc8";
         }
 
-        // tô đỏ lựa chọn sai
+        // tô đỏ nếu sai
         if (selected !== -1 && selected !== q.answer) {
             const wrong = options[selected];
-            if (wrong) wrong.parentElement.style.background = "#ffd1d1";
+            if (wrong) wrong.parentElement.style.background = "#ffd6d6";
         }
 
         // hiện giải thích
@@ -853,6 +311,4 @@ function checkQuiz(data) {
     });
 }
 </script>
-   
 </body>
-</html>
