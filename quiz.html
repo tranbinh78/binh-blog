@@ -69,11 +69,10 @@
 <div id="result-box"></div>
 <button id="restart-btn">Làm lại</button>
 
-<script src="/binh-blog/quiz-data.js"></script>
 
 <script>
 /* ------------------------------
-   Hỗ trợ shuffle có theo dõi index cũ
+   Hỗ trợ shuffle
 -----------------------------------*/
 function shuffleWithNewIndex(arr, oldIndex) {
   const items = arr.map((v, i) => ({v, i}));
@@ -91,7 +90,25 @@ let score = 0;
 window.currentQuestions = [];
 
 /* ------------------------------
-   Tải quiz
+   Load quiz từ JSON file
+-----------------------------------*/
+async function loadQuizFile(name) {
+  try {
+    const url = `/binh-blog/grammar/quiz/${name}.json`;
+    const res = await fetch(url);
+
+    if (!res.ok) throw new Error("Không load được " + url);
+
+    const data = await res.json();
+    loadQuiz(data);
+  } catch (err) {
+    document.getElementById("quiz-container").innerHTML =
+      `<p style="color:red;">Không tải được file bài tập: ${name}.json</p>`;
+  }
+}
+
+/* ------------------------------
+   Hiển thị bài quiz
 -----------------------------------*/
 function loadQuiz(data) {
   score = 0;
@@ -101,23 +118,20 @@ function loadQuiz(data) {
 
   const copied = data.map(q => ({
     question: q.question,
-    options: q.options.slice(),
-    answer: q.answer,
+    options: [q.a, q.b, q.c, q.d],
+    answer: "abcd".indexOf(q.answer),
     explain: q.explain || ""
   }));
 
-  // shuffle options
+  // Shuffle đáp án
   copied.forEach(q => {
-    const oldAns = typeof q.answer === "number" ? q.answer : 0;
-    const {shuffled, newIndex} = shuffleWithNewIndex(q.options, oldAns);
+    const {shuffled, newIndex} = shuffleWithNewIndex(q.options, q.answer);
     q.options = shuffled;
     q.answer = newIndex;
   });
 
-  // lưu global
   window.currentQuestions = copied;
 
-  // render HTML
   copied.forEach((q, index) => {
     const box = document.createElement("div");
     box.className = "question-box";
@@ -130,15 +144,12 @@ function loadQuiz(data) {
     });
 
     html += `</div>
-             <p id="explain-${index}" style="display:none; margin-top:10px;">
-               ${q.explain ? "➡ " + q.explain : ""}
-             </p>`;
+             <p id="explain-${index}" style="display:none; margin-top:10px;"></p>`;
 
     box.innerHTML = html;
     container.appendChild(box);
   });
 
-  // attach event listeners
   container.querySelectorAll(".answers button").forEach(btn => {
     btn.addEventListener("click", () => {
       const q = Number(btn.dataset.q);
@@ -152,9 +163,7 @@ function loadQuiz(data) {
    Kiểm tra đáp án
 -----------------------------------*/
 function checkAnswer(qIndex, ansIndex, btn) {
-  const current = window.currentQuestions && window.currentQuestions[qIndex];
-  if (!current) return;
-
+  const current = window.currentQuestions[qIndex];
   const correct = current.answer;
 
   const buttons = btn.parentNode.querySelectorAll("button");
@@ -165,44 +174,34 @@ function checkAnswer(qIndex, ansIndex, btn) {
     score++;
   } else {
     btn.classList.add("wrong");
-    const correctBtn = btn.parentNode.querySelector(`button[data-a="${correct}"]`);
+    const correctBtn = btn.parentNode.querySelector(
+      `button[data-a="${correct}"]`
+    );
     if (correctBtn) correctBtn.classList.add("correct");
   }
 
-  // ⭐ FIX QUAN TRỌNG — HIỂN THỊ GIẢI THÍCH
   const explainEl = document.getElementById("explain-" + qIndex);
-  if (explainEl) {
-    explainEl.style.display = "block";
-    explainEl.innerHTML = "➡ " + (current.explain || "Không có giải thích.");
-  }
+  explainEl.style.display = "block";
+  explainEl.innerHTML = "➡ " + (current.explain || "");
 
-  // ⭐ FIX CHUẨN: kiểm tra số câu đã trả lời thay vì kiểm tra disabled
-  function countAnswered() {
-  let n = 0;
-  document.querySelectorAll(".answers").forEach(group => {
-    if ([...group.querySelectorAll("button")].some(b => b.disabled)) n++;
-  });
-  return n;
-  }
-
-    if (countAnswered() === window.currentQuestions.length) {
+  if ([...document.querySelectorAll(".answers")].every(g =>
+    [...g.querySelectorAll("button")].some(b => b.disabled)
+  )) {
     finishQuiz();
   }
 }
 
 /* ------------------------------
-   Hiện kết quả
+   Kết quả
 -----------------------------------*/
 function finishQuiz() {
   const box = document.getElementById("result-box");
   const total = window.currentQuestions.length;
 
-  box.innerHTML = `
-    <h3>Kết quả: ${score}/${total}</h3>
-    <p>Bạn đã hoàn thành bài luyện tập!</p>
-  `;
-  box.style.display = "block";
+  box.innerHTML = `<h3>Kết quả: ${score}/${total}</h3>
+                   <p>Bạn đã hoàn thành bài luyện tập!</p>`;
 
+  box.style.display = "block";
   document.getElementById("restart-btn").style.display = "block";
 }
 
@@ -216,19 +215,16 @@ document.getElementById("restart-btn").onclick = () => {
 };
 
 /* ------------------------------
-   Lấy loại bài từ URL
+   Lấy tên bài tập từ URL
 -----------------------------------*/
 const params = new URLSearchParams(window.location.search);
-const type = params.get("type");
+const file = params.get("file"); // ví dụ "present-simple"
 
-if (!type || !window.quizData || !window.quizData[type]) {
-  document.getElementById("quiz-title").innerText = "Bài tập";
-  document.getElementById("quiz-desc").innerText = "Không tìm thấy bài tập.";
+if (!file) {
+  document.getElementById("quiz-container").innerHTML =
+    "<p>Không tìm thấy bài tập.</p>";
 } else {
-  const data = window.quizData[type];
-  document.getElementById("quiz-title").innerText = data.title || "Bài tập";
-  document.getElementById("quiz-desc").innerText = data.desc || "";
-  loadQuiz(data.questions);
+  loadQuizFile(file);
 }
 </script>
 
