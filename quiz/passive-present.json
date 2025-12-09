@@ -1,0 +1,122 @@
+[
+  {
+    "question": "English ____ in many countries.",
+    "a": "is spoken",
+    "b": "speaks",
+    "c": "spoken",
+    "d": "is speaking",
+    "answer": "a"
+  },
+  {
+    "question": "The homework ____ every day.",
+    "a": "is checked",
+    "b": "checks",
+    "c": "checked",
+    "d": "is checking",
+    "answer": "a"
+  },
+  {
+    "question": "Milk ____ from cows.",
+    "a": "is produced",
+    "b": "produces",
+    "c": "produced",
+    "d": "is producing",
+    "answer": "a"
+  },
+  {
+    "question": "This room ____ cleaned weekly.",
+    "a": "is",
+    "b": "is being",
+    "c": "is cleaned",
+    "d": "cleans",
+    "answer": "c"
+  },
+  {
+    "question": "The letters ____ every morning.",
+    "a": "are delivered",
+    "b": "deliver",
+    "c": "delivered",
+    "d": "are delivering",
+    "answer": "a"
+  },
+  {
+    "question": "The door ____ at 7 a.m.",
+    "a": "is opened",
+    "b": "opens",
+    "c": "opening",
+    "d": "is opening",
+    "answer": "a"
+  },
+  {
+    "question": "Coffee ____ in Brazil.",
+    "a": "is grown",
+    "b": "grows",
+    "c": "growed",
+    "d": "is growing",
+    "answer": "a"
+  },
+  {
+    "question": "The news ____ every evening.",
+    "a": "is broadcast",
+    "b": "broadcasts",
+    "c": "broadcasted",
+    "d": "is broadcasting",
+    "answer": "a"
+  },
+  {
+    "question": "These toys ____ in China.",
+    "a": "are made",
+    "b": "make",
+    "c": "made",
+    "d": "are making",
+    "answer": "a"
+  },
+  {
+    "question": "The guests ____ water when they arrive.",
+    "a": "are given",
+    "b": "give",
+    "c": "giving",
+    "d": "are giving",
+    "answer": "a"
+  },
+  {
+    "question": "The windows ____ every month.",
+    "a": "are cleaned",
+    "b": "clean",
+    "c": "cleaned",
+    "d": "are cleaning",
+    "answer": "a"
+  },
+  {
+    "question": "The shirts ____ in that factory.",
+    "a": "are produced",
+    "b": "produce",
+    "c": "produced",
+    "d": "are producing",
+    "answer": "a"
+  },
+  {
+    "question": "Ice cream ____ from milk and sugar.",
+    "a": "is made",
+    "b": "makes",
+    "c": "made",
+    "d": "is making",
+    "answer": "a"
+  },
+  {
+    "question": "Books ____ in libraries.",
+    "a": "are kept",
+    "b": "keep",
+    "c": "keeps",
+    "d": "are keeping",
+    "answer": "a"
+  },
+  {
+    "question": "The tests ____ by teachers.",
+    "a": "are marked",
+    "b": "mark",
+    "c": "marked",
+    "d": "are marking",
+    "answer": "a"
+  }
+]
