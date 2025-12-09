@@ -1,0 +1,122 @@
+[
+  {
+    "question": "She ____ her homework before she went out.",
+    "a": "had finished",
+    "b": "finished",
+    "c": "has finished",
+    "d": "finishes",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ the bus before it arrived.",
+    "a": "had missed",
+    "b": "missed",
+    "c": "miss",
+    "d": "have missed",
+    "answer": "a"
+  },
+  {
+    "question": "By the time we arrived, the movie ____ .",
+    "a": "had started",
+    "b": "started",
+    "c": "has started",
+    "d": "is starting",
+    "answer": "a"
+  },
+  {
+    "question": "He was tired because he ____ all day.",
+    "a": "had worked",
+    "b": "worked",
+    "c": "has worked",
+    "d": "works",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ the house before moving in.",
+    "a": "had cleaned",
+    "b": "cleaned",
+    "c": "clean",
+    "d": "have cleaned",
+    "answer": "a"
+  },
+  {
+    "question": "She didn’t want to go because she ____ the movie already.",
+    "a": "had seen",
+    "b": "saw",
+    "c": "has seen",
+    "d": "sees",
+    "answer": "a"
+  },
+  {
+    "question": "When he arrived, we ____ dinner.",
+    "a": "had just finished",
+    "b": "just finished",
+    "c": "finish",
+    "d": "has finished",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ the room before the guests came.",
+    "a": "had decorated",
+    "b": "decorated",
+    "c": "decorating",
+    "d": "have decorated",
+    "answer": "a"
+  },
+  {
+    "question": "The train had left by the time we ____ to the station.",
+    "a": "got",
+    "b": "had got",
+    "c": "get",
+    "d": "gets",
+    "answer": "a"
+  },
+  {
+    "question": "I couldn’t call her because I ____ my phone.",
+    "a": "had lost",
+    "b": "lost",
+    "c": "have lost",
+    "d": "lose",
+    "answer": "a"
+  },
+  {
+    "question": "Before I opened the door, someone ____ .",
+    "a": "had knocked",
+    "b": "knocked",
+    "c": "knocks",
+    "d": "is knocking",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ in London before she moved to Paris.",
+    "a": "had lived",
+    "b": "lived",
+    "c": "lives",
+    "d": "has lived",
+    "answer": "a"
+  },
+  {
+    "question": "He didn’t recognize her because he ____ her for years.",
+    "a": "hadn't seen",
+    "b": "didn't see",
+    "c": "hasn't seen",
+    "d": "doesn't see",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ the report before the deadline.",
+    "a": "had completed",
+    "b": "completed",
+    "c": "completes",
+    "d": "have completed",
+    "answer": "a"
+  },
+  {
+    "question": "She apologized because she ____ a mistake.",
+    "a": "had made",
+    "b": "made",
+    "c": "makes",
+    "d": "has made",
+    "answer": "a"
+  }
+]
