@@ -545,7 +545,7 @@ async function loadLesson() {
     document.getElementById("content").innerHTML = "<p>Không tìm thấy file.</p>";
     return;
   }
-  const res = await fetch(`/binh-blog/grammar/${file}`);
+  const res = await fetch(`grammar/${file}`);
   const text = await res.text();
 
   document.getElementById("title").innerText =
