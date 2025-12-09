@@ -1,0 +1,122 @@
+[
+  {
+    "question": "If I ____ earlier, I would have caught the bus.",
+    "a": "had left",
+    "b": "left",
+    "c": "have left",
+    "d": "was leaving",
+    "answer": "a"
+  },
+  {
+    "question": "If she had known the truth, she ____ upset.",
+    "a": "would have been",
+    "b": "was",
+    "c": "would be",
+    "d": "is",
+    "answer": "a"
+  },
+  {
+    "question": "If they ____ harder, they would have passed the exam.",
+    "a": "had studied",
+    "b": "studied",
+    "c": "study",
+    "d": "have studied",
+    "answer": "a"
+  },
+  {
+    "question": "If he had brought his map, he ____ lost.",
+    "a": "wouldn’t have gotten",
+    "b": "wouldn’t get",
+    "c": "won’t get",
+    "d": "didn’t get",
+    "answer": "a"
+  },
+  {
+    "question": "If we ____ more time, we would have visited more places.",
+    "a": "had had",
+    "b": "had",
+    "c": "have had",
+    "d": "were having",
+    "answer": "a"
+  },
+  {
+    "question": "If she had called me, I ____ her.",
+    "a": "would have helped",
+    "b": "helped",
+    "c": "would help",
+    "d": "help",
+    "answer": "a"
+  },
+  {
+    "question": "If you had listened to me, you ____ the mistake.",
+    "a": "wouldn’t have made",
+    "b": "won’t make",
+    "c": "didn’t make",
+    "d": "wouldn’t make",
+    "answer": "a"
+  },
+  {
+    "question": "If they ____ earlier, they wouldn’t have missed the meeting.",
+    "a": "had arrived",
+    "b": "arrived",
+    "c": "arrive",
+    "d": "have arrived",
+    "answer": "a"
+  },
+  {
+    "question": "If he ____ the instructions, he would have fixed it.",
+    "a": "had followed",
+    "b": "followed",
+    "c": "follows",
+    "d": "has followed",
+    "answer": "a"
+  },
+  {
+    "question": "If we had seen the sign, we ____ the wrong way.",
+    "a": "wouldn’t have gone",
+    "b": "didn’t go",
+    "c": "wouldn’t go",
+    "d": "haven’t gone",
+    "answer": "a"
+  },
+  {
+    "question": "If she ____ her umbrella, she wouldn’t have gotten wet.",
+    "a": "had taken",
+    "b": "took",
+    "c": "takes",
+    "d": "has taken",
+    "answer": "a"
+  },
+  {
+    "question": "If I had known you were there, I ____ hello.",
+    "a": "would have said",
+    "b": "said",
+    "c": "say",
+    "d": "would say",
+    "answer": "a"
+  },
+  {
+    "question": "If they had prepared better, they ____ the competition.",
+    "a": "would have won",
+    "b": "win",
+    "c": "won",
+    "d": "will win",
+    "answer": "a"
+  },
+  {
+    "question": "If he ____ the truth, he wouldn’t have trusted them.",
+    "a": "had known",
+    "b": "knows",
+    "c": "knew",
+    "d": "has known",
+    "answer": "a"
+  },
+  {
+    "question": "If we had left earlier, we ____ the traffic jam.",
+    "a": "would have avoided",
+    "b": "avoided",
+    "c": "avoid",
+    "d": "would avoid",
+    "answer": "a"
+  }
+]
