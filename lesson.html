@@ -311,5 +311,182 @@ function checkQuiz(data) {
     });
 }
 </script>
+
+<script>
+/* -----------------------------------------------------
+   LẤY THAM SỐ FILE .MD TRÊN URL
+--------------------------------------------------------*/
+function getQueryVariable(variable) {
+    const query = window.location.search.substring(1);
+    const vars = query.split("&");
+    for (let i = 0; i < vars.length; i++) {
+        const pair = vars[i].split("=");
+        if (pair[0] === variable) return decodeURIComponent(pair[1]);
+    }
+    return null;
+}
+
+/* -----------------------------------------------------
+   LOAD FILE .MD NỘI DUNG BÀI HỌC
+--------------------------------------------------------*/
+async function loadLesson() {
+    const file = getQueryVariable("file");
+
+    if (!file) {
+        document.getElementById("lesson-content").innerHTML =
+            "<p>❌ Không tìm thấy file bài học.</p>";
+        return;
+    }
+
+    const path = "grammar/" + file;
+
+    try {
+        const response = await fetch(path);
+        const text = await response.text();
+        const content = marked.parse(text);
+
+        document.getElementById("lesson-content").innerHTML = content;
+
+        generateTableOfContents();
+        generateQuizButton(file.replace(".md", ""));
+    } catch (error) {
+        document.getElementById("lesson-content").innerHTML =
+            "<p>❌ Không tải được nội dung bài học.</p>";
+    }
+}
+
+loadLesson();
+
+/* -----------------------------------------------------
+   TẠO MỤC LỤC BÊN PHẢI
+--------------------------------------------------------*/
+function generateTableOfContents() {
+    const content = document.getElementById("lesson-content");
+    const headers = content.querySelectorAll("h1, h2, h3");
+
+    let tocHTML = "";
+    headers.forEach((h, index) => {
+        const id = "section-" + index;
+        h.id = id;
+        tocHTML += `<li><a href="#${id}">${h.innerText}</a></li>`;
+    });
+
+    document.getElementById("toc-list").innerHTML = tocHTML;
+}
+
+/* -----------------------------------------------------
+   TẠO NÚT "LUYỆN TẬP" CHO TỪNG BÀI
+--------------------------------------------------------*/
+function generateQuizButton(lessonName) {
+    const quizBtn = document.getElementById("open-quiz-btn");
+
+    quizBtn.onclick = () => {
+        openQuizModal(lessonName);
+    };
+}
+
+/* -----------------------------------------------------
+   HIỆN MODAL QUIZ
+--------------------------------------------------------*/
+function openQuizModal(lessonName) {
+    document.getElementById("quizModal").classList.add("show");
+    loadQuiz(lessonName);
+}
+
+function closeQuizModal() {
+    document.getElementById("quizModal").classList.remove("show");
+}
+
+/* -----------------------------------------------------
+   LOAD QUIZ JSON
+--------------------------------------------------------*/
+async function loadQuiz(lessonName) {
+    const quizBox = document.getElementById("quiz-box");
+    quizBox.innerHTML = "Đang tải quiz…";
+
+    try {
+        const response = await fetch("quiz/" + lessonName + ".json");
+        const data = await response.json();
+
+        let html = `<h2>${data.title}</h2>`;
+
+        data.questions.forEach((q, i) => {
+            html += `
+            <div class="question-block" data-id="${i}">
+                <p><b>${i + 1}. ${q.question}</b></p>
+
+                ${Object.keys(q.choices).map(letter => `
+                    <label class="option">
+                        <input type="radio" name="q${i}" value="${letter}">
+                        ${letter.toUpperCase()}. ${q.choices[letter]}
+                    </label>
+                `).join("")}
+
+                <p class="explanation" style="display:none; margin-top:6px; font-style:italic;"></p>
+            </div>`;
+        });
+
+        html += `
+            <button id="submitQuiz" class="quiz-submit">Nộp bài</button>
+        `;
+
+        quizBox.innerHTML = html;
+
+        document.getElementById("submitQuiz").onclick = () =>
+            checkQuiz(data);
+    } catch (error) {
+        quizBox.innerHTML = "<p>Không tải được bài quiz.</p>";
+    }
+}
+
+/* -----------------------------------------------------
+   CHẤM ĐIỂM QUIZ — HIỆN MÀU ĐÚNG SAI
+--------------------------------------------------------*/
+function checkQuiz(data) {
+    const blocks = document.querySelectorAll(".question-block");
+
+    blocks.forEach((block, i) => {
+        const q = data.questions[i];
+        const selected = block.querySelector("input:checked");
+
+        const explanation = block.querySelector(".explanation");
+        explanation.style.display = "block";
+        explanation.innerHTML = "Giải thích: " + q.explanation;
+
+        const options = block.querySelectorAll("label");
+
+        options.forEach(label => {
+            label.classList.remove("correct", "incorrect");
+
+            const input = label.querySelector("input");
+            const letter = input.value;
+
+            if (letter === q.answer) {
+                label.classList.add("correct"); // màu xanh
+            }
+
+            if (selected && input.checked && letter !== q.answer) {
+                label.classList.add("incorrect"); // màu đỏ
+            }
+        });
+    });
+}
+</script>
+
+<style>
+/* Màu đáp án */
+.correct {
+    background: #c6ffd1 !important;
+}
+.incorrect {
+    background: #ffd4d4 !important;
+}
+.option {
+    display: block;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+</style>
 </body>
 </html>
