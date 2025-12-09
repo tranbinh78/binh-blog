@@ -1,0 +1,122 @@
+[
+  {
+    "question": "The car ____ at the moment.",
+    "a": "is being washed",
+    "b": "is washed",
+    "c": "was washed",
+    "d": "was being washed",
+    "answer": "a"
+  },
+  {
+    "question": "The room ____ right now.",
+    "a": "is being cleaned",
+    "b": "is cleaned",
+    "c": "was cleaned",
+    "d": "was being cleaned",
+    "answer": "a"
+  },
+  {
+    "question": "The documents ____ at this time yesterday.",
+    "a": "were being printed",
+    "b": "are being printed",
+    "c": "were printed",
+    "d": "are printed",
+    "answer": "a"
+  },
+  {
+    "question": "Dinner ____ when I arrived.",
+    "a": "was being prepared",
+    "b": "is being prepared",
+    "c": "prepared",
+    "d": "was prepared",
+    "answer": "a"
+  },
+  {
+    "question": "A new bridge ____ right now.",
+    "a": "is being built",
+    "b": "was being built",
+    "c": "is built",
+    "d": "was built",
+    "answer": "a"
+  },
+  {
+    "question": "The meeting ____ when she called.",
+    "a": "was being held",
+    "b": "is being held",
+    "c": "held",
+    "d": "was held",
+    "answer": "a"
+  },
+  {
+    "question": "The story ____ by the teacher at that moment.",
+    "a": "was being told",
+    "b": "is being told",
+    "c": "told",
+    "d": "was told",
+    "answer": "a"
+  },
+  {
+    "question": "The car ____ when the rain started.",
+    "a": "was being fixed",
+    "b": "is being fixed",
+    "c": "was fixed",
+    "d": "fixing",
+    "answer": "a"
+  },
+  {
+    "question": "The windows ____ right now.",
+    "a": "are being cleaned",
+    "b": "were being cleaned",
+    "c": "are cleaned",
+    "d": "cleaned",
+    "answer": "a"
+  },
+  {
+    "question": "The project ____ at that time.",
+    "a": "was being discussed",
+    "b": "is being discussed",
+    "c": "was discussed",
+    "d": "discussed",
+    "answer": "a"
+  },
+  {
+    "question": "The cake ____ when the guests arrived.",
+    "a": "was being baked",
+    "b": "is being baked",
+    "c": "baked",
+    "d": "was baked",
+    "answer": "a"
+  },
+  {
+    "question": "The song ____ live on TV.",
+    "a": "is being performed",
+    "b": "was being performed",
+    "c": "performed",
+    "d": "was performed",
+    "answer": "a"
+  },
+  {
+    "question": "The house ____ while the owner was away.",
+    "a": "was being painted",
+    "b": "is being painted",
+    "c": "painted",
+    "d": "is painted",
+    "answer": "a"
+  },
+  {
+    "question": "The problem ____ when the manager entered the room.",
+    "a": "was being solved",
+    "b": "is being solved",
+    "c": "solved",
+    "d": "was solved",
+    "answer": "a"
+  },
+  {
+    "question": "The message ____ at the moment.",
+    "a": "is being typed",
+    "b": "was being typed",
+    "c": "typed",
+    "d": "is typed",
+    "answer": "a"
+  }
+]
