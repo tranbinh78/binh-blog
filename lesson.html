@@ -748,12 +748,12 @@ function openQuiz() {
 }
 // THÊM ĐOẠN NÀY NGAY TẠI ĐÂY
 document.addEventListener("click", (e) => {
-    const target = e.target.closest("#open-quiz-btn, #quiz-bottom-btn, .quiz-footer-btn");
+  const target = e.target.closest("#open-quiz-btn, .quiz-bottom-btn, .quiz-footer-btn");
 
-    if (target) {
-        e.preventDefault();
-        openQuiz();
-    }
+  if (target) {
+    e.preventDefault();
+    openQuiz();
+  }
 });
     
 /* ===============================
