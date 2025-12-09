@@ -297,9 +297,17 @@ body.reading-mode .content-area { max-width:800px; margin:auto; }
 
   <div class="nav-buttons" id="nav-buttons"></div>
 
+<!-- QUIZ BUTTON AT BOTTOM -->
+<div style="text-align:center; margin-top:25px;">
+  <button id="open-quiz-btn-bottom"
+    style="background:#ffdede;padding:10px 16px;border-radius:6px;border:none;cursor:pointer;">
+    📋 Bài tập kiểm tra
+  </button>
+</div>
+    
  <!-- QUIZ BUTTON AT BOTTOM -->
    <div class="quiz-footer-container">
-    <button id="quiz-bottom-btn" class="quiz-bottom-btn">Bài tập kiểm tra</button>
+   <button id="open-quiz-btn-bottom" class="quiz-bottom-btn">Bài tập kiểm tra</button>
    </div>
    
 </div>
@@ -630,6 +638,14 @@ openBtn && openBtn.addEventListener("click", async () => {
   await loadQuiz(slug);
 });
 
+const openBtnBottom = document.getElementById("open-quiz-btn-bottom");
+openBtnBottom && openBtnBottom.addEventListener("click", async () => {
+  const slug = currentSlug();
+  if (!slug) { alert("Không xác định được bài học."); return; }
+  modal.style.display = "flex";
+  await loadQuiz(slug);
+});
+    
 // Close
 quizClose.addEventListener("click", () => {
   modal.style.display = "none";
