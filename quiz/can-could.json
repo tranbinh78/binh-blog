@@ -1,0 +1,122 @@
+[
+  {
+    "question": "She ____ speak English very well.",
+    "a": "can",
+    "b": "could",
+    "c": "may",
+    "d": "should",
+    "answer": "a"
+  },
+  {
+    "question": "When he was young, he ____ run very fast.",
+    "a": "can",
+    "b": "could",
+    "c": "may",
+    "d": "should",
+    "answer": "b"
+  },
+  {
+    "question": "____ you help me with this?",
+    "a": "Can",
+    "b": "Could",
+    "c": "Should",
+    "d": "May",
+    "answer": "a"
+  },
+  {
+    "question": "When I was a child, I ____ swim.",
+    "a": "could",
+    "b": "can",
+    "c": "should",
+    "d": "may",
+    "answer": "a"
+  },
+  {
+    "question": "I ____ open the door. It's stuck.",
+    "a": "can’t",
+    "b": "couldn’t",
+    "c": "shouldn’t",
+    "d": "won’t",
+    "answer": "b"
+  },
+  {
+    "question": "____ I borrow your pen?",
+    "a": "Could",
+    "b": "Can",
+    "c": "Should",
+    "d": "Would",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ come with us if she finishes early.",
+    "a": "can",
+    "b": "could",
+    "c": "may",
+    "d": "should",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ drive a car now. He passed his test.",
+    "a": "can",
+    "b": "could",
+    "c": "should",
+    "d": "may",
+    "answer": "a"
+  },
+  {
+    "question": "I ____ hear you. Could you speak louder?",
+    "a": "can’t",
+    "b": "couldn’t",
+    "c": "shouldn’t",
+    "d": "won’t",
+    "answer": "a"
+  },
+  {
+    "question": "____ you please repeat that?",
+    "a": "Could",
+    "b": "Can",
+    "c": "Should",
+    "d": "Will",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ see the mountains from our house when we lived there.",
+    "a": "could",
+    "b": "can",
+    "c": "may",
+    "d": "should",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ not come to the party because she was sick.",
+    "a": "could",
+    "b": "couldn’t",
+    "c": "can’t",
+    "d": "shouldn’t",
+    "answer": "b"
+  },
+  {
+    "question": "You ____ try harder next time.",
+    "a": "should",
+    "b": "can",
+    "c": "could",
+    "d": "may",
+    "answer": "a"
+  },
+  {
+    "question": "I ____ help you tomorrow if I’m free.",
+    "a": "can",
+    "b": "could",
+    "c": "should",
+    "d": "would",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ solve this problem when he was young.",
+    "a": "could",
+    "b": "can",
+    "c": "should",
+    "d": "may",
+    "answer": "a"
+  }
+]
