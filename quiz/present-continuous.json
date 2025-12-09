@@ -1,0 +1,122 @@
+[
+  {
+    "question": "She ____ dinner right now.",
+    "a": "cooks",
+    "b": "is cooking",
+    "c": "cook",
+    "d": "cooking",
+    "answer": "b"
+  },
+  {
+    "question": "They ____ soccer at the moment.",
+    "a": "play",
+    "b": "plays",
+    "c": "are playing",
+    "d": "playing",
+    "answer": "c"
+  },
+  {
+    "question": "I ____ for my keys.",
+    "a": "am looking",
+    "b": "look",
+    "c": "looks",
+    "d": "looking",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ a movie now.",
+    "a": "watch",
+    "b": "watches",
+    "c": "are watching",
+    "d": "watched",
+    "answer": "c"
+  },
+  {
+    "question": "The children ____ loudly.",
+    "a": "are shouting",
+    "b": "shout",
+    "c": "shouts",
+    "d": "shouting",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ to school today because it’s raining.",
+    "a": "isn’t walking",
+    "b": "don’t walk",
+    "c": "doesn’t walk",
+    "d": "not walking",
+    "answer": "a"
+  },
+  {
+    "question": "Listen! The birds ____ .",
+    "a": "sing",
+    "b": "are singing",
+    "c": "sings",
+    "d": "singing",
+    "answer": "b"
+  },
+  {
+    "question": "They ____ for the bus.",
+    "a": "wait",
+    "b": "are waiting",
+    "c": "are wait",
+    "d": "waiting",
+    "answer": "b"
+  },
+  {
+    "question": "He ____ his homework right now.",
+    "a": "does",
+    "b": "doing",
+    "c": "is doing",
+    "d": "do",
+    "answer": "c"
+  },
+  {
+    "question": "I ____ English this semester.",
+    "a": "am studying",
+    "b": "study",
+    "c": "studies",
+    "d": "studying",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ a new house these days.",
+    "a": "are building",
+    "b": "build",
+    "c": "built",
+    "d": "building",
+    "answer": "a"
+  },
+  {
+    "question": "The baby ____ . Be quiet!",
+    "a": "sleeps",
+    "b": "sleep",
+    "c": "is sleeping",
+    "d": "sleeping",
+    "answer": "c"
+  },
+  {
+    "question": "We ____ lunch now. Please come later.",
+    "a": "have",
+    "b": "are having",
+    "c": "having",
+    "d": "has",
+    "answer": "b"
+  },
+  {
+    "question": "She ____ TV at the moment.",
+    "a": "is watching",
+    "b": "watches",
+    "c": "watch",
+    "d": "watched",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ to music right now.",
+    "a": "listens",
+    "b": "is listening",
+    "c": "listen",
+    "d": "listening",
+    "answer": "b"
+  }
+]
