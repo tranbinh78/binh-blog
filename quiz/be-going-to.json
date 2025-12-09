@@ -1,0 +1,122 @@
+[
+  {
+    "question": "She ____ visit her grandparents this weekend.",
+    "a": "is going to",
+    "b": "are going to",
+    "c": "going to",
+    "d": "is go to",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ buy a new car.",
+    "a": "are going to",
+    "b": "is going to",
+    "c": "going",
+    "d": "will going to",
+    "answer": "a"
+  },
+  {
+    "question": "I ____ start a new job next month.",
+    "a": "am going to",
+    "b": "is going to",
+    "c": "are going to",
+    "d": "going to",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ move to a bigger house.",
+    "a": "are going to",
+    "b": "is going to",
+    "c": "will",
+    "d": "are go to",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ study harder this year.",
+    "a": "is going to",
+    "b": "are going to",
+    "c": "study",
+    "d": "going to be",
+    "answer": "a"
+  },
+  {
+    "question": "Look! The baby ____ fall.",
+    "a": "is going to",
+    "b": "are going to",
+    "c": "will",
+    "d": "fall",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ travel abroad this summer.",
+    "a": "are going to",
+    "b": "is going to",
+    "c": "going",
+    "d": "will going",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ cook dinner tonight.",
+    "a": "is going to",
+    "b": "are going to",
+    "c": "will cooking",
+    "d": "is go to",
+    "answer": "a"
+  },
+  {
+    "question": "I think it ____ rain soon. Look at the clouds!",
+    "a": "is going to",
+    "b": "are going to",
+    "c": "will",
+    "d": "rains",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ fix the car tomorrow.",
+    "a": "are going to",
+    "b": "is going to",
+    "c": "going to fix",
+    "d": "will going to",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ meet us at the station.",
+    "a": "is going to",
+    "b": "are going to",
+    "c": "go to",
+    "d": "will going",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ have a party next Friday.",
+    "a": "are going to",
+    "b": "is going to",
+    "c": "will having",
+    "d": "going",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ start learning French.",
+    "a": "is going to",
+    "b": "are going to",
+    "c": "start",
+    "d": "will start to",
+    "answer": "a"
+  },
+  {
+    "question": "The train ____ leave soon.",
+    "a": "is going to",
+    "b": "are going to",
+    "c": "leaves",
+    "d": "will leaving",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ visit our friends this afternoon.",
+    "a": "are going to",
+    "b": "is going to",
+    "c": "going to visiting",
+    "d": "will going",
+    "answer": "a"
+  }
+]
