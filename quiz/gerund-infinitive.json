@@ -1,0 +1,122 @@
+[
+  {
+    "question": "She enjoys ____ tennis.",
+    "a": "to play",
+    "b": "playing",
+    "c": "play",
+    "d": "to playing",
+    "answer": "b"
+  },
+  {
+    "question": "I want ____ a new car.",
+    "a": "buy",
+    "b": "buying",
+    "c": "to buy",
+    "d": "to buying",
+    "answer": "c"
+  },
+  {
+    "question": "He decided ____ abroad next year.",
+    "a": "to study",
+    "b": "studying",
+    "c": "study",
+    "d": "to studying",
+    "answer": "a"
+  },
+  {
+    "question": "They suggested ____ to the beach.",
+    "a": "go",
+    "b": "to go",
+    "c": "going",
+    "d": "goes",
+    "answer": "c"
+  },
+  {
+    "question": "We hope ____ you again soon.",
+    "a": "seeing",
+    "b": "to see",
+    "c": "see",
+    "d": "to seeing",
+    "answer": "b"
+  },
+  {
+    "question": "He promised ____ earlier next time.",
+    "a": "to come",
+    "b": "coming",
+    "c": "come",
+    "d": "to coming",
+    "answer": "a"
+  },
+  {
+    "question": "She finished ____ the report.",
+    "a": "to write",
+    "b": "writing",
+    "c": "write",
+    "d": "to writing",
+    "answer": "b"
+  },
+  {
+    "question": "I enjoy ____ music in my free time.",
+    "a": "listen",
+    "b": "to listen",
+    "c": "listening",
+    "d": "to listening",
+    "answer": "c"
+  },
+  {
+    "question": "They agreed ____ us at 7 p.m.",
+    "a": "to meet",
+    "b": "meeting",
+    "c": "meet",
+    "d": "to meeting",
+    "answer": "a"
+  },
+  {
+    "question": "He avoided ____ about the accident.",
+    "a": "to talk",
+    "b": "talk",
+    "c": "talking",
+    "d": "to talking",
+    "answer": "c"
+  },
+  {
+    "question": "We decided ____ the project next week.",
+    "a": "to start",
+    "b": "starting",
+    "c": "start",
+    "d": "to starting",
+    "answer": "a"
+  },
+  {
+    "question": "She kept ____ even though she was tired.",
+    "a": "to work",
+    "b": "working",
+    "c": "work",
+    "d": "to working",
+    "answer": "b"
+  },
+  {
+    "question": "I forgot ____ the lights before leaving.",
+    "a": "to turn off",
+    "b": "turning off",
+    "c": "turn off",
+    "d": "to turning off",
+    "answer": "a"
+  },
+  {
+    "question": "He tried ____ the door, but it was locked.",
+    "a": "to open",
+    "b": "opening",
+    "c": "open",
+    "d": "to opening",
+    "answer": "a"
+  },
+  {
+    "question": "They enjoy ____ new places.",
+    "a": "to explore",
+    "b": "explore",
+    "c": "exploring",
+    "d": "to exploring",
+    "answer": "c"
+  }
+]
