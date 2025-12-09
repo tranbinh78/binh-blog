@@ -1,0 +1,122 @@
+[
+  {
+    "question": "He promised ____ earlier next time.",
+    "a": "to come",
+    "b": "coming",
+    "c": "come",
+    "d": "to coming",
+    "answer": "a"
+  },
+  {
+    "question": "She suggested ____ to the beach.",
+    "a": "to go",
+    "b": "going",
+    "c": "go",
+    "d": "goes",
+    "answer": "b"
+  },
+  {
+    "question": "They agreed ____ the project together.",
+    "a": "to do",
+    "b": "doing",
+    "c": "do",
+    "d": "to doing",
+    "answer": "a"
+  },
+  {
+    "question": "I want you ____ your best.",
+    "a": "to try",
+    "b": "trying",
+    "c": "try",
+    "d": "to trying",
+    "answer": "a"
+  },
+  {
+    "question": "He asked me ____ the door.",
+    "a": "to close",
+    "b": "closing",
+    "c": "close",
+    "d": "to closing",
+    "answer": "a"
+  },
+  {
+    "question": "She enjoys ____ music.",
+    "a": "listening to",
+    "b": "to listen to",
+    "c": "listen to",
+    "d": "to listening to",
+    "answer": "a"
+  },
+  {
+    "question": "My parents let me ____ out last night.",
+    "a": "go",
+    "b": "to go",
+    "c": "going",
+    "d": "to going",
+    "answer": "a"
+  },
+  {
+    "question": "He told us ____ quiet.",
+    "a": "to be",
+    "b": "being",
+    "c": "be",
+    "d": "to being",
+    "answer": "a"
+  },
+  {
+    "question": "She persuaded him ____ the job.",
+    "a": "to take",
+    "b": "take",
+    "c": "taking",
+    "d": "to taking",
+    "answer": "a"
+  },
+  {
+    "question": "He admitted ____ the window.",
+    "a": "breaking",
+    "b": "to break",
+    "c": "break",
+    "d": "to breaking",
+    "answer": "a"
+  },
+  {
+    "question": "They decided ____ early.",
+    "a": "to leave",
+    "b": "leaving",
+    "c": "leave",
+    "d": "to leaving",
+    "answer": "a"
+  },
+  {
+    "question": "We encouraged him ____ harder.",
+    "a": "to work",
+    "b": "work",
+    "c": "working",
+    "d": "to working",
+    "answer": "a"
+  },
+  {
+    "question": "He avoided ____ to the meeting.",
+    "a": "going",
+    "b": "to go",
+    "c": "goes",
+    "d": "to going",
+    "answer": "a"
+  },
+  {
+    "question": "I expect you ____ on time.",
+    "a": "to be",
+    "b": "being",
+    "c": "be",
+    "d": "to being",
+    "answer": "a"
+  },
+  {
+    "question": "She made me ____ my room.",
+    "a": "clean",
+    "b": "to clean",
+    "c": "cleaning",
+    "d": "to cleaning",
+    "answer": "a"
+  }
+]
