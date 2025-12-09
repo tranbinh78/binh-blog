@@ -724,6 +724,28 @@ quizRetry.addEventListener("click", () => {
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") modal.style.display = "none"; });
 modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
 
+/* ===============================
+   Open Quiz
+================================= */
+function openQuiz() {
+    const modal = document.getElementById("quiz-modal");
+    if (!modal) return;
+
+    modal.style.display = "block";
+
+    // Lấy file hiện tại từ URL
+    const params = new URLSearchParams(window.location.search);
+    const currentFile = params.get("file");
+
+    // Tạo tên file quiz
+    const quizFile = currentFile ? currentFile.replace(".md", "-quiz.json") : null;
+
+    if (quizFile) {
+        loadQuiz(quizFile);   // <<== QUAN TRỌNG
+    } else {
+        document.getElementById("quiz-content").innerHTML = "<p>Không tìm thấy file quiz.</p>";
+    }
+}
 
 /* ===============================
    INIT
