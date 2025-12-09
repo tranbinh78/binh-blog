@@ -1,0 +1,122 @@
+[
+  {
+    "question": "She ____ in London for 5 years.",
+    "a": "lived",
+    "b": "has lived",
+    "c": "has been living",
+    "d": "lives",
+    "answer": "b"
+  },
+  {
+    "question": "I ____ my homework already.",
+    "a": "have finished",
+    "b": "finished",
+    "c": "finish",
+    "d": "has finished",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ this movie before.",
+    "a": "have seen",
+    "b": "saw",
+    "c": "see",
+    "d": "has seen",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ to Japan three times.",
+    "a": "has been",
+    "b": "went",
+    "c": "go",
+    "d": "has gone",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ breakfast yet.",
+    "a": "haven’t had",
+    "b": "didn’t have",
+    "c": "don’t have",
+    "d": "not had",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ just ____ the report.",
+    "a": "has / finished",
+    "b": "have / finished",
+    "c": "has / finish",
+    "d": "finished / has",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ in this school since 2020.",
+    "a": "studied",
+    "b": "study",
+    "c": "have studied",
+    "d": "has studied",
+    "answer": "c"
+  },
+  {
+    "question": "I ____ seen him today.",
+    "a": "have",
+    "b": "has",
+    "c": "have not",
+    "d": "haven’t",
+    "answer": "d"
+  },
+  {
+    "question": "He ____ never ____ to Canada.",
+    "a": "has / been",
+    "b": "have / been",
+    "c": "has / go",
+    "d": "have / gone",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ the keys. She can't find them.",
+    "a": "has lost",
+    "b": "lost",
+    "c": "loses",
+    "d": "is losing",
+    "answer": "a"
+  },
+  {
+    "question": "____ you ever ____ sushi?",
+    "a": "Do / try",
+    "b": "Have / tried",
+    "c": "Has / try",
+    "d": "Did / tried",
+    "answer": "b"
+  },
+  {
+    "question": "We ____ him since Monday.",
+    "a": "haven’t seen",
+    "b": "didn’t see",
+    "c": "don’t see",
+    "d": "not seen",
+    "answer": "a"
+  },
+  {
+    "question": "The train ____ just ___.",
+    "a": "has / arrived",
+    "b": "have / arrived",
+    "c": "has / arrive",
+    "d": "arrived / has",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ finished the project.",
+    "a": "has already",
+    "b": "have already",
+    "c": "already have been",
+    "d": "already has",
+    "answer": "b"
+  },
+  {
+    "question": "I ____ this book before.",
+    "a": "haven’t read",
+    "b": "don’t read",
+    "c": "didn’t read",
+    "d": "not read",
+    "answer": "a"
+  }
+]
