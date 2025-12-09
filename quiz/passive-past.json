@@ -1,0 +1,122 @@
+[
+  {
+    "question": "The car ____ yesterday.",
+    "a": "was washed",
+    "b": "washed",
+    "c": "was washing",
+    "d": "is washed",
+    "answer": "a"
+  },
+  {
+    "question": "The letters ____ last week.",
+    "a": "were sent",
+    "b": "sent",
+    "c": "are sent",
+    "d": "were sending",
+    "answer": "a"
+  },
+  {
+    "question": "The house ____ in 1990.",
+    "a": "was built",
+    "b": "built",
+    "c": "was building",
+    "d": "is built",
+    "answer": "a"
+  },
+  {
+    "question": "The room ____ before we arrived.",
+    "a": "was cleaned",
+    "b": "cleaned",
+    "c": "was cleaning",
+    "d": "is cleaned",
+    "answer": "a"
+  },
+  {
+    "question": "The dishes ____ by Tom.",
+    "a": "were washed",
+    "b": "washed",
+    "c": "are washed",
+    "d": "were washing",
+    "answer": "a"
+  },
+  {
+    "question": "The package ____ to the wrong address.",
+    "a": "was delivered",
+    "b": "delivered",
+    "c": "was delivering",
+    "d": "is delivered",
+    "answer": "a"
+  },
+  {
+    "question": "The movie ____ last night.",
+    "a": "was shown",
+    "b": "showed",
+    "c": "is shown",
+    "d": "was showing",
+    "answer": "a"
+  },
+  {
+    "question": "The cake ____ by my mom.",
+    "a": "was made",
+    "b": "made",
+    "c": "was making",
+    "d": "is made",
+    "answer": "a"
+  },
+  {
+    "question": "The windows ____ yesterday afternoon.",
+    "a": "were cleaned",
+    "b": "cleaned",
+    "c": "are cleaned",
+    "d": "were cleaning",
+    "answer": "a"
+  },
+  {
+    "question": "The door ____ because it was broken.",
+    "a": "was repaired",
+    "b": "repaired",
+    "c": "was repairing",
+    "d": "is repaired",
+    "answer": "a"
+  },
+  {
+    "question": "The documents ____ two days ago.",
+    "a": "were printed",
+    "b": "printed",
+    "c": "are printed",
+    "d": "were printing",
+    "answer": "a"
+  },
+  {
+    "question": "The table ____ by a carpenter.",
+    "a": "was made",
+    "b": "made",
+    "c": "was making",
+    "d": "makes",
+    "answer": "a"
+  },
+  {
+    "question": "The flowers ____ this morning.",
+    "a": "were watered",
+    "b": "watered",
+    "c": "are watered",
+    "d": "were watering",
+    "answer": "a"
+  },
+  {
+    "question": "The song ____ at the concert.",
+    "a": "was performed",
+    "b": "performed",
+    "c": "is performed",
+    "d": "was performing",
+    "answer": "a"
+  },
+  {
+    "question": "The room decorations ____ by the students.",
+    "a": "were prepared",
+    "b": "prepared",
+    "c": "are prepared",
+    "d": "were preparing",
+    "answer": "a"
+  }
+]
