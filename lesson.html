@@ -343,13 +343,14 @@ async function loadSidebar() {
   const sidebar = document.getElementById("sidebar");
   sidebar.innerHTML = "<h3>📘 Bài học</h3>";
 
-  const modules = {
-    "Tenses": list.slice(0, 12),
-    "Modal Verbs": list.slice(12, 16),
-    "Passive Voice": list.slice(16, 21),
-    "Conditionals": list.slice(21, 25),
-    "Verb Forms": list.slice(25, 30),
-    "Nouns / Articles": list.slice(30, 36)
+    
+   const modules = {
+     "Tenses": list.slice(0, 13),
+     "Modal Verbs": list.slice(13, 17),
+     "Passive Voice": list.slice(17, 22),
+     "Conditionals": list.slice(22, 26),
+     "Verb Forms": list.slice(26, 35),
+     "Advanced Grammar": list.slice(35, 40)
   };
 
   for (const moduleName in modules) {
