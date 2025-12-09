@@ -1,0 +1,122 @@
+[
+  {
+    "question": "There isn’t ____ water in the bottle.",
+    "a": "any",
+    "b": "many",
+    "c": "a few",
+    "d": "several",
+    "answer": "a"
+  },
+  {
+    "question": "I have ____ friends in this city.",
+    "a": "a few",
+    "b": "a little",
+    "c": "much",
+    "d": "any",
+    "answer": "a"
+  },
+  {
+    "question": "She bought ____ apples.",
+    "a": "some",
+    "b": "much",
+    "c": "a little",
+    "d": "little",
+    "answer": "a"
+  },
+  {
+    "question": "We don’t have ____ milk left.",
+    "a": "much",
+    "b": "many",
+    "c": "a few",
+    "d": "several",
+    "answer": "a"
+  },
+  {
+    "question": "There are ____ chairs in the room.",
+    "a": "many",
+    "b": "much",
+    "c": "little",
+    "d": "a little",
+    "answer": "a"
+  },
+  {
+    "question": "I only need ____ sugar.",
+    "a": "a little",
+    "b": "a few",
+    "c": "few",
+    "d": "many",
+    "answer": "a"
+  },
+  {
+    "question": "He has ____ money. He can't buy it.",
+    "a": "little",
+    "b": "few",
+    "c": "a little",
+    "d": "a few",
+    "answer": "a"
+  },
+  {
+    "question": "She has ____ books on her desk.",
+    "a": "a few",
+    "b": "little",
+    "c": "much",
+    "d": "a little",
+    "answer": "a"
+  },
+  {
+    "question": "There is ____ furniture in the new house.",
+    "a": "some",
+    "b": "many",
+    "c": "a few",
+    "d": "several",
+    "answer": "a"
+  },
+  {
+    "question": "We bought ____ bottles of water.",
+    "a": "a few",
+    "b": "a little",
+    "c": "little",
+    "d": "much",
+    "answer": "a"
+  },
+  {
+    "question": "He drank ____ coffee this morning.",
+    "a": "a little",
+    "b": "few",
+    "c": "a few",
+    "d": "many",
+    "answer": "a"
+  },
+  {
+    "question": "There are ____ students in the classroom.",
+    "a": "many",
+    "b": "much",
+    "c": "little",
+    "d": "a little",
+    "answer": "a"
+  },
+  {
+    "question": "I don’t have ____ time.",
+    "a": "much",
+    "b": "many",
+    "c": "a few",
+    "d": "few",
+    "answer": "a"
+  },
+  {
+    "question": "He has ____ problems to solve.",
+    "a": "a few",
+    "b": "a little",
+    "c": "little",
+    "d": "much",
+    "answer": "a"
+  },
+  {
+    "question": "There isn’t ____ bread on the table.",
+    "a": "any",
+    "b": "a few",
+    "c": "many",
+    "d": "several",
+    "answer": "a"
+  }
+]
