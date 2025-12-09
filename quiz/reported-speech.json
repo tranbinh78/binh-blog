@@ -17,7 +17,12 @@
   },
   {
     "question": "They said, “We are busy.” → They said they ____ busy.",
-    },
+    "a": "were",
+    "b": "are",
+    "c": "was",
+    "d": "be",
+    "answer": "a"
+  },
   {
     "question": "He said, “I bought a new car.” → He said he ____ a new car.",
     "a": "had bought",
