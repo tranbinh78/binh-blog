@@ -1,0 +1,170 @@
+{
+  "title": "Wh Questions Quiz",
+  "questions": [
+    {
+      "question": "____ is your name?",
+      "choices": [
+        "What",
+        "Who",
+        "Where",
+        "How"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ do you live?",
+      "choices": [
+        "Where",
+        "What",
+        "When",
+        "How"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ is she crying?",
+      "choices": [
+        "Why",
+        "When",
+        "Who",
+        "How"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ did you meet yesterday?",
+      "choices": [
+        "Who",
+        "What",
+        "Where",
+        "Which"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ are you going to do now?",
+      "choices": [
+        "What",
+        "How",
+        "Why",
+        "Where"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ old are you?",
+      "choices": [
+        "How",
+        "What",
+        "Who",
+        "Which"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ time does the class start?",
+      "choices": [
+        "What",
+        "When",
+        "Which",
+        "Why"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ did you go on vacation?",
+      "choices": [
+        "Where",
+        "Who",
+        "What",
+        "How"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ is your birthday?",
+      "choices": [
+        "When",
+        "What",
+        "Why",
+        "How"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ is your favorite color?",
+      "choices": [
+        "What",
+        "Which",
+        "Who",
+        "How"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ are you late?",
+      "choices": [
+        "Why",
+        "What",
+        "Where",
+        "How"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ is this book? — It's mine.",
+      "choices": [
+        "Whose",
+        "Who",
+        "Which",
+        "Where"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ did she call?",
+      "choices": [
+        "Who",
+        "Whose",
+        "Which",
+        "How"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ is the boy wearing a red hat?",
+      "choices": [
+        "Which",
+        "Who",
+        "What",
+        "Where"
+      ],
+      "answer": 1,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "____ book do you prefer: this one or that one?",
+      "choices": [
+        "Which",
+        "What",
+        "Why",
+        "When"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    }
+  ]
+}

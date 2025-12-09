@@ -1,0 +1,170 @@
+{
+  "title": "Future Simple Quiz",
+  "questions": [
+    {
+      "question": "I think it ____ tomorrow.",
+      "choices": [
+        "rains",
+        "is raining",
+        "will rain",
+        "rain"
+      ],
+      "answer": 2,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "She ____ help you with your homework.",
+      "choices": [
+        "will",
+        "is",
+        "does",
+        "can"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "They ____ a new house next year.",
+      "choices": [
+        "buy",
+        "will buy",
+        "bought",
+        "are buying"
+      ],
+      "answer": 1,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "He ____ for you later.",
+      "choices": [
+        "will come",
+        "comes",
+        "came",
+        "coming"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "We ____ dinner at 7 p.m.",
+      "choices": [
+        "will have",
+        "have",
+        "had",
+        "having"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "I ____ you the truth.",
+      "choices": [
+        "will tell",
+        "told",
+        "tell",
+        "am telling"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "She ____ the test next week.",
+      "choices": [
+        "will take",
+        "takes",
+        "took",
+        "take"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "They ____ soon.",
+      "choices": [
+        "will leave",
+        "leave",
+        "left",
+        "are leaving"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "He ____ a doctor in the future.",
+      "choices": [
+        "will become",
+        "becomes",
+        "became",
+        "is becoming"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "I’m sure she ____ the exam.",
+      "choices": [
+        "fails",
+        "will fail",
+        "will pass",
+        "passes"
+      ],
+      "answer": 2,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "We ____ home after the party.",
+      "choices": [
+        "will go",
+        "go",
+        "went",
+        "going"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "He ____ you if you ask.",
+      "choices": [
+        "helps",
+        "will help",
+        "help",
+        "helped"
+      ],
+      "answer": 1,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "I think they ____ late.",
+      "choices": [
+        "are",
+        "will be",
+        "were",
+        "are being"
+      ],
+      "answer": 1,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "We ____ the results tomorrow.",
+      "choices": [
+        "will get",
+        "get",
+        "got",
+        "getting"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "This car ____ very expensive.",
+      "choices": [
+        "will be",
+        "is",
+        "was",
+        "being"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    }
+  ]
+}

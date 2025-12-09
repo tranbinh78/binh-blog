@@ -1,0 +1,170 @@
+{
+  "title": "Passive Continuous Quiz",
+  "questions": [
+    {
+      "question": "The car ____ at the moment.",
+      "choices": [
+        "is being washed",
+        "is washed",
+        "was washed",
+        "was being washed"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The room ____ right now.",
+      "choices": [
+        "is being cleaned",
+        "is cleaned",
+        "was cleaned",
+        "was being cleaned"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The documents ____ at this time yesterday.",
+      "choices": [
+        "were being printed",
+        "are being printed",
+        "were printed",
+        "are printed"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "Dinner ____ when I arrived.",
+      "choices": [
+        "was being prepared",
+        "is being prepared",
+        "prepared",
+        "was prepared"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "A new bridge ____ right now.",
+      "choices": [
+        "is being built",
+        "was being built",
+        "is built",
+        "was built"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The meeting ____ when she called.",
+      "choices": [
+        "was being held",
+        "is being held",
+        "held",
+        "was held"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The story ____ by the teacher at that moment.",
+      "choices": [
+        "was being told",
+        "is being told",
+        "told",
+        "was told"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The car ____ when the rain started.",
+      "choices": [
+        "was being fixed",
+        "is being fixed",
+        "was fixed",
+        "fixing"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The windows ____ right now.",
+      "choices": [
+        "are being cleaned",
+        "were being cleaned",
+        "are cleaned",
+        "cleaned"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The project ____ at that time.",
+      "choices": [
+        "was being discussed",
+        "is being discussed",
+        "was discussed",
+        "discussed"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The cake ____ when the guests arrived.",
+      "choices": [
+        "was being baked",
+        "is being baked",
+        "baked",
+        "was baked"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The song ____ live on TV.",
+      "choices": [
+        "is being performed",
+        "was being performed",
+        "performed",
+        "was performed"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The house ____ while the owner was away.",
+      "choices": [
+        "was being painted",
+        "is being painted",
+        "painted",
+        "is painted"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The problem ____ when the manager entered the room.",
+      "choices": [
+        "was being solved",
+        "is being solved",
+        "solved",
+        "was solved"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "The message ____ at the moment.",
+      "choices": [
+        "is being typed",
+        "was being typed",
+        "typed",
+        "is typed"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    }
+  ]
+}
