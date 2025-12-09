@@ -34,7 +34,11 @@
   {
     "question": "If it rained, we ____ at home.",
     "a": "would stay",
-    },
+    "b": "stay",
+    "c": "stayed",
+    "d": "will stay",
+    "answer": "a"
+  },
   {
     "question": "If she had more time, she ____ learn another language.",
     "a": "would",
