@@ -1,0 +1,122 @@
+[
+  {
+    "question": "It looks cloudy. It ____ rain later.",
+    "a": "may",
+    "b": "might",
+    "c": "can",
+    "d": "must",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ come to the party, but he’s not sure.",
+    "a": "may",
+    "b": "might",
+    "c": "can",
+    "d": "should",
+    "answer": "b"
+  },
+  {
+    "question": "____ I ask you a question?",
+    "a": "May",
+    "b": "Might",
+    "c": "Can",
+    "d": "Should",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ visit us this weekend if they have time.",
+    "a": "may",
+    "b": "might",
+    "c": "can",
+    "d": "will",
+    "answer": "a"
+  },
+  {
+    "question": "She ____ be at home. The lights are off.",
+    "a": "might not",
+    "b": "may",
+    "c": "might",
+    "d": "may be",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ join us, but he isn’t sure yet.",
+    "a": "might",
+    "b": "may",
+    "c": "should",
+    "d": "can",
+    "answer": "a"
+  },
+  {
+    "question": "The weather is terrible. The flight ____ be delayed.",
+    "a": "may",
+    "b": "might",
+    "c": "will",
+    "d": "can",
+    "answer": "a"
+  },
+  {
+    "question": "We ____ have to leave early, depending on the traffic.",
+    "a": "might",
+    "b": "may",
+    "c": "can",
+    "d": "should",
+    "answer": "b"
+  },
+  {
+    "question": "She ____ know the answer, but I’m not sure.",
+    "a": "may",
+    "b": "might",
+    "c": "should",
+    "d": "can",
+    "answer": "b"
+  },
+  {
+    "question": "There ____ be a meeting today, but it's not confirmed.",
+    "a": "may",
+    "b": "might",
+    "c": "will",
+    "d": "can",
+    "answer": "b"
+  },
+  {
+    "question": "____ I leave early today?",
+    "a": "May",
+    "b": "Might",
+    "c": "Should",
+    "d": "Would",
+    "answer": "a"
+  },
+  {
+    "question": "They ____ move to a bigger city next year.",
+    "a": "may",
+    "b": "might",
+    "c": "will",
+    "d": "can",
+    "answer": "a"
+  },
+  {
+    "question": "He ____ be sleeping now. It’s very late.",
+    "a": "may",
+    "b": "might",
+    "c": "should",
+    "d": "can",
+    "answer": "b"
+  },
+  {
+    "question": "I ____ be wrong, but I think she likes you.",
+    "a": "might",
+    "b": "may",
+    "c": "should",
+    "d": "must",
+    "answer": "a"
+  },
+  {
+    "question": "The store ____ close early today.",
+    "a": "may",
+    "b": "might",
+    "c": "will",
+    "d": "can",
+    "answer": "a"
+  }
+]
