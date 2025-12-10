@@ -379,6 +379,40 @@ function renderTest() {
   });
 }
 
+/* ===============================
+   BẮT ĐẦU BÀI / NỘP BÀI
+================================= */
+const startBtn = document.getElementById("start-btn");
+const submitBtn = document.getElementById("submit-btn");
+
+if (startBtn) {
+  startBtn.addEventListener("click", () => {
+
+    const mode = document.getElementById("mode-select")?.value || "practice";
+    const count = parseInt(document.getElementById("num-select")?.value || "20", 10);
+
+    // Load câu hỏi
+    if (typeof renderQuestions === "function") {
+      renderQuestions(currentGroup, count);
+    }
+
+    // EXAM MODE → bật đồng hồ
+    if (mode === "exam") {
+      startExamTimer();
+    } else {
+      const display = document.getElementById("timer-box");
+      if (display) display.style.display = "none";
+      if (timer) clearInterval(timer);
+    }
+  });
+}
+
+if (submitBtn) {
+  submitBtn.addEventListener("click", () => {
+    submitTest(false);
+  });
+}
+  
 /* -------------------------------------------------
    START TEST
 ------------------------------------------------- */
@@ -584,38 +618,7 @@ function autoSubmitExam() {
   submitTest(true);
 }
 
-/* ===============================
-   BẮT ĐẦU BÀI / NỘP BÀI
-================================= */
-const startBtn = document.getElementById("start-btn");
-const submitBtn = document.getElementById("submit-btn");
-
-if (startBtn) {
-  startBtn.addEventListener("click", () => {
-    const modeEl = document.getElementById("mode-select");
-    const mode = modeEl ? modeEl.value : "practice";
-    const numEl = document.getElementById("num-select");
-    const count = numEl ? parseInt(numEl.value,10) : 20;
-
-    // renderQuestions(currentGroup, count);   <-- gọi hàm hiện câu của bạn (chắc bạn có sẵn)
-    if (typeof renderQuestions === "function") renderQuestions(currentGroup, count);
-
-    if (mode === "exam") startExamTimer();
-    else {
-      const display = document.getElementById("timer-box");
-      if (display) display.style.display = "none";
-      if (timer) { clearInterval(timer); timer = null; }
-    }
-  });
-}
-
-if (submitBtn) {
-  submitBtn.addEventListener("click", () => {
-    submitTest(false);
-  });
-}
-
-  // Hiển thị điểm
+ // Hiển thị điểm
   const scoreBox = document.getElementById("score-box");
   scoreBox.innerHTML = `Điểm: <b>${correct}/${items.length}</b>`;
   scoreBox.style.display = "block";
