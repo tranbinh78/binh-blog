@@ -391,6 +391,47 @@ saveBtn.addEventListener('click', () => {
 // initial load
 loadGroups();
 
+/* ===============================
+   AUTO START TEST FROM URL
+   e.g. test.html?group=present&mode=exam&num=40&time=600
+================================= */
+function autoStartFromURL() {
+  const params = new URLSearchParams(window.location.search);
+
+  const g = params.get("group");
+  const m = params.get("mode");
+  const n = params.get("num");
+  const t = params.get("time");
+
+  // Nếu không có group → không auto start
+  if (!g) return;
+
+  // Chọn đúng nhóm nếu tồn tại
+  if (groups[g]) {
+    groupSelect.value = g;
+  }
+
+  // Chọn số câu (nếu hợp lệ)
+  if (n && ["10","20","40","100"].includes(n)) {
+    numSelect.value = n;
+  }
+
+  // Chọn chế độ
+  if (m === "exam") modeSelect.value = "exam";
+  if (m === "practice") modeSelect.value = "practice";
+
+  // Set thời gian
+  if (t && !isNaN(parseInt(t))) {
+    examTimeInput.value = parseInt(t);
+  }
+
+  // Tự động bắt đầu bài test
+  startBtn.click();
+}
+
+/* Chạy autoStart khi đã load nhóm */
+setTimeout(autoStartFromURL, 300);
+  
 </script>
 </body>
 </html>
