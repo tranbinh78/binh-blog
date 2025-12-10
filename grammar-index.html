@@ -161,6 +161,28 @@ async function loadModules() {
   }
 }
 
+/* ===============================
+   ADD GRAMMAR TESTS SECTION
+================================= */
+
+const testDiv = document.createElement("div");
+testDiv.className = "module";
+
+testDiv.innerHTML = `
+  <div class="module-title">📝 Grammar Tests</div>
+  <div class="lesson-list">
+    <a class="lesson-item" href="/binh-blog/grammar/test.html?group=present">Present Tenses Test</a>
+    <a class="lesson-item" href="/binh-blog/grammar/test.html?group=past">Past Tenses Test</a>
+    <a class="lesson-item" href="/binh-blog/grammar/test.html?group=future">Future Tenses Test</a>
+    <a class="lesson-item" href="/binh-blog/grammar/test.html?group=conditionals">Conditionals Test</a>
+    <a class="lesson-item" href="/binh-blog/grammar/test.html?group=modal">Modal Verbs Test</a>
+    <a class="lesson-item" href="/binh-blog/grammar/test.html?group=verbs">Verb Forms Test</a>
+    <a class="lesson-item" href="/binh-blog/grammar/test.html?group=all-grammar">All Grammar Test</a>
+  </div>
+`;
+
+container.appendChild(testDiv);
+  
 loadModules();
 
   // MOBILE ACCORDION
