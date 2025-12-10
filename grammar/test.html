@@ -386,38 +386,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const startBtn = document.getElementById("start-btn");
   const submitBtn = document.getElementById("submit-btn");
+  const retryBtn = document.getElementById("retry-btn");
 
-  // debug: bật log để xem điều kiện
-  console.log("startBtn", startBtn, "submitBtn", submitBtn);
-  console.log("mode-select", document.getElementById("mode-select"));
-  console.log("num-select", document.getElementById("num-select"));
+  const groupEl = document.getElementById("group-select");
+  const numEl = document.getElementById("num-select");
+  const modeEl = document.getElementById("mode-select");
 
-  if (startBtn) {
-    startBtn.addEventListener("click", () => {
-      const mode = document.getElementById("mode-select")?.value || "practice";
-      const count = parseInt(document.getElementById("num-select")?.value || "20", 10);
-
-      // gọi hàm hiện câu nếu có
-      if (typeof renderQuestions === "function") {
-        renderQuestions(currentGroup, count);
-      } else {
-        console.warn("renderQuestions chưa được định nghĩa");
-      }
-
-      if (mode === "exam") startExamTimer();
-      else {
-        const display = document.getElementById("timer-box");
-        if (display) display.style.display = "none";
-        if (timer) { clearInterval(timer); timer = null; }
-      }
-    });
-  } else {
-    console.warn("startBtn không tìm thấy - kiểm tra ID trong HTML");
+  if (!startBtn) {
+    console.error("Không tìm thấy nút Start – kiểm tra lại HTML.");
+    return;
   }
 
-  if (submitBtn) {
-    submitBtn.addEventListener("click", () => submitTest(false));
-  }
+  // BẮT ĐẦU
+  startBtn.addEventListener("click", () => {
+
+    const group = groupEl.value;
+    const count = parseInt(numEl.value);
+    const mode = modeEl.value;
+
+    if (!group) {
+      alert("Bạn phải chọn nhóm bài test!");
+      return;
+    }
+
+    if (typeof renderQuestions === "function") {
+      renderQuestions(group, count);
+    }
+
+    if (mode === "exam") {
+      startExamTimer();
+    } else {
+      document.getElementById("timer-box").style.display = "none";
+    }
+
+    submitBtn.style.display = "inline-block";
+    retryBtn.style.display = "none";
+  });
+
+  // NỘP BÀI
+  submitBtn.addEventListener("click", () => {
+    submitTest(false);
+    retryBtn.style.display = "inline-block";
+  });
+
+  // LÀM LẠI
+  retryBtn.addEventListener("click", () => {
+    location.reload();
+  });
+
 });
   
 /* -------------------------------------------------
