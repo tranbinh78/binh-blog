@@ -536,6 +536,106 @@ function autoStartFromURL() {
 }
 
 setTimeout(autoStartFromURL, 500);
+
+/* ===============================
+   EXAM MODE TIMER + AUTO SUBMIT
+================================= */
+let timer = null;
+let timeLeft = 0;
+
+function formatTime(sec) {
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return `${m}:${s.toString().padStart(2,"0")}`;
+}
+
+function startExamTimer() {
+  const count = parseInt(document.getElementById("question-count").value);
+  timeLeft = count * 60; // 1 câu = 60s
+
+  const display = document.getElementById("timer-box");
+  display.style.display = "inline-block";
+  display.innerText = formatTime(timeLeft);
+
+  timer = setInterval(() => {
+    timeLeft--;
+    display.innerText = formatTime(timeLeft);
+
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      autoSubmitExam();
+    }
+  }, 1000);
+}
+
+function autoSubmitExam() {
+  // Khóa toàn bộ đáp án
+  document.querySelectorAll("input[type=radio]").forEach(r => r.disabled = true);
+
+  // Tự động thu bài
+  submitTest(true);
+}
+
+/* ===============================
+   BẮT ĐẦU BÀI
+================================= */
+document.getElementById("btn-start").addEventListener("click", () => {
+  const mode = document.getElementById("mode-select").value;
+  const count = parseInt(document.getElementById("question-count").value);
+
+  renderQuestions(currentGroup, count);
+
+  if (mode === "exam") {
+    startExamTimer();
+  } else {
+    document.getElementById("timer-box").style.display = "none";
+  }
+});
+
+/* ===============================
+   NỘP BÀI
+================================= */
+document.getElementById("btn-submit").addEventListener("click", () => {
+  submitTest(false);
+});
+
+function submitTest(auto = false) {
+  clearInterval(timer);
+
+  const items = document.querySelectorAll(".question-item");
+  let correct = 0;
+
+  items.forEach(item => {
+    const ans = parseInt(item.dataset.answer);
+    const chosen = parseInt(item.dataset.user || -1);
+    const labels = item.querySelectorAll("label");
+
+    labels.forEach((lab, i) => {
+      if (i === ans) lab.classList.add("correct");
+      else if (i === chosen) lab.classList.add("incorrect");
+    });
+
+    if (chosen === ans) correct++;
+  });
+
+  // Hiển thị điểm
+  const scoreBox = document.getElementById("score-box");
+  scoreBox.innerHTML = `Điểm: <b>${correct}/${items.length}</b>`;
+  scoreBox.style.display = "block";
+
+  // Lưu localStorage
+  const saveKey = "test-score-" + currentGroup;
+  localStorage.setItem(saveKey, JSON.stringify({
+    score: correct,
+    total: items.length,
+    time: new Date().toISOString()
+  }));
+
+  if (auto) {
+    alert("Hết giờ! Hệ thống đã tự động nộp bài.");
+  }
+}  
+  
 </script>
 </body>
 </html>
