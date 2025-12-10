@@ -5,54 +5,73 @@
     "present-perfect",
     "present-perfect-continuous"
   ],
+
   "past": [
     "past-simple",
     "past-continuous",
     "past-perfect",
     "past-perfect-continuous"
   ],
+
   "future": [
-    "future-simple-will",
+    "future-simple",
     "be-going-to",
     "future-continuous",
-    "future-perfect"
+    "future-perfect",
+    "future-perfect-continuous"
   ],
+
   "conditionals": [
     "conditional-zero",
     "conditional-first",
     "conditional-second",
     "conditional-third"
   ],
-  "modals": [
+
+  "modal": [
     "can-could",
     "may-might",
-    "must-have-to"
+    "must-have-to",
+    "should-ought-to"
   ],
-  "verb-forms": [
+
+  "verbs": [
+    "regular-irregular-verbs",
     "gerund-infinitive",
-    "bare-vs-to-infinitive"
+    "bare-vs-to-infinitive",
+    "verb-patterns"
   ],
+
   "full": [
     "present-simple",
     "present-continuous",
     "present-perfect",
     "present-perfect-continuous",
+
     "past-simple",
     "past-continuous",
     "past-perfect",
     "past-perfect-continuous",
-    "future-simple-will",
+
+    "future-simple",
     "be-going-to",
     "future-continuous",
     "future-perfect",
+    "future-perfect-continuous",
+
     "conditional-zero",
     "conditional-first",
     "conditional-second",
     "conditional-third",
+
     "can-could",
     "may-might",
     "must-have-to",
+    "should-ought-to",
+
+    "regular-irregular-verbs",
     "gerund-infinitive",
-    "bare-vs-to-infinitive"
+    "bare-vs-to-infinitive",
+    "verb-patterns"
   ]
 }
