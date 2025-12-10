@@ -1,0 +1,58 @@
+{
+  "present": [
+    "present-simple",
+    "present-continuous",
+    "present-perfect",
+    "present-perfect-continuous"
+  ],
+  "past": [
+    "past-simple",
+    "past-continuous",
+    "past-perfect",
+    "past-perfect-continuous"
+  ],
+  "future": [
+    "future-simple-will",
+    "be-going-to",
+    "future-continuous",
+    "future-perfect"
+  ],
+  "conditionals": [
+    "conditional-zero",
+    "conditional-first",
+    "conditional-second",
+    "conditional-third"
+  ],
+  "modals": [
+    "can-could",
+    "may-might",
+    "must-have-to"
+  ],
+  "verb-forms": [
+    "gerund-infinitive",
+    "bare-vs-to-infinitive"
+  ],
+  "full": [
+    "present-simple",
+    "present-continuous",
+    "present-perfect",
+    "present-perfect-continuous",
+    "past-simple",
+    "past-continuous",
+    "past-perfect",
+    "past-perfect-continuous",
+    "future-simple-will",
+    "be-going-to",
+    "future-continuous",
+    "future-perfect",
+    "conditional-zero",
+    "conditional-first",
+    "conditional-second",
+    "conditional-third",
+    "can-could",
+    "may-might",
+    "must-have-to",
+    "gerund-infinitive",
+    "bare-vs-to-infinitive"
+  ]
+}
