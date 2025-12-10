@@ -1,0 +1,170 @@
+{
+  "title": "Zero Conditional Quiz",
+  "questions": [
+    {
+      "question": "If you heat water to 100°C, it ____ .",
+      "choices": [
+        "boils",
+        "boil",
+        "is boiling",
+        "boiled"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If you mix red and blue, you ____ purple.",
+      "choices": [
+        "get",
+        "gets",
+        "got",
+        "are getting"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If plants don’t get water, they ____ .",
+      "choices": [
+        "die",
+        "dies",
+        "are dying",
+        "died"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If you press this button, the machine ____ .",
+      "choices": [
+        "starts",
+        "start",
+        "is starting",
+        "started"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If you drop ice in the sun, it ____ .",
+      "choices": [
+        "melts",
+        "melt",
+        "melting",
+        "melted"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If you don’t eat, you ____ hungry.",
+      "choices": [
+        "get",
+        "gets",
+        "got",
+        "getting"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If people exercise regularly, they ____ healthier.",
+      "choices": [
+        "become",
+        "becomes",
+        "became",
+        "are becoming"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If you heat metal, it ____ .",
+      "choices": [
+        "expands",
+        "expand",
+        "expanded",
+        "is expanding"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If you freeze water, it ____ ice.",
+      "choices": [
+        "becomes",
+        "become",
+        "is becoming",
+        "became"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If it rains, the ground ____ wet.",
+      "choices": [
+        "gets",
+        "get",
+        "is getting",
+        "got"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If students study hard, they ____ good grades.",
+      "choices": [
+        "get",
+        "gets",
+        "getting",
+        "got"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If you mix yellow and red, you ____ orange.",
+      "choices": [
+        "get",
+        "gets",
+        "got",
+        "are getting"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If you don’t sleep enough, you ____ tired.",
+      "choices": [
+        "feel",
+        "feels",
+        "felt",
+        "feeling"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If you study every day, your English ____ better.",
+      "choices": [
+        "gets",
+        "get",
+        "getting",
+        "got"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    },
+    {
+      "question": "If people drink too much coffee, they ____ shaky.",
+      "choices": [
+        "feel",
+        "feels",
+        "felt",
+        "feeling"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+    }
+  ]
+}
