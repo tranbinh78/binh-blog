@@ -656,30 +656,54 @@ function renderQuiz(data) {
 // Submit quiz
 quizSubmit.addEventListener("click", () => {
   if (!quizData) return;
+
   const total = quizData.questions.length;
   let correct = 0;
+
   quizData.questions.forEach((q, idx) => {
-    const u = userAnswers[q.id];
-    const qDiv = quizContent.querySelector(`[data-qid="${q.id}"]`);
+
+    // FIX 1: Dùng index thay vì q.id (vì JSON không có id)
+    const u = userAnswers[idx]; 
+
+    // FIX 2: chọn đúng phần tử theo index
+    const qDiv = quizContent.querySelector(`[data-qid="${idx}"]`);
     const explainDiv = qDiv.querySelector(".q-explain");
-    if (u === undefined) qDiv.style.opacity = "0.9";
+
+    // Reset background trước khi tô
+    const labels = qDiv.querySelectorAll("label");
+    labels.forEach(l => l.style.background = "");
+
+    // Chưa trả lời
+    if (u === undefined) {
+      qDiv.style.opacity = "0.9";
+      // vẫn cho hiển thị đáp án đúng
+      labels[q.answer].style.background = "#d4ffd9";
+      explainDiv.style.display = "block";
+      return;
+    }
+
+    // Trả lời đúng
     if (u === q.answer) {
       correct++;
-      const labels = qDiv.querySelectorAll("label");
-      labels.forEach((lab, ci) => { if (ci === u) lab.style.background = "#d4ffd9"; });
-    } else {
-      const labels = qDiv.querySelectorAll("label");
-      labels.forEach((lab, ci) => {
-        if (ci === q.answer) lab.style.background = "#d4ffd9";
-        if (ci === (userAnswers[q.id] || -1) && ci !== q.answer) lab.style.background = "#ffd9d9";
-      });
+      labels[q.answer].style.background = "#d4ffd9";
     }
+
+    // Trả lời sai
+    else {
+      labels[q.answer].style.background = "#d4ffd9";    // đáp án đúng (xanh)
+      labels[u].style.background = "#ffd9d9";           // đáp án chọn sai (đỏ)
+    }
+
     explainDiv.style.display = "block";
   });
 
-  const score = Math.round((correct/total)*100);
-  quizResult.innerHTML = `<div style="font-weight:700">Điểm: ${score}% — ${correct}/${total} đúng</div>`;
-  // save to localStorage
+  // Tính điểm
+  const score = Math.round((correct / total) * 100);
+  quizResult.innerHTML =
+    `<div style="font-weight:700">Điểm: ${score}% — ${correct}/${total} đúng</div>`;
+});
+
+// save to localStorage
   const slug = currentSlug();
   try { localStorage.setItem('quiz-score-'+slug, JSON.stringify({score, correct, total, time:Date.now()})); } catch(e){}
   quizSubmit.style.display = "none";
