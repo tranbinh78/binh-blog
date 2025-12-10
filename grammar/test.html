@@ -379,63 +379,6 @@ function renderTest() {
   });
 }
 
-/* ===============================
-   BẮT ĐẦU BÀI / NỘP BÀI (sửa: chờ DOM)
-================================= */
-document.addEventListener("DOMContentLoaded", () => {
-
-  const startBtn = document.getElementById("start-btn");
-  const submitBtn = document.getElementById("submit-btn");
-  const retryBtn = document.getElementById("retry-btn");
-
-  const groupEl = document.getElementById("group-select");
-  const numEl = document.getElementById("num-select");
-  const modeEl = document.getElementById("mode-select");
-
-  if (!startBtn) {
-    console.error("Không tìm thấy nút Start – kiểm tra lại HTML.");
-    return;
-  }
-
-  // BẮT ĐẦU
-  startBtn.addEventListener("click", () => {
-
-    const group = groupEl.value;
-    const count = parseInt(numEl.value);
-    const mode = modeEl.value;
-
-    if (!group) {
-      alert("Bạn phải chọn nhóm bài test!");
-      return;
-    }
-
-    if (typeof renderQuestions === "function") {
-      renderQuestions(group, count);
-    }
-
-    if (mode === "exam") {
-      startExamTimer();
-    } else {
-      document.getElementById("timer-box").style.display = "none";
-    }
-
-    submitBtn.style.display = "inline-block";
-    retryBtn.style.display = "none";
-  });
-
-  // NỘP BÀI
-  submitBtn.addEventListener("click", () => {
-    submitTest(false);
-    retryBtn.style.display = "inline-block";
-  });
-
-  // LÀM LẠI
-  retryBtn.addEventListener("click", () => {
-    location.reload();
-  });
-
-});
-  
 /* -------------------------------------------------
    START TEST
 ------------------------------------------------- */
@@ -658,7 +601,62 @@ function autoSubmitExam() {
     alert("Hết giờ! Hệ thống đã tự động nộp bài.");
   }
 }  
-  
+
+/* ===============================
+   BẮT ĐẦU BÀI / NỘP BÀI (sửa: chờ DOM)
+================================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+  const startBtn = document.getElementById("start-btn");
+  const submitBtn = document.getElementById("submit-btn");
+  const retryBtn = document.getElementById("retry-btn");
+
+  const groupEl = document.getElementById("group-select");
+  const numEl = document.getElementById("num-select");
+  const modeEl = document.getElementById("mode-select");
+
+  if (!startBtn) {
+    console.error("Không tìm thấy nút Start – kiểm tra lại HTML.");
+    return;
+  }
+
+  // BẮT ĐẦU
+  startBtn.addEventListener("click", () => {
+
+    const group = groupEl.value;
+    const count = parseInt(numEl.value);
+    const mode = modeEl.value;
+
+    if (!group) {
+      alert("Bạn phải chọn nhóm bài test!");
+      return;
+    }
+
+    if (typeof renderQuestions === "function") {
+      renderQuestions(group, count);
+    }
+
+    if (mode === "exam") {
+      startExamTimer();
+    } else {
+      document.getElementById("timer-box").style.display = "none";
+    }
+
+    submitBtn.style.display = "inline-block";
+    retryBtn.style.display = "none";
+  });
+
+  // NỘP BÀI
+  submitBtn.addEventListener("click", () => {
+    submitTest(false);
+    retryBtn.style.display = "inline-block";
+  });
+
+  // LÀM LẠI
+  retryBtn.addEventListener("click", () => {
+    location.reload();
+  });
+});  
 </script>
 </body>
 </html>
