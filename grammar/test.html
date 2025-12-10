@@ -560,15 +560,15 @@ function autoExplain(question, answerText) {
   return "Đáp án đúng theo cấu trúc ngữ pháp của câu.";
 }
   
-/* -------------------------------------------------
-   SUBMIT TEST
-------------------------------------------------- */
+/* ============================
+     SUBMIT TEST (UPDATED)
+============================ */
 submitBtn.addEventListener("click", () => {
   clearInterval(timerInterval);
 
   let correct = 0;
 
-  allQuestions.forEach((q, index) => {
+  allquestions.forEach((q, index) => {
     const qDiv = document.querySelector(`[data-qindex="${index}"]`);
     const radios = qDiv.querySelectorAll("input[type=radio]");
     const expDiv = qDiv.querySelector(".q-exp");
@@ -576,9 +576,9 @@ submitBtn.addEventListener("click", () => {
     let selected = -1;
     radios.forEach(r => { if (r.checked) selected = parseInt(r.value); });
 
-    // Highlight
+    // Highlight lại
     const labels = qDiv.querySelectorAll(".choice-label");
-    labels.forEach(l => l.classList.remove("correct","wrong"));
+    labels.forEach(l => l.classList.remove("correct", "wrong"));
 
     if (selected === q.answer) {
       correct++;
@@ -588,8 +588,24 @@ submitBtn.addEventListener("click", () => {
       if (selected >= 0) labels[selected].classList.add("wrong");
     }
 
+    /* =============================
+       AUTO EXPLAIN for each question
+    ============================== */
+    const qText = q.text;
+    const correctText = q.choices[q.answer];
+
+    const explanation = autoExplain(qText, correctText);
+
+    expDiv.innerHTML = `<b>Giải thích: </b>${explanation}`;
     expDiv.style.display = "block";
   });
+
+  /* ==== RESULT ==== */
+  const total = allquestions.length;
+  resultBox.innerHTML = `Kết quả: <b>${correct}/${total}</b> — ${(correct/total*100).toFixed(0)}%`;
+  resultBox.style.display = "block";
+
+});
 
   // RESULT
   const total = allQuestions.length;
