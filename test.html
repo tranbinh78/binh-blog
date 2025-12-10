@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Test theo chủ đề — Binh Blog</title>
+<link rel="stylesheet" href="/binh-blog/style.css">
+<style>
+/* --- local styles for test page --- */
+.container { max-width:1100px; margin:28px auto; padding:0 18px; }
+.topbar { display:flex; gap:12px; align-items:center; margin-bottom:16px; flex-wrap:wrap; }
+.select, .btn, .small { padding:8px 12px; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer; }
+.btn { background:#c9b3ff; border:0; color:#222; font-weight:600; }
+.hint { color:#666; font-size:0.95rem; }
+.grid { display:grid; grid-template-columns: 1fr 380px; gap:20px; align-items:start; }
+.panel { background:#fff; padding:14px; border-radius:10px; border:1px solid #eee; box-shadow:0 6px 18px rgba(0,0,0,0.03); }
+#question-list { max-height:66vh; overflow:auto; padding-right:6px; }
+.q-item { margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #f3f3f3; }
+.q-label { display:block; padding:8px; border-radius:8px; margin:8px 0; border:1px solid #eee; cursor:pointer; background:#fff; }
+.q-label.correct { background:#d4ffd9 !important; border-color:#b6f0b6; }
+.q-label.incorrect { background:#ffd9d9 !important; border-color:#f0b6b6; }
+.q-explain { display:none; margin-top:8px; padding:10px; background:#fbfbfb; border-radius:6px; border:1px solid #eee; color:#333; }
+.side { position:sticky; top:20px; }
+.timer { font-weight:700; color:#b30000; margin-bottom:8px; }
+.results { margin-top:12px; }
+.small-muted { font-size:0.9rem; color:#666; }
+.controls { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+.switch { display:flex; align-items:center; gap:8px; }
+.note { font-size:0.95rem; color:#444; margin-top:8px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Test theo chủ đề</h1>
+
+  <div class="topbar">
+    <label>Chọn nhóm:
+      <select id="group-select" class="select">
+        <option value="">— chọn —</option>
+      </select>
+    </label>
+
+    <label>Số câu:
+      <select id="num-select" class="select">
+        <option value="10">10</option>
+        <option value="20" selected>20</option>
+        <option value="40">40</option>
+        <option value="100">100</option>
+      </select>
+    </label>
+
+    <label>Chế độ:
+      <select id="mode-select" class="select">
+        <option value="practice">Practice</option>
+        <option value="exam">Exam (Thi)</option>
+      </select>
+    </label>
+
+    <label>Thời gian (Exam, giây):
+      <input id="exam-time" type="number" class="select" value="600" style="width:110px;">
+    </label>
+
+    <button id="start-btn" class="btn">Bắt đầu</button>
+
+    <div style="flex:1"></div>
+    <div class="hint">Các quiz lấy từ <code>/grammar/quiz/</code> theo cấu hình <code>test-groups.json</code>.</div>
+  </div>
+
+  <div class="grid">
+    <div class="panel" id="question-list">
+      <div id="intro" class="hint">Chưa có đề thi. Chọn nhóm và bấm "Bắt đầu".</div>
+      <!-- questions will be injected here -->
+    </div>
+
+    <aside class="side">
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div id="title-selected"><b>Nhóm:</b> —</div>
+            <div id="meta" class="small-muted">Số câu: <span id="meta-total">0</span></div>
+          </div>
+          <div id="timer" class="timer" style="display:none">⏳ 00:00</div>
+        </div>
+
+        <div class="controls">
+          <button id="submit-btn" class="btn" style="display:none">Nộp bài</button>
+          <button id="reset-btn" class="small" style="display:none">Làm lại</button>
+          <button id="save-btn" class="small" style="display:none">Lưu điểm</button>
+        </div>
+
+        <div id="result-box" class="results"></div>
+
+        <div style="margin-top:12px;">
+          <h4>Điểm đã lưu (nhóm)</h4>
+          <div id="saved-list" class="small-muted">Chưa có dữ liệu.</div>
+        </div>
+
+        <div class="note">Gợi ý: recommended 20–40 câu cho mỗi nhóm. Exam Mode sẽ khóa lựa chọn khi hết giờ.</div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+/* Test page script */
+
+// CONFIG: path to quiz folder and groups file
+const QUIZ_BASE = "/binh-blog/grammar/quiz/";
+const GROUP_FILE = "/binh-blog/grammar/quiz/test-groups.json";
+
+// DOM refs
+const groupSelect = document.getElementById("group-select");
+const numSelect = document.getElementById("num-select");
+const modeSelect = document.getElementById("mode-select");
+const examTimeInput = document.getElementById("exam-time");
+const startBtn = document.getElementById("start-btn");
+const qList = document.getElementById("question-list");
+const titleSelected = document.getElementById("title-selected");
+const metaTotal = document.getElementById("meta-total");
+const submitBtn = document.getElementById("submit-btn");
+const resetBtn = document.getElementById("reset-btn");
+const saveBtn = document.getElementById("save-btn");
+const timerDiv = document.getElementById("timer");
+const resultBox = document.getElementById("result-box");
+const savedList = document.getElementById("saved-list");
+const intro = document.getElementById("intro");
+
+let groups = {};           // mapping group -> array of quiz slugs
+let allQuestions = [];     // pooled questions for current test
+let userAnswers = {};      // index -> choiceIndex
+let examMode = false;
+let examTimer = null;
+let examTimeLeft = 0;
+
+// UTIL: shuffle
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// load groups config
+async function loadGroups() {
+  try {
+    const res = await fetch(GROUP_FILE);
+    if (!res.ok) throw new Error('Không load được nhóm');
+    groups = await res.json();
+    // populate select
+    groupSelect.innerHTML = '<option value="">— chọn —</option>';
+    Object.keys(groups).forEach(g => {
+      const opt = document.createElement('option');
+      opt.value = g;
+      opt.textContent = g.charAt(0).toUpperCase() + g.slice(1);
+      groupSelect.appendChild(opt);
+    });
+    loadSavedList();
+  } catch (e) {
+    console.error(e);
+    groupSelect.innerHTML = '<option value="">Lỗi load nhóm</option>';
+  }
+}
+
+// load saved scores summary for groups
+function loadSavedList() {
+  const keys = Object.keys(localStorage).filter(k => k.startsWith('test-score-'));
+  if (!keys.length) { savedList.textContent = 'Chưa có dữ liệu.'; return; }
+  const lines = keys.map(k => {
+    try {
+      const obj = JSON.parse(localStorage.getItem(k));
+      const group = k.replace('test-score-','');
+      return `<div><b>${group}</b>: ${obj.score}% — ${obj.correct}/${obj.total} lúc ${new Date(obj.time).toLocaleString()}</div>`;
+    } catch(e){ return ''; }
+  }).join('');
+  savedList.innerHTML = lines || 'Chưa có dữ liệu.';
+}
+
+// build test by fetching files for group
+async function buildTestForGroup(group, maxQuestions) {
+  allQuestions = [];
+  userAnswers = {};
+  if (!groups[group]) throw new Error('Group not found');
+
+  const slugs = groups[group];
+  // allow '*' meaning all quiz files in folder (not implemented here)
+  let slugsToFetch = Array.isArray(slugs) ? slugs : [];
+  // fetch sequentially (safe)
+  for (const s of slugsToFetch) {
+    const url = QUIZ_BASE + s + ".json";
+    try {
+      const r = await fetch(url);
+      if (!r.ok) {
+        console.warn("Quiz file not found:", url);
+        continue;
+      }
+      const jd = await r.json();
+      // append with metadata: source slug
+      jd.questions.forEach(q => {
+        allQuestions.push({ ...q, _source: s });
+      });
+    } catch (e) {
+      console.warn("Error fetching", url, e);
+    }
+  }
+
+  if (!allQuestions.length) throw new Error('Không có câu hỏi trong nhóm này.');
+
+  // randomize and limit
+  shuffle(allQuestions);
+  if (maxQuestions && allQuestions.length > maxQuestions) allQuestions = allQuestions.slice(0, maxQuestions);
+
+  return allQuestions;
+}
+
+// render test UI
+function renderTest() {
+  if (!allQuestions.length) {
+    qList.innerHTML = '<div class="hint">Không có câu hỏi.</div>';
+    return;
+  }
+  intro.style.display = 'none';
+  qList.innerHTML = "";
+  allQuestions.forEach((q, idx) => {
+    const div = document.createElement('div');
+    div.className = 'q-item';
+    div.dataset.qid = idx;
+    div.innerHTML = `<div style="font-weight:600;margin-bottom:6px;">${idx+1}. ${q.question}</div>
+      <div class="choices">${q.choices.map((c,ci)=>`<label class="q-label"><input type="radio" name="q${idx}" value="${ci}"> ${String.fromCharCode(65+ci)}. ${c}</label>`).join('')}</div>
+      <div class="q-explain">${q.explanation||''}</div>`;
+    qList.appendChild(div);
+
+    // attach change listener
+    div.querySelectorAll('input[type=radio]').forEach(r => {
+      r.addEventListener('change', e => {
+        userAnswers[idx] = parseInt(e.target.value,10);
+      });
+    });
+  });
+
+  metaTotal.textContent = allQuestions.length;
+  titleSelected.innerHTML = `<b>Nhóm:</b> ${groupSelect.value}`;
+  submitBtn.style.display = 'inline-block';
+  resetBtn.style.display = 'inline-block';
+  saveBtn.style.display = 'inline-block';
+}
+
+// scoring & highlight
+function scoreTest() {
+  let correct = 0;
+  const total = allQuestions.length;
+
+  allQuestions.forEach((q, idx) => {
+    const div = qList.querySelector(`[data-qid="${idx}"]`);
+    const labels = Array.from(div.querySelectorAll('.q-label'));
+    const explain = div.querySelector('.q-explain');
+    labels.forEach(l => l.classList.remove('correct','incorrect'));
+    const u = (typeof userAnswers[idx] !== "undefined") ? parseInt(userAnswers[idx],10) : undefined;
+
+    if (u === q.answer) {
+      correct++;
+      if (labels[q.answer]) labels[q.answer].classList.add('correct');
+    } else {
+      if (labels[q.answer]) labels[q.answer].classList.add('correct');
+      if (u !== undefined && labels[u]) labels[u].classList.add('incorrect');
+    }
+    explain.style.display = 'block';
+  });
+
+  const score = Math.round((correct / total) * 100);
+  resultBox.innerHTML = `<div style="font-weight:700">Điểm: ${score}% — ${correct}/${total} đúng</div>`;
+  return {score, correct, total};
+}
+
+// timer controls
+function startTimer(seconds) {
+  clearInterval(examTimer);
+  examTimeLeft = seconds;
+  timerDiv.style.display = 'block';
+  timerDiv.textContent = formatTime(examTimeLeft);
+  examTimer = setInterval(() => {
+    examTimeLeft--;
+    timerDiv.textContent = formatTime(examTimeLeft);
+    if (examTimeLeft <= 0) {
+      clearInterval(examTimer);
+      timerDiv.textContent = '⛔ Hết giờ!';
+      // lock inputs
+      lockInputs();
+      // auto submit
+      const res = scoreTest();
+      // save auto if exam
+      if (modeSelect.value === 'exam') saveResult(groupSelect.value, res);
+    }
+  }, 1000);
+}
+
+function formatTime(s) {
+  if (s < 0) s = 0;
+  const m = Math.floor(s/60);
+  const sec = s%60;
+  return `⏳ ${m}:${String(sec).padStart(2,'0')}`;
+}
+
+function lockInputs() {
+  qList.querySelectorAll('input[type=radio]').forEach(i => i.disabled = true);
+  submitBtn.style.display = 'none';
+}
+
+// save to localStorage (per group)
+function saveResult(group, result) {
+  try {
+    const obj = { score: result.score, correct: result.correct, total: result.total, time: Date.now() };
+    localStorage.setItem('test-score-' + group, JSON.stringify(obj));
+    loadSavedList();
+    alert('Đã lưu kết quả cho nhóm ' + group);
+  } catch (e) {
+    console.error(e);
+    alert('Không lưu được kết quả.');
+  }
+}
+
+// reset test UI
+function resetTest() {
+  userAnswers = {};
+  qList.querySelectorAll('.q-item').forEach(item => {
+    item.style.opacity = 1;
+    item.querySelectorAll('.q-label').forEach(l => {
+      l.classList.remove('correct','incorrect');
+      const inp = l.querySelector('input[type=radio]');
+      if (inp) inp.checked = false, inp.disabled = false;
+    });
+    const ex = item.querySelector('.q-explain');
+    if (ex) ex.style.display = 'none';
+  });
+  resultBox.innerHTML = '';
+  submitBtn.style.display = 'inline-block';
+  timerDiv.style.display = 'none';
+  clearInterval(examTimer);
+}
+
+// START button
+startBtn.addEventListener('click', async () => {
+  const group = groupSelect.value;
+  if (!group) { alert('Chọn nhóm trước.'); return; }
+  const num = parseInt(numSelect.value,10) || 20;
+  const mode = modeSelect.value;
+  examMode = (mode === 'exam');
+  try {
+    allQuestions = [];
+    const pool = await buildTestForGroup(group, num);
+    // success
+    renderTest();
+    // if exam mode -> start timer
+    if (examMode) {
+      let seconds = parseInt(examTimeInput.value,10);
+      if (!seconds || seconds <= 0) seconds = 300;
+      startTimer(seconds);
+    } else {
+      timerDiv.style.display = 'none';
+    }
+  } catch (e) {
+    console.error(e);
+    alert(e.message || 'Lỗi tạo đề thi.');
+  }
+});
+
+// submit button
+submitBtn.addEventListener('click', () => {
+  // if exam mode and time expired -> do nothing
+  if (examMode && examTimeLeft <= 0) return;
+  // score and show
+  const res = scoreTest();
+  // if exam mode -> lock and save
+  if (examMode) {
+    lockInputs();
+    saveResult(groupSelect.value, res);
+    clearInterval(examTimer);
+  }
+});
+
+// reset and save
+resetBtn.addEventListener('click', () => {
+  resetTest();
+});
+
+saveBtn.addEventListener('click', () => {
+  const res = scoreTest();
+  saveResult(groupSelect.value, res);
+});
+
+// initial load
+loadGroups();
+
+</script>
+</body>
+</html>
