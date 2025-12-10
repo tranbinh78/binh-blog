@@ -6,6 +6,14 @@
 <title>Bài học | Binh Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
+/* Quiz highlight */
+.q-label { display:block; padding:10px; border-radius:6px; margin:6px 0; cursor:pointer; background: #fff; border:1px solid #eee; }
+.q-label.correct { background:#d4ffd9 !important; border-color:#b6f0b6; }
+.q-label.incorrect { background:#ffd9d9 !important; border-color:#f0b6b6; }
+.q-explain { display:none; margin-top:8px; padding:8px; background:#f8f8f8; border-radius:6px; border:1px solid #eee; font-size:0.95rem; }
+.q-item { margin-bottom:18px; padding-bottom:6px; border-bottom:1px solid #f0f0f0; }
+   
 /* ===============================
    GLOBAL LAYOUT & THEME
 ================================= */
@@ -573,9 +581,8 @@ function enableMobileAccordion() {
 }
 
 /* ===============================
-   QUIZ POPUP ENGINE (loads / renders / scores)
+   QUIZ POPUP ENGINE 
 ================================= */
-// helper to get current lesson slug (from ?file=present-simple.md)
 function currentSlug() {
   const p = new URLSearchParams(window.location.search);
   const f = p.get("file") || "";
@@ -602,7 +609,7 @@ openBtn && openBtn.addEventListener("click", async () => {
   await loadQuiz(slug);
 });
 
-// Close
+// Đóng modal
 quizClose.addEventListener("click", () => {
   modal.style.display = "none";
 });
@@ -614,111 +621,93 @@ async function loadQuiz(slug) {
   quizRetry.style.display = "none";
   quizSubmit.style.display = "inline-block";
   userAnswers = {};
+
   try {
     const res = await fetch(`/binh-blog/grammar/quiz/${slug}.json`);
-    if (!res.ok) { quizContent.innerHTML = "<p>Không tìm thấy quiz cho bài này.</p>"; return; }
+    if (!res.ok) {
+      quizContent.innerHTML = "<p>Không tìm thấy quiz cho bài này.</p>";
+      return;
+    }
     quizData = await res.json();
     renderQuiz(quizData);
   } catch (e) {
-    quizContent.innerHTML = "<p>Lỗi khi tải quiz.</p>";
     console.error(e);
+    quizContent.innerHTML = "<p>Lỗi khi tải quiz.</p>";
   }
 }
 
-// Render quiz questions (multiple choice)
+// Render quiz
 function renderQuiz(data) {
   quizTitle.innerText = data.title + " — Quiz";
-  const html = data.questions.map((q, idx) => {
-    const choices = q.choices.map((c, ci) => {
-      return `<label style="display:block;padding:8px;border-radius:6px;margin-bottom:6px;border:1px solid #eee;cursor:pointer;">
-        <input type="radio" name="q${idx}" value="${ci}" style="margin-right:8px">${String.fromCharCode(65+ci)}. ${c}
-      </label>`;
-    }).join("");
-    return `<div style="margin-bottom:12px;" data-qid="${q.id}">
-      <div style="font-weight:600;margin-bottom:6px;">${idx+1}. ${q.question}</div>
-      <div>${choices}</div>
-      <div class="q-explain" style="display:none;margin-top:6px;color:#444;background:#fafafa;padding:8px;border-radius:6px;">${q.explanation}</div>
-    </div>`;
-  }).join("");
-  quizContent.innerHTML = html;
-  // attach change listeners
+  quizContent.innerHTML = "";
+
   data.questions.forEach((q, idx) => {
-    const radios = quizContent.querySelectorAll(`input[name="q${idx}"]`);
-    radios.forEach(r => {
+    const qDiv = document.createElement("div");
+    qDiv.className = "q-item";
+    qDiv.setAttribute("data-qid", idx);
+
+    qDiv.innerHTML = `
+      <div style="font-weight:600;margin-bottom:6px;">${idx+1}. ${q.question}</div>
+      <div class="q-choices">${ q.choices.map((c, ci) => `
+        <label class="q-label">
+          <input type="radio" name="q${idx}" value="${ci}">
+          ${String.fromCharCode(65+ci)}. ${c}
+        </label>`).join("") }
+      </div>
+      <div class="q-explain" style="display:none;margin-top:6px;">${q.explanation}</div>
+    `;
+
+    quizContent.appendChild(qDiv);
+
+    // Gán sự kiện khi chọn đáp án
+    qDiv.querySelectorAll("input[type=radio]").forEach(r => {
       r.addEventListener("change", () => {
-        userAnswers[q.id] = parseInt(r.value,10);
+        userAnswers[idx] = parseInt(r.value, 10);
       });
     });
   });
-  quizContent.scrollTop = 0;
 }
 
 // Submit quiz
 quizSubmit.addEventListener("click", () => {
   if (!quizData) return;
 
-  const total = quizData.questions.length;
   let correct = 0;
+  const total = quizData.questions.length;
 
   quizData.questions.forEach((q, idx) => {
-
-    // FIX 1: Dùng index thay vì q.id
-    const u = userAnswers[idx];
-
-    // FIX 2: Chọn đúng phần tử theo index
     const qDiv = quizContent.querySelector(`[data-qid="${idx}"]`);
     const explainDiv = qDiv.querySelector(".q-explain");
+    const labels = qDiv.querySelectorAll(".q-label");
 
-    // Reset màu trước khi tô lại
-    const labels = qDiv.querySelectorAll("label");
-    labels.forEach(l => l.style.background = "");
+    labels.forEach(l => l.classList.remove("correct", "incorrect"));
 
-    // Trường hợp chưa chọn
-    if (u === undefined) {
-      qDiv.style.opacity = "0.9";
-      labels[q.answer].style.background = "#d4ffd9";
-      explainDiv.style.display = "block";
-      return;
-    }
+    const u = userAnswers[idx];
 
-    // Trường hợp đúng
     if (u === q.answer) {
       correct++;
-      labels[q.answer].style.background = "#d4ffd9";
-    }
-
-    // Trường hợp sai
-    else {
-      labels[q.answer].style.background = "#d4ffd9"; 
-      labels[u].style.background = "#ffd9d9";        
+      labels[q.answer].classList.add("correct");
+    } else {
+      labels[q.answer].classList.add("correct");
+      if (u !== undefined) labels[u].classList.add("incorrect");
     }
 
     explainDiv.style.display = "block";
   });
 
-  // Tính điểm
-  const score = Math.round((correct / total) * 100);
-  quizResult.innerHTML =
-    `<div style="font-weight:700">Điểm: ${score}% — ${correct}/${total} đúng</div>`;
-});
+  const score = Math.round(correct / total * 100);
+  quizResult.innerHTML = `<b>Điểm: ${score}% — ${correct}/${total} đúng</b>`;
 
-// save to localStorage
-  const slug = currentSlug();
-  try { localStorage.setItem('quiz-score-'+slug, JSON.stringify({score, correct, total, time:Date.now()})); } catch(e){}
   quizSubmit.style.display = "none";
   quizRetry.style.display = "inline-block";
 });
 
-// Retry
+// Retry quiz
 quizRetry.addEventListener("click", () => {
   const slug = currentSlug();
   loadQuiz(slug);
 });
-
-// allow closing modal with ESC and clicking outside
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") modal.style.display = "none"; });
-modal.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
-
+   
 /* ===============================
    INIT
 ================================= */
