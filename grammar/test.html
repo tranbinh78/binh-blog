@@ -444,131 +444,15 @@ function lockAllInputs() {
     .forEach(i => i.disabled = true);
 }
 
-function autoExplain(question, answerText) {
-
-  const q = question.toLowerCase();
-  const a = answerText.toLowerCase();
-
-  /* ===========================================
-     1) SIGNAL WORDS DETECTION
-  =========================================== */
-
-  // Present Continuous
-  if (q.includes("now") || q.includes("right now") || q.includes("at the moment")) {
-    return "Dùng hiện tại tiếp diễn vì có dấu hiệu thời gian như 'now', 'right now', mô tả hành động đang xảy ra.";
-  }
-
-  // Present Perfect
-  if (q.includes("already") || q.includes("yet") || q.includes("just")) {
-    return "Dùng hiện tại hoàn thành vì có các trạng từ như already, yet, just.";
-  }
-
-  // Present Perfect Continuous
-  if (q.includes("for ") || q.includes("since ")) {
-    if (a.includes("has been") || a.includes("have been"))
-      return "Dùng hiện tại hoàn thành tiếp diễn để nhấn mạnh hành động kéo dài từ quá khứ đến hiện tại.";
-  }
-
-  // Past Simple
-  if (q.includes("yesterday") || q.includes("last") || q.includes("ago")) {
-    return "Dùng quá khứ đơn vì có dấu hiệu thời gian rõ ràng: yesterday, last, ago.";
-  }
-
-  // Future (will)
-  if (q.includes("tomorrow") || q.includes("next")) {
-    return "Dùng thì tương lai đơn để diễn tả kế hoạch hoặc dự đoán dựa trên cảm tính.";
-  }
-
-  // Be going to
-  if (q.includes("plan") || q.includes("intend") || q.includes("going to")) {
-    return "Dùng be going to để diễn tả kế hoạch hoặc dự định có trước.";
-  }
-
-  /* ===========================================
-     2) VERB FORM PATTERNS
-  =========================================== */
-
-  // Passive Voice
-  if (a.includes("is ") && a.includes("ed") || 
-      a.includes("are ") && a.includes("ed") ||
-      a.includes("was ") && a.includes("ed") ||
-      a.includes("were ") && a.includes("ed")) {
-
-    return "Dùng thể bị động (Passive) vì nhấn mạnh hành động, không phải người thực hiện.";
-  }
-
-  // Past Continuous
-  if (a.includes("was ") && a.includes("ing") || a.includes("were ") && a.includes("ing")) {
-    return "Dùng quá khứ tiếp diễn để mô tả hành động đang xảy ra tại một thời điểm trong quá khứ.";
-  }
-
-  // Future Continuous
-  if (a.includes("will be") && a.includes("ing")) {
-    return "Dùng tương lai tiếp diễn để mô tả hành động đang diễn ra tại một thời điểm trong tương lai.";
-  }
-
-  // Future Perfect
-  if (a.includes("will have") && a.includes("ed")) {
-    return "Dùng tương lai hoàn thành để diễn tả hành động hoàn tất trước một thời điểm tương lai.";
-  }
-
-  // Future Perfect Continuous
-  if (a.includes("will have been") && a.includes("ing")) {
-    return "Dùng tương lai hoàn thành tiếp diễn để nhấn mạnh độ dài hành động trước mốc thời gian tương lai.";
-  }
-
-  // Past Perfect
-  if (a.includes("had ") && a.includes("ed")) {
-    return "Dùng quá khứ hoàn thành cho hành động xảy ra trước một hành động khác trong quá khứ.";
-  }
-
-  // Past Perfect Continuous
-  if (a.includes("had been") && a.includes("ing")) {
-    return "Dùng quá khứ hoàn thành tiếp diễn để nhấn mạnh hành động kéo dài trước một hành động khác.";
-  }
-
-  // Simple Present
-  if (/^[a-z]+s$/.test(a)) {
-    return "Dùng hiện tại đơn để diễn tả thói quen, sự thật hiển nhiên hoặc lịch trình.";
-  }
-
-  // Modal verbs
-  if (a.includes("can ") || a.includes("should ") || a.includes("must ") || a.includes("might ")) {
-    return "Động từ khiếm khuyết (modal verbs) luôn đi kèm động từ nguyên mẫu không 'to'.";
-  }
-
-  /* ===========================================
-     3) CONDITIONALS
-  =========================================== */
-
-  if (a.includes("would")) {
-    return "Câu điều kiện loại 2: diễn tả tình huống không có thật ở hiện tại.";
-  }
-
-  if (a.includes("will")) {
-    return "Câu điều kiện loại 1: diễn tả điều kiện có thật ở hiện tại hoặc tương lai.";
-  }
-
-  if (a.includes("had") && a.includes("would have")) {
-    return "Câu điều kiện loại 3: diễn tả điều kiện không có thật trong quá khứ.";
-  }
-
-  /* ===========================================
-     4) DEFAULT EXPLANATION
-  =========================================== */
-
-  return "Đáp án đúng theo cấu trúc ngữ pháp của câu.";
-}
-  
-/* ============================
-     SUBMIT TEST (UPDATED)
-============================ */
+/* -------------------------------------------------
+   SUBMIT TEST
+------------------------------------------------- */
 submitBtn.addEventListener("click", () => {
   clearInterval(timerInterval);
 
   let correct = 0;
 
-  allquestions.forEach((q, index) => {
+  allQuestions.forEach((q, index) => {
     const qDiv = document.querySelector(`[data-qindex="${index}"]`);
     const radios = qDiv.querySelectorAll("input[type=radio]");
     const expDiv = qDiv.querySelector(".q-exp");
@@ -576,9 +460,9 @@ submitBtn.addEventListener("click", () => {
     let selected = -1;
     radios.forEach(r => { if (r.checked) selected = parseInt(r.value); });
 
-    // Highlight lại
+    // Highlight
     const labels = qDiv.querySelectorAll(".choice-label");
-    labels.forEach(l => l.classList.remove("correct", "wrong"));
+    labels.forEach(l => l.classList.remove("correct","wrong"));
 
     if (selected === q.answer) {
       correct++;
@@ -588,24 +472,8 @@ submitBtn.addEventListener("click", () => {
       if (selected >= 0) labels[selected].classList.add("wrong");
     }
 
-    /* =============================
-       AUTO EXPLAIN for each question
-    ============================== */
-    const qText = q.text;
-    const correctText = q.choices[q.answer];
-
-    const explanation = autoExplain(qText, correctText);
-
-    expDiv.innerHTML = `<b>Giải thích: </b>${explanation}`;
     expDiv.style.display = "block";
   });
-
-  /* ==== RESULT ==== */
-  const total = allquestions.length;
-  resultBox.innerHTML = `Kết quả: <b>${correct}/${total}</b> — ${(correct/total*100).toFixed(0)}%`;
-  resultBox.style.display = "block";
-
-});
 
   // RESULT
   const total = allQuestions.length;
