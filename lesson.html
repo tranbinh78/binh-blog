@@ -662,36 +662,35 @@ quizSubmit.addEventListener("click", () => {
 
   quizData.questions.forEach((q, idx) => {
 
-    // FIX 1: Dùng index thay vì q.id (vì JSON không có id)
-    const u = userAnswers[idx]; 
+    // FIX 1: Dùng index thay vì q.id
+    const u = userAnswers[idx];
 
-    // FIX 2: chọn đúng phần tử theo index
+    // FIX 2: Chọn đúng phần tử theo index
     const qDiv = quizContent.querySelector(`[data-qid="${idx}"]`);
     const explainDiv = qDiv.querySelector(".q-explain");
 
-    // Reset background trước khi tô
+    // Reset màu trước khi tô lại
     const labels = qDiv.querySelectorAll("label");
     labels.forEach(l => l.style.background = "");
 
-    // Chưa trả lời
+    // Trường hợp chưa chọn
     if (u === undefined) {
       qDiv.style.opacity = "0.9";
-      // vẫn cho hiển thị đáp án đúng
       labels[q.answer].style.background = "#d4ffd9";
       explainDiv.style.display = "block";
       return;
     }
 
-    // Trả lời đúng
+    // Trường hợp đúng
     if (u === q.answer) {
       correct++;
       labels[q.answer].style.background = "#d4ffd9";
     }
 
-    // Trả lời sai
+    // Trường hợp sai
     else {
-      labels[q.answer].style.background = "#d4ffd9";    // đáp án đúng (xanh)
-      labels[u].style.background = "#ffd9d9";           // đáp án chọn sai (đỏ)
+      labels[q.answer].style.background = "#d4ffd9"; 
+      labels[u].style.background = "#ffd9d9";        
     }
 
     explainDiv.style.display = "block";
