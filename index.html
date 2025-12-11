@@ -1,0 +1,21 @@
+---
+layout: home
+title: "Binh Blog"
+---
+<section class="hero">
+  <div class="inner">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.tagline }}</p>
+    <p>{{ site.description }}</p>
+    <p><a href="/grammar/">Grammar Lessons →</a> • <a href="/pages/quizzes.html">Quizzes →</a></p>
+  </div>
+</section>
+
+<section class="posts">
+  <h2>Latest posts</h2>
+  <ul>
+  {% for post in site.posts limit:6 %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <small>— {{ post.date | date: "%Y-%m-%d" }}</small></li>
+  {% endfor %}
+  </ul>
+</section>
