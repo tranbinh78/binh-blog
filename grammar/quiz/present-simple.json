@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "She ____ to school every day.",
-      "choices": [
-        "go",
-        "goes",
-        "going",
-        "gone"
-      ],
+      "choices": ["go", "goes", "going", "gone"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'goes' vì chủ ngữ 'she' → động từ ở ngôi thứ 3 số ít phải thêm -es."
     },
     {
       "question": "Water ____ at 100°C.",
-      "choices": [
-        "boils",
-        "boil",
-        "is boiling",
-        "boiled"
-      ],
+      "choices": ["boils", "boil", "is boiling", "boiled"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng Present Simple để nói về sự thật hiển nhiên → 'water boils'."
     },
     {
       "question": "They usually ____ lunch at 12.",
-      "choices": [
-        "have",
-        "has",
-        "having",
-        "had"
-      ],
+      "choices": ["have", "has", "having", "had"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘They’ là số nhiều → dùng động từ nguyên mẫu 'have'."
     },
     {
       "question": "My father ____ coffee.",
-      "choices": [
-        "don’t drink",
-        "doesn’t drink",
-        "not drink",
-        "isn’t drink"
-      ],
+      "choices": ["don’t drink", "doesn’t drink", "not drink", "isn’t drink"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Phủ định Present Simple với chủ ngữ số ít → ‘doesn’t + V’."
     },
     {
       "question": "The sun ____ in the east.",
-      "choices": [
-        "rise",
-        "rises",
-        "rising",
-        "rose"
-      ],
+      "choices": ["rise", "rises", "rising", "rose"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Sự thật hiển nhiên + chủ ngữ số ít → dùng 'rises'."
     },
     {
       "question": "____ you like apples?",
-      "choices": [
-        "Are",
-        "Do",
-        "Does",
-        "Did"
-      ],
+      "choices": ["Are", "Do", "Does", "Did"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Câu hỏi Present Simple với chủ ngữ ‘you’ → dùng 'Do'."
     },
     {
       "question": "Tom ____ football.",
-      "choices": [
-        "play",
-        "plays",
-        "playing",
-        "played"
-      ],
+      "choices": ["play", "plays", "playing", "played"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Tom là chủ ngữ số ít → động từ thêm -s → 'plays'."
     },
     {
       "question": "We ____ TV in the evening.",
-      "choices": [
-        "watch",
-        "watches",
-        "watching",
-        "watched"
-      ],
+      "choices": ["watch", "watches", "watching", "watched"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'We' là số nhiều → động từ giữ nguyên → 'watch'."
     },
     {
       "question": "She ____ English well.",
-      "choices": [
-        "speak",
-        "speaks",
-        "speaking",
-        "spoken"
-      ],
+      "choices": ["speak", "speaks", "speaking", "spoken"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Chủ ngữ 'she' → động từ phải thêm -s → 'speaks'."
     },
     {
       "question": "He ____ to music every night.",
-      "choices": [
-        "listen",
-        "listens",
-        "listening",
-        "is listening"
-      ],
+      "choices": ["listen", "listens", "listening", "is listening"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Thói quen hằng ngày + chủ ngữ số ít → dùng 'listens'."
     },
     {
       "question": "I ____ coffee in the morning.",
-      "choices": [
-        "not drink",
-        "don’t drink",
-        "doesn’t drink",
-        "not drinking"
-      ],
+      "choices": ["not drink", "don’t drink", "doesn’t drink", "not drinking"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Phủ định Present Simple với 'I' → dùng 'don’t + V'."
     },
     {
       "question": "The shops ____ at 9 a.m.",
-      "choices": [
-        "open",
-        "opens",
-        "opened",
-        "opening"
-      ],
+      "choices": ["open", "opens", "opened", "opening"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Shops’ là số nhiều → dùng động từ nguyên mẫu ‘open’."
     },
     {
       "question": "Birds ____ in the sky.",
-      "choices": [
-        "fly",
-        "flies",
-        "flying",
-        "flew"
-      ],
+      "choices": ["fly", "flies", "flying", "flew"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Birds’ số nhiều → dùng 'fly'."
     },
     {
       "question": "She ____ her homework after dinner.",
-      "choices": [
-        "do",
-        "does",
-        "did",
-        "doing"
-      ],
+      "choices": ["do", "does", "did", "doing"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Chủ ngữ số ít → dùng 'does' trong Present Simple."
     },
     {
       "question": "Dogs ____ meat.",
-      "choices": [
-        "eat",
-        "eats",
-        "ate",
-        "eating"
-      ],
+      "choices": ["eat", "eats", "ate", "eating"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Dogs’ là số nhiều → dùng 'eat'."
     }
   ]
 }
