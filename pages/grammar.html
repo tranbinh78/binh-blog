@@ -1,0 +1,21 @@
+---
+layout: page
+title: English Grammar Lessons
+permalink: /grammar/
+---
+
+<h1>English Grammar Lessons</h1>
+
+<p>Below is the list of grammar lessons. Click on a topic to view the lesson.</p>
+
+<ul>
+  {% assign grammar_pages = site.static_files | where_exp: "file", "file.path contains 'grammar/'" %}
+  {% for file in grammar_pages %}
+    {% if file.extname == '.md' %}
+      {% assign filename = file.name | replace: '.md', '' %}
+      <li>
+        <a href="{{ '/grammar/' | append: filename | append: '.html' }}">{{ filename | replace: '-', ' ' | capitalize }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
