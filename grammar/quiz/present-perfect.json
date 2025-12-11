@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "She ____ in London for 5 years.",
-      "choices": [
-        "lived",
-        "has lived",
-        "has been living",
-        "lives"
-      ],
+      "choices": ["lived", "has lived", "has been living", "lives"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng Present Perfect với 'for 5 years' để diễn tả hành động bắt đầu trong quá khứ và kéo dài đến hiện tại."
     },
     {
       "question": "I ____ my homework already.",
-      "choices": [
-        "have finished",
-        "finished",
-        "finish",
-        "has finished"
-      ],
+      "choices": ["have finished", "finished", "finish", "has finished"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Already' là dấu hiệu của Present Perfect, diễn tả hành động đã hoàn thành."
     },
     {
       "question": "They ____ this movie before.",
-      "choices": [
-        "have seen",
-        "saw",
-        "see",
-        "has seen"
-      ],
+      "choices": ["have seen", "saw", "see", "has seen"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Before' thường đi với Present Perfect để diễn tả trải nghiệm."
     },
     {
       "question": "He ____ to Japan three times.",
-      "choices": [
-        "has been",
-        "went",
-        "go",
-        "has gone"
-      ],
+      "choices": ["has been", "went", "go", "has gone"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'has been' để diễn tả trải nghiệm (nhiều lần) cho đến hiện tại."
     },
     {
       "question": "We ____ breakfast yet.",
-      "choices": [
-        "haven’t had",
-        "didn’t have",
-        "don’t have",
-        "not had"
-      ],
+      "choices": ["haven’t had", "didn’t have", "don’t have", "not had"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Trong câu phủ định với 'yet', luôn dùng Present Perfect → 'haven’t had'."
     },
     {
       "question": "She ____ just ____ the report.",
-      "choices": [
-        "has / finished",
-        "have / finished",
-        "has / finish",
-        "finished / has"
-      ],
+      "choices": ["has / finished", "have / finished", "has / finish", "finished / has"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Just' là dấu hiệu của Present Perfect, dùng 'has finished'."
     },
     {
       "question": "They ____ in this school since 2020.",
-      "choices": [
-        "studied",
-        "study",
-        "have studied",
-        "has studied"
-      ],
+      "choices": ["studied", "study", "have studied", "has studied"],
       "answer": 2,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Since 2020' → hành động bắt đầu trong quá khứ và kéo dài đến nay → dùng Present Perfect."
     },
     {
       "question": "I ____ seen him today.",
-      "choices": [
-        "have",
-        "has",
-        "have not",
-        "haven’t"
-      ],
+      "choices": ["have", "has", "have not", "haven’t"],
       "answer": 3,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Câu phủ định Present Perfect → 'haven’t seen'. 'Today' vẫn được dùng với Present Perfect."
     },
     {
       "question": "He ____ never ____ to Canada.",
-      "choices": [
-        "has / been",
-        "have / been",
-        "has / go",
-        "have / gone"
-      ],
+      "choices": ["has / been", "have / been", "has / go", "have / gone"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Never' dùng trong Present Perfect để diễn tả kinh nghiệm chưa từng xảy ra."
     },
     {
       "question": "She ____ the keys. She can't find them.",
-      "choices": [
-        "has lost",
-        "lost",
-        "loses",
-        "is losing"
-      ],
+      "choices": ["has lost", "lost", "loses", "is losing"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hiện tại không tìm thấy → kết quả hiện tại → dùng Present Perfect: 'has lost'."
     },
     {
       "question": "____ you ever ____ sushi?",
-      "choices": [
-        "Do / try",
-        "Have / tried",
-        "Has / try",
-        "Did / tried"
-      ],
+      "choices": ["Do / try", "Have / tried", "Has / try", "Did / tried"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Ever' dùng trong câu hỏi về trải nghiệm → Present Perfect: 'Have you ever tried...?'"
     },
     {
       "question": "We ____ him since Monday.",
-      "choices": [
-        "haven’t seen",
-        "didn’t see",
-        "don’t see",
-        "not seen"
-      ],
+      "choices": ["haven’t seen", "didn’t see", "don’t see", "not seen"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Since Monday' → hành động kéo dài đến hiện tại → dùng Present Perfect: 'haven’t seen'."
     },
     {
       "question": "The train ____ just ___.",
-      "choices": [
-        "has / arrived",
-        "have / arrived",
-        "has / arrive",
-        "arrived / has"
-      ],
+      "choices": ["has / arrived", "have / arrived", "has / arrive", "arrived / has"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Just' → hành động vừa mới xảy ra → dùng Present Perfect."
     },
     {
       "question": "They ____ finished the project.",
-      "choices": [
-        "has already",
-        "have already",
-        "already have been",
-        "already has"
-      ],
+      "choices": ["has already", "have already", "already have been", "already has"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Already' dùng trong Present Perfect, chủ ngữ 'they' → 'have already finished'."
     },
     {
       "question": "I ____ this book before.",
-      "choices": [
-        "haven’t read",
-        "don’t read",
-        "didn’t read",
-        "not read"
-      ],
+      "choices": ["haven’t read", "don’t read", "didn’t read", "not read"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Before' → diễn tả trải nghiệm trong quá khứ đến hiện tại → dùng Present Perfect."
     }
   ]
 }
