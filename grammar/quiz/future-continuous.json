@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "This time tomorrow, I ____ to Hanoi.",
-      "choices": [
-        "will be traveling",
-        "will travel",
-        "am traveling",
-        "travel"
-      ],
+      "choices": ["will be traveling", "will travel", "am traveling", "travel"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'This time tomorrow' chỉ thời điểm cụ thể trong tương lai → dùng Future Continuous: will be + V-ing."
     },
     {
       "question": "At 8 p.m. tonight, she ____ her homework.",
-      "choices": [
-        "will be doing",
-        "will do",
-        "does",
-        "is doing"
-      ],
+      "choices": ["will be doing", "will do", "does", "is doing"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'At 8 p.m. tonight' → hành động đang diễn ra tại thời điểm tương lai → dùng 'will be doing'."
     },
     {
       "question": "They ____ dinner when we arrive.",
-      "choices": [
-        "will be having",
-        "will have",
-        "have",
-        "are having"
-      ],
+      "choices": ["will be having", "will have", "have", "are having"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động đang diễn ra trong tương lai khi hành động khác xen vào → dùng Future Continuous."
     },
     {
       "question": "He ____ the car all afternoon.",
-      "choices": [
-        "will be repairing",
-        "will repair",
-        "repairs",
-        "repair"
-      ],
+      "choices": ["will be repairing", "will repair", "repairs", "repair"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'All afternoon' (trong tương lai) → diễn tả hành động đang diễn ra suốt một khoảng thời gian."
     },
     {
       "question": "At 10 a.m. tomorrow, we ____ the test.",
-      "choices": [
-        "will be taking",
-        "take",
-        "will take",
-        "are taking"
-      ],
+      "choices": ["will be taking", "take", "will take", "are taking"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Thời điểm cụ thể trong tương lai ('at 10 a.m. tomorrow') → dùng Future Continuous."
     },
     {
       "question": "She ____ the piano when you call.",
-      "choices": [
-        "will be practicing",
-        "practices",
-        "will practice",
-        "is practicing"
-      ],
+      "choices": ["will be practicing", "practices", "will practice", "is practicing"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động sẽ đang diễn ra khi hành động khác xảy ra trong tương lai → dùng Future Continuous."
     },
     {
       "question": "I ____ for my exam this weekend.",
-      "choices": [
-        "will be studying",
-        "study",
-        "will study",
-        "am studying"
-      ],
+      "choices": ["will be studying", "study", "will study", "am studying"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'This weekend' → nhấn mạnh quá trình đang diễn ra trong tương lai → dùng 'will be studying'."
     },
     {
       "question": "They ____ TV at that time.",
-      "choices": [
-        "will be watching",
-        "watch",
-        "watched",
-        "are watching"
-      ],
+      "choices": ["will be watching", "watch", "watched", "are watching"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'At that time' → hành động đang diễn ra tại một thời điểm tương lai → dùng Future Continuous."
     },
     {
       "question": "She ____ at the library all day tomorrow.",
-      "choices": [
-        "will be working",
-        "works",
-        "worked",
-        "is working"
-      ],
+      "choices": ["will be working", "works", "worked", "is working"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'All day tomorrow' → quá trình đang diễn ra trong tương lai → dùng Future Continuous."
     },
     {
       "question": "We ____ dinner at 7 p.m. next Monday.",
-      "choices": [
-        "will be having",
-        "have",
-        "will have",
-        "are having"
-      ],
+      "choices": ["will be having", "have", "will have", "are having"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'At 7 p.m. next Monday' → thời điểm rõ ràng trong tương lai → chọn 'will be having'."
     },
     {
       "question": "At this time next year, he ____ abroad.",
-      "choices": [
-        "will be living",
-        "lives",
-        "lived",
-        "will live"
-      ],
+      "choices": ["will be living", "lives", "lived", "will live"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'This time next year' báo hiệu hành động đang diễn ra vào thời điểm tương lai → dùng Future Continuous."
     },
     {
       "question": "Don’t call me at 6. I ____ .",
-      "choices": [
-        "will be cooking",
-        "cook",
-        "cooked",
-        "am cooking"
-      ],
+      "choices": ["will be cooking", "cook", "cooked", "am cooking"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động sẽ đang diễn ra tại thời điểm được nói đến ('at 6') → dùng Future Continuous."
     },
     {
       "question": "The students ____ an exam at this time next week.",
-      "choices": [
-        "will be taking",
-        "take",
-        "took",
-        "will take"
-      ],
+      "choices": ["will be taking", "take", "took", "will take"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'This time next week' → hành động đang xảy ra vào thời điểm tương lai → dùng Future Continuous."
     },
     {
       "question": "I ____ a meeting when you come.",
-      "choices": [
-        "will be having",
-        "have",
-        "will have",
-        "am having"
-      ],
+      "choices": ["will be having", "have", "will have", "am having"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động đang diễn ra trong tương lai khi hành động khác xảy ra → Future Continuous."
     },
     {
       "question": "She ____ in the garden when you arrive.",
-      "choices": [
-        "will be working",
-        "works",
-        "worked",
-        "is working"
-      ],
+      "choices": ["will be working", "works", "worked", "is working"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động đang diễn ra trong tương lai khi có sự kiện khác xuất hiện → dùng Future Continuous."
     }
   ]
 }
