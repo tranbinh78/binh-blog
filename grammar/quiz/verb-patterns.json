@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "He promised ____ earlier next time.",
-      "choices": [
-        "to come",
-        "coming",
-        "come",
-        "to coming"
-      ],
+      "choices": ["to come", "coming", "come", "to coming"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Promise’ + to V → to come."
     },
     {
       "question": "She suggested ____ to the beach.",
-      "choices": [
-        "to go",
-        "going",
-        "go",
-        "goes"
-      ],
+      "choices": ["to go", "going", "go", "goes"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Suggest’ + V-ing → going."
     },
     {
       "question": "They agreed ____ the project together.",
-      "choices": [
-        "to do",
-        "doing",
-        "do",
-        "to doing"
-      ],
+      "choices": ["to do", "doing", "do", "to doing"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Agree’ + to V → to do."
     },
     {
       "question": "I want you ____ your best.",
-      "choices": [
-        "to try",
-        "trying",
-        "try",
-        "to trying"
-      ],
+      "choices": ["to try", "trying", "try", "to trying"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Cấu trúc: want + object + to V → to try."
     },
     {
       "question": "He asked me ____ the door.",
-      "choices": [
-        "to close",
-        "closing",
-        "close",
-        "to closing"
-      ],
+      "choices": ["to close", "closing", "close", "to closing"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Ask + object + to V’ → to close."
     },
     {
       "question": "She enjoys ____ music.",
-      "choices": [
-        "listening to",
-        "to listen to",
-        "listen to",
-        "to listening to"
-      ],
+      "choices": ["listening to", "to listen to", "listen to", "to listening to"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Enjoy’ + V-ing → listening to."
     },
     {
       "question": "My parents let me ____ out last night.",
-      "choices": [
-        "go",
-        "to go",
-        "going",
-        "to going"
-      ],
+      "choices": ["go", "to go", "going", "to going"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Let + object + bare infinitive (V)’ → go."
     },
     {
       "question": "He told us ____ quiet.",
-      "choices": [
-        "to be",
-        "being",
-        "be",
-        "to being"
-      ],
+      "choices": ["to be", "being", "be", "to being"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Tell + object + to V’ → to be."
     },
     {
       "question": "She persuaded him ____ the job.",
-      "choices": [
-        "to take",
-        "take",
-        "taking",
-        "to taking"
-      ],
+      "choices": ["to take", "take", "taking", "to taking"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Persuade + object + to V’ → to take."
     },
     {
       "question": "He admitted ____ the window.",
-      "choices": [
-        "breaking",
-        "to break",
-        "break",
-        "to breaking"
-      ],
+      "choices": ["breaking", "to break", "break", "to breaking"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Admit’ + V-ing → breaking."
     },
     {
       "question": "They decided ____ early.",
-      "choices": [
-        "to leave",
-        "leaving",
-        "leave",
-        "to leaving"
-      ],
+      "choices": ["to leave", "leaving", "leave", "to leaving"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Decide’ + to V → to leave."
     },
     {
       "question": "We encouraged him ____ harder.",
-      "choices": [
-        "to work",
-        "work",
-        "working",
-        "to working"
-      ],
+      "choices": ["to work", "work", "working", "to working"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Encourage + object + to V’ → to work."
     },
     {
       "question": "He avoided ____ to the meeting.",
-      "choices": [
-        "going",
-        "to go",
-        "goes",
-        "to going"
-      ],
+      "choices": ["going", "to go", "goes", "to going"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Avoid’ + V-ing → going."
     },
     {
       "question": "I expect you ____ on time.",
-      "choices": [
-        "to be",
-        "being",
-        "be",
-        "to being"
-      ],
+      "choices": ["to be", "being", "be", "to being"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Expect + object + to V’ → to be."
     },
     {
       "question": "She made me ____ my room.",
-      "choices": [
-        "clean",
-        "to clean",
-        "cleaning",
-        "to cleaning"
-      ],
+      "choices": ["clean", "to clean", "cleaning", "to cleaning"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Make + object + bare infinitive (V)’ → clean."
     }
   ]
 }
