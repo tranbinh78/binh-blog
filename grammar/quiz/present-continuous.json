@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "She ____ dinner right now.",
-      "choices": [
-        "cooks",
-        "is cooking",
-        "cook",
-        "cooking"
-      ],
+      "choices": ["cooks", "is cooking", "cook", "cooking"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng hiện tại tiếp diễn vì có 'right now' – hành động đang diễn ra ngay lúc nói."
     },
     {
       "question": "They ____ soccer at the moment.",
-      "choices": [
-        "play",
-        "plays",
-        "are playing",
-        "playing"
-      ],
+      "choices": ["play", "plays", "are playing", "playing"],
       "answer": 2,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Có dấu hiệu 'at the moment' → dùng 'are playing' cho hành động đang diễn ra."
     },
     {
       "question": "I ____ for my keys.",
-      "choices": [
-        "am looking",
-        "look",
-        "looks",
-        "looking"
-      ],
+      "choices": ["am looking", "look", "looks", "looking"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘am looking’ là hiện tại tiếp diễn → hành động đang thực hiện."
     },
     {
       "question": "We ____ a movie now.",
-      "choices": [
-        "watch",
-        "watches",
-        "are watching",
-        "watched"
-      ],
+      "choices": ["watch", "watches", "are watching", "watched"],
       "answer": 2,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Từ 'now' báo hiệu hành động đang diễn ra → dùng hiện tại tiếp diễn."
     },
     {
       "question": "The children ____ loudly.",
-      "choices": [
-        "are shouting",
-        "shout",
-        "shouts",
-        "shouting"
-      ],
+      "choices": ["are shouting", "shout", "shouts", "shouting"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động đang xảy ra → dùng 'are shouting'."
     },
     {
       "question": "He ____ to school today because it’s raining.",
-      "choices": [
-        "isn’t walking",
-        "don’t walk",
-        "doesn’t walk",
-        "not walking"
-      ],
+      "choices": ["isn’t walking", "don’t walk", "doesn’t walk", "not walking"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng hiện tại tiếp diễn cho tình huống tạm thời: hôm nay trời mưa nên cậu ấy không đi bộ."
     },
     {
       "question": "Listen! The birds ____ .",
-      "choices": [
-        "sing",
-        "are singing",
-        "sings",
-        "singing"
-      ],
+      "choices": ["sing", "are singing", "sings", "singing"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Từ 'Listen!' báo hiệu hành động đang diễn ra → dùng 'are singing'."
     },
     {
       "question": "They ____ for the bus.",
-      "choices": [
-        "wait",
-        "are waiting",
-        "are wait",
-        "waiting"
-      ],
+      "choices": ["wait", "are waiting", "are wait", "waiting"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động đang diễn ra tại thời điểm nói → dùng 'are waiting'."
     },
     {
       "question": "He ____ his homework right now.",
-      "choices": [
-        "does",
-        "doing",
-        "is doing",
-        "do"
-      ],
+      "choices": ["does", "doing", "is doing", "do"],
       "answer": 2,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Right now' → dùng hiện tại tiếp diễn: 'is doing'."
     },
     {
       "question": "I ____ English this semester.",
-      "choices": [
-        "am studying",
-        "study",
-        "studies",
-        "studying"
-      ],
+      "choices": ["am studying", "study", "studies", "studying"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Thì hiện tại tiếp diễn mô tả hoạt động tạm thời trong một giai đoạn ('this semester')."
     },
     {
       "question": "They ____ a new house these days.",
-      "choices": [
-        "are building",
-        "build",
-        "built",
-        "building"
-      ],
+      "choices": ["are building", "build", "built", "building"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'These days' diễn tả hành động đang kéo dài trong hiện tại → dùng hiện tại tiếp diễn."
     },
     {
       "question": "The baby ____ . Be quiet!",
-      "choices": [
-        "sleeps",
-        "sleep",
-        "is sleeping",
-        "sleeping"
-      ],
+      "choices": ["sleeps", "sleep", "is sleeping", "sleeping"],
       "answer": 2,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Be quiet!' báo hiệu hành động ngay lúc nói → dùng 'is sleeping'."
     },
     {
       "question": "We ____ lunch now. Please come later.",
-      "choices": [
-        "have",
-        "are having",
-        "having",
-        "has"
-      ],
+      "choices": ["have", "are having", "having", "has"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Now' → dùng 'are having' cho hành động đang diễn ra."
     },
     {
       "question": "She ____ TV at the moment.",
-      "choices": [
-        "is watching",
-        "watches",
-        "watch",
-        "watched"
-      ],
+      "choices": ["is watching", "watches", "watch", "watched"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'At the moment' là dấu hiệu rõ ràng của hiện tại tiếp diễn."
     },
     {
       "question": "He ____ to music right now.",
-      "choices": [
-        "listens",
-        "is listening",
-        "listen",
-        "listening"
-      ],
+      "choices": ["listens", "is listening", "listen", "listening"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Right now' → hành động đang diễn ra → dùng hiện tại tiếp diễn."
     }
   ]
 }
