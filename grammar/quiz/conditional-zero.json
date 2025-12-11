@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "If you heat water to 100°C, it ____ .",
-      "choices": [
-        "boils",
-        "boil",
-        "is boiling",
-        "boiled"
-      ],
+      "choices": ["boils", "boil", "is boiling", "boiled"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Zero Conditional: sự thật khoa học → dùng Present Simple → boils."
     },
     {
       "question": "If you mix red and blue, you ____ purple.",
-      "choices": [
-        "get",
-        "gets",
-        "got",
-        "are getting"
-      ],
+      "choices": ["get", "gets", "got", "are getting"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Kết quả luôn đúng → Present Simple → get."
     },
     {
       "question": "If plants don’t get water, they ____ .",
-      "choices": [
-        "die",
-        "dies",
-        "are dying",
-        "died"
-      ],
+      "choices": ["die", "dies", "are dying", "died"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Sự thật tự nhiên → Present Simple → die."
     },
     {
       "question": "If you press this button, the machine ____ .",
-      "choices": [
-        "starts",
-        "start",
-        "is starting",
-        "started"
-      ],
+      "choices": ["starts", "start", "is starting", "started"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Kết quả trực tiếp → Present Simple → starts."
     },
     {
       "question": "If you drop ice in the sun, it ____ .",
-      "choices": [
-        "melts",
-        "melt",
-        "melting",
-        "melted"
-      ],
+      "choices": ["melts", "melt", "melting", "melted"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Quy luật tự nhiên → Present Simple → melts."
     },
     {
       "question": "If you don’t eat, you ____ hungry.",
-      "choices": [
-        "get",
-        "gets",
-        "got",
-        "getting"
-      ],
+      "choices": ["get", "gets", "got", "getting"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Kết quả luôn đúng → Present Simple → get."
     },
     {
       "question": "If people exercise regularly, they ____ healthier.",
-      "choices": [
-        "become",
-        "becomes",
-        "became",
-        "are becoming"
-      ],
+      "choices": ["become", "becomes", "became", "are becoming"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Thói quen → Present Simple → become."
     },
     {
       "question": "If you heat metal, it ____ .",
-      "choices": [
-        "expands",
-        "expand",
-        "expanded",
-        "is expanding"
-      ],
+      "choices": ["expands", "expand", "expanded", "is expanding"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Sự thật vật lý → Present Simple → expands."
     },
     {
       "question": "If you freeze water, it ____ ice.",
-      "choices": [
-        "becomes",
-        "become",
-        "is becoming",
-        "became"
-      ],
+      "choices": ["becomes", "become", "is becoming", "became"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Quy luật tự nhiên → Present Simple → becomes."
     },
     {
       "question": "If it rains, the ground ____ wet.",
-      "choices": [
-        "gets",
-        "get",
-        "is getting",
-        "got"
-      ],
+      "choices": ["gets", "get", "is getting", "got"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Kết quả luôn xảy ra → Present Simple → gets."
     },
     {
       "question": "If students study hard, they ____ good grades.",
-      "choices": [
-        "get",
-        "gets",
-        "getting",
-        "got"
-      ],
+      "choices": ["get", "gets", "getting", "got"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Kết quả chung chung → Present Simple → get."
     },
     {
       "question": "If you mix yellow and red, you ____ orange.",
-      "choices": [
-        "get",
-        "gets",
-        "got",
-        "are getting"
-      ],
+      "choices": ["get", "gets", "got", "are getting"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Sự thật → Present Simple → get."
     },
     {
       "question": "If you don’t sleep enough, you ____ tired.",
-      "choices": [
-        "feel",
-        "feels",
-        "felt",
-        "feeling"
-      ],
+      "choices": ["feel", "feels", "felt", "feeling"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hậu quả tự nhiên → Present Simple → feel."
     },
     {
       "question": "If you study every day, your English ____ better.",
-      "choices": [
-        "gets",
-        "get",
-        "getting",
-        "got"
-      ],
+      "choices": ["gets", "get", "getting", "got"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Kết quả hiển nhiên → Present Simple → gets."
     },
     {
       "question": "If people drink too much coffee, they ____ shaky.",
-      "choices": [
-        "feel",
-        "feels",
-        "felt",
-        "feeling"
-      ],
+      "choices": ["feel", "feels", "felt", "feeling"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Kết quả thường xuyên đúng → Present Simple → feel."
     }
   ]
 }
