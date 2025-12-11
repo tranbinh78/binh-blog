@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "She ____ her homework before she went out.",
-      "choices": [
-        "had finished",
-        "finished",
-        "has finished",
-        "finishes"
-      ],
+      "choices": ["had finished", "finished", "has finished", "finishes"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng Past Perfect để diễn tả hành động xảy ra trước hành động khác trong quá khứ ('went out')."
     },
     {
       "question": "They ____ the bus before it arrived.",
-      "choices": [
-        "had missed",
-        "missed",
-        "miss",
-        "have missed"
-      ],
+      "choices": ["had missed", "missed", "miss", "have missed"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động 'missed the bus' xảy ra trước thời điểm xe đến → dùng 'had missed'."
     },
     {
       "question": "By the time we arrived, the movie ____ .",
-      "choices": [
-        "had started",
-        "started",
-        "has started",
-        "is starting"
-      ],
+      "choices": ["had started", "started", "has started", "is starting"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'By the time' + mốc quá khứ → hành động trước đó dùng Past Perfect: 'had started'."
     },
     {
       "question": "He was tired because he ____ all day.",
-      "choices": [
-        "had worked",
-        "worked",
-        "has worked",
-        "works"
-      ],
+      "choices": ["had worked", "worked", "has worked", "works"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Nguyên nhân xảy ra trước trạng thái trong quá khứ → dùng Past Perfect."
     },
     {
       "question": "They ____ the house before moving in.",
-      "choices": [
-        "had cleaned",
-        "cleaned",
-        "clean",
-        "have cleaned"
-      ],
+      "choices": ["had cleaned", "cleaned", "clean", "have cleaned"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Before' báo hiệu hành động xảy ra trước hành động khác → dùng 'had cleaned'."
     },
     {
       "question": "She didn’t want to go because she ____ the movie already.",
-      "choices": [
-        "had seen",
-        "saw",
-        "has seen",
-        "sees"
-      ],
+      "choices": ["had seen", "saw", "has seen", "sees"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Already' + hành động trước quá khứ → Past Perfect: 'had seen'."
     },
     {
       "question": "When he arrived, we ____ dinner.",
-      "choices": [
-        "had just finished",
-        "just finished",
-        "finish",
-        "has finished"
-      ],
+      "choices": ["had just finished", "just finished", "finish", "has finished"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động hoàn thành ('had just finished') xảy ra ngay trước thời điểm 'he arrived'."
     },
     {
       "question": "They ____ the room before the guests came.",
-      "choices": [
-        "had decorated",
-        "decorated",
-        "decorating",
-        "have decorated"
-      ],
+      "choices": ["had decorated", "decorated", "decorating", "have decorated"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động trang trí xảy ra trước khi khách đến → dùng Past Perfect."
     },
     {
       "question": "The train had left by the time we ____ to the station.",
-      "choices": [
-        "got",
-        "had got",
-        "get",
-        "gets"
-      ],
+      "choices": ["got", "had got", "get", "gets"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động 'got to the station' chỉ là mốc thời gian quá khứ → không dùng Past Perfect ở mốc → dùng 'got'."
     },
     {
       "question": "I couldn’t call her because I ____ my phone.",
-      "choices": [
-        "had lost",
-        "lost",
-        "have lost",
-        "lose"
-      ],
+      "choices": ["had lost", "lost", "have lost", "lose"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động mất điện thoại xảy ra trước hành động không thể gọi → dùng 'had lost'."
     },
     {
       "question": "Before I opened the door, someone ____ .",
-      "choices": [
-        "had knocked",
-        "knocked",
-        "knocks",
-        "is knocking"
-      ],
+      "choices": ["had knocked", "knocked", "knocks", "is knocking"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Before' → hành động xảy ra sớm hơn dùng Past Perfect: 'had knocked'."
     },
     {
       "question": "She ____ in London before she moved to Paris.",
-      "choices": [
-        "had lived",
-        "lived",
-        "lives",
-        "has lived"
-      ],
+      "choices": ["had lived", "lived", "lives", "has lived"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động sống ở London xảy ra trước khi chuyển đi → Past Perfect."
     },
     {
       "question": "He didn’t recognize her because he ____ her for years.",
-      "choices": [
-        "hadn't seen",
-        "didn't see",
-        "hasn't seen",
-        "doesn't see"
-      ],
+      "choices": ["hadn't seen", "didn't see", "hasn't seen", "doesn't see"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Hadn't seen' diễn tả sự kéo dài trước một mốc quá khứ → Past Perfect."
     },
     {
       "question": "We ____ the report before the deadline.",
-      "choices": [
-        "had completed",
-        "completed",
-        "completes",
-        "have completed"
-      ],
+      "choices": ["had completed", "completed", "completes", "have completed"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động hoàn thành xảy ra trước thời hạn → dùng Past Perfect."
     },
     {
       "question": "She apologized because she ____ a mistake.",
-      "choices": [
-        "had made",
-        "made",
-        "makes",
-        "has made"
-      ],
+      "choices": ["had made", "made", "makes", "has made"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động mắc lỗi xảy ra trước hành động xin lỗi → dùng Past Perfect."
     }
   ]
 }
