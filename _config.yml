@@ -11,7 +11,7 @@ lang: en
 author:
   name: "Trần Bình"
   url: "https://tranbinh78.github.io/binh-blog"
-  avatar: "/assets/img/avatar.png"
+ avatar: /assets/img/avatar-binh.png.jpg
 
 timezone: Asia/Ho_Chi_Minh
 
