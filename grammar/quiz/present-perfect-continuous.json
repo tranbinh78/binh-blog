@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "She ____ for 2 hours.",
-      "choices": [
-        "has been studying",
-        "studies",
-        "has studied",
-        "is studying"
-      ],
+      "choices": ["has been studying", "studies", "has studied", "is studying"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng Present Perfect Continuous với 'for 2 hours' để nhấn mạnh hành động kéo dài đến hiện tại."
     },
     {
       "question": "They ____ here since morning.",
-      "choices": [
-        "have waited",
-        "have been waiting",
-        "wait",
-        "are waiting"
-      ],
+      "choices": ["have waited", "have been waiting", "wait", "are waiting"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Since morning' mô tả hành động bắt đầu trong quá khứ và tiếp tục đến nay → dùng Present Perfect Continuous."
     },
     {
       "question": "He is tired because he ____ all day.",
-      "choices": [
-        "has been working",
-        "works",
-        "worked",
-        "is working"
-      ],
+      "choices": ["has been working", "works", "worked", "is working"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Nguyên nhân của tình trạng hiện tại ('tired') → dùng Present Perfect Continuous để nhấn mạnh sự kéo dài."
     },
     {
       "question": "We ____ for you for 30 minutes.",
-      "choices": [
-        "have been looking",
-        "have looked",
-        "look",
-        "are looking"
-      ],
+      "choices": ["have been looking", "have looked", "look", "are looking"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'For 30 minutes' → hành động kéo dài đến hiện tại → dùng Present Perfect Continuous."
     },
     {
       "question": "It ____ raining since morning.",
-      "choices": [
-        "has rained",
-        "has been raining",
-        "rains",
-        "is raining"
-      ],
+      "choices": ["has rained", "has been raining", "rains", "is raining"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Since morning' → dùng Present Perfect Continuous để nhấn mạnh thời lượng hành động."
     },
     {
       "question": "She ____ this book for a week.",
-      "choices": [
-        "has been reading",
-        "read",
-        "is reading",
-        "reads"
-      ],
+      "choices": ["has been reading", "read", "is reading", "reads"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động kéo dài trong một tuần → Present Perfect Continuous."
     },
     {
       "question": "They ____ in this company for years.",
-      "choices": [
-        "have been working",
-        "work",
-        "worked",
-        "are working"
-      ],
+      "choices": ["have been working", "work", "worked", "are working"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'For years' → hành động kéo dài liên tục → Present Perfect Continuous."
     },
     {
       "question": "I ____ about you.",
-      "choices": [
-        "have thought",
-        "have been thinking",
-        "think",
-        "am thinking"
-      ],
+      "choices": ["have thought", "have been thinking", "think", "am thinking"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Nhấn mạnh sự kéo dài của hành động suy nghĩ → dùng Present Perfect Continuous."
     },
     {
       "question": "He ____ the guitar recently.",
-      "choices": [
-        "has been practicing",
-        "practices",
-        "practiced",
-        "is practicing"
-      ],
+      "choices": ["has been practicing", "practices", "practiced", "is practicing"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Recently' là dấu hiệu của Present Perfect Continuous khi nhấn mạnh quá trình."
     },
     {
       "question": "The kids ____ the whole afternoon.",
-      "choices": [
-        "have been playing",
-        "played",
-        "play",
-        "are playing"
-      ],
+      "choices": ["have been playing", "played", "play", "are playing"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'The whole afternoon' → hành động kéo dài → dùng Present Perfect Continuous."
     },
     {
       "question": "Why are you so wet? – I ____ in the rain.",
-      "choices": [
-        "am walking",
-        "walked",
-        "have been walking",
-        "have walked"
-      ],
+      "choices": ["am walking", "walked", "have been walking", "have walked"],
       "answer": 2,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Kết quả hiện tại ('wet') do hành động kéo dài → Present Perfect Continuous."
     },
     {
       "question": "She ____ for a new job lately.",
-      "choices": [
-        "has been looking",
-        "is looking",
-        "looks",
-        "looked"
-      ],
+      "choices": ["has been looking", "is looking", "looks", "looked"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Lately' → dùng Present Perfect Continuous để nói về hành động gần đây và còn tiếp tục."
     },
     {
       "question": "We ____ English since 7 p.m.",
-      "choices": [
-        "study",
-        "have studied",
-        "have been studying",
-        "studied"
-      ],
+      "choices": ["study", "have studied", "have been studying", "studied"],
       "answer": 2,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Since 7 p.m.' → hành động bắt đầu trong quá khứ và vẫn tiếp diễn → Present Perfect Continuous."
     },
     {
       "question": "He ____ too much time on games recently.",
-      "choices": [
-        "has been spending",
-        "spends",
-        "spent",
-        "is spending"
-      ],
+      "choices": ["has been spending", "spends", "spent", "is spending"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Recently' → hành động lặp đi lặp lại kéo dài → dùng Present Perfect Continuous."
     },
     {
       "question": "They ____ for 3 hours. Let’s take a break.",
-      "choices": [
-        "have been discussing",
-        "discuss",
-        "discussed",
-        "are discussing"
-      ],
+      "choices": ["have been discussing", "discuss", "discussed", "are discussing"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'For 3 hours' → dùng Present Perfect Continuous để nhấn mạnh thời lượng."
     }
   ]
 }
