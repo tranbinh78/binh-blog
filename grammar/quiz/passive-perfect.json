@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "The project ____ already ____ .",
-      "choices": [
-        "has / been finished",
-        "has / finished",
-        "have / been finished",
-        "had / finished"
-      ],
+      "choices": ["has / been finished", "has / finished", "have / been finished", "had / finished"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Already' + hiện tại hoàn thành bị động → has been finished."
     },
     {
       "question": "The work ____ by the team before the deadline.",
-      "choices": [
-        "had been completed",
-        "has been completed",
-        "was completed",
-        "completed"
-      ],
+      "choices": ["had been completed", "has been completed", "was completed", "completed"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Before the deadline' → hoàn thành trước một mốc quá khứ → had been completed."
     },
     {
       "question": "The letter ____ by the time I arrived.",
-      "choices": [
-        "had been sent",
-        "was sent",
-        "sent",
-        "has been sent"
-      ],
+      "choices": ["had been sent", "was sent", "sent", "has been sent"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'By the time I arrived' → quá khứ hoàn thành bị động: had been sent."
     },
     {
       "question": "The documents ____ just ____ .",
-      "choices": [
-        "have / been printed",
-        "have / printed",
-        "has / printed",
-        "had / printed"
-      ],
+      "choices": ["have / been printed", "have / printed", "has / printed", "had / printed"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Just' + hiện tại hoàn thành bị động → have been printed."
     },
     {
       "question": "The room ____ before the guests came.",
-      "choices": [
-        "had been cleaned",
-        "was being cleaned",
-        "has been cleaned",
-        "cleaned"
-      ],
+      "choices": ["had been cleaned", "was being cleaned", "has been cleaned", "cleaned"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động xảy ra *trước khi khách đến* → had been cleaned."
     },
     {
       "question": "The news ____ already ____ .",
-      "choices": [
-        "has / been announced",
-        "was / announced",
-        "had / been announced",
-        "has / announced"
-      ],
+      "choices": ["has / been announced", "was / announced", "had / been announced", "has / announced"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hiện tại hoàn thành bị động: has been announced."
     },
     {
       "question": "The cake ____ before we arrived.",
-      "choices": [
-        "had been eaten",
-        "was eaten",
-        "has been eaten",
-        "ate"
-      ],
+      "choices": ["had been eaten", "was eaten", "has been eaten", "ate"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động hoàn thành trước mốc 'we arrived' → had been eaten."
     },
     {
       "question": "The tasks ____ before lunchtime.",
-      "choices": [
-        "had been finished",
-        "finished",
-        "were finished",
-        "have been finished"
-      ],
+      "choices": ["had been finished", "finished", "were finished", "have been finished"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hoàn thành trước mốc quá khứ → had been finished."
     },
     {
       "question": "The machine ____ not ____ properly.",
-      "choices": [
-        "has / been working",
-        "had / been working",
-        "has / worked",
-        "had / worked"
-      ],
+      "choices": ["has / been working", "had / been working", "has / worked", "had / worked"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Câu hiện tại hoàn thành tiếp diễn bị động hiếm gặp → nhưng 'has been working' = hoạt động đến hiện tại."
     },
     {
       "question": "The emails ____ by noon yesterday.",
-      "choices": [
-        "had been sent",
-        "were sent",
-        "has been sent",
-        "sent"
-      ],
+      "choices": ["had been sent", "were sent", "has been sent", "sent"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'By noon yesterday' → hành động hoàn thành trước mốc thời gian quá khứ → had been sent."
     },
     {
       "question": "The book ____ already ____ to the students.",
-      "choices": [
-        "has / been given",
-        "had / given",
-        "is / giving",
-        "has / gave"
-      ],
+      "choices": ["has / been given", "had / given", "is / giving", "has / gave"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hiện tại hoàn thành bị động: has been given."
     },
     {
       "question": "The file ____ before the meeting.",
-      "choices": [
-        "had been prepared",
-        "has been prepared",
-        "was preparing",
-        "prepared"
-      ],
+      "choices": ["had been prepared", "has been prepared", "was preparing", "prepared"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hoàn thành trước cuộc họp → had been prepared."
     },
     {
       "question": "The project report ____ already ____ .",
-      "choices": [
-        "has / been submitted",
-        "had / submitted",
-        "was / submitting",
-        "has / submitted"
-      ],
+      "choices": ["has / been submitted", "had / submitted", "was / submitting", "has / submitted"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hiện tại hoàn thành bị động → has been submitted."
     },
     {
       "question": "The problem ____ by the engineers.",
-      "choices": [
-        "has been solved",
-        "had been solved",
-        "was solved",
-        "solved"
-      ],
+      "choices": ["has been solved", "had been solved", "was solved", "solved"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động hoàn thành liên quan hiện tại → has been solved."
     },
     {
       "question": "The schedule ____ already ____ .",
-      "choices": [
-        "has / been changed",
-        "had / changed",
-        "is / changing",
-        "was / changed"
-      ],
+      "choices": ["has / been changed", "had / changed", "is / changing", "was / changed"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hiện tại hoàn thành bị động → has been changed."
     }
   ]
 }
