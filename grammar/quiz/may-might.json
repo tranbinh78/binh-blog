@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "It looks cloudy. It ____ rain later.",
-      "choices": [
-        "may",
-        "might",
-        "can",
-        "must"
-      ],
+      "choices": ["may", "might", "can", "must"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'May' diễn tả khả năng có thể xảy ra, mức độ cao hơn 'might'."
     },
     {
       "question": "He ____ come to the party, but he’s not sure.",
-      "choices": [
-        "may",
-        "might",
-        "can",
-        "should"
-      ],
+      "choices": ["may", "might", "can", "should"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Might' diễn tả khả năng thấp, không chắc chắn."
     },
     {
       "question": "____ I ask you a question?",
-      "choices": [
-        "May",
-        "Might",
-        "Can",
-        "Should"
-      ],
+      "choices": ["May", "Might", "Can", "Should"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'May I…?' là cách xin phép lịch sự và chuẩn mực nhất."
     },
     {
       "question": "They ____ visit us this weekend if they have time.",
-      "choices": [
-        "may",
-        "might",
-        "can",
-        "will"
-      ],
+      "choices": ["may", "might", "can", "will"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'May' diễn tả khả năng xảy ra trong tương lai, khá có thể."
     },
     {
       "question": "She ____ be at home. The lights are off.",
-      "choices": [
-        "might not",
-        "may",
-        "might",
-        "may be"
-      ],
+      "choices": ["might not", "may", "might", "may be"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Might not' diễn tả khả năng thấp, phủ định."
     },
     {
       "question": "He ____ join us, but he isn’t sure yet.",
-      "choices": [
-        "might",
-        "may",
-        "should",
-        "can"
-      ],
+      "choices": ["might", "may", "should", "can"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Might' → khả năng thấp, chưa chắc."
     },
     {
       "question": "The weather is terrible. The flight ____ be delayed.",
-      "choices": [
-        "may",
-        "might",
-        "will",
-        "can"
-      ],
+      "choices": ["may", "might", "will", "can"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'May' diễn tả khả năng có thể xảy ra (khá cao)."
     },
     {
       "question": "We ____ have to leave early, depending on the traffic.",
-      "choices": [
-        "might",
-        "may",
-        "can",
-        "should"
-      ],
+      "choices": ["might", "may", "can", "should"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'May have to' → có thể phải làm gì (khả năng khá cao)."
     },
     {
       "question": "She ____ know the answer, but I’m not sure.",
-      "choices": [
-        "may",
-        "might",
-        "should",
-        "can"
-      ],
+      "choices": ["may", "might", "should", "can"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Might' → không chắc chắn, mức độ thấp."
     },
     {
       "question": "There ____ be a meeting today, but it's not confirmed.",
-      "choices": [
-        "may",
-        "might",
-        "will",
-        "can"
-      ],
+      "choices": ["may", "might", "will", "can"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Might' diễn tả khả năng thấp, chưa được xác nhận."
     },
     {
       "question": "____ I leave early today?",
-      "choices": [
-        "May",
-        "Might",
-        "Should",
-        "Would"
-      ],
+      "choices": ["May", "Might", "Should", "Would"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'May I…?' → xin phép lịch sự nhất."
     },
     {
       "question": "They ____ move to a bigger city next year.",
-      "choices": [
-        "may",
-        "might",
-        "will",
-        "can"
-      ],
+      "choices": ["may", "might", "will", "can"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'May' → khả năng khá cao trong tương lai."
     },
     {
       "question": "He ____ be sleeping now. It’s very late.",
-      "choices": [
-        "may",
-        "might",
-        "should",
-        "can"
-      ],
+      "choices": ["may", "might", "should", "can"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Might' → dự đoán không chắc chắn."
     },
     {
       "question": "I ____ be wrong, but I think she likes you.",
-      "choices": [
-        "might",
-        "may",
-        "should",
-        "must"
-      ],
+      "choices": ["might", "may", "should", "must"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Might' diễn tả sự không chắc chắn (khiêm tốn)."
     },
     {
       "question": "The store ____ close early today.",
-      "choices": [
-        "may",
-        "might",
-        "will",
-        "can"
-      ],
+      "choices": ["may", "might", "will", "can"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'May' → khả năng cao hơn 'might'."
     }
   ]
 }
