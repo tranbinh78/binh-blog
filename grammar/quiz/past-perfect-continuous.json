@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "She was tired because she ____ for 3 hours.",
-      "choices": [
-        "had been studying",
-        "has been studying",
-        "studied",
-        "was studying"
-      ],
+      "choices": ["had been studying", "has been studying", "studied", "was studying"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng Past Perfect Continuous để diễn tả nguyên nhân xảy ra trước một trạng thái trong quá khứ ('was tired')."
     },
     {
       "question": "They ____ for the bus for 40 minutes before it arrived.",
-      "choices": [
-        "had been waiting",
-        "waited",
-        "were waiting",
-        "have waited"
-      ],
+      "choices": ["had been waiting", "waited", "were waiting", "have waited"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Before it arrived' → hành động chờ xảy ra trước → dùng 'had been waiting'."
     },
     {
       "question": "He ____ the guitar for years before joining the band.",
-      "choices": [
-        "had been practicing",
-        "practiced",
-        "was practicing",
-        "has practiced"
-      ],
+      "choices": ["had been practicing", "practiced", "was practicing", "has practiced"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'For years' → nhấn mạnh hành động kéo dài trước một mốc quá khứ → dùng Past Perfect Continuous."
     },
     {
       "question": "The ground was wet because it ____ earlier.",
-      "choices": [
-        "had been raining",
-        "was raining",
-        "rained",
-        "has been raining"
-      ],
+      "choices": ["had been raining", "was raining", "rained", "has been raining"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Kết quả ('ground was wet') do hành động kéo dài trước đó → 'had been raining'."
     },
     {
       "question": "I ____ for you before you finally arrived.",
-      "choices": [
-        "had been looking",
-        "was looking",
-        "looked",
-        "have looked"
-      ],
+      "choices": ["had been looking", "was looking", "looked", "have looked"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Before you arrived' → hành động diễn ra liên tục trước một mốc quá khứ → dùng Past Perfect Continuous."
     },
     {
       "question": "She failed the exam because she ____ enough.",
-      "choices": [
-        "hadn’t been studying",
-        "didn’t study",
-        "hasn’t studied",
-        "wasn’t studying"
-      ],
+      "choices": ["hadn’t been studying", "didn’t study", "hasn’t studied", "wasn’t studying"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Diễn tả nguyên nhân kéo dài trước thời điểm thi → Past Perfect Continuous phủ định."
     },
     {
       "question": "They ____ for hours when the rain stopped.",
-      "choices": [
-        "had been walking",
-        "walked",
-        "were walking",
-        "have walked"
-      ],
+      "choices": ["had been walking", "walked", "were walking", "have walked"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động kéo dài ('for hours') trước sự kiện khác trong quá khứ → dùng 'had been walking'."
     },
     {
       "question": "We ____ for the signal before crossing the street.",
-      "choices": [
-        "had been waiting",
-        "waited",
-        "were waiting",
-        "have been waiting"
-      ],
+      "choices": ["had been waiting", "waited", "were waiting", "have been waiting"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Before crossing' → hành động xảy ra trước mốc quá khứ → dùng Past Perfect Continuous."
     },
     {
       "question": "He ____ too much time on games before the test.",
-      "choices": [
-        "had been spending",
-        "was spending",
-        "spent",
-        "has spent"
-      ],
+      "choices": ["had been spending", "was spending", "spent", "has spent"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Before the test' → quá trình kéo dài trước mốc quá khứ → dùng 'had been spending'."
     },
     {
       "question": "She ____ to find a job before she finally got one.",
-      "choices": [
-        "had been trying",
-        "tried",
-        "was trying",
-        "has tried"
-      ],
+      "choices": ["had been trying", "tried", "was trying", "has tried"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng Past Perfect Continuous cho hành động kéo dài đến trước khi có kết quả."
     },
     {
       "question": "They ____ each other for years before they got married.",
-      "choices": [
-        "had been seeing",
-        "saw",
-        "were seeing",
-        "have seen"
-      ],
+      "choices": ["had been seeing", "saw", "were seeing", "have seen"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'For years' + mốc quá khứ ('got married') → dùng Past Perfect Continuous."
     },
     {
       "question": "I ____ all day before I took a break.",
-      "choices": [
-        "had been working",
-        "worked",
-        "was working",
-        "have been working"
-      ],
+      "choices": ["had been working", "worked", "was working", "have been working"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động kéo dài trước khi nghỉ → Past Perfect Continuous."
     },
     {
       "question": "She ____ for an hour before he finally answered the phone.",
-      "choices": [
-        "had been calling",
-        "called",
-        "was calling",
-        "has been calling"
-      ],
+      "choices": ["had been calling", "called", "was calling", "has been calling"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'For an hour' → hành động kéo dài trước một sự kiện khác → dùng Past Perfect Continuous."
     },
     {
       "question": "The students ____ for weeks before the exam.",
-      "choices": [
-        "had been preparing",
-        "prepared",
-        "were preparing",
-        "have prepared"
-      ],
+      "choices": ["had been preparing", "prepared", "were preparing", "have prepared"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Nhấn mạnh thời gian chuẩn bị kéo dài trước bài kiểm tra → dùng Past Perfect Continuous."
     },
     {
       "question": "We ____ the car for 2 months before it broke down.",
-      "choices": [
-        "had been using",
-        "used",
-        "were using",
-        "have used"
-      ],
+      "choices": ["had been using", "used", "were using", "have used"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'For 2 months' → hành động kéo dài trước một mốc quá khứ → dùng Past Perfect Continuous."
     }
   ]
 }
