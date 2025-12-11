@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "I think it ____ tomorrow.",
-      "choices": [
-        "rains",
-        "is raining",
-        "will rain",
-        "rain"
-      ],
+      "choices": ["rains", "is raining", "will rain", "rain"],
       "answer": 2,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'will' cho dự đoán dựa trên suy nghĩ chủ quan ('I think')."
     },
     {
       "question": "She ____ help you with your homework.",
-      "choices": [
-        "will",
-        "is",
-        "does",
-        "can"
-      ],
+      "choices": ["will", "is", "does", "can"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Will' diễn tả quyết định tự đưa ra tại thời điểm nói."
     },
     {
       "question": "They ____ a new house next year.",
-      "choices": [
-        "buy",
-        "will buy",
-        "bought",
-        "are buying"
-      ],
+      "choices": ["buy", "will buy", "bought", "are buying"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Next year' → kế hoạch cho tương lai → dùng Future Simple: will + V."
     },
     {
       "question": "He ____ for you later.",
-      "choices": [
-        "will come",
-        "comes",
-        "came",
-        "coming"
-      ],
+      "choices": ["will come", "comes", "came", "coming"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Later' → hành động tương lai → dùng 'will come'."
     },
     {
       "question": "We ____ dinner at 7 p.m.",
-      "choices": [
-        "will have",
-        "have",
-        "had",
-        "having"
-      ],
+      "choices": ["will have", "have", "had", "having"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Thời điểm tương lai đã xác định ('at 7 p.m.') → dùng Future Simple."
     },
     {
       "question": "I ____ you the truth.",
-      "choices": [
-        "will tell",
-        "told",
-        "tell",
-        "am telling"
-      ],
+      "choices": ["will tell", "told", "tell", "am telling"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Will tell' được dùng cho lời hứa hoặc cam kết."
     },
     {
       "question": "She ____ the test next week.",
-      "choices": [
-        "will take",
-        "takes",
-        "took",
-        "take"
-      ],
+      "choices": ["will take", "takes", "took", "take"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Next week' → thời điểm tương lai → dùng Future Simple."
     },
     {
       "question": "They ____ soon.",
-      "choices": [
-        "will leave",
-        "leave",
-        "left",
-        "are leaving"
-      ],
+      "choices": ["will leave", "leave", "left", "are leaving"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Soon' → hành động dự kiến trong tương lai → dùng 'will leave'."
     },
     {
       "question": "He ____ a doctor in the future.",
-      "choices": [
-        "will become",
-        "becomes",
-        "became",
-        "is becoming"
-      ],
+      "choices": ["will become", "becomes", "became", "is becoming"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'In the future' → dự đoán tương lai → dùng 'will become'."
     },
     {
       "question": "I’m sure she ____ the exam.",
-      "choices": [
-        "fails",
-        "will fail",
-        "will pass",
-        "passes"
-      ],
+      "choices": ["fails", "will fail", "will pass", "passes"],
       "answer": 2,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'I'm sure' → dự đoán chắc chắn → dùng 'will'."
     },
     {
       "question": "We ____ home after the party.",
-      "choices": [
-        "will go",
-        "go",
-        "went",
-        "going"
-      ],
+      "choices": ["will go", "go", "went", "going"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Hành động tương lai sau một sự kiện → dùng Future Simple."
     },
     {
       "question": "He ____ you if you ask.",
-      "choices": [
-        "helps",
-        "will help",
-        "help",
-        "helped"
-      ],
+      "choices": ["helps", "will help", "help", "helped"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Câu điều kiện loại 1: mệnh đề sau 'if' hiện tại đơn, mệnh đề chính dùng 'will'."
     },
     {
       "question": "I think they ____ late.",
-      "choices": [
-        "are",
-        "will be",
-        "were",
-        "are being"
-      ],
+      "choices": ["are", "will be", "were", "are being"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'I think' → dự đoán, dùng 'will be'."
     },
     {
       "question": "We ____ the results tomorrow.",
-      "choices": [
-        "will get",
-        "get",
-        "got",
-        "getting"
-      ],
+      "choices": ["will get", "get", "got", "getting"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "'Tomorrow' → thời điểm tương lai → dùng Future Simple."
     },
     {
       "question": "This car ____ very expensive.",
-      "choices": [
-        "will be",
-        "is",
-        "was",
-        "being"
-      ],
+      "choices": ["will be", "is", "was", "being"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dự đoán trong tương lai → dùng 'will be'."
     }
   ]
 }
