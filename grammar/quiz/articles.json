@@ -3,168 +3,93 @@
   "questions": [
     {
       "question": "She bought ____ umbrella yesterday.",
-      "choices": [
-        "an",
-        "a",
-        "the",
-        "no article"
-      ],
+      "choices": ["an", "a", "the", "no article"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'an' trước danh từ bắt đầu bằng nguyên âm (u)."
     },
     {
       "question": "I saw ____ dog in the garden. ____ dog was very cute.",
-      "choices": [
-        "a / The",
-        "the / A",
-        "an / The",
-        "a / A"
-      ],
+      "choices": ["a / The", "the / A", "an / The", "a / A"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'a' khi nhắc lần đầu; dùng 'the' khi nhắc lại đối tượng đã biết."
     },
     {
       "question": "He is ____ engineer.",
-      "choices": [
-        "an",
-        "a",
-        "the",
-        "no article"
-      ],
+      "choices": ["an", "a", "the", "no article"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'an' trước danh từ bắt đầu bằng nguyên âm (e)."
     },
     {
       "question": "We visited ____ museum last weekend.",
-      "choices": [
-        "the",
-        "a",
-        "an",
-        "no article"
-      ],
+      "choices": ["the", "a", "an", "no article"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'the' khi nói về địa điểm cụ thể mà người nghe có thể đoán được."
     },
     {
       "question": "I love ____ music.",
-      "choices": [
-        "no article",
-        "the",
-        "a",
-        "an"
-      ],
+      "choices": ["no article", "the", "a", "an"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Danh từ không đếm được dùng chung (music) → không dùng mạo từ."
     },
     {
       "question": "She works in ____ hospital.",
-      "choices": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
+      "choices": ["a", "an", "the", "no article"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘Hospital’ bắt đầu bằng âm nguyên âm → dùng 'an'."
     },
     {
       "question": "____ sun rises in the east.",
-      "choices": [
-        "The",
-        "A",
-        "An",
-        "No article"
-      ],
+      "choices": ["The", "A", "An", "No article"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'the' cho các hiện tượng duy nhất (sun, moon…)."
     },
     {
       "question": "He wants to buy ____ new laptop.",
-      "choices": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
+      "choices": ["a", "an", "the", "no article"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'a' trước danh từ bắt đầu bằng phụ âm (n)."
     },
     {
       "question": "I bought ____ apple and ____ banana.",
-      "choices": [
-        "an / a",
-        "a / an",
-        "an / the",
-        "the / the"
-      ],
+      "choices": ["an / a", "a / an", "an / the", "the / the"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Apple bắt đầu bằng nguyên âm → 'an'; banana bắt đầu bằng phụ âm → 'a'."
     },
     {
       "question": "This is ____ best restaurant in town.",
-      "choices": [
-        "the",
-        "a",
-        "an",
-        "no article"
-      ],
+      "choices": ["the", "a", "an", "no article"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "So sánh nhất luôn dùng 'the'."
     },
     {
       "question": "She wants to become ____ doctor.",
-      "choices": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
+      "choices": ["a", "an", "the", "no article"],
       "answer": 1,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Dùng 'an' trước âm nguyên âm (dọc âm ‘o’)."
     },
     {
       "question": "We went to ____ beach yesterday.",
-      "choices": [
-        "the",
-        "a",
-        "no article",
-        "an"
-      ],
+      "choices": ["the", "a", "no article", "an"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Nói về một bãi biển cụ thể mà người nói/nghe đều biết → dùng 'the'."
     },
     {
       "question": "____ water is essential for life.",
-      "choices": [
-        "No article",
-        "The",
-        "A",
-        "An"
-      ],
+      "choices": ["No article", "The", "A", "An"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Danh từ không đếm được nói chung → không dùng mạo từ."
     },
     {
       "question": "He is reading ____ book I lent him.",
-      "choices": [
-        "the",
-        "a",
-        "an",
-        "no article"
-      ],
+      "choices": ["the", "a", "an", "no article"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "‘The book’ là cuốn sách cụ thể đã được nhắc tới."
     },
     {
       "question": "She drinks ____ milk every morning.",
-      "choices": [
-        "no article",
-        "the",
-        "a",
-        "an"
-      ],
+      "choices": ["no article", "the", "a", "an"],
       "answer": 0,
-      "explanation": "Giải thích: đáp án đúng dựa trên quy tắc ngữ pháp."
+      "explanation": "Danh từ không đếm được dùng chung (milk) → không có mạo từ."
     }
   ]
 }
