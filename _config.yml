@@ -1,0 +1,54 @@
+title: "Binh Blog"
+tagline: "Learning. Sharing. Growing."
+description: "Blog cá nhân của Trần Bình – chia sẻ quá trình học tiếng Anh, ghi chú và cuộc sống."
+url: "https://tranbinh78.github.io"
+baseurl: "/binh-blog"
+
+theme: jekyll-theme-chirpy
+
+lang: en
+
+author:
+  name: "Trần Bình"
+  url: "https://tranbinh78.github.io/binh-blog"
+  avatar: "/assets/img/avatar.png"
+
+timezone: Asia/Ho_Chi_Minh
+
+markdown: kramdown
+
+paginate: 10
+
+collections:
+  posts:
+    output: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive
+    tag: archive
+  permalinks:
+    category: '/categories/:name/'
+    tag: '/tags/:name/'
+
+comments:
+  provider: "giscus"
+  giscus:
+    repo: "tranbinh78/binh-blog"
+    repo_id: ""
+    category: "General"
+    category_id: ""
+    mapping: "pathname"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    theme: "light"
