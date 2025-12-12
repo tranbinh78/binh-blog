@@ -482,7 +482,7 @@ input:checked + .slider:before {
 
 /* Khi hover → zoom nhẹ 1% */
 .nav a:hover {
-  transform: scale(1.015);   /* zoom nhẹ */
+  transform: scale(1.02);      /* zoom mạnh hơn, giống iOS */
   background-color: rgba(0,0,0,0.05);
 }
 
