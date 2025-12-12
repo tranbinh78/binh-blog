@@ -101,13 +101,39 @@ body {
 }
 
 .nav a:hover {
-  background: var(--accent-2);
+  background: rgba(0,0,0,0.04);
 }
 
 .nav .active {
   background: #e9eef5;
   color: var(--accent);
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+}
+
+/* ============================
+   Modern Link Hover (Underline Slide)
+============================= */
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 
@@ -314,7 +340,7 @@ a:hover::after {
 }
 
 .dark .nav a:hover {
-  background: var(--accent-2);
+  background: rgba(255,255,255,0.06);
 }
 
 .dark .nav .active {
