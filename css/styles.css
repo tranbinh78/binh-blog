@@ -531,3 +531,44 @@ input:checked + .slider:before {
   box-shadow: none;
 }
 
+/* ============================
+   Sidebar Ripple Hover Effect
+============================= */
+
+.nav a {
+  position: relative;
+  overflow: hidden; /* quan trọng để ripple không tràn ra ngoài */
+}
+
+/* tạo lớp ripple */
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.45s ease;
+}
+
+/* khi hover → ripple lan ra */
+.nav a:hover::after {
+  width: 230px;
+  height: 230px;
+  opacity: 0.12;
+}
+
+/* phiên bản Light Mode (màu ripple tối hơn) */
+:not(.dark) .nav a:hover::after {
+  background: rgba(0,0,0,0.15);
+  opacity: 0.10;
+}
+
+/* Active item không ripple */
+.nav .active::after {
+  display: none;
+}
+
