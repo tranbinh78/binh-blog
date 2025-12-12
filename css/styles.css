@@ -498,3 +498,36 @@ input:checked + .slider:before {
   transform: scale(1);
   box-shadow: none;
 }
+
+/* Border Highlight Glow */
+.nav a {
+  position: relative;
+}
+
+.nav a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  pointer-events: none;
+}
+
+.nav a:hover::before {
+  border-color: rgba(255,255,255,0.25);   /* glow nhẹ trong Dark Mode */
+  box-shadow: 0 0 6px rgba(255,255,255,0.15);
+}
+
+/* Light mode điều chỉnh glow */
+:not(.dark) .nav a:hover::before {
+  border-color: rgba(0,0,0,0.15);
+  box-shadow: 0 0 6px rgba(0,0,0,0.10);
+}
+
+/* Active item không glow */
+.nav .active::before {
+  border-color: transparent;
+  box-shadow: none;
+}
+
