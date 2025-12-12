@@ -1,0 +1,263 @@
+/* ============================
+   VARIABLES
+============================= */
+:root {
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #111827;
+  --sidebar-bg: #f8fafb;
+  --container-width: 1100px;
+  --gap: 28px;
+  --radius: 10px;
+  --max-width: 1200px;
+  --accent-2: #efefef;
+  --shadow: 0 6px 18px rgba(15,23,42,0.06);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+
+/* ============================
+   BASE STYLES
+============================= */
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--accent);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+
+/* ============================
+   LAYOUT
+============================= */
+.wrapper {
+  max-width: var(--max-width);
+  margin: 24px auto;
+  display: flex;
+  gap: var(--gap);
+  padding: 16px;
+}
+
+
+/* ============================
+   SIDEBAR
+============================= */
+.sidebar {
+  width: 260px;
+  background: var(--sidebar-bg);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  height: fit-content;
+  position: sticky;
+  top: 24px;
+  align-self: flex-start;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.brand img {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.brand h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.nav li {
+  margin: 10px 0;
+}
+
+.nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--accent);
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background .18s, color .18s;
+}
+
+.nav a:hover {
+  background: var(--accent-2);
+}
+
+.nav .active {
+  background: #e9eef5;
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+}
+
+
+/* ============================
+   MAIN CONTENT
+============================= */
+.main {
+  flex: 1;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.site-title {
+  font-size: 48px;
+  margin: 6px 0;
+}
+
+.lead {
+  font-size: 20px;
+  color: var(--muted);
+  margin: 6px 0 18px;
+}
+
+
+/* ============================
+   POSTS LIST
+============================= */
+.posts-list {
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.post-item h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.post-item .meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+
+/* ============================
+   ARTICLE BOX
+============================= */
+.article {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+
+/* ============================
+   SECTION TITLE
+============================= */
+.section-title {
+  font-size: 28px;
+  margin: 34px 0 12px;
+}
+
+
+/* ============================
+   GALLERY
+============================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 12px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* ============================
+   CONTACT FORM
+============================= */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6eef5;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+button.primary {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 0;
+  background: #111827;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* ============================
+   FOOTER
+============================= */
+.footer {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+
+/* ============================
+   RESPONSIVE
+============================= */
+@media (max-width: 900px) {
+  .wrapper {
+    padding: 12px;
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: auto;
+    margin-bottom: 12px;
+  }
+
+  .site-title {
+    font-size: 36px;
+  }
+}
