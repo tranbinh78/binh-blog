@@ -16,7 +16,7 @@ Website gồm các trang:
 ---
 
 # 1. Chuẩn bị thư mục dự án
-
+<p>
 Cấu trúc thư mục bắt buộc:
 binh-blog/
 ├─ index.html
@@ -32,7 +32,7 @@ binh-blog/
 ├─ gallery-1.jpg
 ├─ gallery-2.jpg
 └─ ...
-
+</p>
 Bạn có thể thay đổi ảnh trong thư mục `assets/` theo ý muốn.
 
 ---
