@@ -30,11 +30,13 @@
       </ul>
 
   <!-- Nút chuyển Dark Mode -->
-  <div style="margin-top:20px; padding-top:12px; border-top:1px solid #e5e7eb;">
-    <button id="darkToggle" class="primary" style="width:100%; padding:10px; border-radius:8px;">
-  🌙 Dark Mode
-  </button>
-  </div>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="darkToggle">
+            <input type="checkbox" id="darkToggle">
+            <span class="slider"></span>
+        </label>
+        <span id="themeLabel">🌙 Dark Mode</span>
+    </div>
       
     </aside>
 
@@ -75,27 +77,27 @@
 
 <script>
   const toggle = document.getElementById("darkToggle");
+  const label = document.getElementById("themeLabel");
   const root = document.documentElement;
 
-  // Load từ localStorage nếu từng bật Dark Mode
+  // Load trạng thái đã lưu
   if (localStorage.getItem("theme") === "dark") {
     root.classList.add("dark");
-    toggle.textContent = "☀️ Light Mode";
+    toggle.checked = true;
+    label.textContent = "☀️ Light Mode";
   }
 
-  toggle.onclick = () => {
-    root.classList.toggle("dark");
-
-    const isDark = root.classList.contains("dark");
-
-    if (isDark) {
-      toggle.textContent = "☀️ Light Mode"; // icon mặt trời
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      root.classList.add("dark");
+      label.textContent = "☀️ Light Mode";
       localStorage.setItem("theme", "dark");
     } else {
-      toggle.textContent = "🌙 Dark Mode"; // icon mặt trăng
+      root.classList.remove("dark");
+      label.textContent = "🌙 Dark Mode";
       localStorage.setItem("theme", "light");
     }
-  };
+  });
 </script>
   
 </body>
