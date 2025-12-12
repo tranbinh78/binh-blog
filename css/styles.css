@@ -604,3 +604,16 @@ input:checked + .slider:before {
   background: rgba(0,0,0,0.2);
 }
 
+/* Spacing giữa icon và chữ */
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+/* Icon nhỏ đẹp hơn */
+.nav a::first-letter {
+  font-size: 18px;
+}
+
