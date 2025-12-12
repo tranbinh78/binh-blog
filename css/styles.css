@@ -484,14 +484,17 @@ input:checked + .slider:before {
 .nav a:hover {
   transform: scale(1.02);      /* zoom mạnh hơn, giống iOS */
   background-color: rgba(0,0,0,0.05);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.10);  /* shadow nhẹ */
 }
 
 /* Dark mode hover */
 .dark .nav a:hover {
   background-color: rgba(255,255,255,0.08);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.45);  /* shadow đậm hơn để nổi bật trên nền tối */
 }
 
 /* Active item không bị zoom */
 .nav .active {
   transform: scale(1);
+  box-shadow: none;
 }
