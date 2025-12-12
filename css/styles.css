@@ -464,3 +464,34 @@ input:checked + .slider:before {
   user-select: none;
   color: var(--accent);
 }
+
+/* ============================
+   Sidebar Link Hover – Smooth Zoom (Apple-style)
+============================= */
+
+.nav a {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  transform: scale(1);
+  transition: 
+    background-color 0.25s ease,
+    transform 0.20s ease,
+    color 0.25s ease;
+}
+
+/* Khi hover → zoom nhẹ 1% */
+.nav a:hover {
+  transform: scale(1.015);   /* zoom nhẹ */
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* Dark mode hover */
+.dark .nav a:hover {
+  background-color: rgba(255,255,255,0.08);
+}
+
+/* Active item không bị zoom */
+.nav .active {
+  transform: scale(1);
+}
