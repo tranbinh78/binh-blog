@@ -16,24 +16,24 @@ Website gồm các trang:
 ---
 
 # 1. Chuẩn bị thư mục dự án
-<p>
-Cấu trúc thư mục bắt buộc:
-binh-blog/
-├─ index.html
-├─ tieng-anh.html
-├─ cuoc-song.html
-├─ gallery.html
-├─ about.html
-├─ contact.html
-├─ css/
-│ └─ styles.css
-└─ assets/
-├─ avatar.jpg
-├─ gallery-1.jpg
-├─ gallery-2.jpg
-└─ ...
-</p>
-Bạn có thể thay đổi ảnh trong thư mục `assets/` theo ý muốn.
+
+Cấu trúc thư mục bắt buộc:<br>
+binh-blog/<br>
+├─ index.html<br>
+├─ tieng-anh.html<br>
+├─ cuoc-song.html<br>
+├─ gallery.html<br>
+├─ about.html<br>
+├─ contact.html<br>
+├─ css/<br>
+│ └─ styles.css<br>
+└─ assets/<br>
+├─ avatar.jpg<br>
+├─ gallery-1.jpg<br>
+├─ gallery-2.jpg<br>
+└─ ...<br>
+
+Bạn có thể thay đổi ảnh trong thư mục `assets/` theo ý muốn.<br>
 
 ---
 
