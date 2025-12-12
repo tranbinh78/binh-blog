@@ -261,3 +261,55 @@ button.primary {
     font-size: 36px;
   }
 }
+
+/* ============================
+   DARK MODE
+============================= */
+.dark {
+  --bg: #0f172a;
+  --sidebar-bg: #1e293b;
+  --accent: #f8fafc;
+  --muted: #94a3b8;
+  --accent-2: #334155;
+  --shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+
+.dark body {
+  background: var(--bg);
+  color: var(--accent);
+}
+
+.dark .sidebar {
+  background: var(--sidebar-bg);
+  box-shadow: var(--shadow);
+}
+
+.dark .nav a {
+  color: var(--accent);
+}
+
+.dark .nav a:hover {
+  background: var(--accent-2);
+}
+
+.dark .nav .active {
+  background: #475569;
+  color: var(--accent);
+}
+
+.dark .article {
+  background: #1e293b;
+  box-shadow: var(--shadow);
+}
+
+.dark .post-item {
+  border-color: #334155;
+}
+
+.dark .gallery-grid img {
+  opacity: 0.9;
+}
+
+.dark .footer {
+  color: var(--muted);
+}
