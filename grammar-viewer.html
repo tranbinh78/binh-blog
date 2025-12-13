@@ -124,19 +124,25 @@
         .then(md => {
 
         // Remove <link> tags
-           md = md.replace(/<link[^>]*>/gi, "");
+            md = md.replace(/<link[^>]*>/gi, "");
 
         // Remove HTML comments
-           md = md.replace(/<!--[\s\S]*?-->/g, "");
+            md = md.replace(/<!--[\s\S]*?-->/g, "");
 
-        // Remove first <h1> (Jekyll title)
-           md = md.replace(/<h1>[\s\S]*?<\/h1>/, "");
+        // Remove Jekyll title h1
+            md = md.replace(/<h1>[\s\S]*?<\/h1>/, "");
 
-        // 🔥 REMOVE SCRIPT TAGS AT THE END
-           md = md.replace(/<script[\s\S]*?<\/script>/gi, "");
+        // Remove ALL script tags (head + footer)
+            md = md.replace(/<script[\s\S]*?<\/script>/gi, "");
 
-          document.getElementById("content").innerHTML =
-          marked.parse(md);
+        // 🔥 REMOVE stray closing divs at the end (KEY FIX)
+            md = md.replace(/(\s*<\/div>\s*)+$/g, "");
+
+        // Trim whitespace
+            md = md.trim();
+
+            document.getElementById("content").innerHTML =
+            marked.parse(md);
 
           // Set title from filename
           const name = file.split("/").pop().replace(".md", "");
