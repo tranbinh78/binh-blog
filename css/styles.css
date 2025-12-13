@@ -617,3 +617,29 @@ input:checked + .slider:before {
   font-size: 18px;
 }
 
+/* English Hub */
+.english-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.english-card {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 22px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.english-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+
+.english-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
