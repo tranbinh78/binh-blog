@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tiếng Anh — Tran Bình</title>
+  <title>Tiếng Anh — Trần Bình</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -11,7 +11,7 @@
   <div class="wrapper">
 
     <!-- Sidebar -->
-    <aside class="sidebar" role="navigation" aria-label="Chính">
+    <aside class="sidebar">
       <div class="brand">
         <img src="assets/avatar.jpg" alt="Avatar Tran Binh" />
         <div>
@@ -21,111 +21,106 @@
       </div>
 
       <ul class="nav">
-        <li><a class="active" href="index.html">🏠 Home</a></li>
-        <li><a href="tieng-anh.html">📘 Tiếng Anh</a></li>
-        <li><a href="cuoc-song.html">📝 Cuộc sống</a></li>
-        <li><a href="gallery.html">📷 Gallery</a></li>
-        <li><a href="about.html">👤 About me</a></li>
-        <li><a href="contact.html">✉️ Contact</a></li>
+        <li><a href="index.html">🏡 Home</a></li>
+        <li><a class="active" href="tieng-anh.html">📘 Tiếng Anh</a></li>
+        <li><a href="cuoc-song.html">📔 Cuộc sống</a></li>
+        <li><a href="gallery.html">📸 Gallery</a></li>
+        <li><a href="about.html">🙂 About me</a></li>
+        <li><a href="contact.html">💌 Contact</a></li>
       </ul>
-
-  <!-- Nút chuyển Dark Mode -->
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="darkToggle">
-        <input type="checkbox" id="darkToggle">
-        <span class="slider"></span>
-      </label>
-      <span id="themeLabel">🌙 Dark Mode</span>
-    </div>
-      
     </aside>
 
     <!-- Main content -->
     <main class="main">
+
+      <!-- Header -->
       <div class="header-row">
         <div>
           <h2 class="site-title">Tiếng Anh</h2>
           <p class="lead">
-            Tôi học tiếng Anh mỗi ngày theo cách chậm rãi nhưng bền vững. 
-            Trang này là nơi tôi ghi lại những phương pháp hiệu quả, những lần vấp ngã 
-            và cả những điều nhỏ bé giúp tôi tiến bộ hơn.
+            Chọn phần bạn muốn học.  
+            Tôi chia tiếng Anh thành các phần rõ ràng để học từng bước, không bị rối.
           </p>
         </div>
       </div>
 
-     <section class="article" style="margin-bottom:24px;">
-     <h3 class="section-title">Tôi học tiếng Anh như thế nào?</h3>
+      <!-- English Hub -->
+      <section class="article">
 
-     <p>
-        Tôi không học tiếng Anh theo kiểu nhồi nhét hay chạy theo mục tiêu quá lớn.
-        Tôi chọn những phương pháp đơn giản, lặp lại mỗi ngày và phù hợp với nhịp sống của mình.
-     </p>
+        <div class="english-grid">
 
-     <ul>
-        <li>Nghe tiếng Anh mỗi ngày, kể cả khi không hiểu hết.</li>
-        <li>Ghi chú từ vựng theo ngữ cảnh, không học từ đơn lẻ.</li>
-        <li>Viết lại bằng tiếng Anh những điều quen thuộc trong cuộc sống.</li>
-        <li>Chấp nhận sai và học từ lỗi sai.</li>
-      </ul>
+          <a class="english-card" href="tieng-anh/vocabulary.html">
+            <div class="english-icon">📘</div>
+            <h3>Vocabulary</h3>
+            <p>Học từ vựng theo chủ đề, gắn với đời sống.</p>
+          </a>
 
-       <p style="margin-top:24px; color: var(--muted);">
-          Tôi không viết trang này để dạy ai đó giỏi tiếng Anh nhanh hơn. 
-          Tôi viết để nhắc mình rằng, mỗi ngày cố gắng một chút cũng là đủ.
-       </p>
-       
-    </section>
+          <a class="english-card" href="tieng-anh/grammar.html">
+            <div class="english-icon">📐</div>
+            <h3>Grammar</h3>
+            <p>Các thì, cấu trúc và điểm ngữ pháp quan trọng.</p>
+          </a>
+
+          <a class="english-card" href="tieng-anh/test-grammar.html">
+            <div class="english-icon">📝</div>
+            <h3>Test Grammar</h3>
+            <p>Kiểm tra ngữ pháp để biết trình độ hiện tại.</p>
+          </a>
+
+          <a class="english-card" href="tieng-anh/listening.html">
+            <div class="english-icon">🎧</div>
+            <h3>Listening</h3>
+            <p>Luyện nghe tiếng Anh thực tế mỗi ngày.</p>
+          </a>
+
+          <a class="english-card" href="tieng-anh/speaking.html">
+            <div class="english-icon">🗣️</div>
+            <h3>Speaking</h3>
+            <p>Luyện nói từ những câu đơn giản.</p>
+          </a>
+
+        </div>
+
+      </section>
+
+      <!-- Closing -->
+      <p style="margin-top:24px; color: var(--muted);">
+        Tôi không học tiếng Anh để giỏi nhanh.
+        Tôi học để mỗi ngày dùng được nhiều hơn một chút.
+      </p>
 
     </main>
   </div>
-
-  <script>
-  const toggle = document.getElementById("darkToggle");
-  const label = document.getElementById("themeLabel");
-  const root = document.documentElement;
-
-  // Load trạng thái đã lưu
-  if (localStorage.getItem("theme") === "dark") {
-    root.classList.add("dark");
-    toggle.checked = true;
-    label.textContent = "☀️ Light Mode";
-  }
-
-  toggle.addEventListener("change", () => {
-    if (toggle.checked) {
-      root.classList.add("dark");
-      label.textContent = "☀️ Light Mode";
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      label.textContent = "🌙 Dark Mode";
-      localStorage.setItem("theme", "light");
-    }
-  });
-</script>
-
-<script>
-  const navLinks = document.querySelectorAll(".nav a");
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", function(e) {
-      const rect = this.getBoundingClientRect();
-      const ripple = document.createElement("span");
-
-      const size = Math.max(rect.width, rect.height);
-      ripple.style.width = ripple.style.height = size + "px";
-
-      ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
-      ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
-
-      ripple.classList.add("ripple");
-      this.appendChild(ripple);
-
-      setTimeout(() => {
-        ripple.remove();
-      }, 600);
-    });
-  });
-</script>
-  
 </body>
 </html>
+🎨 CSS CẦN CÓ (nếu bạn CHƯA thêm)
+Nếu bạn chưa có phần này trong styles.css, hãy dán thêm 1 lần:
+
+css
+Sao chép mã
+/* English Hub */
+.english-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.english-card {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 22px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.english-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+
+.english-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
