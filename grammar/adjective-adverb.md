@@ -1,56 +1,135 @@
-# Adjective vs Adverb
+# Adjectives & Adverbs (Tính từ & Trạng từ)
 
-## 0. Định nghĩa
-**English:** This grammar topic describes its key usage, essential rules, and how it functions in everyday communication.  
-**Tiếng Việt:** Chủ điểm ngữ pháp này giải thích cách dùng chính, quy tắc quan trọng và cách áp dụng trong giao tiếp hằng ngày.
+## 1. Definition  
+**English:**  
+Adjectives describe **nouns** (people, things, places).  
+Adverbs describe **verbs**, **adjectives**, or **other adverbs**.  
+They tell us *how*, *when*, *where*, or *how often* something happens.
 
-## 1. Công thức
-- Khẳng định: …
-- Phủ định: …
-- Nghi vấn: …
+**Tiếng Việt:**  
+**Tính từ** dùng để mô tả **danh từ** (người, vật, nơi chốn).  
+**Trạng từ** dùng để mô tả **động từ**, **tính từ**, hoặc **trạng từ khác**, cho biết cách thức, thời gian, nơi chốn hoặc mức độ xảy ra của hành động.
 
-## 2. Cách dùng
-- Cách dùng 1
-- Cách dùng 2
-- Cách dùng 3
+---
 
-## 3. Dấu hiệu nhận biết
-- Từ khóa 1
-- Từ khóa 2
-- Từ khóa 3
+## 2. Adjectives (Tính từ)
 
-## 4. Ví dụ
-- EN: Example sentence 1.  
-  VI: Câu ví dụ 1.
-- EN: Example sentence 2.  
-  VI: Câu ví dụ 2.
-- EN: Example sentence 3.  
-  VI: Câu ví dụ 3.
-- EN: Example sentence 4.  
-  VI: Câu ví dụ 4.
-- EN: Example sentence 5.  
-  VI: Câu ví dụ 5.
+### ✔ Characteristics  
+- Đứng **trước danh từ** hoặc **sau động từ to be**  
+- Không thay đổi theo số ít / số nhiều  
+- Không thêm *-ly*
 
-## 5. Bài tập
-1. Câu hỏi 1  
-2. Câu hỏi 2  
-3. Câu hỏi 3  
-4. Câu hỏi 4  
-5. Câu hỏi 5  
-6. Câu hỏi 6  
-7. Câu hỏi 7  
-8. Câu hỏi 8  
-9. Câu hỏi 9  
-10. Câu hỏi 10  
+### ✔ Examples  
+- She is a **happy** person.  
+- It is a **beautiful** day.  
+- The movie was **interesting**.
 
-### → Đáp án
-1. …  
-2. …  
-3. …  
-4. …  
-5. …  
-6. …  
-7. …  
-8. …  
-9. …  
-10. …  
+---
+
+## 3. Adverbs (Trạng từ)
+
+### ✔ Characteristics  
+- Thường được tạo bằng cách thêm **-ly** vào tính từ  
+- Dùng để mô tả **cách hành động xảy ra**
+
+### ✔ Examples  
+- She sings **beautifully**.  
+- He speaks **slowly**.  
+- They work **hard**.
+
+⚠️ Lưu ý: không phải mọi trạng từ đều có *-ly*  
+- fast → fast  
+- hard → hard  
+- late → late  
+
+---
+
+## 4. Position in a sentence (Vị trí trong câu)
+
+### ✔ Adjective  
+- Before noun: a **good** student  
+- After *to be*: She is **tired**.
+
+### ✔ Adverb  
+- After verb: He runs **quickly**.  
+- Before adjective: very **careful**.  
+- Before adverb: quite **slowly**.
+
+---
+
+## 5. Common adjective → adverb forms
+
+| Adjective | Adverb |
+|---------|--------|
+| quick | quickly |
+| slow | slowly |
+| careful | carefully |
+| easy | easily |
+| happy | happily |
+
+---
+
+## 6. Adjective or Adverb? (So sánh)
+
+- She is a **good** singer. *(adjective)*  
+- She sings **well**. *(adverb)*  
+
+- He is **fast**. *(adjective)*  
+- He runs **fast**. *(adverb)*  
+
+---
+
+## 7. Exercises (10 câu — 5 điền + 5 trắc nghiệm)
+
+### A. Fill-in  
+(Choose adjective or adverb)
+
+1. She speaks very ___ (clear / clearly).  
+2. This is a ___ idea (good / well).  
+3. He drives ___ (careful / carefully).  
+4. The test was ___ (easy / easily).  
+5. They worked ___ all day (hard / hardly).  
+
+---
+
+### B. Multiple-choice  
+
+6. She is a ___ student.  
+a. well  
+b. good  
+c. nicely  
+
+7. He answered the question ___.  
+a. correct  
+b. correctness  
+c. correctly  
+
+8. The baby is sleeping ___.  
+a. peaceful  
+b. peacefully  
+c. peace  
+
+9. This soup tastes ___.  
+a. good  
+b. well  
+c. goodness  
+
+10. She finished the work ___.  
+a. quick  
+b. quicker  
+c. quickly  
+
+---
+
+## → Answers  
+
+1. clearly  
+2. good  
+3. carefully  
+4. easy  
+5. hard  
+6. b  
+7. c  
+8. b  
+9. a  
+10. c  
