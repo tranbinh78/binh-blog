@@ -122,12 +122,24 @@
           return res.text();
         })
         .then(md => {
-        // Remove unwanted HTML/Jekyll snippets
-              md = md.replace(/<link[^>]*>/g, "");
-              md = md.replace(/<!--[\s\S]*?-->/g, "");
-              md = md.replace(/<h1>[\s\S]*?<\/h1>/, "");
-              document.getElementById("content").innerHTML =
-              marked.parse(md);
+
+        // Remove <link> tags
+           md = md.replace(/<link[^>]*>/gi, "");
+
+        // Remove HTML comments
+           md = md.replace(/<!--[\s\S]*?-->/g, "");
+
+        // Remove first <h1> (Jekyll title)
+           md = md.replace(/<h1>[\s\S]*?<\/h1>/, "");
+
+        // 🔥 REMOVE SCRIPT TAGS AT THE END
+           md = md.replace(/<script[\s\S]*?<\/script>/gi, "");
+
+        // Remove stray closing divs
+           md = md.replace(/<\/div>\s*$/g, "");
+
+          document.getElementById("content").innerHTML =
+          marked.parse(md);
 
           // Set title from filename
           const name = file.split("/").pop().replace(".md", "");
