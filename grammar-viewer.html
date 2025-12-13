@@ -135,9 +135,6 @@
         // 🔥 REMOVE SCRIPT TAGS AT THE END
            md = md.replace(/<script[\s\S]*?<\/script>/gi, "");
 
-        // Remove stray closing divs
-           md = md.replace(/<\/div>\s*$/g, "");
-
           document.getElementById("content").innerHTML =
           marked.parse(md);
 
