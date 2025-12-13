@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grammar — Trần Bình</title>
+
+  <!-- Main styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Markdown renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    /* Markdown content styling */
+    .md-content h1, 
+    .md-content h2, 
+    .md-content h3 {
+      margin-top: 28px;
+    }
+
+    .md-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 16px 0;
+    }
+
+    .md-content ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .md-content li {
+      margin-bottom: 6px;
+    }
+
+    .md-content pre {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .md-content code {
+      background: rgba(0,0,0,0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 90%;
+    }
+
+    .dark .md-content code {
+      background: rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- Sidebar (MENU THỐNG NHẤT) -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="assets/avatar.jpg" alt="Avatar Tran Binh" />
+        <div>
+          <h1>Tran Binh</h1>
+          <div style="color:var(--muted);font-size:13px">Personal website</div>
+        </div>
+      </div>
+
+      <ul class="nav">
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a class="active" href="tieng-anh.html">📘 Tiếng Anh</a></li>
+        <li><a href="cuoc-song.html">📝 Cuộc sống</a></li>
+        <li><a href="gallery.html">📷 Gallery</a></li>
+        <li><a href="about.html">👤 About me</a></li>
+        <li><a href="contact.html">✉️ Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <article class="post">
+
+        <!-- Header -->
+        <header class="post-header">
+          <h1 class="post-title" id="page-title">Grammar</h1>
+          <div class="post-meta">
+            Nội dung được tải trực tiếp từ file Markdown
+          </div>
+        </header>
+
+        <!-- Markdown content -->
+        <div class="post-content md-content" id="content">
+          Đang tải nội dung...
+        </div>
+
+        <!-- Back -->
+        <footer class="post-footer">
+          <p class="post-back">
+            ← <a href="tieng-anh/grammar.html">Quay lại Grammar</a>
+          </p>
+        </footer>
+
+      </article>
+    </main>
+
+  </div>
+
+  <!-- Script -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file");
+
+    if (!file) {
+      document.getElementById("content").innerText =
+        "Không có file được chỉ định.";
+    } else {
+      fetch(file)
+        .then(res => {
+          if (!res.ok) throw new Error("File not found");
+          return res.text();
+        })
+        .then(md => {
+          document.getElementById("content").innerHTML =
+            marked.parse(md);
+
+          // Set title from filename
+          const name = file.split("/").pop().replace(".md", "");
+          document.getElementById("page-title").innerText =
+            name.replace(/-/g, " ").toUpperCase();
+        })
+        .catch(() => {
+          document.getElementById("content").innerText =
+            "Không thể tải nội dung Markdown.";
+        });
+    }
+  </script>
+
+</body>
+</html>
