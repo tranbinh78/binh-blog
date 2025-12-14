@@ -153,7 +153,12 @@
             "Không thể tải nội dung Markdown.";
         });
     }
-  
+ function currentSlug() {
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
+  if (!file) return null;
+  return file.split("/").pop().replace(".md", "");
+}
  function getSlugFromFile() {
   const params = new URLSearchParams(window.location.search);
   const file = params.get("file");
