@@ -156,6 +156,35 @@
             "Không thể tải nội dung Markdown.";
         });
     }
+
+  function injectQuizButton() {
+  const slug = currentSlug(); // present-simple
+  if (!slug) return;
+
+  const content = document.getElementById("content");
+  if (!content) return;
+
+  const btnWrapper = document.createElement("div");
+  btnWrapper.style = "margin:40px 0;text-align:center";
+
+  btnWrapper.innerHTML = `
+    <button id="open-quiz-btn"
+      style="
+        background:#c9b3ff;
+        padding:14px 22px;
+        border-radius:10px;
+        border:none;
+        font-size:16px;
+        font-weight:700;
+        cursor:pointer;">
+      📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
+    </button>
+  `;
+
+  content.appendChild(btnWrapper);
+
+  document.getElementById("open-quiz-btn").onclick = openQuizForLesson;
+}
   </script>
 
 </body>
