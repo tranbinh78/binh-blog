@@ -108,84 +108,77 @@
   </div>
 
   <!-- Script -->
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const file = params.get("file");
+ <script>
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
+  const contentEl = document.getElementById("content");
+  const titleEl = document.getElementById("page-title");
 
+  function getSlugFromFile(path) {
+    if (!path) return null;
+    return path.split("/").pop().replace(".md", "");
+  }
+
+  async function loadMarkdown() {
     if (!file) {
-      document.getElementById("content").innerText =
-        "Không có file được chỉ định.";
-    } else {
-      fetch(file)
-        .then(res => {
-          if (!res.ok) throw new Error("File not found");
-          return res.text();
-        })
-       .then(md => {
-
-      // Remove <link> tags
-        md = md.replace(/<link[^>]*>/gi, "");
-
-      // Remove HTML comments
-        md = md.replace(/<!--[\s\S]*?-->/g, "");
-
-      // Remove Jekyll title h1
-        md = md.replace(/<h1>[\s\S]*?<\/h1>/, "");
-
-      // Remove ALL script tags
-        md = md.replace(/<script[\s\S]*?<\/script>/gi, "");
-
-      // 🔥 REMOVE code blocks that only contain </div>
-        md = md.replace(/```[\s\S]*?<\/div>[\s\S]*?```/g, "");
-
-      // Remove stray closing divs (plain text)
-        md = md.replace(/(\s*<\/div>\s*)+$/g, "");
-
-        md = md.trim();
-
-        document.getElementById("content").innerHTML =
-        marked.parse(md);
-
-          // Set title from filename
-          const name = file.split("/").pop().replace(".md", "");
-          document.getElementById("page-title").innerText =
-            name.replace(/-/g, " ").toUpperCase();
-        })
-        .catch(() => {
-          document.getElementById("content").innerText =
-            "Không thể tải nội dung Markdown.";
-        });
+      contentEl.innerText = "Không có file được chỉ định.";
+      return;
     }
 
-  function injectQuizButton() {
-  const slug = currentSlug(); // present-simple
-  if (!slug) return;
+    try {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error("Not found");
 
-  const content = document.getElementById("content");
-  if (!content) return;
+      let md = await res.text();
 
-  const btnWrapper = document.createElement("div");
-  btnWrapper.style = "margin:40px 0;text-align:center";
+      // Cleanup
+      md = md.replace(/<link[^>]*>/gi, "");
+      md = md.replace(/<!--[\s\S]*?-->/g, "");
+      md = md.replace(/<script[\s\S]*?<\/script>/gi, "");
+      md = md.replace(/```[\s\S]*?```/g, m => m.includes("</div>") ? "" : m);
 
-  btnWrapper.innerHTML = `
-    <button id="open-quiz-btn"
-      style="
-        background:#c9b3ff;
-        padding:14px 22px;
-        border-radius:10px;
-        border:none;
-        font-size:16px;
-        font-weight:700;
-        cursor:pointer;">
-      📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
-    </button>
-  `;
+      contentEl.innerHTML = marked.parse(md);
 
-  content.appendChild(btnWrapper);
+      const slug = getSlugFromFile(file);
+      titleEl.innerText = slug.replace(/-/g, " ").toUpperCase();
 
-  document.getElementById("open-quiz-btn").onclick = openQuizForLesson;
-}
-  </script>
+      injectQuizButton(slug);
+
+    } catch (e) {
+      contentEl.innerText = "Không thể tải nội dung Markdown.";
+    }
+  }
+
+  async function injectQuizButton(slug) {
+    const quizUrl = `/binh-blog/grammar/quiz/${slug}.json`;
+
+    // Kiểm tra có quiz hay không
+    const res = await fetch(quizUrl, { method: "HEAD" });
+    if (!res.ok) return;
+
+    const wrap = document.createElement("div");
+    wrap.style = "margin:50px 0;text-align:center";
+
+    wrap.innerHTML = `
+      <button
+        style="
+          background:#c9b3ff;
+          padding:14px 26px;
+          border-radius:12px;
+          border:none;
+          font-size:16px;
+          font-weight:700;
+          cursor:pointer;"
+        onclick="location.href='/binh-blog/quiz-viewer.html?quiz=${slug}'">
+        📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
+      </button>
+    `;
+
+    contentEl.appendChild(wrap);
+  }
+
+  loadMarkdown();
+</script>
 
 </body>
 </html>
