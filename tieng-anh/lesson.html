@@ -281,6 +281,21 @@ body.reading-mode .content-area { max-width:800px; margin:auto; }
 
   <div id="content">Đang tải nội dung...</div>
 
+   <!-- ✅ NÚT MỞ QUIZ (ĐẶT Ở ĐÂY) -->
+   <div style="margin:40px 0;text-align:center">
+   <button id="open-quiz-btn"
+    style="
+      background:#c9b3ff;
+      padding:14px 22px;
+      border-radius:10px;
+      border:none;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;">
+    📝 Làm bài kiểm tra Present Simple
+     </button>
+   </div>
+  
   <div class="nav-buttons" id="nav-buttons"></div>
 </div>
 
@@ -294,20 +309,22 @@ body.reading-mode .content-area { max-width:800px; margin:auto; }
 <div id="mobile-overlay"></div>
 
 <!-- QUIZ POPUP -->
-<div id="quiz-modal" aria-hidden="true">
-  <div id="quiz-box" role="dialog" aria-modal="true">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-      <h3 id="quiz-title" style="margin:0">Quiz</h3>
-      <div>
-        <button id="quiz-close" style="background:#eee;border:none;padding:6px 10px;border-radius:6px;cursor:pointer;">Đóng</button>
-      </div>
-    </div>
-    <div id="quiz-content">Đang tải quiz...</div>
-    <div id="quiz-footer" style="margin-top:12px;display:flex;justify-content:space-between;align-items:center;">
+<div id="quiz-modal" style="display:none;position:fixed;inset:0;
+     background:rgba(0,0,0,.45);z-index:9999;
+     align-items:center;justify-content:center;">
+  <div id="quiz-box"
+       style="background:#fff;width:95%;max-width:760px;
+              padding:20px;border-radius:12px;
+              max-height:90vh;overflow:auto">
+    <h3 id="quiz-title"></h3>
+    <div id="quiz-content"></div>
+
+    <div style="margin-top:16px;display:flex;justify-content:space-between">
       <div id="quiz-result"></div>
       <div>
-        <button id="quiz-submit" style="background:#c9b3ff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;">Nộp bài</button>
-        <button id="quiz-retry" style="background:#eee;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;display:none;margin-left:6px;">Làm lại</button>
+        <button id="quiz-submit">Nộp bài</button>
+        <button id="quiz-retry" style="display:none">Làm lại</button>
+        <button id="quiz-close">Đóng</button>
       </div>
     </div>
   </div>
@@ -668,6 +685,25 @@ function renderQuiz(data) {
   });
 }
 
+/* ✅ DÁN ĐOẠN CODE Ở ĐÂY */
+const quizBtn = document.getElementById("open-quiz-btn");
+
+if (quizBtn) {
+  quizBtn.onclick = async () => {
+    const slug = currentSlug();
+    const res = await fetch(`/binh-blog/grammar/quiz/${slug}.json`);
+
+    if (!res.ok) {
+      alert("Bài này chưa có quiz.");
+      return;
+    }
+
+    const data = await res.json();
+    renderQuiz(data);
+    document.getElementById("quiz-modal").style.display = "flex";
+  };
+}
+   
 // Submit quiz
 quizSubmit.addEventListener("click", () => {
   if (!quizData) return;
