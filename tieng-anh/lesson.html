@@ -447,8 +447,8 @@ async function loadNextPrev() {
   const next = list[i + 1];
 
   let html = "";
-  if (prev) html += `<a class="np-btn" href="/binh-blog/lesson.html?file=${prev.file}">← ${prev.title}</a>`;
-  if (next) html += `<a class="np-btn" href="/binh-blog/lesson.html?file=${next.file}">${next.title} →</a>`;
+  if (prev) html += `<a class="np-btn" href="/binh-blog/tieng-anh/lesson.html?file=${prev.file}">← ${prev.title}</a>`;
+  if (next) html += `<a class="np-btn" href="/binh-blog/tieng-anh/lesson.html?file=${next.file}">${next.title} →</a>`;
 
   document.getElementById("nav-buttons").innerHTML = html;
 }
@@ -553,7 +553,7 @@ async function loadLesson() {
     document.getElementById("content").innerHTML = "<p>Không tìm thấy file.</p>";
     return;
   }
-  const res = await fetch(`grammar/${file}`);
+  const res = await fetch(`/binh-blog/grammar/${file}`)
   const text = await res.text();
 
   document.getElementById("title").innerText =
