@@ -380,7 +380,7 @@ async function loadSidebar() {
     lessons.forEach(item => {
       const a = document.createElement("a");
       a.className = "lesson-item";
-      a.href = `/binh-blog/lesson.html?file=${item.file}`;
+      a.href = `/binh-blog/tieng-anh/lesson.html?file=${item.file}`;
       a.innerText = item.title;
 
       if (item.file === file) a.classList.add("active");
