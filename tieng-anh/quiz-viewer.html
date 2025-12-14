@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Grammar Quiz</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar giữ nguyên -->
+
+  <main class="main">
+    <h1 id="quiz-title">Grammar Quiz</h1>
+    <div id="quiz"></div>
+    <button id="submit">Nộp bài</button>
+    <div id="result"></div>
+
+    <p style="margin-top:30px;">
+      ← <a href="test-grammar.html">Quay lại Test Grammar</a>
+    </p>
+  </main>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const file = params.get("file");
+
+if (!file) {
+  document.getElementById("quiz").innerHTML = "Không tìm thấy bài test.";
+} else {
+  fetch(`../grammar/quiz/${file}.json`)
+    .then(res => res.json())
+    .then(data => renderQuiz(data));
+}
+
+function renderQuiz(data) {
+  document.getElementById("quiz-title").innerText = data.title;
+
+  const quiz = document.getElementById("quiz");
+  data.questions.forEach((q, i) => {
+    const div = document.createElement("div");
+    div.className = "quiz-question";
+
+    div.innerHTML = `
+      <p><b>${i + 1}. ${q.question}</b></p>
+      ${q.choices.map((c, idx) => `
+        <label>
+          <input type="radio" name="q${i}" value="${idx}">
+          ${c}
+        </label><br>
+      `).join("")}
+    `;
+    quiz.appendChild(div);
+  });
+
+  document.getElementById("submit").onclick = () => checkAnswers(data);
+}
+
+function checkAnswers(data) {
+  let score = 0;
+  data.questions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    if (selected && Number(selected.value) === q.answer) score++;
+  });
+
+  document.getElementById("result").innerHTML =
+    `✅ Bạn đúng ${score}/${data.questions.length} câu`;
+}
+</script>
+
+</body>
+</html>
