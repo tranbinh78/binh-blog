@@ -159,7 +159,12 @@
   if (!file) return null;
   return file.split("/").pop().replace(".md", "");
 }
- function getSlugFromFile() {
+
+/* ===============================
+   QUIZ INTEGRATION (FINAL)
+================================ */
+
+function getSlugFromFile() {
   const params = new URLSearchParams(window.location.search);
   const file = params.get("file");
   if (!file) return null;
@@ -181,8 +186,9 @@ function injectQuizButton() {
        style="
         display:inline-block;
         background:#c9b3ff;
-        padding:14px 24px;
+        padding:14px 22px;
         border-radius:12px;
+        border:none;
         font-size:16px;
         font-weight:700;
         text-decoration:none;
@@ -193,6 +199,7 @@ function injectQuizButton() {
 
   content.appendChild(wrapper);
 }
+  
 </script>
 
 </body>
