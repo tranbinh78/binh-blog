@@ -71,70 +71,43 @@
 </div>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const file = params.get("file");
-const contentEl = document.getElementById("content");
-const titleEl = document.getElementById("page-title");
+function getSlugFromFile() {
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file"); // grammar/present-continuous.md
+  if (!file) return null;
 
-if (!file) {
-  contentEl.innerHTML = "❌ Grammar Viewer chỉ hỗ trợ file .md";
-  throw new Error("No file");
+  return file
+    .split("/")
+    .pop()
+    .replace(".md", ""); // present-continuous
 }
 
-if (!file.endsWith(".md")) {
-  contentEl.innerHTML = "❌ Grammar Viewer chỉ hỗ trợ file .md";
-  throw new Error("Invalid file type");
-}
+function injectQuizButton() {
+  const slug = getSlugFromFile();
+  if (!slug) return;
 
-fetch(file)
-  .then(res => {
-    if (!res.ok) throw new Error("File not found");
-    return res.text();
-  })
-  .then(md => {
-    // Clean markdown
-    md = md.replace(/<script[\s\S]*?<\/script>/gi, "");
-    md = md.replace(/<link[^>]*>/gi, "");
-    md = md.replace(/<!--[\s\S]*?-->/g, "");
-    md = md.trim();
+  const content = document.getElementById("content");
+  if (!content) return;
 
-    contentEl.innerHTML = marked.parse(md);
+  const wrap = document.createElement("div");
+  wrap.style = "margin:40px 0;text-align:center";
 
-    // Set title
-    const slug = getSlug();
-    titleEl.innerText = slug.replace(/-/g, " ").toUpperCase();
-
-    injectQuizButton(slug);
-  })
-  .catch(() => {
-    contentEl.innerHTML = "❌ Không thể tải nội dung Grammar.";
-  });
-
-function getSlug() {
-  const f = new URLSearchParams(location.search).get("file");
-  return f.split("/").pop().replace(".md", "");
-}
-
-function injectQuizButton(slug) {
-  const wrapper = document.createElement("div");
-  wrapper.style = "margin:50px 0;text-align:center";
-
-  wrapper.innerHTML = `
-    <a href="/binh-blog/tieng-anh/quiz-viewer.html?quiz=${slug}"
+  wrap.innerHTML = `
+    <a href="tieng-anh/quiz-viewer.html?quiz=${slug}"
        style="
-        display:inline-block;
-        background:#c9b3ff;
-        padding:14px 22px;
-        border-radius:12px;
-        font-size:16px;
-        font-weight:700;
-        text-decoration:none;
-        color:#1e1e1e;">
+         display:inline-block;
+         padding:14px 22px;
+         border-radius:12px;
+         background:#c9b3ff;
+         color:#000;
+         font-weight:700;
+         text-decoration:none;
+       ">
       📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
     </a>
   `;
 
-  contentEl.appendChild(wrapper);
+  content.appendChild(wrap);
 }
 </script>
 </body>
