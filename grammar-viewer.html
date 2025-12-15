@@ -5,171 +5,114 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Grammar — Trần Bình</title>
 
-  <!-- Main styles -->
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- Markdown renderer -->
+  <link rel="stylesheet" href="assets/css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-  <style>
-    /* Markdown content styling */
-    .md-content h1, 
-    .md-content h2, 
-    .md-content h3 {
-      margin-top: 28px;
-    }
-
-    .md-content p {
-      font-size: 18px;
-      line-height: 1.8;
-      margin: 16px 0;
-    }
-
-    .md-content ul {
-      margin-left: 20px;
-      margin-bottom: 16px;
-    }
-
-    .md-content li {
-      margin-bottom: 6px;
-    }
-
-    .md-content pre {
-      background: #0f172a;
-      color: #e5e7eb;
-      padding: 16px;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-
-    .md-content code {
-      background: rgba(0,0,0,0.08);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 90%;
-    }
-
-    .dark .md-content code {
-      background: rgba(255,255,255,0.1);
-    }
-  </style>
 </head>
 
 <body>
-  <div class="wrapper">
+<div class="wrapper">
 
-    <!-- Sidebar (MENU THỐNG NHẤT) -->
-    <aside class="sidebar">
-      <div class="brand">
-        <img src="assets/avatar.jpg" alt="Avatar Tran Binh" />
-        <div>
-          <h1>Tran Binh</h1>
-          <div style="color:var(--muted);font-size:13px">Personal website</div>
-        </div>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="assets/avatar.jpg" alt="Avatar Tran Binh" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div class="muted">Personal website</div>
+      </div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a class="active" href="tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a href="gallery.html">📷 Gallery</a></li>
+      <li><a href="about.html">👤 About me</a></li>
+      <li><a href="contact.html">✉️ Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <article class="post">
+
+      <header class="post-header">
+        <h1 id="page-title">Grammar</h1>
+        <div class="post-meta">Grammar - Ngữ pháp</div>
+      </header>
+
+      <div id="content" class="post-content">
+        Đang tải nội dung...
       </div>
 
-      <ul class="nav">
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a class="active" href="tieng-anh.html">📘 Tiếng Anh</a></li>
-        <li><a href="cuoc-song.html">📝 Cuộc sống</a></li>
-        <li><a href="gallery.html">📷 Gallery</a></li>
-        <li><a href="about.html">👤 About me</a></li>
-        <li><a href="contact.html">✉️ Contact</a></li>
-      </ul>
-    </aside>
+      <footer class="post-footer">
+        <p><a href="tieng-anh/grammar.html">← Quay lại Grammar</a></p>
+      </footer>
 
-    <!-- Main content -->
-    <main class="main">
-      <article class="post">
+    </article>
+  </main>
 
-        <!-- Header -->
-        <header class="post-header">
-          <h1 class="post-title" id="page-title">Grammar</h1>
-          <div class="post-meta">
-          Grammar - Ngữ pháp
-          </div>
-        </header>
+</div>
 
-        <!-- Markdown content -->
-        <div class="post-content md-content" id="content">
-          Đang tải nội dung...
-        </div>
-
-        <!-- Back -->
-        <footer class="post-footer">
-          <p class="post-back">
-            ← <a href="tieng-anh/grammar.html">Quay lại Grammar</a>
-          </p>
-        </footer>
-
-      </article>
-    </main>
-
-  </div>
-
-  <!-- Script -->
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const file = params.get("file");
+/* ========= LẤY FILE ========= */
+const params = new URLSearchParams(window.location.search);
+const file = params.get("file");
 
-  function getSlug() {
-    if (!file) return null;
-    return file.split("/").pop().replace(".md", "");
-  }
+if (!file) {
+  document.getElementById("content").innerText = "Không có file được chỉ định.";
+} else {
+  fetch(file)
+    .then(res => {
+      if (!res.ok) throw new Error("File not found");
+      return res.text();
+    })
+    .then(md => {
+      document.getElementById("content").innerHTML = marked.parse(md);
+      injectQuizButton();
+      setTitleFromFile(file);
+    })
+    .catch(() => {
+      document.getElementById("content").innerText =
+        "Không thể tải nội dung bài học.";
+    });
+}
 
-  function injectQuizButton() {
-    const slug = getSlug();
-    if (!slug) return;
+/* ========= SLUG CHUẨN ========= */
+function getSlugFromFile() {
+  if (!file) return null;
+  return file
+    .split("/")
+    .pop()
+    .replace(".md", "")
+    .replace(".html", "")
+    .toLowerCase();
+}
 
-    const content = document.getElementById("content");
-    if (!content) return;
+/* ========= TIÊU ĐỀ ========= */
+function setTitleFromFile(file) {
+  const name = getSlugFromFile();
+  document.getElementById("page-title").innerText =
+    name.replace(/-/g, " ").toUpperCase();
+}
 
-    const wrapper = document.createElement("div");
-    wrapper.style = "margin:48px 0;text-align:center";
+/* ========= NÚT QUIZ ========= */
+function injectQuizButton() {
+  const slug = getSlugFromFile();
+  if (!slug) return;
 
-    wrapper.innerHTML = `
-      <a href="tieng-anh/quiz-viewer.html?quiz=${slug}"
-         style="
-           background:#c9b3ff;
-           padding:14px 26px;
-           border-radius:10px;
-           font-size:16px;
-           font-weight:700;
-           text-decoration:none;
-           display:inline-block;
-           color:#000;">
-        📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
-      </a>
-    `;
+  const wrapper = document.createElement("div");
+  wrapper.style = "margin:50px 0;text-align:center";
 
-    content.appendChild(wrapper);
-  }
+  wrapper.innerHTML = `
+    <a href="tieng-anh/quiz-viewer.html?quiz=${slug}"
+       class="btn-primary">
+       📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
+    </a>
+  `;
 
-  if (!file) {
-    document.getElementById("content").innerText =
-      "Không có file được chỉ định.";
-  } else {
-    fetch(file)
-      .then(res => {
-        if (!res.ok) throw new Error("Not found");
-        return res.text();
-      })
-      .then(md => {
-        document.getElementById("content").innerHTML =
-          marked.parse(md);
-
-        // QUAN TRỌNG: gọi sau khi render xong
-        injectQuizButton();
-
-        const name = getSlug();
-        document.getElementById("page-title").innerText =
-          name.replace(/-/g, " ").toUpperCase();
-      })
-      .catch(() => {
-        document.getElementById("content").innerText =
-          "Không thể tải nội dung Markdown.";
-      });
-  }
+  document.getElementById("content").appendChild(wrapper);
+}
 </script>
 
 </body>
