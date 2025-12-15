@@ -98,56 +98,78 @@ if (!slug) {
 
 function renderQuiz(data) {
   document.getElementById("quiz-title").innerText = data.title;
-  const quiz = document.getElementById("quiz");
+
+  const quizEl = document.getElementById("quiz");
+  quizEl.innerHTML = "";
 
   data.questions.forEach((q, i) => {
-    const card = document.createElement("div");
-    card.className = "quiz-card";
+    const div = document.createElement("div");
+    div.className = "quiz-question";
+    div.dataset.index = i;
 
-    card.innerHTML = `
+    div.innerHTML = `
       <p><b>${i + 1}. ${q.question}</b></p>
+
       ${q.choices.map((c, idx) => `
-        <label>
+        <label class="choice">
           <input type="radio" name="q${i}" value="${idx}">
           ${c}
         </label>
       `).join("")}
-      <div class="explain" style="display:none">
-        <b>Giải thích:</b> ${q.explain || ""}
+
+      <div class="explanation" style="display:none; margin-top:10px;">
+        <b>Giải thích:</b> ${q.explanation}
       </div>
     `;
 
-    quiz.appendChild(card);
+    quizEl.appendChild(div);
   });
 
-  document.getElementById("submit").onclick =
-    () => checkAnswers(data);
+  document.getElementById("submit").onclick = () => checkAnswers(data);
 }
 
 function checkAnswers(data) {
   let score = 0;
-  const cards = document.querySelectorAll(".quiz-card");
 
   data.questions.forEach((q, i) => {
-    const selected =
-      document.querySelector(`input[name="q${i}"]:checked`);
-    const labels = cards[i].querySelectorAll("label");
-    const explain = cards[i].querySelector(".explain");
+    const wrapper = document.querySelector(
+      `.quiz-question[data-index="${i}"]`
+    );
 
-    labels.forEach((label, idx) => {
-      if (idx === q.answer) label.classList.add("correct");
-      if (selected && idx == selected.value && idx !== q.answer)
-        label.classList.add("wrong");
+    const selected = wrapper.querySelector(
+      `input[name="q${i}"]:checked`
+    );
+
+    const choices = wrapper.querySelectorAll(".choice");
+    const explainBox = wrapper.querySelector(".explanation");
+
+    choices.forEach((label, idx) => {
+      label.style.border = "1px solid #e5e7eb";
+      label.style.background = "#fff";
+
+      if (idx === q.answer) {
+        label.style.background = "#dcfce7";
+        label.style.border = "1px solid #22c55e";
+      }
+
+      if (selected && idx === Number(selected.value) && idx !== q.answer) {
+        label.style.background = "#fee2e2";
+        label.style.border = "1px solid #ef4444";
+      }
     });
 
-    if (selected && Number(selected.value) === q.answer)
+    if (selected && Number(selected.value) === q.answer) {
       score++;
+    }
 
-    explain.style.display = "block";
+    explainBox.style.display = "block";
   });
 
-  document.getElementById("result").innerText =
-    `✅ Bạn đúng ${score}/${data.questions.length} câu`;
+  document.getElementById("result").innerHTML = `
+    <div style="margin-top:20px;font-size:18px;font-weight:700">
+      ✅ Bạn đúng ${score}/${data.questions.length} câu
+    </div>
+  `;
 }
 </script>
 
