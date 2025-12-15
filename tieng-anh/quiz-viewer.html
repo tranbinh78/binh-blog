@@ -3,43 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <title>Grammar Quiz</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f6f7fb;
+      margin: 0;
+      padding: 0;
+    }
+
+    .layout {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 16px 60px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .quiz-question {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+
+    .quiz-question p {
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .quiz-question label {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      border: 1px solid #e5e7eb;
+      transition: background 0.2s, border 0.2s;
+    }
+
+    .quiz-question input {
+      margin-right: 8px;
+    }
+
+    .quiz-question label:hover {
+      background: #f3f4f6;
+    }
+
+    .correct {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+    }
+
+    .wrong {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+    }
+
+    #submit {
+      margin-top: 20px;
+      background: #c9b3ff;
+      border: none;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #submit:hover {
+      opacity: 0.9;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .back-link {
+      margin-top: 30px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
 
 <div class="layout">
 
-  <!-- Sidebar giữ nguyên -->
+  <h1 id="quiz-title">Grammar Quiz</h1>
+  <div id="quiz">Đang tải bài kiểm tra…</div>
 
-  <main class="main">
-    <h1 id="quiz-title">Grammar Quiz</h1>
-    <div id="quiz"></div>
-    <button id="submit">Nộp bài</button>
-    <div id="result"></div>
+  <button id="submit">Nộp bài</button>
+  <div id="result"></div>
 
-    <p style="margin-top:30px;">
-      ← <a href="test-grammar.html">Quay lại Test Grammar</a>
-    </p>
-  </main>
+  <p class="back-link">
+    ← <a href="test-grammar.html">Quay lại Test Grammar</a>
+  </p>
 
 </div>
 
 <script>
 const params = new URLSearchParams(window.location.search);
-const quiz = params.get("quiz"); // present-simple
+const quizSlug = params.get("quiz"); // present-simple
 
-if (!quiz) {
+let quizData = null;
+
+if (!quizSlug) {
   document.getElementById("quiz").innerText = "Không có bài kiểm tra.";
 } else {
-  fetch(`../grammar/quiz/${quiz}.json`)
+  fetch(`../grammar/quiz/${quizSlug}.json`)
     .then(res => {
       if (!res.ok) throw new Error("Quiz not found");
       return res.json();
     })
-    .then(data => renderQuiz(data))
+    .then(data => {
+      quizData = data;
+      renderQuiz(data);
+    })
     .catch(() => {
       document.getElementById("quiz").innerText =
-        "Không tìm thấy bài test.";
+        "❌ Không tìm thấy bài test.";
     });
 }
 
@@ -47,34 +135,55 @@ function renderQuiz(data) {
   document.getElementById("quiz-title").innerText = data.title;
 
   const quiz = document.getElementById("quiz");
+  quiz.innerHTML = "";
+
   data.questions.forEach((q, i) => {
     const div = document.createElement("div");
     div.className = "quiz-question";
+    div.dataset.index = i;
 
     div.innerHTML = `
-      <p><b>${i + 1}. ${q.question}</b></p>
+      <p>${i + 1}. ${q.question}</p>
       ${q.choices.map((c, idx) => `
         <label>
           <input type="radio" name="q${i}" value="${idx}">
           ${c}
-        </label><br>
+        </label>
       `).join("")}
     `;
+
     quiz.appendChild(div);
   });
 
-  document.getElementById("submit").onclick = () => checkAnswers(data);
+  document.getElementById("submit").onclick = checkAnswers;
 }
 
-function checkAnswers(data) {
+function checkAnswers() {
   let score = 0;
-  data.questions.forEach((q, i) => {
-    const selected = document.querySelector(`input[name="q${i}"]:checked`);
-    if (selected && Number(selected.value) === q.answer) score++;
+
+  quizData.questions.forEach((q, i) => {
+    const block = document.querySelector(`.quiz-question[data-index="${i}"]`);
+    const labels = block.querySelectorAll("label");
+    const selected = block.querySelector("input:checked");
+
+    labels.forEach(l => l.classList.remove("correct","wrong"));
+
+    if (selected) {
+      const val = Number(selected.value);
+      if (val === q.answer) {
+        score++;
+        labels[val].classList.add("correct");
+      } else {
+        labels[val].classList.add("wrong");
+        labels[q.answer].classList.add("correct");
+      }
+    } else {
+      labels[q.answer].classList.add("correct");
+    }
   });
 
-  document.getElementById("result").innerHTML =
-    `✅ Bạn đúng ${score}/${data.questions.length} câu`;
+  document.getElementById("result").innerText =
+    `✅ Bạn đúng ${score}/${quizData.questions.length} câu`;
 }
 </script>
 
