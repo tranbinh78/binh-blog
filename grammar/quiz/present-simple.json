@@ -59,7 +59,7 @@
       "question": "He ____ to music every night.",
       "choices": ["listen", "listens", "listening", "is listening"],
       "answer": 1,
-      "explanation": "Thói quen hằng ngày + chủ ngữ số ít → dùng 'listens'."
+      "explanation": "Thói quen hằng ngày + chủ ngữ số ít → động từ phải thêm -s 'listens'."
     },
     {
       "question": "I ____ coffee in the morning.",
@@ -77,7 +77,7 @@
       "question": "Birds ____ in the sky.",
       "choices": ["fly", "flies", "flying", "flew"],
       "answer": 0,
-      "explanation": "‘Birds’ số nhiều → dùng 'fly'."
+      "explanation": "‘Birds’ là số nhiều → dùng động từ nguyên mẫu ‘fly’."
     },
     {
       "question": "She ____ her homework after dinner.",
@@ -89,7 +89,7 @@
       "question": "Dogs ____ meat.",
       "choices": ["eat", "eats", "ate", "eating"],
       "answer": 0,
-      "explanation": "‘Dogs’ là số nhiều → dùng 'eat'."
+      "explanation": "‘Dogs’ là số nhiều →  dùng động từ nguyên mẫu 'eat'."
     }
   ]
 }
