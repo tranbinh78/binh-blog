@@ -26,21 +26,19 @@
 
 <script>
 const params = new URLSearchParams(window.location.search);
-const slug = params.get("quiz");
+const quiz = params.get("quiz"); // present-simple
 
-if (!slug) {
-  document.getElementById("content").innerHTML = "Không tìm thấy bài test.";
+if (!quiz) {
+  document.getElementById("quiz").innerText = "Không có bài kiểm tra.";
 } else {
-  fetch(`/binh-blog/grammar/quiz/${slug}.json`)
+  fetch(`../grammar/quiz/${quiz}.json`)
     .then(res => {
-      if (!res.ok) throw new Error("Not found");
+      if (!res.ok) throw new Error("Quiz not found");
       return res.json();
     })
-    .then(data => {
-      renderQuiz(data);
-    })
+    .then(data => renderQuiz(data))
     .catch(() => {
-      document.getElementById("content").innerHTML =
+      document.getElementById("quiz").innerText =
         "Không tìm thấy bài test.";
     });
 }
