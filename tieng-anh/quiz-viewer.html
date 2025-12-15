@@ -81,21 +81,28 @@
 </div>
 
 <script>
-const params = new URLSearchParams(location.search);
-const slug = params.get("quiz");
+const params = new URLSearchParams(window.location.search);
+const quizSlug = params.get("quiz"); // present-simple
 
-if (!slug) {
+let quizData = null;
+
+if (!quizSlug) {
   document.getElementById("quiz").innerText = "Không có bài kiểm tra.";
 } else {
-  fetch(`../grammar/quiz/${slug}.json`)
-    .then(res => res.json())
-    .then(renderQuiz)
+  fetch(`../grammar/quiz/${quizSlug}.json`)
+    .then(res => {
+      if (!res.ok) throw new Error("Quiz not found");
+      return res.json();
+    })
+    .then(data => {
+      quizData = data;
+      renderQuiz(data);
+    })
     .catch(() => {
       document.getElementById("quiz").innerText =
-        "Không tìm thấy bài test.";
+        "❌ Không tìm thấy bài test.";
     });
 }
-
 function renderQuiz(data) {
   document.getElementById("quiz-title").innerText = data.title;
 
