@@ -71,56 +71,70 @@
 </div>
 
 <script>
-const params = new URLSearchParams(location.search);
+const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
+const contentEl = document.getElementById("content");
+const titleEl = document.getElementById("page-title");
 
-if (!file || !file.endsWith(".md")) {
-  document.getElementById("content").innerText =
-    "❌ Grammar Viewer chỉ hỗ trợ file .md";
-  throw new Error("Invalid file");
+if (!file) {
+  contentEl.innerHTML = "❌ Grammar Viewer chỉ hỗ trợ file .md";
+  throw new Error("No file");
+}
+
+if (!file.endsWith(".md")) {
+  contentEl.innerHTML = "❌ Grammar Viewer chỉ hỗ trợ file .md";
+  throw new Error("Invalid file type");
 }
 
 fetch(file)
   .then(res => {
-    if (!res.ok) throw new Error();
+    if (!res.ok) throw new Error("File not found");
     return res.text();
   })
   .then(md => {
-    md = md
-      .replace(/<script[\s\S]*?<\/script>/gi, "")
-      .replace(/<link[^>]*>/gi, "")
-      .replace(/<!--[\s\S]*?-->/g, "");
+    // Clean markdown
+    md = md.replace(/<script[\s\S]*?<\/script>/gi, "");
+    md = md.replace(/<link[^>]*>/gi, "");
+    md = md.replace(/<!--[\s\S]*?-->/g, "");
+    md = md.trim();
 
-    document.getElementById("content").innerHTML = marked.parse(md);
-    injectQuizButton();
-    setTitleFromFile();
+    contentEl.innerHTML = marked.parse(md);
+
+    // Set title
+    const slug = getSlug();
+    titleEl.innerText = slug.replace(/-/g, " ").toUpperCase();
+
+    injectQuizButton(slug);
   })
   .catch(() => {
-    document.getElementById("content").innerText =
-      "❌ Không thể tải nội dung.";
+    contentEl.innerHTML = "❌ Không thể tải nội dung Grammar.";
   });
 
-function slugFromFile() {
-  return file.split("/").pop().replace(".md", "");
+function getSlug() {
+  const f = new URLSearchParams(location.search).get("file");
+  return f.split("/").pop().replace(".md", "");
 }
 
-function setTitleFromFile() {
-  document.getElementById("page-title").innerText =
-    slugFromFile().replace(/-/g, " ").toUpperCase();
-}
-
-function injectQuizButton() {
-  const slug = slugFromFile();
-
+function injectQuizButton(slug) {
   const wrapper = document.createElement("div");
-  wrapper.className = "quiz-btn";
+  wrapper.style = "margin:50px 0;text-align:center";
+
   wrapper.innerHTML = `
-    <a href="tieng-anh/quiz-viewer.html?quiz=${slug}">
+    <a href="/binh-blog/tieng-anh/quiz-viewer.html?quiz=${slug}"
+       style="
+        display:inline-block;
+        background:#c9b3ff;
+        padding:14px 22px;
+        border-radius:12px;
+        font-size:16px;
+        font-weight:700;
+        text-decoration:none;
+        color:#1e1e1e;">
       📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
     </a>
   `;
 
-  document.getElementById("content").appendChild(wrapper);
+  contentEl.appendChild(wrapper);
 }
 </script>
 </body>
