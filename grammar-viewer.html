@@ -7,21 +7,40 @@
 
   <link rel="stylesheet" href="assets/css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    .md-content h1, .md-content h2, .md-content h3 {
+      margin-top: 28px;
+    }
+    .md-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 16px 0;
+    }
+    .quiz-btn {
+      margin: 48px 0;
+      text-align: center;
+    }
+    .quiz-btn a {
+      display: inline-block;
+      background: #c9b3ff;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #111;
+    }
+  </style>
 </head>
 
 <body>
 <div class="wrapper">
 
-  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="brand">
-      <img src="assets/avatar.jpg" alt="Avatar Tran Binh" />
-      <div>
-        <h1>Tran Binh</h1>
-        <div class="muted">Personal website</div>
-      </div>
+      <img src="assets/avatar.jpg" />
+      <h1>Tran Binh</h1>
     </div>
-
     <ul class="nav">
       <li><a href="index.html">🏠 Home</a></li>
       <li><a class="active" href="tieng-anh.html">📘 Tiếng Anh</a></li>
@@ -32,88 +51,77 @@
     </ul>
   </aside>
 
-  <!-- Main -->
   <main class="main">
     <article class="post">
-
       <header class="post-header">
         <h1 id="page-title">Grammar</h1>
-        <div class="post-meta">Grammar - Ngữ pháp</div>
+        <div class="post-meta">Grammar – Ngữ pháp</div>
       </header>
 
-      <div id="content" class="post-content">
+      <div id="content" class="post-content md-content">
         Đang tải nội dung...
       </div>
 
       <footer class="post-footer">
-        <p><a href="tieng-anh/grammar.html">← Quay lại Grammar</a></p>
+        ← <a href="tieng-anh/grammar.html">Quay lại Grammar</a>
       </footer>
-
     </article>
   </main>
 
 </div>
 
 <script>
-/* ========= LẤY FILE ========= */
-const params = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(location.search);
 const file = params.get("file");
 
-if (!file) {
-  document.getElementById("content").innerText = "Không có file được chỉ định.";
-} else {
-  fetch(file)
-    .then(res => {
-      if (!res.ok) throw new Error("File not found");
-      return res.text();
-    })
-    .then(md => {
-      document.getElementById("content").innerHTML = marked.parse(md);
-      injectQuizButton();
-      setTitleFromFile(file);
-    })
-    .catch(() => {
-      document.getElementById("content").innerText =
-        "Không thể tải nội dung bài học.";
-    });
+if (!file || !file.endsWith(".md")) {
+  document.getElementById("content").innerText =
+    "❌ Grammar Viewer chỉ hỗ trợ file .md";
+  throw new Error("Invalid file");
 }
 
-/* ========= SLUG CHUẨN ========= */
-function getSlugFromFile() {
-  if (!file) return null;
-  return file
-    .split("/")
-    .pop()
-    .replace(".md", "")
-    .replace(".html", "")
-    .toLowerCase();
+fetch(file)
+  .then(res => {
+    if (!res.ok) throw new Error();
+    return res.text();
+  })
+  .then(md => {
+    md = md
+      .replace(/<script[\s\S]*?<\/script>/gi, "")
+      .replace(/<link[^>]*>/gi, "")
+      .replace(/<!--[\s\S]*?-->/g, "");
+
+    document.getElementById("content").innerHTML = marked.parse(md);
+    injectQuizButton();
+    setTitleFromFile();
+  })
+  .catch(() => {
+    document.getElementById("content").innerText =
+      "❌ Không thể tải nội dung.";
+  });
+
+function slugFromFile() {
+  return file.split("/").pop().replace(".md", "");
 }
 
-/* ========= TIÊU ĐỀ ========= */
-function setTitleFromFile(file) {
-  const name = getSlugFromFile();
+function setTitleFromFile() {
   document.getElementById("page-title").innerText =
-    name.replace(/-/g, " ").toUpperCase();
+    slugFromFile().replace(/-/g, " ").toUpperCase();
 }
 
-/* ========= NÚT QUIZ ========= */
 function injectQuizButton() {
-  const slug = getSlugFromFile();
-  if (!slug) return;
+  const slug = slugFromFile();
 
   const wrapper = document.createElement("div");
-  wrapper.style = "margin:50px 0;text-align:center";
-
+  wrapper.className = "quiz-btn";
   wrapper.innerHTML = `
-    <a href="tieng-anh/quiz-viewer.html?quiz=${slug}"
-       class="btn-primary">
-       📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
+    <a href="tieng-anh/quiz-viewer.html?quiz=${slug}">
+      📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
     </a>
   `;
 
   document.getElementById("content").appendChild(wrapper);
 }
 </script>
-
 </body>
 </html>
