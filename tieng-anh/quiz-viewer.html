@@ -26,14 +26,23 @@
 
 <script>
 const params = new URLSearchParams(window.location.search);
-const file = params.get("file");
+const slug = params.get("quiz");
 
-if (!file) {
-  document.getElementById("quiz").innerHTML = "Không tìm thấy bài test.";
+if (!slug) {
+  document.getElementById("content").innerHTML = "Không tìm thấy bài test.";
 } else {
-  fetch(`../grammar/quiz/${file}.json`)
-    .then(res => res.json())
-    .then(data => renderQuiz(data));
+  fetch(`/binh-blog/grammar/quiz/${slug}.json`)
+    .then(res => {
+      if (!res.ok) throw new Error("Not found");
+      return res.json();
+    })
+    .then(data => {
+      renderQuiz(data);
+    })
+    .catch(() => {
+      document.getElementById("content").innerHTML =
+        "Không tìm thấy bài test.";
+    });
 }
 
 function renderQuiz(data) {
