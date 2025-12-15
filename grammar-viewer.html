@@ -71,43 +71,65 @@
 </div>
 
 <script>
-function getSlugFromFile() {
-  const params = new URLSearchParams(window.location.search);
-  const file = params.get("file"); // grammar/present-continuous.md
-  if (!file) return null;
+const params = new URLSearchParams(window.location.search);
+const file = params.get("file");
 
-  return file
-    .split("/")
-    .pop()
-    .replace(".md", ""); // present-continuous
+const contentEl = document.getElementById("content");
+const titleEl = document.getElementById("page-title");
+
+/* ===== 1. Chỉ cho phép .md ===== */
+if (!file || !file.endsWith(".md")) {
+  contentEl.innerHTML =
+    "❌ Grammar Viewer chỉ hỗ trợ file <b>.md</b>.<br><a href='tieng-anh/grammar.html'>← Quay lại Grammar</a>";
+  throw new Error("Invalid file");
 }
 
-function injectQuizButton() {
-  const slug = getSlugFromFile();
-  if (!slug) return;
+/* ===== 2. Lấy slug từ file .md ===== */
+function getSlugFromMd(path) {
+  return path.split("/").pop().replace(".md", "");
+}
 
-  const content = document.getElementById("content");
-  if (!content) return;
+const slug = getSlugFromMd(file);
 
+/* ===== 3. Load Markdown ===== */
+fetch(file)
+  .then(res => {
+    if (!res.ok) throw new Error("File not found");
+    return res.text();
+  })
+  .then(md => {
+    contentEl.innerHTML = marked.parse(md);
+
+    titleEl.innerText = slug
+      .replace(/-/g, " ")
+      .toUpperCase();
+
+    injectQuizButton(slug);
+  })
+  .catch(() => {
+    contentEl.innerHTML = "❌ Không thể tải nội dung.";
+  });
+
+/* ===== 4. Gắn nút Làm bài kiểm tra ===== */
+function injectQuizButton(slug) {
   const wrap = document.createElement("div");
-  wrap.style = "margin:40px 0;text-align:center";
+  wrap.style = "margin:48px 0;text-align:center";
 
   wrap.innerHTML = `
     <a href="tieng-anh/quiz-viewer.html?quiz=${slug}"
        style="
-         display:inline-block;
-         padding:14px 22px;
-         border-radius:12px;
-         background:#c9b3ff;
-         color:#000;
-         font-weight:700;
-         text-decoration:none;
-       ">
-      📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
+        display:inline-block;
+        background:#c9b3ff;
+        padding:14px 24px;
+        border-radius:12px;
+        font-weight:700;
+        text-decoration:none;
+        color:#000;">
+      📝 Làm bài kiểm tra ${slug.replace(/-/g, " ").toUpperCase()}
     </a>
   `;
 
-  content.appendChild(wrap);
+  contentEl.appendChild(wrap);
 }
 </script>
 </body>
