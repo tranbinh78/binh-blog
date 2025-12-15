@@ -113,6 +113,8 @@ const params = new URLSearchParams(window.location.search);
 const file = params.get("file");
 
 function getSlugFromFile() {
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
   if (!file) return null;
   return file.split("/").pop().replace(".md", "");
 }
@@ -127,21 +129,20 @@ function injectQuizButton() {
   const wrapper = document.createElement("div");
   wrapper.style = "margin:48px 0;text-align:center";
 
- wrapper.innerHTML = `
-  <a href="/binh-blog/tieng-anh/quiz-viewer.html?quiz=${slug}"
-     style="
-       display:inline-block;
-       background:#c9b3ff;
-       padding:14px 22px;
-       border-radius:10px;
-       font-size:16px;
-       font-weight:700;
-       text-decoration:none;
-       color:#000;
-     ">
-    📝 Làm bài kiểm tra ${slug.replace(/-/g," ").toUpperCase()}
-  </a>
-`;
+  wrapper.innerHTML = `
+    <a href="/binh-blog/tieng-anh/quiz-viewer.html?quiz=${slug}"
+       style="
+         display:inline-block;
+         background:#c9b3ff;
+         padding:14px 22px;
+         border-radius:10px;
+         text-decoration:none;
+         color:#000;
+         font-size:16px;
+         font-weight:700;">
+      📝 Làm bài kiểm tra ${slug.replace(/-/g, " ").toUpperCase()}
+    </a>
+  `;
 
   content.appendChild(wrapper);
 }
