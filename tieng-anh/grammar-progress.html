@@ -107,41 +107,38 @@
 
 <script>
 const tableBody = document.getElementById("progress-body");
+const keys = Object.keys(localStorage)
+  .filter(k => k.startsWith("quiz-progress-"));
 
-  const rows = [];
-
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-
-    // ✅ CHỈ LẤY KEY ĐÚNG
-    if (!key.startsWith("quiz-progress-")) continue;
-
+if (keys.length === 0) {
+  tableBody.innerHTML = `
+    <tr>
+      <td colspan="6">Chưa có dữ liệu làm bài.</td>
+    </tr>
+  `;
+} else {
+  keys.forEach(key => {
     const slug = key.replace("quiz-progress-", "");
     const data = JSON.parse(localStorage.getItem(key));
 
-    rows.push(`
-      <tr>
-        <td>${slug.replace(/-/g, " ").toUpperCase()}</td>
-        <td>${data.attempts}</td>
-        <td>${data.best}</td>
-        <td>${data.last}</td>
-        <td>${data.best >= 80 ? "✅ Tốt" : "⚠️ Cần ôn lại"}</td>
-        <td>
-          <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
-        </td>
-      </tr>
-    `);
-  }
+    let rating = "🔴 Cần luyện";
+    if (data.best >= 90) rating = "🟢 Tốt";
+    else if (data.best >= 70) rating = "🟡 Khá";
 
-  if (rows.length === 0) {
-    tableBody.innerHTML = `
-      <tr>
-        <td colspan="6">Chưa có dữ liệu làm bài.</td>
-      </tr>
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${slug.replace(/-/g," ")}</td>
+      <td>${data.attempts}</td>
+      <td>${data.best}</td>
+      <td>${data.last}</td>
+      <td>${rating}</td>
+      <td>
+        <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
+      </td>
     `;
-  } else {
-    tableBody.innerHTML = rows.join("");
-  }
+    tableBody.appendChild(row);
+  });
+}
 </script>
 
 </body>
