@@ -106,52 +106,56 @@
 </div>
 
 <script>
-  const tbody = document.getElementById("progress-body");
+ const tbody = document.getElementById("progress-body");
 
-  const rows = [];
+const GRAMMAR_LIST = [
+  "present-simple",
+  "present-continuous",
+  "present-perfect",
+  "present-perfect-continuous",
+  "past-simple",
+  "past-continuous",
+  "past-perfect",
+  "past-perfect-continuous",
+  "future-simple",
+  "be-going-to",
+  "future-continuous",
+  "future-perfect",
+  "future-perfect-continuous"
+];
 
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
+let hasData = false;
 
-    if (!key.startsWith("quiz-progress-")) continue;
+GRAMMAR_LIST.forEach(slug => {
+  const key = `quiz-progress-${slug}`;
+  const raw = localStorage.getItem(key);
+  if (!raw) return;
 
-    const slug = key.replace("quiz-progress-", "");
-    const data = JSON.parse(localStorage.getItem(key));
+  hasData = true;
+  const data = JSON.parse(raw);
 
-    const rate =
-      data.best >= 90 ? "🌟 Xuất sắc" :
-      data.best >= 70 ? "✅ Tốt" :
-      "⚠️ Cần ôn lại";
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td>${slug.replace(/-/g," ").toUpperCase()}</td>
+    <td>${data.attempts}</td>
+    <td>${data.best}</td>
+    <td>${data.last}</td>
+    <td>${data.best >= 80 ? "✅ Tốt" : "⚠️ Cần ôn"}</td>
+    <td>
+      <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
+    </td>
+  `;
 
-    rows.push(`
-      <tr>
-        <td>${slug.replace(/-/g, " ")}</td>
-        <td>${data.attempts}</td>
-        <td>${data.best}</td>
-        <td>${data.last}</td>
-        <td>${rate}</td>
-        <td>
-          <a href="grammar-viewer.html?file=grammar/${slug}.md">
-            Ôn lý thuyết
-          </a>
-          |
-          <a href="quiz-viewer.html?quiz=${slug}">
-            Làm lại
-          </a>
-        </td>
-      </tr>
-    `);
-  }
+  tbody.appendChild(tr);
+});
 
-  if (rows.length === 0) {
-    tbody.innerHTML = `
-      <tr>
-        <td colspan="6">Chưa có dữ liệu làm bài.</td>
-      </tr>
-    `;
-  } else {
-    tbody.innerHTML = rows.join("");
-  }
+if (!hasData) {
+  tbody.innerHTML = `
+    <tr>
+      <td colspan="6">Chưa có dữ liệu làm bài.</td>
+    </tr>
+  `;
+}
 </script>
 
 </body>
