@@ -106,56 +106,42 @@
 </div>
 
 <script>
- const tbody = document.getElementById("progress-body");
+const tableBody = document.getElementById("progress-body");
 
-const GRAMMAR_LIST = [
-  "present-simple",
-  "present-continuous",
-  "present-perfect",
-  "present-perfect-continuous",
-  "past-simple",
-  "past-continuous",
-  "past-perfect",
-  "past-perfect-continuous",
-  "future-simple",
-  "be-going-to",
-  "future-continuous",
-  "future-perfect",
-  "future-perfect-continuous"
-];
+  const rows = [];
 
-let hasData = false;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
 
-GRAMMAR_LIST.forEach(slug => {
-  const key = `quiz-progress-${slug}`;
-  const raw = localStorage.getItem(key);
-  if (!raw) return;
+    // ✅ CHỈ LẤY KEY ĐÚNG
+    if (!key.startsWith("quiz-progress-")) continue;
 
-  hasData = true;
-  const data = JSON.parse(raw);
+    const slug = key.replace("quiz-progress-", "");
+    const data = JSON.parse(localStorage.getItem(key));
 
-  const tr = document.createElement("tr");
-  tr.innerHTML = `
-    <td>${slug.replace(/-/g," ").toUpperCase()}</td>
-    <td>${data.attempts}</td>
-    <td>${data.best}</td>
-    <td>${data.last}</td>
-    <td>${data.best >= 80 ? "✅ Tốt" : "⚠️ Cần ôn"}</td>
-    <td>
-      <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
-    </td>
-  `;
+    rows.push(`
+      <tr>
+        <td>${slug.replace(/-/g, " ").toUpperCase()}</td>
+        <td>${data.attempts}</td>
+        <td>${data.best}</td>
+        <td>${data.last}</td>
+        <td>${data.best >= 80 ? "✅ Tốt" : "⚠️ Cần ôn lại"}</td>
+        <td>
+          <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
+        </td>
+      </tr>
+    `);
+  }
 
-  tbody.appendChild(tr);
-});
-
-if (!hasData) {
-  tbody.innerHTML = `
-    <tr>
-      <td colspan="6">Chưa có dữ liệu làm bài.</td>
-    </tr>
-  `;
-}
+  if (rows.length === 0) {
+    tableBody.innerHTML = `
+      <tr>
+        <td colspan="6">Chưa có dữ liệu làm bài.</td>
+      </tr>
+    `;
+  } else {
+    tableBody.innerHTML = rows.join("");
+  }
 </script>
 
 </body>
