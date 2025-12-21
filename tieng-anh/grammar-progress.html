@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tiến độ Grammar — Trần Bình</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <style>
+    .progress-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 16px;
+    }
+
+    .progress-table th,
+    .progress-table td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    .progress-table th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .good { background:#dcfce7; color:#166534; }
+    .mid { background:#fef9c3; color:#854d0e; }
+    .bad { background:#fee2e2; color:#7f1d1d; }
+
+    .actions a {
+      margin-right: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #6366f1;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrapper">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../assets/avatar.jpg" alt="Avatar" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="font-size:13px;color:var(--muted)">Personal website</div>
+      </div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a href="../gallery.html">📷 Gallery</a></li>
+      <li><a href="../about.html">👤 About me</a></li>
+      <li><a href="../contact.html">✉️ Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <article class="post">
+
+      <header class="post-header">
+        <h1 class="post-title">📊 Tiến độ Grammar</h1>
+        <div class="post-meta">Theo dõi toàn bộ các thì đã học</div>
+      </header>
+
+      <div class="post-content">
+        <table class="progress-table">
+          <thead>
+            <tr>
+              <th>Thì</th>
+              <th>Số lần làm</th>
+              <th>Điểm cao nhất</th>
+              <th>Gần nhất</th>
+              <th>Đánh giá</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="progress-body"></tbody>
+        </table>
+      </div>
+
+      <footer class="post-footer">
+        ← <a href="../tieng-anh/grammar.html">Quay lại Grammar</a>
+      </footer>
+
+    </article>
+  </main>
+
+</div>
+
+<script>
+  const tbody = document.getElementById("progress-body");
+
+  function getLevel(score) {
+    if (score >= 80) return '<span class="badge good">Tốt</span>';
+    if (score >= 50) return '<span class="badge mid">Cần luyện</span>';
+    return '<span class="badge bad">Yếu</span>';
+  }
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+
+    if (!key.startsWith("quiz-progress-")) continue;
+
+    const slug = key.replace("quiz-progress-", "");
+    const data = JSON.parse(localStorage.getItem(key));
+    const percent = Math.round((data.best / 15) * 100);
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><b>${slug.replace(/-/g," ").toUpperCase()}</b></td>
+      <td>${data.attempts}</td>
+      <td>${data.best}</td>
+      <td>${data.last}</td>
+      <td>${getLevel(percent)}</td>
+      <td class="actions">
+        <a href="../grammar-viewer.html?file=grammar/${slug}.md">📘 Học</a>
+        <a href="quiz-viewer.html?quiz=${slug}">📝 Quiz</a>
+      </td>
+    `;
+
+    tbody.appendChild(tr);
+  }
+
+  if (!tbody.children.length) {
+    tbody.innerHTML =
+      `<tr><td colspan="6">Chưa có dữ liệu làm bài.</td></tr>`;
+  }
+</script>
+
+</body>
+</html>
