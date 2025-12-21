@@ -233,7 +233,64 @@ function checkAnswers(data) {
       ✅ Bạn đúng ${score}/${data.questions.length} câu
     </div>
   `;
+  // 👉 THÊM 2 DÒNG NÀY
+  saveProgress(quiz, score, data.questions.length);
+  renderProgressSummary(quiz);
 }
+
+// ===============================
+// SAVE PROGRESS TO LOCALSTORAGE
+// ===============================
+function saveProgress(slug, score, total) {
+  const key = "grammarProgress";
+  const data = JSON.parse(localStorage.getItem(key) || "{}");
+
+  if (!data[slug]) {
+    data[slug] = {
+      attempts: 0,
+      bestScore: 0,
+      lastScore: 0,
+      history: []
+    };
+  }
+
+  data[slug].attempts += 1;
+  data[slug].lastScore = score;
+  data[slug].bestScore = Math.max(data[slug].bestScore, score);
+
+  data[slug].history.push({
+    date: new Date().toLocaleString("vi-VN"),
+    score,
+    total
+  });
+
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function renderProgressSummary(slug) {
+  const data = JSON.parse(localStorage.getItem("grammarProgress") || "{}");
+  if (!data[slug]) return;
+
+  const p = data[slug];
+  const result = document.getElementById("result");
+
+  result.innerHTML += `
+    <div style="
+      margin-top:16px;
+      padding:14px;
+      background:#f0f4ff;
+      border-left:4px solid #7c6cff;
+      border-radius:8px;
+      font-size:15px;
+    ">
+      📊 <b>Tiến độ bài này</b><br>
+      • Số lần làm: <b>${p.attempts}</b><br>
+      • Điểm cao nhất: <b>${p.bestScore}</b><br>
+      • Điểm gần nhất: <b>${p.lastScore}</b>
+    </div>
+  `;
+}
+  
 </script>
 
 </body>
