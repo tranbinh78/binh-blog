@@ -106,9 +106,9 @@
 </div>
 
 <script>
-   const tableBody = document.getElementById("progress-body");
+  const tbody = document.getElementById("progress-body");
 
-  let hasData = false;
+  const rows = [];
 
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
@@ -118,34 +118,39 @@
     const slug = key.replace("quiz-progress-", "");
     const data = JSON.parse(localStorage.getItem(key));
 
-    const tr = document.createElement("tr");
-
     const rate =
-      data.best === data.total ? "🌟 Xuất sắc" :
-      data.best >= data.total * 0.7 ? "👍 Tốt" :
-      "📘 Cần luyện thêm";
+      data.best >= 90 ? "🌟 Xuất sắc" :
+      data.best >= 70 ? "✅ Tốt" :
+      "⚠️ Cần ôn lại";
 
-    tr.innerHTML = `
-      <td>${slug.replace(/-/g, " ").toUpperCase()}</td>
-      <td>${data.attempts}</td>
-      <td>${data.best}/${data.total}</td>
-      <td>${data.last}/${data.total}</td>
-      <td>${rate}</td>
-      <td>
-        <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
-      </td>
-    `;
-
-    tableBody.appendChild(tr);
-    hasData = true;
+    rows.push(`
+      <tr>
+        <td>${slug.replace(/-/g, " ")}</td>
+        <td>${data.attempts}</td>
+        <td>${data.best}</td>
+        <td>${data.last}</td>
+        <td>${rate}</td>
+        <td>
+          <a href="grammar-viewer.html?file=grammar/${slug}.md">
+            Ôn lý thuyết
+          </a>
+          |
+          <a href="quiz-viewer.html?quiz=${slug}">
+            Làm lại
+          </a>
+        </td>
+      </tr>
+    `);
   }
 
-  if (!hasData) {
-    tableBody.innerHTML = `
+  if (rows.length === 0) {
+    tbody.innerHTML = `
       <tr>
         <td colspan="6">Chưa có dữ liệu làm bài.</td>
       </tr>
     `;
+  } else {
+    tbody.innerHTML = rows.join("");
   }
 </script>
 
