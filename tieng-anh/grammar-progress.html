@@ -79,7 +79,28 @@
         <h1 class="post-title">📊 Tiến độ Grammar</h1>
         <div class="post-meta">Theo dõi toàn bộ các thì đã học</div>
       </header>
+      
+<section style="max-width:600px;margin:24px 0;">
+  <h3>📊 Tiến độ Grammar tổng</h3>
 
+  <div style="
+    background:#e5e7eb;
+    border-radius:12px;
+    overflow:hidden;
+    height:22px;
+    margin:10px 0;">
+    <div id="progress-bar"
+         style="
+           height:100%;
+           width:0%;
+           background:#7c7cff;
+           transition:width .4s;">
+    </div>
+  </div>
+
+  <div id="progress-text" style="font-size:14px;color:#444"></div>
+</section>
+      
       <div class="post-content">
         <table class="progress-table">
           <thead>
@@ -139,6 +160,37 @@ if (keys.length === 0) {
     tableBody.appendChild(row);
   });
 }
+
+const GRAMMAR_TENSES = [
+  "present-simple",
+  "present-continuous",
+  "present-perfect",
+  "present-perfect-continuous",
+  "past-simple",
+  "past-continuous",
+  "past-perfect",
+  "past-perfect-continuous",
+  "future-simple",
+  "be-going-to",
+  "future-continuous",
+  "future-perfect",
+  "future-perfect-continuous"
+];
+
+let completed = 0;
+
+GRAMMAR_TENSES.forEach(slug => {
+  if (localStorage.getItem(`quiz-progress-${slug}`)) {
+    completed++;
+  }
+});
+
+const percent = Math.round((completed / GRAMMAR_TENSES.length) * 100);
+
+document.getElementById("progress-bar").style.width = percent + "%";
+document.getElementById("progress-text").innerText =
+  `Đã hoàn thành ${completed}/${GRAMMAR_TENSES.length} thì (${percent}%)`;
+  
 </script>
 
 </body>
