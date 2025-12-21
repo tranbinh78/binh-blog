@@ -106,37 +106,38 @@
 </div>
 
 <script>
-  const tableBody = document.getElementById("progress-body");
+   const tableBody = document.getElementById("progress-body");
 
   let hasData = false;
 
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
 
-    // CHỈ lấy các key quiz-progress-
     if (!key.startsWith("quiz-progress-")) continue;
 
     const slug = key.replace("quiz-progress-", "");
     const data = JSON.parse(localStorage.getItem(key));
 
-    hasData = true;
-
     const tr = document.createElement("tr");
+
+    const rate =
+      data.best === data.total ? "🌟 Xuất sắc" :
+      data.best >= data.total * 0.7 ? "👍 Tốt" :
+      "📘 Cần luyện thêm";
 
     tr.innerHTML = `
       <td>${slug.replace(/-/g, " ").toUpperCase()}</td>
       <td>${data.attempts}</td>
-      <td>${data.best}</td>
-      <td>${data.last}</td>
-      <td>${data.best >= 8 ? "✅ Tốt" : "⚠️ Cần ôn"}</td>
+      <td>${data.best}/${data.total}</td>
+      <td>${data.last}/${data.total}</td>
+      <td>${rate}</td>
       <td>
-        <a href="grammar-viewer.html?file=grammar/${slug}.md">
-          Ôn lại
-        </a>
+        <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
       </td>
     `;
 
     tableBody.appendChild(tr);
+    hasData = true;
   }
 
   if (!hasData) {
