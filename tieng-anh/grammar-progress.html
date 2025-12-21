@@ -106,42 +106,45 @@
 </div>
 
 <script>
-  const tbody = document.getElementById("progress-body");
+  const tableBody = document.getElementById("progress-body");
 
-  function getLevel(score) {
-    if (score >= 80) return '<span class="badge good">Tốt</span>';
-    if (score >= 50) return '<span class="badge mid">Cần luyện</span>';
-    return '<span class="badge bad">Yếu</span>';
-  }
+  let hasData = false;
 
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
 
+    // CHỈ lấy các key quiz-progress-
     if (!key.startsWith("quiz-progress-")) continue;
 
     const slug = key.replace("quiz-progress-", "");
     const data = JSON.parse(localStorage.getItem(key));
-    const percent = Math.round((data.best / 15) * 100);
+
+    hasData = true;
 
     const tr = document.createElement("tr");
+
     tr.innerHTML = `
-      <td><b>${slug.replace(/-/g," ").toUpperCase()}</b></td>
+      <td>${slug.replace(/-/g, " ").toUpperCase()}</td>
       <td>${data.attempts}</td>
       <td>${data.best}</td>
       <td>${data.last}</td>
-      <td>${getLevel(percent)}</td>
-      <td class="actions">
-        <a href="../grammar-viewer.html?file=grammar/${slug}.md">📘 Học</a>
-        <a href="quiz-viewer.html?quiz=${slug}">📝 Quiz</a>
+      <td>${data.best >= 8 ? "✅ Tốt" : "⚠️ Cần ôn"}</td>
+      <td>
+        <a href="grammar-viewer.html?file=grammar/${slug}.md">
+          Ôn lại
+        </a>
       </td>
     `;
 
-    tbody.appendChild(tr);
+    tableBody.appendChild(tr);
   }
 
-  if (!tbody.children.length) {
-    tbody.innerHTML =
-      `<tr><td colspan="6">Chưa có dữ liệu làm bài.</td></tr>`;
+  if (!hasData) {
+    tableBody.innerHTML = `
+      <tr>
+        <td colspan="6">Chưa có dữ liệu làm bài.</td>
+      </tr>
+    `;
   }
 </script>
 
