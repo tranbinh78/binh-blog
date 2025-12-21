@@ -155,16 +155,22 @@
         return res.text();
       })
       .then(md => {
-        document.getElementById("content").innerHTML =
-          marked.parse(md);
+      const content = document.getElementById("content");
 
-        // QUAN TRỌNG: gọi sau khi render xong
+      // 1. Render Markdown
+        content.innerHTML = marked.parse(md);
+
+      // 2. Gắn nút làm bài kiểm tra
         injectQuizButton();
 
+      // 3. Gắn thông tin tiến độ (nếu có)
+        injectProgressInfo();
+
+      // 4. Đặt lại tiêu đề trang
         const name = getSlug();
         document.getElementById("page-title").innerText =
-          name.replace(/-/g, " ").toUpperCase();
-      })
+        name.replace(/-/g, " ").toUpperCase();
+        })
       .catch(() => {
         document.getElementById("content").innerText =
           "Không thể tải nội dung Markdown.";
