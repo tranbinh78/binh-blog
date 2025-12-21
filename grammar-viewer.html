@@ -145,6 +145,36 @@
     content.appendChild(wrapper);
   }
 
+  function injectProgressInfo() {
+  const slug = getSlug();
+  if (!slug) return;
+
+  const data = JSON.parse(
+    localStorage.getItem("quiz-progress-" + slug) || "{}"
+  );
+
+  if (!data.attempts) return;
+
+  const box = document.createElement("div");
+  box.style = `
+    margin:40px 0;
+    padding:16px 20px;
+    border-left:4px solid #7c3aed;
+    background:#f5f3ff;
+    border-radius:10px;
+    font-size:15px;
+  `;
+
+  box.innerHTML = `
+    <b>📊 Tiến độ học bài này</b><br>
+    • Số lần làm: ${data.attempts}<br>
+    • Điểm cao nhất: ${data.best}/${data.total}<br>
+    • Lần gần nhất: ${data.last}/${data.total}
+  `;
+
+  const content = document.getElementById("content");
+  content.prepend(box);
+}
   if (!file) {
     document.getElementById("content").innerText =
       "Không có file được chỉ định.";
