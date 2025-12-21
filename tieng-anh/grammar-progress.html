@@ -8,21 +8,20 @@
   <link rel="stylesheet" href="../css/styles.css" />
 
   <style>
-    .progress-table {
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 24px;
-      font-size: 16px;
+      margin-top: 20px;
     }
 
-    .progress-table th,
-    .progress-table td {
-      padding: 12px;
+    th, td {
+      padding: 10px 12px;
       border-bottom: 1px solid #e5e7eb;
       text-align: left;
+      font-size: 15px;
     }
 
-    .progress-table th {
+    th {
       background: #f8fafc;
       font-weight: 700;
     }
@@ -35,15 +34,26 @@
       display: inline-block;
     }
 
-    .good { background:#dcfce7; color:#166534; }
-    .mid { background:#fef9c3; color:#854d0e; }
-    .bad { background:#fee2e2; color:#7f1d1d; }
+    .good { background: #dcfce7; color: #166534; }
+    .avg  { background: #fef9c3; color: #854d0e; }
+    .bad  { background: #fee2e2; color: #991b1b; }
 
-    .actions a {
-      margin-right: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      color: #6366f1;
+    .progress-wrap {
+      margin: 24px 0;
+    }
+
+    .progress-bar {
+      height: 14px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg,#6366f1,#8b5cf6);
+      width: 0%;
+      transition: width .5s ease;
     }
   </style>
 </head>
@@ -54,10 +64,10 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="brand">
-      <img src="../assets/avatar.jpg" alt="Avatar" />
+      <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
       <div>
         <h1>Tran Binh</h1>
-        <div style="font-size:13px;color:var(--muted)">Personal website</div>
+        <div style="color:var(--muted);font-size:13px">Personal website</div>
       </div>
     </div>
 
@@ -74,123 +84,99 @@
   <!-- Main -->
   <main class="main">
     <article class="post">
-
       <header class="post-header">
         <h1 class="post-title">📊 Tiến độ Grammar</h1>
-        <div class="post-meta">Theo dõi toàn bộ các thì đã học</div>
+        <div class="post-meta">Theo dõi toàn bộ bài đã làm</div>
       </header>
-      
-<section style="max-width:600px;margin:24px 0;">
-  <h3>📊 Tiến độ Grammar tổng</h3>
 
-  <div style="
-    background:#e5e7eb;
-    border-radius:12px;
-    overflow:hidden;
-    height:22px;
-    margin:10px 0;">
-    <div id="progress-bar"
-         style="
-           height:100%;
-           width:0%;
-           background:#7c7cff;
-           transition:width .4s;">
-    </div>
-  </div>
-
-  <div id="progress-text" style="font-size:14px;color:#444"></div>
-</section>
-      
-      <div class="post-content">
-        <table class="progress-table">
-          <thead>
-            <tr>
-              <th>Thì</th>
-              <th>Số lần làm</th>
-              <th>Điểm cao nhất</th>
-              <th>Gần nhất</th>
-              <th>Đánh giá</th>
-              <th>Hành động</th>
-            </tr>
-          </thead>
-          <tbody id="progress-body"></tbody>
-        </table>
+      <!-- Tổng tiến độ -->
+      <div class="progress-wrap">
+        <b>Tiến độ tổng</b>
+        <div class="progress-bar">
+          <div class="progress-fill" id="totalProgress"></div>
+        </div>
+        <div id="progressText" style="margin-top:6px;font-size:14px"></div>
       </div>
 
-      <footer class="post-footer">
-        ← <a href="../tieng-anh/grammar.html">Quay lại Grammar</a>
-      </footer>
+      <!-- Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Thì</th>
+            <th>Số lần làm</th>
+            <th>Điểm cao nhất</th>
+            <th>Gần nhất</th>
+            <th>Đánh giá</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="progressTable">
+          <tr>
+            <td colspan="6">Đang tải dữ liệu...</td>
+          </tr>
+        </tbody>
+      </table>
 
+      <p style="margin-top:24px">
+        ← <a href="grammar.html">Quay lại Grammar</a>
+      </p>
     </article>
   </main>
-
 </div>
 
 <script>
-const tableBody = document.getElementById("progress-body");
-const keys = Object.keys(localStorage)
-  .filter(k => k.startsWith("quiz-progress-"));
+(function () {
 
-if (keys.length === 0) {
-  tableBody.innerHTML = `
-    <tr>
-      <td colspan="6">Chưa có dữ liệu làm bài.</td>
-    </tr>
-  `;
-} else {
+  const tbody = document.getElementById("progressTable");
+  const progressFill = document.getElementById("totalProgress");
+  const progressText = document.getElementById("progressText");
+
+  const keys = Object.keys(localStorage)
+    .filter(k => k.startsWith("quiz-progress-"));
+
+  if (keys.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6">Chưa có dữ liệu làm bài.</td></tr>`;
+    progressText.innerText = "Chưa làm bài nào";
+    return;
+  }
+
+  let rows = "";
+  let completed = 0;
+
   keys.forEach(key => {
     const slug = key.replace("quiz-progress-", "");
     const data = JSON.parse(localStorage.getItem(key));
 
-    let rating = "🔴 Cần luyện";
-    if (data.best >= 90) rating = "🟢 Tốt";
-    else if (data.best >= 70) rating = "🟡 Khá";
+    if (data.best > 0) completed++;
 
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${slug.replace(/-/g," ")}</td>
-      <td>${data.attempts}</td>
-      <td>${data.best}</td>
-      <td>${data.last}</td>
-      <td>${rating}</td>
-      <td>
-        <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
-      </td>
+    let rating = "bad";
+    let label = "Yếu";
+
+    if (data.best >= 80) { rating = "good"; label = "Tốt"; }
+    else if (data.best >= 50) { rating = "avg"; label = "Khá"; }
+
+    rows += `
+      <tr>
+        <td>${slug.replace(/-/g," ").toUpperCase()}</td>
+        <td>${data.attempts}</td>
+        <td>${data.best}</td>
+        <td>${data.last}</td>
+        <td><span class="badge ${rating}">${label}</span></td>
+        <td>
+          <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
+        </td>
+      </tr>
     `;
-    tableBody.appendChild(row);
   });
-}
 
-const GRAMMAR_TENSES = [
-  "present-simple",
-  "present-continuous",
-  "present-perfect",
-  "present-perfect-continuous",
-  "past-simple",
-  "past-continuous",
-  "past-perfect",
-  "past-perfect-continuous",
-  "future-simple",
-  "be-going-to",
-  "future-continuous",
-  "future-perfect",
-  "future-perfect-continuous"
-];
+  tbody.innerHTML = rows;
 
-let completed = 0;
+  const percent = Math.round((completed / keys.length) * 100);
+  progressFill.style.width = percent + "%";
+  progressText.innerText =
+    `Hoàn thành ${completed}/${keys.length} bài (${percent}%)`;
 
-GRAMMAR_TENSES.forEach(slug => {
-  if (localStorage.getItem(`quiz-progress-${slug}`)) {
-    completed++;
-  }
-});
-
-const percent = Math.round((completed / GRAMMAR_TENSES.length) * 100);
-
-document.getElementById("progress-bar").style.width = percent + "%";
-document.getElementById("progress-text").innerText =
-  `Đã hoàn thành ${completed}/${GRAMMAR_TENSES.length} thì (${percent}%)`;
-  
+})();
 </script>
 
 </body>
