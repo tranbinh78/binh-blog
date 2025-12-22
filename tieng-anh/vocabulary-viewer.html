@@ -94,47 +94,7 @@
 .vocab-quiz-btn:hover {
   opacity: 0.9;
 }
-    
-    /* Markdown content styling */
-    .md-content h1, 
-    .md-content h2, 
-    .md-content h3 {
-      margin-top: 28px;
-    }
-
-    .md-content p {
-      font-size: 18px;
-      line-height: 1.8;
-      margin: 16px 0;
-    }
-
-    .md-content ul {
-      margin-left: 20px;
-      margin-bottom: 16px;
-    }
-
-    .md-content li {
-      margin-bottom: 6px;
-    }
-
-    .md-content pre {
-      background: #0f172a;
-      color: #e5e7eb;
-      padding: 16px;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-
-    .md-content code {
-      background: rgba(0,0,0,0.08);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 90%;
-    }
-
-    .dark .md-content code {
-      background: rgba(255,255,255,0.1);
-    }
+       
   </style>
 </head>
 
@@ -241,9 +201,9 @@
 
       // 1. Render Markdown
         content.innerHTML = marked.parse(md);
-        injectVocabularyQuiz();
+       
       // 2. Gắn nút làm bài kiểm tra
-       injectVocabQuizButton();
+        injectVocabularyQuiz();
 
       // 3. Gắn thông tin tiến độ (nếu có)
         injectProgressInfo();
