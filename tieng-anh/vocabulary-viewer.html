@@ -125,14 +125,6 @@
     <main class="main">
       <article class="post">
 
-        <!-- Header -->
-        <header class="post-header">
-          <h1 class="post-title" id="page-title">Vocabulary</h1>
-          <div class="post-meta">
-          Vocabulary - Từ vựng
-          </div>
-        </header>
-
         <!-- Markdown content -->
         <div class="post-content md-content" id="content">
           Đang tải nội dung...
@@ -207,17 +199,7 @@
 
       // 3. Gắn thông tin tiến độ (nếu có)
         injectProgressInfo();
-
-      // 4. Đặt lại tiêu đề trang
-        const name = getSlug();
-        document.getElementById("page-title").innerText =
-        name.replace(/-/g, " ").toUpperCase();
-        })
-      .catch(() => {
-        document.getElementById("content").innerText =
-          "Không thể tải nội dung Markdown.";
-      });
-  }
+      })
 
  function injectProgressInfo() {
     const slug = getSlug();
