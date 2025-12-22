@@ -156,33 +156,32 @@ if (!file) {
   document.getElementById("content").innerText =
     "Không có file được chỉ định.";
 } else {
-  - fetch(file)
-  + fetch("../" + file)
-    .then(res => {
-      if (!res.ok) throw new Error("Not found");
-      return res.text();
-    })
-    .then(md => {
-      const content = document.getElementById("content");
+  fetch(`tieng-anh/${file}`)
+  .then(res => {
+    if (!res.ok) throw new Error("Not found");
+    return res.text();
+  })
+  .then(md => {
+    const content = document.getElementById("content");
 
-      // Render Markdown
-      content.innerHTML = marked.parse(md);
+    // Render Markdown
+    content.innerHTML = marked.parse(md);
 
-      // Quiz button
-      injectVocabularyQuiz();
+    // Quiz button
+    injectVocabularyQuiz();
 
-      // Progress box (nếu có)
-      injectProgressInfo();
+    // Progress
+    injectProgressInfo();
 
-      // Title
-      const slug = getSlug();
-      document.getElementById("page-title").innerText =
-        slug.replace(/-/g, " ").toUpperCase();
-    })
-    .catch(() => {
-      document.getElementById("content").innerText =
-        "Không thể tải nội dung Markdown.";
-    });
+    // Title
+    const name = getSlug();
+    document.getElementById("page-title").innerText =
+      name.replace(/-/g, " ").toUpperCase();
+  })
+  .catch(() => {
+    document.getElementById("content").innerText =
+      "Không thể tải nội dung Markdown.";
+  });
 }
 
 function injectVocabularyQuiz() {
