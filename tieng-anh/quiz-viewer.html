@@ -233,9 +233,9 @@ function checkAnswers(data) {
       ✅ Bạn đúng ${score}/${data.questions.length} câu
     </div>
   `;
-  // 👉 THÊM 2 DÒNG NÀY
-  saveProgress(quiz, score, data.questions.length);
-  renderProgressSummary(quizSlug);
+ // LƯU TIẾN ĐỘ
+saveProgress(quizSlug, score, data.questions.length);
+renderProgressSummary(quizSlug);
 }
 
 // ===============================
