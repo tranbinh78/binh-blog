@@ -1,41 +1,50 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Tiến độ Grammar — Trần Bình</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css" />
 
   <style>
-    .progress-bar {
-      width: 100%;
-      height: 14px;
+    .progress-box {
+      margin: 24px 0;
+      padding: 16px;
+      background: #f1f5ff;
+      border-radius: 10px;
+    }
+
+    .bar {
+      height: 12px;
       background: #e5e7eb;
-      border-radius: 8px;
+      border-radius: 999px;
       overflow: hidden;
-      margin: 10px 0 6px;
+      margin: 10px 0;
     }
-    .progress-fill {
+
+    .bar-fill {
       height: 100%;
-      background: linear-gradient(90deg,#7c7cff,#c084fc);
+      background: #7c6cff;
       width: 0%;
-      transition: width .4s;
+      transition: width 0.4s;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 24px;
-    }
-    th, td {
-      padding: 10px;
-      border-bottom: 1px solid #e5e7eb;
-      text-align: left;
+      margin-top: 20px;
       font-size: 15px;
     }
+
+    th, td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 10px;
+      text-align: left;
+    }
+
     th {
       background: #f8fafc;
-      font-weight: 700;
     }
   </style>
 </head>
@@ -43,61 +52,49 @@
 <body>
 <div class="wrapper">
 
-  <!-- Sidebar -->
+  <!-- Sidebar giữ nguyên -->
   <aside class="sidebar">
     <div class="brand">
-      <img src="../assets/avatar.jpg">
+      <img src="../assets/avatar.jpg" alt="Avatar">
       <div>
         <h1>Tran Binh</h1>
-        <div style="font-size:13px;color:var(--muted)">Personal website</div>
+        <div style="font-size:13px;color:#666">Personal website</div>
       </div>
     </div>
 
     <ul class="nav">
       <li><a href="../index.html">🏠 Home</a></li>
       <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
-      <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
-      <li><a href="../gallery.html">📷 Gallery</a></li>
-      <li><a href="../about.html">👤 About me</a></li>
-      <li><a href="../contact.html">✉️ Contact</a></li>
     </ul>
   </aside>
 
-  <!-- Main -->
   <main class="main">
     <article class="post">
 
-      <header class="post-header">
-        <h1>📊 Tiến độ Grammar</h1>
-        <div class="post-meta">Theo dõi toàn bộ bài kiểm tra đã làm</div>
-      </header>
+      <h1>📊 Tiến độ Grammar</h1>
+      <p>Theo dõi toàn bộ bài kiểm tra đã làm</p>
 
-      <!-- Tổng tiến độ -->
-      <section>
-        <h3>Tiến độ tổng</h3>
-        <div class="progress-bar">
-          <div class="progress-fill" id="totalBar"></div>
+      <div class="progress-box">
+        <b>Tiến độ tổng</b>
+        <div class="bar">
+          <div class="bar-fill" id="total-bar"></div>
         </div>
-        <div id="totalText" style="font-size:14px;color:#555"></div>
-      </section>
+        <div id="total-text">Chưa làm bài nào</div>
+      </div>
 
-      <!-- Bảng -->
-      <table>
+      <table id="progress-table">
         <thead>
           <tr>
             <th>Thì</th>
-            <th>Số lần</th>
+            <th>Số lần làm</th>
             <th>Điểm cao nhất</th>
             <th>Gần nhất</th>
-            <th>Đánh giá</th>
           </tr>
         </thead>
-        <tbody id="progressBody">
-          <tr><td colspan="5">Đang tải dữ liệu...</td></tr>
-        </tbody>
+        <tbody></tbody>
       </table>
 
-      <p style="margin-top:24px">
+      <p style="margin-top:30px;">
         ← <a href="grammar.html">Quay lại Grammar</a>
       </p>
 
@@ -106,52 +103,37 @@
 </div>
 
 <script>
-(function () {
+const data = JSON.parse(localStorage.getItem("grammarProgress") || "{}");
+const tbody = document.querySelector("#progress-table tbody");
+const totalBar = document.getElementById("total-bar");
+const totalText = document.getElementById("total-text");
 
-  const body = document.getElementById("progressBody");
-  const bar  = document.getElementById("totalBar");
-  const text = document.getElementById("totalText");
+const slugs = Object.keys(data);
 
-  const rows = [];
-  let done = 0;
+if (slugs.length === 0) {
+  tbody.innerHTML = `<tr><td colspan="4">Chưa có dữ liệu làm bài.</td></tr>`;
+} else {
+  let completed = 0;
 
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    if (!key.startsWith("quiz-progress-")) continue;
+  slugs.forEach(slug => {
+    const p = data[slug];
+    if (p.bestScore > 0) completed++;
 
-    const slug = key.replace("quiz-progress-", "");
-    const data = JSON.parse(localStorage.getItem(key));
-
-    done++;
-
-    const percent = Math.round((data.best / data.total) * 100);
-    let rating = "🟡 Trung bình";
-    if (percent >= 80) rating = "🟢 Tốt";
-    if (percent < 50) rating = "🔴 Yếu";
-
-    rows.push(`
+    tbody.innerHTML += `
       <tr>
         <td>${slug.replace(/-/g," ").toUpperCase()}</td>
-        <td>${data.attempts}</td>
-        <td>${data.best}/${data.total}</td>
-        <td>${data.last}/${data.total}</td>
-        <td>${rating}</td>
+        <td>${p.attempts}</td>
+        <td>${p.bestScore}</td>
+        <td>${p.lastScore}</td>
       </tr>
-    `);
-  }
+    `;
+  });
 
-  if (rows.length === 0) {
-    body.innerHTML = `<tr><td colspan="5">Chưa có dữ liệu làm bài.</td></tr>`;
-    bar.style.width = "0%";
-    text.innerText = "Chưa làm bài nào";
-    return;
-  }
-
-  body.innerHTML = rows.join("");
-  bar.style.width = Math.round(done / 13 * 100) + "%";
-  text.innerText = `Đã hoàn thành ${done}/13 thì`;
-
-})();
+  const percent = Math.round((completed / slugs.length) * 100);
+  totalBar.style.width = percent + "%";
+  totalText.innerText =
+    `Đã hoàn thành ${completed}/${slugs.length} bài (${percent}%)`;
+}
 </script>
 
 </body>
