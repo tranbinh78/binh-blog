@@ -6,7 +6,7 @@
   <title>Vocabulary — Trần Bình</title>
 
   <!-- Main styles -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
 
   <!-- Markdown renderer -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -104,7 +104,7 @@
     <!-- Sidebar (MENU THỐNG NHẤT) -->
     <aside class="sidebar">
       <div class="brand">
-        <img src="assets/avatar.jpg" alt="Avatar Tran Binh" />
+        <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
         <div>
           <h1>Tran Binh</h1>
           <div style="color:var(--muted);font-size:13px">Personal website</div>
@@ -112,12 +112,12 @@
       </div>
 
       <ul class="nav">
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a class="active" href="tieng-anh.html">📘 Tiếng Anh</a></li>
-        <li><a href="cuoc-song.html">📝 Cuộc sống</a></li>
-        <li><a href="gallery.html">📷 Gallery</a></li>
-        <li><a href="about.html">👤 About me</a></li>
-        <li><a href="contact.html">✉️ Contact</a></li>
+        <li><a href="../index.html">🏠 Home</a></li>
+        <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+        <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
+        <li><a href="../gallery.html">📷 Gallery</a></li>
+        <li><a href="../about.html">👤 About me</a></li>
+        <li><a href="../contact.html">✉️ Contact</a></li>
       </ul>
     </aside>
 
@@ -145,112 +145,87 @@
 <!-- Script -->
 <script>
   const params = new URLSearchParams(window.location.search);
-  const file = params.get("file");
+const file = params.get("file");
 
-  function getSlug() {
-    if (!file) return null;
-    return file.split("/").pop().replace(".md", "");
-  }
-
-  function injectVocabQuizButton() {
-  const slug = getSlug();
-  if (!slug) return;
-
-  const content = document.getElementById("content");
-
-  const wrapper = document.createElement("div");
-  wrapper.style = "margin:48px 0;text-align:center";
-
-  wrapper.innerHTML = `
-    <a href="quiz-viewer.html?quiz=vocab-${slug}"
-       style="
-         background:#c9b3ff;
-         padding:14px 26px;
-         border-radius:10px;
-         font-size:16px;
-         font-weight:700;
-         text-decoration:none;
-         display:inline-block;
-         color:#000;">
-      📝 Làm bài kiểm tra Vocabulary
-    </a>
-  `;
-
-  content.appendChild(wrapper);
+function getSlug() {
+  if (!file) return "";
+  return file.split("/").pop().replace(".md", "");
 }
 
-  if (!file) {
-    document.getElementById("content").innerText =
-      "Không có file được chỉ định.";
-  } else {
-    fetch(file)
-      .then(res => {
-        if (!res.ok) throw new Error("Not found");
-        return res.text();
-      })
-      .then(md => {
+if (!file) {
+  document.getElementById("content").innerText =
+    "Không có file được chỉ định.";
+} else {
+  fetch("../" + file)
+    .then(res => {
+      if (!res.ok) throw new Error("Not found");
+      return res.text();
+    })
+    .then(md => {
       const content = document.getElementById("content");
 
-      // 1. Render Markdown
-        content.innerHTML = marked.parse(md);
-       
-      // 2. Gắn nút làm bài kiểm tra
-        injectVocabularyQuiz();
+      // Render Markdown
+      content.innerHTML = marked.parse(md);
 
-      // 3. Gắn thông tin tiến độ (nếu có)
-        injectProgressInfo();
-      })
+      // Quiz button
+      injectVocabularyQuiz();
 
- function injectProgressInfo() {
-    const slug = getSlug();
-    if (!slug) return;
+      // Progress box (nếu có)
+      injectProgressInfo();
 
-    const key = `vocab-progress-${slug}`;
-    const raw = localStorage.getItem(key);
-    if (!raw) return;
+      // Title
+      const slug = getSlug();
+      document.getElementById("page-title").innerText =
+        slug.replace(/-/g, " ").toUpperCase();
+    })
+    .catch(() => {
+      document.getElementById("content").innerText =
+        "Không thể tải nội dung Markdown.";
+    });
+}
 
-    const data = JSON.parse(raw);
-
-    const box = document.createElement("div");
-    box.style = `
-      margin:32px 0;
-      padding:16px 18px;
-      background:#f1f5ff;
-      border-left:4px solid #7c7cff;
-      border-radius:8px;
-      font-size:15px;
-    `;
-
-    box.innerHTML = `
-      <b>📊 Tiến độ bài này</b><br>
-      • Số lần làm: <b>${data.attempts}</b><br>
-      • Điểm cao nhất: <b>${data.best}</b><br>
-      • Điểm gần nhất: <b>${data.last}</b>
-    `;
-
-    document.getElementById("content").appendChild(box);
-  }
-
-  function injectVocabularyQuiz() {
-  const params = new URLSearchParams(window.location.search);
-  const file = params.get("file");
-  if (!file) return;
-
-  const slug = file.split("/").pop().replace(".md", "");
-
-  const content = document.getElementById("content");
+function injectVocabularyQuiz() {
+  const slug = getSlug();
+  if (!slug) return;
 
   const btn = document.createElement("div");
   btn.style.textAlign = "center";
 
   btn.innerHTML = `
     <a class="vocab-quiz-btn"
-       href="quiz-viewer.html?quiz=vocab-${slug}">
+       href="../quiz-viewer.html?quiz=vocab-${slug}">
       🧠 Làm bài kiểm tra Vocabulary
     </a>
   `;
 
-  content.appendChild(btn);
+  document.getElementById("content").appendChild(btn);
+}
+
+function injectProgressInfo() {
+  const slug = getSlug();
+  const raw = localStorage.getItem(`vocab-progress-${slug}`);
+  if (!raw) return;
+
+  const data = JSON.parse(raw);
+
+  const box = document.createElement("div");
+  box.style = `
+    margin:32px 0;
+    padding:16px 18px;
+    background:#f1f5ff;
+    border-left:4px solid #7c7cff;
+    border-radius:8px;
+    font-size:15px;
+  `;
+
+  box.innerHTML = `
+    <b>📊 Tiến độ bài này</b><br>
+    • Số lần làm: <b>${data.attempts}</b><br>
+    • Điểm cao nhất: <b>${data.best}</b><br>
+    • Điểm gần nhất: <b>${data.last}</b>
+  `;
+
+  document.getElementById("content").appendChild(box);
 }
   
 </script>
