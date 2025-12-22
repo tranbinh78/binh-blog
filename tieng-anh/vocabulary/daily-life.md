@@ -1,8 +1,3 @@
-# Daily Life
-Vocabulary – Từ vựng
-
----
-
 ## 🏠 Daily Life – Cuộc sống hằng ngày
 
 Nhóm từ vựng này tập trung vào **những hành động và tình huống quen thuộc mỗi ngày**.
