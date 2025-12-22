@@ -12,6 +12,89 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <style>
+  /* ===== Vocabulary Markdown Styling ===== */
+
+.md-content h1 {
+  font-size: 30px;
+  margin-top: 24px;
+}
+
+.md-content h2 {
+  font-size: 24px;
+  margin-top: 36px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 6px;
+}
+
+.md-content h3 {
+  font-size: 20px;
+  margin-top: 28px;
+}
+
+.md-content p {
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 14px 0;
+}
+
+.md-content ul {
+  margin: 12px 0 20px 22px;
+}
+
+.md-content li {
+  margin-bottom: 6px;
+}
+
+/* ===== TABLE (Vocabulary) ===== */
+.md-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 26px;
+  font-size: 16px;
+}
+
+.md-content th {
+  background: #eef2ff;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #c7d2fe;
+}
+
+.md-content td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+}
+
+.md-content tr:hover {
+  background: #f9fafb;
+}
+
+/* ===== SECTION DIVIDER ===== */
+.md-content hr {
+  margin: 36px 0;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== QUIZ BUTTON ===== */
+.vocab-quiz-btn {
+  display: inline-block;
+  margin: 48px auto 16px;
+  padding: 14px 28px;
+  background: #c9b3ff;
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.vocab-quiz-btn:hover {
+  opacity: 0.9;
+}
+    
     /* Markdown content styling */
     .md-content h1, 
     .md-content h2, 
@@ -158,7 +241,7 @@
 
       // 1. Render Markdown
         content.innerHTML = marked.parse(md);
-
+        injectVocabularyQuiz();
       // 2. Gắn nút làm bài kiểm tra
        injectVocabQuizButton();
 
@@ -205,6 +288,28 @@
 
     document.getElementById("content").appendChild(box);
   }
+
+  function injectVocabularyQuiz() {
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
+  if (!file) return;
+
+  const slug = file.split("/").pop().replace(".md", "");
+
+  const content = document.getElementById("content");
+
+  const btn = document.createElement("div");
+  btn.style.textAlign = "center";
+
+  btn.innerHTML = `
+    <a class="vocab-quiz-btn"
+       href="quiz-viewer.html?quiz=vocab-${slug}">
+      🧠 Làm bài kiểm tra Vocabulary
+    </a>
+  `;
+
+  content.appendChild(btn);
+}
   
 </script>
 
