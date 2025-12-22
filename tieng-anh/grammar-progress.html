@@ -1,59 +1,41 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
   <title>Tiến độ Grammar — Trần Bình</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css">
 
   <style>
+    .progress-bar {
+      width: 100%;
+      height: 14px;
+      background: #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 10px 0 6px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg,#7c7cff,#c084fc);
+      width: 0%;
+      transition: width .4s;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin-top: 24px;
     }
-
     th, td {
-      padding: 10px 12px;
+      padding: 10px;
       border-bottom: 1px solid #e5e7eb;
       text-align: left;
       font-size: 15px;
     }
-
     th {
       background: #f8fafc;
       font-weight: 700;
-    }
-
-    .badge {
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      display: inline-block;
-    }
-
-    .good { background: #dcfce7; color: #166534; }
-    .avg  { background: #fef9c3; color: #854d0e; }
-    .bad  { background: #fee2e2; color: #991b1b; }
-
-    .progress-wrap {
-      margin: 24px 0;
-    }
-
-    .progress-bar {
-      height: 14px;
-      background: #e5e7eb;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg,#6366f1,#8b5cf6);
-      width: 0%;
-      transition: width .5s ease;
     }
   </style>
 </head>
@@ -64,10 +46,10 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="brand">
-      <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
+      <img src="../assets/avatar.jpg">
       <div>
         <h1>Tran Binh</h1>
-        <div style="color:var(--muted);font-size:13px">Personal website</div>
+        <div style="font-size:13px;color:var(--muted)">Personal website</div>
       </div>
     </div>
 
@@ -84,42 +66,41 @@
   <!-- Main -->
   <main class="main">
     <article class="post">
+
       <header class="post-header">
-        <h1 class="post-title">📊 Tiến độ Grammar</h1>
-        <div class="post-meta">Theo dõi toàn bộ bài đã làm</div>
+        <h1>📊 Tiến độ Grammar</h1>
+        <div class="post-meta">Theo dõi toàn bộ bài kiểm tra đã làm</div>
       </header>
 
       <!-- Tổng tiến độ -->
-      <div class="progress-wrap">
-        <b>Tiến độ tổng</b>
+      <section>
+        <h3>Tiến độ tổng</h3>
         <div class="progress-bar">
-          <div class="progress-fill" id="totalProgress"></div>
+          <div class="progress-fill" id="totalBar"></div>
         </div>
-        <div id="progressText" style="margin-top:6px;font-size:14px"></div>
-      </div>
+        <div id="totalText" style="font-size:14px;color:#555"></div>
+      </section>
 
-      <!-- Table -->
+      <!-- Bảng -->
       <table>
         <thead>
           <tr>
             <th>Thì</th>
-            <th>Số lần làm</th>
+            <th>Số lần</th>
             <th>Điểm cao nhất</th>
             <th>Gần nhất</th>
             <th>Đánh giá</th>
-            <th>Hành động</th>
           </tr>
         </thead>
-        <tbody id="progressTable">
-          <tr>
-            <td colspan="6">Đang tải dữ liệu...</td>
-          </tr>
+        <tbody id="progressBody">
+          <tr><td colspan="5">Đang tải dữ liệu...</td></tr>
         </tbody>
       </table>
 
       <p style="margin-top:24px">
         ← <a href="grammar.html">Quay lại Grammar</a>
       </p>
+
     </article>
   </main>
 </div>
@@ -127,54 +108,48 @@
 <script>
 (function () {
 
-  const tbody = document.getElementById("progressTable");
-  const progressFill = document.getElementById("totalProgress");
-  const progressText = document.getElementById("progressText");
+  const body = document.getElementById("progressBody");
+  const bar  = document.getElementById("totalBar");
+  const text = document.getElementById("totalText");
 
-  const keys = Object.keys(localStorage)
-    .filter(k => k.startsWith("quiz-progress-"));
+  const rows = [];
+  let done = 0;
 
-  if (keys.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="6">Chưa có dữ liệu làm bài.</td></tr>`;
-    progressText.innerText = "Chưa làm bài nào";
-    return;
-  }
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (!key.startsWith("quiz-progress-")) continue;
 
-  let rows = "";
-  let completed = 0;
-
-  keys.forEach(key => {
     const slug = key.replace("quiz-progress-", "");
     const data = JSON.parse(localStorage.getItem(key));
 
-    if (data.best > 0) completed++;
+    done++;
 
-    let rating = "bad";
-    let label = "Yếu";
+    const percent = Math.round((data.best / data.total) * 100);
+    let rating = "🟡 Trung bình";
+    if (percent >= 80) rating = "🟢 Tốt";
+    if (percent < 50) rating = "🔴 Yếu";
 
-    if (data.best >= 80) { rating = "good"; label = "Tốt"; }
-    else if (data.best >= 50) { rating = "avg"; label = "Khá"; }
-
-    rows += `
+    rows.push(`
       <tr>
         <td>${slug.replace(/-/g," ").toUpperCase()}</td>
         <td>${data.attempts}</td>
-        <td>${data.best}</td>
-        <td>${data.last}</td>
-        <td><span class="badge ${rating}">${label}</span></td>
-        <td>
-          <a href="quiz-viewer.html?quiz=${slug}">Làm lại</a>
-        </td>
+        <td>${data.best}/${data.total}</td>
+        <td>${data.last}/${data.total}</td>
+        <td>${rating}</td>
       </tr>
-    `;
-  });
+    `);
+  }
 
-  tbody.innerHTML = rows;
+  if (rows.length === 0) {
+    body.innerHTML = `<tr><td colspan="5">Chưa có dữ liệu làm bài.</td></tr>`;
+    bar.style.width = "0%";
+    text.innerText = "Chưa làm bài nào";
+    return;
+  }
 
-  const percent = Math.round((completed / keys.length) * 100);
-  progressFill.style.width = percent + "%";
-  progressText.innerText =
-    `Hoàn thành ${completed}/${keys.length} bài (${percent}%)`;
+  body.innerHTML = rows.join("");
+  bar.style.width = Math.round(done / 13 * 100) + "%";
+  text.innerText = `Đã hoàn thành ${done}/13 thì`;
 
 })();
 </script>
