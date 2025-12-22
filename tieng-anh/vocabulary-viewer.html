@@ -145,88 +145,49 @@
 <!-- Script -->
 <script>
 const params = new URLSearchParams(window.location.search);
-const file = params.get("file");
+  const file = params.get("file");
 
-function getSlug() {
-  if (!file) return "";
-  return file.split("/").pop().replace(".md", "");
-}
+  function getSlug() {
+    if (!file) return null;
+    return file.split("/").pop().replace(".md", "");
+  }
 
-if (!file) {
-  document.getElementById("content").innerText =
-    "Không có file được chỉ định.";
-} else {
-  fetch(`tieng-anh/${file}`)
-  .then(res => {
-    if (!res.ok) throw new Error("Not found");
-    return res.text();
-  })
-  .then(md => {
-    const content = document.getElementById("content");
-
-    // Render Markdown
-    content.innerHTML = marked.parse(md);
-
-    // Quiz button
-    injectVocabularyQuiz();
-
-    // Progress
-    injectProgressInfo();
-
-    // Title
-    const name = getSlug();
-    document.getElementById("page-title").innerText =
-      name.replace(/-/g, " ").toUpperCase();
-  })
-  .catch(() => {
+  if (!file) {
     document.getElementById("content").innerText =
-      "Không thể tải nội dung Markdown.";
-  });
-}
+      "Không có file được chỉ định.";
+  } else {
 
-function injectVocabularyQuiz() {
-  const slug = getSlug();
-  if (!slug) return;
+    // 🔥 ĐƯỜNG DẪN CHUẨN
+    const mdPath = "../" + file;
 
-  const btn = document.createElement("div");
-  btn.style.textAlign = "center";
+    fetch(mdPath)
+      .then(res => {
+        if (!res.ok) throw new Error("Markdown not found");
+        return res.text();
+      })
+      .then(md => {
+        const content = document.getElementById("content");
 
-  btn.innerHTML = `
-    <a class="vocab-quiz-btn"
-       href="../quiz-viewer.html?quiz=vocab-${slug}">
-      🧠 Làm bài kiểm tra Vocabulary
-    </a>
-  `;
+        // Render Markdown
+        content.innerHTML = marked.parse(md);
 
-  document.getElementById("content").appendChild(btn);
-}
+        // Gắn nút quiz
+        injectVocabularyQuiz();
 
-function injectProgressInfo() {
-  const slug = getSlug();
-  const raw = localStorage.getItem(`vocab-progress-${slug}`);
-  if (!raw) return;
+        // Gắn progress (nếu có)
+        injectProgressInfo();
 
-  const data = JSON.parse(raw);
-
-  const box = document.createElement("div");
-  box.style = `
-    margin:32px 0;
-    padding:16px 18px;
-    background:#f1f5ff;
-    border-left:4px solid #7c7cff;
-    border-radius:8px;
-    font-size:15px;
-  `;
-
-  box.innerHTML = `
-    <b>📊 Tiến độ bài này</b><br>
-    • Số lần làm: <b>${data.attempts}</b><br>
-    • Điểm cao nhất: <b>${data.best}</b><br>
-    • Điểm gần nhất: <b>${data.last}</b>
-  `;
-
-  document.getElementById("content").appendChild(box);
-}
+        // Set title
+        const slug = getSlug();
+        document.getElementById("page-title").innerText =
+          slug.replace(/-/g, " ").toUpperCase();
+      })
+      .catch(err => {
+        document.getElementById("content").innerText =
+          "Không thể tải nội dung Markdown.";
+        console.error(err);
+      });
+  }
   
 </script>
 
