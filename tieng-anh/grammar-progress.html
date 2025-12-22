@@ -121,7 +121,11 @@ if (slugs.length === 0) {
 
     tbody.innerHTML += `
       <tr>
-        <td>${slug.replace(/-/g," ").toUpperCase()}</td>
+        <td>${
+        slug
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, c => c.toUpperCase())
+        }</td>
         <td>${p.attempts}</td>
         <td>${p.bestScore}</td>
         <td>${p.lastScore}</td>
