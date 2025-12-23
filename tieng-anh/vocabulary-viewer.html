@@ -147,48 +147,34 @@
   const params = new URLSearchParams(window.location.search);
   const file = params.get("file");
 
-  function getSlug() {
-    if (!file) return "";
-    return file.split("/").pop().replace(".md", "");
-  }
+if (!file) {
+  document.getElementById("content").innerText =
+    "Không có file được chỉ định.";
+} else {
+  fetch("/binh-blog/" + file)
+    .then(res => {
+      if (!res.ok) throw new Error("Not found");
+      return res.text();
+    })
+    .then(md => {
+      const content = document.getElementById("content");
 
-  if (!file) {
-    document.getElementById("content").innerText =
-      "Không có file được chỉ định.";
-  } else {
-    const BASE = "/binh-blog/tieng-anh/";
-    const url = BASE + file;
+      // Render Markdown
+      content.innerHTML = marked.parse(md);
 
-    fetch(url)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error("HTTP " + res.status);
-        }
-        return res.text();
-      })
-      .then(md => {
-        const content = document.getElementById("content");
+      injectVocabularyQuiz();
+      injectProgressInfo();
 
-        // Render Markdown
-        content.innerHTML = marked.parse(md);
-
-        // Quiz button
-        injectVocabularyQuiz();
-
-        // Progress
-        injectProgressInfo();
-
-        // Title
-        const name = getSlug();
-        document.getElementById("page-title").innerText =
-          name.replace(/-/g, " ").toUpperCase();
-      })
-      .catch(err => {
-        console.error("Fetch error:", err);
-        document.getElementById("content").innerText =
-          "Không thể tải nội dung Markdown.";
-      });
-  }
+      const name = getSlug();
+      document.getElementById("page-title").innerText =
+        name.replace(/-/g, " ").toUpperCase();
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById("content").innerText =
+        "Không thể tải nội dung Markdown.";
+    });
+}
   
 </script>
 
