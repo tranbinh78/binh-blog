@@ -1,5 +1,3 @@
-# SHOPPING
-
 ## 🛒 Shopping – Mua sắm hằng ngày
 
 Nhóm từ vựng này tập trung vào **mua sắm cơ bản, hỏi giá, lựa chọn và thanh toán** trong đời sống hằng ngày.
