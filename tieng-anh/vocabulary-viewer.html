@@ -144,11 +144,11 @@
 
 <!-- Script -->
 <script>
-const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.search);
   const file = params.get("file");
 
   function getSlug() {
-    if (!file) return "";
+    if (!file) return null;
     return file.split("/").pop().replace(".md", "");
   }
 
@@ -156,7 +156,7 @@ const params = new URLSearchParams(window.location.search);
     document.getElementById("content").innerText =
       "Không có file được chỉ định.";
   } else {
-    fetch(file)
+    fetch("./" + file)
       .then(res => {
         if (!res.ok) throw new Error("Not found");
         return res.text();
@@ -167,10 +167,10 @@ const params = new URLSearchParams(window.location.search);
         // Render Markdown
         content.innerHTML = marked.parse(md);
 
-        // Nút quiz
+        // Gắn nút quiz
         injectVocabularyQuiz();
 
-        // Tiến độ
+        // Gắn tiến độ
         injectProgressInfo();
 
         // Tiêu đề
@@ -179,9 +179,9 @@ const params = new URLSearchParams(window.location.search);
           name.replace(/-/g, " ").toUpperCase();
       })
       .catch(err => {
+        console.error(err);
         document.getElementById("content").innerText =
           "Không thể tải nội dung Markdown.";
-        console.error(err);
       });
   }
   
