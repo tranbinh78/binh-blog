@@ -178,12 +178,11 @@ const params = new URLSearchParams(window.location.search);
         document.getElementById("page-title").innerText =
           name.replace(/-/g, " ").toUpperCase();
       })
-      .catch(err => {
-        console.error(err);
-        document.getElementById("content").innerText =
-          "Không thể tải nội dung Markdown.";
-      });
-  }
+     .catch(() => {
+      document.getElementById("content").innerText =
+      "Không thể tải nội dung Markdown.";
+    });
+    }
   
 </script>
 
