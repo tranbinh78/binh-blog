@@ -2,66 +2,33 @@
   "id": "travel",
   "title": "Travel",
   "timeLimit": 8,
+  "totalPoints": 10,
+  "passScore": 7,
   "parts": [
     {
       "type": "multiple-choice",
-      "question": "I go ___ a trip with my family.",
+      "question": "I go ___ a trip.",
       "options": ["on", "to", "for", "at"],
-      "answer": 0
-    },
-    {
-      "type": "multiple-choice",
-      "question": "I ___ a ticket online.",
-      "options": ["book", "books", "booking", "booked"],
-      "answer": 0
-    },
-    {
-      "type": "multiple-choice",
-      "question": "I travel ___ plane.",
-      "options": ["with", "by", "on", "in"],
-      "answer": 1
-    },
-    {
-      "type": "multiple-choice",
-      "question": "I need to ___ a taxi.",
-      "options": ["take", "go", "ride", "drive"],
-      "answer": 0
-    },
-    {
-      "type": "multiple-choice",
-      "question": "I ___ at a hotel.",
-      "options": ["stay", "live", "sleep", "rest"],
-      "answer": 0
+      "answer": 0,
+      "points": 1
     },
     {
       "type": "fill-blank",
       "question": "I pack my ___ before the trip.",
-      "answer": ["bag"]
-    },
-    {
-      "type": "fill-blank",
-      "question": "I need to check ___ at the hotel.",
-      "answer": ["in"]
-    },
-    {
-      "type": "fill-blank",
-      "question": "I ask for ___ when I’m lost.",
-      "answer": ["directions"]
+      "answer": ["bag"],
+      "points": 1
     },
     {
       "type": "translate",
       "question": "Tôi đang đi du lịch.",
-      "answer": ["I am on a trip.", "I'm on a trip."]
-    },
-    {
-      "type": "translate",
-      "question": "Tôi tận hưởng chuyến đi.",
-      "answer": ["I enjoy the trip."]
+      "answer": ["I'm on a trip.", "I am on a trip."],
+      "points": 2
     },
     {
       "type": "sentence",
       "question": "Write a sentence using: ask for directions",
-      "sample": "I ask for directions when I travel."
+      "sample": "I ask for directions when I travel.",
+      "points": 2
     }
   ]
 }
