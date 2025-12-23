@@ -1,5 +1,3 @@
-# WORK & STUDY
-
 ## 🏢 Work & Study – Công việc và học tập
 
 Nhóm từ vựng này tập trung vào **những hành động quen thuộc trong công việc và học tập hằng ngày**.
