@@ -1,68 +1,67 @@
 // quiz-loader.js
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  const topic = params.get("topic");
+const params = new URLSearchParams(window.location.search);
+const topic = params.get("topic");
 
-  const container = document.getElementById("quiz-container");
+const QUIZ_BASE = "/binh-blog/tieng-anh/vocab-quiz/";
 
-  if (!topic) {
-    container.innerHTML = "Không xác định được chủ đề bài kiểm tra.";
-    return;
-  }
+const container = document.getElementById("quiz-container");
 
-  const quizPath = `./vocab-quiz/${topic}.json`;
+if (!topic) {
+  container.innerHTML = "Không có chủ đề quiz.";
+  throw new Error("Missing topic");
+}
 
-  fetch(quizPath)
-    .then(res => {
-      if (!res.ok) throw new Error("Quiz JSON not found");
-      return res.json();
-    })
-    .then(quiz => {
-      renderQuiz(quiz);
-    })
-    .catch(err => {
-      console.error(err);
-      container.innerHTML =
-        "Không thể tải bài kiểm tra. Vui lòng thử lại.";
-    });
+fetch(`${QUIZ_BASE}${topic}.json`)
+  .then(res => {
+    if (!res.ok) throw new Error("Quiz not found");
+    return res.json();
+  })
+  .then(data => {
+    renderQuiz(data);
+  })
+  .catch(err => {
+    console.error(err);
+    container.innerHTML = "Không thể tải bài kiểm tra. Vui lòng thử lại.";
+  });
 
-  function renderQuiz(quiz) {
-    let html = `
-      <h2>${quiz.title}</h2>
-      <p>Thời gian: ${quiz.timeLimit} phút</p>
-      <form id="quiz-form">
-    `;
+function renderQuiz(data) {
+  let html = `<h2>${data.title}</h2>`;
+  html += `<p>${data.description}</p>`;
 
-    quiz.parts.forEach((q, i) => {
-      html += `<div class="quiz-question"><p><strong>${i + 1}. ${q.question}</strong></p>`;
-
-      if (q.type === "multiple-choice") {
-        q.options.forEach((opt, idx) => {
-          html += `
-            <label>
-              <input type="radio" name="q${i}" value="${idx}">
-              ${opt}
-            </label><br>
-          `;
-        });
-      }
-
-      if (q.type === "fill-blank") {
-        html += `<input type="text" name="q${i}" />`;
-      }
-
-      if (q.type === "translate" || q.type === "sentence") {
-        html += `<textarea name="q${i}" rows="2"></textarea>`;
-      }
-
-      html += `</div>`;
-    });
-
+  data.questions.forEach((q, i) => {
     html += `
-      <button type="submit">Nộp bài</button>
-      </form>
+      <div class="quiz-question">
+        <p><strong>${i + 1}. ${q.question}</strong></p>
+        ${q.options.map((opt, idx) => `
+          <label>
+            <input type="radio" name="q${i}" value="${idx}">
+            ${opt}
+          </label><br>
+        `).join("")}
+      </div>
     `;
+  });
 
-    container.innerHTML = html;
-  }
-})();
+  html += `<button onclick="submitQuiz()">Nộp bài</button>`;
+  container.innerHTML = html;
+
+  window.__quizData = data;
+}
+
+function submitQuiz() {
+  let score = 0;
+
+  __quizData.questions.forEach((q, i) => {
+    const checked = document.querySelector(`input[name="q${i}"]:checked`);
+    if (checked && Number(checked.value) === q.answer) {
+      score += q.points;
+    }
+  });
+
+  const pass = score >= __quizData.passScore;
+
+  alert(
+    `Điểm: ${score}/${__quizData.totalPoints}\n` +
+    (pass ? "✅ ĐẠT" : "❌ CHƯA ĐẠT")
+  );
+}
