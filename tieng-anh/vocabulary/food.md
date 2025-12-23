@@ -1,5 +1,3 @@
-# FOOD
-
 ## 🍽️ Food – Ăn uống hằng ngày
 
 Nhóm từ vựng này tập trung vào **ăn uống, bữa ăn và thói quen ăn uống thường ngày**.
