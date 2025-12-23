@@ -2,7 +2,8 @@
 const params = new URLSearchParams(window.location.search);
 const topic = params.get("topic");
 
-const QUIZ_BASE = "/binh-blog/tieng-anh/vocab-quiz/";
+const QUIZ_BASE =
+  window.location.origin + "/binh-blog/tieng-anh/vocab-quiz/";
 
 const container = document.getElementById("quiz-container");
 
