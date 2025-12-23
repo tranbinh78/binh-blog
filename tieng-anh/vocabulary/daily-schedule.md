@@ -1,5 +1,3 @@
-# DAILY SCHEDULE
-
 ## ⏰ Daily Schedule – Thời gian biểu hằng ngày
 
 Nhóm từ vựng này tập trung vào **cách nói về thời gian, lịch sinh hoạt và trình tự hoạt động trong một ngày**.
