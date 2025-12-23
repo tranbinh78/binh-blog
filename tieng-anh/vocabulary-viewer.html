@@ -156,10 +156,7 @@
     document.getElementById("content").innerText =
       "Không có file được chỉ định.";
   } else {
-     fetch(file.startsWith("vocabulary/")
-      ? file
-      : "vocabulary/" + file
-      )
+     fetch("../tieng-anh/" + file)
       .then(res => {
         if (!res.ok) throw new Error("Not found");
         return res.text();
