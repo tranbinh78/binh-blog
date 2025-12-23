@@ -1,0 +1,35 @@
+
+{
+  "id": "emotions",
+  "title": "Emotions",
+  "timeLimit": 8,
+  "totalPoints": 10,
+  "passScore": 7,
+  "parts": [
+    {
+      "type": "multiple-choice",
+      "question": "I feel ___ today.",
+      "options": ["happy", "happily", "happiness", "happier"],
+      "answer": 0,
+      "points": 1
+    },
+    {
+      "type": "fill-blank",
+      "question": "I feel ___ of my work.",
+      "answer": ["proud"],
+      "points": 1
+    },
+    {
+      "type": "translate",
+      "question": "Hôm nay tôi có tâm trạng tốt.",
+      "answer": ["I'm in a good mood today.", "I am in a good mood today."],
+      "points": 2
+    },
+    {
+      "type": "sentence",
+      "question": "Write a sentence using: feel stressed",
+      "sample": "I feel stressed at work.",
+      "points": 2
+    }
+  ]
+}
