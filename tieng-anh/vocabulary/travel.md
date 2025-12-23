@@ -1,5 +1,3 @@
-# TRAVEL
-
 ## ✈️ Travel – Du lịch cơ bản
 
 Nhóm từ vựng này tập trung vào **du lịch, di chuyển và các tình huống thường gặp khi đi xa**.
