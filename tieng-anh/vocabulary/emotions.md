@@ -1,5 +1,3 @@
-# EMOTIONS
-
 ## 😊 Emotions – Cảm xúc hằng ngày
 
 Nhóm từ vựng này tập trung vào **cách nói về cảm xúc và trạng thái tinh thần trong cuộc sống hằng ngày**.
