@@ -148,7 +148,7 @@
   const file = params.get("file");
 
   function getSlug() {
-    if (!file) return null;
+    if (!file) return "";
     return file.split("/").pop().replace(".md", "");
   }
 
@@ -156,26 +156,38 @@
     document.getElementById("content").innerText =
       "Không có file được chỉ định.";
   } else {
-     fetch("/binh-blog/tieng-anh/" + file)
-  .then(res => {
-    if (!res.ok) throw new Error("Not found");
-    return res.text();
-  })
-  .then(md => {
-    const content = document.getElementById("content");
-    content.innerHTML = marked.parse(md);
+    const BASE = "/binh-blog/tieng-anh/";
+    const url = BASE + file;
 
-    injectVocabularyQuiz();
-    injectProgressInfo();
+    fetch(url)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("HTTP " + res.status);
+        }
+        return res.text();
+      })
+      .then(md => {
+        const content = document.getElementById("content");
 
-    const name = getSlug();
-    document.getElementById("page-title").innerText =
-      name.replace(/-/g, " ").toUpperCase();
-  })
-  .catch(() => {
-    document.getElementById("content").innerText =
-      "Không thể tải nội dung Markdown.";
-  });
+        // Render Markdown
+        content.innerHTML = marked.parse(md);
+
+        // Quiz button
+        injectVocabularyQuiz();
+
+        // Progress
+        injectProgressInfo();
+
+        // Title
+        const name = getSlug();
+        document.getElementById("page-title").innerText =
+          name.replace(/-/g, " ").toUpperCase();
+      })
+      .catch(err => {
+        console.error("Fetch error:", err);
+        document.getElementById("content").innerText =
+          "Không thể tải nội dung Markdown.";
+      });
   }
   
 </script>
