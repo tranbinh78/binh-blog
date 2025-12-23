@@ -1,5 +1,3 @@
-# HEALTH
-
 ## 🩺 Health – Sức khỏe hằng ngày
 
 Nhóm từ vựng này tập trung vào **cách nói về sức khỏe, tình trạng cơ thể và thói quen chăm sóc sức khỏe**.
