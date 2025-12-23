@@ -25,6 +25,9 @@
       border-radius:12px;
       text-decoration:none;
     }
+    .vocab-quiz-btn:hover {
+      background: #b39cff;
+  }
   </style>
 </head>
 
@@ -98,16 +101,17 @@
         document.getElementById("page-title").innerText =
           slug.replace(/-/g, " ").toUpperCase();
 
-        // Gắn nút quiz (CHUẨN MỚI)
-        content.insertAdjacentHTML("beforeend", `
-          <div style="text-align:center">
+        // Gắn nút quiz (CHUẨN – KHÔNG TRÙNG)
+        if (!document.querySelector(".vocab-quiz-btn")) {
+            content.insertAdjacentHTML("beforeend", `
+            <div style="text-align:center; margin-top:40px">
             <a class="vocab-quiz-btn"
-               href="./vocab-quiz.html?topic=${slug}"
+               href="vocab-quiz.html?topic=${slug}">
               🧠 Làm bài kiểm tra Vocabulary
             </a>
-          </div>
-        `);
-      })
+            </div>
+            `);
+          }
       .catch(err => {
         console.error(err);
         document.getElementById("content").innerText =
