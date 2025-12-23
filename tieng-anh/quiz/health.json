@@ -1,0 +1,67 @@
+{
+  "id": "health",
+  "title": "Health",
+  "timeLimit": 8,
+  "parts": [
+    {
+      "type": "multiple-choice",
+      "question": "I don’t feel ___ today.",
+      "options": ["good", "well", "better", "healthy"],
+      "answer": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "I have a ___.",
+      "options": ["head", "headache", "headaches", "aching"],
+      "answer": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "She ___ a fever.",
+      "options": ["have", "has", "having", "had"],
+      "answer": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "I need to ___ at home today.",
+      "options": ["rest", "sleeping", "rests", "rested"],
+      "answer": 0
+    },
+    {
+      "type": "multiple-choice",
+      "question": "I try to ___ healthy.",
+      "options": ["keep", "do", "make", "stay"],
+      "answer": 3
+    },
+    {
+      "type": "fill-blank",
+      "question": "I feel ___ now.",
+      "answer": ["better"]
+    },
+    {
+      "type": "fill-blank",
+      "question": "I take ___ every day.",
+      "answer": ["medicine"]
+    },
+    {
+      "type": "fill-blank",
+      "question": "I need to see a ___.",
+      "answer": ["doctor"]
+    },
+    {
+      "type": "translate",
+      "question": "Tôi không cảm thấy khỏe hôm nay.",
+      "answer": ["I don't feel well today."]
+    },
+    {
+      "type": "translate",
+      "question": "Tôi cần nghỉ ngơi ở nhà.",
+      "answer": ["I need to rest at home."]
+    },
+    {
+      "type": "sentence",
+      "question": "Write a sentence using: feel sick",
+      "sample": "I feel sick today."
+    }
+  ]
+}
