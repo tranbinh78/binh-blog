@@ -80,7 +80,8 @@
   }
 
   if (!file) {
-    document.getElementById("content").innerText = "Không có file được chỉ định.";
+    document.getElementById("content").innerText =
+      "Không có file được chỉ định.";
   } else {
     fetch(file)
       .then(res => {
@@ -92,13 +93,16 @@
         content.innerHTML = marked.parse(md);
 
         const slug = getSlug();
+
+        // Set page title
         document.getElementById("page-title").innerText =
           slug.replace(/-/g, " ").toUpperCase();
 
+        // Gắn nút quiz (CHUẨN MỚI)
         content.insertAdjacentHTML("beforeend", `
           <div style="text-align:center">
             <a class="vocab-quiz-btn"
-               href="../quiz-viewer.html?quiz=vocab-${slug}">
+               href="../vocab-quiz.html?topic=${slug}">
               🧠 Làm bài kiểm tra Vocabulary
             </a>
           </div>
