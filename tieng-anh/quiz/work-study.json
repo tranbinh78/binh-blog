@@ -1,0 +1,67 @@
+{
+  "id": "work-study",
+  "title": "Work & Study",
+  "timeLimit": 8,
+  "parts": [
+    {
+      "type": "multiple-choice",
+      "question": "I ___ to work at 8 a.m.",
+      "options": ["go", "goes", "going", "went"],
+      "answer": 0
+    },
+    {
+      "type": "multiple-choice",
+      "question": "I start work ___ nine.",
+      "options": ["in", "on", "at", "after"],
+      "answer": 2
+    },
+    {
+      "type": "multiple-choice",
+      "question": "We have a ___ every Monday.",
+      "options": ["meeting", "meet", "met", "meetings"],
+      "answer": 0
+    },
+    {
+      "type": "multiple-choice",
+      "question": "I ___ from home twice a week.",
+      "options": ["work", "works", "working", "worked"],
+      "answer": 0
+    },
+    {
+      "type": "multiple-choice",
+      "question": "She ___ her homework after dinner.",
+      "options": ["do", "does", "doing", "did"],
+      "answer": 1
+    },
+    {
+      "type": "fill-blank",
+      "question": "I ___ English every evening.",
+      "answer": ["study", "study English"]
+    },
+    {
+      "type": "fill-blank",
+      "question": "I take ___ in class.",
+      "answer": ["notes"]
+    },
+    {
+      "type": "fill-blank",
+      "question": "I have a lot ___ do today.",
+      "answer": ["to"]
+    },
+    {
+      "type": "translate",
+      "question": "Tôi đang bận ở chỗ làm hôm nay.",
+      "answer": ["I am busy at work today.", "I'm busy at work today."]
+    },
+    {
+      "type": "translate",
+      "question": "Tôi học tiếng Anh vào buổi tối.",
+      "answer": ["I study English in the evening."]
+    },
+    {
+      "type": "sentence",
+      "question": "Write a sentence using: work from home",
+      "sample": "I work from home twice a week."
+    }
+  ]
+}
