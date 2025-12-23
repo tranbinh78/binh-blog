@@ -2,193 +2,114 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vocabulary — Trần Bình</title>
 
-  <!-- Main styles -->
   <link rel="stylesheet" href="../css/styles.css" />
-
-  <!-- Markdown renderer -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <style>
-  /* ===== Vocabulary Markdown Styling ===== */
-
-.md-content h1 {
-  font-size: 30px;
-  margin-top: 24px;
-}
-
-.md-content h2 {
-  font-size: 24px;
-  margin-top: 36px;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 6px;
-}
-
-.md-content h3 {
-  font-size: 20px;
-  margin-top: 28px;
-}
-
-.md-content p {
-  font-size: 17px;
-  line-height: 1.75;
-  margin: 14px 0;
-}
-
-.md-content ul {
-  margin: 12px 0 20px 22px;
-}
-
-.md-content li {
-  margin-bottom: 6px;
-}
-
-/* ===== TABLE (Vocabulary) ===== */
-.md-content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 18px 0 26px;
-  font-size: 16px;
-}
-
-.md-content th {
-  background: #eef2ff;
-  padding: 10px;
-  text-align: left;
-  border-bottom: 2px solid #c7d2fe;
-}
-
-.md-content td {
-  padding: 10px;
-  border-bottom: 1px solid #e5e7eb;
-  vertical-align: top;
-}
-
-.md-content tr:hover {
-  background: #f9fafb;
-}
-
-/* ===== SECTION DIVIDER ===== */
-.md-content hr {
-  margin: 36px 0;
-  border: none;
-  border-top: 1px solid #e5e7eb;
-}
-
-/* ===== QUIZ BUTTON ===== */
-.vocab-quiz-btn {
-  display: inline-block;
-  margin: 48px auto 16px;
-  padding: 14px 28px;
-  background: #c9b3ff;
-  color: #000;
-  font-weight: 700;
-  font-size: 16px;
-  border-radius: 12px;
-  text-decoration: none;
-  text-align: center;
-}
-
-.vocab-quiz-btn:hover {
-  opacity: 0.9;
-}
-       
+    .md-content h1 { font-size:30px; margin-top:24px }
+    .md-content h2 { font-size:24px; margin-top:36px; border-bottom:2px solid #e5e7eb }
+    .md-content h3 { font-size:20px; margin-top:28px }
+    .md-content p  { font-size:17px; line-height:1.75 }
+    .md-content table { width:100%; border-collapse:collapse; margin:20px 0 }
+    .md-content th, .md-content td { padding:10px; border-bottom:1px solid #e5e7eb }
+    .vocab-quiz-btn {
+      display:inline-block;
+      margin:40px auto;
+      padding:14px 28px;
+      background:#c9b3ff;
+      color:#000;
+      font-weight:700;
+      border-radius:12px;
+      text-decoration:none;
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrapper">
+<div class="wrapper">
 
-    <!-- Sidebar (MENU THỐNG NHẤT) -->
-    <aside class="sidebar">
-      <div class="brand">
-        <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
-        <div>
-          <h1>Tran Binh</h1>
-          <div style="color:var(--muted);font-size:13px">Personal website</div>
-        </div>
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../assets/avatar.jpg" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="color:var(--muted);font-size:13px">Personal website</div>
+      </div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a href="../gallery.html">📷 Gallery</a></li>
+      <li><a href="../about.html">👤 About me</a></li>
+      <li><a href="../contact.html">✉️ Contact</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <article class="post">
+
+      <!-- QUAN TRỌNG: element này PHẢI TỒN TẠI -->
+      <header class="post-header">
+        <h1 id="page-title">Vocabulary</h1>
+      </header>
+
+      <div id="content" class="post-content md-content">
+        Đang tải nội dung...
       </div>
 
-      <ul class="nav">
-        <li><a href="../index.html">🏠 Home</a></li>
-        <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
-        <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
-        <li><a href="../gallery.html">📷 Gallery</a></li>
-        <li><a href="../about.html">👤 About me</a></li>
-        <li><a href="../contact.html">✉️ Contact</a></li>
-      </ul>
-    </aside>
+      <footer class="post-footer">
+        ← <a href="vocabulary.html">Quay lại Vocabulary</a>
+      </footer>
 
-    <!-- Main content -->
-    <main class="main">
-      <article class="post">
+    </article>
+  </main>
 
-        <!-- Markdown content -->
-        <div class="post-content md-content" id="content">
-          Đang tải nội dung...
-        </div>
+</div>
 
-        <!-- Back -->
-        <footer class="post-footer">
-          <p class="post-back">
-            ← <a href="tieng-anh/vocabulary.html">Quay lại Vocabulary</a>
-          </p>
-        </footer>
-
-      </article>
-    </main>
-
-  </div>
-
-<!-- Script -->
 <script>
   const params = new URLSearchParams(window.location.search);
   const file = params.get("file");
 
   function getSlug() {
-    if (!file) return "";
-    return file.split("/").pop().replace(".md", "");
+    return file ? file.split("/").pop().replace(".md", "") : "";
   }
 
   if (!file) {
-    document.getElementById("content").innerText =
-      "Không có file được chỉ định.";
+    document.getElementById("content").innerText = "Không có file được chỉ định.";
   } else {
-    const BASE = window.location.origin + "/binh-blog/";
-
-    fetch(BASE + file)
+    fetch(file)
       .then(res => {
-        if (!res.ok) {
-          throw new Error("Không tìm thấy file Markdown");
-        }
+        if (!res.ok) throw new Error("404");
         return res.text();
       })
       .then(md => {
         const content = document.getElementById("content");
-
-        // Render Markdown
         content.innerHTML = marked.parse(md);
 
-        // Nút quiz
-        injectVocabularyQuiz();
-
-        // Tiến độ
-        injectProgressInfo();
-
-        // Tiêu đề
-        const name = getSlug();
+        const slug = getSlug();
         document.getElementById("page-title").innerText =
-          name.replace(/-/g, " ").toUpperCase();
+          slug.replace(/-/g, " ").toUpperCase();
+
+        content.insertAdjacentHTML("beforeend", `
+          <div style="text-align:center">
+            <a class="vocab-quiz-btn"
+               href="../quiz-viewer.html?quiz=vocab-${slug}">
+              🧠 Làm bài kiểm tra Vocabulary
+            </a>
+          </div>
+        `);
       })
       .catch(err => {
+        console.error(err);
         document.getElementById("content").innerText =
           "Không thể tải nội dung Markdown.";
-        console.error(err);
       });
   }
-  
 </script>
 
 </body>
