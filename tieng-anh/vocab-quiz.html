@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vocabulary Quiz</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <main class="main">
+
+      <div class="header-row">
+        <div>
+          <h2 class="site-title">🧠 Vocabulary Quiz</h2>
+          <p class="lead">
+            Kiểm tra nhanh để ghi nhớ từ vựng tốt hơn.
+          </p>
+        </div>
+      </div>
+
+      <section class="article">
+        <div id="quiz-container">
+          <p style="color:var(--muted);">
+            Đang tải bài kiểm tra…
+          </p>
+        </div>
+      </section>
+
+      <p style="margin-top:24px;">
+        <a id="back-to-lesson" href="#">
+          ← Quay lại bài học
+        </a>
+      </p>
+
+    </main>
+  </div>
+
+  <!-- Quiz logic -->
+  <script src="./js/quiz-loader.js"></script>
+  <script src="./js/quiz-grader.js"></script>
+</body>
+</html>
