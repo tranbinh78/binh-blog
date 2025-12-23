@@ -1,0 +1,67 @@
+{
+  "id": "emotions",
+  "title": "Emotions",
+  "timeLimit": 8,
+  "parts": [
+    {
+      "type": "multiple-choice",
+      "question": "I feel ___ today.",
+      "options": ["happy", "happily", "happiness", "happier"],
+      "answer": 0
+    },
+    {
+      "type": "multiple-choice",
+      "question": "She feels ___ after work.",
+      "options": ["stress", "stressed", "stressful", "stressing"],
+      "answer": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "I’m in a good ___.",
+      "options": ["mind", "mood", "feeling", "emotion"],
+      "answer": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "He feels ___ when he has nothing to do.",
+      "options": ["excited", "relaxed", "bored", "proud"],
+      "answer": 2
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Please ___ down.",
+      "options": ["sit", "slow", "calm", "rest"],
+      "answer": 2
+    },
+    {
+      "type": "fill-blank",
+      "question": "I feel ___ at home.",
+      "answer": ["relaxed"]
+    },
+    {
+      "type": "fill-blank",
+      "question": "I don’t feel ___ today.",
+      "answer": ["well"]
+    },
+    {
+      "type": "fill-blank",
+      "question": "I feel ___ of my work.",
+      "answer": ["proud"]
+    },
+    {
+      "type": "translate",
+      "question": "Tôi cảm thấy mệt sau giờ làm.",
+      "answer": ["I feel tired after work."]
+    },
+    {
+      "type": "translate",
+      "question": "Hôm nay tôi có tâm trạng tốt.",
+      "answer": ["I am in a good mood today.", "I'm in a good mood today."]
+    },
+    {
+      "type": "sentence",
+      "question": "Write a sentence using: feel stressed",
+      "sample": "I feel stressed at work."
+    }
+  ]
+}
