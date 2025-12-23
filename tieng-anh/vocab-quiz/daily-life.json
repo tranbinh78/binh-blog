@@ -1,11 +1,11 @@
-
 {
   "id": "daily-life",
   "title": "Daily Life",
+  "description": "Quiz about daily routines and habits.",
   "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
-  "parts": [
+  "questions": [
     {
       "type": "multiple-choice",
       "question": "I usually ___ at 6 a.m.",
@@ -30,19 +30,22 @@
     {
       "type": "fill-blank",
       "question": "I ___ up early on weekdays.",
-      "answer": ["wake", "wake up"],
+      "answer": 0,
+      "options": ["wake", "wake up"],
       "points": 1
     },
     {
       "type": "translate",
       "question": "Tôi thức dậy lúc 6 giờ sáng.",
-      "answer": ["I wake up at 6 a.m."],
+      "answer": 0,
+      "options": ["I wake up at 6 a.m."],
       "points": 2
     },
     {
       "type": "sentence",
       "question": "Write a sentence using: wake up",
-      "sample": "I wake up at 6 a.m.",
+      "answer": 0,
+      "options": ["I wake up at 6 a.m."],
       "points": 2
     }
   ]
