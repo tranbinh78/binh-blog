@@ -2,56 +2,47 @@
   "id": "daily-life",
   "title": "Daily Life",
   "timeLimit": 7,
+  "totalPoints": 10,
+  "passScore": 7,
   "parts": [
     {
       "type": "multiple-choice",
       "question": "I usually ___ at 6 a.m.",
       "options": ["wake", "wake up", "get", "sleep"],
-      "answer": 1
+      "answer": 1,
+      "points": 1
     },
     {
       "type": "multiple-choice",
       "question": "I ___ breakfast at home.",
       "options": ["eat", "do", "have", "make"],
-      "answer": 2
+      "answer": 2,
+      "points": 1
     },
     {
       "type": "multiple-choice",
       "question": "I ___ TV in the evening.",
       "options": ["see", "look", "watch", "view"],
-      "answer": 2
-    },
-    {
-      "type": "multiple-choice",
-      "question": "I go to bed ___ 10 p.m.",
-      "options": ["in", "on", "at", "after"],
-      "answer": 2
-    },
-    {
-      "type": "multiple-choice",
-      "question": "After work, I ___ at home.",
-      "options": ["relax", "relaxes", "relaxing", "relaxed"],
-      "answer": 0
+      "answer": 2,
+      "points": 1
     },
     {
       "type": "fill-blank",
       "question": "I ___ up early on weekdays.",
-      "answer": ["wake", "wake up"]
-    },
-    {
-      "type": "fill-blank",
-      "question": "I brush my ___ every morning.",
-      "answer": ["teeth"]
+      "answer": ["wake", "wake up"],
+      "points": 1
     },
     {
       "type": "translate",
       "question": "Tôi thức dậy lúc 6 giờ sáng.",
-      "answer": ["I wake up at 6 a.m."]
+      "answer": ["I wake up at 6 a.m."],
+      "points": 2
     },
     {
       "type": "sentence",
       "question": "Write a sentence using: wake up",
-      "sample": "I wake up at 6 a.m."
+      "sample": "I wake up at 6 a.m.",
+      "points": 2
     }
   ]
 }
