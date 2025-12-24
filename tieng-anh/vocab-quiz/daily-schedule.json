@@ -5,10 +5,10 @@
   "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
-  "parts": [
+  "questions": [
     {
       "type": "multiple-choice",
-      "question": "I ___ school at 7 a.m.",
+      "question": "I ___ to school at 7 a.m.",
       "options": ["go", "goes", "going", "went"],
       "answer": 0,
       "points": 1
@@ -21,21 +21,31 @@
       "points": 1
     },
     {
+      "type": "multiple-choice",
+      "question": "We ___ homework in the evening.",
+      "options": ["do", "does", "doing", "did"],
+      "answer": 0,
+      "points": 1
+    },
+    {
       "type": "fill-blank",
-      "question": "I ___ homework in the evening.",
-      "answer": ["do"],
+      "question": "I ___ up at 6 a.m.",
+      "options": ["wake", "waking"],
+      "answer": 0,
       "points": 1
     },
     {
       "type": "translate",
       "question": "Tôi đi học lúc 7 giờ sáng.",
-      "answer": ["I go to school at 7 a.m."],
+      "options": ["I go to school at 7 a.m."],
+      "answer": 0,
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: schedule",
-      "sample": "I have a busy daily schedule.",
+      "question": "Write a sentence using: go to bed",
+      "options": ["I go to bed at 10 p.m."],
+      "answer": 0,
       "points": 2
     }
   ]
