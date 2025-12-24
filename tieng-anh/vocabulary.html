@@ -11,6 +11,10 @@
    .vocab-list {
       background: var(--card-bg);
       color: var(--text);
+      padding: 24px 28px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+      max-width: 760px;
     }
 
     .vocab-list ul {
@@ -111,12 +115,13 @@
     </ul>
 
     <!-- DARK MODE -->
-    <div class="sidebar-footer">
-        <label class="theme-switch">
-          <input type="checkbox" id="darkToggle">
-          <span class="slider"></span>
-          <span class="label-text">🌙 Dark mode</span>
+    <div class="mode-switch">
+        <span class="mode-icon">🌙</span>
+        <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
         </label>
+        <span class="mode-text">Light Mode</span>
     </div>
     
   </aside>
