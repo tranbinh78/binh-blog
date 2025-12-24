@@ -5,37 +5,47 @@
   "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
-  "parts": [
+  "questions": [
     {
       "type": "multiple-choice",
-      "question": "I feel ___ today.",
-      "options": ["happy", "happiness", "happily", "happier"],
-      "answer": 0,
-      "points": 1
-    },
-    {
-      "type": "multiple-choice",
-      "question": "She is ___ because she passed the exam.",
-      "options": ["sad", "angry", "excited", "tired"],
+      "question": "I feel ___ when I hear good news.",
+      "options": ["sad", "angry", "happy", "tired"],
       "answer": 2,
       "points": 1
     },
     {
+      "type": "multiple-choice",
+      "question": "She is ___ because she lost her phone.",
+      "options": ["excited", "happy", "angry", "relaxed"],
+      "answer": 2,
+      "points": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "He feels ___ after a long day at work.",
+      "options": ["tired", "excited", "nervous", "proud"],
+      "answer": 0,
+      "points": 1
+    },
+    {
       "type": "fill-blank",
-      "question": "He feels ___ when he is alone.",
-      "answer": ["lonely", "sad"],
+      "question": "I feel ___ when I am with my family.",
+      "options": ["happy", "happiness"],
+      "answer": 0,
       "points": 1
     },
     {
       "type": "translate",
       "question": "Tôi cảm thấy vui hôm nay.",
-      "answer": ["I feel happy today."],
+      "options": ["I feel happy today."],
+      "answer": 0,
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: happy",
-      "sample": "I am happy to see you.",
+      "question": "Write a sentence using: feel sad",
+      "options": ["I feel sad when it rains."],
+      "answer": 0,
       "points": 2
     }
   ]
