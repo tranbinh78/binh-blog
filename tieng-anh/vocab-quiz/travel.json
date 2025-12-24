@@ -1,49 +1,38 @@
 {
   "id": "travel",
   "title": "Travel",
-  "description": "Quiz about travel and transportation.",
-  "timeLimit": 10,
+  "description": "Quiz about traveling and transportation.",
+  "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
   "questions": [
     {
       "type": "multiple-choice",
-      "question": "I usually travel by ___.",
-      "options": ["car", "bus", "bike", "all"],
-      "answer": 3,
-      "points": 1
-    },
-    {
-      "type": "multiple-choice",
-      "question": "We ___ a hotel online.",
-      "options": ["book", "order", "buy", "take"],
+      "question": "We travel ___ plane.",
+      "options": ["by", "with", "on", "in"],
       "answer": 0,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "She ___ to Paris last year.",
-      "options": ["go", "goes", "went", "gone"],
-      "answer": 2,
+      "question": "She booked a ___ room.",
+      "options": ["hotel", "house", "school", "office"],
+      "answer": 0,
       "points": 1
     },
     {
-      "type": "fill-blank",
-      "question": "I pack my ___ before a trip.",
-      "answer": ["luggage", "bag"],
+      "type": "multiple-choice",
+      "question": "They went ___ vacation last week.",
+      "options": ["in", "on", "to", "for"],
+      "answer": 1,
       "points": 1
     },
     {
-      "type": "translate",
-      "question": "Tôi thích đi du lịch.",
-      "answer": ["I like traveling.", "I like to travel."],
-      "points": 2
-    },
-    {
-      "type": "sentence",
-      "question": "Write a sentence using: airport",
-      "sample": "I arrived at the airport early.",
-      "points": 2
+      "type": "multiple-choice",
+      "question": "He packed his ___.",
+      "options": ["bag", "desk", "bed", "chair"],
+      "answer": 0,
+      "points": 1
     }
   ]
 }
