@@ -21,20 +21,27 @@
       "points": 1
     },
     {
+      "type": "multiple-choice",
+      "question": "We ___ dinner together every day.",
+      "options": ["eat", "have", "make", "cook"],
+      "answer": 1,
+      "points": 1
+    },
+    {
       "type": "fill-blank",
-      "question": "I often ___ rice for lunch.",
-      "answer": ["eat", "have"],
+      "question": "I ___ lunch at noon.",
+      "answer": ["have", "eat"],
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi thích ăn trái cây.",
-      "answer": ["I like eating fruit.", "I like fruit."],
+      "question": "Tôi thích ăn rau.",
+      "answer": ["I like eating vegetables."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: breakfast",
+      "question": "Write a sentence using: have breakfast",
       "sample": "I have breakfast at 7 a.m.",
       "points": 2
     }
