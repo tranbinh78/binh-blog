@@ -2,10 +2,10 @@
   "id": "work-study",
   "title": "Work & Study",
   "description": "Quiz about work and study routines.",
-  "timeLimit": 7,
+  "timeLimit": 10,
   "totalPoints": 10,
   "passScore": 7,
-  "parts": [
+  "questions": [
     {
       "type": "multiple-choice",
       "question": "I usually ___ to work at 8 a.m.",
@@ -29,20 +29,20 @@
     },
     {
       "type": "fill-blank",
-      "question": "I ___ homework in the evening.",
+      "question": "I ___ my homework in the evening.",
       "answer": ["do"],
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi học bài mỗi tối.",
-      "answer": ["I study every evening."],
+      "question": "Tôi học tiếng Anh mỗi ngày.",
+      "answer": ["I study English every day."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: go to work",
-      "sample": "I go to work at 8 a.m.",
+      "question": "Write a sentence using: office",
+      "sample": "I work in an office.",
       "points": 2
     }
   ]
