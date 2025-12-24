@@ -753,3 +753,26 @@ input:checked + .slider:before {
   color: #fff;
   cursor: pointer;
 }
+
+/* Lightbox navigation */
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 42px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 14px;
+  user-select: none;
+  background: rgba(0,0,0,0.35);
+  border-radius: 50%;
+}
+
+.lightbox-prev { left: 30px; }
+.lightbox-next { right: 30px; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(0,0,0,0.55);
+}
