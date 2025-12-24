@@ -67,6 +67,14 @@ body {
   border: 1px solid rgba(0,0,0,0.03); /* subtle border to separate from page */
 }
 
+.sidebar {
+  color: var(--text);
+}
+
+.sidebar a {
+  color: var(--text);
+}
+
 /* Slight lift on hover (desktop) */
 .sidebar:hover {
   transform: translateY(-3px);
