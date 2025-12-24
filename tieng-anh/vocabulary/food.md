@@ -59,5 +59,3 @@ Nhóm từ vựng này tập trung vào **ăn uống, bữa ăn và thói quen �
 - Eating Out
 
 ---
-
-← [Quay lại Vocabulary](../vocabulary.html)
