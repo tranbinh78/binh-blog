@@ -1,34 +1,48 @@
-
 {
   "id": "health",
   "title": "Health",
-  "timeLimit": 8,
+  "description": "Quiz about health and daily habits.",
+  "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
   "parts": [
     {
       "type": "multiple-choice",
-      "question": "I don’t feel ___ today.",
-      "options": ["good", "well", "better", "healthy"],
+      "question": "I exercise ___ a week.",
+      "options": ["two", "twice", "second", "double"],
+      "answer": 1,
+      "points": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "She eats ___ food.",
+      "options": ["health", "healthy", "healthily", "healthiness"],
+      "answer": 1,
+      "points": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "He ___ enough water every day.",
+      "options": ["drink", "drinks", "drinking", "drank"],
       "answer": 1,
       "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I take ___ every day.",
-      "answer": ["medicine"],
+      "question": "I ___ early to stay healthy.",
+      "answer": ["sleep"],
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi cần nghỉ ngơi ở nhà.",
-      "answer": ["I need to rest at home."],
+      "question": "Tập thể dục rất tốt cho sức khỏe.",
+      "answer": ["Exercise is very good for health."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: feel sick",
-      "sample": "I feel sick today.",
+      "question": "Write a sentence using: stay healthy",
+      "sample": "I exercise to stay healthy.",
       "points": 2
     }
   ]
