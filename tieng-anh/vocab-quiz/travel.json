@@ -1,38 +1,52 @@
 {
   "id": "travel",
   "title": "Travel",
-  "description": "Quiz about traveling and transportation.",
+  "description": "Quiz about travel and transportation.",
   "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
   "questions": [
     {
       "type": "multiple-choice",
-      "question": "We travel ___ plane.",
-      "options": ["by", "with", "on", "in"],
+      "question": "I usually ___ by bus.",
+      "options": ["go", "goes", "going", "went"],
       "answer": 0,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "She booked a ___ room.",
-      "options": ["hotel", "house", "school", "office"],
-      "answer": 0,
-      "points": 1
-    },
-    {
-      "type": "multiple-choice",
-      "question": "They went ___ vacation last week.",
-      "options": ["in", "on", "to", "for"],
+      "question": "She ___ to work by bike.",
+      "options": ["go", "goes", "going", "gone"],
       "answer": 1,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "He packed his ___.",
-      "options": ["bag", "desk", "bed", "chair"],
+      "question": "We ___ a trip last summer.",
+      "options": ["have", "had", "has", "having"],
+      "answer": 1,
+      "points": 1
+    },
+    {
+      "type": "fill-blank",
+      "question": "I ___ to school on foot.",
+      "options": ["go", "going"],
       "answer": 0,
       "points": 1
+    },
+    {
+      "type": "translate",
+      "question": "Tôi đi du lịch mỗi năm.",
+      "options": ["I travel every year."],
+      "answer": 0,
+      "points": 2
+    },
+    {
+      "type": "sentence",
+      "question": "Write a sentence using: travel by bus",
+      "options": ["I travel by bus every day."],
+      "answer": 0,
+      "points": 2
     }
   ]
 }
