@@ -129,10 +129,19 @@
   const lightboxCaption = document.querySelector(".lightbox-caption");
   const closeBtn = document.querySelector(".lightbox-close");
 
-  document.querySelectorAll(".gallery-item img").forEach(img => {
+  document.querySelectorAll(".gallery-grid img").forEach(img => {
+    img.style.cursor = "pointer";
+
     img.addEventListener("click", () => {
       lightboxImg.src = img.src;
-      lightboxCaption.textContent = img.nextElementSibling?.textContent || "";
+
+      const caption =
+        img.closest("figure")?.querySelector("figcaption")?.textContent ||
+        img.nextElementSibling?.textContent ||
+        img.alt ||
+        "";
+
+      lightboxCaption.textContent = caption;
       lightbox.classList.add("active");
     });
   });
