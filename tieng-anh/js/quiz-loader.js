@@ -2,6 +2,12 @@
 const params = new URLSearchParams(window.location.search);
 const topic = params.get("topic");
 
+const backLink = document.getElementById("back-to-lesson");
+
+if (backLink && topic) {
+  backLink.href = `/binh-blog/tieng-anh/vocabulary-viewer.html?file=vocabulary/${topic}.md`;
+}
+
 const QUIZ_BASE = "/binh-blog/tieng-anh/vocab-quiz/";
 
 const container = document.getElementById("quiz-container");
