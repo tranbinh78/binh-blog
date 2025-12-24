@@ -2,10 +2,10 @@
   "id": "food",
   "title": "Food",
   "description": "Quiz about food and eating habits.",
-  "timeLimit": 7,
+  "timeLimit": 10,
   "totalPoints": 10,
   "passScore": 7,
-  "parts": [
+  "questions": [
     {
       "type": "multiple-choice",
       "question": "I usually ___ breakfast at 7 a.m.",
@@ -22,27 +22,27 @@
     },
     {
       "type": "multiple-choice",
-      "question": "We ___ dinner together every day.",
-      "options": ["eat", "have", "make", "cook"],
-      "answer": 1,
+      "question": "We ___ dinner together.",
+      "options": ["cook", "make", "have", "eat"],
+      "answer": 2,
       "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I ___ lunch at noon.",
-      "answer": ["have", "eat"],
+      "question": "I ___ a lot of water every day.",
+      "answer": ["drink"],
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi thích ăn rau.",
-      "answer": ["I like eating vegetables."],
+      "question": "Tôi thích đồ ăn Việt Nam.",
+      "answer": ["I like Vietnamese food."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: have breakfast",
-      "sample": "I have breakfast at 7 a.m.",
+      "question": "Write a sentence using: healthy food",
+      "sample": "I try to eat healthy food.",
       "points": 2
     }
   ]
