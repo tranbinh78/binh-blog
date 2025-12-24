@@ -1,4 +1,5 @@
 // quiz-loader.js
+document.addEventListener("DOMContentLoaded", () => {
 const params = new URLSearchParams(window.location.search);
 const topic = params.get("topic");
 
@@ -29,7 +30,7 @@ fetch(`${QUIZ_BASE}${topic}.json`)
     console.error(err);
     container.innerHTML = "Không thể tải bài kiểm tra. Vui lòng thử lại.";
   });
-
+});
 function renderQuiz(data) {
   let html = `<h2>${data.title}</h2>`;
   html += `<p>${data.description || ""}</p>`;
