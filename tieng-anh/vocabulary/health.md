@@ -69,5 +69,3 @@ Nhóm từ vựng này tập trung vào **cách nói về sức khỏe, tình tr
 - Healthy Lifestyle
 
 ---
-
-← [Quay lại Vocabulary](../vocabulary.html)
