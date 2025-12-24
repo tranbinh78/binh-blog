@@ -2,7 +2,7 @@
   "id": "food",
   "title": "Food",
   "description": "Quiz about food and eating habits.",
-  "timeLimit": 10,
+  "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
   "questions": [
@@ -23,27 +23,16 @@
     {
       "type": "multiple-choice",
       "question": "We ___ dinner together.",
-      "options": ["cook", "make", "have", "eat"],
-      "answer": 2,
+      "options": ["have", "do", "eat", "make"],
+      "answer": 0,
       "points": 1
     },
     {
-      "type": "fill-blank",
-      "question": "I ___ a lot of water every day.",
-      "answer": ["drink"],
+      "type": "multiple-choice",
+      "question": "He drinks ___ every morning.",
+      "options": ["rice", "coffee", "bread", "meat"],
+      "answer": 1,
       "points": 1
-    },
-    {
-      "type": "translate",
-      "question": "Tôi thích đồ ăn Việt Nam.",
-      "answer": ["I like Vietnamese food."],
-      "points": 2
-    },
-    {
-      "type": "sentence",
-      "question": "Write a sentence using: healthy food",
-      "sample": "I try to eat healthy food.",
-      "points": 2
     }
   ]
 }
