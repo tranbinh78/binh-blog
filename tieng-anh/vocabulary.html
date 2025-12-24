@@ -176,26 +176,24 @@
 </div>
 
 <script>
-  const toggle = document.getElementById("darkToggle");
-  const root = document.documentElement;
+const toggle = document.getElementById("darkToggle");
+const root = document.documentElement;
 
-  if (localStorage.getItem("theme") === "dark") {
+// Load trạng thái
+if (localStorage.getItem("theme") === "dark") {
+  root.classList.add("dark");
+  toggle.checked = true;
+}
+
+toggle.addEventListener("change", () => {
+  if (toggle.checked) {
     root.classList.add("dark");
-    toggle.checked = true;
-    label.textContent = "☀️ Light mode";
+    localStorage.setItem("theme", "dark");
+  } else {
+    root.classList.remove("dark");
+    localStorage.setItem("theme", "light");
   }
-
-  toggle.addEventListener("change", () => {
-    if (toggle.checked) {
-      root.classList.add("dark");
-      label.textContent = "☀️ Light mode";
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      label.textContent = "🌙 Dark mode";
-      localStorage.setItem("theme", "light");
-    }
-  });
+});
 </script>
 
 </body>
