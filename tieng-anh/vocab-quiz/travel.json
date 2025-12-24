@@ -1,48 +1,48 @@
 {
   "id": "travel",
   "title": "Travel",
-  "description": "Quiz about traveling and vacations.",
-  "timeLimit": 7,
+  "description": "Quiz about travel and transportation.",
+  "timeLimit": 10,
   "totalPoints": 10,
   "passScore": 7,
-  "parts": [
+  "questions": [
     {
       "type": "multiple-choice",
-      "question": "I want to ___ to Japan.",
-      "options": ["go", "travel", "visit", "all are correct"],
+      "question": "I usually travel by ___.",
+      "options": ["car", "bus", "bike", "all"],
       "answer": 3,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "We ___ a hotel near the beach.",
-      "options": ["book", "buy", "rent", "stay"],
+      "question": "We ___ a hotel online.",
+      "options": ["book", "order", "buy", "take"],
       "answer": 0,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "She travels ___ plane.",
-      "options": ["by", "with", "on", "in"],
-      "answer": 0,
+      "question": "She ___ to Paris last year.",
+      "options": ["go", "goes", "went", "gone"],
+      "answer": 2,
       "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I ___ my luggage last night.",
-      "answer": ["packed"],
+      "question": "I pack my ___ before a trip.",
+      "answer": ["luggage", "bag"],
       "points": 1
     },
     {
       "type": "translate",
       "question": "Tôi thích đi du lịch.",
-      "answer": ["I like traveling."],
+      "answer": ["I like traveling.", "I like to travel."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: go on vacation",
-      "sample": "I go on vacation every summer.",
+      "question": "Write a sentence using: airport",
+      "sample": "I arrived at the airport early.",
       "points": 2
     }
   ]
