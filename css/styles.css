@@ -715,3 +715,41 @@ input:checked + .slider:before {
   color: var(--muted);
   background: rgba(0,0,0,0.15);
 }
+
+/* ===== Lightbox ===== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 12px;
+}
+
+.lightbox-caption {
+  margin-top: 14px;
+  font-size: 15px;
+  color: #ddd;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  font-size: 34px;
+  color: #fff;
+  cursor: pointer;
+}
