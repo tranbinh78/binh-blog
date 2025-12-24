@@ -124,43 +124,41 @@
 </script>
 
 <script>
+  console.log("Lightbox script loaded");
+
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.querySelector(".lightbox-img");
   const lightboxCaption = document.querySelector(".lightbox-caption");
   const closeBtn = document.querySelector(".lightbox-close");
 
-  document.querySelectorAll(".gallery-grid img").forEach(img => {
-    img.style.cursor = "pointer";
+  const images = document.querySelectorAll(".gallery-grid img");
+  console.log("Found images:", images.length);
+
+  images.forEach(img => {
+    img.style.cursor = "zoom-in";
 
     img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
+      console.log("Image clicked");
 
-      const caption =
+      lightboxImg.src = img.src;
+      lightboxCaption.textContent =
         img.closest("figure")?.querySelector("figcaption")?.textContent ||
-        img.nextElementSibling?.textContent ||
         img.alt ||
         "";
 
-      lightboxCaption.textContent = caption;
       lightbox.classList.add("active");
     });
   });
 
-  closeBtn.addEventListener("click", () => {
-    lightbox.classList.remove("active");
-  });
+  closeBtn.onclick = () => lightbox.classList.remove("active");
 
-  lightbox.addEventListener("click", e => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove("active");
-    }
-  });
+  lightbox.onclick = e => {
+    if (e.target === lightbox) lightbox.classList.remove("active");
+  };
 
-  document.addEventListener("keydown", e => {
-    if (e.key === "Escape") {
-      lightbox.classList.remove("active");
-    }
-  });
+  document.onkeydown = e => {
+    if (e.key === "Escape") lightbox.classList.remove("active");
+  };
 </script>
   
 <div id="lightbox" class="lightbox">
