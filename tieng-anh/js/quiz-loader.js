@@ -1,5 +1,4 @@
 // quiz-loader.js
-document.addEventListener("DOMContentLoaded", () => {
 const params = new URLSearchParams(window.location.search);
 const topic = params.get("topic");
 
@@ -24,13 +23,21 @@ fetch(`${QUIZ_BASE}${topic}.json`)
     return res.json();
   })
   .then(data => {
-    renderQuiz(data);
+    const questions = data.questions || data.parts;
+
+    if (!Array.isArray(questions)) {
+      throw new Error("Invalid quiz format");
+    }
+
+    renderQuiz({
+      ...data,
+      questions
+    });
   })
   .catch(err => {
     console.error(err);
     container.innerHTML = "Không thể tải bài kiểm tra. Vui lòng thử lại.";
   });
-});
 function renderQuiz(data) {
   let html = `<h2>${data.title}</h2>`;
   html += `<p>${data.description || ""}</p>`;
