@@ -70,5 +70,3 @@ Nhóm từ vựng này tập trung vào **mua sắm cơ bản, hỏi giá, lựa
 - Daily Conversations
 
 ---
-
-← [Quay lại Vocabulary](../vocabulary.html)
