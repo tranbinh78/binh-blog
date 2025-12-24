@@ -8,31 +8,45 @@
   "questions": [
     {
       "type": "multiple-choice",
-      "question": "I usually ___ to work at 8 a.m.",
-      "options": ["go", "come", "walk", "run"],
+      "question": "I ___ English every day.",
+      "options": ["study", "studies", "studying", "studied"],
       "answer": 0,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "She ___ English every day.",
-      "options": ["study", "studies", "studying", "studied"],
+      "question": "She ___ to school by bus.",
+      "options": ["go", "goes", "going", "went"],
       "answer": 1,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "He works ___ an office.",
-      "options": ["in", "at", "on", "to"],
+      "question": "They ___ their homework in the evening.",
+      "options": ["do", "make", "have", "take"],
       "answer": 0,
       "points": 1
     },
     {
-      "type": "multiple-choice",
-      "question": "They ___ meetings on Monday.",
-      "options": ["have", "do", "make", "take"],
+      "type": "fill-blank",
+      "question": "I ___ at an office.",
+      "options": ["work", "working"],
       "answer": 0,
       "points": 1
+    },
+    {
+      "type": "translate",
+      "question": "Tôi học tiếng Anh mỗi ngày.",
+      "options": ["I study English every day."],
+      "answer": 0,
+      "points": 2
+    },
+    {
+      "type": "sentence",
+      "question": "Write a sentence using: do homework",
+      "options": ["I do my homework after school."],
+      "answer": 0,
+      "points": 2
     }
   ]
 }
