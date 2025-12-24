@@ -32,20 +32,22 @@ fetch(`${QUIZ_BASE}${topic}.json`)
 
 function renderQuiz(data) {
   let html = `<h2>${data.title}</h2>`;
-  html += `<p>${data.description}</p>`;
+  html += `<p>${data.description || ""}</p>`;
 
-  data.questions.forEach((q, i) => {
-    html += `
-      <div class="quiz-question">
-        <p><strong>${i + 1}. ${q.question}</strong></p>
-        ${q.options.map((opt, idx) => `
-          <label>
-            <input type="radio" name="q${i}" value="${idx}">
-            ${opt}
-          </label><br>
-        `).join("")}
-      </div>
-    `;
+  data.parts.forEach((q, i) => {
+    if (q.type === "multiple-choice") {
+      html += `
+        <div class="quiz-question">
+          <p><strong>${i + 1}. ${q.question}</strong></p>
+          ${q.options.map((opt, idx) => `
+            <label>
+              <input type="radio" name="q${i}" value="${idx}">
+              ${opt}
+            </label><br>
+          `).join("")}
+        </div>
+      `;
+    }
   });
 
   html += `<button onclick="submitQuiz()">Nộp bài</button>`;
@@ -57,10 +59,12 @@ function renderQuiz(data) {
 function submitQuiz() {
   let score = 0;
 
-  __quizData.questions.forEach((q, i) => {
+  __quizData.parts.forEach((q, i) => {
+    if (q.type !== "multiple-choice") return;
+
     const checked = document.querySelector(`input[name="q${i}"]:checked`);
     if (checked && Number(checked.value) === q.answer) {
-      score += q.points;
+      score += q.points || 1;
     }
   });
 
