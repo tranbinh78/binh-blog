@@ -1,48 +1,51 @@
 {
   "id": "health",
   "title": "Health",
-  "description": "Quiz about health and lifestyle.",
-  "timeLimit": 10,
+  "description": "Quiz about health and healthy habits.",
+  "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
   "questions": [
     {
       "type": "multiple-choice",
-      "question": "I exercise ___ a week.",
-      "options": ["two", "twice", "second", "double"],
-      "answer": 1,
-      "points": 1
-    },
-    {
-      "type": "multiple-choice",
-      "question": "He should ___ more water.",
-      "options": ["drink", "drinks", "drinking", "drank"],
+      "question": "I ___ exercise every morning.",
+      "options": ["do", "does", "doing", "did"],
       "answer": 0,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "Smoking is bad ___ your health.",
-      "options": ["to", "for", "with", "at"],
+      "question": "She ___ enough water every day.",
+      "options": ["drink", "drinks", "drinking", "drank"],
       "answer": 1,
       "points": 1
     },
     {
+      "type": "multiple-choice",
+      "question": "We should ___ healthy food.",
+      "options": ["eat", "eats", "eating", "ate"],
+      "answer": 0,
+      "points": 1
+    },
+    {
       "type": "fill-blank",
-      "question": "I try to ___ enough sleep.",
-      "answer": ["get", "have"],
+      "question": "I ___ a walk every evening.",
+      "options": ["take", "taking"],
+      "answer": 0,
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Sức khỏe rất quan trọng.",
-      "answer": ["Health is very important."],
+      "question": "Tôi tập thể dục mỗi ngày.",
+      "options": ["I exercise every day."],
+      "answer": 0,
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: healthy",
-      "sample": "I want to live a healthy life.",
+      "question": "Write a sentence using: drink water",
+      "options": ["I drink water regularly."],
+      "answer": 0,
       "points": 2
     }
   ]
