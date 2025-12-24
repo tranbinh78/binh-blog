@@ -781,3 +781,10 @@ input:checked + .slider:before {
 .lightbox-next:hover {
   background: rgba(0,0,0,0.55);
 }
+
+/* ===== Gallery image size (for lazy loading stability) ===== */
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
