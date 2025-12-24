@@ -131,16 +131,14 @@
 </div>
   
 <script>
-  console.log("Lightbox script loaded");
-
+ 
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.querySelector(".lightbox-img");
   const lightboxCaption = document.querySelector(".lightbox-caption");
   const closeBtn = document.querySelector(".lightbox-close");
 
   const images = document.querySelectorAll(".gallery-grid img");
-  console.log("Found images:", images.length);
-
+  
   images.forEach(img => {
     img.style.cursor = "zoom-in";
 
