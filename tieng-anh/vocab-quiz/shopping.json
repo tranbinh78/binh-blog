@@ -1,68 +1,42 @@
-
 {
   "id": "shopping",
   "title": "Shopping",
-  "timeLimit": 8,
+  "description": "Quiz about shopping and buying things.",
+  "timeLimit": 7,
+  "totalPoints": 10,
+  "passScore": 7,
   "parts": [
     {
       "type": "multiple-choice",
-      "question": "I go ___ on weekends.",
-      "options": ["shop", "shopping", "to shop", "shops"],
-      "answer": 1
+      "question": "I want to ___ a new shirt.",
+      "options": ["buy", "sell", "pay", "cost"],
+      "answer": 0,
+      "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "I’m looking ___ a shirt.",
-      "options": ["at", "for", "to", "on"],
-      "answer": 1
-    },
-    {
-      "type": "multiple-choice",
-      "question": "How much ___ it?",
-      "options": ["are", "is", "does", "do"],
-      "answer": 1
-    },
-    {
-      "type": "multiple-choice",
-      "question": "This jacket is too ___.",
-      "options": ["cheap", "expensive", "sale", "price"],
-      "answer": 1
-    },
-    {
-      "type": "multiple-choice",
-      "question": "I’ll ___ it.",
-      "options": ["take", "buying", "taking", "takes"],
-      "answer": 0
+      "question": "How much does it ___?",
+      "options": ["pay", "buy", "cost", "spend"],
+      "answer": 2,
+      "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "Do you have this in another ___?",
-      "answer": ["size"]
-    },
-    {
-      "type": "fill-blank",
-      "question": "This item is on ___.",
-      "answer": ["sale"]
-    },
-    {
-      "type": "fill-blank",
-      "question": "I pay by ___.",
-      "answer": ["cash", "card"]
+      "question": "I ___ groceries every weekend.",
+      "answer": ["buy", "shop for"],
+      "points": 1
     },
     {
       "type": "translate",
-      "question": "Cái này giá bao nhiêu?",
-      "answer": ["How much is it?"]
-    },
-    {
-      "type": "translate",
-      "question": "Tôi sẽ lấy cái này.",
-      "answer": ["I'll take it.", "I will take it."]
+      "question": "Tôi đi mua sắm vào cuối tuần.",
+      "answer": ["I go shopping on weekends."],
+      "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: look for",
-      "sample": "I’m looking for a jacket."
+      "question": "Write a sentence using: shop",
+      "sample": "I shop at the supermarket.",
+      "points": 2
     }
   ]
 }
