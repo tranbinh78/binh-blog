@@ -716,13 +716,14 @@ input:checked + .slider:before {
   background: rgba(0,0,0,0.15);
 }
 
-/* ===== Lightbox ===== */
+/* ===== Lightbox layout ===== */
 
 .lightbox {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.85);
   display: none;
+  flex-direction: column;       /* 👈 quan trọng */
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -732,17 +733,21 @@ input:checked + .slider:before {
   display: flex;
 }
 
+/* Ảnh */
 .lightbox-img {
   max-width: 90%;
-  max-height: 80vh;
+  max-height: 70vh;             /* chừa chỗ cho caption */
   border-radius: 12px;
 }
 
+/* Caption dưới ảnh */
 .lightbox-caption {
-  margin-top: 14px;
+  margin-top: 12px;
+  max-width: 90%;
   font-size: 15px;
   color: #ddd;
   text-align: center;
+  line-height: 1.6;
 }
 
 .lightbox-close {
