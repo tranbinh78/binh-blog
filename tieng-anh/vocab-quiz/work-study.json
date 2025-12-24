@@ -9,33 +9,40 @@
     {
       "type": "multiple-choice",
       "question": "I usually ___ to work at 8 a.m.",
-      "options": ["go", "goes", "going", "went"],
+      "options": ["go", "come", "walk", "run"],
       "answer": 0,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "She is ___ English now.",
+      "question": "She ___ English every day.",
       "options": ["study", "studies", "studying", "studied"],
-      "answer": 2,
+      "answer": 1,
+      "points": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "He works ___ an office.",
+      "options": ["in", "at", "on", "to"],
+      "answer": 0,
       "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I ___ English every day.",
-      "answer": ["study", "learn"],
+      "question": "I ___ homework in the evening.",
+      "answer": ["do"],
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi học tiếng Anh mỗi ngày.",
-      "answer": ["I study English every day."],
+      "question": "Tôi học bài mỗi tối.",
+      "answer": ["I study every evening."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: work",
-      "sample": "I work in an office.",
+      "question": "Write a sentence using: go to work",
+      "sample": "I go to work at 8 a.m.",
       "points": 2
     }
   ]
