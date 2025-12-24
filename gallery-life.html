@@ -123,6 +123,13 @@
   });
 </script>
 
+<!-- ===== Lightbox ===== -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+  <p class="lightbox-caption"></p>
+</div>
+  
 <script>
   console.log("Lightbox script loaded");
 
@@ -160,13 +167,7 @@
     if (e.key === "Escape") lightbox.classList.remove("active");
   };
 </script>
-  
-<div id="lightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img class="lightbox-img" src="" alt="">
-  <p class="lightbox-caption"></p>
-</div>
-  
+ 
 </body>
 </html>
 
