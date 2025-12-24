@@ -2,7 +2,7 @@
   "id": "work-study",
   "title": "Work & Study",
   "description": "Quiz about work and study routines.",
-  "timeLimit": 10,
+  "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
   "questions": [
@@ -28,22 +28,11 @@
       "points": 1
     },
     {
-      "type": "fill-blank",
-      "question": "I ___ my homework in the evening.",
-      "answer": ["do"],
+      "type": "multiple-choice",
+      "question": "They ___ meetings on Monday.",
+      "options": ["have", "do", "make", "take"],
+      "answer": 0,
       "points": 1
-    },
-    {
-      "type": "translate",
-      "question": "Tôi học tiếng Anh mỗi ngày.",
-      "answer": ["I study English every day."],
-      "points": 2
-    },
-    {
-      "type": "sentence",
-      "question": "Write a sentence using: office",
-      "sample": "I work in an office.",
-      "points": 2
     }
   ]
 }
