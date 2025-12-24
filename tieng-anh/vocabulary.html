@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Vocabulary — Tiếng Anh thực tế</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
 
-<style>
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <style>
     .vocab-list {
       background: var(--card-bg, #fff);
       padding: 24px 28px;
@@ -16,13 +16,10 @@
       max-width: 760px;
     }
 
-    .vocab-list h2 {
-      margin-top: 0;
-    }
-
     .vocab-list ul {
       list-style: none;
       padding-left: 0;
+      margin: 0;
     }
 
     .vocab-list li {
@@ -41,42 +38,60 @@
       font-weight: 400;
     }
 
-   
+    /* Dark toggle giống Home */
+    .sidebar-footer {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .theme-switch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .theme-switch:hover {
+      background: rgba(255,255,255,.08);
+    }
   </style>
 </head>
-  
+
 <body>
-  <div class="wrapper">
+<div class="wrapper">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="brand">
-        <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
-        <div>
-          <h1>Tran Binh</h1>
-          <div style="color:var(--muted);font-size:13px">Personal website</div>
-        </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="color:var(--muted);font-size:13px">Personal website</div>
       </div>
-
-      <ul class="nav">
-        <li><a class="active" href="index.html">🏠 Home</a></li>
-          <li><a href="tieng-anh.html">📘 Tiếng Anh</a></li>
-          <li><a href="cuoc-song.html">📝 Cuộc sống</a></li>
-          <li><a href="gallery.html">📷 Gallery</a></li>
-          <li><a href="about.html">👤 About me</a></li>
-          <li><a href="contact.html">✉️ Contact</a></li>
-      </ul>
-  
-    <!-- 👉 THÊM DARK MODE NGAY TẠI ĐÂY -->
-    <div class="dark-toggle">
-        <label class="theme-switch">
-            <input type="checkbox" id="darkToggle">
-            <span class="slider"></span>
-            <span class="label-text">🌙 Dark mode</span>
-        </label>
     </div>
-      
-    </aside>
+
+    <ul class="nav">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a href="../gallery.html">📷 Gallery</a></li>
+      <li><a href="../about.html">👤 About me</a></li>
+      <li><a href="../contact.html">✉️ Contact</a></li>
+    </ul>
+
+    <!-- DARK MODE -->
+    <div class="sidebar-footer">
+      <label class="theme-switch">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider"></span>
+        <span id="themeLabel">🌙 Dark mode</span>
+      </label>
+    </div>
+  </aside>
 
   <!-- MAIN -->
   <main class="main">
@@ -95,58 +110,35 @@
 
         <ul>
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/daily-life.md">
-              🏠 Daily Life
-            </a>
+            <a href="vocabulary-viewer.html?file=vocabulary/daily-life.md">🏠 Daily Life</a>
             <small>Cuộc sống hằng ngày, sinh hoạt, thói quen</small>
           </li>
-
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/work-study.md">
-              💼 Work & Study
-            </a>
+            <a href="vocabulary-viewer.html?file=vocabulary/work-study.md">💼 Work & Study</a>
             <small>Công việc, học tập, giao tiếp cơ bản</small>
           </li>
-
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/food.md">
-              🍔 Food
-            </a>
+            <a href="vocabulary-viewer.html?file=vocabulary/food.md">🍔 Food</a>
             <small>Ăn uống, nấu ăn, gọi món</small>
           </li>
-
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/emotions.md">
-              😊 Emotions
-            </a>
+            <a href="vocabulary-viewer.html?file=vocabulary/emotions.md">😊 Emotions</a>
             <small>Cảm xúc, trạng thái tinh thần</small>
           </li>
-
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/health.md">
-              🩺 Health
-            </a>
+            <a href="vocabulary-viewer.html?file=vocabulary/health.md">🩺 Health</a>
             <small>Sức khỏe, thói quen lành mạnh</small>
           </li>
-
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/daily-schedule.md">
-              ⏰ Daily Schedule
-            </a>
+            <a href="vocabulary-viewer.html?file=vocabulary/daily-schedule.md">⏰ Daily Schedule</a>
             <small>Thời gian biểu, sinh hoạt trong ngày</small>
           </li>
-
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/shopping.md">
-              🛒 Shopping
-            </a>
+            <a href="vocabulary-viewer.html?file=vocabulary/shopping.md">🛒 Shopping</a>
             <small>Mua sắm, giá cả, thanh toán</small>
           </li>
-
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/travel.md">
-              ✈️ Travel
-            </a>
+            <a href="vocabulary-viewer.html?file=vocabulary/travel.md">✈️ Travel</a>
             <small>Du lịch, khách sạn, di chuyển</small>
           </li>
         </ul>
@@ -156,30 +148,29 @@
   </main>
 </div>
 
- <script>
+<script>
   const toggle = document.getElementById("darkToggle");
   const label = document.getElementById("themeLabel");
   const root = document.documentElement;
 
-  // Load trạng thái đã lưu
   if (localStorage.getItem("theme") === "dark") {
     root.classList.add("dark");
     toggle.checked = true;
-    label.textContent = "☀️ Light Mode";
+    label.textContent = "☀️ Light mode";
   }
 
   toggle.addEventListener("change", () => {
     if (toggle.checked) {
       root.classList.add("dark");
-      label.textContent = "☀️ Light Mode";
+      label.textContent = "☀️ Light mode";
       localStorage.setItem("theme", "dark");
     } else {
       root.classList.remove("dark");
-      label.textContent = "🌙 Dark Mode";
+      label.textContent = "🌙 Dark mode";
       localStorage.setItem("theme", "light");
     }
   });
 </script>
-  
+
 </body>
 </html>
