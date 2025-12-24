@@ -2,48 +2,30 @@
   "id": "daily-life",
   "title": "Daily Life",
   "description": "Quiz about daily routines and habits.",
-  "totalPoints": 6,
-  "passScore": 4,
   "questions": [
     {
+      "type": "multiple-choice",
       "question": "I usually ___ at 6 a.m.",
       "options": ["wake", "wake up", "get", "sleep"],
-      "answer": 1,
-      "points": 1
+      "answer": 1
     },
     {
+      "type": "multiple-choice",
       "question": "I ___ breakfast at home.",
       "options": ["eat", "do", "have", "make"],
-      "answer": 2,
-      "points": 1
+      "answer": 2
     },
     {
+      "type": "multiple-choice",
       "question": "I ___ TV in the evening.",
       "options": ["see", "look", "watch", "view"],
-      "answer": 2,
-      "points": 1
+      "answer": 2
     },
     {
-      "question": "Which sentence is correct?",
-      "options": [
-        "I wake early weekdays.",
-        "I wake up early on weekdays.",
-        "I waking up early weekdays.",
-        "I wakes up early weekdays."
-      ],
-      "answer": 1,
-      "points": 1
-    },
-    {
-      "question": "Choose the correct translation of: Tôi thức dậy lúc 6 giờ sáng.",
-      "options": [
-        "I wake at 6 morning.",
-        "I wake up at 6 a.m.",
-        "I woke up 6 a.m.",
-        "I wake on 6 a.m."
-      ],
-      "answer": 1,
-      "points": 2
+      "type": "multiple-choice",
+      "question": "I ___ up early on weekdays.",
+      "options": ["wake", "wake up"],
+      "answer": 1
     }
   ]
 }
