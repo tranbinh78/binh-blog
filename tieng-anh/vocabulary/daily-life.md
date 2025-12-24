@@ -68,5 +68,3 @@ Nhóm từ vựng này tập trung vào **những hành động và tình huốn
 - **Emotions**
 
 ---
-
-← Quay lại Vocabulary
