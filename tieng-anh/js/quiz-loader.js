@@ -8,7 +8,7 @@ if (backLink && topic) {
   backLink.href = `/binh-blog/tieng-anh/vocabulary-viewer.html?file=vocabulary/${topic}.md`;
 }
 
-const QUIZ_BASE = "./vocab-quiz/";
+const QUIZ_BASE = "/binh-blog/tieng-anh/vocab-quiz/";
 
 const container = document.getElementById("quiz-container");
 
@@ -23,39 +23,29 @@ fetch(`${QUIZ_BASE}${topic}.json`)
     return res.json();
   })
   .then(data => {
-    const questions = data.questions || data.parts;
-
-    if (!Array.isArray(questions)) {
-      throw new Error("Invalid quiz format");
-    }
-
-    renderQuiz({
-      ...data,
-      questions
-    });
+    renderQuiz(data);
   })
   .catch(err => {
     console.error(err);
     container.innerHTML = "Không thể tải bài kiểm tra. Vui lòng thử lại.";
   });
+
 function renderQuiz(data) {
   let html = `<h2>${data.title}</h2>`;
-  html += `<p>${data.description || ""}</p>`;
+  html += `<p>${data.description}</p>`;
 
-  data.parts.forEach((q, i) => {
-    if (q.type === "multiple-choice") {
-      html += `
-        <div class="quiz-question">
-          <p><strong>${i + 1}. ${q.question}</strong></p>
-          ${q.options.map((opt, idx) => `
-            <label>
-              <input type="radio" name="q${i}" value="${idx}">
-              ${opt}
-            </label><br>
-          `).join("")}
-        </div>
-      `;
-    }
+  data.questions.forEach((q, i) => {
+    html += `
+      <div class="quiz-question">
+        <p><strong>${i + 1}. ${q.question}</strong></p>
+        ${q.options.map((opt, idx) => `
+          <label>
+            <input type="radio" name="q${i}" value="${idx}">
+            ${opt}
+          </label><br>
+        `).join("")}
+      </div>
+    `;
   });
 
   html += `<button onclick="submitQuiz()">Nộp bài</button>`;
@@ -67,12 +57,10 @@ function renderQuiz(data) {
 function submitQuiz() {
   let score = 0;
 
-  __quizData.parts.forEach((q, i) => {
-    if (q.type !== "multiple-choice") return;
-
+  __quizData.questions.forEach((q, i) => {
     const checked = document.querySelector(`input[name="q${i}"]:checked`);
     if (checked && Number(checked.value) === q.answer) {
-      score += q.points || 1;
+      score += q.points;
     }
   });
 
