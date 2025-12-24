@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery – Học tập | Trần Bình</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+<div class="wrapper">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" role="navigation" aria-label="Chính">
+    <div class="brand">
+      <img src="assets/avatar.jpg" alt="Avatar Tran Binh" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="color:var(--muted);font-size:13px">Personal website</div>
+      </div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a class="active" href="gallery.html">📷 Gallery</a></li>
+      <li><a href="about.html">👤 About me</a></li>
+      <li><a href="contact.html">✉️ Contact</a></li>
+    </ul>
+
+    <!-- Dark mode -->
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="darkToggle">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider"></span>
+      </label>
+      <span id="themeLabel">🌙 Dark Mode</span>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="header-row">
+      <div>
+        <h2 class="site-title">Gallery – Học tập</h2>
+        <p class="lead">Những khoảnh khắc học tập, ghi chép và rèn luyện mỗi ngày.</p>
+      </div>
+    </div>
+
+    <section class="article">
+      <div class="gallery-grid">
+
+        <figure class="gallery-item">
+          <img src="assets/study-1.jpg" alt="Góc học tập" loading="lazy">
+          <figcaption>Góc học tập buổi tối</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="assets/study-2.jpg" alt="Sách và ghi chú" loading="lazy">
+          <figcaption>Sách và ghi chú</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="assets/study-3.jpg" alt="Học trực tuyến" loading="lazy">
+          <figcaption>Học trực tuyến</figcaption>
+        </figure>
+
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== Lightbox ===== -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <span class="lightbox-prev">&#10094;</span>
+  <img class="lightbox-img" src="" alt="">
+  <span class="lightbox-next">&#10095;</span>
+  <p class="lightbox-caption"></p>
+</div>
+
+<!-- Dark mode script -->
+<script>
+  const toggle = document.getElementById("darkToggle");
+  const label = document.getElementById("themeLabel");
+  const root = document.documentElement;
+
+  if (localStorage.getItem("theme") === "dark") {
+    root.classList.add("dark");
+    toggle.checked = true;
+    label.textContent = "☀️ Light Mode";
+  }
+
+  toggle.addEventListener("change", () => {
+    root.classList.toggle("dark", toggle.checked);
+    label.textContent = toggle.checked ? "☀️ Light Mode" : "🌙 Dark Mode";
+    localStorage.setItem("theme", toggle.checked ? "dark" : "light");
+  });
+</script>
+
+<!-- Lightbox script -->
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.querySelector(".lightbox-img");
+  const lightboxCaption = document.querySelector(".lightbox-caption");
+  const closeBtn = document.querySelector(".lightbox-close");
+  const prevBtn = document.querySelector(".lightbox-prev");
+  const nextBtn = document.querySelector(".lightbox-next");
+
+  const images = Array.from(document.querySelectorAll(".gallery-grid img"));
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const img = images[index];
+    if (!img) return;
+
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent =
+      img.closest("figure")?.querySelector("figcaption")?.textContent ||
+      img.alt ||
+      "";
+
+    currentIndex = index;
+  }
+
+  images.forEach((img, index) => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => {
+      showImage(index);
+      lightbox.classList.add("active");
+    });
+  });
+
+  prevBtn.onclick = () =>
+    showImage((currentIndex - 1 + images.length) % images.length);
+
+  nextBtn.onclick = () =>
+    showImage((currentIndex + 1) % images.length);
+
+  closeBtn.onclick = () => lightbox.classList.remove("active");
+
+  lightbox.onclick = e =>
+    e.target === lightbox && lightbox.classList.remove("active");
+
+  document.addEventListener("keydown", e => {
+    if (!lightbox.classList.contains("active")) return;
+    if (e.key === "Escape") lightbox.classList.remove("active");
+    if (e.key === "ArrowLeft") prevBtn.onclick();
+    if (e.key === "ArrowRight") nextBtn.onclick();
+  });
+</script>
+
+</body>
+</html>
