@@ -66,22 +66,7 @@
     body.dark a {
       color: #c7d2fe;
     }
-
- .dark-toggle {
-  margin-top: 20px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-.theme-switch {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 14px;
-  color: var(--text);
-}
-    
+   
   </style>
 </head>
 
@@ -106,8 +91,7 @@
       <li><a href="../about.html">👤 About me</a></li>
       <li><a href="../contact.html">✉️ Contact</a></li>
     </ul>
-<!-- DARK MODE BUTTON -->
-<button class="dark-toggle" id="darkToggle">🌙 Dark</button>
+
     <div class="dark-toggle">
       <label class="theme-switch">
         <input type="checkbox" id="darkToggle">
@@ -195,7 +179,8 @@
     </article>
   </main>
 </div>
-
+<!-- DARK MODE BUTTON -->
+<button class="dark-toggle" id="darkToggle">🌙 Dark</button>
 <script>
   const btn = document.getElementById("darkToggle");
   const isDark = localStorage.getItem("darkMode") === "1";
