@@ -7,6 +7,68 @@
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
+<style>
+    .vocab-list {
+      background: var(--card-bg, #fff);
+      padding: 24px 28px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      max-width: 760px;
+    }
+
+    .vocab-list h2 {
+      margin-top: 0;
+    }
+
+    .vocab-list ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .vocab-list li {
+      margin: 14px 0;
+      line-height: 1.6;
+    }
+
+    .vocab-list a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .vocab-list small {
+      display: block;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    /* Dark mode toggle */
+    .dark-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #c9b3ff;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+    }
+
+    body.dark {
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    body.dark .vocab-list {
+      background: #1e293b;
+    }
+
+    body.dark a {
+      color: #c7d2fe;
+    }
+  </style>
+</head>
+  
 <body>
   <div class="wrapper">
 
@@ -40,111 +102,83 @@
       
     </aside>
 
-    <!-- Main content -->
-    <main class="main">
+  <!-- MAIN -->
+  <main class="main">
+    <article class="post">
 
-      <!-- Header -->
-      <div class="header-row">
-        <div>
-          <h2 class="site-title">Vocabulary</h2>
-          <p class="lead">
-            Từ vựng được chia theo các chủ đề quen thuộc,
-            để bạn học và dùng ngay trong đời sống hàng ngày.
-          </p>
-        </div>
-      </div>
+      <header class="post-header">
+        <h1>Vocabulary</h1>
+        <p>
+          Từ vựng được chia theo các chủ đề quen thuộc,
+          giúp bạn học và dùng ngay trong đời sống hằng ngày.
+        </p>
+      </header>
 
-  <!-- Intro -->
-  <section class="article">
+      <section class="vocab-list">
+        <h2>📁 Các chủ đề từ vựng</h2>
 
-  <h3 class="section-title">📂 Các chủ đề từ vựng</h3>
+        <ul>
+          <li>
+            <a href="vocabulary-viewer.html?file=vocabulary/daily-life.md">
+              🏠 Daily Life
+            </a>
+            <small>Cuộc sống hằng ngày, sinh hoạt, thói quen</small>
+          </li>
 
-  <ul>
+          <li>
+            <a href="vocabulary-viewer.html?file=vocabulary/work-study.md">
+              💼 Work & Study
+            </a>
+            <small>Công việc, học tập, giao tiếp cơ bản</small>
+          </li>
 
-    <li>
-      <a href="vocabulary-viewer.html?file=vocabulary/daily-life.md">
-        🏠 Daily Life (Cuộc sống hằng ngày)
-      </a><br>
-      <span style="color:var(--muted);">
-        Sinh hoạt, thói quen, việc thường ngày.
-      </span>
-    </li>
+          <li>
+            <a href="vocabulary-viewer.html?file=vocabulary/food.md">
+              🍔 Food
+            </a>
+            <small>Ăn uống, nấu ăn, gọi món</small>
+          </li>
 
-    <li style="margin-top:14px;">
-      <a href="vocabulary-viewer.html?file=vocabulary/work-study.md">
-        💼 Work & Study (Công việc – Học tập)
-      </a><br>
-      <span style="color:var(--muted);">
-        Công việc, học tập, kỹ năng, giao tiếp cơ bản.
-      </span>
-    </li>
+          <li>
+            <a href="vocabulary-viewer.html?file=vocabulary/emotions.md">
+              😊 Emotions
+            </a>
+            <small>Cảm xúc, trạng thái tinh thần</small>
+          </li>
 
-    <li style="margin-top:14px;">
-      <a href="vocabulary-viewer.html?file=vocabulary/food.md">
-        🍜 Food (Ăn uống)
-      </a><br>
-      <span style="color:var(--muted);">
-        Món ăn, nấu nướng, gọi món hằng ngày.
-      </span>
-    </li>
+          <li>
+            <a href="vocabulary-viewer.html?file=vocabulary/health.md">
+              🩺 Health
+            </a>
+            <small>Sức khỏe, thói quen lành mạnh</small>
+          </li>
 
-    <li style="margin-top:14px;">
-      <a href="vocabulary-viewer.html?file=vocabulary/emotions.md">
-        🙂 Emotions (Cảm xúc)
-      </a><br>
-      <span style="color:var(--muted);">
-        Cảm xúc và trạng thái tinh thần thường gặp.
-      </span>
-    </li>
+          <li>
+            <a href="vocabulary-viewer.html?file=vocabulary/daily-schedule.md">
+              ⏰ Daily Schedule
+            </a>
+            <small>Thời gian biểu, sinh hoạt trong ngày</small>
+          </li>
 
-    <li style="margin-top:14px;">
-      <a href="vocabulary-viewer.html?file=vocabulary/health.md">
-        🩺 Health (Sức khỏe)
-      </a><br>
-      <span style="color:var(--muted);">
-        Tình trạng sức khỏe, thói quen lành mạnh.
-      </span>
-    </li>
+          <li>
+            <a href="vocabulary-viewer.html?file=vocabulary/shopping.md">
+              🛒 Shopping
+            </a>
+            <small>Mua sắm, giá cả, thanh toán</small>
+          </li>
 
-    <li style="margin-top:14px;">
-      <a href="vocabulary-viewer.html?file=vocabulary/daily-schedule.md">
-        ⏰ Daily Schedule (Thời gian biểu)
-      </a><br>
-      <span style="color:var(--muted);">
-        Lịch sinh hoạt, trình tự hoạt động trong ngày.
-      </span>
-    </li>
+          <li>
+            <a href="vocabulary-viewer.html?file=vocabulary/travel.md">
+              ✈️ Travel
+            </a>
+            <small>Du lịch, khách sạn, di chuyển</small>
+          </li>
+        </ul>
+      </section>
 
-    <li style="margin-top:14px;">
-      <a href="vocabulary-viewer.html?file=vocabulary/shopping.md">
-        🛒 Shopping (Mua sắm)
-      </a><br>
-      <span style="color:var(--muted);">
-        Mua sắm, hỏi giá, thanh toán.
-      </span>
-    </li>
-
-    <li style="margin-top:14px;">
-      <a href="vocabulary-viewer.html?file=vocabulary/travel.md">
-        ✈️ Travel (Du lịch)
-      </a><br>
-      <span style="color:var(--muted);">
-        Đi lại, khách sạn, hỏi đường, di chuyển.
-      </span>
-    </li>
-
-  </ul>
-  </section>
-    
-      <!-- Closing -->
-      <p style="margin-top:24px; color:var(--muted);">
-        Tôi không cố nhớ thật nhiều từ.
-        Tôi chỉ cố dùng lại những từ quen thuộc
-        cho đến khi chúng trở thành một phần tự nhiên.
-      </p>
-
-    </main>
-  </div>
+    </article>
+  </main>
+</div>
 
  <script>
   const toggle = document.getElementById("darkToggle");
