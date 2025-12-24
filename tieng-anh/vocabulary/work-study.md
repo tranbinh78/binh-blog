@@ -63,5 +63,3 @@ Nhóm từ vựng này tập trung vào **những hành động quen thuộc tro
 - Learning English
 
 ---
-
-← [Quay lại Vocabulary](../vocabulary.html)
