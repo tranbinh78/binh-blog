@@ -1,41 +1,41 @@
-
 {
   "id": "food",
   "title": "Food",
-  "timeLimit": 8,
+  "description": "Quiz about food and eating habits.",
+  "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
   "parts": [
     {
       "type": "multiple-choice",
-      "question": "I usually ___ breakfast at home.",
+      "question": "I usually ___ breakfast at 7 a.m.",
       "options": ["eat", "do", "have", "make"],
       "answer": 2,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "We ___ out on weekends.",
-      "options": ["eat", "eats", "eating", "ate"],
-      "answer": 0,
+      "question": "She likes ___ vegetables.",
+      "options": ["eat", "eating", "to eat", "eaten"],
+      "answer": 1,
       "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I usually ___ at home.",
-      "answer": ["cook", "cook at home"],
+      "question": "I often ___ rice for lunch.",
+      "answer": ["eat", "have"],
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi đói.",
-      "answer": ["I'm hungry.", "I am hungry."],
+      "question": "Tôi thích ăn trái cây.",
+      "answer": ["I like eating fruit.", "I like fruit."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: eat out",
-      "sample": "We eat out on weekends.",
+      "question": "Write a sentence using: breakfast",
+      "sample": "I have breakfast at 7 a.m.",
       "points": 2
     }
   ]
