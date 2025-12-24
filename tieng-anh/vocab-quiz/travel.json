@@ -1,34 +1,48 @@
-
 {
   "id": "travel",
   "title": "Travel",
-  "timeLimit": 8,
+  "description": "Quiz about traveling and vacations.",
+  "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
   "parts": [
     {
       "type": "multiple-choice",
-      "question": "I go ___ a trip.",
-      "options": ["on", "to", "for", "at"],
+      "question": "I want to ___ to Japan.",
+      "options": ["go", "travel", "visit", "all are correct"],
+      "answer": 3,
+      "points": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "We ___ a hotel near the beach.",
+      "options": ["book", "buy", "rent", "stay"],
+      "answer": 0,
+      "points": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "She travels ___ plane.",
+      "options": ["by", "with", "on", "in"],
       "answer": 0,
       "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I pack my ___ before the trip.",
-      "answer": ["bag"],
+      "question": "I ___ my luggage last night.",
+      "answer": ["packed"],
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi đang đi du lịch.",
-      "answer": ["I'm on a trip.", "I am on a trip."],
+      "question": "Tôi thích đi du lịch.",
+      "answer": ["I like traveling."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: ask for directions",
-      "sample": "I ask for directions when I travel.",
+      "question": "Write a sentence using: go on vacation",
+      "sample": "I go on vacation every summer.",
       "points": 2
     }
   ]
