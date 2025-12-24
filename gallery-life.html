@@ -1,1 +1,117 @@
-//gallery
+
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery — Cuộc sống | Trần Bình</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" role="navigation" aria-label="Chính">
+      <div class="brand">
+        <img src="assets/avatar.jpg" alt="Avatar Tran Binh" />
+        <div>
+          <h1>Tran Binh</h1>
+          <div style="color:var(--muted);font-size:13px">Personal website</div>
+        </div>
+      </div>
+
+      <ul class="nav">
+          <li><a class="active" href="index.html">🏠 Home</a></li>
+          <li><a href="tieng-anh.html">📘 Tiếng Anh</a></li>
+          <li><a href="cuoc-song.html">📝 Cuộc sống</a></li>
+          <li><a href="gallery.html">📷 Gallery</a></li>
+          <li><a href="about.html">👤 About me</a></li>
+          <li><a href="contact.html">✉️ Contact</a></li>
+      </ul>
+
+<!-- Nút chuyển Dark Mode -->
+  <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="darkToggle">
+          <input type="checkbox" id="darkToggle">
+          <span class="slider"></span>
+      </label>
+      <span id="themeLabel">🌙 Dark Mode</span>
+  </div>
+      
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <div class="header-row">
+        <div>
+          <h2 class="site-title">Gallery – Cuộc sống</h2>
+          <p class="lead">Những khoảnh khắc đời thường.</p>
+        </div>
+      </div>
+
+     <section class="article">
+
+    <div class="gallery-grid">
+        <img src="assets/life-1.jpg" alt="Cuộc sống 1">
+        <img src="assets/life-2.jpg" alt="Cuộc sống 2">
+        <img src="assets/life-3.jpg" alt="Cuộc sống 3">
+    </div>
+
+      </section>
+
+    </main>
+  </div>
+
+ <script>
+  const toggle = document.getElementById("darkToggle");
+  const label = document.getElementById("themeLabel");
+  const root = document.documentElement;
+
+  // Load trạng thái đã lưu
+  if (localStorage.getItem("theme") === "dark") {
+    root.classList.add("dark");
+    toggle.checked = true;
+    label.textContent = "☀️ Light Mode";
+  }
+
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      root.classList.add("dark");
+      label.textContent = "☀️ Light Mode";
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      label.textContent = "🌙 Dark Mode";
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
+
+<script>
+  const navLinks = document.querySelectorAll(".nav a");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      const rect = this.getBoundingClientRect();
+      const ripple = document.createElement("span");
+
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = size + "px";
+
+      ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+      ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+
+      ripple.classList.add("ripple");
+      this.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
+</script>
+  
+</body>
+</html>
+
