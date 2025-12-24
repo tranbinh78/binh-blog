@@ -655,15 +655,15 @@ input:checked + .slider:before {
 .gallery-card {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
   display: block;
 }
 
 .gallery-card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
 }
 
 .gallery-card:hover img {
@@ -672,10 +672,9 @@ input:checked + .slider:before {
 
 .gallery-card span {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  font-size: 15px;
+  inset: auto 0 0 0;
+  padding: 12px;
+  font-size: 16px;
   color: #fff;
   text-align: center;
   background: rgba(0,0,0,0.55);
