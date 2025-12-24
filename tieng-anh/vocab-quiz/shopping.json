@@ -1,7 +1,7 @@
 {
   "id": "shopping",
   "title": "Shopping",
-  "description": "Quiz about shopping and buying things.",
+  "description": "Quiz about shopping activities.",
   "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
@@ -15,27 +15,34 @@
     },
     {
       "type": "multiple-choice",
-      "question": "How much does it ___?",
-      "options": ["pay", "buy", "cost", "spend"],
-      "answer": 2,
+      "question": "This shirt is too ___.",
+      "options": ["expensive", "cheap", "price", "cost"],
+      "answer": 0,
+      "points": 1
+    },
+    {
+      "type": "multiple-choice",
+      "question": "She goes shopping ___ weekends.",
+      "options": ["in", "on", "at", "to"],
+      "answer": 1,
       "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I ___ groceries every weekend.",
-      "answer": ["buy", "shop for"],
+      "question": "I ___ money before shopping.",
+      "answer": ["save"],
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi đi mua sắm vào cuối tuần.",
-      "answer": ["I go shopping on weekends."],
+      "question": "Tôi thích mua sắm.",
+      "answer": ["I like shopping."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: shop",
-      "sample": "I shop at the supermarket.",
+      "question": "Write a sentence using: go shopping",
+      "sample": "I go shopping on weekends.",
       "points": 2
     }
   ]
