@@ -69,5 +69,3 @@ Nhóm từ vựng này tập trung vào **du lịch, di chuyển và các tình 
 - Booking Hotels
 
 ---
-
-← [Quay lại Vocabulary](../vocabulary.html)
