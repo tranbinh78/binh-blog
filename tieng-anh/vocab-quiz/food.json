@@ -22,17 +22,31 @@
     },
     {
       "type": "multiple-choice",
-      "question": "We ___ dinner together.",
-      "options": ["have", "do", "eat", "make"],
+      "question": "We ___ dinner together every day.",
+      "options": ["have", "do", "make", "take"],
       "answer": 0,
       "points": 1
     },
     {
-      "type": "multiple-choice",
-      "question": "He drinks ___ every morning.",
-      "options": ["rice", "coffee", "bread", "meat"],
-      "answer": 1,
+      "type": "fill-blank",
+      "question": "I ___ fruit every morning.",
+      "options": ["eat", "eating"],
+      "answer": 0,
       "points": 1
+    },
+    {
+      "type": "translate",
+      "question": "Tôi ăn cơm trưa lúc 12 giờ.",
+      "options": ["I eat lunch at 12 o'clock."],
+      "answer": 0,
+      "points": 2
+    },
+    {
+      "type": "sentence",
+      "question": "Write a sentence using: have dinner",
+      "options": ["I have dinner with my family."],
+      "answer": 0,
+      "points": 2
     }
   ]
 }
