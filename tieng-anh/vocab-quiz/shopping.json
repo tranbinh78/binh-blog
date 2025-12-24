@@ -1,48 +1,51 @@
 {
   "id": "shopping",
   "title": "Shopping",
-  "description": "Quiz about shopping activities.",
+  "description": "Quiz about shopping and buying things.",
   "timeLimit": 7,
   "totalPoints": 10,
   "passScore": 7,
-  "parts": [
+  "questions": [
     {
       "type": "multiple-choice",
-      "question": "I want to ___ a new shirt.",
-      "options": ["buy", "sell", "pay", "cost"],
+      "question": "I usually ___ groceries at the supermarket.",
+      "options": ["buy", "sell", "pay", "take"],
       "answer": 0,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "This shirt is too ___.",
-      "options": ["expensive", "cheap", "price", "cost"],
+      "question": "This shirt is very ___.",
+      "options": ["expensive", "cheap", "large", "old"],
       "answer": 0,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "She goes shopping ___ weekends.",
-      "options": ["in", "on", "at", "to"],
-      "answer": 1,
+      "question": "She ___ a new phone yesterday.",
+      "options": ["buy", "buys", "bought", "buying"],
+      "answer": 2,
       "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I ___ money before shopping.",
-      "answer": ["save"],
+      "question": "I ___ for clothes on the weekend.",
+      "options": ["shop", "shopping"],
+      "answer": 0,
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi thích mua sắm.",
-      "answer": ["I like shopping."],
+      "question": "Tôi mua quần áo mới.",
+      "options": ["I buy new clothes."],
+      "answer": 0,
       "points": 2
     },
     {
       "type": "sentence",
       "question": "Write a sentence using: go shopping",
-      "sample": "I go shopping on weekends.",
+      "options": ["I go shopping on the weekend."],
+      "answer": 0,
       "points": 2
     }
   ]
