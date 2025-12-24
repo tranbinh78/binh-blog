@@ -1,67 +1,42 @@
 {
   "id": "daily-schedule",
   "title": "Daily Schedule",
-  "timeLimit": 8,
+  "description": "Quiz about daily schedules and routines.",
+  "timeLimit": 7,
+  "totalPoints": 10,
+  "passScore": 7,
   "parts": [
     {
       "type": "multiple-choice",
-      "question": "I ___ up at 6 a.m.",
-      "options": ["wake", "wake up", "get", "stand"],
-      "answer": 1
-    },
-    {
-      "type": "multiple-choice",
-      "question": "I have breakfast ___ home.",
-      "options": ["in", "on", "at", "from"],
-      "answer": 2
-    },
-    {
-      "type": "multiple-choice",
-      "question": "I start work ___ nine.",
-      "options": ["in", "on", "at", "after"],
-      "answer": 2
-    },
-    {
-      "type": "multiple-choice",
-      "question": "I finish work at 5 p.m. and ___ home.",
+      "question": "I ___ school at 7 a.m.",
       "options": ["go", "goes", "going", "went"],
-      "answer": 0
+      "answer": 0,
+      "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "I usually ___ in the evening.",
-      "options": ["relax", "relaxes", "relaxing", "relaxed"],
-      "answer": 0
+      "question": "She ___ lunch at noon.",
+      "options": ["eat", "eats", "ate", "eating"],
+      "answer": 1,
+      "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I go to ___ at 10 p.m.",
-      "answer": ["bed"]
-    },
-    {
-      "type": "fill-blank",
-      "question": "I have ___ at noon.",
-      "answer": ["lunch"]
-    },
-    {
-      "type": "fill-blank",
-      "question": "I take a ___ after lunch.",
-      "answer": ["break"]
+      "question": "I ___ homework in the evening.",
+      "answer": ["do"],
+      "points": 1
     },
     {
       "type": "translate",
-      "question": "Tôi thức dậy sớm vào các ngày trong tuần.",
-      "answer": ["I wake up early on weekdays."]
-    },
-    {
-      "type": "translate",
-      "question": "Buổi tối tôi thư giãn ở nhà.",
-      "answer": ["I relax at home in the evening."]
+      "question": "Tôi đi học lúc 7 giờ sáng.",
+      "answer": ["I go to school at 7 a.m."],
+      "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: go to bed",
-      "sample": "I go to bed at 10 p.m."
+      "question": "Write a sentence using: schedule",
+      "sample": "I have a busy daily schedule.",
+      "points": 2
     }
   ]
 }
