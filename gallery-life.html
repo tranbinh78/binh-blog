@@ -122,6 +122,43 @@
     });
   });
 </script>
+
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.querySelector(".lightbox-img");
+  const lightboxCaption = document.querySelector(".lightbox-caption");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  document.querySelectorAll(".gallery-item img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightboxCaption.textContent = img.nextElementSibling?.textContent || "";
+      lightbox.classList.add("active");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+  });
+
+  lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove("active");
+    }
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      lightbox.classList.remove("active");
+    }
+  });
+</script>
+  
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+  <p class="lightbox-caption"></p>
+</div>
   
 </body>
 </html>
