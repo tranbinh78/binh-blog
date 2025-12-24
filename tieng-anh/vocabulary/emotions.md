@@ -68,5 +68,3 @@ Nhóm từ vựng này tập trung vào **cách nói về cảm xúc và trạng
 - Relationships
 
 ---
-
-← [Quay lại Vocabulary](../vocabulary.html)
