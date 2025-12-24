@@ -2,130 +2,48 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vocabulary — Tiếng Anh thực tế</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vocabulary — Trần Bình</title>
 
+  <!-- CSS CHUNG -->
   <link rel="stylesheet" href="../css/styles.css" />
-
-  <style>
-   .vocab-list {
-      background: var(--card-bg);
-      color: var(--text);
-    }
-
-    .vocab-list ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .vocab-list li {
-      margin: 14px 0;
-      line-height: 1.6;
-    }
-
-    .vocab-list a {
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .vocab-list small {
-      display: block;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    /* Dark toggle giống Home */
-    .sidebar-footer {
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255,255,255,.12);
-    }
-
-    .theme-switch {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .theme-switch:hover {
-      background: rgba(255,255,255,.08);
-    }
-
-    .sidebar {
-       display: flex;
-       flex-direction: column;
-     }
-
-    .nav {
-       flex: 1;
-    }
-
-    .sidebar-footer {
-        margin-top: auto;
-        padding-top: 12px;
-    }
-
-    /* ===== FIX SIDEBAR LAYOUT ===== */
-    .sidebar {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .nav {
-        flex: 1;
-    }
-
-    .sidebar-footer {
-        margin-top: auto;
-        padding-top: 12px;
-    }
-    
-  </style>
 </head>
 
 <body>
 <div class="wrapper">
 
-  <!-- SIDEBAR -->
- <aside class="sidebar">
-
-  <div class="brand">
-    <img src="../assets/avatar.jpg" />
-    <div>
-      <h1>Tran Binh</h1>
-      <div style="color:var(--muted);font-size:13px">Personal website</div>
+  <!-- ================= SIDEBAR (GIỐNG HOME 100%) ================= -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../assets/avatar.jpg" alt="Tran Binh" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="color:var(--muted);font-size:13px">
+          Personal website
+        </div>
+      </div>
     </div>
-  </div>
 
-  <ul class="nav">
-    <li><a href="../index.html">🏠 Home</a></li>
-    <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
-    <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
-    <li><a href="../gallery.html">📷 Gallery</a></li>
-    <li><a href="../about.html">👤 About me</a></li>
-    <li><a href="../contact.html">✉️ Contact</a></li>
-  </ul>
+    <ul class="nav">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a href="../gallery.html">📷 Gallery</a></li>
+      <li><a href="../about.html">👤 About me</a></li>
+      <li><a href="../contact.html">✉️ Contact</a></li>
+    </ul>
 
-  <!-- FOOTER -->
-  <div class="sidebar-footer">
-    <div class="mode-switch">
-      <span class="mode-icon">🌙</span>
+    <!-- DARK MODE: GIỐNG HOME -->
+    <div class="theme-toggle">
       <label class="switch">
         <input type="checkbox" id="themeToggle">
         <span class="slider"></span>
       </label>
-      <span class="mode-text">Light Mode</span>
+      <span class="mode-label">Light Mode</span>
     </div>
-  </div>
+  </aside>
 
-</aside>
-
-  <!-- MAIN -->
+  <!-- ================= MAIN ================= -->
   <main class="main">
     <article class="post">
 
@@ -137,40 +55,63 @@
         </p>
       </header>
 
-      <section class="vocab-list">
+      <section class="post-content">
         <h2>📁 Các chủ đề từ vựng</h2>
 
-        <ul>
+        <ul class="vocab-list">
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/daily-life.md">🏠 Daily Life</a>
+            <a href="vocabulary-viewer.html?file=vocabulary/daily-life.md">
+              🏠 Daily Life
+            </a>
             <small>Cuộc sống hằng ngày, sinh hoạt, thói quen</small>
           </li>
+
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/work-study.md">💼 Work & Study</a>
+            <a href="vocabulary-viewer.html?file=vocabulary/work-study.md">
+              💼 Work & Study
+            </a>
             <small>Công việc, học tập, giao tiếp cơ bản</small>
           </li>
+
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/food.md">🍔 Food</a>
+            <a href="vocabulary-viewer.html?file=vocabulary/food.md">
+              🍔 Food
+            </a>
             <small>Ăn uống, nấu ăn, gọi món</small>
           </li>
+
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/emotions.md">😊 Emotions</a>
+            <a href="vocabulary-viewer.html?file=vocabulary/emotions.md">
+              😊 Emotions
+            </a>
             <small>Cảm xúc, trạng thái tinh thần</small>
           </li>
+
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/health.md">🩺 Health</a>
+            <a href="vocabulary-viewer.html?file=vocabulary/health.md">
+              🩺 Health
+            </a>
             <small>Sức khỏe, thói quen lành mạnh</small>
           </li>
+
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/daily-schedule.md">⏰ Daily Schedule</a>
+            <a href="vocabulary-viewer.html?file=vocabulary/daily-schedule.md">
+              ⏰ Daily Schedule
+            </a>
             <small>Thời gian biểu, sinh hoạt trong ngày</small>
           </li>
+
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/shopping.md">🛒 Shopping</a>
+            <a href="vocabulary-viewer.html?file=vocabulary/shopping.md">
+              🛒 Shopping
+            </a>
             <small>Mua sắm, giá cả, thanh toán</small>
           </li>
+
           <li>
-            <a href="vocabulary-viewer.html?file=vocabulary/travel.md">✈️ Travel</a>
+            <a href="vocabulary-viewer.html?file=vocabulary/travel.md">
+              ✈️ Travel
+            </a>
             <small>Du lịch, khách sạn, di chuyển</small>
           </li>
         </ul>
@@ -178,31 +119,11 @@
 
     </article>
   </main>
+
 </div>
 
-<script>
-const toggle = document.getElementById("themeToggle");
-const root = document.documentElement;
-const text = document.querySelector(".mode-text");
-
-if (localStorage.getItem("theme") === "dark") {
-  root.classList.add("dark");
-  toggle.checked = true;
-  text.textContent = "Dark Mode";
-}
-
-toggle.addEventListener("change", () => {
-  if (toggle.checked) {
-    root.classList.add("dark");
-    text.textContent = "Dark Mode";
-    localStorage.setItem("theme", "dark");
-  } else {
-    root.classList.remove("dark");
-    text.textContent = "Light Mode";
-    localStorage.setItem("theme", "light");
-  }
-});
-</script>
+<!-- JS DARK MODE CHUNG (GIỐNG HOME) -->
+<script src="../js/theme.js"></script>
 
 </body>
 </html>
