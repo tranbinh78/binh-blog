@@ -1,11 +1,11 @@
 {
   "id": "health",
   "title": "Health",
-  "description": "Quiz about health and daily habits.",
-  "timeLimit": 7,
+  "description": "Quiz about health and lifestyle.",
+  "timeLimit": 10,
   "totalPoints": 10,
   "passScore": 7,
-  "parts": [
+  "questions": [
     {
       "type": "multiple-choice",
       "question": "I exercise ___ a week.",
@@ -15,34 +15,34 @@
     },
     {
       "type": "multiple-choice",
-      "question": "She eats ___ food.",
-      "options": ["health", "healthy", "healthily", "healthiness"],
-      "answer": 1,
+      "question": "He should ___ more water.",
+      "options": ["drink", "drinks", "drinking", "drank"],
+      "answer": 0,
       "points": 1
     },
     {
       "type": "multiple-choice",
-      "question": "He ___ enough water every day.",
-      "options": ["drink", "drinks", "drinking", "drank"],
+      "question": "Smoking is bad ___ your health.",
+      "options": ["to", "for", "with", "at"],
       "answer": 1,
       "points": 1
     },
     {
       "type": "fill-blank",
-      "question": "I ___ early to stay healthy.",
-      "answer": ["sleep"],
+      "question": "I try to ___ enough sleep.",
+      "answer": ["get", "have"],
       "points": 1
     },
     {
       "type": "translate",
-      "question": "Tập thể dục rất tốt cho sức khỏe.",
-      "answer": ["Exercise is very good for health."],
+      "question": "Sức khỏe rất quan trọng.",
+      "answer": ["Health is very important."],
       "points": 2
     },
     {
       "type": "sentence",
-      "question": "Write a sentence using: stay healthy",
-      "sample": "I exercise to stay healthy.",
+      "question": "Write a sentence using: healthy",
+      "sample": "I want to live a healthy life.",
       "points": 2
     }
   ]
