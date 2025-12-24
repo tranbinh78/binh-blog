@@ -70,5 +70,3 @@ Nhóm từ vựng này tập trung vào **cách nói về thời gian, lịch si
 - Time Expressions
 
 ---
-
-← [Quay lại Vocabulary](../vocabulary.html)
