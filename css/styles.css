@@ -787,3 +787,24 @@ input:checked + .slider:before {
   height: 200px;
   object-fit: cover;
 }
+
+/* ===== About me ===== */
+
+.about h3 {
+  margin-top: 28px;
+  font-size: 20px;
+}
+
+.about p {
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 12px 0;
+}
+
+.about ul {
+  margin: 12px 0 20px 22px;
+}
+
+.about li {
+  margin-bottom: 6px;
+}
