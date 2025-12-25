@@ -959,3 +959,40 @@ input:checked + .slider:before {
   transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(0,0,0,0.12);
 }
+
+/* ===== Transcript Toggle ===== */
+
+.transcript-toggle {
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  background: rgba(59,130,246,0.1);
+  color: var(--accent, #3b82f6);
+}
+
+.transcript-toggle:hover {
+  background: rgba(59,130,246,0.18);
+}
+
+/* Transcript box */
+
+.transcript-box {
+  display: none;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.dark .transcript-box {
+  background: #111827;
+}
+
+.transcript-content p {
+  margin: 6px 0;
+}
