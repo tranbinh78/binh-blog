@@ -851,3 +851,15 @@ input:checked + .slider:before {
 .post ul {
   margin: 12px 0 20px 22px;
 }
+
+/* ===== Post meta (date) ===== */
+
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.post-meta time {
+  display: inline-block;
+}
