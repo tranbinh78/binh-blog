@@ -829,3 +829,25 @@ input:checked + .slider:before {
 .contact li {
   margin-bottom: 6px;
 }
+
+/* ===== Blog post ===== */
+
+.post h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.post h4 {
+  margin-top: 26px;
+  font-size: 18px;
+}
+
+.post p {
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 14px 0;
+}
+
+.post ul {
+  margin: 12px 0 20px 22px;
+}
