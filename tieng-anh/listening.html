@@ -39,8 +39,33 @@
         Trình duyệt của bạn không hỗ trợ audio.
       </audio>
 
-      <a href="#listening-01" class="detail-link">Xem ghi chú</a>
+     <button class="transcript-toggle" data-target="transcript-01">
+  📄 Transcript
+     </button>
+
+     <div class="transcript-box" id="transcript-01">
+     <div class="transcript-content">
+
+      <p><strong>Charles:</strong> Hello, Julian.</p>
+      <p><strong>Julian:</strong> Hello, Charles. How are you?</p>
+      <p><strong>Charles:</strong> I'm fine. Julian, do you remember Alyssa?</p>
+      <p><strong>Julian:</strong> No, I don't.</p>
+      <p><strong>Charles:</strong> She's Ben's sister.</p>
+      <p><strong>Alyssa:</strong> Hello. Nice to meet you again.</p>
+      <p><strong>Julian:</strong> Nice to meet you too.</p>
+      <p><strong>Alyssa:</strong> I'm not Alison.</p>
+      <p><strong>Julian:</strong> What?</p>
+      <p><strong>Alyssa:</strong> My name isn't Alison. It's Alyssa.</p>
+      <p><strong>Julian:</strong> I'm sorry. Nice to meet you, Alyssa.</p>
+      <p><strong>Charles:</strong> Good. Would you like a drink?</p>
+      <p><strong>Julian:</strong> Good idea.</p>
+      <p><strong>Alyssa:</strong> Yes, please.</p>
+      <p><strong>Charles:</strong> Here you are.</p>
+      <p><strong>Alyssa and Julian:</strong> Thanks!</p>
+
+     </div>
     </div>
+   </div>
 
     <!-- Sau này copy block này để thêm bài mới -->
 
@@ -49,6 +74,18 @@
 </section>
   </main>
 </div>
+<script>
+  document.querySelectorAll(".transcript-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-target");
+      const box = document.getElementById(id);
 
+      if (!box) return;
+
+      box.style.display =
+        box.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
 </body>
 </html>
