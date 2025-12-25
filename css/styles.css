@@ -923,13 +923,18 @@ input:checked + .slider:before {
 }
 
 .detail-link {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 6px 12px;
   font-size: 14px;
+  border-radius: 8px;
+  background: rgba(59,130,246,0.1);
   color: var(--accent, #3b82f6);
   text-decoration: none;
 }
 
 .detail-link:hover {
-  text-decoration: underline;
+  background: rgba(59,130,246,0.18);
 }
 
 /* Divider */
@@ -942,4 +947,15 @@ input:checked + .slider:before {
 
 .dark .section-divider {
   border-top-color: rgba(255,255,255,0.15);
+}
+
+/* Listening card hover */
+
+.listening-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.listening-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.12);
 }
