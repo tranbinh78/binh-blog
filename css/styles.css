@@ -863,3 +863,19 @@ input:checked + .slider:before {
 .post-meta time {
   display: inline-block;
 }
+
+/* ===== English pages ===== */
+
+.english h3 {
+  margin-top: 28px;
+  font-size: 20px;
+}
+
+.english p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.english ul {
+  margin: 12px 0 20px 22px;
+}
