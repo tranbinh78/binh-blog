@@ -808,3 +808,24 @@ input:checked + .slider:before {
 .about li {
   margin-bottom: 6px;
 }
+
+/* ===== Contact ===== */
+
+.contact h3 {
+  margin-top: 28px;
+  font-size: 20px;
+}
+
+.contact p {
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 12px 0;
+}
+
+.contact ul {
+  margin: 12px 0 20px 22px;
+}
+
+.contact li {
+  margin-bottom: 6px;
+}
