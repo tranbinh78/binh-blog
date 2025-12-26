@@ -1004,3 +1004,19 @@ input:checked + .slider:before {
 .transcript-box.open {
   display: block;
 }
+
+/* ===== Transcript slide animation ===== */
+
+.transcript-box {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 
+    max-height 0.35s ease,
+    opacity 0.25s ease;
+}
+
+.transcript-box.open {
+  max-height: 1000px; /* đủ lớn cho transcript */
+  opacity: 1;
+}
