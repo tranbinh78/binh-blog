@@ -325,14 +325,18 @@
 </div>
 <script>
   document.querySelectorAll(".transcript-toggle").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const id = btn.getAttribute("data-target");
-      const box = document.getElementById(id);
-      if (!box) return;
+  btn.addEventListener("click", () => {
+    const id = btn.getAttribute("data-target");
+    const box = document.getElementById(id);
+    if (!box) return;
 
-      box.classList.toggle("open");
-    });
+    box.classList.toggle("open");
+
+    btn.textContent = box.classList.contains("open")
+      ? "📄 Ẩn transcript"
+      : "📄 Transcript";
   });
+});
 </script>
 </body>
 </html>
