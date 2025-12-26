@@ -121,11 +121,9 @@
     btn.addEventListener("click", () => {
       const id = btn.getAttribute("data-target");
       const box = document.getElementById(id);
-
       if (!box) return;
 
-      box.style.display =
-        box.style.display === "block" ? "none" : "block";
+      box.classList.toggle("open");
     });
   });
 </script>
