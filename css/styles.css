@@ -996,3 +996,11 @@ input:checked + .slider:before {
 .transcript-content p {
   margin: 6px 0;
 }
+
+.transcript-box {
+  display: none;
+}
+
+.transcript-box.open {
+  display: block;
+}
