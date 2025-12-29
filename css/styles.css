@@ -23,6 +23,7 @@
 
 html, body {
   height: auto;
+  min-height: 100%;
   overflow-y: auto;
 }
 
@@ -44,12 +45,7 @@ body {
 .wrapper {
   display: flex;
   min-height: 100vh;
-  max-width: var(--max-width);
-  margin: 24px auto;
-  display: flex;
-  gap: var(--gap);
-  padding: 16px;
-}
+ }
 
 /* ============================
    Sidebar: softer radius + smoother shadow
@@ -154,9 +150,7 @@ a:hover::after {
 ============================= */
 .main {
   flex: 1;
-  overflow-y: auto;
-  padding-bottom: 60px; /* tránh bị sát đáy */
-}
+ }
 
 .header-row {
   display: flex;
