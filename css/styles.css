@@ -1020,3 +1020,22 @@ input:checked + .slider:before {
   max-height: 1000px; /* đủ lớn cho transcript */
   opacity: 1;
 }
+
+/* ===== Alphabet figure ===== */
+
+.alphabet-figure {
+  margin: 16px 0 24px;
+  text-align: center;
+}
+
+.alphabet-figure img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.alphabet-figure figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
