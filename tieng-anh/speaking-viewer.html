@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Speaking — Trần Bình</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <!-- Markdown renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+
+  <!-- Sidebar: copy y hệt vocabulary-viewer.html -->
+  <!-- (dán sidebar giống Vocabulary Viewer) -->
+
+  <main class="main">
+    <article class="article">
+      <div id="content" class="md-content">
+        Đang tải nội dung...
+      </div>
+
+      <footer class="post-footer">
+        ← <a href="speaking.html">Quay lại Speaking</a>
+      </footer>
+    </article>
+  </main>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
+
+  if (file) {
+    fetch(file)
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById("content").innerHTML = marked.parse(md);
+      })
+      .catch(() => {
+        document.getElementById("content").innerHTML =
+          "<p>Không tải được nội dung.</p>";
+      });
+  } else {
+    document.getElementById("content").innerHTML =
+      "<p>Không có bài nào được chọn.</p>";
+  }
+</script>
+</body>
+</html>
