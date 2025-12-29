@@ -137,6 +137,15 @@ Hãy nói về gia đình bạn:
 
 ---
 
+## 🔊 Nghe & xem mẫu (Talking about Family)
+
+- Video nói về gia đình (British Council):  
+  https://www.youtube.com/watch?v=9k6m1PZ1k0Y
+
+📌 Nghe mẫu → nói về gia đình của bạn.
+
+---
+
 ## Hoàn tất Speaking A1
 
 🎉 Chúc mừng!  
