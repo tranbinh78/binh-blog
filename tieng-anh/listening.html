@@ -10,8 +10,35 @@
 <body>
 <div class="wrapper">
 
-  <!-- Sidebar (copy từ vocabulary.html để khỏi sai path) -->
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../assets/avatar.jpg" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="color:var(--muted);font-size:13px">Personal website</div>
+      </div>
+    </div>
 
+    <ul class="nav">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a href="../gallery.html">📷 Gallery</a></li>
+      <li><a href="../about.html">👤 About me</a></li>
+      <li><a href="../contact.html">✉️ Contact</a></li>
+    </ul>
+
+    <!-- Dark mode -->
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="darkToggle">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider"></span>
+      </label>
+      <span id="themeLabel">🌙 Dark Mode</span>
+    </div>
+  </aside>
+  
   <main class="main">
     <div class="header-row">
       <div>
@@ -337,6 +364,25 @@
       : "📄 Transcript";
   });
 });
+</script>
+
+<!-- Dark mode script -->
+<script>
+  const toggle = document.getElementById("darkToggle");
+  const label = document.getElementById("themeLabel");
+  const root = document.documentElement;
+
+  if (localStorage.getItem("theme") === "dark") {
+    root.classList.add("dark");
+    toggle.checked = true;
+    label.textContent = "☀️ Light Mode";
+  }
+
+  toggle.addEventListener("change", () => {
+    root.classList.toggle("dark", toggle.checked);
+    label.textContent = toggle.checked ? "☀️ Light Mode" : "🌙 Dark Mode";
+    localStorage.setItem("theme", toggle.checked ? "dark" : "light");
+  });
 </script>
 </body>
 </html>
