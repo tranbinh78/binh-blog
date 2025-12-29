@@ -81,7 +81,7 @@ Hội thoại ngắn là những đoạn nói:
 
 ---
 
-## 7. Cách luyện hội thoại ngắn (A1)
+## 7. ✍️ Cách luyện hội thoại ngắn (A1)
 
 ### Bước 1: Đọc theo vai
 - Đọc cả A và B
@@ -98,7 +98,7 @@ Hội thoại ngắn là những đoạn nói:
 
 ---
 
-## 8. Bài luyện nhanh (tự làm)
+## 8. 🗣️ Bài luyện nhanh (tự làm)
 
 Tự nói thành hội thoại:
 
