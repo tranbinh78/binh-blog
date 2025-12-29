@@ -139,5 +139,14 @@ Ví dụ trong câu:
 
 ---
 
+## 🔊 Nghe & xem mẫu (Rhythm & Linking)
+
+- Video nối âm & nhịp điệu (Rachel’s English):  
+  https://www.youtube.com/watch?v=0r9k8g4g8Wc
+
+📌 Nghe → bắt chước → nói liền mạch.
+
+---
+
 ## Bài tiếp theo
 ➡️ **Speaking 05 – Common Daily Phrases (A1)**
