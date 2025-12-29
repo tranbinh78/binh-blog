@@ -1011,7 +1011,7 @@ input:checked + .slider:before {
 /* ===== Transcript slide animation ===== */
 
 .transcript-box {
-  max-height: 0;
+  max-height: none;
   overflow: hidden;
   opacity: 0;
   transition: 
@@ -1095,6 +1095,3 @@ input:checked + .slider:before {
   overflow: visible;
 }
 
-.transcript-box {
-  max-height: none;
-}
