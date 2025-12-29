@@ -1027,73 +1027,7 @@ input:checked + .slider:before {
   opacity: 1;
 }
 
-/* ===== Alphabet figure ===== */
-
-.alphabet-figure {
-  margin: 16px 0 24px;
-  text-align: center;
-}
-
-.alphabet-figure img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-.alphabet-figure figcaption {
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* ================================
-   SPEAKING PAGE (Lesson layout)
-================================ */
-
-/* Cho phép trang Speaking cuộn tự nhiên */
-.speaking-page {
-  overflow: visible;
-}
-
-/* Nội dung bài học */
-.speaking-page .article {
-  max-width: 900px;
-  margin: 0 auto 48px;
-  padding: 24px 28px;
-  background: var(--card);
-  border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-
-  /* QUAN TRỌNG */
-  height: auto;
-  overflow: visible;
-}
-
-/* Heading trong bài Speaking */
-.speaking-page h4,
-.speaking-page h5 {
-  margin-top: 28px;
-  margin-bottom: 12px;
-}
-
-/* Danh sách phát âm */
-.speaking-page ul {
-  padding-left: 20px;
-  margin: 12px 0 20px;
-}
-
-.speaking-page li {
-  margin-bottom: 6px;
-}
-
-/* Đảm bảo ảnh (bảng Alphabet) không bị cắt */
-.speaking-page img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.listening-card,
-.speaking-card {
-  overflow: visible;
+.layout-english .sidebar {
+  width: 260px;
+  flex-shrink: 0;
 }
