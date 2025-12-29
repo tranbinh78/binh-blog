@@ -999,6 +999,16 @@ input:checked + .slider:before {
   background: #111827;
 }
 
+.path-note {
+  margin: 8px 0 16px;
+  font-size: 14px;
+  color: var(--muted);
+  background: #f8f9ff;
+  padding: 10px 14px;
+  border-left: 4px solid #5b6cff;
+  border-radius: 6px;
+}
+
 .transcript-content p {
   margin: 6px 0;
 }
