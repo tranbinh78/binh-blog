@@ -39,6 +39,7 @@ body {
    LAYOUT
 ============================= */
 .wrapper {
+  min-height: 100vh;
   max-width: var(--max-width);
   margin: 24px auto;
   display: flex;
@@ -149,6 +150,8 @@ a:hover::after {
 ============================= */
 .main {
   flex: 1;
+  overflow-y: auto;
+  padding-bottom: 40px; /* tránh bị sát đáy */
 }
 
 .header-row {
@@ -1085,4 +1088,13 @@ input:checked + .slider:before {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.listening-card,
+.speaking-card {
+  overflow: visible;
+}
+
+.transcript-box {
+  max-height: none;
 }
