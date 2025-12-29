@@ -30,7 +30,7 @@ Bảng dưới đây cho biết:
 
 > 📌 Học để **nhận biết**, không dùng khi phát âm từ.
 
-![Bảng chữ cái tiếng Anh và phiên âm](../assets/images/bang-phien-am-chu-cai-tieng-anh.png)
+![Bảng chữ cái tiếng Anh và phiên âm](../assets/bang-phien-am-chu-cai-tieng-anh.png)
 
 ---
 
