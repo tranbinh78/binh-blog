@@ -80,7 +80,7 @@ Một số từ **viết giống nhau nhưng khác trọng âm**:
 
 ---
 
-## 5. Cách luyện Word Stress (rất quan trọng)
+## 5. ✍️ Cách luyện Word Stress (rất quan trọng)
 
 ### Bước 1: Nghe & bắt chước
 - Nghe người bản xứ đọc
@@ -96,7 +96,7 @@ Một số từ **viết giống nhau nhưng khác trọng âm**:
 
 ---
 
-## 6. Bài luyện nhanh (tự làm)
+## 6. 🗣️ Bài luyện nhanh (tự làm)
 
 Đọc to và nhấn đúng trọng âm:
 
