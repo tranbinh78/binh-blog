@@ -100,7 +100,7 @@ Ví dụ:
 
 ---
 
-## 7. Cách luyện nói về gia đình (A1)
+## 7. ✍️ Cách luyện nói về gia đình (A1)
 
 ### Bước 1: Viết ra ý
 - Bao nhiêu người
@@ -117,7 +117,7 @@ Ví dụ:
 
 ---
 
-## 8. Bài luyện nhanh (tự làm)
+## 8. 🗣️ Bài luyện nhanh (tự làm)
 
 Hãy nói về gia đình bạn:
 
