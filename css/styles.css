@@ -1106,25 +1106,24 @@ input:checked + .slider:before {
   border-radius: 6px;
 }
 
-
 /* =========================
-   FIX Vocabulary timeline
+   Vocabulary – disable timeline
    ========================= */
 
-/* Tắt thanh timeline xanh */
-.vocab-step::before {
+.vocab-step::before,
+.vocab-step::after {
   content: none !important;
 }
 
-/* Layout ngang gọn gàng */
+/* đảm bảo không có thanh giả */
 .vocab-step {
+  background: #fff;
   display: flex;
-  align-items: flex-start;
   gap: 16px;
-  position: relative;
+  align-items: flex-start;
 }
 
-/* Số tròn bên trái */
+/* số tròn */
 .vocab-step .step-number {
   width: 36px;
   height: 36px;
@@ -1137,5 +1136,4 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2px;
 }
