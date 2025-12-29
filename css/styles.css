@@ -155,8 +155,6 @@ a:hover::after {
    MAIN CONTENT
 ============================= */
 .main {
-  flex: 1;
-  height: auto;
   overflow: visible;
 }
 .header-row {
