@@ -132,5 +132,13 @@ Hãy tự nói:
 
 ---
 
+## 🔊 Nghe & xem mẫu (Daily Situations)
+
+- Video tình huống hằng ngày (British Council):  
+  https://www.youtube.com/watch?v=8a0K5o1y1Z0
+
+📌 Nghe theo tình huống → đổi chi tiết → nói lại.
+---
+
 ## Bài tiếp theo
 ➡️ **Speaking 08 – Talking about Yourself (A1)**
