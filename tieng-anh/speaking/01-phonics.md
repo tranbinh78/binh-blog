@@ -45,7 +45,7 @@ Bảng dưới đây cho biết:
 - 🔠 Interactive IPA Chart (click nghe từng ký hiệu):  
   https://www.ipachart.com/
 
-📌 Nghe từng âm → bắt chước → đọc to.
+🗣️ Nghe từng âm → bắt chước → đọc to.
 
 ---
 
@@ -90,7 +90,7 @@ Nguyên âm được phát âm khi **luồng hơi đi ra tự do**.
 
 ---
 
-## 5. Luyện theo cặp âm dễ nhầm
+## 5. ✍️ Luyện theo cặp âm dễ nhầm
 
 ### Cặp 1
 - sit → /sɪt/
