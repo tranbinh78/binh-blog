@@ -102,7 +102,7 @@ Ví dụ trong câu:
 
 ---
 
-## 7. Cách luyện Rhythm & Linking (A1)
+## 7. ✍️ Cách luyện Rhythm & Linking (A1)
 
 ### Bước 1: Gạch chân
 - Gạch chân từ được nhấn
@@ -118,7 +118,7 @@ Ví dụ trong câu:
 
 ---
 
-## 8. Bài luyện nhanh (tự làm)
+## 8. 🗣️ Bài luyện nhanh (tự làm)
 
 Đọc to và nối âm:
 
