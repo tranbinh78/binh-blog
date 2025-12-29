@@ -157,5 +157,13 @@ Hãy tự nói về bạn:
 
 ---
 
+## 🔊 Nghe & xem mẫu (Introduce Yourself)
+
+- Video giới thiệu bản thân đơn giản (British Council):  
+  https://www.youtube.com/watch?v=7F2m7QXQk8M
+
+📌 Nghe mẫu → nói theo → thay thông tin cá nhân.
+---
+
 ## Bài tiếp theo
 ➡️ **Speaking 09 – Daily Routine (A1)**
