@@ -117,6 +117,16 @@ Một số từ **viết giống nhau nhưng khác trọng âm**:
 - Luôn kiểm tra **IPA + dấu ˈ**
 
 ---
+## 🔊 Nghe & xem mẫu (Word Stress)
+
+- Nghe trọng âm trong từ (Cambridge Dictionary):  
+  https://dictionary.cambridge.org/help/phonetics
+
+- Video minh hoạ trọng âm từ (Rachel’s English):  
+  https://www.youtube.com/watch?v=Y1J8QxZsKqY
+
+📌 Chú ý vị trí nhấn (ˈ) trong IPA.
+---
 
 ## Bài tiếp theo
 ➡️ **Speaking 03 – Sentence Stress & Rhythm**
