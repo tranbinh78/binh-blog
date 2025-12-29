@@ -42,10 +42,10 @@ body {
    LAYOUT
 ============================= */
 .wrapper {
+  display: flex;
   min-height: 100vh;
   max-width: var(--max-width);
   margin: 24px auto;
-  display: flex;
   gap: var(--gap);
   padding: 16px;
  }
@@ -154,7 +154,10 @@ a:hover::after {
 .main {
   flex: 1;
  }
-
+.main {
+  overflow: visible;
+  height: auto;
+}
 .header-row {
   display: flex;
   justify-content: space-between;
