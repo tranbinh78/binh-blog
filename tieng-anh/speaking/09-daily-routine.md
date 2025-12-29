@@ -164,5 +164,13 @@ Hãy nói về một ngày của bạn:
 
 ---
 
+## 🔊 Nghe & xem mẫu (Daily Routine)
+
+- Video nói về routine hằng ngày (British Council):  
+  https://www.youtube.com/watch?v=0ZQx7x0Xy1Q
+
+📌 Nghe → nói theo trình tự sáng – chiều – tối.
+---
+
 ## Bài tiếp theo
 ➡️ **Speaking 10 – Talking about Your Family (A1)**
