@@ -10,42 +10,86 @@
 <body>
 <div class="wrapper">
 
-  <!-- Sidebar copy từ vocabulary.html -->
+  <!-- Sidebar (copy từ vocabulary.html cho đúng path) -->
 
   <main class="main">
     <div class="header-row">
       <div>
         <h2 class="site-title">Speaking</h2>
-        <p class="lead">Rèn luyện kỹ năng nói tiếng Anh.</p>
+        <p class="lead">Luyện nói tiếng Anh từ những tình huống đơn giản.</p>
       </div>
     </div>
 
-    <section class="article english">
+    <section class="article">
 
-      <h3>Mục tiêu</h3>
-      <p>
-        Trang này dùng để ghi lại quá trình luyện nói,
-        chủ đề nói và các phương pháp cải thiện phát âm.
-      </p>
+      <h3 style="margin-bottom:16px;">Danh sách bài Speaking</h3>
 
-      <h3>Cách tôi luyện Speaking</h3>
-      <ul>
-        <li>Nói trước gương</li>
-        <li>Shadowing theo audio</li>
-        <li>Ghi âm và nghe lại</li>
-        <li>Luyện nói theo chủ đề</li>
-      </ul>
+      <div class="listening-grid">
 
-      <h3>Nội dung sẽ bổ sung</h3>
-      <ul>
-        <li>Danh sách chủ đề Speaking</li>
-        <li>Bài nói mẫu</li>
-        <li>Nhật ký luyện nói</li>
-      </ul>
+        <!-- Speaking Card 01 -->
+        <div class="listening-card">
+          <h4>Speaking 01 – Free time</h4>
+          <div class="level">A1</div>
+          <p class="desc">
+            Luyện nói về các hoạt động rảnh rỗi hằng ngày.
+          </p>
+
+          <button class="transcript-toggle" data-target="speaking-01">
+            🗣️ Speaking script
+          </button>
+
+          <div class="transcript-box" id="speaking-01">
+            <div class="transcript-content">
+
+              <p><strong>Prompt:</strong></p>
+              <ul>
+                <li>What do you do in your free time?</li>
+                <li>Do you play sports?</li>
+                <li>Do you go out in the evening?</li>
+              </ul>
+
+              <p><strong>Sample answer:</strong></p>
+              <p>
+                In my free time, I like watching TV and listening to music.
+                On the weekend, I play football with my friends.
+                Sometimes I go out in the evening and drink coffee.
+              </p>
+
+              <p><strong>Practice tip:</strong></p>
+              <ul>
+                <li>Nói chậm, rõ từng câu</li>
+                <li>Ghi âm và nghe lại</li>
+                <li>Lặp lại 2–3 lần</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaking Card 02 (mẫu để thêm sau) -->
+        <!-- Copy block trên và đổi nội dung -->
+
+      </div>
 
     </section>
   </main>
 </div>
+
+<script>
+  document.querySelectorAll(".transcript-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-target");
+      const box = document.getElementById(id);
+      if (!box) return;
+
+      box.classList.toggle("open");
+
+      btn.textContent = box.classList.contains("open")
+        ? "🗣️ Ẩn script"
+        : "🗣️ Speaking script";
+    });
+  });
+</script>
 
 </body>
 </html>
