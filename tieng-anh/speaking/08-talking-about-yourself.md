@@ -116,7 +116,7 @@ Ví dụ:
 
 ---
 
-## 8. Cách luyện hiệu quả (A1)
+## 8. ✍️ Cách luyện hiệu quả (A1)
 
 ### Bước 1: Chuẩn bị ý
 - Tên
@@ -135,7 +135,7 @@ Ví dụ:
 
 ---
 
-## 9. Bài luyện nhanh (tự làm)
+## 9. 🗣️ Bài luyện nhanh (tự làm)
 
 Hãy tự nói về bạn:
 
