@@ -24,6 +24,7 @@
 html, body { height: 100%; }
 
 body {
+  overflow-y: auto;   /* ✅ cho phép cuộn */
   margin: 0;
   font-family: var(--font-sans);
   color: var(--accent);
@@ -39,6 +40,7 @@ body {
    LAYOUT
 ============================= */
 .wrapper {
+  display: flex;
   min-height: 100vh;
   max-width: var(--max-width);
   margin: 24px auto;
@@ -151,7 +153,7 @@ a:hover::after {
 .main {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: 40px; /* tránh bị sát đáy */
+  padding-bottom: 60px; /* tránh bị sát đáy */
 }
 
 .header-row {
@@ -1094,4 +1096,3 @@ input:checked + .slider:before {
 .speaking-card {
   overflow: visible;
 }
-
