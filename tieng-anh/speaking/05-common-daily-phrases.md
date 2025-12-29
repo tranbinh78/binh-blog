@@ -156,5 +156,16 @@ Chú ý:
 
 ---
 
+## 🔊 Nghe & xem mẫu (Daily Phrases)
+
+- Nghe phát âm từng phrase (Cambridge Dictionary):  
+  https://dictionary.cambridge.org/
+
+- Video phrases đời sống (British Council):  
+  https://www.youtube.com/watch?v=6o0G8BBcZ5c
+
+📌 Chọn 5–7 câu → nghe → nói lại.
+---
+
 ## Bài tiếp theo
 ➡️ **Speaking 06 – Short Daily Conversations (A1)**
