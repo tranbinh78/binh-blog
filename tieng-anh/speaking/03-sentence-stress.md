@@ -131,6 +131,14 @@ Ví dụ:
 - Sentence stress giúp bạn:
   - nói tự nhiên hơn
   - nghe hiểu tốt hơn
+---
+
+## 🔊 Nghe & xem mẫu (Sentence Stress)
+
+- Video giải thích sentence stress (British Council):  
+  https://www.youtube.com/watch?v=G0vZfJvZk1M
+
+📌 Nghe nhịp lên – xuống, không đọc đều từng chữ.
 
 ---
 
