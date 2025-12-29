@@ -76,8 +76,6 @@
         <li><a href="about.html">👤 About me</a></li>
         <li><a href="contact.html">✉️ Contact</a></li>
       </ul>
-
-     </div>
     </aside>
 
     <!-- Main content -->
@@ -157,58 +155,22 @@
         return res.text();
       })
       .then(md => {
-      const content = document.getElementById("content");
+        document.getElementById("content").innerHTML =
+          marked.parse(md);
 
-      // 1. Render Markdown
-        content.innerHTML = marked.parse(md);
-
-      // 2. Gắn nút làm bài kiểm tra
+        // QUAN TRỌNG: gọi sau khi render xong
         injectQuizButton();
 
-      // 3. Gắn thông tin tiến độ (nếu có)
-        injectProgressInfo();
-
-      // 4. Đặt lại tiêu đề trang
         const name = getSlug();
         document.getElementById("page-title").innerText =
-        name.replace(/-/g, " ").toUpperCase();
-        })
+          name.replace(/-/g, " ").toUpperCase();
+      })
       .catch(() => {
         document.getElementById("content").innerText =
           "Không thể tải nội dung Markdown.";
       });
   }
-
- function injectProgressInfo() {
-    const slug = getSlug();
-    if (!slug) return;
-
-    const key = `quiz-progress-${slug}`;
-    const raw = localStorage.getItem(key);
-    if (!raw) return;
-
-    const data = JSON.parse(raw);
-
-    const box = document.createElement("div");
-    box.style = `
-      margin:32px 0;
-      padding:16px 18px;
-      background:#f1f5ff;
-      border-left:4px solid #7c7cff;
-      border-radius:8px;
-      font-size:15px;
-    `;
-
-    box.innerHTML = `
-      <b>📊 Tiến độ bài này</b><br>
-      • Số lần làm: <b>${data.attempts}</b><br>
-      • Điểm cao nhất: <b>${data.best}</b><br>
-      • Điểm gần nhất: <b>${data.last}</b>
-    `;
-
-    document.getElementById("content").appendChild(box);
-  }
-  
 </script>
+
 </body>
 </html>
