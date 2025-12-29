@@ -1105,3 +1105,30 @@ input:checked + .slider:before {
   border-left: 4px solid #5b6cff;
   border-radius: 6px;
 }
+
+/* =========================
+   FIX Vocabulary step number
+   ========================= */
+
+.vocab-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.vocab-step .step-number {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: #4f46e5;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vocab-step::before {
+  display: none !important;
+}
