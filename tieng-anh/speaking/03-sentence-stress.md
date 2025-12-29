@@ -89,7 +89,7 @@ Nhấn:
 
 ---
 
-## 6. Cách luyện Sentence Stress (A1)
+## 6. 🗣️ Cách luyện Sentence Stress (A1)
 
 ### Bước 1: Đọc chậm – gạch chân
 - Gạch chân **từ quan trọng**
@@ -111,7 +111,7 @@ Ví dụ:
 
 ---
 
-## 7. Bài luyện nhanh (tự làm)
+## 7. ✍️ Bài luyện nhanh (tự làm)
 
 Đọc to và nhấn đúng:
 
