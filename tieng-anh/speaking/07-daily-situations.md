@@ -93,7 +93,7 @@
 
 ---
 
-## 8. Cách luyện theo tình huống (A1)
+## 8. ✍️ Cách luyện theo tình huống (A1)
 
 ### Bước 1: Đọc theo mẫu
 - Đọc từng đoạn
@@ -111,7 +111,7 @@
 
 ---
 
-## 9. Bài luyện nhanh (tự làm)
+## 9. 🗣️ Bài luyện nhanh (tự làm)
 
 Hãy tự nói:
 
