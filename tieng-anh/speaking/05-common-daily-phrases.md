@@ -118,7 +118,7 @@ Chú ý:
 
 ---
 
-## 8. Cách luyện hiệu quả (A1)
+## 8. ✍️ Cách luyện hiệu quả (A1)
 
 ### Bước 1: Đọc to
 - Đọc từng cụm câu
@@ -135,7 +135,7 @@ Chú ý:
 
 ---
 
-## 9. Bài luyện nhanh (tự làm)
+## 9. 🗣️ Bài luyện nhanh (tự làm)
 
 Đọc to và trả lời:
 
