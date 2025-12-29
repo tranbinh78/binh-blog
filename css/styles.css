@@ -1105,3 +1105,55 @@ input:checked + .slider:before {
   border-radius: 6px;
 }
 
+/* ============================
+   VOCABULARY / SPEAKING – DARK MODE SUPPORT
+============================= */
+
+/* Card nền chính */
+.dark .learning-box,
+.dark .article {
+  background: #1e293b;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+}
+
+/* Mỗi item (01, 02, 03...) */
+.dark .lesson-item {
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Hover */
+.dark .lesson-item:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+}
+
+/* Item đang active */
+.dark .lesson-item.active {
+  background: linear-gradient(90deg, #1e293b, #0f172a);
+  border-left: 4px solid #818cf8;
+}
+
+/* Số tròn (01, 02...) */
+.dark .lesson-num {
+  background: #6366f1;
+  color: #fff;
+}
+
+/* Mô tả nhỏ */
+.dark .lesson-item p {
+  color: #cbd5f5;
+}
+
+/* Path note */
+.dark .path-note {
+  background: rgba(99,102,241,0.15);
+  color: #e5e7eb;
+  border-left-color: #818cf8;
+}
+
+/* Divider nếu có */
+.dark .section-divider {
+  border-top-color: rgba(255,255,255,0.12);
+}
+
