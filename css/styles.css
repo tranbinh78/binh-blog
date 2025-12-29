@@ -1137,3 +1137,33 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: center;
 }
+
+/* =========================
+   VOCABULARY FIX OVERRIDE
+   ========================= */
+
+.vocab-page .lesson-num,
+.vocab-page .step-number {
+  all: unset;
+}
+
+.vocab-page .learning-step,
+.vocab-page .step-content {
+  all: unset;
+  display: block;
+}
+
+.vocab-page .lesson-card {
+  display: block;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: #f9fafb;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.vocab-page .lesson-card:hover {
+  background: #eef2ff;
+}
