@@ -36,6 +36,17 @@ Bảng dưới đây cho biết:
   <source src="../assets/video/the-alphabet-song.mp4" type="video/mp4">
   Trình duyệt của bạn không hỗ trợ video.
 </video>
+
+## 🔊 Nghe & xem mẫu (IPA chuẩn)
+
+- 🇬🇧 Bảng IPA + audio từng âm (British Council):  
+  https://www.britishcouncil.org/school-resources/find/sounds
+
+- 🔠 Interactive IPA Chart (click nghe từng ký hiệu):  
+  https://www.ipachart.com/
+
+📌 Nghe từng âm → bắt chước → đọc to.
+
 ---
 
 ## 3. Phụ âm (Consonants)
