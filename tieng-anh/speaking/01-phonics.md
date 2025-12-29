@@ -32,6 +32,10 @@ Bảng dưới đây cho biết:
 
 ![Bảng chữ cái tiếng Anh và phiên âm](../assets/bang-phien-am-chu-cai-tieng-anh.png)
 
+<video controls width="100%" style="max-width:720px; border-radius:12px;">
+  <source src="../assets/video/the-alphabet-song.mp4" type="video/mp4">
+  Trình duyệt của bạn không hỗ trợ video.
+</video>
 ---
 
 ## 3. Phụ âm (Consonants)
