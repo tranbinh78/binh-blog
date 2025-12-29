@@ -1096,3 +1096,23 @@ input:checked + .slider:before {
 .speaking-card {
   overflow: visible;
 }
+
+html, body {
+  height: auto;
+  overflow-y: auto;
+}
+
+.wrapper {
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.article,
+.speaking-card,
+.listening-card {
+  overflow: visible;
+}
