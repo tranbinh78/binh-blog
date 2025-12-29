@@ -124,7 +124,7 @@ Ví dụ:
 
 ---
 
-## 8. Cách luyện nói Daily Routine (A1)
+## 8. ✍️ Cách luyện nói Daily Routine (A1)
 
 ### Bước 1: Viết ra 5 việc
 - Thức dậy
@@ -143,7 +143,7 @@ Ví dụ:
 
 ---
 
-## 9. Bài luyện nhanh (tự làm)
+## 9. 🗣️ Bài luyện nhanh (tự làm)
 
 Hãy nói về một ngày của bạn:
 
