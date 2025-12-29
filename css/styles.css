@@ -38,13 +38,16 @@ body {
   font-size: 16px;
 }
 
-
 /* ============================
    LAYOUT
 ============================= */
 .wrapper {
-  display: flex;
   min-height: 100vh;
+  max-width: var(--max-width);
+  margin: 24px auto;
+  display: flex;
+  gap: var(--gap);
+  padding: 16px;
  }
 
 /* ============================
