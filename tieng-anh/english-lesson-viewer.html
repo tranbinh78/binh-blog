@@ -64,9 +64,8 @@
 </div>
 
 <script>
-  // Lấy param ?lesson=A1.1
   const params = new URLSearchParams(window.location.search);
-  const lesson = params.get("lesson");
+  const lesson = params.get("file");
 
   if (!lesson) {
     document.getElementById("lesson-content").innerHTML =
@@ -80,12 +79,14 @@
         return res.text();
       })
       .then(md => {
-        document.getElementById("lesson-content").innerHTML = marked.parse(md);
+        document.getElementById("lesson-content").innerHTML =
+          marked.parse(md);
 
-        // Lấy title từ H1 trong markdown nếu có
+        // Lấy title từ H1 trong markdown
         const h1 = document.querySelector("#lesson-content h1");
         if (h1) {
-          document.getElementById("lesson-title").textContent = h1.textContent;
+          document.getElementById("lesson-title").textContent =
+            h1.textContent;
         }
       })
       .catch(() => {
