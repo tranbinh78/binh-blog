@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English Lesson | Trần Bình</title>
+
+  <!-- CSS dùng chung -->
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <!-- Markdown renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+
+  <!-- Sidebar (GIỮ GIỐNG speaking-viewer.html) -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="color:var(--muted);font-size:13px">Personal website</div>
+      </div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a href="../gallery.html">📷 Gallery</a></li>
+      <li><a href="../about.html">👤 About me</a></li>
+      <li><a href="../contact.html">✉️ Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Header -->
+    <div class="header-row">
+      <div>
+        <h2 class="site-title" id="lesson-title">English Lesson</h2>
+        <p class="lead" id="lesson-desc">
+          Bài học tiếng Anh theo lộ trình A1 → B1.
+        </p>
+      </div>
+    </div>
+
+    <!-- Lesson content -->
+    <section class="article">
+      <div id="lesson-content" class="md-content">
+        <!-- Markdown sẽ được render ở đây -->
+      </div>
+    </section>
+
+    <!-- Footer navigation -->
+    <div style="margin-top:32px; display:flex; gap:12px;">
+      <a href="english-lessons.html" class="btn-secondary">← Quay lại lộ trình</a>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  // Lấy param ?lesson=A1.1
+  const params = new URLSearchParams(window.location.search);
+  const lesson = params.get("lesson");
+
+  if (!lesson) {
+    document.getElementById("lesson-content").innerHTML =
+      "<p>Không tìm thấy bài học.</p>";
+  } else {
+    const filePath = `lessons/${lesson}.md`;
+
+    fetch(filePath)
+      .then(res => {
+        if (!res.ok) throw new Error("Không tìm thấy file");
+        return res.text();
+      })
+      .then(md => {
+        document.getElementById("lesson-content").innerHTML = marked.parse(md);
+
+        // Lấy title từ H1 trong markdown nếu có
+        const h1 = document.querySelector("#lesson-content h1");
+        if (h1) {
+          document.getElementById("lesson-title").textContent = h1.textContent;
+        }
+      })
+      .catch(() => {
+        document.getElementById("lesson-content").innerHTML =
+          "<p>Không tải được nội dung bài học.</p>";
+      });
+  }
+</script>
+
+</body>
+</html>
