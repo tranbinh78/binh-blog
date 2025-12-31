@@ -29,7 +29,7 @@
           <li><a href="contact.html">✉️ Contact</a></li>
       </ul>
 
-    <!-- Nút chuyển Dark Mode -->
+    <!-- Nút Dark Mode -->
     <div class="theme-switch-wrapper">
         <label class="theme-switch" for="darkToggle">
           <input type="checkbox" id="darkToggle">
@@ -108,12 +108,12 @@
     </main>
   </div>
 
+  // Script Dark mode
  <script>
   const toggle = document.getElementById("darkToggle");
   const label = document.getElementById("themeLabel");
   const root = document.documentElement;
-
-  // Load trạng thái đã lưu
+  
   if (localStorage.getItem("theme") === "dark") {
     root.classList.add("dark");
     toggle.checked = true;
