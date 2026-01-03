@@ -76,37 +76,33 @@
   const params = new URLSearchParams(window.location.search);
   const lesson = params.get("file");
 
+  const contentEl = document.getElementById("lesson-content");
+  const titleEl = document.getElementById("lesson-title");
+
   if (!lesson) {
-    document.getElementById("lesson-content").innerHTML =
-    "<p>Không tìm thấy bài học.</p>";
+    contentEl.innerHTML = "<p>Không tìm thấy bài học.</p>";
   } else {
     const filePath = `lessons/${lesson}.md`;
 
     fetch(filePath)
       .then(res => {
-        if (!res.ok) throw new Error("Không tìm thấy file");
+        if (!res.ok) throw new Error("File not found");
         return res.text();
       })
       .then(md => {
-        document.getElementById("lesson-content").innerHTML =
-          marked.parse(md);
+        contentEl.innerHTML = marked.parse(md);
 
-        // Lấy title từ H1 trong markdown
-        const h1 = document.querySelector("#lesson-content h1");
-        if (h1) {
-          document.getElementById("lesson-title").textContent =
-            h1.textContent;
-        }
+        // Lấy H1 làm tiêu đề
+        const h1 = contentEl.querySelector("h1");
+        if (h1) titleEl.textContent = h1.textContent;
 
         // ===== SAVE PROGRESS (CHỈ KHI LOAD THÀNH CÔNG) =====
-        let progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
-            progress[lesson] = true;
-            localStorage.setItem("lessonProgress", JSON.stringify(progress));
-        })
+        const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
+        progress[lesson] = true;
+        localStorage.setItem("lessonProgress", JSON.stringify(progress));
       })
       .catch(() => {
-        document.getElementById("lesson-content").innerHTML =
-          "<p>Không tải được nội dung bài học.</p>";
+        contentEl.innerHTML = "<p>Không tải được nội dung bài học.</p>";
       });
   }
 </script>
