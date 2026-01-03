@@ -660,5 +660,15 @@
   });
 </script>
 
+<script>
+  const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
+
+  document.querySelectorAll(".lesson-link").forEach(link => {
+    const lesson = link.dataset.lesson;
+    if (progress[lesson]) {
+      link.classList.add("done");
+    }
+  });
+</script> 
 </body>
 </html>
