@@ -97,6 +97,12 @@
           document.getElementById("lesson-title").textContent =
             h1.textContent;
         }
+
+        // ===== SAVE PROGRESS (CHỈ KHI LOAD THÀNH CÔNG) =====
+        let progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
+            progress[lesson] = true;
+            localStorage.setItem("lessonProgress", JSON.stringify(progress));
+        })
       })
       .catch(() => {
         document.getElementById("lesson-content").innerHTML =
