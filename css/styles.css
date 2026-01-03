@@ -1291,7 +1291,12 @@ input:checked + .slider:before {
 
 /* KHI ĐÃ HỌC */
 .lesson-link.done {
-  background: rgba(34,197,94,0.12);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.lesson-link.done .lesson-title {
+  text-decoration: line-through;
+  opacity: 0.85;
 }
 
 .lesson-link.done .lesson-check {
