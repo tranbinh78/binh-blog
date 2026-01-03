@@ -67,6 +67,11 @@
           </div>
         </summary>
 
+        <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit1-progress"></div>
+        </div>
+
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.1">A1.1 Alphabet & Sounds</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.2">A1.2 Basic Words</a></li>
@@ -86,6 +91,10 @@
             </div>
           </div>
         </summary>
+         <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit2-progress"></div>
+        </div>
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.5">A1.5 – Daily Life Vocabulary</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.6">A1.6 – Verb “to be”</a></li>
@@ -105,6 +114,10 @@
            </div>
           </div> 
         </summary>
+         <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit3-progress"></div>
+        </div>
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.9">A1.9 – People & Family</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.10">A1.10 – Jobs & Daily Roles</a></li>
@@ -124,6 +137,10 @@
            </div>
           </div>   
         </summary>
+         <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit4-progress"></div>
+        </div>
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.13">A1.13 – Time & Daily Routine</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.14">A1.14 – Places Around You</a></li>
@@ -143,6 +160,10 @@
            </div>
           </div>     
         </summary>
+         <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit5-progress"></div>
+        </div>
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.17">A1.17 – Common Food & Drinks</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.18">A1.18 – Ordering Food</a></li>
@@ -162,6 +183,10 @@
             </div>
           </div> 
         </summary>
+         <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit6-progress"></div>
+        </div>
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.21">A1.21 – Places in Town</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.22">A1.22 – Prepositions of Place</a></li>
@@ -181,6 +206,10 @@
            </div>
           </div>  
         </summary>
+         <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit7-progress"></div>
+        </div>
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.25">A1.25 – Hobbies & Free Time</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.26">A1.26 – Like & Don’t Like</a></li>
@@ -200,6 +229,10 @@
             </div>
           </div> 
         </summary>
+         <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit8-progress"></div>
+        </div>
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.29">A1.29 – Numbers & Prices</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.30">A1.30 – How Much & How Many</a></li>
@@ -219,6 +252,10 @@
             </div>
           </div>   
         </summary>
+         <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit9-progress"></div>
+        </div>
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.33">A1.33 – Travel Basics</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.34">A1.34 – Weather</a></li>
@@ -238,6 +275,10 @@
             </div>
           </div> 
         </summary>
+         <!-- PROGRESS ĐẶT Ở ĐÂY -->
+        <div class="progress">
+            <div class="progress-bar" id="unit10-progress"></div>
+        </div>
         <ul class="lesson-grid">
           <li><a href="english-lesson-viewer.html?file=A1.37">A1.37 – Survival Phrases</a></li>
           <li><a href="english-lesson-viewer.html?file=A1.38">A1.38 – Daily Situations</a></li>
@@ -249,6 +290,33 @@
     </section>
   </main>
 </div>
+
+// ==== LOAD PROGRESS ====
+<script>
+const unitLessons = {
+  unit1: ["A1.1.md", "A1.2.md", "A1.3.md", "A1.4.md"],
+  unit2: ["A1.5.md", "A1.6.md", "A1.7.md", "A1.8.md"],
+  unit3: ["A1.9.md", "A1.10.md", "A1.11.md", "A1.12.md"],
+  unit4: ["A1.13.md", "A1.14.md", "A1.15.md", "A1.16.md"],
+  unit5: ["A1.17.md", "A1.18.md", "A1.19.md", "A1.20.md"],
+  unit6: ["A1.21.md", "A1.22.md", "A1.23.md", "A1.24.md"],
+  unit7: ["A1.25.md", "A1.26.md", "A1.27.md", "A1.28.md"],
+  unit8: ["A1.29.md", "A1.30.md", "A1.31.md", "A1.32.md"],
+  unit9: ["A1.33.md", "A1.34.md", "A1.35.md", "A1.36.md"],
+  unit10: ["A1.37.md", "A1.38.md", "A1.39.md", "A1.40.md"],
+};
+
+const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
+
+Object.entries(unitLessons).forEach(([unit, lessons]) => {
+  const done = lessons.filter(l => progress[l]).length;
+  const percent = Math.round((done / lessons.length) * 100);
+
+  const bar = document.getElementById(`${unit}-progress`);
+  if (bar) bar.style.width = percent + "%";
+});
+</script>
+  
 <!-- Dark mode script -->
 <script>
   const toggle = document.getElementById("darkToggle");
