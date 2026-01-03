@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>English Lessons – A1 | Trần Bình</title>
+   <!-- CSS dùng chung -->
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
@@ -11,7 +12,35 @@
 <div class="wrapper">
 
   <!-- Sidebar giữ nguyên như các trang khác -->
+    <aside class="sidebar">
+    <div class="brand">
+      <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="color:var(--muted);font-size:13px">Personal website</div>
+      </div>
+    </div>
 
+    <ul class="nav">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a href="../gallery.html">📷 Gallery</a></li>
+      <li><a href="../about.html">👤 About me</a></li>
+      <li><a href="../contact.html">✉️ Contact</a></li>
+    </ul>
+
+    <!-- Nút Dark Mode -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="darkToggle">
+          <input type="checkbox" id="darkToggle">
+          <span class="slider"></span>
+        </label>
+        <span id="themeLabel">🌙 Dark Mode</span>
+    </div>
+  </aside>
+  
+  <!-- Main -->
   <main class="main">
 
     <div class="header-row">
@@ -169,5 +198,23 @@
     </section>
   </main>
 </div>
+<!-- Dark mode script -->
+<script>
+  const toggle = document.getElementById("darkToggle");
+  const label = document.getElementById("themeLabel");
+  const root = document.documentElement;
+
+  if (localStorage.getItem("theme") === "dark") {
+    root.classList.add("dark");
+    toggle.checked = true;
+    label.textContent = "☀️ Light Mode";
+  }
+
+  toggle.addEventListener("change", () => {
+    root.classList.toggle("dark", toggle.checked);
+    label.textContent = toggle.checked ? "☀️ Light Mode" : "🌙 Dark Mode";
+    localStorage.setItem("theme", toggle.checked ? "dark" : "light");
+  });
+</script>
 </body>
 </html>
