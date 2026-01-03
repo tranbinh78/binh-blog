@@ -1184,3 +1184,37 @@ input:checked + .slider:before {
 .lesson-list li {
   margin: 6px 0;
 }
+
+.unit-card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+}
+
+.unit-card summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.unit-header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.unit-icon {
+  font-size: 28px;
+}
+
+.unit-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.unit-header p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
