@@ -1055,17 +1055,16 @@ input:checked + .slider:before {
 .lesson-item {
   display: flex;
   gap: 16px;
-  padding: 14px 16px;
+  padding: 10px 12px;
   border-radius: 10px;
   text-decoration: none;
   color: inherit;
   background: #f9fafb;
-  transition: all 0.2s ease;
+ transition: 0.2s;
 }
 
 .lesson-item:hover {
-  background: #eef2ff;
-  transform: translateY(-2px);
+  background: rgba(79,124,255,0.12);
 }
 
 .lesson-num {
@@ -1158,11 +1157,11 @@ input:checked + .slider:before {
 }
 
 .unit {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 18px;
-  margin-bottom: 16px;
-  background: var(--card);
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255,255,255,0.06);
 }
 
 .unit summary {
@@ -1242,4 +1241,9 @@ input:checked + .slider:before {
 
 .lesson-grid a:hover {
   background: var(--primary-soft);
+}
+
+.lesson-review {
+  background: rgba(255,193,7,0.12);
+  border-left: 4px solid #ffc107;
 }
