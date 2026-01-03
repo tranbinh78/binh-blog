@@ -680,17 +680,6 @@
     `Hoàn thành ${done}/${a1Lessons.length} bài (${percent}%)`;
 </script>
   
-<!-- GẮN ✓ -->
-<script>
-  const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
-
-  document.querySelectorAll(".lesson-link").forEach(link => {
-    const lesson = link.dataset.lesson;
-    if (progress[lesson]) {
-      link.classList.add("done");
-    }
-  });
-</script>
   
 <!-- Dark mode script -->
 <script>
@@ -708,6 +697,18 @@
     root.classList.toggle("dark", toggle.checked);
     label.textContent = toggle.checked ? "☀️ Light Mode" : "🌙 Dark Mode";
     localStorage.setItem("theme", toggle.checked ? "dark" : "light");
+  });
+</script>
+
+<!-- GẮN ✓ -->
+<script>
+  const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
+
+  document.querySelectorAll(".lesson-link").forEach(link => {
+    const lesson = link.dataset.lesson;
+    if (progress[lesson]) {
+      link.classList.add("done");
+    }
   });
 </script>
 </body>
