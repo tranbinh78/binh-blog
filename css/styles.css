@@ -1264,29 +1264,13 @@ input:checked + .slider:before {
   transition: width 0.4s ease;
 }
 
-/* ===== LESSON DONE CHECK (FINAL - STABLE) ===== */
-
-.lesson-link {
-  position: relative;
-  padding-right: 36px;
-}
-
-.lesson-link.done {
-  background: rgba(34, 197, 94, 0.18);
-}
-
-.lesson-link.done::after {
-  content: "✓";
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #22c55e;
-  font-weight: 700;
-  font-size: 18px;
-}
-
+/* ===== Lesson completed (đã học) ===== */
 .lesson-link.done .lesson-title {
-  text-decoration: line-through;
-  opacity: 0.85;
+  color: #22c55e;            /* xanh lá */
+  font-weight: 600;
+}
+
+/* (tuỳ chọn) hiệu ứng nhẹ */
+.lesson-link.done {
+  background: rgba(34, 197, 94, 0.08);
 }
