@@ -1157,3 +1157,30 @@ input:checked + .slider:before {
   border-top-color: rgba(255,255,255,0.12);
 }
 
+.unit {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  background: var(--card);
+}
+
+.unit summary {
+  cursor: pointer;
+  font-size: 18px;
+  outline: none;
+}
+
+.unit-desc {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.lesson-list {
+  margin-top: 12px;
+  padding-left: 18px;
+}
+
+.lesson-list li {
+  margin: 6px 0;
+}
