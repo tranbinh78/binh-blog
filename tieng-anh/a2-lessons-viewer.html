@@ -72,14 +72,13 @@
 <!-- ===== SCRIPT: LOAD A2 LESSON ===== -->
 <script>
   const params = new URLSearchParams(window.location.search);
-  const file = params.get("file"); // ví dụ: A2.1
-
+  const file = params.get("file");
   const content = document.getElementById("lesson-content");
 
   if (!file) {
     content.innerHTML = "<p>Không có bài học.</p>";
   } else {
-    fetch(`lessons/a2/${file}.md`)
+    fetch(`lessons/${file}.md`)
       .then(res => {
         if (!res.ok) throw new Error("Not found");
         return res.text();
@@ -87,7 +86,6 @@
       .then(md => {
         content.innerHTML = marked.parse(md);
 
-        // lưu progress
         const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
         progress[file] = true;
         localStorage.setItem("lessonProgress", JSON.stringify(progress));
