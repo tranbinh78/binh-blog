@@ -1327,3 +1327,10 @@ input:checked + .slider:before {
   opacity: 0.4;
   pointer-events: none;
 }
+
+.lesson-counter {
+  align-self: center;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
