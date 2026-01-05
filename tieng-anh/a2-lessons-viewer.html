@@ -78,8 +78,8 @@
     document.getElementById("lesson-content").innerHTML =
     "<p>Không tìm thấy bài học.</p>";
   } else {
-    const filePath = `lessons/${lesson}.md`;
-
+    const filePath = `../lessons/${lesson}.md`;
+    
     fetch(filePath)
       .then(res => {
         if (!res.ok) throw new Error("Không tìm thấy file");
