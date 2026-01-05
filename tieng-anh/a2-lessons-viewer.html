@@ -78,7 +78,7 @@
   if (!lesson) {
     content.innerHTML = "<p>Không tìm thấy bài học.</p>";
   } else {
-    const filePath = `lessons/${lesson}.md`; // ⬅️ DÒNG QUYẾT ĐỊNH
+    const filePath = "lessons/" + lesson + ".md";
 
     fetch(filePath)
       .then(res => {
@@ -88,7 +88,6 @@
       .then(md => {
         content.innerHTML = marked.parse(md);
 
-        // Lưu tiến độ
         const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
         progress[lesson] = true;
         localStorage.setItem("lessonProgress", JSON.stringify(progress));
