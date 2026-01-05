@@ -411,5 +411,32 @@
     }
   });
 </script> 
+
+// ==== ĐÁNH DẤU ĐÃ HỌC " ✓" ====
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const progress = JSON.parse(
+    localStorage.getItem("lessonProgress") || "{}"
+  );
+
+  document.querySelectorAll("[data-lesson]").forEach(link => {
+    const lesson = link.dataset.lesson;
+
+    if (progress[lesson]) {
+      // tránh gắn trùng icon
+      if (!link.querySelector(".done-icon")) {
+        const icon = document.createElement("span");
+        icon.textContent = " ✓";
+        icon.className = "done-icon";
+        icon.style.color = "#4ade80";
+        icon.style.fontWeight = "600";
+        icon.style.marginLeft = "6px";
+
+        link.appendChild(icon);
+      }
+    }
+  });
+});
+</script>
 </body>
 </html>
