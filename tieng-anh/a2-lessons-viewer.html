@@ -78,7 +78,8 @@
   if (!lesson) {
     content.innerHTML = "<p>Không tìm thấy bài học.</p>";
   } else {
-    const filePath = "lessons/" + lesson + ".md"; // ✅ ĐÚNG
+    const filePath =
+      `https://raw.githubusercontent.com/tranbinh78/binh-blog/main/tieng-anh/lessons/${lesson}.md`;
 
     fetch(filePath)
       .then(res => {
