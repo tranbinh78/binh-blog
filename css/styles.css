@@ -1302,3 +1302,28 @@ input:checked + .slider:before {
   border-left: 4px solid #ffc107;
 }
 
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0 10px;
+}
+
+.lesson-nav-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.lesson-nav-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.lesson-nav-btn.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
