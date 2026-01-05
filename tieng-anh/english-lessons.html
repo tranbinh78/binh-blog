@@ -438,5 +438,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+/* Highlight bài đang học */
+<script>
+  const currentLesson = localStorage.getItem("currentLesson");
+
+  if (currentLesson) {
+    const links = document.querySelectorAll(".lesson-link");
+
+    links.forEach(link => {
+      const lessonCode = link.dataset.lesson;
+      if (lessonCode === currentLesson) {
+        link.classList.add("current");
+      }
+    });
+  }
+</script>
 </body>
 </html>
