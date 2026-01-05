@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English Lesson – A2 | Trần Bình</title>
+
+  <!-- CSS dùng chung -->
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="color:var(--muted);font-size:13px">Personal website</div>
+      </div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+      <li><a href="../cuoc-song.html">📝 Cuộc sống</a></li>
+      <li><a href="../gallery.html">📷 Gallery</a></li>
+      <li><a href="../about.html">👤 About me</a></li>
+      <li><a href="../contact.html">✉️ Contact</a></li>
+    </ul>
+
+    <!-- Dark mode -->
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="darkToggle">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider"></span>
+      </label>
+      <span id="themeLabel">🌙 Dark Mode</span>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <div class="header-row">
+      <div>
+        <h2 class="site-title">English Lesson – Level A2</h2>
+        <p class="lead">
+          Bài học tiếng Anh theo lộ trình A2 (CEFR).  
+          Học từng bài, có nghe – nói – đọc – viết.
+        </p>
+      </div>
+    </div>
+
+    <!-- Lesson content -->
+    <article class="lesson-content" id="lesson-content">
+      <div class="lesson-loading">Đang tải bài học…</div>
+    </article>
+
+    <div class="lesson-footer">
+      <a href="a2-lessons.html">← Quay lại lộ trình A2</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- ===== SCRIPT: LOAD A2 LESSON ===== -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file"); // ví dụ: A2.1
+
+  const content = document.getElementById("lesson-content");
+
+  if (!file) {
+    content.innerHTML = "<p>Không có bài học.</p>";
+  } else {
+    fetch(`lessons/a2/${file}.md`)
+      .then(res => {
+        if (!res.ok) throw new Error("Not found");
+        return res.text();
+      })
+      .then(md => {
+        content.innerHTML = marked.parse(md);
+
+        // lưu progress
+        const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
+        progress[file] = true;
+        localStorage.setItem("lessonProgress", JSON.stringify(progress));
+      })
+      .catch(() => {
+        content.innerHTML = "<p>❌ Không tải được nội dung bài học.</p>";
+      });
+  }
+</script>
+
+<!-- ===== DARK MODE ===== -->
+<script>
+  const toggle = document.getElementById("darkToggle");
+  const label = document.getElementById("themeLabel");
+  const root = document.documentElement;
+
+  if (localStorage.getItem("theme") === "dark") {
+    root.classList.add("dark");
+    toggle.checked = true;
+    label.textContent = "☀️ Light Mode";
+  }
+
+  toggle.addEventListener("change", () => {
+    root.classList.toggle("dark", toggle.checked);
+    label.textContent = toggle.checked ? "☀️ Light Mode" : "🌙 Dark Mode";
+    localStorage.setItem("theme", toggle.checked ? "dark" : "light");
+  });
+</script>
+
+</body>
+</html>
