@@ -128,7 +128,8 @@
         return res.text();
       })
       .then(md => {
-        contentEl.innerHTML = marked.parse(md);
+        document.getElementById("lesson-content").innerHTML =
+        marked.parse(md);
 
         setupLessonNavA1(lesson);
 
