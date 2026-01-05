@@ -64,6 +64,10 @@
       </div>
     </section>
 
+    <div class="lesson-nav">
+        <a id="prevLesson" class="lesson-nav-btn">← Bài trước</a>
+        <a id="nextLesson" class="lesson-nav-btn">Bài tiếp theo →</a>
+    </div>
     <!-- Footer navigation -->
     <div style="margin-top:32px; display:flex; gap:12px;">
       <a href="english-lessons.html" class="btn-secondary">← Quay lại lộ trình</a>
@@ -79,6 +83,32 @@
   const contentEl = document.getElementById("lesson-content");
   const titleEl = document.getElementById("lesson-title");
 
+  function setupLessonNavA1(lesson) {
+  const prevBtn = document.getElementById("prevLesson");
+  const nextBtn = document.getElementById("nextLesson");
+
+  if (!prevBtn || !nextBtn) return;
+
+  const match = lesson.match(/^A1\.(\d+)$/);
+  if (!match) return;
+
+  const current = parseInt(match[1], 10);
+  const min = 1;
+  const max = 40; // 🔧 đổi nếu A1 có số bài khác
+
+  if (current > min) {
+    prevBtn.href = `english-lesson-viewer.html?file=A1.${current - 1}`;
+  } else {
+    prevBtn.classList.add("disabled");
+  }
+
+  if (current < max) {
+    nextBtn.href = `english-lesson-viewer.html?file=A1.${current + 1}`;
+  } else {
+    nextBtn.classList.add("disabled");
+  }
+}
+  
   if (!lesson) {
     contentEl.innerHTML = "<p>Không tìm thấy bài học.</p>";
   } else {
@@ -91,6 +121,8 @@
       })
       .then(md => {
         contentEl.innerHTML = marked.parse(md);
+
+        setupLessonNavA1(lesson);
 
         // Lấy H1 làm tiêu đề
         const h1 = contentEl.querySelector("h1");
