@@ -73,28 +73,32 @@
 <script>
   const params = new URLSearchParams(window.location.search);
   const lesson = params.get("file");
-  const content = document.getElementById("lesson-content");
 
   if (!lesson) {
-    content.innerHTML = "<p>Không tìm thấy bài học.</p>";
+    document.getElementById("lesson-content").innerHTML =
+    "<p>Không tìm thấy bài học.</p>";
   } else {
-    const filePath = "lessons/" + lesson + ".md";
+    const filePath = `lessons/${lesson}.md`;
 
     fetch(filePath)
       .then(res => {
-        if (!res.ok) throw new Error("Not found");
+        if (!res.ok) throw new Error("Không tìm thấy file");
         return res.text();
       })
       .then(md => {
-        content.innerHTML = marked.parse(md);
+        document.getElementById("lesson-content").innerHTML =
+          marked.parse(md);
 
-        const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
-        progress[lesson] = true;
-        localStorage.setItem("lessonProgress", JSON.stringify(progress));
+        // Lấy title từ H1 trong markdown
+        const h1 = document.querySelector("#lesson-content h1");
+        if (h1) {
+          document.getElementById("lesson-title").textContent =
+            h1.textContent;
+        }
       })
-      .catch(err => {
-        content.innerHTML = "<p>❌ Không tải được nội dung bài học.</p>";
-        console.error("Fetch error:", err);
+      .catch(() => {
+        document.getElementById("lesson-content").innerHTML =
+          "<p>Không tải được nội dung bài học.</p>";
       });
   }
 </script>
