@@ -131,6 +131,9 @@
         document.getElementById("lesson-content").innerHTML =
         marked.parse(md);
 
+        // Lưu bài đang học
+        localStorage.setItem("currentLesson", lesson);
+        
         setupLessonNavA1(lesson);
 
         // Lấy H1 làm tiêu đề
