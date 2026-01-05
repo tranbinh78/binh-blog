@@ -62,6 +62,11 @@
       <div class="lesson-loading">Đang tải bài học…</div>
     </article>
 
+    <div class="lesson-nav">
+       <a id="prevLesson" class="lesson-nav-btn">← Bài trước</a>
+       <a id="nextLesson" class="lesson-nav-btn">Bài tiếp theo →</a>
+    </div>
+
     <div class="lesson-footer">
       <a href="a2-lessons.html">← Quay lại lộ trình A2</a>
     </div>
@@ -74,7 +79,33 @@
   const params = new URLSearchParams(window.location.search);
   const lesson = params.get("file");
   const content = document.getElementById("lesson-content");
+  
+  function setupLessonNav(lesson) {
+  const prevBtn = document.getElementById("prevLesson");
+  const nextBtn = document.getElementById("nextLesson");
 
+  if (!prevBtn || !nextBtn) return;
+
+  const match = lesson.match(/^A2\.(\d+)$/);
+  if (!match) return;
+
+  const current = parseInt(match[1], 10);
+  const min = 1;
+  const max = 40;
+
+  if (current > min) {
+    prevBtn.href = `a2-lessons-viewer.html?file=A2.${current - 1}`;
+  } else {
+    prevBtn.classList.add("disabled");
+  }
+
+  if (current < max) {
+    nextBtn.href = `a2-lessons-viewer.html?file=A2.${current + 1}`;
+  } else {
+    nextBtn.classList.add("disabled");
+  }
+}
+  
   if (!lesson) {
     content.innerHTML = "<p>Không tìm thấy bài học.</p>";
   } else {
@@ -88,6 +119,8 @@
       })
       .then(md => {
         content.innerHTML = marked.parse(md);
+
+        setupLessonNav(lesson);
 
         const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
         progress[lesson] = true;
