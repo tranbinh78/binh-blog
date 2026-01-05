@@ -64,6 +64,11 @@
 
     <div class="lesson-nav">
        <a id="prevLesson" class="lesson-nav-btn">← Bài trước</a>
+
+        <span id="lessonCounter" class="lesson-counter">
+          Bài -- / --
+        </span>
+
        <a id="nextLesson" class="lesson-nav-btn">Bài tiếp theo →</a>
     </div>
 
@@ -83,8 +88,9 @@
   function setupLessonNav(lesson) {
   const prevBtn = document.getElementById("prevLesson");
   const nextBtn = document.getElementById("nextLesson");
+  const counter = document.getElementById("lessonCounter");
 
-  if (!prevBtn || !nextBtn) return;
+  if (!prevBtn || !nextBtn || !counter) return;
 
   const match = lesson.match(/^A2\.(\d+)$/);
   if (!match) return;
@@ -92,6 +98,8 @@
   const current = parseInt(match[1], 10);
   const min = 1;
   const max = 40;
+
+  counter.textContent = `Bài ${current} / ${max}`;
 
   if (current > min) {
     prevBtn.href = `a2-lessons-viewer.html?file=A2.${current - 1}`;
