@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English Lesson – B1 | Trần Bình</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../assets/avatar.jpg" alt="Avatar Tran Binh" />
+      <div>
+        <h1>Tran Binh</h1>
+        <div style="color:var(--muted);font-size:13px">Personal website</div>
+      </div>
+    </div>
+
+    <ul class="nav">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a class="active" href="../tieng-anh.html">📘 Tiếng Anh</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+
+    <div class="header-row">
+      <div>
+        <h2 class="site-title" id="lesson-title">English Lesson – B1</h2>
+        <p class="lead">Bài học tiếng Anh trình độ B1.</p>
+      </div>
+    </div>
+
+    <article class="lesson-content" id="lesson-content">
+      <div class="lesson-loading">Đang tải bài học…</div>
+    </article>
+
+    <div class="lesson-nav">
+      <a id="prevLesson" class="lesson-nav-btn">← Bài trước</a>
+      <span id="lessonCounter" class="lesson-counter">Bài -- / 30</span>
+      <a id="nextLesson" class="lesson-nav-btn">Bài tiếp theo →</a>
+    </div>
+
+    <div class="lesson-footer">
+      <a href="b1-lessons.html">← Quay lại lộ trình B1</a>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const lesson = params.get("file");
+  const content = document.getElementById("lesson-content");
+
+  function setupLessonNavB1(lesson) {
+    const prevBtn = document.getElementById("prevLesson");
+    const nextBtn = document.getElementById("nextLesson");
+    const counter = document.getElementById("lessonCounter");
+
+    const match = lesson.match(/^B1\.(\d+)$/);
+    if (!match) return;
+
+    const current = parseInt(match[1], 10);
+    const max = 30;
+
+    counter.textContent = `Bài ${current} / ${max}`;
+
+    if (current > 1) {
+      prevBtn.href = `b1-lessons-viewer.html?file=B1.${current - 1}`;
+    } else {
+      prevBtn.classList.add("disabled");
+    }
+
+    if (current < max) {
+      nextBtn.href = `b1-lessons-viewer.html?file=B1.${current + 1}`;
+    } else {
+      nextBtn.classList.add("disabled");
+    }
+  }
+
+  if (!lesson) {
+    content.innerHTML = "<p>Không tìm thấy bài học.</p>";
+  } else {
+    const filePath =
+      `https://raw.githubusercontent.com/tranbinh78/binh-blog/main/tieng-anh/lessons/${lesson}.md`;
+
+    fetch(filePath)
+      .then(res => {
+        if (!res.ok) throw new Error("Not found");
+        return res.text();
+      })
+      .then(md => {
+        content.innerHTML = marked.parse(md);
+
+        localStorage.setItem("currentLesson", lesson);
+
+        const progress = JSON.parse(localStorage.getItem("lessonProgress") || "{}");
+        progress[lesson] = true;
+        localStorage.setItem("lessonProgress", JSON.stringify(progress));
+
+        setupLessonNavB1(lesson);
+      })
+      .catch(() => {
+        content.innerHTML = "<p>❌ Không tải được nội dung bài học.</p>";
+      });
+  }
+</script>
+
+</body>
+</html>
