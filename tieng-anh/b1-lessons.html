@@ -28,7 +28,16 @@
       <li><a href="../about.html">👤 About me</a></li>
       <li><a href="../contact.html">✉️ Contact</a></li>
     </ul>
-  </aside>
+
+   <!-- Dark mode -->
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="darkToggle">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider"></span>
+      </label>
+      <span id="themeLabel">🌙 Dark Mode</span>
+    </div>
+   </aside>
 
   <!-- Main -->
   <main class="main">
@@ -171,5 +180,33 @@
   });
 </script>
 
+<!-- Dark mode -->
+<script>
+  const toggle = document.getElementById("darkToggle");
+  const label = document.getElementById("themeLabel");
+  const root = document.documentElement;
+
+  if (localStorage.getItem("theme") === "dark") {
+    root.classList.add("dark");
+    toggle.checked = true;
+    label.textContent = "☀️ Light Mode";
+  }
+
+  toggle.addEventListener("change", () => {
+    root.classList.toggle("dark", toggle.checked);
+    label.textContent = toggle.checked ? "☀️ Light Mode" : "🌙 Dark Mode";
+    localStorage.setItem("theme", toggle.checked ? "dark" : "light");
+  });
+</script>
+
+<script>
+  const progress2 = JSON.parse(localStorage.getItem("lessonProgress") || {});
+  document.querySelectorAll(".lesson-link").forEach(link => {
+    const lesson = link.dataset.lesson;
+    if (progress2[lesson]) {
+      link.classList.add("done");
+    }
+  });
+</script>
 </body>
 </html>
